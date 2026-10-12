@@ -1,0 +1,31 @@
+{
+  "diagnostic": {
+    "error_code": null,
+    "incomplete_reason": "max_output_tokens",
+    "refused": false,
+    "response_bytes": 70608,
+    "response_sha256": "01b8d3b2959d1507b419d70fd70efee26f4b7b8bb95e3531d3a84a16d12bc99f",
+    "status": "incomplete"
+  },
+  "transport_exchange": {
+    "endpoint": "https://api.openai.com/v1/responses",
+    "http_status": 200,
+    "method": "POST",
+    "received_at_utc": "2026-10-12T17:06:43.198688+00:00",
+    "request_body_sha256": "d192acd4d1c5d88c210b85a4927ac5a147039d7b95240b4ce7c3ff7d4395fedd",
+    "request_id": "req_fb0fe3ba5abe4f1d93f77bccbf308328"
+  },
+  "offline": {
+    "status": "passed",
+    "profile": "curation-v4",
+    "provider_calls": 0,
+    "checks": 85,
+    "timestamp_local": "2026-10-12 12:13:58",
+    "log_sha256": "91603df37aa32e2d71745406b6005c74e8f462f3ebca3617176326fc0a2815e3",
+    "scope": "input/profile/adapter/budget; live quality not established"
+  },
+  "profile": "curation-v4",
+  "reasoning_effort": "none",
+  "maximum_output_tokens": 8192,
+  "old_profiles_unchanged": true
+}

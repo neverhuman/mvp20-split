@@ -1,0 +1,23 @@
+{
+  "status": "passed",
+  "timestamp_local": "2026-10-12 12:20:31",
+  "scope": {
+    "tenant_id": "internal",
+    "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336"
+  },
+  "original_receipt_replay": "unchanged",
+  "provider_calls_this_probe": 0,
+  "supported_live_gate": "indeterminate",
+  "missing_capability_gate": "passed",
+  "capabilities": [
+    {
+      "request_id": "capability-2b6dcf326fc127817c983b2fe5ea59288cf43fd0aa447b34223b9c7a61331429-00",
+      "scope": {
+        "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336",
+        "tenant_id": "internal"
+      }
+    }
+  ],
+  "all_original_held_units": 2250000000,
+  "scientific_validity": "not_established"
+}

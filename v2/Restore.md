@@ -1,6 +1,6 @@
 # Restore
 
-Refreshed: 2026-10-12 12:16:00 America/Chicago. Read FIRST after compaction.
+Refreshed: 2026-10-12 12:22:00 America/Chicago. Read FIRST after compaction.
 Continue until a real blocker. No agents/JARVIS; v1 read-only. Preserve untracked
 ocular PDF/DOCX. Existing serving demo unchanged. No source/module edits while
 verification, installation or actual-owner qualification runs.
@@ -10,22 +10,21 @@ verification, installation or actual-owner qualification runs.
 UI-01.08=90%; P1-P4=100%,P5=50%; P5.1/P5.3=100%,P5.2/P5.4=0.
 UI01=78/Build97.5/Verification0; N3/I1=90; UI01.05=96.67.
 Order UI01 -> UI02 -> POP01 -> ML01. LR01paused25/Build33.33.
-UI01.06/07closed100. 08a83.33%,08b66.67%,08c83.33%.
-08c third gate explicitly splits actionable diagnosis100 and conditional repair
-qualification0; first two gates100. No supported live successor or cutover yet.
+UI01.06/07closed100. 08a83.33%,08b66.67%,08c100%.
+08c third gate completed diagnosis and conditional experiment; supported graph acceptance remains0; first two gates100. No supported live successor or cutover yet.
 
 Owner approved08c2026-10-12 11:58:32: exact scope
 internal/owner-records-7e21ca85bd6044198b1585aa2c41d336 extends7/$1.75 to9/$2.25.
 First request diagnostic unchangedv3; second ONLY after specific repair and offline
-verification. ONE FINAL CONDITIONAL ORIGINAL/$0.25 REMAINS. No blind retry. Stop on
+verification. ALL NINE ORIGINALS/$2.25 HOLDS USED; no remaining paid authority. No blind retry. Stop on
 success or exhausted allowance; preserve all original holds. Same pinned model,
 endpoint,8192 output ceiling,synthetic egress,oneattempt; no fallback.
 
 Owner confirms requests/tokens appear in OpenAI dashboard but cost does not.
 Credential selection is authorized Z:/ssos/.env (no env/project/baseURLoverride).
 Verified direct TLS and GETmodel200. Token-derived estimates are NOT invoice cost.
-Six live attempts report cumulative$0.242380500; latesttwo reportzero. Original
-held budget now$2, not refunded by zero usage or failed outputs.
+Seven live attempts report cumulative$0.242380500; latestthree reportzero. Original
+held budget now$2.25, not refunded by zero usage or failed outputs.
 
 ## Latest diagnostic and targeted repair
 
@@ -49,25 +48,30 @@ curation-direct-offline-evidence.json. Installation34581 FINISHEDPASS g at
 curation-planning-installation-20261012g/owner. Source/dev locks0.131.0.
 Isolatedowners.json nowg, policyinternal-curation-direct-v4 added (oldpoliciesretained).
 
-Preparation46893 FINISHEDPASS/drained, logcuration-direct-preparation-a.log. No source edits until
-drained. prepare_direct args legacycuration-live-20261012a, originalcuration-live-v2-20261012a,
-previouscuration-live-v3-20261012a, diagnosiscuration-live-diagnosis-20261012a,
-offlinecuration-direct-offline-evidence.json, outputcuration-live-direct-20261012a.
-material_direct already passes SIX exact old envelope/acceptance replays.
-Preparation validates max_output_tokensdiagnostic+offlineproof+8priorholds before
-freezingstage2repair-evidence, newroots,config,allowance. No keyread duringprep.
-Next inspect/drainprep, synchronizecanonicaltrackers, commit/pushverifiedrepair,
-then run supported scenario on directfolder using existing run.py. This is the
-final approved original; no further approval needed before it if preparationpasses.
-Verified repair ready to commit/push before final original.
+Preparation46893 FINISHEDPASS/drained with six exact earlier envelope replays,
+eight prior holds, one conditional original and separately frozen v4 roots.
+Pushedc7cedcb7, then final live22963 FINISHEDexit1/drained. V4none repeated
+HTTP200 incomplete/max_output_tokens/no refusal, empty capture and zero reported
+usage. Curation31240e14f15e4cfae9af4f42a80d2d105f70a69d5daaad70376789c32c70fc0b;
+command67699c55ae074d5289a502d737422034. Body218173bytes/8192max/none verified.
+Response70609bytes, requestreq_87d7755ae18e419f837bc0cb25d26154.
+No proposal/compiledgraph/successor. ALL9/$2.25 holds used. No further inference.
 
-If final original fails: stop paid calls, do actual-owner replay/accounting/browser
-recovery with updated9holds/zero allowance, retain evidence, commit/push, then ask
-for bounded decision. If success: qualify exact supported graph, compiler, successor
-carry/lineage and browser/recovery; then P5.4 cutover, no skip.
-Known P5.4 gap: Deployment workers/recipes has no managed curation recipe (four
-native recipesonly); inspect owningREADME/native/configuration/recipes. Devworker
-is not a deployed daemon. No newmanagedrecipe implemented yet.
+Actual recovery67709 FINISHEDPASS/drained12:20:35: exact original receipt/current
+view and priorcapability records retained, browser1440/390 accessibility/overflow
+and no duplicate intent pass; narrow screenshot visually reviewed. Canonical
+ledger9/$2.25/zero remaining. Seven live attempts report cumulative$0.242380500,
+NOT invoice charges. EvidenceUI-01.08-Direct withmanifest+scoped drift audit.
+Newreview_direct.py owns this nine-hold/no-provider probe.
+
+NEXT: owner decisionUI-01.08d Output ceiling decision.md, proposed0%.
+Concrete proposal ONEadditionaloriginal/$0.30,16,384outputtokens, aggregate10/$2.55.
+Needs distinct scopedprofile, focusedoffline checks, independent installation,
+allseven originalreplays, frozenroots and richer closeddiagnosticmetadata BEFORE
+issuance. Not authorized or implemented. Alternative providerinvestigation using
+retained requestIDs without new inference. Existing08c approved8,192 cap/exhausted
+allowance does not cover08d. Stop here pending owner; no cutover or paidcall.
+Known P5.4 gap remains managedcuration recipe in Deployment (four recipesonly).
 
 ## Prior acceptance evidence
 
@@ -129,4 +133,4 @@ Read UI guidelines before changes. OpenAI Docs skill already read; official mode
 page checked earlier this session, snapshot/Responses and$0.75/$4.50 per1Mtexttokens.
 
 
-2026-10-12 12:16:59: Planning0.131.0 v4 passes85 offline checks, independent installationg, six exact prior replays and actual-owner stage2 freeze46893; drained. Eight/$2 original holds retained; final approved original/$0.25 ready. No live v4 request yet. UI-01.08c83.33%; parent90/P5=50 unchanged.
+2026-10-12 12:16:59: Planning0.131.0 v4 passes85 offline checks, independent installationg, six exact prior replays and actual-owner stage2 freeze46893; drained. Eight/$2 original holds retained; final approved original/$0.25 ready. No live v4 request yet. UI-01.08c100%; parent90/P5=50 unchanged.
