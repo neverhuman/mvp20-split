@@ -1,6 +1,6 @@
 # Restore
 
-Refreshed2026-10-11 21:53:16 America/Chicago. Read FIRST after compaction.
+Refreshed2026-10-11 22:05:19 America/Chicago. Read FIRST after compaction.
 Continue until needed persists across commits/milestones. No subagents/JARVIS.
 v1 read-only; preserve untracked ocular PDF/DOCX. No source/tests/module README
 edits while verification/installations run. Immutable serving processes are okay.
@@ -8,19 +8,20 @@ edits while verification/installations run. Immutable serving processes are okay
 ## Canonical position
 
 UI-01/N2 complete100%; N2.2 provenance, N2.3 generation comparison and N2.4
-recorded model inspection all qualified. UI01=66%, Build82.5%, Verification0%.
-NEXT approved UI-01.08/P2.3a; P2=50%, child30%, N3/I1=30%; UI01.05=76.67%.
+recorded model inspection all qualified. UI01=66.33%, Build82.92%, Verification0%.
+NEXT approved UI-01.08/P2.3b; P2=58.33%, child31.67%, N3/I1=31.67%; UI01.05=77.22%.
 UI01.06/UI01.07 closed100%. Order UI01 -> UI02 -> POP01 -> ML01.
 LR01 paused25%/Build33.33%. UI01.01 universal index remains unapproved;
 bounded existing-API comparison is qualified.
 
 ## Latest checkpoints
 
-P1 pushed cef2c541; P2.1 pushed601989e1. P2.2 Planning0.110 complete:
-exact campaign envelope/prompt/output and original compiler graph projection.
-92 replay +108 SQL/compiler/provenance +13 boundary checks pass; no tests running.
-Commit/push P2.2 then P2.3a cost allowance/provider adapter. Zero new paid calls.
-Current local/LAN immutable serving owners unchanged (Planning0.107/Studio0.26).
+P1 cef2c541, P2.1 601989e1, P2.2 daaf2e12 pushed. P2.3a Planning0.111 complete:
+fixed4-call/$1 scope guard, max$0.25 reservation, unknown/unissued holds, primary/late
+overage blocking before issue; exact-scope direct curation adapter with262144 body.
+55 final cost/dispatch/boundary tests pass, no tests running; zero paid calls.
+Commit/push P2.3a then P2.3b recoverable worker/job state and public-context assembly.
+Immutable demo owners unchanged; source/dev/service locks0.111 aligned.
 
 ## Evidence and current serving processes
 
@@ -63,11 +64,11 @@ Data0.30/Registry0.1/Research0.40/Knowledge0.18. LAN --baseline is gateway.json.
 
 ## Next task / approved implementation
 
-UI-01.08 approved; P1=100%, P2=50%, child30%. No reapproval needed.
-P2.3a cost bounds/direct adapter next; latest details at end of this handoff.
-P2.2 completed; preserve original new/legacy profile bytes and exact proposed graph.
-Current service0022 migration applied to owned TEST fixture only; demo0021 unchanged.
-OpenAI Docs skill was already read; consult official docs for new API behavior if needed.
+UI-01.08 approved; P1=100%, P2=58.33%, child31.67%. No reapproval needed.
+P2.3a cost adapter complete; P2.3b recoverable worker state/public context next.
+P2.3c compiler/process follows; P2.4 independent replacement remains0%.
+Service0022 migration applied to owned TEST fixture only; demo0021 unchanged.
+OpenAI Docs skill already read; exact API fields/rates reused from reviewed adapter.
 
 Latest evidence:
 - reasoning-studio-tests-20261011a.log362pass.
@@ -91,28 +92,32 @@ commit additionally -c gc.auto=0. Exact paths only; never stage user ocular file
 verify_knowledge_review.py --suite generations uses original numeric browser-input.
 --suite launch --browser-recovery original journal --review-only never resubmits.
 
-## Latest P2.2 checkpoint
+## Resume details
 
-Planning0.110/dev+service locks aligned. Exact curation_input/profile/envelope,
-curation_output parser, fit.v3 and curation prompt implemented. OutputProfiles
-supports new schema. PreparedCampaignProposal.review_document() explicitly projects
-compiler fields while raw output/capture and exact FutureCampaignDraft stay original.
-Generic observation action=abstain for no executable graph; original typed
-request_capabilities payload retains all gaps. No legacy public enum/schema changes.
-Fixed preparation prompt replay through reviewed_for_request; old prompt hashes stable.
-92 replay +108 SQL/compiler/provenance +13 boundary checks pass. Logs
-curation-envelope-b/c.log and curation-envelope-boundaries.log. All test sessions done.
-P2.2 complete100%; commit/push this milestone then P2.3a. No new paid calls.
-Next: curation_budget fixed qualification-scope allowance ($1/4/$0.25 each),
-curation_openai adapter matching CurationEnvelope. Existing OpenAIHTTP accepts only
-16384/32768/65536 body limits; additive curation transport limit needed (e.g262144)
-without changing old defaults. Suggested maxinput262144/output8192 =>233472000
-nanodollar conservative bound, fixed reservation250000000; maxattempts1. This is
-implementation planning, not a made call. Model fixed gpt-5.4-mini-2026-03-17.
-Budget group must be fixed to one declared qualification scope before live calls;
-no moving scopes to evade cap. Synthetic SQL tests use fresh fixture scopes.
-Reuse existing BudgetLedger/DispatchJournal lock-before-family/request, integer
-price accounting, immutable reservation/primary+late observation reconciliation.
-Do not call provider before fixed group guards pass; no refunds for underuse/unknown.
-Then P2.3b owned job state/lease and public-context assembly; P2.3c compiler/process.
-P2.4 independent replacement, P3 capability workflow/UI, P4 successor, P5 live review.
+P2.2 Planning0.110 qualified92 replay +108 SQL/compiler/provenance +13 boundary
+checks. New curation_input/profile/envelope, output parser, fit.v3 and prompt.
+PreparedCampaignProposal.review_document() is explicit compiler projection; exact
+original output/capture/graph retained. No-executable-graph generic action=abstain,
+original request_capabilities payload keeps structured gaps. Legacy profiles intact.
+
+P2.3a Planning0.111 adds curation_budget and curation_openai, updates existing
+BudgetLedger/DispatchJournal scope-before-family/request guards, original ledger
+rows (no migration). Configuration fixes scope/key_env/synthetic egress/timeout.
+Maxinput262144/output8192 costs233472000 nanodollars; maxreserve250000000,
+max4calls and1000000000 per declared qualification scope. No refunds/retries.
+OpenAIHTTP adds262144 limit; original profiles/default untouched. P5 must declare
+one scope before calls; do not use new scopes to evade the owner's total$1 cap.
+Tests curation-cost-a:75pass/1oracle failure (generic policy rejected sooner),
+curation-cost-b:55pass final including legacy reservations/dispatch and boundaries.
+All sessions done. No keys read/no paid calls. Logs under .test-results.
+
+Next P2.3b: isolated curation job state/lease module and exact public context builder.
+Current CurationJournal only immutable queued receipt; add recoverable projections
+without rewriting original bytes. Immutable job events + fenced leases/short SQL
+transactions, provider/peer I/O outside transactions. Read current view while receipt
+query remains exact original queued acknowledgment. New worker principal grant must
+stay separate from browser writes. P2.3c combines once-only issuance with original
+compiler save/validation and managed process, then P2.4 installed replacement.
+Use existing Planning campaign context/slice/packet/authoring modules, public owners
+only. Curations cannot relabel prior deterministic compiler captures. UI and
+capability fulfillment remain P3/P4; no fabricated new tool or scientific claim.

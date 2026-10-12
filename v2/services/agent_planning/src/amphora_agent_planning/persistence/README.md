@@ -1,5 +1,9 @@
 # Planning persistence boundary
 
+UI-01.08/P2.3a adds curation qualification-scope locking and fixed allowance checks
+before new reservations/issuance. Existing reservations/primary/late observations
+own the ledger; exact history replay and legacy budgets stay unchanged. No peer I/O.
+
 - Reviewed implementation: Agent Planning0.69; compiler selection/lease and operation/event SQL verified; v1 original-history regression preserved.
 - State: private planning schema, forward migrations planning_0001 through planning_0015. Never run Planning<=0.69 migrators on0015.
 - Responsibility: immutable request, attempt, observation, policy, reservation, settlement, issuance and late-evidence records. The orchestration module composes these objects; Runtime alone owns campaign decisions.

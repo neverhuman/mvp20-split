@@ -1,5 +1,9 @@
 # OpenAI provider boundary
 
+UI-01.08/P2.3a adds an explicit262144-byte transport body mode for curation.
+Existing defaults and body profiles are unchanged; the curation adapter requires
+its own exact input/cost profile and fixed server scope before a send.
+
 Owner: Planning,BP-07.05/B2.01. Explicit injection only; no default network activation. Model is pinned gpt-5.4-mini-2026-03-17,standard Responses endpoint,low reasoning,JSON output mode. Existing OutputProfiles independently validates permitted actions,schemas and references; JSON mode is not scientific or execution acceptance.
 
 PreparedInput binds selected Artifact bytes to exact length/hash,request/model/prompt and a separately versioned conservative UTF8 input allowance. The existing fixture tokenizer remains unchanged. The allowance is a reservation bound,not reported tokenization. Input includes only the reviewed prompt plus exact selected synthetic bodies. No source or URL retrieval is owned here. Callers must supply an authorized content reader; no .env file reader exists in service code.
