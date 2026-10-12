@@ -358,3 +358,12 @@ Research criteria and registered tools; a local authored proposal is not that li
 N2.2=100%, N2=87.5%, overall57.5%, Build71.88%, Verification0%. Actual local/LAN
 Research/Knowledge origin traversal and original-run completion pass; deterministic
 provider earns no N2.4/N3 credit. N2.3 generational comparison is the next task.
+
+## N2.3 retained generation checkpoint
+
+2026-10-11 19:44:00 America/Chicago: exact published search schema, bounded100-node/128-output
+discovery, two explicit protected checkpoint selections, objective/candidate comparison
+and workspace presentation implemented.13 focused/362 full Studio checks pass;
+scripted1440/390 browser passes. Actual original retained campaign qualification
+and scoped audit remain. N2.3 stays50% until its second delivery group passes.
+No population-wave engine, new Runtime result index or scientific validity claimed.

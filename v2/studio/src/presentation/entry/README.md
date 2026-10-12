@@ -96,3 +96,7 @@ UI-01.06 actual local/LAN launch/reload/results and original-run outage recovery
 also pass1440/390; see the launch integration audit. A Runtime409/410 refreshes a
 coherent snapshot automatically in the visible execution view. A transport outage
 can require Retry campaign read or reload; neither creates another campaign.
+
+Results include the bounded GenerationPanel, lazily discovered by GenerationModel.
+Unmapped numerical campaigns expose it directly; connected scientific campaigns
+expose optional evolutionary history. No generation is inferred from flat screens.

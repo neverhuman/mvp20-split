@@ -231,3 +231,5 @@ await generate({
   campaign: ["planning.campaign-draft", "CampaignDraft"],
   response: ["supervision.response", "SupervisionResponse"],
 }, resolve(target, "followup"), ["followup", "checkpoint", "campaign"]);
+
+await generate({ checkpoint: ["search.checkpoint", "SearchCheckpoint"] }, resolve(target, "search"), ["checkpoint"]);

@@ -1,0 +1,6 @@
+{
+  "checkpoint": {
+    "source": "contracts/schemas/v1/search.checkpoint.serialization.json",
+    "sha256": "e0cf43f3aa26c8a8492ba424091a7f9e6d9a99e86fb328ae0ad7fd1a0d12220e"
+  }
+}

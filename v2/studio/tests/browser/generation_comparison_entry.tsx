@@ -1,0 +1,10 @@
+import {createRoot} from 'react-dom/client';
+import {GenerationPanel} from '../../src/presentation/generation_comparison/panel.js';
+import {GenerationModel} from '../../src/page_models/generation_comparison/model.js';
+import {ObservationClient} from '../../src/transport/observations.js';
+import {DataProvenanceClient} from '../../src/transport/provenance/data.js';
+import '../../src/presentation/style.css';
+const context=await fetch('/probe-context').then(r=>r.json());
+const model=new GenerationModel(context,new ObservationClient(),new DataProvenanceClient());
+createRoot(document.getElementById('root')!).render(<main><h1>Retained search evidence</h1><GenerationPanel model={model}/></main>);
+window.addEventListener('pagehide',()=>model.dispose());

@@ -138,3 +138,8 @@ contents, filter/navigation retention, axe and no overflow at1440/390; both scre
 reviewed. Model-result attachment branch covered; defensive/lifecycle branch gaps
 remain. Proposal half is blocked on SQ-01.01 criterion-target contract decision;
 actual-owner subsequent-campaign and independent replacement acceptance remain V1.
+
+UI-01/N2.3 generation comparison is in source qualification:362 tests and scoped
+scripted browser evidence pass. Existing search checkpoint contracts only; at most
+two selected256KiB artifacts,100 activation discovery ceiling, no new execution
+API or POP-01 implementation. Actual retained-owner qualification pending.

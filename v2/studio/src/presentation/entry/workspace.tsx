@@ -1,3 +1,5 @@
+import {GenerationModel} from '../../page_models/generation_comparison/model.js';
+import {GenerationPanel} from '../generation_comparison/panel.js';
 import { useCallback, useEffect, useMemo, useState, useSyncExternalStore, type ReactNode } from 'react';
 import type { WorkspaceSession } from '../../page_models/session/model.js';
 import type { WorkspaceContext } from '../../transport/session/client.js';
@@ -62,6 +64,8 @@ function Campaign({ context, search, launchControl, planning }: { context: Works
     return { question:new FeedbackModel({ research:new ResearchRecordClient(), feedback:new FeedbackClient() }), model:new MonitorModel(client), navigation:new NavigationModel(client), namedViews:new NamedViewsModel(client), evidence:new EvidenceModel(client), supervision:new SupervisionModel(new SupervisionClient(), new FollowupModel(new FollowupClient()), new CriterionModel(new CriterionClient())), library:new DraftLibrary(context,new AuthoringClient()) };
   }, [context.actor_id, context.scope.tenant_id, context.scope.project_id, context.run_id]);
   useEffect(() => () => { for (const owner of Object.values(owners)) owner.dispose(); }, [owners]);
+  const generations=useMemo(()=>new GenerationModel({scope:context.scope,run:context.run_id},new ObservationClient(),new DataProvenanceClient()),[context.scope.tenant_id,context.scope.project_id,context.run_id]);
+  useEffect(()=>()=>generations.dispose(),[generations]);
   const flow=useMemo(()=>new CampaignFlowModel({scope:context.scope,run:context.run_id},new ObservationClient(),new DataProvenanceClient(),planning),[context.scope.tenant_id,context.scope.project_id,context.run_id,planning]);
   const subscribeFlow=useCallback((listener:()=>void)=>flow.subscribe(listener),[flow]);
   const flowView=useSyncExternalStore(subscribeFlow,()=>flow.snapshot);
@@ -77,7 +81,7 @@ function Campaign({ context, search, launchControl, planning }: { context: Works
     const tick=async()=>{if(!document.hidden)await flow.refresh(true);if(!stopped)timer=setTimeout(()=>void tick(),2000);};
     timer=setTimeout(()=>void tick(),2000);return()=>{stopped=true;clearTimeout(timer);};
   },[flow,mode,flowView.snapshot?.status,flowView.retrySnapshot]);
-if(flowView.phase==='ready')return <ConnectedCampaign provenance={provenance} launchControl={launchControl} view={flowView} mode={mode} navigate={navigate} refresh={()=>void flow.refresh()} knowledge={explored?<LocalKnowledge embedded selection={campaignSelection} feedbackSelection={feedbackSelection} outputSelection={outputSelection} campaign={{scope:context.scope,run:context.run_id}} active={mode==='domain'} synthetic={context.synthetic}/>:null} technical={<MonitorWorkspace {...owners} compact active={mode==='execution'} context={{scope:context.scope,run:context.run_id}} synthetic={context.synthetic}/>} />;
+if(flowView.phase==='ready')return <ConnectedCampaign generations={mode==='knowledge'?<details><summary>Evolutionary search history</summary><GenerationPanel model={generations}/></details>:null} provenance={provenance} launchControl={launchControl} view={flowView} mode={mode} navigate={navigate} refresh={()=>void flow.refresh()} knowledge={explored?<LocalKnowledge embedded selection={campaignSelection} feedbackSelection={feedbackSelection} outputSelection={outputSelection} campaign={{scope:context.scope,run:context.run_id}} active={mode==='domain'} synthetic={context.synthetic}/>:null} technical={<MonitorWorkspace {...owners} compact active={mode==='execution'} context={{scope:context.scope,run:context.run_id}} synthetic={context.synthetic}/>} />;
   if(['loading','idle','denied','failed'].includes(flowView.phase))return <main className="local-entry">{launchControl}<h1>{flowView.phase==='loading'||flowView.phase==='idle'?'Opening the retained campaign':'Campaign context unavailable'}</h1><p>{flowView.message??'Checking the plan and scientific evidence.'}</p>{flowView.phase!=='loading'&&flowView.phase!=='idle'&&<button onClick={()=>void flow.refresh()}>Retry campaign read</button>}</main>;
   return <div className="research-shell">
     <header className="local-workspace-bar"><strong>AMPHORA</strong><span>Research workspace</span><span className="local-access">Local access</span></header>
@@ -92,7 +96,7 @@ if(flowView.phase==='ready')return <ConnectedCampaign provenance={provenance} la
     {reviewed && <div hidden={mode !== 'evaluation'}><EvaluationReviewPanel synthetic={context.synthetic} /></div>}
     <div hidden={mode !== 'execution'}>{launchControl}<MonitorWorkspace {...owners} compact active={mode === 'execution'} context={{ scope:context.scope, run:context.run_id }} synthetic={context.synthetic} /></div>
     {designed && <div hidden={mode !== 'design'}><LocalDesign model={owners.library} synthetic={context.synthetic} /></div>}
-    {explored && <div hidden={mode !== 'knowledge' && mode !== 'domain'}><LocalKnowledge selection={selection} feedbackSelection={feedbackSelection} outputSelection={outputSelection} campaign={{ scope: context.scope, run: context.run_id }} active={mode === 'knowledge' || mode === 'domain'} synthetic={context.synthetic} /></div>}
+    {explored && <div hidden={mode !== 'knowledge' && mode !== 'domain'}>{mode==='knowledge'&&<GenerationPanel model={generations}/>}<LocalKnowledge selection={selection} feedbackSelection={feedbackSelection} outputSelection={outputSelection} campaign={{ scope: context.scope, run: context.run_id }} active={mode === 'knowledge' || mode === 'domain'} synthetic={context.synthetic} /></div>}
   </div>;
 }
 

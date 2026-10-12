@@ -9,13 +9,14 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 ## Program Tracker
 
 - Status: UI-01 primary active; LAN-01 accepted/archived. LR-01 remains conditional; completed plans remain closed.
-- Last refreshed: 2026-10-11 19:26:42 (America/Chicago).
+- Last refreshed: 2026-10-11 19:44:00 (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
 - Current priority: schedule UI-01 Knowledge/run/LLM integration and UI-02 formula/structure views for2026-10-12 through2026-10-16; preserve the live demo.
 - Primary active task: UI-01/N2.3 generational comparison (50%). UI-01.07 complete100%, P1/P2/P3/P4=100%; N2.2=100%, N2=87.5%. UI-01.05 K1/R1=100%, I1=0%, child66.67%; launch remains closed100%.
 - Next task: N2.4 live-provider reasoning, then I1 inventory-fed LLM curation and durable missing-capability requests. UI-02 -> POP-01 -> ML-01 follow in order.
 - Implementation completion: LAN-01=100%; UI-01 active57.5%, Build71.88%, Verification0%; UI-02=0%, P1/P2/P3/P4=0%; LR-01 paused25%, Build33.33%, Acceptance0%.
 - Blockers/dependencies: generational comparison/provider reasoning, candidate structure producer and Knowledge-grounded live LLM integration remain unfinished. No calibrated scientific accuracy benchmark exists for the demo tools. UI-01.01 remains separate.
+- Latest N2.3 checkpoint: bounded comparison implemented;362 Studio tests and scripted browser pass. Actual retained-generation verification/audit next; percentages unchanged.
 - Acceptance posture: actual local/LAN launch/results/Knowledge and exact compiler provenance pass; Studio0.24/349 tests, isolated Planning206/Gateway58 tests. Deterministic origin qualification only; N2.4/N3 and parent V1 remain open.
 - Active exception: owner scheduled four targets for next week. Preserve earned phase credit; sequence the bounded cross-plan handoffs below. Pull LR-01/UI-R01 forward only when their faults block the scheduled integration, with exact return points.
 
@@ -30,9 +31,9 @@ The initial program proves software behavior using deterministic/synthetic fixtu
 ## Current In-Flight Work
 
 LAN-01 complete100%, archived in Completed; deployed viewer preserved.
-UI-01 is active at56.25%, Build70.31%, Verification0%. G0 graph review/design
+UI-01 is active at57.5%, Build71.88%, Verification0%. G0 graph review/design
 is a prerequisite and earns no implementation credit. G1/N1/N2/N3/V1 are five equal
-delivery gates. Phase mirror: G0=100%, G1=100%, N1=100%, N2=81.25%, N3=0%, V1=0%.
+delivery gates. Phase mirror: G0=100%, G1=100%, N1=100%, N2=87.5%, N3=0%, V1=0%.
 LR-01 is paused at25%, Build33.33%, Acceptance0%; R1=100%, R2/R3/V1=0%.
 Completed plans remain in the [completed index](Completed/README.md).
 

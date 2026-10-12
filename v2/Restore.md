@@ -1,6 +1,6 @@
 # Restore
 
-Refreshed2026-10-11 19:33:46 America/Chicago. Read FIRST after compaction.
+Refreshed2026-10-11 19:44:00 America/Chicago. Read FIRST after compaction.
 Owner says continue until needed: milestones/commits are not stopping points.
 No subagents/JARVIS; v1 read-only. Preserve untracked ocular PDF/DOCX.
 Do not edit source/tests/module READMEs while verification or installation runs.
@@ -19,7 +19,14 @@ unapproved; bounded existing-API alternative authorized. No current owner blocke
 ## Latest checkpoint
 
 Pushed49c28ac1, ca056004,1a43c1ea,9cea8028 (Studio),c0efa208 (isolated owners).
-Closeout/helper/docs qualification complete; commit/push next, then N2.3.
+Provenance closeout pushed37e9127a. N2.3 implementation in progress.
+New generation_comparison modules, schema consumer,13 focused/362 full tests pass;
+scripted browser B passes; mobile header adjusted after visual inspection.
+NEXT actual retained numerical campaign qualification using original
+.test-results/demo-20261008/original and present_local_demo.py with immutable
+new Studio preview. Briefly drain LAN then local C, serve numerical review without
+workers/provider calls, qualify, then restore provenance demo/LAN with new assets.
+Both currently still serving; no outage initiated. Keep original scope/receipts.
 Planning0.107/Gateway0.5/Studio0.24/contractsPlanning0.13, private migration0021.
 264 independent owner tests (Planning206/Gateway58),349 Studio tests pass.
 Actual original context -> deterministic Planning capture/compiler -> saved/validated
