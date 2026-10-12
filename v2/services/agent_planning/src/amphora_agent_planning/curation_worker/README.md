@@ -13,7 +13,7 @@ heartbeat and releases only its exact fence; a replaced worker cannot release a
 successor. Background errors surface as bounded diagnostics, without SQL secrets.
 No peer I/O is held under SQL. In-flight calls retain original issuance authority.
 
-Current implementation: discovery/heartbeat/lifecycle/polling; configured process and installed replacement proof remain. Tests owned by
+Current implementation: discovery/heartbeat/lifecycle/polling, configured process and independently installed replacement qualified. Tests owned by
  tests/curation_worker and curation_jobs. No model key, network call or startup
 occurs through these primitives alone. Existing heartbeat strict-revision API
 remains unchanged; refresh is the managed keeper's original-fence operation.
@@ -66,3 +66,7 @@ the actual configured CLI with provider disabled. Original dispatch becomes unkn
 retains full reservation, and repeated replacement stays idle with one dispatch.
 CLI errors are redacted; unexpected integrity failures remain fatal and inspectable
 through retained history. No paid calls or real credentials in this qualification.
+
+Last reviewed:2026-10-12 00:50:48 America/Chicago. Architecture: [Planning](../../../../../docs/Architecture/Agents/Planning.md).
+Delivery: [UI-01.08](../../../../../docs/Build%20Plans/UI-01.08%20Campaign%20curation%20boundary%20decision.md).
+Independent replacement: curation-installation-20261012a,205 scoped checks, public-only wheel closure.

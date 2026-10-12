@@ -20,7 +20,7 @@ draft/revision/content/validation/universe pins. Invalid compilation and rejecte
 commands remain failed; temporary blocked/pending work remains compiling with a
 reason. A validated draft is not admitted, scientifically proven or source-authorized
 for later execution. Original provider output and queued receipt remain immutable.
-Tests: tests/curation_compiler; managed process/replacement acceptance remain later.
+Tests: tests/curation_compiler; managed process/independent replacement qualified at Planning0.123; integrated live acceptance remains P5.
 
 Verified:7 SQL/scripted-owner workflow cases,48 legacy selection/storage/boundary
 checks and2 final persisted-attempt binding checks. Periodic production heartbeat
@@ -29,3 +29,7 @@ and independently installed owner replacement remain c.3/P2.4.
 Managed workflow records named reviewed-policy violations as failed only before
 compiler selection. Original proposal remains visible; integrity/configuration
 errors propagate, and existing selected operations always recover before review.
+
+Last reviewed:2026-10-12 00:50:48 America/Chicago. Architecture: [Planning](../../../../../docs/Architecture/Agents/Planning.md).
+Delivery: [UI-01.08](../../../../../docs/Build%20Plans/UI-01.08%20Campaign%20curation%20boundary%20decision.md).
+Independent replacement: curation-installation-20261012a,205 scoped checks, public-only wheel closure.

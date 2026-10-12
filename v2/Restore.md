@@ -1,87 +1,66 @@
 # Restore
 
-Refreshed 2026-10-12 00:32:29 America/Chicago. Read FIRST after compaction.
+Refreshed 2026-10-12 00:50:48 America/Chicago. Read FIRST after compaction.
 Continue until needed across commits/gates/compaction. No subagents/JARVIS.
 v1 read-only; preserve untracked ocular PDF/DOCX. No source/tests/module README
 edits while tests/installations run. Serving demo uses immutable source copies.
 
 ## Canonical position
 
-UI-01.08 approved; active P2.4 independently installed replacement.
-Child35.00%;P1=100%,P2=75.00%,P3/P4/P5=0. P2.1/2.2=100%,P2.3=100%,P2.4=0.
+UI-01.08 approved; active P3.1 original capability requests/read API.
+Child40.00%;P1=100%,P2=100%,P3/P4/P5=0. P2.1/2.2=100%,P2.3=100%,P2.4=100.
 P2.3a/b=100%;c100%(c.1policy/publication100,c.2provider/compiler100,c.3process100).
-ParentUI01=67.00%/Build83.75%/Verification0;UI01.05=78.33%,I1=35.00%.
+ParentUI01=68.00%/Build85.00%/Verification0;UI01.05=80.00%,I1=40.00%.
 UI01.06/07 closed100. Order UI01->UI02->POP01->ML01. LR01 paused25/Build33.33.
 Universal result index remains separately unapproved. No user decision pending.
 
 ## Latest verified checkpoints
 
-21975bc1 pushed Planning0.120 once-only execution;61 scoped checks.
-fd5b7b4c pushed0.119 outcome projection;38checks.
-941a4e31 pushed0.118 reviewed declaration publication;138+10+20checks.
-189affbc pushed0.117 original context/preparation/job linkage;67finalchecks.
-Working0.121 compiler handoff now qualified:7 workflow/recovery tests406.24s,
-48 original selection/storage/boundary tests146.43s,2 final binding tests103.71s.
-Compiler checkpoint committed/pushed as fb587a75 (Planning0.121). No new compiler migration;
-latest planning0025 is declaration publication. Serving demo0021 unchanged.
+cf0d10b3 pushed Planning0.123 configured worker;33ed863a pushed0.122 lifecycle.
+P2.4 now complete: fresh isolated0.123 wheel and public-only dependency closure,
+205checks:117context68.42s,36durable171.65s,52compiler/process653.11s. No skips/fails.
+Actual test SQL/CLI, scripted owner/provider peers. No keys or paid calls.
+Evidence .test-results/curation-installation-20261012a/evidence.json; owner/manifest.json.
+Exec67834 FINISHED. No tests/installations running. Helper
+ dev/verify_curation_installation.py and latest docs pending commit/push.
+Serving immutable demo remains Planning0.107/migration0021; source schema0025.
 
 ## Implemented curation path
 
-curation_policy freezes original structural/cost limits. curation_declaration
-retains policy/command/Runtime bytes and publishes derived configuration through
-existing Data APIs. No source-right grants. curations use original Runtime graph/
-terminal predecessor summary, Data processing, bounded Registry/Runtime metadata,
-1..8 Knowledge heads/gaps, original Research selection and untrusted human direction.
-Provider engagement hashes command; decision_scope is reviewed declaration digest.
-curation_preparation freezes exact request/packet/envelope and job linkage atomically
-at final linkage, recovering original stored input after partial retention.
-curation_execution recovers issued/observed calls before new config/Data work;
-new reservation/issuance has SQL job guards before writes+commit. Fresh Artifact
-processing twice; exact packet and durable deadline to one direct provider call.
-curation_result binds exact ordinal1 capture/reservation/settlement before progress;
-unknown, overage, invalid, graph, capability request and abstention remain distinct.
-curation_compiler derives unchanged actor+attempt compiler slot, reuses original
-CompilerStore/Progression/commands. New selection SQL guard; compiling/ready require
-retained original provider and Runtime validation. No graph substitution/admission.
-Compiler owns its independent lease after delegation; expiry of curation job cannot
-erase a committed owner command. Replacement recovers it before another POST.
-
-## Latest worker checkpoint
-
-2026-10-12 00:32:29: Planning0.123 configured worker complete (commit pending); previous
-0.122 pushed33ed863a.15 configuration/process checks22.28s;2 actual process-crash/
-recovery and processing-denial checks52.83s;15 policy/boundary checks51.84s.
-ALL TESTS FINISHED. Sync version/locks and commit/push, then P2.4.
-curation_worker/configuration.py validates private DTO/policy identity/files;
-peers.py builds public clients; hosting.py enforces Planning serving role, grants,
-readiness and DB lifetime; __main__.py check/run with graceful signals/redacted errors.
-Check does not load model key or claim work. Disabled run can recover original
-issuance without Data/model. Actual test-only crash provider exits73 after issuance;
-configured replacement keeps full charge/unknown, no new dispatch. No paid calls.
-Curation compiler now rejects explicit policy/structural/tool/evidence violations
-before selection; integrity failures propagate. Worker pauses processing denial.
+Original command/queued receipt append-only; reviewed policy/derived declaration
+published via Data with original upload reconciliation. Exact Runtime predecessor/
+draft, Data, Registry, Knowledge and Research context frozen before model issuance.
+One original scoped cost hold and one physical call; original observation/accounting
+recovered before mutable configuration/Data. Unknown retains full reservation.
+Original graph goes through existing compiler selection, commands and validation;
+no generated substitute. Named model policy/structure/tool/evidence violations fail
+before compiler selection; integrity errors propagate. Independently fenced compiler
+commits survive job expiry and replacement. Managed heartbeat renews exact job fence.
+Private configuration/public clients/CLI check/run; disabled provider default;
+check reads no model key or work. Process-crash test exits73 after issuance,
+actual configured replacement stays unknown with full hold and one dispatch.
 
 ## Next concrete work
 
-P2.4 independent Planning wheel, public-only closure, copied tests and actual
-configured replacement. Use dev/install_owner_peer.py; prohibit peer implementation
-imports. Copy Planning tests plus contracts/planning/tests/campaign_output/fixtures
-(and any needed supervision fixtures). Strip environment to system+owned test SQL;
-no keys. Run scoped curation intake/context/declaration/executor/compiler/worker
-checks under isolated Python -I. No source edits during tests or installation.
-Useful existing patterns: dev/verify_checkpoint_installation.py and
-curation_worker/test_process_recovery.py + crash_worker.py. Scripted owner peers,
-actual SQL/CLI; no scientific claims. Preserve original/live demo state.
+P3.1 original capability requests and scoped read API; P3.2 explicit fulfillment;
+P3.3 truthful browser readback. Owning UI-01.08 now details three equal P3 deliveries.
+Durability can derive stable capability IDs from immutable original captured gaps
+instead of duplicating mutable descriptions. Approved public types already exist
+in contracts/campaign_curation/models.py: CapabilityRequestView, fulfillment
+request/specification/receipt. Existing FulfillmentCommand lives in
+curation_intake/commands.py. Existing grants read_capabilities/fulfill_capabilities
+are reserved in access.py; routes/storage/verification are not implemented.
+CurationView.proposal retains full typed gaps; capability_requests currently empty.
+Use focused domain projection objects, preserving original receipt/progress bytes.
+Explicit verified fulfillment needs real Registry lock/descriptor/ports and current
+Data processing of owner-reviewed acceptance evidence; artifact existence/model
+self-assertion is insufficient. No tool install/codegen/scientific promotion.
 
-P2.4 independent installed replacement follows process gate. Then P3 capability
-requests/fulfillment, P4 successor/UI, P5 actual qualification. Multi-graph legacy
-OriginProjection READ supports one graph; save/index itself is not blocked. Keep
-UI truthful about requested versus consumed context; never silently select first
-head or label provenance complete. Approved CurationView retains original selected
-heads/proposal/provider/draft. No gratuitous additional public API is authorized.
-
-ZERO paid calls and no keys read. P5 only: one declared synthetic scope,4calls/$1,
-max$.25 original reservation/call, no retries/refunds/fallback or scope-budget evasion.
+P4 graph diff and additive successor launch/managed workers; P5 actual-owner/browser
+and live provider. Legacy provenance read supports one Knowledge graph; be truthful
+about requested vs consumed context. No gratuitous additional public API.
+P5 ONE declared synthetic qualification scope,4calls/$1,max$.25 hold/call,
+no retries/refunds/fallback or new-scope evasion. Zero actual calls so far.
 
 ## Commands and guardrails
 

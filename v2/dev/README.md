@@ -446,3 +446,9 @@ and Gateway wheels using copied module tests and owned fixture PostgreSQL. It ke
 credentials in environment, preserves failed evidence and can retry only the known
 missing-supervision-fixture group while retaining previously passed cases. It never
 establishes scientific peer or browser acceptance and does not touch the demo database.
+
+UI-01.08: verify_curation_installation.py builds isolated Planning with public-only
+dependencies and runs copied curation context, execution, compiler and worker tests.
+It strips provider keys, uses scoped owned test SQL, verifies actual CLI crash/recovery
+and retains XML/logs/wheel hashes. It does not replace the serving demo or qualify
+scientific capability. Evidence curation-installation-20261012a:205pass,0paid calls.

@@ -36,3 +36,7 @@ renew the same active fence. This avoids false heartbeat conflicts with concurre
 phase updates; it never adopts another fence or renews expired/terminal work.
 release changes only the matching coordination lease; stale release is a no-op.
 Neither API changes immutable progress, original receipt, or provider authority.
+
+Last reviewed:2026-10-12 00:50:48 America/Chicago. Architecture: [Planning](../../../../../docs/Architecture/Agents/Planning.md).
+Delivery: [UI-01.08](../../../../../docs/Build%20Plans/UI-01.08%20Campaign%20curation%20boundary%20decision.md).
+Independent replacement: curation-installation-20261012a,205 scoped checks, public-only wheel closure.
