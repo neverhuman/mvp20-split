@@ -1,6 +1,6 @@
 # Restore
 
-Refreshed 2026-10-12 02:39:30 America/Chicago. Read FIRST after compaction.
+Refreshed 2026-10-12 02:48:30 America/Chicago. Read FIRST after compaction.
 Continue until needed across commits/gates/compaction. No subagents/JARVIS.
 v1 read-only; preserve untracked ocular PDF/DOCX. No source/tests/module README
 edits while tests/installations run. Serving demo uses immutable source copies.
@@ -8,8 +8,8 @@ edits while tests/installations run. Serving demo uses immutable source copies.
 ## Canonical position
 
 UI-01.08 approved; P4.2 Studio curation submission/receipt recovery ACTIVE.
-Child65%;P1/P2/P3=100%,P4=25%,P5=0. P4.1=100%,P4.2/3/4=0.
-ParentUI01=73%/Build91.25%/Verification0;UI01.05=88.33%,I1=65%.
+Child66.67%;P1/P2/P3=100%,P4=33.33%,P5=0. P4.1=100%,P4.2=33.33%,P4.3/4=0. P4.2a100,b/c0.
+ParentUI01=73.33%/Build91.67%/Verification0;UI01.05=88.89%,I1=66.67%.
 Order UI01->UI02->POP01->ML01. LR01 paused25/Build33.33. No decision pending.
 P5 ONE synthetic scope4calls/$1,max$0.25original hold/call. ZERO paid calls/real keys.
 
@@ -20,7 +20,7 @@ curation-browser-20261012c/evidence.json,1440/390 inspected,16long requests,
 keyboard/negative states.15dd13c6 prior model commit. No serving UI change.
 Planning0.127 schema0027 and capability fulfillment complete; use module READMEs.
 
-P4.1 uncommitted (commit/push next): Deployment0.19/Gateway0.7, locks synced.
+P4.1 pushed4a28d6c9: Deployment0.19/Gateway0.7, locks synced.
 SuccessorIntent/State/HTTP under campaign_successor; shared campaign_launch
 journal/coordinator/preflight/bindings. Schema upgrade adds family to SQLite PK,
 validates legacy data, preserves blobs, one global active slot. Fresh keys4tuple,
@@ -37,15 +37,26 @@ checks; original full mode still supports container/receipt process probes.
 
 ## Next task
 
-Commit exact P4.1 files (exclude user artifacts), push. Then P4.2 Studio curation
-submission/receipt recovery. Existing GET-only CurationClient/Model supports reads.
-Planning POST /v1/campaign-curations and POST /receipts/query already implemented;
-public contract campaign_curation frozen. Need exact original intent/idempotency,
-authenticated scope/actor, predecessor terminal cut, draft refs and selected context,
-bounded direction/policy, durable ambiguous-reply reconciliation. No paid calls.
+P4.2a Studio0.30 uncommitted,399checks pass (curation-request-foundation-a.log).
+Commit/push exact files then b exact predecessor/context preparation, c form/browser.
+New transport/campaign_curation/{submission,commands}.ts; model/{journal,request}.ts.
+Original command stores ASCII canonical integer/reference-only bytes; Python public
+parser parity fixtures include Unicode. Receipt query returns ORIGINAL queued ack,
+not mutable progress (separate CurationModel GET). Storage keyed actor/scope/run;
+reload hides stored ack until live query. Unknown replies allow explicit original
+retry only. One original currently retained; explicit next-request transition after
+terminal outcome still needs wiring during P4.3. All tests FINISHED; no paid calls.
+
+P4.2b derive actual terminal snapshot with ObservationClient, original draft via
+LaunchPlanningContext.selection(snapshot), original context via OriginReader.
+Legacy provenance includes one Knowledge head; keep unavailable context explicit,
+never silently drop/choose first when multi-Knowledge is carried by curation flow.
+Origin research selection has questions/needs arrays; source context receipts are
+not automatic extra scientific evidence. Need bounded selected artifacts explicitly.
+No arbitrary IDs/prompts/provider/budget from UI. Operator policy name can be a
+reviewed local deployment binding; Planning remains final configured-policy authority.
 P4.3 owns graph diff/validation/successor controls; P4.4 actual scripted integration.
-Preserve multi-Knowledge refs, requested vs consumed context; never choose first.
-Read owning contracts/module README before extending UI; no user opaque-ID copying.
+P5 live qualification ONE scope4calls/$1, no retries/refunds/second-scope evasion.
 
 ## Commands and guardrails
 

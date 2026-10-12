@@ -38,3 +38,19 @@ protected state on hiding/denial/context replacement/disposal. Same pending
 fulfillment command may reach a terminal result; terminal receipt bytes stay fixed.
 A subscriber selecting detail during root refresh suppresses automatic duplicate
 selection.22 model/transport/import checks and tsc pass; visual proof remains c.
+
+## Durable browser intent
+
+`CurationRequestModel` owns one original request per campaign context. It freezes
+and stores bytes before intake. Reload hides cached acceptance until an exact live
+receipt query succeeds. Lost replies stay unresolved; explicit retry reuses original
+bytes. Conflicts and storage failures block replacement. Denial/disposal fence late
+responses and clear in-memory protected content. Double clicks cannot mint another
+request. Request acceptance and subsequent model progress have separate owners.
+
+`CurationJournal` stores untrusted recovery hints in actor/scope/run-specific local
+storage. It includes submitted human direction and context references, no credentials.
+This is recovery, not a multi-tab lock or owner authority. A changed pending original
+cannot be overwritten. New curation cycles after terminal outcome are a separate
+explicit transition still to be wired during the remaining successor UI delivery.
+Tests: campaign_curation/request.test.ts and transport/campaign_curation/commands.test.ts.

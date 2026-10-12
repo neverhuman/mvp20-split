@@ -6,5 +6,13 @@
   "capability": {
     "source": "contracts/schemas/v1/planning.capability-request-view.serialization.json",
     "sha256": "0647fa43f81537f81b74e87b6bb64ce4dd8373e5e5daeb839581b23f87097503"
+  },
+  "request": {
+    "source": "contracts/schemas/v1/planning.campaign-curation-request.serialization.json",
+    "sha256": "cd46131df8478a1a4dc386c950f3010563d36a04f6b2ebe083c14c60d70941a8"
+  },
+  "receipt": {
+    "source": "contracts/schemas/v1/planning.campaign-curation-receipt.serialization.json",
+    "sha256": "1d2c3d8d9edda7324720f5dc039d925f44db646c7bab8b6f242cee43670cb460"
   }
 }

@@ -1,0 +1,84 @@
+[
+  {
+    "request": {
+      "encoding": "amphora-command-v2",
+      "identity": {
+        "scope": {
+          "tenant_id": "synthetic",
+          "project_id": "curation-browser"
+        },
+        "actor_id": "owner",
+        "command_id": "curate-1",
+        "command_family": "planning.curate_campaign"
+      },
+      "payload": {
+        "direction": "Compare heated mixtures",
+        "policy_id": "synthetic",
+        "context": {
+          "predecessor": {
+            "run_id": "original-run",
+            "revision": 9,
+            "plan_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          },
+          "draft": {
+            "scope": {
+              "tenant_id": "synthetic",
+              "project_id": "curation-browser"
+            },
+            "draft_id": "original-draft",
+            "revision": 2,
+            "content_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+          },
+          "knowledge": [],
+          "questions": [],
+          "needs": [],
+          "artifacts": []
+        }
+      }
+    },
+    "canonical": "{\"encoding\":\"amphora-command-v2\",\"identity\":{\"actor_id\":\"owner\",\"command_family\":\"planning.curate_campaign\",\"command_id\":\"curate-1\",\"schema_version\":\"1\",\"scope\":{\"project_id\":\"curation-browser\",\"tenant_id\":\"synthetic\"}},\"payload\":{\"context\":{\"artifacts\":[],\"draft\":{\"content_sha256\":\"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\",\"draft_id\":\"original-draft\",\"revision\":2,\"scope\":{\"project_id\":\"curation-browser\",\"tenant_id\":\"synthetic\"}},\"knowledge\":[],\"needs\":[],\"predecessor\":{\"plan_sha256\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"revision\":9,\"run_id\":\"original-run\"},\"questions\":[]},\"direction\":\"Compare heated mixtures\",\"policy_id\":\"synthetic\"}}",
+    "sha256": "6092759600d5c1756d3a444e3a25788e77e9cdd733347d07be45d8f47790413c",
+    "curation_id": "curation-feb55b4cc24f24f5a74c63c0db2cb3933ad70e2df4367e3d5ff69273845eb4e2"
+  },
+  {
+    "request": {
+      "encoding": "amphora-command-v2",
+      "identity": {
+        "scope": {
+          "tenant_id": "synthetic",
+          "project_id": "curation-browser"
+        },
+        "actor_id": "owner",
+        "command_id": "curate-1",
+        "command_family": "planning.curate_campaign"
+      },
+      "payload": {
+        "direction": "\u03b1 polymer \ud83e\uddea\nKeep the original evidence\t\u007f",
+        "policy_id": "synthetic",
+        "context": {
+          "predecessor": {
+            "run_id": "original-run",
+            "revision": 9,
+            "plan_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          },
+          "draft": {
+            "scope": {
+              "tenant_id": "synthetic",
+              "project_id": "curation-browser"
+            },
+            "draft_id": "original-draft",
+            "revision": 2,
+            "content_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+          },
+          "knowledge": [],
+          "questions": [],
+          "needs": [],
+          "artifacts": []
+        }
+      }
+    },
+    "canonical": "{\"encoding\":\"amphora-command-v2\",\"identity\":{\"actor_id\":\"owner\",\"command_family\":\"planning.curate_campaign\",\"command_id\":\"curate-1\",\"schema_version\":\"1\",\"scope\":{\"project_id\":\"curation-browser\",\"tenant_id\":\"synthetic\"}},\"payload\":{\"context\":{\"artifacts\":[],\"draft\":{\"content_sha256\":\"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\",\"draft_id\":\"original-draft\",\"revision\":2,\"scope\":{\"project_id\":\"curation-browser\",\"tenant_id\":\"synthetic\"}},\"knowledge\":[],\"needs\":[],\"predecessor\":{\"plan_sha256\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"revision\":9,\"run_id\":\"original-run\"},\"questions\":[]},\"direction\":\"\\u03b1 polymer \\ud83e\\uddea\\nKeep the original evidence\\t\\u007f\",\"policy_id\":\"synthetic\"}}",
+    "sha256": "4d3f1526045aec6283531861f466def7affc53f32bc38c1a9b143ecf69f8d925",
+    "curation_id": "curation-feb55b4cc24f24f5a74c63c0db2cb3933ad70e2df4367e3d5ff69273845eb4e2"
+  }
+]

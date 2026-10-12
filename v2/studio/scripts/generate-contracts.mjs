@@ -212,6 +212,8 @@ await generate({ origin: ["planning.campaign-origin-knowledge", "CampaignOriginV
 await generate({
   curation: ["planning.campaign-curation-view", "CurationView"],
   capability: ["planning.capability-request-view", "CapabilityRequestView"],
+  request: ["planning.campaign-curation-request", "CurationRequest"],
+  receipt: ["planning.campaign-curation-receipt", "CurationReceipt"],
 }, resolve(target, "campaign_curation"));
 
 await generate(knowledgeRoots, resolve(target, "knowledge"));
