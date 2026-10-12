@@ -1,6 +1,6 @@
 # Restore
 
-Refreshed 2026-10-12 03:46:00 America/Chicago. Read FIRST after compaction.
+Refreshed 2026-10-12 03:54:00 America/Chicago. Read FIRST after compaction.
 Continue until needed across commits/gates/compaction. No subagents/JARVIS.
 v1 read-only; preserve untracked ocular PDF/DOCX. No source/tests/module README
 edits while tests/installations run. Serving demo uses immutable source copies.
@@ -8,8 +8,8 @@ edits while tests/installations run. Serving demo uses immutable source copies.
 ## Canonical position
 
 UI-01.08 approved; P4.3 graph comparison/validation/successor controls ACTIVE.
-Child73.75%;P1/P2/P3=100%,P4=68.75%,P5=0. P4.1/P4.2=100%,P4.3=75%,P4.4=0.
-ParentUI01=74.75%/Build93.44%/Verification0;UI01.05=91.25%,I1=73.75%.
+Child75%;P1/P2/P3=100%,P4=75%,P5=0. P4.1/P4.2=100%,P4.3=100%,P4.4=0.
+ParentUI01=75%/Build93.75%/Verification0;UI01.05=91.67%,I1=75%.
 Order UI01->UI02->POP01->ML01. LR01 paused25/Build33.33. No decision pending.
 P5 ONE synthetic scope4calls/$1,max$0.25original hold/call. ZERO paid calls/real keys.
 
@@ -46,33 +46,31 @@ extracted without authoring behavior change. Unknown-reply identity GET then own
 hash query; no Python canonical hash computed in JS. No automatic POST/retries.
 One original per curation; no cachedreceipt authority.
 
-P4.3a/b/c100,d0. Studio0.34 c complete UNCOMMITTED, commit/push next.438fullchecks
-pass(successor-controls-full-a.log); successor-controls-browser-20261012d actual
-controls screenshot1440/390 inspected/WCAG/overflow. Lostgateway502/reload oneintake;
-socket-reset yields3 physical browser POSTs of ONE byteidentical original, read
-recovery. Initialprobe failed exactphysicalcount assumption; serveridempotence
-remains essential. Changedcut/unsupportedprofile block. Nextcycle noPOST.
-Newscope tests:4preparation,3nextcycle,2successorplanning(all8Knowledge),2sources.
-All source/test sessions FINISHED. Source README boundaries updated.
+32154e19 pushed Studio0.34 controls/context/newcycle,438checks. P4.3d complete,
+commit/push docs+browser next. curation-workspace-browser-20261012b production entry
+with scriptedpublicpeers passes1440/390 inspected/WCAG/overflow: originalcomposer
+->queuedreview->graph->successor->Runtime->predecessorselector->completedchild
+->missingcapability->newrequestcomposer.2curationPOST,1successorPOST,0freshPOST.
+Firstprobe usedwrongmenu label5; corrected to6; no productionchanges. New tests
+browser/curation_workspace.mjs +curation_workspace/fixture.mjs,README. No sessionsrunning.
 
-SuccessorPreparation binds exactsettledcut+reviewedvalidation+installed nestedtools;
-explicit rootinput->runexport hashes. No node-local/freshmanualinput UI.
-SuccessorPlanningContext verifiesnewrun/plan/draft+originalcuration and carriesall
-Knowledge/Research/artifactpins asrequested(notconsumed). Interface CampaignPlanningContext
-in launch/planning_context has optionalcurationContext; originalbehavior preserved.
-CurationJournal.beginNext archives exactoriginal thennullcurrentmarker only after
-freshterminal read by CurationNextCycle. NoPOST/refund/newscopeautomatic.
-ReadyWorkspace has32recent successorcontexts and originalselector; reloadreturnsbase
-and reopenssuccessor throughproposal; no servercampaignindex claimed.
+P4.3=100,P4.4=0. NextP4.4a actualowner/processintegrationfixture. P4.4threeequal
+units a integrated actualPlanning/compiler+Runtime+Deployment managedbinding;
+b receipt/replacement/failurecompatibility; c actualbrowser/independentinstallevidence.
+Use isolated qualification state, syntheticprovider, no servingdemo interruption.
+Existing verify_local_successor.py predatesactivephysicalroot; DO NOT run unchanged
+(it targets LOCALAPPDATA/Amphora/local-v2/installation and starts owners).
+Existing verify_campaign_launch_installation.py full mode process/containerprobes
+still uses scriptedRuntime receipt; launch-only installed120passed already.
+verify_curation_installation.py covers isolatedPlanning/schema0027 with scripted
+owner/providerpeers; not actualRuntimeintegration. Need inspect scoped integration
+module READMEs/tests then construct bounded cross-owner proof; no privatecrossimports.
 
-Next d production workspace browser qualification acrossrequest->review->successor
-->Runtime execution->nextiteration, predecessorselector and missingcapability/newcycle.
-Use actual built dist/local entry as existing tests/browser/campaign_launch.mjs does.
-Current successor_entry fixture tests productioncontrols but callbacks only testlabels;
-d must exercise actual ReadyWorkspace navigation and fullcomposer. Need preserve
-launchjournal original setup or startthroughoriginalfreshlaunch. Publicscriptedpeers
-first; P4.4 actual owner/process integration thenP5 live4call/$1 qualification.
-Servingdemo unchanged0.26. No paidcalls/keys.
+Servingdemo unchangedStudio0.26, zero paidcalls/keys. Newsource usesfullKnowledge
+pins for successors; originaldefault requiresbrowserlaunch binding. Current versions:
+Studio0.34,Deployment0.19,Gateway0.7,Planning0.127/schema0027. Fresh owners already
+installed per evidence paths below, reuse appropriate immutable installs when valid.
+P5 still ONE4call/$1scope,max$0.25hold, no retries/refunds/scopeevasion.
 
 ## Commands and guardrails
 
