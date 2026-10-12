@@ -115,3 +115,12 @@ reviewed internal deployment binding is policy_id internal-curation-v1; Planning
 must configure that policy at cutover and owns provider/cost authority. The browser
 carries no provider configuration or spending override. Proposal navigation retains
 its exact reference across views. A curation request does not launch a successor.
+
+UI-01.08 successor entry composes separate launch/preparation owners after exact
+proposal review. ReadyWorkspace can inspect original and up to32 recently opened
+successor contexts, each independently bound to its accepted run/plan. Reload
+returns to the original campaign; reopen a successor from its retained proposal.
+This bounded local navigation is not a server campaign directory. Successor curation
+uses full original requested Knowledge/Research/artifact pins through the optional
+CampaignPlanningContext.curationContext interface. Original launch provenance remains
+unchanged. Explicit next-cycle entry only prepares the composer after terminal proof.

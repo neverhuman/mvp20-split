@@ -14,5 +14,9 @@
   "admission": {
     "source": "contracts/schemas/v1/graph-runtime.draft-successor-admission.serialization.json",
     "sha256": "9877d459476ef9c57f0a9209deb7f1e49d6a8f0a80a8f1a5de6ea019335f46b5"
+  },
+  "sources": {
+    "source": "contracts/schemas/v1/graph-runtime.carry-sources.serialization.json",
+    "sha256": "5ed36295b238e4a37a69e8121895ebb420c59939e03f45a3d51be5ef9dc15a59"
   }
 }

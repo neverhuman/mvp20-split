@@ -36,3 +36,8 @@ Built-browser fixture launch/reload/node-poll/retention passed at1440/390 with n
 serious/critical accessibility violations. Actual local/LAN managed launch, reload,
 same-run interruption recovery and scientific results pass; integration audit owns
 exact evidence. Full Studio suite337 checks passes.
+
+CampaignPlanningContext defines selection/reference and an optional complete curation
+context reader. Original LaunchPlanningContext behavior is unchanged; successor
+context has its own owner under page_models/successor_launch and must preserve all
+requested Knowledge heads instead of using legacy single-head origin projection.

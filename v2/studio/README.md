@@ -166,3 +166,7 @@ curation-graph-browser-20261012c. Serving demo remains Studio0.26 pending cutove
 
 Studio0.33 consumes successor launch schemas and adds original request/recovery
 owners.427checks and3 public-parser wire vectors pass; UI controls remain next.
+
+Studio0.34 adds reviewed successor launch, explicit retained-export mapping,
+all-Knowledge next-iteration context and deliberate next-request preparation.438
+checks and scoped controls browser probes pass; production journey is the next gate.

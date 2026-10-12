@@ -78,3 +78,14 @@ curationGraphScene projects real control/data links within one nested scope, at 
 200 nodes per window, with explicit omitted counts. Duplicate identities suppress
 the canvas. Missing nested scopes are never replaced by the parent scope.
 Tests: graph_review.test.ts and graph_model.test.ts; launch is a separate owner.
+
+## Explicit next request
+
+RecordedCuration owns terminal-state classification. CurationNextCycle performs a
+fresh exact read and reconciles the terminal original before CurationJournal archives
+its exact stored intent and writes an explicit empty-current marker. Archive/storage
+failure preserves the original; cancellation before the write fences release. The
+next composer creates a separate request only on explicit submission. No provider
+retry, budget refund, scope change or automatic command occurs. Earlier journal
+records remain readable; the null current marker represents deliberate preparation
+for another direction. Tests: next_cycle.test.ts.

@@ -212,6 +212,7 @@ await generate({
   receipt: ["campaign-successor-launch.receipt", "SuccessorLaunchReceipt"],
   query: ["campaign-successor-launch.receipt-query", "SuccessorLaunchReceiptQuery"],
   admission: ["graph-runtime.draft-successor-admission", "AdmitDraftSuccessor"],
+  sources: ["graph-runtime.carry-sources", "CarrySources"],
 }, resolve(target, "successor_launch"));
 
 await generate({ origin: ["planning.campaign-origin-knowledge", "CampaignOriginV2"] }, resolve(target, "campaign_origin"));

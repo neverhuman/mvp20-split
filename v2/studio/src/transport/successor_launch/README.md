@@ -24,3 +24,8 @@ accepted Runtime receipt. Deployment readiness is not execution completion.
 
 Replacement tests: tests/transport/successor_launch. Public Python parser roundtrip
 and actual owner/process/browser qualification remain separate acceptance evidence.
+
+SuccessorSources reads only the bounded public Runtime carry-sources endpoint for
+committed run exports. It authenticates through Gateway, validates the schema/run
+and fences cancellation; no activation discovery or value payload is inferred.
+Tests: sources.test.ts.

@@ -1,6 +1,6 @@
 # Restore
 
-Refreshed 2026-10-12 03:27:00 America/Chicago. Read FIRST after compaction.
+Refreshed 2026-10-12 03:46:00 America/Chicago. Read FIRST after compaction.
 Continue until needed across commits/gates/compaction. No subagents/JARVIS.
 v1 read-only; preserve untracked ocular PDF/DOCX. No source/tests/module README
 edits while tests/installations run. Serving demo uses immutable source copies.
@@ -8,8 +8,8 @@ edits while tests/installations run. Serving demo uses immutable source copies.
 ## Canonical position
 
 UI-01.08 approved; P4.3 graph comparison/validation/successor controls ACTIVE.
-Child72.5%;P1/P2/P3=100%,P4=62.5%,P5=0. P4.1/P4.2=100%,P4.3=50%,P4.4=0.
-ParentUI01=74.5%/Build93.13%/Verification0;UI01.05=90.83%,I1=72.5%.
+Child73.75%;P1/P2/P3=100%,P4=68.75%,P5=0. P4.1/P4.2=100%,P4.3=75%,P4.4=0.
+ParentUI01=74.75%/Build93.44%/Verification0;UI01.05=91.25%,I1=73.75%.
 Order UI01->UI02->POP01->ML01. LR01 paused25/Build33.33. No decision pending.
 P5 ONE synthetic scope4calls/$1,max$0.25original hold/call. ZERO paid calls/real keys.
 
@@ -37,8 +37,7 @@ checks; original full mode still supports container/receipt process probes.
 
 ## Next task
 
-ef7dfccb pushed Studio0.32 graph review. Studio0.33 P4.3b command/recovery complete,
-commit/push next.427 fullchecks successor-studio-full-a.log;15focusedlaunchchecks,
+ef7dfccb pushed Studio0.32 graph review. 7b3a7c3e pushed Studio0.33 P4.3b command/recovery.427 fullchecks successor-studio-full-a.log;15focusedlaunchchecks,
 3browser envelopes parsed by public Python parse_successor_launch/draft_successor
 with exact decimal strings(successor-browser-wire-evidence.json). No active tests.
 New contracts/successor_launch + generated roots; transport/successor_launch and
@@ -47,13 +46,33 @@ extracted without authoring behavior change. Unknown-reply identity GET then own
 hash query; no Python canonical hash computed in JS. No automatic POST/retries.
 One original per curation; no cachedreceipt authority.
 
-P4.3a/b100,c/d0. Next c: controls bind CurationGraphReview exact saved/validated graph,
-fresh terminal predecessor and managed profile; user selects successor launch.
-Need preserve original curation Knowledge context for future successor iterations,
-not just legacy CampaignOriginV2 single Knowledge head. Explicit new-request cycle
-after verified terminal curation; do not turn this into paid-budget evasion.
-Then d browser workflow, P4.4 actual scripted owners/process, P5 real qualification.
-P5 ONE synthetic scope4calls/$1,max$0.25hold. Serving demo unchanged0.26.
+P4.3a/b/c100,d0. Studio0.34 c complete UNCOMMITTED, commit/push next.438fullchecks
+pass(successor-controls-full-a.log); successor-controls-browser-20261012d actual
+controls screenshot1440/390 inspected/WCAG/overflow. Lostgateway502/reload oneintake;
+socket-reset yields3 physical browser POSTs of ONE byteidentical original, read
+recovery. Initialprobe failed exactphysicalcount assumption; serveridempotence
+remains essential. Changedcut/unsupportedprofile block. Nextcycle noPOST.
+Newscope tests:4preparation,3nextcycle,2successorplanning(all8Knowledge),2sources.
+All source/test sessions FINISHED. Source README boundaries updated.
+
+SuccessorPreparation binds exactsettledcut+reviewedvalidation+installed nestedtools;
+explicit rootinput->runexport hashes. No node-local/freshmanualinput UI.
+SuccessorPlanningContext verifiesnewrun/plan/draft+originalcuration and carriesall
+Knowledge/Research/artifactpins asrequested(notconsumed). Interface CampaignPlanningContext
+in launch/planning_context has optionalcurationContext; originalbehavior preserved.
+CurationJournal.beginNext archives exactoriginal thennullcurrentmarker only after
+freshterminal read by CurationNextCycle. NoPOST/refund/newscopeautomatic.
+ReadyWorkspace has32recent successorcontexts and originalselector; reloadreturnsbase
+and reopenssuccessor throughproposal; no servercampaignindex claimed.
+
+Next d production workspace browser qualification acrossrequest->review->successor
+->Runtime execution->nextiteration, predecessorselector and missingcapability/newcycle.
+Use actual built dist/local entry as existing tests/browser/campaign_launch.mjs does.
+Current successor_entry fixture tests productioncontrols but callbacks only testlabels;
+d must exercise actual ReadyWorkspace navigation and fullcomposer. Need preserve
+launchjournal original setup or startthroughoriginalfreshlaunch. Publicscriptedpeers
+first; P4.4 actual owner/process integration thenP5 live4call/$1 qualification.
+Servingdemo unchanged0.26. No paidcalls/keys.
 
 ## Commands and guardrails
 

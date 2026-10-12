@@ -23,6 +23,10 @@ export class RecordedCuration {
     this.data = immutable(bindCuration(decodeCuration(data), this.selection));
     Object.freeze(this);
   }
+  get terminal() {
+    return ['ready','failed','indeterminate','abstained'].includes(this.data.receipt.phase)||
+      this.data.receipt.phase==='proposed'&&this.data.proposal?.outcome.kind==='request_capabilities';
+  }
   get status() {
     if (this.data.receipt.phase === 'proposed' && !this.data.proposal) return 'Proposal details unavailable';
     if (this.data.receipt.phase === 'proposed' && this.data.proposal?.outcome.kind === 'request_capabilities')
@@ -53,8 +57,7 @@ export class RecordedCuration {
       sameValue(before.specification, after.specification) && after.receipt.revision >= before.receipt.revision &&
       Date.parse(after.receipt.updated_at) >= Date.parse(before.receipt.updated_at));
     if (before.receipt.revision === after.receipt.revision) requireOriginal(sameValue(before, after));
-    if (['ready', 'failed', 'indeterminate', 'abstained'].includes(before.receipt.phase) ||
-      before.receipt.phase === 'proposed' && before.proposal?.outcome.kind === 'request_capabilities')
+    if (this.terminal)
       requireOriginal(sameValue(before, after));
     if (before.provider !== null) requireOriginal(sameValue(before.provider, after.provider));
     if (before.proposal !== null) requireOriginal(sameValue(before.proposal, after.proposal));

@@ -1,4 +1,6 @@
-import { useCallback, useEffect, useId, useRef, useSyncExternalStore } from 'react';
+import { useCallback, useEffect, useId, useRef, useSyncExternalStore,type ReactNode } from 'react';
+import type {RecordedCuration} from '../../page_models/campaign_curation/records.js';
+import type {CurationGraphReview} from '../../page_models/campaign_curation/graph_review.js';
 import type { CurationModel } from '../../page_models/campaign_curation/model.js';
 import type { CurationSelection } from '../../transport/campaign_curation/identity.js';
 import { CapabilityDetail } from './detail.js';
@@ -6,9 +8,10 @@ import type { CurationGraphModel } from '../../page_models/campaign_curation/gra
 import { CurationGraphPanel } from './graph_review.js';
 import './style.css';
 
-export function CurationPanel({ model, selection, invalid = false, synthetic, back, graphs }: {
+export function CurationPanel({ model, selection, invalid = false, synthetic, back, graphs,successor,nextCycle }: {
   model: CurationModel; selection: CurationSelection | null; invalid?: boolean; synthetic: boolean; back: () => void;
   graphs?: CurationGraphModel;
+  successor?:(review:CurationGraphReview)=>ReactNode;nextCycle?:(record:RecordedCuration)=>ReactNode;
 }) {
   const listen = useCallback((notify: () => void) => model.subscribe(notify), [model]);
   const view = useSyncExternalStore(listen, () => model.snapshot);
@@ -54,7 +57,7 @@ export function CurationPanel({ model, selection, invalid = false, synthetic, ba
         {data.specification.context.knowledge.length > 0 && <ul>{data.specification.context.knowledge.map(head =>
           <li key={head.snapshot.graph.graph_id}>{head.snapshot.graph.graph_id} · revision {head.snapshot.revision}</li>)}</ul>}
       </details>
-      {graphs&&record&&data.proposal?.outcome.kind==='propose_campaign'&&<CurationGraphPanel model={graphs} record={record}/>}
+      {graphs&&record&&data.proposal?.outcome.kind==='propose_campaign'&&<CurationGraphPanel model={graphs} record={record} {...(successor?{actions:successor}:{})}/>}
       {record!.requests.length ? <div className="curation-layout">
         <section className="curation-request-list" aria-label="Requested capabilities"><h2>Requested capabilities <span>{record!.requests.length}</span></h2>
           <ol>{record!.requests.map(row => <li key={row.reference.request_id}><button aria-pressed={view.detail.index === row.index}
@@ -79,6 +82,7 @@ export function CurationPanel({ model, selection, invalid = false, synthetic, ba
         {data.provider && <><dt>Input / output tokens</dt><dd>{data.provider.usage.input_tokens ?? 'unknown'} / {data.provider.usage.output_tokens ?? 'unknown'}</dd>
           <dt>Raw provider capture digest</dt><dd>{data.provider.output_sha256 ?? 'No capture recorded'}</dd></>}
       </dl></details>
+      {record?.terminal&&nextCycle?.(record)}
     </>}
   </main>;
 }

@@ -4,8 +4,9 @@ import type {SuccessorLaunchRequest} from './generated/successor_launch/request.
 import type {SuccessorLaunchReceipt} from './generated/successor_launch/receipt.js';
 import type {SuccessorLaunchReceiptQuery} from './generated/successor_launch/query.js';
 import type {AdmitDraftSuccessor} from './generated/successor_launch/admission.js';
-export type {SuccessorLaunchRequest,SuccessorLaunchReceipt,SuccessorLaunchReceiptQuery,AdmitDraftSuccessor};
-interface Wire {request:SuccessorLaunchRequest;receipt:SuccessorLaunchReceipt;query:SuccessorLaunchReceiptQuery;admission:AdmitDraftSuccessor}
+import type {CarrySources} from './generated/successor_launch/sources.js';
+export type {SuccessorLaunchRequest,SuccessorLaunchReceipt,SuccessorLaunchReceiptQuery,AdmitDraftSuccessor,CarrySources};
+interface Wire {request:SuccessorLaunchRequest;receipt:SuccessorLaunchReceipt;query:SuccessorLaunchReceiptQuery;admission:AdmitDraftSuccessor;sources:CarrySources}
 const validators=compiled as Record<string,ValidateFunction>;
 export function decodeSuccessor<K extends keyof Wire>(kind:K,value:unknown):Wire[K]{
   const validate=validators[kind] as ValidateFunction<Wire[K]>;

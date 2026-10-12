@@ -1,10 +1,11 @@
-import {useCallback,useEffect,useState,useSyncExternalStore} from 'react';
+import {useCallback,useEffect,useState,useSyncExternalStore,type ReactNode} from 'react';
+import type {CurationGraphReview} from '../../page_models/campaign_curation/graph_review.js';
 import type {RecordedCuration} from '../../page_models/campaign_curation/records.js';
 import type {CurationGraphModel} from '../../page_models/campaign_curation/graph_model.js';
 import {curationGraphScene} from '../../page_models/campaign_curation/graph_scene.js';
 import {GraphCanvas} from '../graph_canvas.js';
 
-export function CurationGraphPanel({record,model}:{record:RecordedCuration;model:CurationGraphModel}){
+export function CurationGraphPanel({record,model,actions}:{record:RecordedCuration;model:CurationGraphModel;actions?:(review:CurationGraphReview)=>ReactNode}){
   const listen=useCallback((notify:()=>void)=>model.subscribe(notify),[model]);
   const view=useSyncExternalStore(listen,()=>model.snapshot);
   const [side,setSide]=useState<'original'|'proposed'>('proposed'),[path,setPath]=useState<string[]>([]),[offset,setOffset]=useState(0),[selected,select]=useState<string|null>(null);
@@ -44,6 +45,7 @@ export function CurationGraphPanel({record,model}:{record:RecordedCuration;model
         {review.validation&&<><p>Saved revision {review.validation.revision} · validation {review.validation.validation_id}</p>
           <ul>{review.validation.pending_checks.map(item=><li key={item}>{item}</li>)}</ul></>}
       </details>
+      {review.validation&&actions?.(review)}
     </>}
   </section>;
 }

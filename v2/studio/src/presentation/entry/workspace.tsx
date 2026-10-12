@@ -1,5 +1,8 @@
 import {CampaignReasoning} from '../campaign_reasoning/panel.js';
 import { CampaignCurationEntry } from './curation.js';
+import {CampaignSuccessorEntry,CampaignNextCycleEntry,type OpenSuccessor} from './successor.js';
+import {SuccessorPlanningContext} from '../../page_models/successor_launch/planning_context.js';
+import type {CampaignPlanningContext} from '../../page_models/launch/planning_context.js';
 import type { CurationSelection } from '../../transport/campaign_curation/identity.js';
 import { CurationPanel } from '../campaign_curation/panel.js';
 import { CurationModel } from '../../page_models/campaign_curation/model.js';
@@ -54,7 +57,7 @@ import { CampaignOriginPanel } from '../campaign_origin/panel.js';
 import type { DomainRevisionRef } from '../../contracts/scientific/knowledge.js';
 import './style.css';
 
-function Campaign({ context, search, launchControl, planning }: { context: WorkspaceContext & { run_id: string }; search: string; launchControl: ReactNode; planning?: LaunchPlanningContext }) {
+function Campaign({ context, search, launchControl, planning,openSuccessor }: { context: WorkspaceContext & { run_id: string }; search: string; launchControl: ReactNode; planning?: CampaignPlanningContext;openSuccessor:OpenSuccessor }) {
   const [selectedCuration,setSelectedCuration]=useState<CurationSelection|null>(null);
   const [originKnowledge, setOriginKnowledge] = useState<DomainRevisionRef | null>(null);
   const [mode, setMode] = useState<WorkflowView>(() => workflowView(search));
@@ -105,7 +108,9 @@ function Campaign({ context, search, launchControl, planning }: { context: Works
     const tick=async()=>{if(!document.hidden)await flow.refresh(true);if(!stopped)timer=setTimeout(()=>void tick(),2000);};
     timer=setTimeout(()=>void tick(),2000);return()=>{stopped=true;clearTimeout(timer);};
   },[flow,mode,flowView.snapshot?.status,flowView.retrySnapshot]);
-if(mode==='curation')return <CurationPanel graphs={curationGraphs} model={curation} selection={selectedCuration??curationSelection.selection} invalid={!selectedCuration&&curationSelection.phase==='invalid'} synthetic={context.synthetic} back={()=>navigate('design')}/>;
+if(mode==='curation')return <CurationPanel graphs={curationGraphs} model={curation} selection={selectedCuration??curationSelection.selection} invalid={!selectedCuration&&curationSelection.phase==='invalid'} synthetic={context.synthetic} back={()=>navigate('design')}
+  successor={review=><CampaignSuccessorEntry review={review} open={openSuccessor}/>}
+  nextCycle={record=><CampaignNextCycleEntry record={record} ready={()=>navigate('design')}/>}/>;
 if(flowView.phase==='ready')return <ConnectedCampaign curationControl={curationControl} curationLink={curationLink} reasoning={reasoning} generations={mode==='knowledge'?<details><summary>Evolutionary search history</summary><GenerationPanel model={generations}/></details>:null} provenance={provenance} launchControl={launchControl} view={flowView} mode={mode} navigate={navigate} refresh={()=>void flow.refresh()} knowledge={explored?<LocalKnowledge embedded selection={campaignSelection} feedbackSelection={feedbackSelection} outputSelection={outputSelection} campaign={{scope:context.scope,run:context.run_id}} active={mode==='domain'} synthetic={context.synthetic}/>:null} technical={<MonitorWorkspace {...owners} compact active={mode==='execution'} context={{scope:context.scope,run:context.run_id}} synthetic={context.synthetic}/>} />;
   if(['loading','idle','denied','failed'].includes(flowView.phase))return <main className="local-entry">{launchControl}<h1>{flowView.phase==='loading'||flowView.phase==='idle'?'Opening the retained campaign':'Campaign context unavailable'}</h1><p>{flowView.message??'Checking the plan and scientific evidence.'}</p>{flowView.phase!=='loading'&&flowView.phase!=='idle'&&<button onClick={()=>void flow.refresh()}>Retry campaign read</button>}</main>;
   return <div className="research-shell">
@@ -127,6 +132,8 @@ if(flowView.phase==='ready')return <ConnectedCampaign curationControl={curationC
 }
 
 function ReadyWorkspace({context,search}:{context:WorkspaceContext;search:string}) {
+  const [successors,setSuccessors]=useState<SuccessorPlanningContext[]>([]),[selectedSuccessor,setSelectedSuccessor]=useState<number|null>(null);
+  const [journeySearch,setJourneySearch]=useState<string|null>(null);
   const owners=useMemo(()=>{
     const client=new LaunchClient();
     const journal=new LaunchJournal(context,{getItem:key=>localStorage.getItem(key),setItem:(key,value)=>localStorage.setItem(key,value)});
@@ -145,11 +152,27 @@ function ReadyWorkspace({context,search}:{context:WorkspaceContext;search:string
     void tick();return()=>{stopped=true;clearTimeout(timer);};
   },[owners]);
   const launchedRun=view.receipt?.run_id??null;
-  const run=launchedRun??context.run_id;
+  const selected=selectedSuccessor===null?undefined:successors[selectedSuccessor];
+  const run=selected?.receipt.run_id??launchedRun??context.run_id;
   const planning=useMemo(()=>launchedRun&&owners.launch.submission&&owners.launch.snapshot.receipt
     ?new LaunchPlanningContext(owners.launch.submission,owners.launch.snapshot.receipt,new AuthoringClient()):undefined,[owners,launchedRun]);
   const control=<LaunchPanel launch={owners.launch} preparation={owners.preparation}/>;
-  return run?<Campaign key={run} context={{...context,run_id:run}} search={search} launchControl={control} {...(planning?{planning}:{})}/>
+  const choose=(index:number|null)=>{
+    setSelectedSuccessor(index);const params=new URLSearchParams();params.set('view','execution');
+    setJourneySearch(params.toString());history.replaceState(null,'',location.pathname+location.search+'#'+params.toString());
+  };
+  const open:OpenSuccessor=(review,command,receipt)=>{
+    const next=new SuccessorPlanningContext(review,command,receipt,new AuthoringClient(),new CurationClient());
+    const found=successors.findIndex(item=>item.receipt.run_id===next.receipt.run_id);
+    if(found>=0){choose(found);return;}
+    const retained=[...successors,next].slice(-32);setSuccessors(retained);choose(retained.length-1);
+  };
+  const currentPlanning=selected??planning;
+  return run?<><nav className="campaign-journey" aria-label="Campaign iteration history" hidden={!successors.length}>
+    <label>Inspect campaign<select value={selectedSuccessor??'original'} onChange={event=>choose(event.target.value==='original'?null:Number(event.target.value))}>
+      <option value="original">Original campaign</option>{successors.map((item,index)=><option key={item.receipt.run_id} value={index}>{item.review.proposed.title} · {item.receipt.run_id}</option>)}</select></label>
+    <span>Most recent 32 opened successors in this workspace. Reload returns to the original campaign; reopen a successor from its retained proposal.</span>
+    </nav><Campaign key={run} context={{...context,run_id:run}} search={journeySearch??search} launchControl={selected?null:control} openSuccessor={open} {...(currentPlanning?{planning:currentPlanning}:{})}/></>
     :<main className="local-entry"><h1>Prepare your first campaign</h1>{control}</main>;
 }
 

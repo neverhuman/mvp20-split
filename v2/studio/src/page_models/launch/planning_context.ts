@@ -5,6 +5,14 @@ import type { AuthoringClient } from "../../transport/authoring.js";
 import type { LaunchSubmission } from "../../transport/launch/submission.js";
 import { same } from "../../transport/scientific/identity.js";
 import { isCampaignContext } from "../campaign_flow/context.js";
+import type {OriginDraft} from '../../contracts/campaign_origin.js';
+import type {CurationRequest} from '../../contracts/campaign_curation.js';
+
+export interface CampaignPlanningContext{
+  selection(snapshot:GraphSnapshotPage['snapshot']):OriginDraft;
+  reference(snapshot:GraphSnapshotPage['snapshot'],signal:AbortSignal):Promise<ArtifactRef|null>;
+  curationContext?(snapshot:GraphSnapshotPage['snapshot'],signal:AbortSignal):Promise<CurationRequest['payload']['context']>;
+}
 
 /** A launch-bound planning artifact is context before it becomes a retained finish output. */
 export class LaunchPlanningContext {

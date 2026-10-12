@@ -52,3 +52,19 @@ canvas resize; ordinary selection preserves the viewport. Public-peer browser pr
 curation-graph-browser-20261012c, desktop1440/mobile390 inspected, all nodes within
 canvas after resize, WCAG/overflow and changed-record/denial checks. No live-model
 or successor-launch qualification is claimed.
+
+## Successor and next-request controls
+
+SuccessorPanel exposes managed-profile readiness, explicit retained-export input
+mapping, original request recovery and an accepted-run navigation action after the
+exact graph review. Read-only progress refresh stops while hidden or terminal.
+Worker readiness is distinct from Runtime execution. Missing tools/exports, changed
+predecessor, denial and unknown launch remain explicit. Next-cycle preparation
+requires fresh terminal verification and never posts a model command.
+
+Browser successor-controls-browser-20261012d:1440/390 screenshots inspected, WCAG
+and overflow pass. Gateway502 after committed launch then reload uses one intake.
+Socket reset caused3 physical browser POSTs of ONE byte-identical intent; recovery
+reads that original. This does not replace Deployment idempotency qualification.
+Explicit next-cycle preparation sends no launch/model POST. Changed predecessor and
+unsupported profiles disable launch. Full production workspace journey remains P4.3d.
