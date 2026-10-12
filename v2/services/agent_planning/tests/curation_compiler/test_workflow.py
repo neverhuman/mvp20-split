@@ -19,7 +19,7 @@ from ..campaign_dispatch_coordinator.support import Refresh, Runtime, Registry
 pytestmark = pytest.mark.postgres
 
 
-def setup(stored, *, invalid_policy=False):
+def setup(stored, *, invalid_policy=False, mutate=None):
     principal, lease, linked, executor, provider, data = execute_setup(stored)
     declared = DeclarationJournal(stored.engine).read(principal, lease.curation_id).identity.reviewed()
     context = next(row['payload'] for row in linked.frozen.preparation.packet.context()['slices'] if row['lane'] == 'curation_runtime')
@@ -27,6 +27,8 @@ def setup(stored, *, invalid_policy=False):
     future = declared.declaration.document().future
     graph['revision'] = future.revision + (1 if invalid_policy else 0)
     graph['context'] = [row.model_dump(mode='json') for row in future.context]
+    if mutate is not None:
+        mutate(graph)
     raw = json.loads(provider.raw)
     raw['outcome'] = {'kind': 'propose_campaign', 'candidate': {'kind': 'future_campaign', 'title': 'Future',
         'definition': graph, 'expected_evidence': []}, 'gaps': []}

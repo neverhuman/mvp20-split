@@ -73,6 +73,17 @@ def test_missing_provider_keeps_original_preparation_without_reserving(stored):
     assert worker.tick(principal, identity, 'worker').phase == 'abstained' and provider.calls == 1
 
 
+def test_processing_denial_after_preparation_pauses_without_new_model_call(stored):
+    principal, identity, _, worker, provider, _, data = setup(stored)
+    worker.tick(principal, identity, 'worker')
+    data.denied = next(iter(worker.policies.values())).document().template.context.objective.artifact_id
+    paused = worker.tick(principal, identity, 'worker')
+    assert paused.phase == 'awaiting_provider' and paused.reason == 'curation_processing_unavailable'
+    assert provider.calls == 0
+    data.denied = None
+    assert worker.tick(principal, identity, 'replacement').phase == 'abstained' and provider.calls == 1
+
+
 def test_lost_derived_upload_resumes_original_declaration_without_new_policy(stored):
     principal, identity, _, worker, provider, peer, data = setup(stored)
     peer.lost_put = True
@@ -131,17 +142,21 @@ def test_managed_compiler_keeps_original_graph_and_reaches_ready(stored):
     assert json.loads(runtime.sent[0])['payload']['definition'] == graph
 
 
-def test_policy_rejected_proposal_fails_without_compiler_selection(stored):
+@pytest.mark.parametrize('fault,code', [('revision', 'decision_future_identity'),
+    ('duplicate_node', 'campaign_authored_duplicate_node')])
+def test_policy_rejected_proposal_fails_without_compiler_selection(stored, fault, code):
     from types import SimpleNamespace
     from ..curation_compiler.test_workflow import setup as proposed
     from amphora_agent_planning.curation_compiler.workflow import CurationCompiler
     from amphora_agent_planning.campaign_dispatch.selection import CompilerSelection
-    principal, lease, journal, provider, _ = proposed(stored, invalid_policy=True)
+    def duplicate(graph): graph['body']['nodes'].append(graph['body']['nodes'][0].copy())
+    principal, lease, journal, provider, _ = proposed(stored, invalid_policy=fault == 'revision',
+        mutate=duplicate if fault == 'duplicate_node' else None)
     compiler = CurationCompiler(journal, SimpleNamespace(journal=journal.compiler))
     worker = CurationWorker(stored.engine, {}, None, None, None, compiler)
     CurationJobs(stored.engine).release(principal, lease)
     result = worker.tick(principal, lease.curation_id, 'managed')
-    assert result.phase == 'failed' and result.reason == 'decision_future_identity'
+    assert result.phase == 'failed' and result.reason == code
     current = journal.current(principal, lease.curation_id)
     assert current.view.proposal == lease.progress.view.proposal and provider.calls == 1
     identifier = CompilerSelection.identity_for(principal.actor_id, current.view.provider.attempt)

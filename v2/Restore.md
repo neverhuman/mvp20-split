@@ -1,16 +1,16 @@
 # Restore
 
-Refreshed 2026-10-12 00:22:45 America/Chicago. Read FIRST after compaction.
+Refreshed 2026-10-12 00:32:29 America/Chicago. Read FIRST after compaction.
 Continue until needed across commits/gates/compaction. No subagents/JARVIS.
 v1 read-only; preserve untracked ocular PDF/DOCX. No source/tests/module README
 edits while tests/installations run. Serving demo uses immutable source copies.
 
 ## Canonical position
 
-UI-01.08 approved; active P2.3c.3 managed worker lifecycle/heartbeat/process.
-Child34.63%;P1=100%,P2=73.15%,P3/P4/P5=0. P2.1/2.2=100%,P2.3=92.59%,P2.4=0.
-P2.3a/b=100%;c77.78%(c.1policy/publication100,c.2provider/compiler100,c.3process33.33).
-ParentUI01=66.93%/Build83.66%/Verification0;UI01.05=78.21%,I1=34.63%.
+UI-01.08 approved; active P2.4 independently installed replacement.
+Child35.00%;P1=100%,P2=75.00%,P3/P4/P5=0. P2.1/2.2=100%,P2.3=100%,P2.4=0.
+P2.3a/b=100%;c100%(c.1policy/publication100,c.2provider/compiler100,c.3process100).
+ParentUI01=67.00%/Build83.75%/Verification0;UI01.05=78.33%,I1=35.00%.
 UI01.06/07 closed100. Order UI01->UI02->POP01->ML01. LR01 paused25/Build33.33.
 Universal result index remains separately unapproved. No user decision pending.
 
@@ -48,30 +48,30 @@ erase a committed owner command. Replacement recovers it before another POST.
 
 ## Latest worker checkpoint
 
-2026-10-12 00:22:45: Planning0.122 lifecycle qualified;36checks158.98s, initial16+10pass.
-CurationJobs.refresh/release preserve exact fences across progress changes;
-curation_worker owns heartbeat/discovery/coordinator/bounded polling. Compiler
-rejects explicit model policy violations before selection and retains proposal.
-Managed original save/validate passes. ALL TESTS FINISHED;13 dependency/test-ownership checks also pass. Locks synced; commit next.
-No paid calls/keys or demo changes. c.3=33.33%: lifecycle100/config0/process0.
-Next reviewed private configuration/public clients, then CLI/process recovery.
+2026-10-12 00:32:29: Planning0.123 configured worker complete (commit pending); previous
+0.122 pushed33ed863a.15 configuration/process checks22.28s;2 actual process-crash/
+recovery and processing-denial checks52.83s;15 policy/boundary checks51.84s.
+ALL TESTS FINISHED. Sync version/locks and commit/push, then P2.4.
+curation_worker/configuration.py validates private DTO/policy identity/files;
+peers.py builds public clients; hosting.py enforces Planning serving role, grants,
+readiness and DB lifetime; __main__.py check/run with graceful signals/redacted errors.
+Check does not load model key or claim work. Disabled run can recover original
+issuance without Data/model. Actual test-only crash provider exits73 after issuance;
+configured replacement keeps full charge/unknown, no new dispatch. No paid calls.
+Curation compiler now rejects explicit policy/structural/tool/evidence violations
+before selection; integrity failures propagate. Worker pauses processing denial.
 
 ## Next concrete work
 
-c.3 managed lifecycle/periodic heartbeat, bounded queue discovery, reviewed private
-configuration/public peer-client composition, CLI/process recovery. Existing
-supervision_scheduling is a structural example, not a curation adapter. Principal
-must match original actor/scope. Provider budget settings are fixed; no implicit
-model or source changes during recovery. c.2 test initially expired after a full
-save+validate sequence without heartbeat; between-step heartbeat fixed tests, and
-explicit expiry-after-Runtime-validation recovery passed. Real managed work needs
-periodic renewal during long processing/model/compiler calls. No lease-limit widening.
-
-Useful fixtures: tests/curation_execution/test_executor.py setup publishes original
-declaration with SDK scripted Data before linked input; unique scopes via
-curation_result/test_journal.py setup(before_freeze). curation_compiler/test_workflow
-builds exact valid synthetic future graph and uses real owner journals with scripted
-Runtime/Registry. No scientific claims or actual model calls in these tests.
+P2.4 independent Planning wheel, public-only closure, copied tests and actual
+configured replacement. Use dev/install_owner_peer.py; prohibit peer implementation
+imports. Copy Planning tests plus contracts/planning/tests/campaign_output/fixtures
+(and any needed supervision fixtures). Strip environment to system+owned test SQL;
+no keys. Run scoped curation intake/context/declaration/executor/compiler/worker
+checks under isolated Python -I. No source edits during tests or installation.
+Useful existing patterns: dev/verify_checkpoint_installation.py and
+curation_worker/test_process_recovery.py + crash_worker.py. Scripted owner peers,
+actual SQL/CLI; no scientific claims. Preserve original/live demo state.
 
 P2.4 independent installed replacement follows process gate. Then P3 capability
 requests/fulfillment, P4 successor/UI, P5 actual qualification. Multi-graph legacy

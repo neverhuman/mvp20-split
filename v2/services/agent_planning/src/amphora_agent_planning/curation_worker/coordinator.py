@@ -9,7 +9,7 @@ from .lease import LeaseKeeper
 
 PENDING = frozenset({'curation_provider_unconfigured', 'curation_lease_lost',
     'curation_progress_conflict', 'curation_heartbeat_unavailable', 'compiler_lease_unavailable',
-    'metadata_unavailable', 'metadata_deadline'})
+    'metadata_unavailable', 'metadata_deadline', 'curation_processing_unavailable'})
 BUDGET = frozenset({'curation_group_calls_exhausted', 'curation_group_cost_exhausted',
     'provider_usage_overage', 'token_budget_exhausted', 'accounting_budget_exhausted'})
 PREPARATION = frozenset({'curation_preparation_not_ready', 'curation_declaration_rejected',
