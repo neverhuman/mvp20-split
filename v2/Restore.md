@@ -98,3 +98,18 @@ Isolated owners: v2/.test-results/origin-installation-20261011a/{planning,gatewa
 python is environment/Scripts/python.exe (NOT .venv). Deployment0.18.3 at
 launch-live-installation-20261009e. Other independent owners remain Runtime0.65,
 Data0.30/Registry0.1/Research0.40/Knowledge0.18. LAN --baseline is gateway.json.
+
+2026-10-11 23:32:44 America/Chicago:941a4e31 pushed Planning0.118/declaration publication.
+New curation_result/outcome.py+journal.py tested:38 outcome/job/HTTP/boundary cases
+pass; all tests FINISHED. Source0.119, sync locks then commit/push. Pure domain
+binds exact original preparation/ordinal1 capture/reservation/settlement. Fenced
+progress distinguishes graph, capabilities, abstention, invalid, unknown and overage;
+replay makes no model call and preserves later progress. c.2 not yet complete.
+Test fixture tests/curation_result/test_journal.py setup builds full original
+context with unique scope, rehashed Runtime draft/universe, paid-profile limits,
+then freezes linked input. All model calls are scripted, zero paid usage.
+NEXT curation execution: fresh processing checks, durable once-only dispatch,
+active job fence in new reservation/issuance transactions, exact envelope/deadline
+adapter wrapper. Reuse local journals; new guarded inserts only, original replay
+unchanged. Then existing CompilerSelection/Progression plus durable curation
+compiler linkage. No current tests/installations or user decision pending.

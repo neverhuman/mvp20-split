@@ -16,7 +16,7 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 - Next task: UI-01.08/P2.3c.2 once-only provider/compiler integration, then managed process recovery. UI-02 -> POP-01 -> ML-01 follow in order.
 - Implementation completion: LAN-01=100%; UI-01 active66.78%, Build83.47%, Verification0%; UI-02=0%, P1/P2/P3/P4=0%; LR-01 paused25%, Build33.33%, Acceptance0%.
 - Blockers/dependencies: none; additive Planning curation and Deployment successor-launch boundaries approved. N3/I1 and candidate-structure producer remain unfinished; no calibrated scientific accuracy benchmark. UI-01.01 remains separate.
-- Latest checkpoint: P2.3c.1 reviewed policy/declaration publication complete;138 regression and10 final focused checks.0paid calls.
+- Latest checkpoint: c.2 original provider outcome projection qualified38checks; fenced issuance/compiler still pending. UI-01.08=33.89% unchanged;0paid calls.
 - Acceptance posture: read-only N2 journey qualified; Studio0.26 served locally/LAN. N3/I1=33.89%, parent V1=0%; no full-engine acceptance or new paid provider calls.
 - Active exception: owner scheduled four targets for next week. Preserve earned phase credit; sequence the bounded cross-plan handoffs below. Pull LR-01/UI-R01 forward only when their faults block the scheduled integration, with exact return points.
 
