@@ -51,3 +51,9 @@ four curation tables. Neither HTTP reads nor intake issue provider work.
 P3.1: GET enriches capability-request references deterministically from the retained
 original proposal. It does not rewrite queued receipts or persisted progress bytes.
 The dedicated capability_requests module owns identity/projection and read authority.
+
+FulfillmentCommand.restore validates original canonical bytes without new authority;
+bind requires fulfill_capabilities. The identity-derived fulfillment ID is stable
+across conflicting payloads so the separate capability_fulfillment journal can
+reject identity reuse. Current curation readiness includes schema0027 fulfillment
+tables used by capability readback.

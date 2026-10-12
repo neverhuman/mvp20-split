@@ -63,7 +63,7 @@ This independently built wheel depends on public contracts and the Tool Protocol
 
 ## State, effects and recovery
 
-Planning owns planning_0001 through0015. Histories, prepared bytes and compiler selections are immutable; separate control rows carry database-clock leases/fences. Normal imports never migrate. No SQL transaction spans provider or peer I/O. Publication and compiler operations persist exact intent before effects. Uncertain replies preserve original identities; an accepted receipt requires exact owner readback. Historical receipt recovery does not grant fresh processing rights. Process loss leaves leases until expiry; stale holders cannot append accepted local history.
+Planning owns planning_0001 through0027. Histories, prepared bytes and compiler selections are immutable; separate control rows carry database-clock leases/fences. Normal imports never migrate. No SQL transaction spans provider or peer I/O. Publication and compiler operations persist exact intent before effects. Uncertain replies preserve original identities; an accepted receipt requires exact owner readback. Historical receipt recovery does not grant fresh processing rights. Process loss leaves leases until expiry; stale holders cannot append accepted local history.
 
 Compiler selection binds original preparation, output, accounting and reviewed configuration. One save and validation use at most16 complete Registry-check rounds over1..64 original tools, with64 events per effect and the last slot reserved for terminal outcomes. Each progression invocation performs at most one effectful POST and releases its300s lease. Runtime original receipts/readbacks are reconciled before fresh-use checks; Registry resolve replay remains effectful and needs current checks. Expired observations require a new bounded check, never an expiry extension. No network exactly-once guarantee is claimed.
 
@@ -105,3 +105,7 @@ lookup, atomic save observation linkage, scoped owner reader and bounded backfil
 Planning contracts0.13.0 includes separate Knowledge-aware provenance.38 PostgreSQL
 checks plus43 projection checks and236 post-sync checks pass. HTTP/Studio and
 isolated installed/actual-owner qualification remain P3/P4; no live upgrade yet.
+
+UI-01.08/P3.2b: Planning0.126 adds immutable capability fulfillment intake and
+first-winner verification evidence; see [capability fulfillment](src/amphora_agent_planning/capability_fulfillment/README.md).
+Current curation readback requires0027; managed fulfillment/HTTP writes follow.

@@ -80,7 +80,21 @@ class AcceptanceReview:
             ProcessedEvidence.bind(row.reference, row.reference, row.body)
         selected = select_report(expected)
         captured = next(row for row in evidence if row.reference == selected)
-        report = AcceptanceReport.parse(captured.body)
+        observed, report, selected = cls.review_report(capability, specification, release, captured.body)
+        return cls(observed, report, selected, evidence)
+
+    @classmethod
+    def review_report(cls, capability, specification, release, body):
+        """Replay report semantics; this alone does not attest Data processing."""
+        accepted(specification.request == capability.reference, 'capability_acceptance_request')
+        observed = ObservedRelease.bind(release, capability.curation.scope, specification.release)
+        accepted(release.status in {'registered', 'active'}, 'capability_release_unavailable')
+        expected = specification.acceptance_evidence
+        accepted(len({ref.artifact_id for ref in expected}) == len(expected)
+            and all(ref.scope == capability.curation.scope for ref in expected), 'capability_evidence_scope')
+        selected = select_report(expected)
+        ProcessedEvidence.bind(selected, selected, body)
+        report = AcceptanceReport.parse(body)
         record, gap = report.document(), capability.gap
         accepted(record.request == capability.reference and record.proposal_sha256 == capability.proposal_sha256
             and record.gap_key == gap.gap_key and record.release == specification.release, 'capability_acceptance_binding')
@@ -98,7 +112,7 @@ class AcceptanceReview:
             accepted(row.result == 'passed', 'capability_acceptance_unproven')
             accepted(len(set(row.supporting_artifacts)) == len(row.supporting_artifacts)
                 and set(row.supporting_artifacts) <= supporting, 'capability_acceptance_support')
-        return cls(observed, report, selected, evidence)
+        return observed, report, selected
 
     @staticmethod
     def _ports(requested, offered, *, inputs):

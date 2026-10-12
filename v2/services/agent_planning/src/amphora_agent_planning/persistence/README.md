@@ -114,3 +114,8 @@ exact retained reservations/issuance replay remains unchanged. Callbacks must do
 no peer I/O. Curation job fences follow existing scope/family/request lock ordering.
 Provider observation/settlement retains its original issuance authority even if
 a job lease expires during the remote call; it never authorizes another call.
+
+UI-01.08/P3.2b adds0026 capability_fulfillments and0027 capability_verifications.
+Both are append-only SELECT/INSERT for planning_service. Unique scoped verified
+request index protects the first winner. No peer I/O spans these transactions;
+source/demo schema advancement remains an explicit operator action.

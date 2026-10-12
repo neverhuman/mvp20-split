@@ -69,12 +69,23 @@ class FulfillmentCommand:
 
     @classmethod
     def bind(cls, principal, raw):
+        value = cls.restore(raw)
+        _actor(principal, value.command, 'fulfill_capabilities')
+        return value
+
+    @classmethod
+    def restore(cls, raw):
         command = parse_fulfillment(raw)
-        _actor(principal, command, 'fulfill_capabilities')
         request = CapabilityFulfillmentRequest.model_validate_json(command.canonical_bytes)
         _unique(request.payload.acceptance_evidence, lambda item: item.artifact_id,
                 'duplicate_fulfillment_evidence')
         return cls(command, request)
+
+    @property
+    def fulfillment_id(self):
+        raw = json.dumps(self.command.identity.model_dump(mode='json'), sort_keys=True,
+                         separators=(',', ':')).encode()
+        return 'fulfillment-' + hashlib.sha256(raw).hexdigest()
 
     def reconcile(self, original_bytes):
         require(parse_fulfillment(original_bytes) == self.command, 'fulfillment_command_conflict')

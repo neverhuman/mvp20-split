@@ -1,16 +1,16 @@
 # Restore
 
-Refreshed 2026-10-12 01:14:38 America/Chicago. Read FIRST after compaction.
+Refreshed 2026-10-12 01:34:08 America/Chicago. Read FIRST after compaction.
 Continue until needed across commits/gates/compaction. No subagents/JARVIS.
 v1 read-only; preserve untracked ocular PDF/DOCX. No source/tests/module README
 edits while tests/installations run. Serving demo uses immutable source copies.
 
 ## Canonical position
 
-UI-01.08 approved; active P3.2b durable fulfillment journal.
-Child48.89%;P1=100%,P2=100%,P3=44.44%,P4/P5=0. P2.1/2.2=100%,P2.3=100%,P2.4=100.
+UI-01.08 approved; active P3.2c HTTP/managed verification.
+Child51.11%;P1=100%,P2=100%,P3=55.56%,P4/P5=0. P2.1/2.2=100%,P2.3=100%,P2.4=100.
 P2.3a/b=100%;c100%(c.1policy/publication100,c.2provider/compiler100,c.3process100).
-ParentUI01=69.78%/Build87.22%/Verification0;UI01.05=82.96%,I1=48.89%.
+ParentUI01=70.22%/Build87.78%/Verification0;UI01.05=83.70%,I1=51.11%.
 UI01.06/07 closed100. Order UI01->UI02->POP01->ML01. LR01 paused25/Build33.33.
 Universal result index remains separately unapproved. No user decision pending.
 
@@ -49,10 +49,26 @@ bounded Registry and Data processing. Report labels cannot confer owner or scien
 authority. No SQL writes/provider calls/demo changes. Durable journal next.
 P3.2=33.33%(a100,b/c0),P3=44.44%,child48.89%;parent69.78%/Build87.22%,UI01.05=82.96%.
 
-Uncommitted capability_acceptance/{wire,review,collection}.py and README/tests.
+Committed capability_acceptance/{wire,review,collection}.py and README/tests.
 Versioned schema frozen in tests/capability_acceptance/acceptance-v1.schema.json.
 Collector: Registry10s, Data20s/32calls/16MiB,4MiB per Artifact,64KiB report.
-ALL TESTS FINISHED; locks/commit for0.125 pending. No paid calls or real keys.
+ALL TESTS FINISHED;0.125 locks synced, committed/pushed ff4af1b1. No paid calls or real keys.
+## Latest P3.2b checkpoint
+
+2026-10-12 01:34:08 America/Chicago: Planning0.126 P3.2b durable fulfillment complete.
+Append-only0026 intake/original pending receipt and0027 terminal verification;
+exact owner scope/actor, immutable original gap, first verified winner, competing
+history retained. Exact report/Registry/processed-reference witness; no payload
+copy or peer I/O in SQL. Winner-first capability readback; original receipt unchanged.
+Intake30pass84.58s; first verification56pass/3 strict-JSON replay failures corrected;
+final20pass133.59s includes concurrency, rollback, witness and process replacement.
+Evidence capability-fulfillment-intake-a.log and capability-fulfillment-verification-b.log.
+No paid calls/keys/live-demo changes. P3.2=66.67%(a/b100,c0),P3=55.56%,child51.11%;
+parent70.22%/Build87.78%,UI01.05=83.70%. P3.2c HTTP/managed qualification next.
+
+No tests/installations running;0.126 locks synced. Commit/push this verified unit
+then implement P3.2c. Current schema0027; immutable demo still0021.
+
 ## Next concrete work
 
 P3.2 explicit fulfillment;
@@ -62,7 +78,7 @@ instead of duplicating mutable descriptions. Approved public types already exist
 in contracts/campaign_curation/models.py: CapabilityRequestView, fulfillment
 request/specification/receipt. Existing FulfillmentCommand lives in
 curation_intake/commands.py. Existing grants read_capabilities/fulfill_capabilities
-are in access.py; read route implemented, fulfillment write/storage/verification pending.
+are in access.py; read route implemented, fulfillment HTTP/managed processing pending; storage/verification implemented.
 CurationView.proposal retains full typed gaps; public reads now derive capability_requests.
 Use focused domain projection objects, preserving original receipt/progress bytes.
 Explicit verified fulfillment needs real Registry lock/descriptor/ports and current

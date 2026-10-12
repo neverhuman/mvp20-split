@@ -106,6 +106,8 @@ def create_app(intake=None, credentials=None, *, topology=None, campaign_origins
                 conn.execute(text('SELECT envelope_sha256 FROM planning.curation_preparation_links LIMIT 0'))
                 conn.execute(text('SELECT origin_sha256 FROM planning.curation_declarations LIMIT 0'))
                 conn.execute(text('SELECT event_sha256 FROM planning.curation_declaration_events LIMIT 0'))
+                conn.execute(text('SELECT receipt_bytes FROM planning.capability_fulfillments LIMIT 0'))
+                conn.execute(text('SELECT receipt_bytes FROM planning.capability_verifications LIMIT 0'))
         mode = 'supervisor_intake_and_topology' if topology is not None else 'supervisor_intake_only'
         if curations is not None:
             mode = 'supervisor_intake_topology_and_curation' if topology is not None else 'supervisor_intake_and_curation'
