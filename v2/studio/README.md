@@ -1,5 +1,15 @@
 # Graph Studio
 
+Current release **0.24.0** adds exact campaign provenance in Question/Evaluation,
+independent Runtime save/draft verification, actual Research criteria and consumed
+Knowledge navigation. Browser launch/progress remains qualified from0.23.2.349 tests
+pass; actual local/LAN1440/390 origin/results/Knowledge and negative reads pass.
+[UI-01.07 audit](../docs/Audits/UI-01.07_Campaign_Provenance.md) records the deterministic
+qualification and limitations. Source modules are page_models/campaign_origin,
+transport/campaign_origin and presentation/campaign_origin. No live-model claim.
+
+Historical release checkpoints follow.
+
 Source release **0.22.0** adds a distinct Knowledge view to the connected campaign,
 selected from an exact retained planning association. Historical Results links and
 context artifacts remain compatible. The embedded explorer reads real Knowledge
@@ -31,7 +41,7 @@ proposal/successor/byte/browser journey, two independent286-test Studio installs
 and scoped audit are complete under [SQ-01](../docs/Audits/SQ-01_Quality_Closeout.md). This source update
 does not replace the separately frozen demo assets below.
 
-Current demo release: **0.16.1**, qualified against actual retained owners under
+Historical demo release: **0.16.1**, qualified against actual retained owners under
 [DEMO-01](../docs/Audits/DEMO-01_Internal_Walkthrough.md). The local entry exposes
 execution/authored graphs, checkpoint reasoning, domain/evidence, saved draft
 inspection and explicit question/quality focus export. Launch selection pins survive

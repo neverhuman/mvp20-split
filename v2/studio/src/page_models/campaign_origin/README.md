@@ -25,4 +25,10 @@ Existing flow typography/buttons and narrow responsive layout are reused.
 349 Studio tests pass, including12 scoped origin tests; scripted production-entry
 and component browser1440/390 checks pass. Reader line/branch100/93.75%, Research
 100/94.74%, model92.65/70.37%. Remaining cancellation/failure branches and actual-owner
-qualification are recorded in UI-01.07/P4. Independent replacement preserves these interfaces and failure cases.
+qualification evidence are recorded in UI-01.07/P4. Independent replacement preserves these interfaces and failure cases.
+
+2026-10-11 19:26:42: P4 actual deterministic Planning compiler -> Runtime saved draft
+-> browser launch/results -> exact origin/Research/consumed Knowledge passes on
+localhost and LAN at1440/390. Manual draft absence and altered pins are explicit.
+Screenshots inspected; no serious/critical axe findings. See UI-01.07 audit for
+retained failures and limits; no live-model or scientific-validity claim.

@@ -2,7 +2,7 @@
 
 - Design status: context/proposal,owner handoff,durable supervision,inspection and bounded live synthetic evaluation implemented; selected-model deployment wiring and scientific-quality validation remain separate gates.
 - Naming note: component/record/operation names below are proposed logical design, not implemented APIs or selected deployment technology
-- Last reviewed: `2026-10-06 03:08:04` (America/Chicago)
+- Last reviewed: `2026-10-11 19:26:42` (America/Chicago)
 - Parent: [Domain overview](Agent_Architecture.md)
 - Requirement source: [Product Requirements](../Requirements/Product_Requirements.md#llm-prompt-integration)
 
@@ -60,3 +60,19 @@ Planning0.52/public Planning0.9 also implements bounded public campaign context 
 Planning0.69/public Planning0.9 implements evidence-purpose and exact tool/composition policies, declarationv1/v2 bounds, original stored-accounting checks and a durable compiler client. Runtime retains draft/compiler/execution authority; Registry eligibility observations are finite and do not reserve capacity. Immutable selection/round/effect journals, database-clock fencing, original receipt reconciliation and fresh-use checks bound one effectful POST per progression invocation. Actual-owner crashes, source-rights changes and replacement preserve exact histories. The [campaign closeout audit](../../Audits/BP-07.03_Campaign_Closeout.md) separates these proofs from pending Runtime engagement acceptance and live-model/scientific quality.300-descriptor synthetic catalog acceptance measures bounded identity/context handling, not semantic ranking effectiveness.
 
 Current evaluation boundary: Planning0.95/planning0019 preserves frozen input/rubric/model revisions,allprimaryattempts and conservative settlement. Provider-enforced extraction schema complements local validation; current syntheticv5 passes12/12,earlierfailuresretained. Runtime0.62/Studio0.8 expose coherent scoped metadata and separate authoritative decisions. [Evaluation closeout](../../Audits/BP-07.05_Evaluation_Closeout.md) records independent replacement,exact limits and BP-09.03 deployment handoff.
+
+## Exact saved-campaign provenance
+
+Planning owns a bounded read-only association between an exact Runtime draft
+revision/content digest and its original retained compiler proposal/preparation,
+Research selections, Knowledge pins, tool bindings and accepted save receipt.
+Record the private lookup atomically with the accepted save observation. Rebuild
+and reads revalidate original history; no latest-head inference, provider call or
+peer database access is permitted. Scope/read grant is independent of write rights.
+Studio verifies Runtime and Research reads separately before displaying provenance;
+source and Knowledge inspection retain their own authorization. Missing association
+never identifies the author. Compilation and context do not establish scientific
+validity or current execution eligibility. [UI-01.07](../../Build%20Plans/UI-01.07%20Campaign%20provenance%20decision.md)
+and the [owned module](../../../services/agent_planning/src/amphora_agent_planning/campaign_origin/README.md)
+record the concrete versioned API and qualification. This contract does not expose
+raw prompts, provider captures or hidden reasoning.

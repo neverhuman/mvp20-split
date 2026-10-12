@@ -19,4 +19,10 @@ authorization. Public capture absence refers to this compiler association only.
 349 Studio tests pass. Scripted production component at1440/390 is visually
 inspected, has no horizontal overflow and no axe violations; denial/missing/invalid
 responses clear detail. Full-entry launch/reload/missing-origin regression passes.
-Actual-owner browser workflow and consumed Knowledge traversal remain P4.
+Actual-owner browser workflow and consumed Knowledge traversal are recorded below.
+
+2026-10-11 19:26:42: P4 actual deterministic Planning compiler -> Runtime saved draft
+-> browser launch/results -> exact origin/Research/consumed Knowledge passes on
+localhost and LAN at1440/390. Manual draft absence and altered pins are explicit.
+Screenshots inspected; no serious/critical axe findings. See UI-01.07 audit for
+retained failures and limits; no live-model or scientific-validity claim.

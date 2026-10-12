@@ -1,13 +1,14 @@
 # Agent Planning service boundary
 
-Current release: Planning0.104.0/planning0020. SQ-01/C2b integrates
-[campaign_followup](src/amphora_agent_planning/campaign_followup/README.md) with retained
-preparation, configured public Research reads, provider validation and publication.
-Runtime acceptance and Studio proposal presentation remain subsequent SQ-01 gates.
-Installed demo owners remain frozen separately; no new live adapter is enabled.
+Current release: Planning0.107.0 / migration0021. UI-01.07 adds a scoped,
+read-only exact campaign origin API backed by original compiler history and an
+atomic saved-draft lookup. Public Planning0.13.0 preserves earlier schema bytes.
+Runtime still owns draft acceptance and execution. See
+[campaign_origin](src/amphora_agent_planning/campaign_origin/README.md).
 
-- Version: Planning0.104.0; public Planning0.11.0 and supervision0.10.1; migration head0020 unchanged.
-- Reviewed: `2026-10-07 14:02:37` (America/Chicago);242 affected-boundary tests and5 final checks pass.
+- Version: Planning0.107.0; public Planning0.13.0 and supervision0.10.2.
+- Reviewed: `2026-10-11 19:26:42` (America/Chicago);206 independent Planning tests,
+  actual scientific compiler/origin/Research/Knowledge and local/LAN browser proof.
 - Owner: Agent Planning. Runtime accepts execution decisions; Knowledge and Research retain domain authority.
 - Design: [Planning](../../docs/Architecture/Agents/Planning.md). Campaign acceptance: [BP-07.03](../../docs/Build%20Plans/BP-07/Completed/BP-07.03%20Campaign%20proposals%20and%20context.md); supervisor acceptance [BP-07.04](../../docs/Build%20Plans/BP-07/Completed/BP-07.04%20Durable%20supervisor%20and%20races.md).
 

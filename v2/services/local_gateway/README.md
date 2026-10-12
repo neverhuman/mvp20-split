@@ -1,5 +1,12 @@
 # Local browser gateway
 
+Current release0.5.0 adds UI-01.07 exact Planning campaign-origin GET, with two
+strict query pins,256KiB response bound and distinct sanitized absence/denial/
+inconsistency states.58 independent tests and actual local/LAN provenance traversal
+pass2026-10-11 19:26:42. No new write, provider or operator route.
+
+Historical release checkpoints follow.
+
 Owner LAN-01/UI-01.06; release0.4.0 adds the explicit Deployment launch peer.
 Only /v1/campaign-launch-profiles, /v1/campaign-launches and one receipt identity
 are routed; no query parameters or operator controls. Launch POST is bounded to

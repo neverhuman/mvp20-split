@@ -1,6 +1,6 @@
 # Campaign origin projection
 
-- Owner: Planning; UI-01.07/P1/P2 complete; P3 API/Studio pending.
+- Owner: Planning; UI-01.07/P1-P4 complete; qualified2026-10-11 19:26:42.
 - Design: [bounded campaign provenance](../../../../../docs/Build%20Plans/UI-01.07%20Campaign%20provenance%20decision.md).
 - Tests: `tests/campaign_origin`; public shape tests belong to contracts/planning.
 
@@ -9,7 +9,7 @@ the original verified compiler selection, authoring plan, eligibility configurat
 and accepted save observation. Existing original-proposal and receipt/readback
 policies are reapplied. A pending receipt, rejected save or missing readback cannot
 produce provenance. Construction is pure and does not prove durable storage itself.
-The future owned reader must load these inputs through Planning's journals.
+The owned reader loads these inputs through Planning's journals.
 
 The public response pins an exact scoped draft, original producer/attempt/preparation/
 proposal, context reference identities, observed usage, selected tool releases and
@@ -26,13 +26,12 @@ Historical compilation establishes neither current eligibility nor scientific tr
 
 The pure projection performs no I/O. The owned index/reader below use Planning SQL
 only; there is no provider invocation, peer-private access, Runtime mutation or admission. The `read_campaign_origin` grant is distinct from attempt
-reads and all writes. P3 owns HTTP/authentication and Studio; neither is implemented yet.
+reads and all writes. P3 implements HTTP/authentication and independent Studio verification.
 
 Replacement must preserve exact schema/digest bytes, original identity checks,
 bounded failure and honest missing-data semantics. 227 scoped projection/contract/authoring/compiler/schema checks pass. Projection
 coverage82/83 statements (98.80%),9/10 branches (90%); no-Research restore branch
-remains unexercised, with missing-context projection separately tested. No
-installed-package or actual-owner acceptance is claimed yet.
+remains unexercised, with missing-context projection separately tested. Later P4 qualification below supersedes this early verification checkpoint.
 
 ## Owned lookup and reconstruction (Planning0.106.0)
 
@@ -83,4 +82,17 @@ is canonical JSON with no-store. Ready checks migration0021; serving applies no 
 
 18 focused HTTP cases and69 API/Gateway transport checks pass.29 actual-SQL origin
 route and existing supervision API checks pass, including foreign-scope404 and
-unchanged compiler history. Browser and isolated host qualification remain P4.
+unchanged compiler history. P4 qualification is complete; see the current checkpoint below.
+
+## Current qualification
+
+2026-10-11 19:26:42:206 independent Planning tests pass; Gateway58 independent
+checks and Studio349 checks pass. Actual deterministic proposal preparation selected
+public Research criteria and the retained Knowledge graph before hashing. Original
+compiler saved/validated a four-invocation scientific draft; the browser launched
+that draft and inspected its exact origin/Research/Knowledge after completion.
+Local/LAN1440/390 and negative manual-origin/changed-pin checks pass. An actual
+Planning process replacement returns the same origin digest without another provider
+call. Response15377bytes, observed local read3.562s (not a latency guarantee).
+No live-model/scientific accuracy claim. [Scoped audit](../../../../../docs/Audits/UI-01.07_Campaign_Provenance.md)
+owns detailed evidence and limitations. Coverage gaps above remain explicit.

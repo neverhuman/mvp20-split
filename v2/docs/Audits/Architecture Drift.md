@@ -1,16 +1,15 @@
 # Architecture Drift
 
 - Status: BP-01 through BP-09 closed/audited; named successor findings remain.
-- Last refreshed: `2026-10-09 10:29:00` (America/Chicago).
+- Last refreshed: `2026-10-11 19:26:42` (America/Chicago).
 - Scope: unresolved v2 design/implementation alignment and scoped successor boundaries.
 - Active focus: selected-host integration and named scientific/UI successor limits.
-- Next gate: UI-01/N2.2 exact Planning/Research provenance, then comparison/provider reasoning. UI-01.06 launch and K1 aligned in history. LR-01 paused; UI-R01 retains feedback-read follow-up.
+- Next gate: UI-01/N2.3 comparison, then provider reasoning. UI-01.07 provenance aligned in history. UI-01.06 launch and K1 aligned in history. LR-01 paused; UI-R01 retains feedback-read follow-up.
 
 ## Active Findings
 
 | Finding | Owner / trigger | Disposition |
 |---|---|---|
-| Planning/Research provenance is not yet bound to the scientific review | UI-01/N2.2 | Qualified launch/K1 remain complete. Planning compiler origin is retained privately; Runtime draft reads carry no origin. [UI-01.07 decision](../Build%20Plans/UI-01.07%20Campaign%20provenance%20decision.md) records the approved bounded public origin read/owned index; P1/P2/P3 projection, owned lookup and API/Studio verified; P4 actual-owner qualification active. Comparison/provider reasoning remain parent N2 scope. |
 | Default graph is a disconnected inventory; authored layout ignores dependencies | [UI-01](../Build%20Plans/UI-01%20Research%20Workspace%20Overhaul.md), G0/G1 first | Source correction verified by UI-01/G1: ELK routes authored links; automatic root/fit, nested scopes, selection and viewport retention pass actual-owner browser review. Candidate assets only; frozen demo unchanged, V1 replacement qualification remains. N1 question-first navigation also verified. |
 | SME evaluation logic absent from executed numerical demo | UI-01/N2.S then N2.2 | Local design-review MVP now exposes criteria, actual solvency procedure, assumptions, evidence gaps and aggregation, with future-only concern export/import.306 tests and served SME browser pass. UI-01.03 now executes two standalone scientific tools with four verified result inspectors; [scoped audit](UI-01.03_Scientific_Execution.md). Runtime Planning generation and automatic feedback consumption remain unimplemented in this view. No complete-engine acceptance. |
 | Hidden sibling concurrency in graph presentation | UI-01/N2.C, Studio0.18 | Implemented and served for owner review: same-cut inline fan-out/rejoin, sequential iteration expansion, focus/overview map, explicit bounded omissions.301Studio checks and actual served browser checks pass; failed-state display uses a separately labelled intercepted fixture. This retained numeric campaign is not a formulation/solvency migration. |
