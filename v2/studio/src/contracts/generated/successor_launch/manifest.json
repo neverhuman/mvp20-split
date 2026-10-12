@@ -1,0 +1,18 @@
+{
+  "request": {
+    "source": "contracts/schemas/v1/campaign-successor-launch.request.serialization.json",
+    "sha256": "ea9fbd26596826b90a2203cd2427163c3ae51c4cccd9e210ca21b2bc11894c7e"
+  },
+  "receipt": {
+    "source": "contracts/schemas/v1/campaign-successor-launch.receipt.serialization.json",
+    "sha256": "acff83aaf37c3562c798e79ca92a0a7848ec5ce9e2650382fdf7713fad0b514b"
+  },
+  "query": {
+    "source": "contracts/schemas/v1/campaign-successor-launch.receipt-query.serialization.json",
+    "sha256": "43ebd9b6731c821608d6fbfbd10bf0a2acc65a076534fa4a1a818bcdee1c162a"
+  },
+  "admission": {
+    "source": "contracts/schemas/v1/graph-runtime.draft-successor-admission.serialization.json",
+    "sha256": "9877d459476ef9c57f0a9209deb7f1e49d6a8f0a80a8f1a5de6ea019335f46b5"
+  }
+}

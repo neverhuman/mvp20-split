@@ -1,6 +1,6 @@
 # Restore
 
-Refreshed 2026-10-12 03:19:00 America/Chicago. Read FIRST after compaction.
+Refreshed 2026-10-12 03:27:00 America/Chicago. Read FIRST after compaction.
 Continue until needed across commits/gates/compaction. No subagents/JARVIS.
 v1 read-only; preserve untracked ocular PDF/DOCX. No source/tests/module README
 edits while tests/installations run. Serving demo uses immutable source copies.
@@ -8,8 +8,8 @@ edits while tests/installations run. Serving demo uses immutable source copies.
 ## Canonical position
 
 UI-01.08 approved; P4.3 graph comparison/validation/successor controls ACTIVE.
-Child71.25%;P1/P2/P3=100%,P4=56.25%,P5=0. P4.1/P4.2=100%,P4.3=25%,P4.4=0.
-ParentUI01=74.25%/Build92.81%/Verification0;UI01.05=90.42%,I1=71.25%.
+Child72.5%;P1/P2/P3=100%,P4=62.5%,P5=0. P4.1/P4.2=100%,P4.3=50%,P4.4=0.
+ParentUI01=74.5%/Build93.13%/Verification0;UI01.05=90.83%,I1=72.5%.
 Order UI01->UI02->POP01->ML01. LR01 paused25/Build33.33. No decision pending.
 P5 ONE synthetic scope4calls/$1,max$0.25original hold/call. ZERO paid calls/real keys.
 
@@ -37,22 +37,23 @@ checks; original full mode still supports container/receipt process probes.
 
 ## Next task
 
-77c873c8 pushed Studio0.31 P4.2. Studio0.32 graph review P4.3a complete, commit/push
-next.416checks pass(curation-graph-full-b.log); browser curation-graph-browser-20261012c
-1440/390 inspected. Initial mobile graph offcanvas repaired by GraphCanvas opt-in
-fitOnResize; browser asserts all nodes within canvas after resize. No active tests.
-GraphReview/Reader binds original/proposed/validation; GraphModel fences reads;
-GraphScene real control/data links, nested scopes,200-node windows, duplicate-ID
-suppression. GraphDefinitionComparison allows visible same-scope campaign-ID change;
-DraftComparison retains editor stricter guard.10new tests. Full-a import guard failed
-helper named require; renamed requireBinding, full-b416pass.
+ef7dfccb pushed Studio0.32 graph review. Studio0.33 P4.3b command/recovery complete,
+commit/push next.427 fullchecks successor-studio-full-a.log;15focusedlaunchchecks,
+3browser envelopes parsed by public Python parse_successor_launch/draft_successor
+with exact decimal strings(successor-browser-wire-evidence.json). No active tests.
+New contracts/successor_launch + generated roots; transport/successor_launch and
+page_models/successor_launch READMEs own replacement boundaries. Shared command_wire
+extracted without authoring behavior change. Unknown-reply identity GET then owner
+hash query; no Python canonical hash computed in JS. No automatic POST/retries.
+One original per curation; no cachedreceipt authority.
 
-P4.3 units a graphreview100,b command/recovery0,c controls/newcycle0,d browser0.
-Next P4.3b: consume public campaign_successor_launch request/receipt + draft_successor
-schemas; original numeric Runtime command, exact Deployment receiptquery. Do not
-reuse integer-only curationencoder for graph floats. Then controls/newcycle and
-browser gate. P4.4 actual scripted owners/process; P5 ONE synthetic scope4calls/$1.
-P5 must configure internal-curation-v1 policy and preserve all Knowledge heads.
+P4.3a/b100,c/d0. Next c: controls bind CurationGraphReview exact saved/validated graph,
+fresh terminal predecessor and managed profile; user selects successor launch.
+Need preserve original curation Knowledge context for future successor iterations,
+not just legacy CampaignOriginV2 single Knowledge head. Explicit new-request cycle
+after verified terminal curation; do not turn this into paid-budget evasion.
+Then d browser workflow, P4.4 actual scripted owners/process, P5 real qualification.
+P5 ONE synthetic scope4calls/$1,max$0.25hold. Serving demo unchanged0.26.
 
 ## Commands and guardrails
 

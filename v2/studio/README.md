@@ -163,3 +163,6 @@ checks pass with362 Studio regressions. No new provider issuance or public API.
 Studio0.32 adds exact retained curation graph comparison and bounded connected
 previews.416 checks pass; scripted desktop/mobile visual evidence is in
 curation-graph-browser-20261012c. Serving demo remains Studio0.26 pending cutover.
+
+Studio0.33 consumes successor launch schemas and adds original request/recovery
+owners.427checks and3 public-parser wire vectors pass; UI controls remain next.

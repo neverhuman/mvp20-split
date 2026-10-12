@@ -207,6 +207,12 @@ await generate({
   receipt: ["campaign-launch.receipt", "LaunchReceipt"],
   catalog: ["campaign-launch.profiles", "LaunchProfileCatalog"],
 }, resolve(target, "launch"));
+await generate({
+  request: ["campaign-successor-launch.request", "SuccessorLaunchRequest"],
+  receipt: ["campaign-successor-launch.receipt", "SuccessorLaunchReceipt"],
+  query: ["campaign-successor-launch.receipt-query", "SuccessorLaunchReceiptQuery"],
+  admission: ["graph-runtime.draft-successor-admission", "AdmitDraftSuccessor"],
+}, resolve(target, "successor_launch"));
 
 await generate({ origin: ["planning.campaign-origin-knowledge", "CampaignOriginV2"] }, resolve(target, "campaign_origin"));
 await generate({

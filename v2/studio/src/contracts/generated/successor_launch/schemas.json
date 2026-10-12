@@ -1,0 +1,1964 @@
+{
+  "request": {
+    "$defs": {
+      "AdmitDraftSuccessor": {
+        "additionalProperties": false,
+        "properties": {
+          "budget": {
+            "$ref": "#/$defs/AttemptBudget"
+          },
+          "carried": {
+            "items": {
+              "$ref": "#/$defs/CarriedBinding"
+            },
+            "maxItems": 64,
+            "title": "Carried",
+            "type": "array"
+          },
+          "draft": {
+            "$ref": "#/$defs/DraftSelection"
+          },
+          "inputs": {
+            "items": {
+              "$ref": "#/$defs/GraphBinding"
+            },
+            "maxItems": 64,
+            "title": "Inputs",
+            "type": "array"
+          },
+          "limits": {
+            "$ref": "#/$defs/GraphLimits",
+            "default": {
+              "deadline_seconds": 3600,
+              "max_activations": 10000
+            }
+          },
+          "plan_sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Plan Sha256",
+            "type": "string"
+          },
+          "predecessor": {
+            "$ref": "#/$defs/PredecessorCut"
+          },
+          "schema_version": {
+            "const": "1",
+            "default": "1",
+            "title": "Schema Version",
+            "type": "string"
+          }
+        },
+        "required": [
+          "plan_sha256",
+          "inputs",
+          "budget",
+          "predecessor",
+          "carried",
+          "draft"
+        ],
+        "title": "AdmitDraftSuccessor",
+        "type": "object"
+      },
+      "ArtifactConstant": {
+        "additionalProperties": false,
+        "properties": {
+          "artifact": {
+            "$ref": "#/$defs/ArtifactRef"
+          },
+          "kind": {
+            "const": "artifact",
+            "title": "Kind",
+            "type": "string"
+          },
+          "representation": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Representation",
+            "type": "string"
+          },
+          "unit": {
+            "maxLength": 64,
+            "minLength": 1,
+            "title": "Unit",
+            "type": "string"
+          }
+        },
+        "required": [
+          "kind",
+          "artifact",
+          "representation",
+          "unit"
+        ],
+        "title": "ArtifactConstant",
+        "type": "object"
+      },
+      "ArtifactRef": {
+        "additionalProperties": false,
+        "properties": {
+          "artifact_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Artifact Id",
+            "type": "string"
+          },
+          "media_type": {
+            "maxLength": 128,
+            "minLength": 3,
+            "pattern": "^[^\\s/]+/[^\\s/]+$",
+            "title": "Media Type",
+            "type": "string"
+          },
+          "schema_ref": {
+            "$ref": "#/$defs/SchemaRef"
+          },
+          "scope": {
+            "$ref": "#/$defs/Scope"
+          },
+          "sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Sha256",
+            "type": "string"
+          },
+          "size_bytes": {
+            "maximum": 9007199254740991,
+            "minimum": 0,
+            "title": "Size Bytes",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "artifact_id",
+          "scope",
+          "sha256",
+          "media_type",
+          "schema_ref",
+          "size_bytes"
+        ],
+        "title": "ArtifactRef",
+        "type": "object"
+      },
+      "AttemptBudget": {
+        "additionalProperties": false,
+        "properties": {
+          "limit": {
+            "maximum": 9007199254740991,
+            "minimum": 1,
+            "title": "Limit",
+            "type": "integer"
+          },
+          "max_attempts_per_activation": {
+            "default": 3,
+            "maximum": 100,
+            "minimum": 1,
+            "title": "Max Attempts Per Activation",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "limit"
+        ],
+        "title": "AttemptBudget",
+        "type": "object"
+      },
+      "BooleanConstant": {
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "const": "boolean",
+            "title": "Kind",
+            "type": "string"
+          },
+          "value": {
+            "title": "Value",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "kind",
+          "value"
+        ],
+        "title": "BooleanConstant",
+        "type": "object"
+      },
+      "CarriedBinding": {
+        "additionalProperties": false,
+        "properties": {
+          "expected_value_sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Expected Value Sha256",
+            "type": "string"
+          },
+          "source": {
+            "discriminator": {
+              "mapping": {
+                "node_output": "#/$defs/NodeOutputSource",
+                "run_output": "#/$defs/RunOutputSource"
+              },
+              "propertyName": "kind"
+            },
+            "oneOf": [
+              {
+                "$ref": "#/$defs/RunOutputSource"
+              },
+              {
+                "$ref": "#/$defs/NodeOutputSource"
+              }
+            ],
+            "title": "Source"
+          },
+          "target_port": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Target Port",
+            "type": "string"
+          }
+        },
+        "required": [
+          "target_port",
+          "source",
+          "expected_value_sha256"
+        ],
+        "title": "CarriedBinding",
+        "type": "object"
+      },
+      "CollectionValue": {
+        "additionalProperties": false,
+        "properties": {
+          "items": {
+            "items": {
+              "anyOf": [
+                {
+                  "discriminator": {
+                    "mapping": {
+                      "artifact": "#/$defs/ArtifactConstant",
+                      "boolean": "#/$defs/BooleanConstant",
+                      "integer": "#/$defs/IntegerConstant",
+                      "number": "#/$defs/NumberValue",
+                      "string": "#/$defs/StringConstant"
+                    },
+                    "propertyName": "kind"
+                  },
+                  "oneOf": [
+                    {
+                      "$ref": "#/$defs/BooleanConstant"
+                    },
+                    {
+                      "$ref": "#/$defs/IntegerConstant"
+                    },
+                    {
+                      "$ref": "#/$defs/NumberValue"
+                    },
+                    {
+                      "$ref": "#/$defs/StringConstant"
+                    },
+                    {
+                      "$ref": "#/$defs/ArtifactConstant"
+                    }
+                  ]
+                },
+                {
+                  "$ref": "#/$defs/MissingValue"
+                }
+              ]
+            },
+            "maxItems": 10000,
+            "title": "Items",
+            "type": "array"
+          },
+          "kind": {
+            "const": "collection",
+            "title": "Kind",
+            "type": "string"
+          }
+        },
+        "required": [
+          "kind",
+          "items"
+        ],
+        "title": "CollectionValue",
+        "type": "object"
+      },
+      "CommandIdentity": {
+        "additionalProperties": false,
+        "properties": {
+          "actor_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Actor Id",
+            "type": "string"
+          },
+          "command_family": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Command Family",
+            "type": "string"
+          },
+          "command_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Command Id",
+            "type": "string"
+          },
+          "schema_version": {
+            "const": "1",
+            "default": "1",
+            "title": "Schema Version",
+            "type": "string"
+          },
+          "scope": {
+            "$ref": "#/$defs/Scope"
+          }
+        },
+        "required": [
+          "command_family",
+          "command_id",
+          "scope",
+          "actor_id"
+        ],
+        "title": "CommandIdentity",
+        "type": "object"
+      },
+      "DraftSelection": {
+        "additionalProperties": false,
+        "properties": {
+          "content_sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Content Sha256",
+            "type": "string"
+          },
+          "draft_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Draft Id",
+            "type": "string"
+          },
+          "revision": {
+            "maximum": 9007199254740991,
+            "minimum": 1,
+            "title": "Revision",
+            "type": "integer"
+          },
+          "universe_sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Universe Sha256",
+            "type": "string"
+          },
+          "validation_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Validation Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "draft_id",
+          "revision",
+          "content_sha256",
+          "validation_id",
+          "universe_sha256"
+        ],
+        "title": "DraftSelection",
+        "type": "object"
+      },
+      "GraphBinding": {
+        "additionalProperties": false,
+        "properties": {
+          "port": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Port",
+            "type": "string"
+          },
+          "value": {
+            "discriminator": {
+              "mapping": {
+                "artifact": "#/$defs/ArtifactConstant",
+                "boolean": "#/$defs/BooleanConstant",
+                "collection": "#/$defs/CollectionValue",
+                "integer": "#/$defs/IntegerConstant",
+                "number": "#/$defs/NumberValue",
+                "string": "#/$defs/StringConstant"
+              },
+              "propertyName": "kind"
+            },
+            "oneOf": [
+              {
+                "$ref": "#/$defs/BooleanConstant"
+              },
+              {
+                "$ref": "#/$defs/IntegerConstant"
+              },
+              {
+                "$ref": "#/$defs/NumberValue"
+              },
+              {
+                "$ref": "#/$defs/StringConstant"
+              },
+              {
+                "$ref": "#/$defs/ArtifactConstant"
+              },
+              {
+                "$ref": "#/$defs/CollectionValue"
+              }
+            ],
+            "title": "Value"
+          }
+        },
+        "required": [
+          "port",
+          "value"
+        ],
+        "title": "GraphBinding",
+        "type": "object"
+      },
+      "GraphLimits": {
+        "additionalProperties": false,
+        "properties": {
+          "deadline_seconds": {
+            "default": 3600,
+            "maximum": 86400,
+            "minimum": 1,
+            "title": "Deadline Seconds",
+            "type": "integer"
+          },
+          "max_activations": {
+            "default": 10000,
+            "maximum": 100000,
+            "minimum": 1,
+            "title": "Max Activations",
+            "type": "integer"
+          }
+        },
+        "title": "GraphLimits",
+        "type": "object"
+      },
+      "IntegerConstant": {
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "const": "integer",
+            "title": "Kind",
+            "type": "string"
+          },
+          "unit": {
+            "default": "1",
+            "maxLength": 64,
+            "minLength": 1,
+            "title": "Unit",
+            "type": "string"
+          },
+          "value": {
+            "maximum": 9007199254740991,
+            "minimum": -9007199254740991,
+            "title": "Value",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "kind",
+          "value"
+        ],
+        "title": "IntegerConstant",
+        "type": "object"
+      },
+      "LaunchProfileRef": {
+        "additionalProperties": false,
+        "properties": {
+          "profile_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Profile Id",
+            "type": "string"
+          },
+          "sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Sha256",
+            "type": "string"
+          },
+          "version": {
+            "const": "1",
+            "title": "Version",
+            "type": "string"
+          }
+        },
+        "required": [
+          "profile_id",
+          "version",
+          "sha256"
+        ],
+        "title": "LaunchProfileRef",
+        "type": "object"
+      },
+      "MissingValue": {
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "const": "missing",
+            "title": "Kind",
+            "type": "string"
+          },
+          "member_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Member Id",
+            "type": "string"
+          },
+          "reason_code": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Reason Code",
+            "type": "string"
+          }
+        },
+        "required": [
+          "kind",
+          "reason_code",
+          "member_id"
+        ],
+        "title": "MissingValue",
+        "type": "object"
+      },
+      "NodeOutputSource": {
+        "additionalProperties": false,
+        "properties": {
+          "activation_id": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Activation Id",
+            "type": "string"
+          },
+          "kind": {
+            "const": "node_output",
+            "default": "node_output",
+            "title": "Kind",
+            "type": "string"
+          },
+          "port": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Port",
+            "type": "string"
+          }
+        },
+        "required": [
+          "activation_id",
+          "port"
+        ],
+        "title": "NodeOutputSource",
+        "type": "object"
+      },
+      "NumberValue": {
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "const": "number",
+            "title": "Kind",
+            "type": "string"
+          },
+          "unit": {
+            "default": "1",
+            "maxLength": 64,
+            "minLength": 1,
+            "title": "Unit",
+            "type": "string"
+          },
+          "value": {
+            "maxLength": 427,
+            "pattern": "^-?(?:(?:0|[1-9][0-9]{0,99})(?:\\.[0-9]{1,324})?|10{100})$",
+            "title": "Value",
+            "type": "string"
+          }
+        },
+        "required": [
+          "kind",
+          "value"
+        ],
+        "title": "NumberValue",
+        "type": "object"
+      },
+      "PredecessorCut": {
+        "additionalProperties": false,
+        "properties": {
+          "plan_sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Plan Sha256",
+            "type": "string"
+          },
+          "revision": {
+            "maximum": 9007199254740991,
+            "minimum": 0,
+            "title": "Revision",
+            "type": "integer"
+          },
+          "run_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Run Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "run_id",
+          "plan_sha256",
+          "revision"
+        ],
+        "title": "PredecessorCut",
+        "type": "object"
+      },
+      "RunOutputSource": {
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "const": "run_output",
+            "default": "run_output",
+            "title": "Kind",
+            "type": "string"
+          },
+          "port": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Port",
+            "type": "string"
+          }
+        },
+        "required": [
+          "port"
+        ],
+        "title": "RunOutputSource",
+        "type": "object"
+      },
+      "SchemaRef": {
+        "additionalProperties": false,
+        "properties": {
+          "schema_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Schema Id",
+            "type": "string"
+          },
+          "sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Sha256",
+            "type": "string"
+          },
+          "version": {
+            "const": "1",
+            "title": "Version",
+            "type": "string"
+          }
+        },
+        "required": [
+          "schema_id",
+          "version",
+          "sha256"
+        ],
+        "title": "SchemaRef",
+        "type": "object"
+      },
+      "Scope": {
+        "additionalProperties": false,
+        "properties": {
+          "project_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Project Id",
+            "type": "string"
+          },
+          "tenant_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Tenant Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "tenant_id",
+          "project_id"
+        ],
+        "title": "Scope",
+        "type": "object"
+      },
+      "StringConstant": {
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "const": "string",
+            "title": "Kind",
+            "type": "string"
+          },
+          "value": {
+            "maxLength": 4096,
+            "title": "Value",
+            "type": "string"
+          }
+        },
+        "required": [
+          "kind",
+          "value"
+        ],
+        "title": "StringConstant",
+        "type": "object"
+      },
+      "SuccessorAdmission": {
+        "additionalProperties": false,
+        "properties": {
+          "encoding": {
+            "const": "amphora-command-v2",
+            "title": "Encoding",
+            "type": "string"
+          },
+          "identity": {
+            "$ref": "#/$defs/CommandIdentity"
+          },
+          "payload": {
+            "$ref": "#/$defs/AdmitDraftSuccessor"
+          }
+        },
+        "required": [
+          "encoding",
+          "identity",
+          "payload"
+        ],
+        "title": "SuccessorAdmission",
+        "type": "object"
+      },
+      "SuccessorLaunchSpecification": {
+        "additionalProperties": false,
+        "properties": {
+          "admission": {
+            "$ref": "#/$defs/SuccessorAdmission"
+          },
+          "profile": {
+            "$ref": "#/$defs/LaunchProfileRef"
+          }
+        },
+        "required": [
+          "profile",
+          "admission"
+        ],
+        "title": "SuccessorLaunchSpecification",
+        "type": "object"
+      }
+    },
+    "$id": "urn:amphora:campaign-successor-launch.request:1:serialization",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "additionalProperties": false,
+    "properties": {
+      "encoding": {
+        "const": "amphora-command-v2",
+        "title": "Encoding",
+        "type": "string"
+      },
+      "identity": {
+        "$ref": "#/$defs/CommandIdentity"
+      },
+      "payload": {
+        "$ref": "#/$defs/SuccessorLaunchSpecification"
+      }
+    },
+    "required": [
+      "encoding",
+      "identity",
+      "payload"
+    ],
+    "title": "SuccessorLaunchRequest",
+    "type": "object"
+  },
+  "receipt": {
+    "$defs": {
+      "AcceptedReceipt": {
+        "additionalProperties": false,
+        "properties": {
+          "binding": {
+            "$ref": "#/$defs/ReceiptBinding"
+          },
+          "committed": {
+            "$ref": "#/$defs/CommittedReference"
+          },
+          "status": {
+            "const": "accepted",
+            "title": "Status",
+            "type": "string"
+          }
+        },
+        "required": [
+          "status",
+          "binding",
+          "committed"
+        ],
+        "title": "AcceptedReceipt",
+        "type": "object"
+      },
+      "CommandIdentity": {
+        "additionalProperties": false,
+        "properties": {
+          "actor_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Actor Id",
+            "type": "string"
+          },
+          "command_family": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Command Family",
+            "type": "string"
+          },
+          "command_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Command Id",
+            "type": "string"
+          },
+          "schema_version": {
+            "const": "1",
+            "default": "1",
+            "title": "Schema Version",
+            "type": "string"
+          },
+          "scope": {
+            "$ref": "#/$defs/Scope"
+          }
+        },
+        "required": [
+          "command_family",
+          "command_id",
+          "scope",
+          "actor_id"
+        ],
+        "title": "CommandIdentity",
+        "type": "object"
+      },
+      "CommandReceipt": {
+        "additionalProperties": false,
+        "properties": {
+          "outcome": {
+            "discriminator": {
+              "mapping": {
+                "accepted": "#/$defs/AcceptedReceipt",
+                "pending": "#/$defs/PendingReceipt",
+                "rejected": "#/$defs/RejectedReceipt"
+              },
+              "propertyName": "status"
+            },
+            "oneOf": [
+              {
+                "$ref": "#/$defs/PendingReceipt"
+              },
+              {
+                "$ref": "#/$defs/AcceptedReceipt"
+              },
+              {
+                "$ref": "#/$defs/RejectedReceipt"
+              }
+            ],
+            "title": "Outcome"
+          },
+          "schema_version": {
+            "const": "1",
+            "default": "1",
+            "title": "Schema Version",
+            "type": "string"
+          }
+        },
+        "required": [
+          "outcome"
+        ],
+        "title": "CommandReceipt",
+        "type": "object"
+      },
+      "CommittedReference": {
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "enum": [
+              "run",
+              "attempt",
+              "completion",
+              "worker_policy"
+            ],
+            "title": "Kind",
+            "type": "string"
+          },
+          "object_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Object Id",
+            "type": "string"
+          },
+          "revision": {
+            "maximum": 9007199254740991,
+            "minimum": 0,
+            "title": "Revision",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "kind",
+          "object_id",
+          "revision"
+        ],
+        "title": "CommittedReference",
+        "type": "object"
+      },
+      "LaunchProfileRef": {
+        "additionalProperties": false,
+        "properties": {
+          "profile_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Profile Id",
+            "type": "string"
+          },
+          "sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Sha256",
+            "type": "string"
+          },
+          "version": {
+            "const": "1",
+            "title": "Version",
+            "type": "string"
+          }
+        },
+        "required": [
+          "profile_id",
+          "version",
+          "sha256"
+        ],
+        "title": "LaunchProfileRef",
+        "type": "object"
+      },
+      "PendingReceipt": {
+        "additionalProperties": false,
+        "properties": {
+          "binding": {
+            "$ref": "#/$defs/ReceiptBinding"
+          },
+          "status": {
+            "const": "pending",
+            "title": "Status",
+            "type": "string"
+          }
+        },
+        "required": [
+          "status",
+          "binding"
+        ],
+        "title": "PendingReceipt",
+        "type": "object"
+      },
+      "PredecessorCut": {
+        "additionalProperties": false,
+        "properties": {
+          "plan_sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Plan Sha256",
+            "type": "string"
+          },
+          "revision": {
+            "maximum": 9007199254740991,
+            "minimum": 0,
+            "title": "Revision",
+            "type": "integer"
+          },
+          "run_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Run Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "run_id",
+          "plan_sha256",
+          "revision"
+        ],
+        "title": "PredecessorCut",
+        "type": "object"
+      },
+      "ReceiptBinding": {
+        "additionalProperties": false,
+        "properties": {
+          "identity": {
+            "$ref": "#/$defs/CommandIdentity"
+          },
+          "operation_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Operation Id",
+            "type": "string"
+          },
+          "request_sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Request Sha256",
+            "type": "string"
+          }
+        },
+        "required": [
+          "identity",
+          "request_sha256",
+          "operation_id"
+        ],
+        "title": "ReceiptBinding",
+        "type": "object"
+      },
+      "RejectedReceipt": {
+        "additionalProperties": false,
+        "properties": {
+          "binding": {
+            "$ref": "#/$defs/ReceiptBinding"
+          },
+          "reason_code": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Reason Code",
+            "type": "string"
+          },
+          "status": {
+            "const": "rejected",
+            "title": "Status",
+            "type": "string"
+          }
+        },
+        "required": [
+          "status",
+          "binding",
+          "reason_code"
+        ],
+        "title": "RejectedReceipt",
+        "type": "object"
+      },
+      "Scope": {
+        "additionalProperties": false,
+        "properties": {
+          "project_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Project Id",
+            "type": "string"
+          },
+          "tenant_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Tenant Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "tenant_id",
+          "project_id"
+        ],
+        "title": "Scope",
+        "type": "object"
+      },
+      "WorkerReadiness": {
+        "additionalProperties": false,
+        "properties": {
+          "expected": {
+            "maximum": 64,
+            "minimum": 0,
+            "title": "Expected",
+            "type": "integer"
+          },
+          "ready": {
+            "maximum": 64,
+            "minimum": 0,
+            "title": "Ready",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "expected",
+          "ready"
+        ],
+        "title": "WorkerReadiness",
+        "type": "object"
+      }
+    },
+    "$id": "urn:amphora:campaign-successor-launch.receipt:1:serialization",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "additionalProperties": false,
+    "properties": {
+      "admission": {
+        "anyOf": [
+          {
+            "$ref": "#/$defs/CommandReceipt"
+          },
+          {
+            "type": "null"
+          }
+        ]
+      },
+      "created_at": {
+        "format": "date-time",
+        "title": "Created At",
+        "type": "string"
+      },
+      "identity": {
+        "$ref": "#/$defs/CommandIdentity"
+      },
+      "phase": {
+        "enum": [
+          "preparing",
+          "admission_unresolved",
+          "rejected",
+          "admitted_not_engaged",
+          "engaging",
+          "engaged",
+          "draining",
+          "released",
+          "recovery_required"
+        ],
+        "title": "Phase",
+        "type": "string"
+      },
+      "predecessor": {
+        "$ref": "#/$defs/PredecessorCut"
+      },
+      "profile": {
+        "$ref": "#/$defs/LaunchProfileRef"
+      },
+      "profile_kind": {
+        "const": "campaign-successor-launch.v1",
+        "title": "Profile Kind",
+        "type": "string"
+      },
+      "reason_code": {
+        "anyOf": [
+          {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "title": "Reason Code"
+      },
+      "request_sha256": {
+        "pattern": "^[0-9a-f]{64}$",
+        "title": "Request Sha256",
+        "type": "string"
+      },
+      "revision": {
+        "maximum": 9007199254740991,
+        "minimum": 0,
+        "title": "Revision",
+        "type": "integer"
+      },
+      "run_id": {
+        "anyOf": [
+          {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "title": "Run Id"
+      },
+      "updated_at": {
+        "format": "date-time",
+        "title": "Updated At",
+        "type": "string"
+      },
+      "wire_version": {
+        "const": "1",
+        "default": "1",
+        "title": "Wire Version",
+        "type": "string"
+      },
+      "workers": {
+        "$ref": "#/$defs/WorkerReadiness"
+      }
+    },
+    "required": [
+      "profile_kind",
+      "identity",
+      "request_sha256",
+      "profile",
+      "predecessor",
+      "revision",
+      "phase",
+      "reason_code",
+      "created_at",
+      "updated_at",
+      "admission",
+      "run_id",
+      "workers"
+    ],
+    "title": "SuccessorLaunchReceipt",
+    "type": "object"
+  },
+  "query": {
+    "$defs": {
+      "CommandIdentity": {
+        "additionalProperties": false,
+        "properties": {
+          "actor_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Actor Id",
+            "type": "string"
+          },
+          "command_family": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Command Family",
+            "type": "string"
+          },
+          "command_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Command Id",
+            "type": "string"
+          },
+          "schema_version": {
+            "const": "1",
+            "default": "1",
+            "title": "Schema Version",
+            "type": "string"
+          },
+          "scope": {
+            "$ref": "#/$defs/Scope"
+          }
+        },
+        "required": [
+          "command_family",
+          "command_id",
+          "scope",
+          "actor_id"
+        ],
+        "title": "CommandIdentity",
+        "type": "object"
+      },
+      "Scope": {
+        "additionalProperties": false,
+        "properties": {
+          "project_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Project Id",
+            "type": "string"
+          },
+          "tenant_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Tenant Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "tenant_id",
+          "project_id"
+        ],
+        "title": "Scope",
+        "type": "object"
+      }
+    },
+    "$id": "urn:amphora:campaign-successor-launch.receipt-query:1:serialization",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "additionalProperties": false,
+    "properties": {
+      "identity": {
+        "$ref": "#/$defs/CommandIdentity"
+      },
+      "request_sha256": {
+        "pattern": "^[0-9a-f]{64}$",
+        "title": "Request Sha256",
+        "type": "string"
+      }
+    },
+    "required": [
+      "identity",
+      "request_sha256"
+    ],
+    "title": "SuccessorLaunchReceiptQuery",
+    "type": "object"
+  },
+  "admission": {
+    "$defs": {
+      "ArtifactConstant": {
+        "additionalProperties": false,
+        "properties": {
+          "artifact": {
+            "$ref": "#/$defs/ArtifactRef"
+          },
+          "kind": {
+            "const": "artifact",
+            "title": "Kind",
+            "type": "string"
+          },
+          "representation": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Representation",
+            "type": "string"
+          },
+          "unit": {
+            "maxLength": 64,
+            "minLength": 1,
+            "title": "Unit",
+            "type": "string"
+          }
+        },
+        "required": [
+          "kind",
+          "artifact",
+          "representation",
+          "unit"
+        ],
+        "title": "ArtifactConstant",
+        "type": "object"
+      },
+      "ArtifactRef": {
+        "additionalProperties": false,
+        "properties": {
+          "artifact_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Artifact Id",
+            "type": "string"
+          },
+          "media_type": {
+            "maxLength": 128,
+            "minLength": 3,
+            "pattern": "^[^\\s/]+/[^\\s/]+$",
+            "title": "Media Type",
+            "type": "string"
+          },
+          "schema_ref": {
+            "$ref": "#/$defs/SchemaRef"
+          },
+          "scope": {
+            "$ref": "#/$defs/Scope"
+          },
+          "sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Sha256",
+            "type": "string"
+          },
+          "size_bytes": {
+            "maximum": 9007199254740991,
+            "minimum": 0,
+            "title": "Size Bytes",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "artifact_id",
+          "scope",
+          "sha256",
+          "media_type",
+          "schema_ref",
+          "size_bytes"
+        ],
+        "title": "ArtifactRef",
+        "type": "object"
+      },
+      "AttemptBudget": {
+        "additionalProperties": false,
+        "properties": {
+          "limit": {
+            "maximum": 9007199254740991,
+            "minimum": 1,
+            "title": "Limit",
+            "type": "integer"
+          },
+          "max_attempts_per_activation": {
+            "default": 3,
+            "maximum": 100,
+            "minimum": 1,
+            "title": "Max Attempts Per Activation",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "limit"
+        ],
+        "title": "AttemptBudget",
+        "type": "object"
+      },
+      "BooleanConstant": {
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "const": "boolean",
+            "title": "Kind",
+            "type": "string"
+          },
+          "value": {
+            "title": "Value",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "kind",
+          "value"
+        ],
+        "title": "BooleanConstant",
+        "type": "object"
+      },
+      "CarriedBinding": {
+        "additionalProperties": false,
+        "properties": {
+          "expected_value_sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Expected Value Sha256",
+            "type": "string"
+          },
+          "source": {
+            "discriminator": {
+              "mapping": {
+                "node_output": "#/$defs/NodeOutputSource",
+                "run_output": "#/$defs/RunOutputSource"
+              },
+              "propertyName": "kind"
+            },
+            "oneOf": [
+              {
+                "$ref": "#/$defs/RunOutputSource"
+              },
+              {
+                "$ref": "#/$defs/NodeOutputSource"
+              }
+            ],
+            "title": "Source"
+          },
+          "target_port": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Target Port",
+            "type": "string"
+          }
+        },
+        "required": [
+          "target_port",
+          "source",
+          "expected_value_sha256"
+        ],
+        "title": "CarriedBinding",
+        "type": "object"
+      },
+      "CollectionValue": {
+        "additionalProperties": false,
+        "properties": {
+          "items": {
+            "items": {
+              "anyOf": [
+                {
+                  "discriminator": {
+                    "mapping": {
+                      "artifact": "#/$defs/ArtifactConstant",
+                      "boolean": "#/$defs/BooleanConstant",
+                      "integer": "#/$defs/IntegerConstant",
+                      "number": "#/$defs/NumberValue",
+                      "string": "#/$defs/StringConstant"
+                    },
+                    "propertyName": "kind"
+                  },
+                  "oneOf": [
+                    {
+                      "$ref": "#/$defs/BooleanConstant"
+                    },
+                    {
+                      "$ref": "#/$defs/IntegerConstant"
+                    },
+                    {
+                      "$ref": "#/$defs/NumberValue"
+                    },
+                    {
+                      "$ref": "#/$defs/StringConstant"
+                    },
+                    {
+                      "$ref": "#/$defs/ArtifactConstant"
+                    }
+                  ]
+                },
+                {
+                  "$ref": "#/$defs/MissingValue"
+                }
+              ]
+            },
+            "maxItems": 10000,
+            "title": "Items",
+            "type": "array"
+          },
+          "kind": {
+            "const": "collection",
+            "title": "Kind",
+            "type": "string"
+          }
+        },
+        "required": [
+          "kind",
+          "items"
+        ],
+        "title": "CollectionValue",
+        "type": "object"
+      },
+      "DraftSelection": {
+        "additionalProperties": false,
+        "properties": {
+          "content_sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Content Sha256",
+            "type": "string"
+          },
+          "draft_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Draft Id",
+            "type": "string"
+          },
+          "revision": {
+            "maximum": 9007199254740991,
+            "minimum": 1,
+            "title": "Revision",
+            "type": "integer"
+          },
+          "universe_sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Universe Sha256",
+            "type": "string"
+          },
+          "validation_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Validation Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "draft_id",
+          "revision",
+          "content_sha256",
+          "validation_id",
+          "universe_sha256"
+        ],
+        "title": "DraftSelection",
+        "type": "object"
+      },
+      "GraphBinding": {
+        "additionalProperties": false,
+        "properties": {
+          "port": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Port",
+            "type": "string"
+          },
+          "value": {
+            "discriminator": {
+              "mapping": {
+                "artifact": "#/$defs/ArtifactConstant",
+                "boolean": "#/$defs/BooleanConstant",
+                "collection": "#/$defs/CollectionValue",
+                "integer": "#/$defs/IntegerConstant",
+                "number": "#/$defs/NumberValue",
+                "string": "#/$defs/StringConstant"
+              },
+              "propertyName": "kind"
+            },
+            "oneOf": [
+              {
+                "$ref": "#/$defs/BooleanConstant"
+              },
+              {
+                "$ref": "#/$defs/IntegerConstant"
+              },
+              {
+                "$ref": "#/$defs/NumberValue"
+              },
+              {
+                "$ref": "#/$defs/StringConstant"
+              },
+              {
+                "$ref": "#/$defs/ArtifactConstant"
+              },
+              {
+                "$ref": "#/$defs/CollectionValue"
+              }
+            ],
+            "title": "Value"
+          }
+        },
+        "required": [
+          "port",
+          "value"
+        ],
+        "title": "GraphBinding",
+        "type": "object"
+      },
+      "GraphLimits": {
+        "additionalProperties": false,
+        "properties": {
+          "deadline_seconds": {
+            "default": 3600,
+            "maximum": 86400,
+            "minimum": 1,
+            "title": "Deadline Seconds",
+            "type": "integer"
+          },
+          "max_activations": {
+            "default": 10000,
+            "maximum": 100000,
+            "minimum": 1,
+            "title": "Max Activations",
+            "type": "integer"
+          }
+        },
+        "title": "GraphLimits",
+        "type": "object"
+      },
+      "IntegerConstant": {
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "const": "integer",
+            "title": "Kind",
+            "type": "string"
+          },
+          "unit": {
+            "default": "1",
+            "maxLength": 64,
+            "minLength": 1,
+            "title": "Unit",
+            "type": "string"
+          },
+          "value": {
+            "maximum": 9007199254740991,
+            "minimum": -9007199254740991,
+            "title": "Value",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "kind",
+          "value"
+        ],
+        "title": "IntegerConstant",
+        "type": "object"
+      },
+      "MissingValue": {
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "const": "missing",
+            "title": "Kind",
+            "type": "string"
+          },
+          "member_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Member Id",
+            "type": "string"
+          },
+          "reason_code": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Reason Code",
+            "type": "string"
+          }
+        },
+        "required": [
+          "kind",
+          "reason_code",
+          "member_id"
+        ],
+        "title": "MissingValue",
+        "type": "object"
+      },
+      "NodeOutputSource": {
+        "additionalProperties": false,
+        "properties": {
+          "activation_id": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Activation Id",
+            "type": "string"
+          },
+          "kind": {
+            "const": "node_output",
+            "default": "node_output",
+            "title": "Kind",
+            "type": "string"
+          },
+          "port": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Port",
+            "type": "string"
+          }
+        },
+        "required": [
+          "activation_id",
+          "port"
+        ],
+        "title": "NodeOutputSource",
+        "type": "object"
+      },
+      "NumberValue": {
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "const": "number",
+            "title": "Kind",
+            "type": "string"
+          },
+          "unit": {
+            "default": "1",
+            "maxLength": 64,
+            "minLength": 1,
+            "title": "Unit",
+            "type": "string"
+          },
+          "value": {
+            "maxLength": 427,
+            "pattern": "^-?(?:(?:0|[1-9][0-9]{0,99})(?:\\.[0-9]{1,324})?|10{100})$",
+            "title": "Value",
+            "type": "string"
+          }
+        },
+        "required": [
+          "kind",
+          "value"
+        ],
+        "title": "NumberValue",
+        "type": "object"
+      },
+      "PredecessorCut": {
+        "additionalProperties": false,
+        "properties": {
+          "plan_sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Plan Sha256",
+            "type": "string"
+          },
+          "revision": {
+            "maximum": 9007199254740991,
+            "minimum": 0,
+            "title": "Revision",
+            "type": "integer"
+          },
+          "run_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Run Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "run_id",
+          "plan_sha256",
+          "revision"
+        ],
+        "title": "PredecessorCut",
+        "type": "object"
+      },
+      "RunOutputSource": {
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "const": "run_output",
+            "default": "run_output",
+            "title": "Kind",
+            "type": "string"
+          },
+          "port": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Port",
+            "type": "string"
+          }
+        },
+        "required": [
+          "port"
+        ],
+        "title": "RunOutputSource",
+        "type": "object"
+      },
+      "SchemaRef": {
+        "additionalProperties": false,
+        "properties": {
+          "schema_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Schema Id",
+            "type": "string"
+          },
+          "sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Sha256",
+            "type": "string"
+          },
+          "version": {
+            "const": "1",
+            "title": "Version",
+            "type": "string"
+          }
+        },
+        "required": [
+          "schema_id",
+          "version",
+          "sha256"
+        ],
+        "title": "SchemaRef",
+        "type": "object"
+      },
+      "Scope": {
+        "additionalProperties": false,
+        "properties": {
+          "project_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Project Id",
+            "type": "string"
+          },
+          "tenant_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Tenant Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "tenant_id",
+          "project_id"
+        ],
+        "title": "Scope",
+        "type": "object"
+      },
+      "StringConstant": {
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "const": "string",
+            "title": "Kind",
+            "type": "string"
+          },
+          "value": {
+            "maxLength": 4096,
+            "title": "Value",
+            "type": "string"
+          }
+        },
+        "required": [
+          "kind",
+          "value"
+        ],
+        "title": "StringConstant",
+        "type": "object"
+      }
+    },
+    "$id": "urn:amphora:graph-runtime.draft-successor-admission:1:serialization",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "additionalProperties": false,
+    "properties": {
+      "budget": {
+        "$ref": "#/$defs/AttemptBudget"
+      },
+      "carried": {
+        "items": {
+          "$ref": "#/$defs/CarriedBinding"
+        },
+        "maxItems": 64,
+        "title": "Carried",
+        "type": "array"
+      },
+      "draft": {
+        "$ref": "#/$defs/DraftSelection"
+      },
+      "inputs": {
+        "items": {
+          "$ref": "#/$defs/GraphBinding"
+        },
+        "maxItems": 64,
+        "title": "Inputs",
+        "type": "array"
+      },
+      "limits": {
+        "$ref": "#/$defs/GraphLimits",
+        "default": {
+          "deadline_seconds": 3600,
+          "max_activations": 10000
+        }
+      },
+      "plan_sha256": {
+        "pattern": "^[0-9a-f]{64}$",
+        "title": "Plan Sha256",
+        "type": "string"
+      },
+      "predecessor": {
+        "$ref": "#/$defs/PredecessorCut"
+      },
+      "schema_version": {
+        "const": "1",
+        "default": "1",
+        "title": "Schema Version",
+        "type": "string"
+      }
+    },
+    "required": [
+      "plan_sha256",
+      "inputs",
+      "budget",
+      "predecessor",
+      "carried",
+      "draft"
+    ],
+    "title": "AdmitDraftSuccessor",
+    "type": "object"
+  }
+}
