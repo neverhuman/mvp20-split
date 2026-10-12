@@ -1,21 +1,34 @@
 # Restore
 
-Refreshed 2026-10-12 05:38:10 America/Chicago. Read FIRST after compaction.
+Refreshed 2026-10-12 05:45:39 America/Chicago. Read FIRST after compaction.
 Continue across checkpoints/commits/compaction until genuinely needed. No agents
 or JARVIS. v1 read-only. Preserve user untracked ocular PDF/DOCX. No source/tests/
 module README edits while tests/installations run. No owner decision needed.
 
 ## Canonical position
 
-UI-01.08 approved80%; P1/P2/P3/P4=100,P5=0. P4.4a/b/c=100.
-ACTIVE P5.1 freeze live scope/input/budget. UI01=76/Build95/Verification0;
-UI01.05=93.33,K1/R1=100,I1=80. Trackers synchronized; do not alter order:
+UI-01.08 approved85%; P1/P2/P3/P4=100,P5=25. P4.4a/b/c=100.
+ACTIVE P5.2 live supported-change original request. UI01=77/Build96.25/Verification0;
+UI01.05=95,K1/R1=100,I1=85. Trackers synchronized; do not alter order:
 UI01->UI02->POP01->ML01. LR01 paused25/Build33.33. UI01.06/07 closed100.
 P5 must declare ONE synthetic scope,4 physical calls/$1 total,max$0.25original
 hold/call. ZERO paid calls or real model keys read this turn. No retries/refunds/
 new-scope evasion. P4 has2 deterministic synthetic sends, both retained.
 
 ## Immediate work
+
+be7d26be PUSHED P4 actualintegration/recovery/browser. P5.1 nowPASS: new dev
+curation_live_qualification/{prepare,configuration,allowance}.py andREADME.
+Preparation45800FINISHED; curation-live-preparation-a/replay.logPASS.
+Actualinitial-allowance:2slots/500000000unitsheld,2slots/500000000remaining.
+Outputv2/.test-results/curation-live-20261012a; frozen-files.json pins allconfig.
+No modelkeyread/paidcall; NOsessionsrunning. Sourceprep/docsreadycommitbeforecalls.
+Nextimplement live target worker/controller forone supported graph change; then
+one missingcapability. ActualproviderONLY; do not reuse syntheticadapter. Freeze
+validation mustprecedealllivework. ProcessusesinstalledPlanning0.127.2 andexisting
+scope,retainedoriginalpredecessor. PublicCurationView plus owner-local exactcapture
+export establish unchangedmodelgraph. Preserve originalpaidfailure ifany; no retry.
+
 
 P4.4a actual integration PASSED2026-10-12 05:23:04,logcuration-integrated-i.log.
 Original request02 compiled round12; successor b81abfe02efa4790a6adb8f6d72ac99a
