@@ -9,15 +9,15 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 ## Program Tracker
 
 - Status: UI-01 primary active; LAN-01 accepted/archived. LR-01 remains conditional; completed plans remain closed.
-- Last refreshed: 2026-10-12 05:21:32 (America/Chicago).
+- Last refreshed: 2026-10-12 05:34:30 (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
 - Current priority: schedule UI-01 Knowledge/run/LLM integration and UI-02 formula/structure views for2026-10-12 through2026-10-16; preserve the live demo.
-- Primary active task: UI-01/N3/I1, implementing approved [UI-01.08](UI-01.08%20Campaign%20curation%20boundary%20decision.md), P1=100%, P2=100%, P3=100%,P4=75%,P5=0%, child75%. N2=100%; launch/provenance remain closed. UI-01.05 K1/R1=100%, I1=75%, child91.67%.
-- Next task: UI-01.08/P4.4a actual owner/process integration fixture. UI-02 -> POP-01 -> ML-01 follow in order.
-- Implementation completion: LAN-01=100%; UI-01 active75%, Build93.75%, Verification0%; UI-02=0%, P1/P2/P3/P4=0%; LR-01 paused25%, Build33.33%, Acceptance0%.
+- Primary active task: UI-01/N3/I1, implementing approved [UI-01.08](UI-01.08%20Campaign%20curation%20boundary%20decision.md), P1=100%, P2=100%, P3=100%,P4=100%,P5=0%, child80%. N2=100%; launch/provenance remain closed. UI-01.05 K1/R1=100%, I1=80%, child93.33%.
+- Next task: UI-01.08/P5.1 frozen live qualification preparation. UI-02 -> POP-01 -> ML-01 follow in order.
+- Implementation completion: LAN-01=100%; UI-01 active76%, Build95%, Verification0%; UI-02=0%, P1/P2/P3/P4=0%; LR-01 paused25%, Build33.33%, Acceptance0%.
 - Blockers/dependencies: none; additive Planning curation and Deployment successor-launch boundaries approved. N3/I1 and candidate-structure producer remain unfinished; no calibrated scientific accuracy benchmark. UI-01.01 remains separate.
-- Latest checkpoint: Planning0.127.2 fixed-schema memoization preserves published bytes;98 scoped checks pass. Independent cold reconstruction32.5s->6.6s. Same retained proposal resumes actual successor qualification;0paid calls.
-- Acceptance posture: read-only N2 journey qualified; Studio0.26 served locally/LAN. N3/I1=75%, parent V1=0%; no full-engine acceptance or new paid provider calls.
+- Latest checkpoint: Planning0.127.2 fixed-schema memoization preserves published bytes;98 scoped checks pass. Independent cold reconstruction32.5s->6.6s. Actual retained proposal compiled; successor completed and preserved exact carried result/predecessor. P4 complete: actual owner/replacement/browser1440/390 recovery pass; no intercepted API responses or duplicate intents. P5 live preparation next;0paid calls.
+- Acceptance posture: read-only N2 journey qualified; Studio0.26 served locally/LAN. N3/I1=80%, parent V1=0%; no full-engine acceptance or new paid provider calls.
 - Active exception: owner scheduled four targets for next week. Preserve earned phase credit; sequence the bounded cross-plan handoffs below. Pull LR-01/UI-R01 forward only when their faults block the scheduled integration, with exact return points.
 
 ## Initial Delivery Boundary
@@ -31,9 +31,9 @@ The initial program proves software behavior using deterministic/synthetic fixtu
 ## Current In-Flight Work
 
 LAN-01 complete100%, archived in Completed; deployed viewer preserved.
-UI-01 is active at75%, Build93.75%, Verification0%. G0 graph review/design
+UI-01 is active at76%, Build95%, Verification0%. G0 graph review/design
 is a prerequisite and earns no implementation credit. G1/N1/N2/N3/V1 are five equal
-delivery gates. Phase mirror: G0=100%, G1=100%, N1=100%, N2=100%, N3=75%, V1=0%.
+delivery gates. Phase mirror: G0=100%, G1=100%, N1=100%, N2=100%, N3=80%, V1=0%.
 LR-01 is paused at25%, Build33.33%, Acceptance0%; R1=100%, R2/R3/V1=0%.
 Completed plans remain in the [completed index](Completed/README.md).
 
@@ -41,7 +41,7 @@ Completed plans remain in the [completed index](Completed/README.md).
 
 | Order | Canonical plan | Status | Overall | Build | Verification/Acceptance | Prerequisite |
 |---|---|---|---:|---:|---:|---|
-| 1 | [UI-01 Research Workspace Overhaul](UI-01%20Research%20Workspace%20Overhaul.md) | N2=100%; N3/I1 approved; UI-01.08/P4 active; P3 complete; P4 successor flow active | 75% | 93.75% | 0% | Additive curation/capability/successor boundaries |
+| 1 | [UI-01 Research Workspace Overhaul](UI-01%20Research%20Workspace%20Overhaul.md) | N2=100%; N3/I1 approved; UI-01.08/P5 active; P3 complete; P4 complete; P5 live qualification active | 76% | 95% | 0% | Additive curation/capability/successor boundaries |
 | 2 | [UI-02 Candidate Structure and Recommendation Views](UI-02%20Candidate%20Structure%20and%20Recommendation%20Views.md) | Scheduled next week; P1/P2/P3/P4=0% | 0% | 0% | 0% | Typed retained candidate structures and explicit selection evidence; activation audit |
 | 3 | [POP-01 Population Campaign Execution and Experience](POP-01%20Population%20Campaign%20Execution%20and%20Experience.md) | Queued; Execution/Experience/Qualification=0% | 0% | 0% | 0% | Knowledge/LLM workflow UI-01/V1 and UI-02/P4 complete |
 | 4 | [ML-01 Inherited Scientific Model Integration](ML-01%20Inherited%20Scientific%20Model%20Integration.md) | Standalone queued; M1/M2/M3/M4/V1=0% | 0% | 0% | 0% | UI-01/V1 + UI-02/P4, then POP-01 complete; qualified population/tool handoff |
@@ -172,6 +172,7 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 
 | Timestamp | Checkpoint | Evidence |
 |---|---|---|
+| 2026-10-12 05:27:40 | UI-01.08/P4.4a/b complete; child78.33%,parent75.67/Build94.58. | Actual compiler/successor seed/carry integration and two-process receipt/conflict/stale-predecessor rejection pass. 98 schema/compiler checks; immutable schema cache32.5s->6.6s. P4.4c browser next;0paid calls. |
 | 2026-10-12 05:02:01 | UI-01.08/P4.4a actual compiler composition repaired; percentages unchanged. |136initial +2focused source checks; independentPlanning0.127.1 resumes exact proposal and saves draft. Compiler pending diagnosis remains;0paid calls. |
 | 2026-10-12 04:13:30 | UI-01.08/P4.4a isolated preparation and blocking Deployment configuration repair; percentages unchanged. |178 lifecycle/launch checks; independent0.19.1 wheel; actual Planning curation readiness. No live-demo or paid-model change. |
 | 2026-10-11 22:52:39 | UI-01.08/P2.3b complete; P2=66.67%, child33.33%; UI01=66.67%/Build83.33%. |55initial/67final linkage and legacy journal checks; exact crash recovery/fencing; managed worker/compiler next;0paid calls. |
@@ -196,4 +197,3 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 | 2026-10-07 23:13:55 | UI-01.03 E1/E2/E3 complete; UI01=50%,Build62.50%,N2=50%. Owner review pending. | Two standalone scientific tools;21 isolated tests;108 Deployment tests;310 Studio tests; four Runtime-retained invocations and actual served1440/390 inspection. [Audit](../Audits/UI-01.03_Scientific_Execution.md). |
 | 2026-10-07 18:07:35 | UI-01 planned and prioritized0%; graph review first, then research workflow. LR-01 paused25%. | Owner-reported graph failure; [UI-01](UI-01%20Research%20Workspace%20Overhaul.md) owns six ordered phases with G0 design separate from implementation. |
 | 2026-10-07 14:49:53 | SQ-01 C2 complete; overall75%, Build92.5%, Verification66.67%. | Runtime175 tests; retained-only outcomes and old recipe bytes preserved. B3 proposal UI next. |
-| 2026-10-07 14:02:37 | SQ-01 C2b complete; overall69.44%, Build94.44%, Verification66.67%. | 242 compatibility/SQL/recovery tests and5 final checks; C2=66.67%; Runtime next. |
