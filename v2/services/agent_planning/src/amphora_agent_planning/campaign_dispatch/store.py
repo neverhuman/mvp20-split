@@ -67,7 +67,7 @@ class CompilerStore:
                 'stored_compiler_selection')
         return StoredCompilerSelection(selected, row['registered_at'])
 
-    def register(self, principal, selection):
+    def register(self, principal, selection, *, guard=None):
         selected = self.checked(principal, selection)
         principal.require('record_attempts', selected.document().origin.attempt.engagement.scope)
         # All origin rows are immutable. Load outside the short mutation
@@ -80,6 +80,8 @@ class CompilerStore:
             if existing is not None:
                 require(existing.selection == selected, 'compiler_selection_conflict')
                 return existing
+            if guard is not None:
+                guard(connection)
             reference = selected.document().origin.attempt
             connection.execute(text('INSERT INTO planning.compiler_selections '
                 '(tenant_id,project_id,selection_id,actor_id,engagement_id,request_sha256,ordinal,selection_sha256,canonical_bytes) '
@@ -88,6 +90,8 @@ class CompilerStore:
                     'request': reference.request_sha256, 'ordinal': reference.ordinal, 'digest': selected.sha256, 'body': selected.canonical})
             connection.execute(text('INSERT INTO planning.compiler_control (tenant_id,project_id,selection_id) '
                                     'VALUES (:tenant,:project,:selection)'), key)
+            if guard is not None:
+                guard(connection)
             return self.selection(connection, principal, key)
 
     def read(self, principal, identifier):

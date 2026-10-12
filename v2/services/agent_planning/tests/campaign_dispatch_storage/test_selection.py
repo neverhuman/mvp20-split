@@ -142,3 +142,21 @@ def test_invalid_lease_bounds_reject(stored, seconds):
     store, selection, _, _ = setup(stored)
     with pytest.raises(ValueError, match='compiler_lease_seconds'):
         store.acquire(stored.principal, selection.effect_id, seconds)
+
+
+@pytest.mark.parametrize('fail_at', [1, 2])
+def test_curation_registration_guard_rolls_back_new_rows_and_does_not_gate_replay(stored, fail_at):
+    store, selection, _, _ = setup(stored)
+    calls = []
+    def guard(conn):
+        calls.append(1)
+        if len(calls) == fail_at: raise ValueError('injected_curation_fence')
+    with pytest.raises(ValueError, match='injected_curation_fence'):
+        store.register(stored.principal, selection, guard=guard)
+    assert store.read(stored.principal, selection.effect_id) is None
+    key = store.key(stored.principal, selection.effect_id)
+    with stored.engine.connect() as conn:
+        assert conn.execute(text('SELECT count(*) FROM planning.compiler_control WHERE selection_id=:selection'), key).scalar_one() == 0
+    original = store.register(stored.principal, selection)
+    def forbidden(conn): raise AssertionError('Read-only replay does not require a new job fence')
+    assert store.register(stored.principal, selection, guard=forbidden) == original

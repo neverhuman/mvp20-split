@@ -97,8 +97,16 @@ class CompilerSelection:
         value = self.document()
         # Configuration and generated payload deliberately do not discriminate
         # the durable slot. The future journal rejects changed slot contents.
-        slot = {'format': 'planning-compiler-effect.v1', 'actor_id': value.actor_id,
-                'attempt': value.origin.attempt.model_dump(mode='json')}
+        return self.identity_for(value.actor_id, value.origin.attempt)
+
+    @staticmethod
+    def identity_for(actor_id, attempt):
+        from amphora_contracts_core import Identifier
+        from pydantic import TypeAdapter
+        actor_id = TypeAdapter(Identifier).validate_python(actor_id, strict=True)
+        attempt = ProviderAttemptRef.model_validate_json(attempt.model_dump_json())
+        slot = {'format': 'planning-compiler-effect.v1', 'actor_id': actor_id,
+                'attempt': attempt.model_dump(mode='json')}
         return 'compiler-' + hashlib.sha256(canonical(slot)).hexdigest()
 
     @property

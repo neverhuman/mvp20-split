@@ -1,50 +1,77 @@
 # Restore
 
-Refreshed 2026-10-11 23:16:57 America/Chicago. Read FIRST after compaction.
-Continue until needed persists across milestones and commits. No subagents/JARVIS.
-v1 read-only. Preserve untracked ocular PDF/DOCX. No source/test/module README
-edits while tests/installations run. Serving demo uses immutable copies.
+Refreshed 2026-10-12 00:05:20 America/Chicago. Read FIRST after compaction.
+Continue until needed across commits/gates/compaction. No subagents/JARVIS.
+v1 read-only; preserve untracked ocular PDF/DOCX. No source/tests/module README
+edits while tests/installations run. Serving demo uses immutable source copies.
 
 ## Canonical position
 
-UI-01.08 approved, active c.2 compiler handoff. Child34.26%; P1=100%, P2=71.30%,
-P3/P4/P5=0%. P2.1/2.2=100%, P2.3=85.19%, P2.4=0. P2.3a/b=100%; c55.56%.
-c.1policy/publication100%; c.2provider/compiler66.67%; c.3managedprocess0%.
-c.2outputs: original result100%,once-onlyexecution100%,compiler0%.
-UI01 overall66.85%,Build83.56%,Verification0; UI01.05=78.09%,I1=34.26%.
-Order UI01->UI02->POP01->ML01. LR01 paused25/Build33.33; UI01.06/07 closed100.
-Universal result index remains separately unapproved.
+UI-01.08 approved; active P2.3c.3 managed worker lifecycle/heartbeat/process.
+Child34.44%;P1=100%,P2=72.22%,P3/P4/P5=0. P2.1/2.2=100%,P2.3=88.89%,P2.4=0.
+P2.3a/b=100%;c66.67%(c.1policy/publication100,c.2provider/compiler100,c.3process0).
+ParentUI01=66.89%/Build83.61%/Verification0;UI01.05=78.15%,I1=34.44%.
+UI01.06/07 closed100. Order UI01->UI02->POP01->ML01. LR01 paused25/Build33.33.
+Universal result index remains separately unapproved. No user decision pending.
 
-## Latest verified checkpoint
+## Latest verified checkpoints
 
-189affbc pushed Planning0.117/planning0024 original context/durable linkage.
-Working Planning0.118/planning0025: reviewed policy/declaration publication100%.
-138 policy/declaration/legacy publication checks,10 final recovery/identity/CAS/
-loopback checks,20 HTTP/boundary checks passed. All tests FINISHED. No source
-rights grants, provider calls or live deployment changes. Sync locks then commit.
+21975bc1 pushed Planning0.120 once-only execution;61 scoped checks.
+fd5b7b4c pushed0.119 outcome projection;38checks.
+941a4e31 pushed0.118 reviewed declaration publication;138+10+20checks.
+189affbc pushed0.117 original context/preparation/job linkage;67finalchecks.
+Working0.121 compiler handoff now qualified:7 workflow/recovery tests406.24s,
+48 original selection/storage/boundary tests146.43s,2 final binding tests103.71s.
+ALL TESTS FINISHED. Sync0.121 locks then commit/push. No new compiler migration;
+latest planning0025 is declaration publication. Serving demo0021 unchanged.
 
-curation_policy builds declaration from reviewed immutable limits plus original
-Runtime context. curation_declaration stores original policy/command/Runtime bytes,
-then publishes derived configuration via existing Data APIs. Fenced immutable
-history recovers lost begin/finalize; uncertain PUT creates bounded replacement
-upload, not repeated same PUT. Foreign Data client rejected before registration.
-DeclarationTransport alone permits text/plain; old transport unchanged.
+## Implemented curation path
 
-CurationIntent engagement hashes original command; decision_scope remains reviewed
-declaration digest. Full prepared context includes original Runtime graph/run,
-Data processing, bounded Registry/Runtime schemas,1..8Knowledge heads/gaps and
-original Research selection. No private peer access or latest-head repinning.
+curation_policy freezes original structural/cost limits. curation_declaration
+retains policy/command/Runtime bytes and publishes derived configuration through
+existing Data APIs. No source-right grants. curations use original Runtime graph/
+terminal predecessor summary, Data processing, bounded Registry/Runtime metadata,
+1..8 Knowledge heads/gaps, original Research selection and untrusted human direction.
+Provider engagement hashes command; decision_scope is reviewed declaration digest.
+curation_preparation freezes exact request/packet/envelope and job linkage atomically
+at final linkage, recovering original stored input after partial retention.
+curation_execution recovers issued/observed calls before new config/Data work;
+new reservation/issuance has SQL job guards before writes+commit. Fresh Artifact
+processing twice; exact packet and durable deadline to one direct provider call.
+curation_result binds exact ordinal1 capture/reservation/settlement before progress;
+unknown, overage, invalid, graph, capability request and abstention remain distinct.
+curation_compiler derives unchanged actor+attempt compiler slot, reuses original
+CompilerStore/Progression/commands. New selection SQL guard; compiling/ready require
+retained original provider and Runtime validation. No graph substitution/admission.
+Compiler owns its independent lease after delegation; expiry of curation job cannot
+erase a committed owner command. Replacement recovers it before another POST.
 
-P2.3c.2 needs once-only original provider/observation/compiler integration; c.3
-managed worker/process. Use existing PlanningRunner.execute (one attempt), not
-new paid retry logic. Budget stops must include curation group reasons.
-No keys read and ZERO paid calls. P5 only: one declared synthetic scope,4calls/$1,
-max$.25 held per call; no fallback/retry/refund or second-scope budget evasion.
+## Next concrete work
 
-Multi-graph provenance limitation: legacy OriginProjection READ requires1graph;
-compiler save itself uses OriginIndex pointers and is not blocked. Approved
-CurationView retains original heads/proposal/draft. Resolve truthful multi-graph
-read/UI before qualification; never silently take first graph or claim complete.
+c.3 managed lifecycle/periodic heartbeat, bounded queue discovery, reviewed private
+configuration/public peer-client composition, CLI/process recovery. Existing
+supervision_scheduling is a structural example, not a curation adapter. Principal
+must match original actor/scope. Provider budget settings are fixed; no implicit
+model or source changes during recovery. c.2 test initially expired after a full
+save+validate sequence without heartbeat; between-step heartbeat fixed tests, and
+explicit expiry-after-Runtime-validation recovery passed. Real managed work needs
+periodic renewal during long processing/model/compiler calls. No lease-limit widening.
+
+Useful fixtures: tests/curation_execution/test_executor.py setup publishes original
+declaration with SDK scripted Data before linked input; unique scopes via
+curation_result/test_journal.py setup(before_freeze). curation_compiler/test_workflow
+builds exact valid synthetic future graph and uses real owner journals with scripted
+Runtime/Registry. No scientific claims or actual model calls in these tests.
+
+P2.4 independent installed replacement follows process gate. Then P3 capability
+requests/fulfillment, P4 successor/UI, P5 actual qualification. Multi-graph legacy
+OriginProjection READ supports one graph; save/index itself is not blocked. Keep
+UI truthful about requested versus consumed context; never silently select first
+head or label provenance complete. Approved CurationView retains original selected
+heads/proposal/provider/draft. No gratuitous additional public API is authorized.
+
+ZERO paid calls and no keys read. P5 only: one declared synthetic scope,4calls/$1,
+max$.25 original reservation/call, no retries/refunds/fallback or scope-budget evasion.
 
 ## Commands and guardrails
 
@@ -98,40 +125,3 @@ Isolated owners: v2/.test-results/origin-installation-20261011a/{planning,gatewa
 python is environment/Scripts/python.exe (NOT .venv). Deployment0.18.3 at
 launch-live-installation-20261009e. Other independent owners remain Runtime0.65,
 Data0.30/Registry0.1/Research0.40/Knowledge0.18. LAN --baseline is gateway.json.
-
-2026-10-11 23:32:44 America/Chicago:941a4e31 pushed Planning0.118/declaration publication.
-New curation_result/outcome.py+journal.py tested:38 outcome/job/HTTP/boundary cases
-pass; all tests FINISHED. Source0.119, sync locks then commit/push. Pure domain
-binds exact original preparation/ordinal1 capture/reservation/settlement. Fenced
-progress distinguishes graph, capabilities, abstention, invalid, unknown and overage;
-replay makes no model call and preserves later progress. c.2 not yet complete.
-Test fixture tests/curation_result/test_journal.py setup builds full original
-context with unique scope, rehashed Runtime draft/universe, paid-profile limits,
-then freezes linked input. All model calls are scripted, zero paid usage.
-NEXT curation execution: fresh processing checks, durable once-only dispatch,
-active job fence in new reservation/issuance transactions, exact envelope/deadline
-adapter wrapper. Reuse local journals; new guarded inserts only, original replay
-unchanged. Then existing CompilerSelection/Progression plus durable curation
-compiler linkage. No current tests/installations or user decision pending.
-
-2026-10-11 23:42:02 America/Chicago: fd5b7b4c pushed0.119/outcome. Working0.120 executor tested61
-scoped checks; all tests finished. Sync locks then commit/push. CurationExecutor
-recovers original observations/issuance before Data/provider configuration; new
-calls verify retained finalized declaration, fresh processing twice, exact packet
-and durable deadline. BudgetLedger.reserve/DispatchJournal.issue optional SQL guard
-only for new writes, before writes and final commit; legacy replay unchanged.
-Provider crash retains original issuance; replacement never sends again. Late paid
-observation/accounting persists even if job lease expires. ZERO paid calls/keys.
-
-Current percentages supersede earlier header until next trim: UI01.08=34.26%,
-P2=71.30%, P2.3=85.19%, c55.56%(c.1=100,c.2=66.67,c.3=0). c.2 outputs:
-original result100%,once-only executor100%,compiler0. Parent66.85%/Build83.56%,
-UI01.05=78.09%. NEXT compiler handoff. Existing CompilerSelection.effect_id is
-hash of original actor+attempt (independent output/config). Can derive/recover this
-slot and reuse CompilerStore/CompilerProgression; avoid unnecessary new link API.
-Need guarded new selection insert, compiling progress, exact validated DraftSelection
-projection; original commands/replacement preserved. Compiler owns its independent
-lease once delegated; no claim job expiry physically cancels issued work.
-Fixture tests/curation_execution/test_executor.py setup publishes original declaration
-with public SDK scripted Data peer before exact input freeze; unique scopes via
-curation_result.test_journal.setup(before_freeze callback). All scripts are local.

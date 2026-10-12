@@ -100,3 +100,13 @@ def test_rehashed_origin_requires_original_reconstruction(inputs):
     assert shaped.effect_id == selected.effect_id
     with pytest.raises(ValueError, match='compiler_selection_origin'):
         shaped.verify_origin(principal, authoring, config)
+
+
+def test_original_slot_can_be_recovered_without_current_configuration(inputs):
+    import hashlib
+    principal, authoring, config = inputs
+    selected = CompilerSelection.bind(*inputs)
+    attempt = authoring.review.composition.evidence.proposal.attempt.reference()
+    expected = 'compiler-' + hashlib.sha256(canonical({'format': 'planning-compiler-effect.v1',
+        'actor_id': principal.actor_id, 'attempt': attempt.model_dump(mode='json')})).hexdigest()
+    assert CompilerSelection.identity_for(principal.actor_id, attempt) == selected.effect_id == expected

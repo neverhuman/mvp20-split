@@ -68,3 +68,8 @@ observation and never changes the original Runtime command. Other compiler effec
 create no origin. Replacement and public projection are owned by campaign_origin;
 38 scoped PostgreSQL index/compiler/fence/race checks pass. Existing command/event
 bytes remain unchanged; the serving installation must migrate before upgrade.
+
+UI-01.08 curation derives the unchanged CompilerSelection slot through identity_for.
+Optional owner-local registration guard fences new selection/control insertion
+before writes and commit; retained selection replay is unchanged. Once selected,
+CompilerProgression uses its own lease and exact original command recovery.
