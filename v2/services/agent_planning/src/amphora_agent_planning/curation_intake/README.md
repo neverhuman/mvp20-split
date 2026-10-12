@@ -47,3 +47,7 @@ Apply0024 explicitly with a compatible migrator; do not run old migrators afterw
 Current GET reads the latest immutable curation_jobs projection when present; the
 receipt query remains the original queued acknowledgment. Readiness checks all
 four curation tables. Neither HTTP reads nor intake issue provider work.
+
+P3.1: GET enriches capability-request references deterministically from the retained
+original proposal. It does not rewrite queued receipts or persisted progress bytes.
+The dedicated capability_requests module owns identity/projection and read authority.

@@ -1,16 +1,16 @@
 # Restore
 
-Refreshed 2026-10-12 00:50:48 America/Chicago. Read FIRST after compaction.
+Refreshed 2026-10-12 01:00:31 America/Chicago. Read FIRST after compaction.
 Continue until needed across commits/gates/compaction. No subagents/JARVIS.
 v1 read-only; preserve untracked ocular PDF/DOCX. No source/tests/module README
 edits while tests/installations run. Serving demo uses immutable source copies.
 
 ## Canonical position
 
-UI-01.08 approved; active P3.1 original capability requests/read API.
-Child40.00%;P1=100%,P2=100%,P3/P4/P5=0. P2.1/2.2=100%,P2.3=100%,P2.4=100.
+UI-01.08 approved; active P3.2 explicit capability fulfillment.
+Child46.67%;P1=100%,P2=100%,P3=33.33%,P4/P5=0. P2.1/2.2=100%,P2.3=100%,P2.4=100.
 P2.3a/b=100%;c100%(c.1policy/publication100,c.2provider/compiler100,c.3process100).
-ParentUI01=68.00%/Build85.00%/Verification0;UI01.05=80.00%,I1=40.00%.
+ParentUI01=69.33%/Build86.67%/Verification0;UI01.05=82.22%,I1=46.67%.
 UI01.06/07 closed100. Order UI01->UI02->POP01->ML01. LR01 paused25/Build33.33.
 Universal result index remains separately unapproved. No user decision pending.
 
@@ -21,8 +21,7 @@ P2.4 now complete: fresh isolated0.123 wheel and public-only dependency closure,
 205checks:117context68.42s,36durable171.65s,52compiler/process653.11s. No skips/fails.
 Actual test SQL/CLI, scripted owner/provider peers. No keys or paid calls.
 Evidence .test-results/curation-installation-20261012a/evidence.json; owner/manifest.json.
-Exec67834 FINISHED. No tests/installations running. Helper
- dev/verify_curation_installation.py and latest docs pending commit/push.
+Exec67834 FINISHED. No tests/installations running. P2 qualification helper/docs committed and pushed deaa5c79.
 Serving immutable demo remains Planning0.107/migration0021; source schema0025.
 
 ## Implemented curation path
@@ -40,17 +39,28 @@ Private configuration/public clients/CLI check/run; disabled provider default;
 check reads no model key or work. Process-crash test exits73 after issuance,
 actual configured replacement stays unknown with full hold and one dispatch.
 
+## Latest P3 checkpoint
+
+2026-10-12 01:00:31: Planning0.124 capability_requests implemented and qualified48checks82.57s
+plus14 exact proposal-hash/ownership checks36.79s. ALL TESTS FINISHED.
+IDs capability-<curation digest>-<00..15>; complete original gaps/proposal hash derive
+from immutable captured output. No duplicate store/migration. Curation GET adds refs
+only to response; queued receipts/serialized progress unchanged. Independent scoped
+GET capability-requests, foreign actor/scope404, own read_capabilities grant.
+Canonical P3.1=100%,P3.2/P3.3=0%; version/locks/commit pending.
+No paid calls/keys/demo changes. Tests capability_requests own this boundary.
+
 ## Next concrete work
 
-P3.1 original capability requests and scoped read API; P3.2 explicit fulfillment;
+P3.2 explicit fulfillment;
 P3.3 truthful browser readback. Owning UI-01.08 now details three equal P3 deliveries.
 Durability can derive stable capability IDs from immutable original captured gaps
 instead of duplicating mutable descriptions. Approved public types already exist
 in contracts/campaign_curation/models.py: CapabilityRequestView, fulfillment
 request/specification/receipt. Existing FulfillmentCommand lives in
 curation_intake/commands.py. Existing grants read_capabilities/fulfill_capabilities
-are reserved in access.py; routes/storage/verification are not implemented.
-CurationView.proposal retains full typed gaps; capability_requests currently empty.
+are in access.py; read route implemented, fulfillment write/storage/verification pending.
+CurationView.proposal retains full typed gaps; public reads now derive capability_requests.
 Use focused domain projection objects, preserving original receipt/progress bytes.
 Explicit verified fulfillment needs real Registry lock/descriptor/ports and current
 Data processing of owner-reviewed acceptance evidence; artifact existence/model

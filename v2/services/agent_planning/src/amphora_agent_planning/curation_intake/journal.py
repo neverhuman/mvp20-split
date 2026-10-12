@@ -81,5 +81,6 @@ class CurationJournal:
             original = OriginalCuration.restore(row)
             original.incoming.require_read(principal)
             from ..curation_jobs.journal import current
+            from ..capability_requests.projection import CurationCapabilities
             progress = current(conn, original)
-            return progress.view if progress is not None else original.view()
+            return CurationCapabilities.enrich(progress.view if progress is not None else original.view())

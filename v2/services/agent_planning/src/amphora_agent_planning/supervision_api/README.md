@@ -53,3 +53,8 @@ saved-draft provenance under their project scope; they gain no attempt/write gra
 Readiness requires private migration0021. This is neither compiler dispatch nor
 backfill authority.29 actual-SQL origin/supervision HTTP checks pass;18 focused
 origin route tests cover strict pins, auth, named missing/limit and sanitized failures.
+
+P3.1: configured curations also expose GET /v1/capability-requests/{request_id}.
+Its independent read_capabilities grant does not confer read_curations or execution.
+Startup refuses that grant without configured curation storage; no request-side
+provider/peer work or new migration. Fulfillment writes remain P3.2.

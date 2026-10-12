@@ -38,7 +38,7 @@ def create_app(intake=None, credentials=None, *, topology=None, campaign_origins
         raise ValueError('campaign_origins_require_configured_planning')
     if curations is not None and intake is None:
         raise ValueError('curation_requires_configured_planning')
-    if credentials is not None and curations is None and credentials.has_any_action({'record_curations', 'read_curations'}):
+    if credentials is not None and curations is None and credentials.has_any_action({'record_curations', 'read_curations', 'read_capabilities'}):
         raise ValueError('curation_configuration_required')
     if credentials is not None and topology is None and credentials.has_any_action({'propose_topology','read_topology'}):
         raise ValueError('topology_configuration_required')
@@ -118,7 +118,10 @@ def create_app(intake=None, credentials=None, *, topology=None, campaign_origins
     install_campaign_origins(app, campaign_origins if campaign_origins is not None else CampaignOriginReader(intake.engine), credentials)
     if curations is not None:
         from ..curation_intake.http import install_curations
+        from ..capability_requests.http import install_capability_reads
+        from ..capability_requests.reader import CapabilityRequestReader
         install_curations(app, curations, credentials)
+        install_capability_reads(app, CapabilityRequestReader(curations.engine), credentials)
     if topology is not None:
         from ..topology.http import install_topology
         install_topology(app,topology,credentials)
