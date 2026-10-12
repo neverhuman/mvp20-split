@@ -23,3 +23,5 @@ for an already issued ticket. No worker is activated by importing/configuring it
 Tests: tests/curation_openai with scripted transport; exact sent bytes, timeout
 narrowing, fixed scope, expired/invalid input, unknown failure and no retry.
 Actual live-model qualification remains P5; this module has made no paid calls.
+
+UI-01.08b diagnostic repair: after a decoded response, retain only an immutable response digest/size, closed status/error/incomplete classifications and refusal boolean in process memory. Curation exposes that diagnostic and existing sanitized transport failure for the qualification exporter. No remote prose, API key, output repair, extra request or public schema change. Existing persisted observations and accounting stay authoritative; diagnostics are not retroactively recoverable after a process exits.

@@ -49,3 +49,5 @@ UI-01.08a: prepare_v2.py creates a separate approved six-slot declaration and ne
 review.py and the Studio curation_live_review probe qualify the actual v2 capability request plus failed graph, exact receipt replay and six original holds. Real requested ports, applicability and acceptance criteria remain unfulfilled; browser refresh/reload cannot call a provider or launch a graph.
 
 UI-01.08b: prepare_v3/material_v3 preserve four original v1/v2 envelopes and acceptance outcomes, export the strict generation schema/hash and freeze a seventh-slot/$1.75 declaration. Six previous holds count; only one new supported scenario is permitted. No key read or provider call during preparation. Original files remain unchanged.
+
+The worker exporter now retains response/transport diagnostics when exposed by installed Planning0.129.1. Closed classifications and whole-response digest/size explain future failures without logging remote prose or credentials. They cannot reconstruct the already-drained v3 response. No automatic retry or added allowance.

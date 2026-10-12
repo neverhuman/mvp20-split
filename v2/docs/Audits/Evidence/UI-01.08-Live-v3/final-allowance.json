@@ -1,0 +1,53 @@
+{
+  "scope": {
+    "tenant_id": "internal",
+    "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336"
+  },
+  "canonical_check": "passed",
+  "original_reservations": [
+    {
+      "engagement_id": "curation-call-0ff63c924db0e439116715f9fa728e47fa5fe5067902fc64528f25e60f4dc5b6",
+      "ordinal": 1,
+      "accounting_units": 250000000
+    },
+    {
+      "engagement_id": "curation-call-2349703d65699f593c3f3d9611e726d4c0e0c82780883a833467e6f4c9440dcf",
+      "ordinal": 1,
+      "accounting_units": 250000000
+    },
+    {
+      "engagement_id": "curation-call-242d726bbf40ff10d6bcf7dce55a758e04728bc523c2b8f1e48072868e3029c1",
+      "ordinal": 1,
+      "accounting_units": 250000000
+    },
+    {
+      "engagement_id": "curation-call-61a40426e49b23fd6df79afcfa216550639fafcdd03e4e4c906f14e3600638c9",
+      "ordinal": 1,
+      "accounting_units": 250000000
+    },
+    {
+      "engagement_id": "curation-call-690a6f0547d8f7b0f4d4716e90c6947853bb2eaf4dcf4d6b78e2cfabe4f58777",
+      "ordinal": 1,
+      "accounting_units": 250000000
+    },
+    {
+      "engagement_id": "curation-call-8cc32e12a033f197264623f9ffc2534680ab6dfb6ea054b625595b969900b83e",
+      "ordinal": 1,
+      "accounting_units": 250000000
+    },
+    {
+      "engagement_id": "curation-call-d94c362f6ab13c3c1795313420ef97d66de39b3faf834f555dd0e36a62c1c3f0",
+      "ordinal": 1,
+      "accounting_units": 250000000
+    }
+  ],
+  "reserved_slots": 7,
+  "reserved_units": 1750000000,
+  "maximum_slots": 7,
+  "maximum_units": 1750000000,
+  "authorization": "UI-01.08b",
+  "remaining_slots": 0,
+  "remaining_reservation_units": 0,
+  "unit": "usd_nanodollars",
+  "provider_enabled": false
+}

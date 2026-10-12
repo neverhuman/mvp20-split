@@ -9,6 +9,7 @@ from ..providers.capture import unknown_usage
 from ..providers.port import ProviderReply
 from .input import PreparedInput, tokenizer_reference
 from .pricing import MODEL, OpenAIPrice
+from .diagnostics import ResponseDiagnostic
 
 
 class OpenAIProvider:
@@ -16,6 +17,7 @@ class OpenAIProvider:
     def __init__(self, transport, content, *, revision="openai-responses-synthetic-v1"):
         require(revision in {"openai-responses-synthetic-v1", "openai-responses-synthetic-v2", "openai-responses-synthetic-v3"}, "openai_transport_revision")
         self.transport,self.content,self.revision = transport,content,revision
+        self.last_response = None
     def supports(self, model):
         return (model.provider_id,model.model_id,model.model_revision)==("openai",MODEL,MODEL) and model.tokenizer==tokenizer_reference()
     def reply(self, attempt):
@@ -23,10 +25,12 @@ class OpenAIProvider:
         return self.reply_prepared(prepared)
 
     def reply_prepared(self, prepared):
+        self.last_response = None
         raw=self.transport.send(prepared.body)
         require(type(raw) is bytes and 0<len(raw)<=1048576,"openai_response_limit")
         value=json.loads(raw.decode("utf-8"),object_pairs_hook=_object,parse_constant=_constant)
         require(type(value) is dict and value.get("model")==MODEL,"openai_response_model")
+        self.last_response = ResponseDiagnostic.capture(raw, value)
         usage=unknown_usage()
         counts=value.get("usage")
         if type(counts) is dict:

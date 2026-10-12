@@ -39,7 +39,7 @@ try{
   await capture('missing-capability');
   await page.reload();await page.getByText('Not yet supplied',{exact:true}).waitFor();
   await page.goto(input.origin+'/#view=curation&curation='+input.failed);
-  await page.getByText('Revision preparation failed',{exact:true}).waitFor();
+  await page.getByText(input.failure_label??'Revision preparation failed',{exact:true}).waitFor();
   await page.getByRole('heading',{name:'No retained proposal',exact:true}).waitFor();
   await capture('failed-graph');
   await page.getByRole('button',{name:'Refresh record',exact:true}).click();

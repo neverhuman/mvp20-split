@@ -118,3 +118,6 @@ def test_v3_refusal_and_incomplete_never_become_accepted_output(status, content)
     with pytest.raises(TimeoutError, match='openai_output_incomplete'):
         b''.join(reply.chunks)
     assert len(calls) == 1 and reply.usage.certainty == 'reported'
+    assert adapter.last_response.status == status
+    assert adapter.last_response.refused is (status == 'completed')
+    assert adapter.last_transport_failure is None

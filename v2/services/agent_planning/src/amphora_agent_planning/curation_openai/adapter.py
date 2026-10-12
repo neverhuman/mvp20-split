@@ -21,6 +21,8 @@ class CurationOpenAI:
         self.scope = Scope.model_validate(scope.model_dump(mode='python', warnings=False))
         transport_factory(api_key, timeout_seconds=timeout_seconds, maximum_body_bytes=262144)
         self._key, self.timeout, self._factory = api_key, timeout_seconds, transport_factory
+        self.last_response = None
+        self.last_transport_failure = None
 
     def supports(self, model):
         try:
@@ -33,6 +35,8 @@ class CurationOpenAI:
         return CurationAllowance.validate_policy(policy)
 
     def reply(self, binding, packet, *, deadline_unix_ms):
+        self.last_response = None
+        self.last_transport_failure = None
         original = binding.request.document()
         require(original.reference.scope == self.scope, 'curation_provider_scope')
         CurationAllowance.cost(original.context.model, original.context.limits)
@@ -43,4 +47,9 @@ class CurationOpenAI:
         if remaining < 1:
             raise ProviderUnavailable()
         transport = self._factory(self._key, timeout_seconds=min(self.timeout, remaining), maximum_body_bytes=262144)
-        return OpenAIProvider(transport, None).reply_prepared(prepared)
+        decoder = OpenAIProvider(transport, None)
+        try:
+            return decoder.reply_prepared(prepared)
+        finally:
+            self.last_response = decoder.last_response
+            self.last_transport_failure = getattr(transport, "last_failure", None)

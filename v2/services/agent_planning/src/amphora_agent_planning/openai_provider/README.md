@@ -22,3 +22,5 @@ BP-09.03 checkpoint integration reuses only the bounded decoder/pricing/HTTP tra
 this module. Its separate checkpoint envelope/profile does not alter evaluation v1/v2/v3.
 HTTP accepts an explicit65536-byte body ceiling for that caller; the original16384 default
 and32768 evaluation profile remain unchanged. See [checkpoint adapter](../checkpoint_openai/README.md).
+
+UI-01.08b diagnostic repair: after a decoded response, retain only an immutable response digest/size, closed status/error/incomplete classifications and refusal boolean in process memory. Curation exposes that diagnostic and existing sanitized transport failure for the qualification exporter. No remote prose, API key, output repair, extra request or public schema change. Existing persisted observations and accounting stay authoritative; diagnostics are not retroactively recoverable after a process exits.

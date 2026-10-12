@@ -1,0 +1,37 @@
+{
+  "status": "passed",
+  "planning": "0.129.1",
+  "provider_calls": 0,
+  "replays": [
+    {
+      "version": "1",
+      "scenario": "supported",
+      "envelope_sha256": "c7b1827d0f4c8d547a8dd190ae025e28813001abd227619fccbd6ca9bbf8c617",
+      "original_acceptance_unchanged": true
+    },
+    {
+      "version": "1",
+      "scenario": "missing",
+      "envelope_sha256": "167a7126d11c43918c696dc53d8c4240816035512e9c4d9b66994233ddb9ab81",
+      "original_acceptance_unchanged": true
+    },
+    {
+      "version": "2",
+      "scenario": "supported",
+      "envelope_sha256": "457a46815484b5bd50894eec57a44204c74d5b11f00d5d182a1ca3ca63e8d9ce",
+      "original_acceptance_unchanged": true
+    },
+    {
+      "version": "2",
+      "scenario": "missing",
+      "envelope_sha256": "17aefa8332107765190c027b8171e5e2d69ef330e0615efe2d371d01fddd8699",
+      "original_acceptance_unchanged": true
+    },
+    {
+      "version": "3",
+      "scenario": "supported",
+      "envelope_sha256": "83b171a87ded40d48ed9d66859ccea9420ec3ff28a5c762ae6f6114e378cac48",
+      "original_acceptance_unchanged": true
+    }
+  ]
+}

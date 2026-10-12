@@ -1,0 +1,94 @@
+{
+  "capability_requests": [],
+  "proposal": null,
+  "provider": {
+    "attempt": {
+      "engagement": {
+        "engagement_id": "curation-call-0ff63c924db0e439116715f9fa728e47fa5fe5067902fc64528f25e60f4dc5b6",
+        "scope": {
+          "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336",
+          "tenant_id": "internal"
+        }
+      },
+      "ordinal": 1,
+      "request_sha256": "4d6ac6873b7ae565403730eb8ad6b1608da68506ae921dc301ff3c75b8db165d"
+    },
+    "envelope_sha256": "83b171a87ded40d48ed9d66859ccea9420ec3ff28a5c762ae6f6114e378cac48",
+    "output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "reservation_units": 250000000,
+    "usage": {
+      "accounting_units": 0,
+      "certainty": "reported",
+      "input_tokens": 0,
+      "output_tokens": 0
+    }
+  },
+  "receipt": {
+    "created_at": "2026-10-12T16:13:05.678040Z",
+    "identity": {
+      "actor_id": "admin",
+      "command_family": "planning.curate_campaign",
+      "command_id": "0fb7bc545ac8441eb63b65329e0cc9c2",
+      "schema_version": "1",
+      "scope": {
+        "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336",
+        "tenant_id": "internal"
+      }
+    },
+    "phase": "indeterminate",
+    "reason_code": "provider_outcome_unknown",
+    "reference": {
+      "curation_id": "curation-093a8f6249abcb4676357df701d9d11a6ec2919133fbe2318297884030bad181",
+      "scope": {
+        "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336",
+        "tenant_id": "internal"
+      }
+    },
+    "request_sha256": "0ff63c924db0e439116715f9fa728e47fa5fe5067902fc64528f25e60f4dc5b6",
+    "revision": 3,
+    "updated_at": "2026-10-12T16:13:24.163128Z",
+    "wire_version": "1"
+  },
+  "specification": {
+    "context": {
+      "artifacts": [
+        {
+          "artifact_id": "98228b80754543f3bb7eb666dbbae661",
+          "media_type": "application/json",
+          "schema_ref": {
+            "schema_id": "search.specification",
+            "sha256": "e829b92d2145b0916847b06cb6e73c4a5aea17addea8bbdd1e9706dbd1cc79a7",
+            "version": "1"
+          },
+          "scope": {
+            "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336",
+            "tenant_id": "internal"
+          },
+          "sha256": "d14234f2432410742138825bf475ab4e32f442315a6c75a3003e1d627b65d0b1",
+          "size_bytes": 1749
+        }
+      ],
+      "draft": {
+        "content_sha256": "9e3b725872892f3e7ff0db393e1341b9c8a359eb05eae48b5e3d24081ca6a7f9",
+        "draft_id": "curation-fixture-curation-owner-20261012a-original",
+        "revision": 1,
+        "scope": {
+          "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336",
+          "tenant_id": "internal"
+        }
+      },
+      "knowledge": [],
+      "needs": [],
+      "predecessor": {
+        "plan_sha256": "a40d42aff4b53b0c28e8ca5e6b6736c6484a53fa2c43210a58170f78523a0373",
+        "revision": 9,
+        "run_id": "f44f4f297b4a4622b54d2dd8399048c6"
+      },
+      "questions": []
+    },
+    "direction": "Create one revised synthetic engineering campaign. Keep the single numeric.search-seed invocation, its exact installed tool binding and existing parameters artifact. Keep the result export. Add a required root input named previous_result with exactly the same value type as the existing result output. Add a root output named previous_result of that type and bind that finish output directly to the root input. The operator will carry the predecessor result into this input through Runtime successor admission. Retain the seed-to-finish control edge. Use the exact future campaign revision/context from the reviewed declaration. This is a data-carry software test only, not chemistry or a scientific improvement. Return the complete revised graph.",
+    "policy_id": "internal-curation-v3"
+  },
+  "validated_draft": null,
+  "wire_version": "1"
+}

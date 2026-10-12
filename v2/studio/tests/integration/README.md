@@ -104,3 +104,5 @@ region at desktop/narrow widths; no new Studio code or schema is needed.
 UI-01.08/P5: curation_live_failure.mjs reads both original failed live-model records through the actual Gateway and owners. It verifies no retained proposal or launch action, exact capture digest/reason, refresh/reload without new intent, and 1440/390 accessibility/overflow. The dev curation_live_qualification/browser controller verifies immutable receipts, P4 history and four original budget holds before/after. This is failure recovery evidence, not a passing live proposal or fulfilled capability.
 
 curation_live_review.mjs qualifies the actual live-model missing-capability response and failed graph through production owners. It verifies requested ports/applicability/evidence and unfulfilled posture, failure isolation, original receipt recovery, responsive accessibility and no new intent on refresh. Qualification data comes only from retained real owner records.
+
+The live review probe also accepts the retained indeterminate outcome label; it verifies no graph/launch or new intent on reload while the existing capability request remains unfulfilled.

@@ -9,15 +9,15 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 ## Program Tracker
 
 - Status: UI-01 primary active; LAN-01 accepted/archived. LR-01 remains conditional; completed plans remain closed.
-- Last refreshed: 2026-10-12 11:11:27 (America/Chicago).
+- Last refreshed: 2026-10-12 11:20:06 (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
 - Current priority: schedule UI-01 Knowledge/run/LLM integration and UI-02 formula/structure views for2026-10-12 through2026-10-16; preserve the live demo.
 - Primary active task: UI-01/N3/I1, implementing approved [UI-01.08](UI-01.08%20Campaign%20curation%20boundary%20decision.md), P1=100%, P2=100%, P3=100%,P4=100%,P5=50%, child90%. N2=100%; launch/provenance remain closed. UI-01.05 K1/R1=100%, I1=90%, child96.67%.
-- Next task: UI-01.08b provider-schema correction and one additional supported call approved2026-10-12 11:04:00; offline verification active; return P5.2, then P5.4. UI-02 -> POP-01 -> ML-01 remain ordered.
+- Next task: P5.2 requires live provider diagnosis; [UI-01.08c](UI-01.08c%20Provider%20outcome%20diagnosis%20allowance.md) proposes at most two additional original calls/$0.50, pending owner approval. No call remains authorized.
 - Implementation completion: LAN-01=100%; UI-01 active78%, Build97.5%, Verification0%; UI-02=0%, P1/P2/P3/P4=0%; LR-01 paused25%, Build33.33%, Acceptance0%.
-- Blockers/dependencies: Supported live graph fails schema nesting. All six slots/$1.50 original holds used; one additional $0.25 call approved after offline/install/freeze gates. Missing-capability P5.3 passed independently.
-- Latest checkpoint: 2026-10-12 11:11:27: Planning0.129.0 source135 plus final input/adapter51 checks pass; isolated installation, four original v1/v2 replays, dependency boundaries and actual-owner v3 preparation pass. Six original holds retained; one approved $0.25 slot remains. No key read or new call. Correction66.67%; parent90/P5=50 unchanged pending live supported successor.
-- Acceptance posture: N3/I1=90%, parent V1=0%; no full-engine acceptance or serving cutover. Four live calls reported $0.242380500; existing demo preserved.
+- Blockers/dependencies: Seventh original is indeterminate with empty output and reported zero tokens. Seven/$1.75 original holds exhausted. Diagnostic repair and actual owner/browser recovery pass; no live supported graph or cutover.
+- Latest checkpoint: Planning0.129.1 diagnostic repair:90 tests, isolated install, five exact original envelope/acceptance replays, and actual owner/browser1440/390 pass. UI-01.08=90/P5=50;08b=66.67 unchanged.
+- Acceptance posture: N3/I1=90%, parent V1=0%; no full-engine acceptance or serving cutover. Five live attempts cumulatively reported $0.242380500; existing demo preserved.
 - Active exception: owner scheduled four targets for next week. Preserve earned phase credit; sequence the bounded cross-plan handoffs below. Pull LR-01/UI-R01 forward only when their faults block the scheduled integration, with exact return points.
 
 ## Initial Delivery Boundary
@@ -172,6 +172,7 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 
 | Timestamp | Checkpoint | Evidence |
 |---|---|---|
+| 2026-10-12 11:20:06 | UI-01.08/P5.2 remains unmet; child90/P5=50. | Seventh original indeterminate;0 reported tokens. Diagnostic90 checks, five replays and actual browser pass. Seven/$1.75 held; UI-01.08c proposed. |
 | 2026-10-12 09:06:13 | UI-01.08=90/P5=50; parent78/Build97.5. | Missing capability and actual browser passed; supported graph failed. Six/$1.50 holds exhausted. UI-01.08b pending. |
 | 2026-10-12 08:54:22 | Approved UI-01.08a correction66.67%; parent85/P5=25 unchanged. | Planning0.128.0:124 scoped checks, isolated install, original v1 replay and actual-owner v2 preparation pass. Exact scope6/$1.50 retains four old holds; two new slots remain. |
 | 2026-10-12 06:01:28 | UI-01.08/P5.2 blocked; child85%, parent77/Build96.25 unchanged. | Two original live outputs failed schema validation; exact replay/browser1440/390 pass. All four slots/$1 held, reported live$0.157331250. UI-01.08a proposes additive input repair and scoped budget extension; no cutover. |
@@ -196,7 +197,6 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 | 2026-10-11 18:51:49 | UI-01.07 P1/P2/P3=100%, P4 active0%, child75%; parent N2.2 remains50%. | Planning0.107/Gateway0.5 API; Studio0.24 with349 tests and scripted1440/390 provenance/launch regression. Actual owners and isolated install next. |
 | 2026-10-09 10:20:00 | UI-01.06/R1=100%; UI-01.05=66.67%. N2.5=100%, N2=81.25%; parent56.25%/Build70.31%. | Actual local/LAN launch/results, same-run/container outage recovery and Knowledge traversal pass. Deployment502 installed tests/four probes, Studio337 checks. Scoped audit aligned; N2.2 resumes. |
 | 2026-10-09 09:17:45 | UI-01.06=60%, L3 complete100%, L4 active0%; UI-01.05=53.33%, R1=60%. Parent55% unchanged. |335 Studio/125 owner checks; browser launch/reload/pinned plan/node polling at1440/390. [Audit](../Audits/UI-01.06_Launch_UI.md). Actual owners/workers next. |
-| 2026-10-09 09:06:00 | UI-01.06=55%, L3=75%; UI-01.05=51.67%, R1=55%; parent55% unchanged. | API/Gateway and durable Studio recovery model verified; integrated Run UI next.12 focused launch and88 Studio transport checks; actual campaign/browser remain. |
 
 ## 2026-10-12 09:06:13 live evaluation checkpoint
 
