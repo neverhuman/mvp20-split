@@ -1,19 +1,22 @@
 # Restore
 
-Refreshed 2026-10-12 02:13:56 America/Chicago. Read FIRST after compaction.
+Refreshed 2026-10-12 02:29:00 America/Chicago. Read FIRST after compaction.
 Continue until needed across commits/gates/compaction. No subagents/JARVIS.
 v1 read-only; preserve untracked ocular PDF/DOCX. No source/tests/module README
 edits while tests/installations run. Serving demo uses immutable source copies.
 
 ## Canonical position
 
-UI-01.08 approved; active P3.3c visual integration/browser qualification.
-Child57.78%;P1/P2=100%,P3=88.89%,P4/P5=0. P3.1/P3.2=100%,P3.3=66.67.
-P3.3 has three equal units: a transport/schema/Gateway100, b page model100,
-c visual integration/qualification0 ACTIVE. Complete each before the next.
-ParentUI01=71.56%/Build89.44%/Verification0;UI01.05=85.93%,I1=57.78%.
-UI01.06/07 closed100. Order UI01->UI02->POP01->ML01. LR01 paused25/Build33.33.
-Universal result index remains separately unapproved. No user decision pending.
+UI-01.08 approved; P3 complete, P4.1 managed successor admission/recovery ACTIVE.
+Child60%;P1/P2/P3=100%,P4/P5=0. P4 has4equal ordered units: Deployment successor,
+Studio curation submission, graph diff/successor UI, integrated scripted qualification.
+ParentUI01=72%/Build90%/Verification0;UI01.05=86.67%,I1=60%.
+No user decision pending. P5 ONE scope4calls/$1,max$0.25hold/call. Zero paid calls.
+
+Latest:15dd13c6 pushed Studio0.28 state. Studio0.29 visual/navigation uncommitted,
+P3c complete385checks; browser curation-browser-20261012c/evidence.json,
+1440/390 inspected,16long requests/keyboard/negative states. Tests all FINISHED.
+Commit/push exact P3 files then P4.1. Serving demo unchanged.
 
 ## Latest commits and verified backend
 
