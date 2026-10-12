@@ -18,7 +18,7 @@ wheels = [
 
 [[package]]
 name = "amphora-agent-planning"
-version = "0.127.1"
+version = "0.127.2"
 source = { editable = "../services/agent_planning" }
 dependencies = [
     { name = "alembic" },
@@ -166,7 +166,7 @@ requires-dist = [
 
 [[package]]
 name = "amphora-contracts-campaign-curation"
-version = "0.1.0"
+version = "0.1.1"
 source = { editable = "../contracts/campaign_curation" }
 dependencies = [
     { name = "amphora-contracts-commands" },

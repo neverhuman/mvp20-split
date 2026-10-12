@@ -1,6 +1,6 @@
 [project]
 name = "amphora-contracts-campaign-curation"
-version = "0.1.0"
+version = "0.1.1"
 requires-python = ">=3.12,<3.13"
 dependencies = ["pydantic>=2.12,<3", "amphora-contracts-core==0.1.0", "amphora-contracts-commands==0.2.0", "amphora-contracts-graph-runtime==0.13.0", "amphora-contracts-knowledge==0.8.0", "amphora-contracts-research==0.14.0", "amphora-contracts-tools==0.1.0", "amphora-contracts-planning==0.13.0"]
 

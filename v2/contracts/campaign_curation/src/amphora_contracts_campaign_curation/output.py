@@ -2,6 +2,7 @@
 
 import hashlib
 import json
+from functools import lru_cache
 from typing import Annotated, Literal
 
 from amphora_contracts_core import Identifier, SchemaRef, WireModel, Digest
@@ -61,7 +62,9 @@ class CampaignCurationDraft(WireModel):
     unresolved: Annotated[tuple[CampaignUnresolvedPoint, ...], Field(max_length=64)]
 
 
+@lru_cache(maxsize=1)
 def campaign_curation_draft_schema() -> SchemaRef:
+    """Process-constant frozen identity; never caches input or eligibility state."""
     schema = CampaignCurationDraft.model_json_schema(mode='validation')
     schema['$schema'] = 'https://json-schema.org/draft/2020-12/schema'
     schema['$id'] = 'urn:amphora:planning.campaign-curation-draft:1:validation'

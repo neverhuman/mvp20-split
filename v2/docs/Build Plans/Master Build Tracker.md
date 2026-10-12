@@ -9,14 +9,14 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 ## Program Tracker
 
 - Status: UI-01 primary active; LAN-01 accepted/archived. LR-01 remains conditional; completed plans remain closed.
-- Last refreshed: 2026-10-12 05:02:01 (America/Chicago).
+- Last refreshed: 2026-10-12 05:21:32 (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
 - Current priority: schedule UI-01 Knowledge/run/LLM integration and UI-02 formula/structure views for2026-10-12 through2026-10-16; preserve the live demo.
 - Primary active task: UI-01/N3/I1, implementing approved [UI-01.08](UI-01.08%20Campaign%20curation%20boundary%20decision.md), P1=100%, P2=100%, P3=100%,P4=75%,P5=0%, child75%. N2=100%; launch/provenance remain closed. UI-01.05 K1/R1=100%, I1=75%, child91.67%.
 - Next task: UI-01.08/P4.4a actual owner/process integration fixture. UI-02 -> POP-01 -> ML-01 follow in order.
 - Implementation completion: LAN-01=100%; UI-01 active75%, Build93.75%, Verification0%; UI-02=0%, P1/P2/P3/P4=0%; LR-01 paused25%, Build33.33%, Acceptance0%.
 - Blockers/dependencies: none; additive Planning curation and Deployment successor-launch boundaries approved. N3/I1 and candidate-structure producer remain unfinished; no calibrated scientific accuracy benchmark. UI-01.01 remains separate.
-- Latest checkpoint: Planning0.127.1 repairs actual compiler reader composition; scoped regressions pass across initial/focused runs. Original seed complete; retained proposal saved; compiler recovery diagnosis active.0paid calls.
+- Latest checkpoint: Planning0.127.2 fixed-schema memoization preserves published bytes;98 scoped checks pass. Independent cold reconstruction32.5s->6.6s. Same retained proposal resumes actual successor qualification;0paid calls.
 - Acceptance posture: read-only N2 journey qualified; Studio0.26 served locally/LAN. N3/I1=75%, parent V1=0%; no full-engine acceptance or new paid provider calls.
 - Active exception: owner scheduled four targets for next week. Preserve earned phase credit; sequence the bounded cross-plan handoffs below. Pull LR-01/UI-R01 forward only when their faults block the scheduled integration, with exact return points.
 

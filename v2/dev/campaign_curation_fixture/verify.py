@@ -92,7 +92,7 @@ def worker_configuration(api, output, scope, roots, material, attempt):
     return write(attempt / 'curation-worker.json', worker)
 
 
-def verify(root, output):
+def verify(root, output, *, diagnose=False):
     owners = json.loads((output / 'owners.json').read_bytes())['owners']
     python = Path(owners['planning']['installation']) / 'environment/Scripts/python.exe'
     material_path = output / 'planning-material.json'
@@ -125,6 +125,10 @@ def verify(root, output):
         env['CURATION_PLANNING_DATABASE'] = 'postgresql+psycopg://planning_service:' + quote(password, safe='') + '@127.0.0.1:' + str(state['postgres']['port']) + '/amphora_local?connect_timeout=5'
         for name in ('data', 'runtime', 'registry', 'knowledge', 'research'):
             env['CURATION_' + name.upper() + '_TOKEN'] = api.tokens['artifact' if name == 'data' else name]
+        if diagnose:
+            planning_process(python, 'profile', worker_path, attempt, env)
+            print('Read-only Planning compiler profile retained; no worker advanced', flush=True)
+            return
         path = '/v1/campaign-curations/' + original['reference']['curation_id']
         current = api.call('planning', path)
         if current['receipt']['phase'] != 'ready':
@@ -161,5 +165,6 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--root', type=Path, required=True)
     parser.add_argument('--output', type=Path, required=True)
+    parser.add_argument('--diagnose', action='store_true')
     args = parser.parse_args()
-    verify(args.root.absolute(), args.output.absolute())
+    verify(args.root.absolute(), args.output.absolute(), diagnose=args.diagnose)

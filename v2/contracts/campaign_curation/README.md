@@ -1,6 +1,6 @@
 # Campaign curation public contracts
 
-UI-01.08/P1, version0.1.0. These additive DTOs describe future-campaign intent,
+UI-01.08/P1, version0.1.1. These additive DTOs describe future-campaign intent,
 exact predecessor/draft/Knowledge/Research/Artifact pins, durable job receipts,
 model output and explicit capability fulfillment. Planning owns all state and
 policy; these types do not schedule providers, authorize reads/spend, install tools
@@ -32,3 +32,9 @@ portable schema roundtrips, predecessor byte pins, malformed/oversized request a
 authority negatives. HTTP authorization, journal conflicts/recovery, provider bounds
 and fulfillment verification belong to later owner modules; no deployed route is
 claimed by this package. Public dependencies only; no persistence or service imports.
+
+The process-constant curation output SchemaRef is frozen and memoized (one entry).
+Repeated compiler reconstruction does not regenerate the unchanged schema/hash.
+No input, permission, provider output or eligibility observation is cached here.
+Published schema bytes remain unchanged; output/test_schema_identity.py verifies
+repeated lookup, mutation rejection and the exact checked-in schema digest.

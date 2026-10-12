@@ -1,8 +1,10 @@
 """Run only in the independently installed Planning interpreter; synthetic provider."""
 import base64
 import copy
+import cProfile
 import importlib.util
 import json
+import pstats
 import sys
 import time
 from dataclasses import asdict
@@ -81,22 +83,51 @@ def main():
             'tokenizer': curation_tokenizer_reference().model_dump(mode='json'),
             'output_schema': campaign_curation_draft_schema().model_dump(mode='json')})
         return
-    assert action == 'run'
+    assert action in {'run', 'profile'}
     host = CurationHost.load(path)
     try:
+        if action == 'profile':
+            # Planning owns these reads. No lease, peer write or provider call.
+            journal = host.poller.worker.compiler.progression.journal
+            rows = (path.parent / 'compiler-turns.jsonl').read_text().splitlines()
+            selection_id = json.loads(rows[-1])['selection_id']
+            timings = []
+            profiler = cProfile.Profile()
+            profiler.enable()
+            for repetition in range(2):
+                started = time.perf_counter()
+                selected = journal.selected(host.principal, selection_id)
+                context = journal.context(host.principal, selected.selection)
+                save, _ = context.save()
+                journal.read(host.principal, selection_id, save.effect_id)
+                current = journal.latest_round(host.principal, selection_id)
+                timings.append({'repetition': repetition, 'seconds': time.perf_counter() - started,
+                    'round': None if current is None else current.ordinal})
+            profiler.disable()
+            profiler.dump_stats(str(path.parent / 'compiler-read-profile.pstats'))
+            with (path.parent / 'compiler-read-profile.txt').open('w') as stream:
+                pstats.Stats(profiler, stream=stream).sort_stats('cumulative').print_stats(45)
+            write(path.parent / 'compiler-read-timings.json', timings)
+            return
         host.poller.worker.executor.provider = SyntheticProposal(path.parent)
         progression = host.poller.worker.compiler.progression
         advance = progression.advance
+        consecutive_checks = 0
         def traced_advance(*args, **kwargs):
+            nonlocal consecutive_checks
+            started = time.perf_counter()
             result = advance(*args, **kwargs)
             dispatch = result.dispatch
             detail = {'selection_id': result.selection_id, 'stage': result.stage,
                 'terminal': result.terminal, 'pause_reason': result.pause_reason,
                 'operation': None if dispatch is None else dispatch.operation.progress.state,
                 'prerequisites': None if dispatch is None or dispatch.prerequisites is None else dispatch.prerequisites.status,
-                'round': None if result.round is None else result.round.ordinal}
+                'round': None if result.round is None else result.round.ordinal,
+                'elapsed_seconds': time.perf_counter() - started}
             with (path.parent / 'compiler-turns.jsonl').open('a', encoding='utf-8') as stream:
                 stream.write(json.dumps(detail) + '\n')
+            consecutive_checks = consecutive_checks + 1 if result.stage == 'eligibility' else 0
+            assert consecutive_checks < 2, 'Repeated eligibility without validation: diagnose before consuming more rounds'
             return result
         progression.advance = traced_advance
         turns = []

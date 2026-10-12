@@ -47,3 +47,9 @@ proposal, validation, carry and lineage evidence. It remains an in-progress P4.4
 acceptance probe: original seed/retained proposal/draft save pass; later compiler
 pending recovery is unresolved. A terminal applicability failure stays immutable;
 curation-02 is the corrected separate original request. No paid calls are made.
+
+`verify --diagnose` profiles only Planning-owned retained compiler reads in the
+independent interpreter, without advancing a worker/lease or issuing another
+eligibility/model request. It recovers the same public fixture and drains normally.
+Raw profiler/timing evidence stays in the fixture evidence directory. Stop and
+diagnose repeated nonprogress before consuming bounded compiler rounds.

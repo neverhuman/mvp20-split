@@ -1,9 +1,33 @@
 # Restore
 
-Refreshed 2026-10-12 05:03:45 America/Chicago. Read FIRST after compaction.
+Refreshed 2026-10-12 05:21:32 America/Chicago. Read FIRST after compaction.
 Continue across checkpoints/commits/compaction until genuinely needed. No agents
 or JARVIS. v1 read-only. Preserve user untracked ocular PDF/DOCX. No source/tests/
-module README edits while tests/installations run. No sessions currently running.
+module README edits while tests/installations run. ProbeI session94677 currently
+running; source tests/install/profile finished; see immediate checkpoint below.
+
+## Immediate checkpoint
+
+d3c66c97 committed/pushed prior composition repair. IntegratedH advanced rounds10/11
+but repeatedly renewed eligibility without validating. Stopped ONLY exact isolated
+Planning probe PIDs25160/14980 before round exhaustion; supervisor drained normally.
+No model retry. Original selection stillround11, oldleaseexpires~05:15 (check).
+Read-only --diagnose probe PASS: cold compiler reconstruction32.5s, warm0.14s;
+628fixed JSON schema generations consumed30.1s,501curation schemas26s. Raw evidence
+serving/curation-02/compiler-read-profile.txt and timings.json, logcuration-profile-a.
+Now memoize only frozen process-constant curation SchemaRef (one entry), preserving
+published bytes and ALL freshness/rights checks. Contract0.1.1,Planning0.127.2;
+dev/service pins+locks synced. New module-owned schemaidentity regression.
+Tests44429 FINISHED98PASS408.65s: curation-schema-cache-a.log (contracts/publication/
+curationcompiler/curationoutput/compilercoordinator); predecessor bytes unchanged.
+Install78890 FINISHED: curation-planning-install-b.log, independent target
+v2/.test-results/curation-planning-installation-20261012b/owner; fixtureowners.json
+updated. ReadonlyprofileB PASS:32.5s->6.6s cold, warm0.14s. Originalbeforeprofile
+retained withbefore-cache-prefix. IntegratedI running94677,logcuration-integrated-i;
+helper nowstopsafter2consecutiveeligibilityturns to preserveboundedrounds and logs
+elapsedseconds. No changes tooriginalselection/pins. WaitIthenactualnextgate.
+Verifiedschema performance repair/docs readycommit/push; no acceptancecredit yet.
+P4.4a remains0; no acceptance credit yet. No paidcalls. Demo untouched.
 
 ## Canonical position
 
