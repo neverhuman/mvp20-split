@@ -8,7 +8,15 @@ USD nanodollars ($1). Each original request has one attempt, at most262144
 conservative input units and8192 output tokens, and at most250000000 reserved
 nanodollars. At those token maxima, pinned integer rates require233472000 units.
 Underreservation, wrong model/profile/currency or widened limits reject before an
-attempt is created. There is no operator-configurable larger allowance here.
+attempt is created. Default scope ceilings remain four/$1.
+
+UI-01.08a owner approval2026-10-12 adds a packaged, immutable release policy for
+exact scope internal/owner-records-7e21ca85bd6044198b1585aa2c41d336: six original
+slots/$1.50. ceiling.py owns the exact tenant/project match and authorization ID.
+Browser input, environment and worker configuration cannot enlarge it. This is a
+reviewed one-scope qualification extension, not a general management API. Both v1
+and v2 original reservations count; no new profile, process or scope can refund
+existing holds. A replacement without the extension fails closed at default caps.
 
 BudgetLedger and DispatchJournal take the curation scope lock before existing
 family/request locks. Existing own reservations/policies/primary and late observations
@@ -19,8 +27,10 @@ and issuance before settlement. Already-issued history remains recoverable.
 
 Only OpenAI curation-profile histories count; old supervision and deterministic
 fixtures retain their original budgets. Namespace claims with wrong schema/model
-pins fail policy validation. Queries return at most5 matching reservations to detect
-the four-call ceiling. All SQL is Planning-owned; no peer I/O in a transaction.
+pins fail policy validation. Queries return at most active ceiling plus one matching
+reservations (5default/7approved) to detect overflow. Reservation, dispatch and
+read-only allowance reports share ceiling_for. All SQL is Planning-owned; no peer
+I/O in a transaction.
 
 The provider adapter separately pins the configured qualification scope. P5 must
 declare that scope before any paid call and keep the whole approved group there;

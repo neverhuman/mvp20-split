@@ -26,7 +26,7 @@ class CurationEnvelope:
 
         original = request.document()
         request = RequestSnapshot.bind(original, actor_id=original.actor_id, scope=original.reference.scope)
-        CurationInputBound.bind(original.context.model)
+        profile = CurationInputBound.bind(original.context.model)
         require(original.purpose == 'campaign_proposal', 'curation_input_purpose')
         require(original.context.output_schema == campaign_curation_draft_schema(), 'curation_input_output_profile')
         require(type(raw) is bytes and 0 < len(raw) <= 8388608, 'curation_input_size')
@@ -49,6 +49,9 @@ class CurationEnvelope:
                 'curation_input_omissions')
         require(all(type(context[key]) is list for key in ('slices', 'budget_omissions', 'consumed_observations')),
                 'curation_input_context')
+        if profile.envelope_version == '2':
+            from .readable import readable_context
+            context = readable_context(context)
         payload = canonical({'output_schema': CampaignCurationDraft.model_json_schema(mode='validation'),
             'packet_sha256': hashlib.sha256(raw).hexdigest(), 'untrusted_context': context}).decode('utf-8')
         body = canonical({'model': MODEL, 'store': False, 'stream': False, 'service_tier': 'default',

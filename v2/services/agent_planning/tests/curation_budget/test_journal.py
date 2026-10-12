@@ -16,8 +16,10 @@ from sqlalchemy import text
 from ..curation_openai.test_adapter import source
 
 
-def entry(stored, name, units=250000000):
+def entry(stored, name, units=250000000, version='1'):
+    from amphora_agent_planning.curation_input import curation_tokenizer_reference
     value = source().request.document().model_dump(mode='json')
+    value['context']['model']['tokenizer'] = curation_tokenizer_reference(version).model_dump(mode='json')
     def rescope(row):
         if isinstance(row, dict):
             if set(row) == {'tenant_id', 'project_id'}: row.update(stored.principal.scope.model_dump())

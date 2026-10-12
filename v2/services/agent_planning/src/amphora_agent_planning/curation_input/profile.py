@@ -13,13 +13,15 @@ from ..openai_provider.pricing import MODEL
 
 
 @cache
-def curation_tokenizer_reference():
-    descriptor = canonical({'format': 'planning.curation-openai-input-bound.v1',
+def curation_tokenizer_reference(version='1'):
+    require(version in {'1', '2'}, 'curation_input_profile')
+    descriptor = canonical({'format': 'planning.curation-openai-input-bound.v' + version,
         'algorithm': 'serialized_responses_utf8_bytes_plus_1024', 'model': MODEL,
-        'envelope': 'curation-responses-v1',
+        'envelope': 'curation-responses-v' + version,
         'output_schema': campaign_curation_draft_schema().model_dump(mode='json'),
         'unit': 'conservative_input_token_bound', 'authorization': 'none'})
-    return SchemaRef(schema_id='planning.curation-openai-input-bound', version='1',
+    name = 'planning.curation-openai-input-bound' + ('' if version == '1' else '.v2')
+    return SchemaRef(schema_id=name, version='1',
                      sha256=hashlib.sha256(descriptor).hexdigest())
 
 
@@ -41,8 +43,13 @@ class CurationInputBound:
         model = ModelBinding.model_validate(supplied.model_dump(mode='python', warnings=False))
         require((model.provider_id, model.model_id, model.model_revision) == ('openai', MODEL, MODEL),
                 'curation_input_model')
-        require(model.tokenizer == curation_tokenizer_reference(), 'curation_input_profile')
+        require(model.tokenizer in (curation_tokenizer_reference('1'), curation_tokenizer_reference('2')), 'curation_input_profile')
         return cls(model.tokenizer)
+
+    @property
+    def envelope_version(self):
+        require(self.reference in (curation_tokenizer_reference('1'), curation_tokenizer_reference('2')), 'curation_input_profile')
+        return '1' if self.reference == curation_tokenizer_reference('1') else '2'
 
     def measure(self, request, raw):
         from .envelope import CurationEnvelope

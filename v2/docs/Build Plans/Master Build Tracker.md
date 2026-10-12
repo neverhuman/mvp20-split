@@ -9,14 +9,14 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 ## Program Tracker
 
 - Status: UI-01 primary active; LAN-01 accepted/archived. LR-01 remains conditional; completed plans remain closed.
-- Last refreshed: 2026-10-12 06:01:28 (America/Chicago).
+- Last refreshed: 2026-10-12 08:54:22 (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
 - Current priority: schedule UI-01 Knowledge/run/LLM integration and UI-02 formula/structure views for2026-10-12 through2026-10-16; preserve the live demo.
 - Primary active task: UI-01/N3/I1, implementing approved [UI-01.08](UI-01.08%20Campaign%20curation%20boundary%20decision.md), P1=100%, P2=100%, P3=100%,P4=100%,P5=25%, child85%. N2=100%; launch/provenance remain closed. UI-01.05 K1/R1=100%, I1=85%, child95%.
-- Next task: owner decision on [UI-01.08a](UI-01.08a%20Live%20curation%20qualification%20correction.md); both live outputs failed, four original slots/$1 held. Offline repair then return P5.2; no new calls or cutover authorized. UI-02 -> POP-01 -> ML-01 follow in order.
+- Next task: implement approved [UI-01.08a](UI-01.08a%20Live%20curation%20qualification%20correction.md); both live outputs failed, four original slots/$1 held. Offline repair then return P5.2; two additional calls/$0.50 approved2026-10-12 08:41:16 after offline checks; cutover gates remain. UI-02 -> POP-01 -> ML-01 follow in order.
 - Implementation completion: LAN-01=100%; UI-01 active77%, Build96.25%, Verification0%; UI-02=0%, P1/P2/P3/P4=0%; LR-01 paused25%, Build33.33%, Acceptance0%.
-- Blockers/dependencies: live curation outputs failed strict schema validation and original scope allowance is exhausted. UI-01.08a requires owner direction before additive profile/allowance work. Existing public curation/successor boundaries remain approved; UI-01.01 result index remains separate.
-- Latest checkpoint: two real OpenAI captures retained and rejected unchanged; no successor. Actual owner replacement/exact receipt replay and browser1440/390 failure checks pass. Offline readable-input preview verifies nine schema digests. Four original slots/$1 remain held; no additional call authorized. P4 implementation/acceptance stays complete.
+- Blockers/dependencies: live curation outputs failed strict schema validation and original scope allowance is exhausted. UI-01.08a approved; offline correction/replacement gates precede the two additional calls. Existing public curation/successor boundaries remain approved; UI-01.01 result index remains separate.
+- Latest checkpoint: Planning0.128.0 input/profile and scoped allowance repair passes124 checks, isolated install, both original v1 replays and actual-owner freeze. Four old holds retained, two new slots/$0.50 available. UI-01.08a=66.67%; parent85/P5=25 unchanged pending live acceptance.
 - Acceptance posture: read-only N2 journey qualified; Studio0.26 served locally/LAN. N3/I1=85%, parent V1=0%; no full-engine acceptance. Two P5 live calls reported$0.157331250; failure recovery passes, successful live qualification remains blocked.
 - Active exception: owner scheduled four targets for next week. Preserve earned phase credit; sequence the bounded cross-plan handoffs below. Pull LR-01/UI-R01 forward only when their faults block the scheduled integration, with exact return points.
 
@@ -172,6 +172,7 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 
 | Timestamp | Checkpoint | Evidence |
 |---|---|---|
+| 2026-10-12 08:54:22 | Approved UI-01.08a correction66.67%; parent85/P5=25 unchanged. | Planning0.128.0:124 scoped checks, isolated install, original v1 replay and actual-owner v2 preparation pass. Exact scope6/$1.50 retains four old holds; two new slots remain. |
 | 2026-10-12 06:01:28 | UI-01.08/P5.2 blocked; child85%, parent77/Build96.25 unchanged. | Two original live outputs failed schema validation; exact replay/browser1440/390 pass. All four slots/$1 held, reported live$0.157331250. UI-01.08a proposes additive input repair and scoped budget extension; no cutover. |
 | 2026-10-12 05:43:13 | UI-01.08/P5.1 complete; child85%, parent77/Build96.25. | One frozen scope/configuration, actual original allowance check and independent live worker preflight; zero paid calls at freeze. |
 | 2026-10-12 05:34:30 | UI-01.08/P4 complete; child80%, parent76/Build95. | Actual-owner browser1440/390 proposal, successor/original, next-context and reload pass without new intent. |
@@ -196,4 +197,3 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 | 2026-10-09 09:17:45 | UI-01.06=60%, L3 complete100%, L4 active0%; UI-01.05=53.33%, R1=60%. Parent55% unchanged. |335 Studio/125 owner checks; browser launch/reload/pinned plan/node polling at1440/390. [Audit](../Audits/UI-01.06_Launch_UI.md). Actual owners/workers next. |
 | 2026-10-09 09:06:00 | UI-01.06=55%, L3=75%; UI-01.05=51.67%, R1=55%; parent55% unchanged. | API/Gateway and durable Studio recovery model verified; integrated Run UI next.12 focused launch and88 Studio transport checks; actual campaign/browser remain. |
 | 2026-10-09 08:41:18 | UI-01.06 L1/L2 complete;40% overall, L3 active0%. UI-01.05=48.89%, K1=100%, R1=40%, I1=0. Parent55% unchanged. |170 focused source tests;468 independent installed tests; original admission receipt after process death and three Docker adoption variants. [Audit](../Audits/UI-01.06_Launch_Recovery.md). No live Run API/UI yet. |
-| 2026-10-08 21:32:11 | UI-01.05 K1 complete100%; child33.33%, R1/I1=0; parent55% unchanged pending N2 groups. |318 Studio checks; actual source/Knowledge publication, four tool invocations, localhost/LAN traversal and connected-flow regression. [Audit](../Audits/UI-01.05_Knowledge_Integration.md). |

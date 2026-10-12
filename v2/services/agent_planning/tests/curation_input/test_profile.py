@@ -19,12 +19,12 @@ from ..campaign_packet.test_assembly import plan
 MODEL = 'gpt-5.4-mini-2026-03-17'
 
 
-def curation_plan(maximum=200000, extras=()):
-    source = plan(maximum=maximum, extras=extras, prompt=reviewed_instructions('curation'))
+def curation_plan(maximum=200000, extras=(), version='1'):
+    source = plan(maximum=maximum, extras=extras, prompt=reviewed_instructions('curation', version))
     value = source.request.document().model_dump(mode='json')
     value['purpose'] = 'campaign_proposal'
     value['context']['model'].update(provider_id='openai', model_id=MODEL, model_revision=MODEL,
-        tokenizer=curation_tokenizer_reference().model_dump(mode='json'), context_window_tokens=400000)
+        tokenizer=curation_tokenizer_reference(version).model_dump(mode='json'), context_window_tokens=400000)
     value['context']['output_schema'] = campaign_curation_draft_schema().model_dump(mode='json')
     return replace(source, request=request(value))
 

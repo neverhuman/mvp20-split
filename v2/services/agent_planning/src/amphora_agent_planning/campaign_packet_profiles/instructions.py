@@ -11,18 +11,23 @@ from ..context import RequestSnapshot
 from ..context.policy import require
 
 
-def reviewed_instructions(profile='campaign'):
+def reviewed_instructions(profile='campaign', version='1'):
     # Canonical LF encoding is part of this owned profile; supplied Artifact bytes
     # are never normalized or repaired to make a different digest pass.
     require(profile in {'campaign', 'curation'}, 'campaign_instruction_profile')
-    return files(__package__).joinpath('prompts/' + profile + '-v1.txt').read_bytes().replace(b'\r\n', b'\n')
+    require(version == '1' or (profile == 'curation' and version == '2'), 'campaign_instruction_profile')
+    return files(__package__).joinpath('prompts/' + profile + '-v' + version + '.txt').read_bytes().replace(b'\r\n', b'\n')
 
 
 def reviewed_for_request(request):
     original = request.document()
     profile = 'curation' if original.context.output_schema == campaign_curation_draft_schema() else 'campaign'
     require(profile != 'curation' or original.purpose == 'campaign_proposal', 'curation_instruction_purpose')
-    return reviewed_instructions(profile)
+    version = '1'
+    if profile == 'curation' and original.context.model.provider_id == 'openai':
+        from ..curation_input import CurationInputBound
+        version = CurationInputBound.bind(original.context.model).envelope_version
+    return reviewed_instructions(profile, version)
 
 
 @dataclass(frozen=True)

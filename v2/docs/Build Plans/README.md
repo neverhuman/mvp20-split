@@ -1,6 +1,6 @@
 # Build Plans
 
-- [UI-01.08a Live curation correction](UI-01.08a%20Live%20curation%20qualification%20correction.md): proposed input-profile and same-scope budget extension after two retained failed live outputs; parent remains85%, P5.2 blocked. No new calls authorized.
+- [UI-01.08a Live curation correction](UI-01.08a%20Live%20curation%20qualification%20correction.md): approved input-profile and same-scope budget extension after two retained failed live outputs; parent remains85%, P5.2 offline correction active. Two additional calls/$0.50 approved after offline gates.
 
 - [Campaign provenance decision](UI-01.07%20Campaign%20provenance%20decision.md): approved/qualified100%; bounded Planning-owned exact-draft origin read and lookup. Qualified launch UI-01.06 stays complete.
 

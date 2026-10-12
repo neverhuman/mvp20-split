@@ -43,3 +43,5 @@ digest-verified readable schema documents and an explicit output construction gu
 It preserves original packet/capture files and cannot be used by the frozen worker.
 Activation requires an additive reviewed profile and separate live qualification;
 the preview provides no evidence of improved model accuracy or measured token use.
+
+UI-01.08a: prepare_v2.py creates a separate approved six-slot declaration and new truthful live policy/prompt/configuration roots; it verifies the prior four reservations remain. material.py runs only inside installed Planning to export v2 material and reproduce both old v1 envelopes byte-for-byte while retaining their rejection. No key is read during preparation. run.py requires the exact approved six-slot/1.50 USD declaration for the extension; original qualification files are never rewritten.

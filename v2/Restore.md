@@ -1,9 +1,9 @@
 # Restore
 
-Refreshed2026-10-12 06:01:28 America/Chicago. Read FIRST after compaction.
+Refreshed2026-10-12 08:41:16 America/Chicago. Read FIRST after compaction.
 Continue across gates/commits/compaction until needed. No agents/JARVIS; v1 read-only.
 Preserve untracked user ocular PDF/DOCX. No source/tests/module README edits during
-running tests/installations. No sessions running; all qualification owners drained.
+running tests/installations. Preparation84482 and boundary36897 FINISHED PASS; all isolated owners drained. No sessions running.
 
 ## Canonical position and concrete blocker
 
@@ -11,13 +11,36 @@ UI-01.08=85%,P1/P2/P3/P4=100,P5=25. P5.1=100; P5.2/P5.3/P5.4=0.
 UI01=77/Build96.25/Verification0,N3/I1=85;UI01.05=95,K1/R1=100.
 UI01 -> UI02 -> POP01 -> ML01; LR01 paused25/Build33.33. UI01.06/07 closed100.
 Active P5.2: two original live outputs failed strict validation. No successor.
-UI-01.08a Live curation qualification correction.md is concrete PROPOSED decision:
+UI-01.08a Live curation qualification correction.md was APPROVED2026-10-12 08:41:16:
 additive readable input/instruction profile, preserve v1 reconstruction/contracts,
 same-scope ceiling6slots/$1.50 (two additional calls/$0.50), default limits unchanged.
-Needs owner direction for material profile/budget change; NO more paid calls now.
-If approved: implement offline v2/replay/budget tests and independent installation,
+Owner approved input-profile repair and two additional calls/$0.50; offline gates first.
+ACTIVE: implement offline v2/replay/budget tests and independent installation,
 freeze additive authorization/policy roots, then P5.2 live supported ->P5.3 missing
 ->P5.4 local/LAN/cutover ->parentV1. Do not reopen completed prerequisite phases.
+
+## Active correction checkpoint2026-10-12 08:54:22
+
+Planning0.128.0 implements explicit curation input .v2 (Core SchemaRef wireversion1),
+curation-v2 prompt, fit.v4; old default profile/instructions unchanged. Readable
+projection verifies schema and text/plain/application/json artifact hashes/size/
+encoding, preserves originals, exposes reviewed future declaration as data. Scope
+ceiling.py packages exact approved tenant/project6/$1.50; others4/$1. Canonical
+reserve/dispatch/allowance queries use ceiling+1 and count v1/v2 original holds.
+First source runA failed29/118 on mistaken Core SchemaRef version2; fixed using
+existing checkpoint distinct-ID convention. FinalrunB session73583FINISHED:
+124PASS91.07s, logcuration-input-v2-b.log. No paid calls this turn.
+Installation5200FINISHED PASS:curation-planning-installation-20261012c/owner,
+Planning0.128.0; no private peers. Original v1 envelopes both replay byte-exact and
+failed outputs still rejected via installed material.py. Dependency boundary output
+PASS. prepare_v2 session84482 currently running; logcuration-v2-preparation-a.log.
+New outputcuration-live-v2-20261012a. Only isolated servingowners installation and
+allowed policylist extended; originals backed upowners-pre-v2/planning-pre-v2.json.
+Original livev1 frozenfiles remain unchanged. Newdevmaterial.py/prepare_v2.py plus
+run.py scoped6guard/allowance.py dynamicceiling. Preparation complete; source124checks, isolatedoriginalreplay and actualfrozenledger
+PASS. Correction66.67%. Commit/push verifiedrepair, then one original supported request
+under newv2 policy. No keyread
+or new modelcall yet. Serving demo unchanged. Verified repair checkpoint ready; latest Git log identifies commit.
 
 ## Latest work and evidence
 
@@ -111,5 +134,5 @@ uvv2/.venv/Scripts/uv.exe; --offline installs/locks. Git safe.directory=
 Use rg--files before paths. Deploymentv2/deploy/local,Studiov2/studio.
 Read UI guidelines before changes. OpenAI Docs skill already read; official model
 page checked earlier this session, snapshot/Responses and$0.75/$4.50 per1Mtexttokens.
-No additional provider calls authorized until explicit decision. The user must not
+Two additional calls now authorized after offline/replacement gates. The user must not
 need to reauthorize ordinary implementation after that bounded decision.

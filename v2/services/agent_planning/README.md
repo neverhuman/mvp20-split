@@ -112,3 +112,5 @@ Current curation readback requires0027; managed fulfillment/HTTP writes follow.
 
 UI-01.08/P3.2c: Planning0.127 connects approved fulfillment intake and managed
 verification with fair campaign polling.56 scoped checks and150 independently installed checks pass; P3.2 complete. Serving demo versions remain unchanged.
+
+UI-01.08a/0.128.0: additive curation input v2 makes verified schema documents readable and specifies closed output variants; old input and output contracts stay unchanged. The owner-reviewed exact qualification scope has a six-slot/1.50 USD ceiling; other scopes retain four slots/1 USD. Existing reservations are never reset. No database migration or Runtime changes.

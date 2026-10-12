@@ -64,7 +64,10 @@ def verify(root, serving, qualification, scenario, key_file):
         assert hashlib.sha256((qualification / name).read_bytes()).hexdigest() == digest, 'Frozen live preparation changed'
     declaration = read(qualification / 'scope-declaration.json')
     allowance = read(qualification / 'live-allowance.json')
-    assert allowance['maximum_new_physical_calls'] == 2 and declaration['maximum_total_slots'] == 4
+    assert allowance['maximum_new_physical_calls'] == 2
+    assert declaration['maximum_total_slots'] == 4 or (
+        declaration['maximum_total_slots'] == 6 and declaration['maximum_original_units'] == 1500000000
+        and declaration['authorization'] == 'UI-01.08a')
     original = read(serving / 'integrated-evidence.json')
     scope = original['scope']
     assert scope == declaration['scope'] == allowance['scope']
@@ -76,7 +79,7 @@ def verify(root, serving, qualification, scenario, key_file):
         draft = read(serving / 'original-draft.json')['head']
         sources = read(serving / 'original-carry-sources.json')
         command = campaign.original('curation', 'planning.curate_campaign', {
-            'direction': DIRECTIONS[scenario], 'policy_id': 'internal-curation-v1',
+            'direction': DIRECTIONS[scenario], 'policy_id': read(qualification / 'curation-policy.json')['policy_id'],
             'context': {'predecessor': sources['predecessor'], 'draft': {'scope': scope,
                 **{key: draft[key] for key in ('draft_id', 'revision', 'content_sha256')}},
                 'knowledge': [], 'questions': [], 'needs': [],
@@ -95,7 +98,7 @@ def verify(root, serving, qualification, scenario, key_file):
             assert owned_process([python, '-I', Path(__file__).with_name('allowance.py'), config,
                 output / 'allowance-before.json'], environment, output / 'allowance.log', timeout=60) == 0
             before = read(output / 'allowance-before.json')
-            assert before['scope'] == scope and before['reserved_slots'] <= 4
+            assert before['scope'] == scope and before['reserved_slots'] <= declaration['maximum_total_slots']
             # DispatchJournal reconciles any original issued request before considering a new send.
             environment['OPENAI_API_KEY'] = credential(key_file)
             try:

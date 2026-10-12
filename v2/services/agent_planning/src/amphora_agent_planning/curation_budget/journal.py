@@ -8,6 +8,7 @@ from ..budget.policy import BudgetPolicy, ReservationDemand
 from ..context.policy import require
 from ..providers.wire import observation_document
 from .policy import CurationAllowance
+from .ceiling import ceiling_for
 
 
 def lock(connection, key, request):
@@ -19,6 +20,7 @@ def lock(connection, key, request):
 
 
 def check(connection, key, demand=None):
+    ceiling = ceiling_for(key)
     rows = list(connection.execute(text('SELECT r.*,p.canonical_bytes AS policy_bytes, '
         'o.canonical_bytes AS observation_bytes,l.canonical_bytes AS late_bytes '
         'FROM planning.reservations r JOIN planning.budget_policies p '
@@ -30,8 +32,10 @@ def check(connection, key, demand=None):
         "AND convert_from(q.canonical_bytes,'UTF8')::jsonb #>> '{context,model,provider_id}'='openai' "
         "AND (convert_from(q.canonical_bytes,'UTF8')::jsonb #>> '{context,output_schema,schema_id}'="
         "'planning.campaign-curation-draft' OR convert_from(q.canonical_bytes,'UTF8')::jsonb "
-        "#>> '{context,model,tokenizer,schema_id}'='planning.curation-openai-input-bound') LIMIT 5"), key).mappings())
-    require(len(rows) + (demand is not None) <= CurationAllowance.maximum_calls, 'curation_group_calls_exhausted')
+        "#>> '{context,model,tokenizer,schema_id}' IN ('planning.curation-openai-input-bound',"
+        "'planning.curation-openai-input-bound.v2')) LIMIT :scan_limit"),
+        {**key, 'scan_limit': ceiling.maximum_calls + 1}).mappings())
+    require(len(rows) + (demand is not None) <= ceiling.maximum_calls, 'curation_group_calls_exhausted')
     units = 0
     for row in rows:
         policy = BudgetPolicy.from_bytes(bytes(row['policy_bytes']))
@@ -53,5 +57,5 @@ def check(connection, key, demand=None):
             require(not charge.overage, 'provider_usage_overage')
             held = max(held, charge.accounting_units)
         units += held
-    require(units + (0 if demand is None else demand.accounting_units) <= CurationAllowance.maximum_units,
+    require(units + (0 if demand is None else demand.accounting_units) <= ceiling.maximum_units,
             'curation_group_cost_exhausted')
