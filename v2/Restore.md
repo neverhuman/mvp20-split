@@ -1,16 +1,16 @@
 # Restore
 
-Refreshed 2026-10-12 01:00:31 America/Chicago. Read FIRST after compaction.
+Refreshed 2026-10-12 01:14:38 America/Chicago. Read FIRST after compaction.
 Continue until needed across commits/gates/compaction. No subagents/JARVIS.
 v1 read-only; preserve untracked ocular PDF/DOCX. No source/tests/module README
 edits while tests/installations run. Serving demo uses immutable source copies.
 
 ## Canonical position
 
-UI-01.08 approved; active P3.2 explicit capability fulfillment.
-Child46.67%;P1=100%,P2=100%,P3=33.33%,P4/P5=0. P2.1/2.2=100%,P2.3=100%,P2.4=100.
+UI-01.08 approved; active P3.2b durable fulfillment journal.
+Child48.89%;P1=100%,P2=100%,P3=44.44%,P4/P5=0. P2.1/2.2=100%,P2.3=100%,P2.4=100.
 P2.3a/b=100%;c100%(c.1policy/publication100,c.2provider/compiler100,c.3process100).
-ParentUI01=69.33%/Build86.67%/Verification0;UI01.05=82.22%,I1=46.67%.
+ParentUI01=69.78%/Build87.22%/Verification0;UI01.05=82.96%,I1=48.89%.
 UI01.06/07 closed100. Order UI01->UI02->POP01->ML01. LR01 paused25/Build33.33.
 Universal result index remains separately unapproved. No user decision pending.
 
@@ -41,15 +41,18 @@ actual configured replacement stays unknown with full hold and one dispatch.
 
 ## Latest P3 checkpoint
 
-2026-10-12 01:00:31: Planning0.124 capability_requests implemented and qualified48checks82.57s
-plus14 exact proposal-hash/ownership checks36.79s. ALL TESTS FINISHED.
-IDs capability-<curation digest>-<00..15>; complete original gaps/proposal hash derive
-from immutable captured output. No duplicate store/migration. Curation GET adds refs
-only to response; queued receipts/serialized progress unchanged. Independent scoped
-GET capability-requests, foreign actor/scope404, own read_capabilities grant.
-Canonical P3.1=100%,P3.2/P3.3=0%; version/locks/commit pending.
-No paid calls/keys/demo changes. Tests capability_requests own this boundary.
+P3.1 pushed e7bf5e79 (0.124,48+14 checks).
+2026-10-12 01:14:38 America/Chicago: Planning0.125 P3.2a acceptance evidence complete.
+25 initial/48 final acceptance+ownership checks pass19.85s. Frozen v1 report,
+original request/proposal/gap/release/criteria/applicability/typed-port binding;
+bounded Registry and Data processing. Report labels cannot confer owner or scientific
+authority. No SQL writes/provider calls/demo changes. Durable journal next.
+P3.2=33.33%(a100,b/c0),P3=44.44%,child48.89%;parent69.78%/Build87.22%,UI01.05=82.96%.
 
+Uncommitted capability_acceptance/{wire,review,collection}.py and README/tests.
+Versioned schema frozen in tests/capability_acceptance/acceptance-v1.schema.json.
+Collector: Registry10s, Data20s/32calls/16MiB,4MiB per Artifact,64KiB report.
+ALL TESTS FINISHED; locks/commit for0.125 pending. No paid calls or real keys.
 ## Next concrete work
 
 P3.2 explicit fulfillment;
