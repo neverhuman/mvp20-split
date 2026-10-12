@@ -1,5 +1,12 @@
 # Foundation Verification Tooling
 
+UI-01.08: campaign-curation and campaign-successor-launch have independent
+contract test scopes. Planning curation admission and original provenance use
+`run_tests.py --module agent-planning --area curation_intake` or `campaign_origin`.
+The Planning and Studio roots remain their sole test owners; focused areas/scripts
+do not create overlapping ownership entries. Generation comparison remains runnable
+with `node scripts/verify-generations.mjs` from Studio.
+
 LAN-01: serve_lan_review.py starts an independently installed HTTPS gateway beside
 the existing localhost gateway. It reuses only the live public configuration and
 Deployment credential vault; owners/workers are neither started nor stopped.

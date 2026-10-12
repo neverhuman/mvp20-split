@@ -1,0 +1,23 @@
+[project]
+name = "amphora-contracts-campaign-successor-launch"
+version = "0.1.0"
+requires-python = ">=3.12,<3.13"
+dependencies = ["pydantic>=2.12,<3", "amphora-contracts-core==0.1.0", "amphora-contracts-commands==0.2.0", "amphora-contracts-graph-runtime==0.13.0", "amphora-contracts-runtime==0.1.0", "amphora-contracts-campaign-launch==0.1.0", "amphora-contracts-draft-successor==0.1.0"]
+
+[build-system]
+requires = ["hatchling>=1.27,<2"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/amphora_contracts_campaign_successor_launch"]
+
+[tool.uv.sources]
+amphora-contracts-core = { path = "../core", editable = true }
+amphora-contracts-commands = { path = "../commands", editable = true }
+amphora-contracts-graph-runtime = { path = "../graph_runtime", editable = true }
+amphora-contracts-runtime = { path = "../runtime", editable = true }
+amphora-contracts-campaign-launch = { path = "../campaign_launch", editable = true }
+amphora-contracts-draft-successor = { path = "../draft_successor", editable = true }
+
+[tool.amphora]
+public-imports = ["amphora-contracts-core", "amphora-contracts-commands", "amphora-contracts-graph-runtime", "amphora-contracts-runtime", "amphora-contracts-campaign-launch", "amphora-contracts-draft-successor"]

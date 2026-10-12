@@ -18,11 +18,12 @@ wheels = [
 
 [[package]]
 name = "amphora-agent-planning"
-version = "0.107.0"
+version = "0.108.0"
 source = { editable = "../services/agent_planning" }
 dependencies = [
     { name = "alembic" },
     { name = "amphora-contracts-artifacts" },
+    { name = "amphora-contracts-campaign-curation" },
     { name = "amphora-contracts-campaigns" },
     { name = "amphora-contracts-commands" },
     { name = "amphora-contracts-core" },
@@ -48,6 +49,7 @@ dependencies = [
 requires-dist = [
     { name = "alembic", specifier = ">=1.16,<2" },
     { name = "amphora-contracts-artifacts", editable = "../contracts/artifacts" },
+    { name = "amphora-contracts-campaign-curation", editable = "../contracts/campaign_curation" },
     { name = "amphora-contracts-campaigns", editable = "../contracts/campaigns" },
     { name = "amphora-contracts-commands", editable = "../contracts/commands" },
     { name = "amphora-contracts-core", editable = "../contracts/core" },
@@ -163,6 +165,33 @@ requires-dist = [
 ]
 
 [[package]]
+name = "amphora-contracts-campaign-curation"
+version = "0.1.0"
+source = { editable = "../contracts/campaign_curation" }
+dependencies = [
+    { name = "amphora-contracts-commands" },
+    { name = "amphora-contracts-core" },
+    { name = "amphora-contracts-graph-runtime" },
+    { name = "amphora-contracts-knowledge" },
+    { name = "amphora-contracts-planning" },
+    { name = "amphora-contracts-research" },
+    { name = "amphora-contracts-tools" },
+    { name = "pydantic" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "amphora-contracts-commands", editable = "../contracts/commands" },
+    { name = "amphora-contracts-core", editable = "../contracts/core" },
+    { name = "amphora-contracts-graph-runtime", editable = "../contracts/graph_runtime" },
+    { name = "amphora-contracts-knowledge", editable = "../contracts/knowledge" },
+    { name = "amphora-contracts-planning", editable = "../contracts/planning" },
+    { name = "amphora-contracts-research", editable = "../contracts/research" },
+    { name = "amphora-contracts-tools", editable = "../contracts/tools" },
+    { name = "pydantic", specifier = ">=2.12,<3" },
+]
+
+[[package]]
 name = "amphora-contracts-campaign-launch"
 version = "0.1.0"
 source = { editable = "../contracts/campaign_launch" }
@@ -182,6 +211,31 @@ requires-dist = [
     { name = "amphora-contracts-graph-runtime", editable = "../contracts/graph_runtime" },
     { name = "amphora-contracts-runtime", editable = "../contracts/runtime" },
     { name = "amphora-contracts-tools", editable = "../contracts/tools" },
+    { name = "pydantic", specifier = ">=2.12,<3" },
+]
+
+[[package]]
+name = "amphora-contracts-campaign-successor-launch"
+version = "0.1.0"
+source = { editable = "../contracts/campaign_successor_launch" }
+dependencies = [
+    { name = "amphora-contracts-campaign-launch" },
+    { name = "amphora-contracts-commands" },
+    { name = "amphora-contracts-core" },
+    { name = "amphora-contracts-draft-successor" },
+    { name = "amphora-contracts-graph-runtime" },
+    { name = "amphora-contracts-runtime" },
+    { name = "pydantic" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "amphora-contracts-campaign-launch", editable = "../contracts/campaign_launch" },
+    { name = "amphora-contracts-commands", editable = "../contracts/commands" },
+    { name = "amphora-contracts-core", editable = "../contracts/core" },
+    { name = "amphora-contracts-draft-successor", editable = "../contracts/draft_successor" },
+    { name = "amphora-contracts-graph-runtime", editable = "../contracts/graph_runtime" },
+    { name = "amphora-contracts-runtime", editable = "../contracts/runtime" },
     { name = "pydantic", specifier = ">=2.12,<3" },
 ]
 
@@ -734,7 +788,9 @@ dependencies = [
     { name = "amphora-campaign-runtime" },
     { name = "amphora-capability-registry" },
     { name = "amphora-contracts-artifacts" },
+    { name = "amphora-contracts-campaign-curation" },
     { name = "amphora-contracts-campaign-launch" },
+    { name = "amphora-contracts-campaign-successor-launch" },
     { name = "amphora-contracts-campaigns" },
     { name = "amphora-contracts-candidate-canonicalization" },
     { name = "amphora-contracts-candidate-spaces" },
@@ -794,7 +850,9 @@ requires-dist = [
     { name = "amphora-campaign-runtime", editable = "../services/campaign_runtime" },
     { name = "amphora-capability-registry", editable = "../services/capability_registry" },
     { name = "amphora-contracts-artifacts", editable = "../contracts/artifacts" },
+    { name = "amphora-contracts-campaign-curation", editable = "../contracts/campaign_curation" },
     { name = "amphora-contracts-campaign-launch", editable = "../contracts/campaign_launch" },
+    { name = "amphora-contracts-campaign-successor-launch", editable = "../contracts/campaign_successor_launch" },
     { name = "amphora-contracts-campaigns", editable = "../contracts/campaigns" },
     { name = "amphora-contracts-candidate-canonicalization", editable = "../contracts/candidate_canonicalization" },
     { name = "amphora-contracts-candidate-spaces", editable = "../contracts/candidate_spaces" },

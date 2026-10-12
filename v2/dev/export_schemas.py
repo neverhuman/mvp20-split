@@ -9,6 +9,8 @@ from pathlib import Path
 
 import amphora_contracts_topology_search as topology_search
 import amphora_contracts_campaign_launch as campaign_launch
+import amphora_contracts_campaign_curation as campaign_curation
+import amphora_contracts_campaign_successor_launch as successor_launch
 import amphora_contracts_evaluation_reuse as evaluation_reuse
 from amphora_contracts_synthetic_evaluation import SyntheticEvaluationReceipt
 from amphora_contracts_execution_proofs import AcceptedToolExecution
@@ -52,6 +54,17 @@ from amphora_contracts_tools import Completion, Invocation, ToolBinding, ToolDes
 
 ROOT = Path(__file__).absolute().parents[1]
 MODELS = {
+    "campaign-successor-launch.request": successor_launch.SuccessorLaunchRequest,
+    "campaign-successor-launch.receipt-query": successor_launch.SuccessorLaunchReceiptQuery,
+    "campaign-successor-launch.receipt": successor_launch.SuccessorLaunchReceipt,
+    "planning.campaign-curation-draft": campaign_curation.CampaignCurationDraft,
+    "planning.campaign-curation-request": campaign_curation.CurationRequest,
+    "planning.campaign-curation-receipt-query": campaign_curation.CurationReceiptQuery,
+    "planning.campaign-curation-receipt": campaign_curation.CurationReceipt,
+    "planning.campaign-curation-view": campaign_curation.CurationView,
+    "planning.capability-request-view": campaign_curation.CapabilityRequestView,
+    "planning.capability-fulfillment-request": campaign_curation.CapabilityFulfillmentRequest,
+    "planning.capability-fulfillment-receipt": campaign_curation.CapabilityFulfillmentReceipt,
     "planning.campaign-origin-knowledge": planning_contracts.CampaignOriginV2,
     "planning.campaign-origin": planning_contracts.CampaignOrigin,
     "topology-search.policy": topology_search.TopologyPolicy,

@@ -1,6 +1,6 @@
 # Restore
 
-Refreshed2026-10-11 20:04:00 America/Chicago. Read FIRST after compaction.
+Refreshed2026-10-11 21:24:47 America/Chicago. Read FIRST after compaction.
 Continue until needed persists across commits/milestones. No subagents/JARVIS.
 v1 read-only; preserve untracked ocular PDF/DOCX. No source/tests/module README
 edits while verification/installations run. Immutable serving processes are okay.
@@ -8,23 +8,19 @@ edits while verification/installations run. Immutable serving processes are okay
 ## Canonical position
 
 UI-01/N2 complete100%; N2.2 provenance, N2.3 generation comparison and N2.4
-recorded model inspection all qualified. UI01=60%, Build75%, Verification0%.
-NEXT owner direction on UI-01.08 for N3/I1 (0%); K1/R1=100%, UI01.05=66.67%.
+recorded model inspection all qualified. UI01=64%, Build80%, Verification0%.
+NEXT approved UI-01.08/P2.1; N3/I1=20%; K1/R1=100%, UI01.05=73.33%.
 UI01.06/UI01.07 closed100%. Order UI01 -> UI02 -> POP01 -> ML01.
 LR01 paused25%/Build33.33%. UI01.01 universal index remains unapproved;
 bounded existing-API comparison is qualified.
 
 ## Latest checkpoints
 
-Pushed provenance49c28ac1/ca056004/1a43c1ea/9cea8028/c0efa208/37e9127a.
-Generation source88d625d5 and closeout0362f472 pushed. N2.4/decision docs
-closeout checks passed; final commit/push is the last action before the owner gate.
-Studio0.26; Planning0.107/Gateway0.5/PlanningContracts0.13/private migration0021.
-362 Studio tests;13 focused generation checks. Provenance264 isolated owner tests.
-Current scientific proposal remains deterministic; actual prior OpenAI history
-was separately verified. Zero new paid calls.
-Audits: docs/Audits/UI-01.07_Campaign_Provenance.md and
-UI-01_N2.3_Generation_Comparison.md. Parent and MBT mirrors updated.
+P1 UI-01.08 verified: two new public packages0.1.0; source Planning0.108 pure
+curation command policy.219 contract/publication,74 focused/boundary,38 SQL/API
+regression checks pass. No new paid calls or migrations. Commit/push this milestone
+then P2.1. Existing served Planning remains0.107; Studio0.26/Gateway0.5.
+N2.4 closeout2ee0f9cc already pushed; no outstanding approval gate.
 
 ## Evidence and current serving processes
 
@@ -65,25 +61,19 @@ python is environment/Scripts/python.exe (NOT .venv). Deployment0.18.3 at
 launch-live-installation-20261009e. Other independent owners remain Runtime0.65,
 Data0.30/Registry0.1/Research0.40/Knowledge0.18. LAN --baseline is gateway.json.
 
-## Next task / owner gate
+## Next task / approved implementation
 
-N2.4 complete100%: direct read-only model-history navigation reused actual original
-OpenAI request/rationale/capture/Runtime outcome, no paid calls. N2=100%, UI01=60%,
-Build75%, Verification0%. N3/I1 remains0%, UI01.05 remains66.67%.
-STOP after committing final closeout: owner direction required for proposed
-UI-01.08 Campaign curation boundary decision.md (all five phases0%). It concretely
-scopes new Planning campaign-curation jobs, versioned output/missing-capability
-requests and explicit verified fulfillment, plus separate Deployment successor-launch
-contract using Runtime's existing graph.admit_draft_successor command. Existing
-launch/provenance approvals do not cover these new public writes. No dependent API
-implementation started. Final response should request this decision and cite
-v2/AGENTS.md material scope/sequence rule, not ask to reapprove provenance.
-
-Existing checkpoint OpenAI input accepts supervision only. Campaign packet live
-input needs a distinct identity; never relabel the deterministic compiler helper.
-No provider key was read this checkpoint. OpenAI Docs used; official mini model page
-reviewedOct11 confirms existing rates/Responses support. Proposed future qualification
-cap$1 total/four calls/$0.25 each, synthetic-only; no calls made under that proposal.
+Owner approved UI-01.08; P1 complete100%, P2 active0%, child20%. No reapproval needed.
+P1 two new contract packages0.1.0, Planning0.108 pure command policy complete.
+219 contract/publication +74 focused/boundary +38 actual-SQL policy/API tests pass.
+Next P2.1 durable original-intent journal, read-only reconciliation and scoped HTTP.
+Then P2.2 exact envelope, P2.3 worker/issuance/compiler, P2.4 scripted/replacement.
+No curation routes/migrations/live deployment yet. Preserve serving0.107.
+Boundary guard found preexisting overlapping test ownership; fixed owner roots,
+Planning --area curation_intake/campaign_origin; generation direct script unchanged. Approval includes synthetic-only live qualification
+maximum$1/four calls/$0.25 reservation each, once-only issuance; no calls made yet.
+Coherence review and tracker approval recorded. Last closeout2ee0f9cc pushed.
+Existing supervision-only envelope cannot be relabelled as campaign curation.
 
 Latest evidence:
 - reasoning-studio-tests-20261011a.log362pass.

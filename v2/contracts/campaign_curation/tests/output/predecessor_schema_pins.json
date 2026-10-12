@@ -1,0 +1,30 @@
+{
+  "CampaignDraft": {
+    "validation": "91f6b7032503073e343cfbd54819c6d0ef4c26170842ba56c18f11d055493b73",
+    "serialization": "91f6b7032503073e343cfbd54819c6d0ef4c26170842ba56c18f11d055493b73"
+  },
+  "CheckpointDraft": {
+    "validation": "ab020e2816397c00d1c9b540f4d653123836dc90b16785d3d07497211f96fca4",
+    "serialization": "ab020e2816397c00d1c9b540f4d653123836dc90b16785d3d07497211f96fca4"
+  },
+  "CheckpointFollowupDraft": {
+    "validation": "20838f4c563060f223dc80d23d887de6ec60add2b303ed6b381c43c1ca96aa0a",
+    "serialization": "20838f4c563060f223dc80d23d887de6ec60add2b303ed6b381c43c1ca96aa0a"
+  },
+  "CampaignOrigin": {
+    "validation": "610d6cd05f5ccae0c1b5ab5179f08605451f9c7447ecc1ca047171d72e6f69ad",
+    "serialization": "610d6cd05f5ccae0c1b5ab5179f08605451f9c7447ecc1ca047171d72e6f69ad"
+  },
+  "CampaignOriginV2": {
+    "validation": "aa6581c2b6083fd5d39a8cf432a357ee7e81b8124664a3f8815eab3ab13ffb42",
+    "serialization": "aa6581c2b6083fd5d39a8cf432a357ee7e81b8124664a3f8815eab3ab13ffb42"
+  },
+  "LaunchRequest": {
+    "validation": "9353f8aac4a47e6ab34e67bce1fb25f830df8138f7b28af5fb502e612d67e90b",
+    "serialization": "9353f8aac4a47e6ab34e67bce1fb25f830df8138f7b28af5fb502e612d67e90b"
+  },
+  "LaunchReceipt": {
+    "validation": "8558dbeafd64e18fdf7d99ea74da278123c91a76e64ae1378f39698e272cb07e",
+    "serialization": "8558dbeafd64e18fdf7d99ea74da278123c91a76e64ae1378f39698e272cb07e"
+  }
+}
