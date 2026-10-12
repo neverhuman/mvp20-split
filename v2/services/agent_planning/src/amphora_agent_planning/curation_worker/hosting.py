@@ -5,6 +5,9 @@ from dataclasses import dataclass
 from sqlalchemy import text
 
 from ..access import Principal
+from ..capability_acceptance.collection import AcceptanceCollector
+from ..capability_fulfillment.verification import FulfillmentVerifier
+from ..capability_fulfillment.worker import FulfillmentWorker
 from ..campaign_dispatch.dispatcher import CompilerDispatcher
 from ..campaign_dispatch.journal import CompilerJournal
 from ..campaign_dispatch.progression import CompilerProgression
@@ -21,7 +24,8 @@ from .peers import CurationPeers
 from .polling import CurationPoller
 
 TABLES = ('curation_requests', 'curation_progress', 'curation_leases', 'curation_preparation_links',
-    'curation_declarations', 'curation_declaration_events', 'compiler_selections')
+    'curation_declarations', 'curation_declaration_events', 'compiler_selections',
+    'capability_fulfillments', 'capability_verifications')
 
 
 @dataclass(frozen=True)
@@ -55,7 +59,10 @@ class CurationHost:
             worker = CurationWorker(engine, reviewed.policy_map(), peers.assembler, publisher,
                 CurationExecutor(engine, peers.data, provider,
                     timeout_seconds=config.live.timeout_seconds if config.live is not None else 60), compiler)
-            return cls(engine, principal, CurationPoller(worker, list(reviewed.policy_map()), config.worker_id))
+            fulfillments = FulfillmentWorker(FulfillmentVerifier(engine,
+                AcceptanceCollector(peers.refresh.registry, peers.data)))
+            return cls(engine, principal, CurationPoller(worker, list(reviewed.policy_map()), config.worker_id,
+                fulfillments=fulfillments))
         except BaseException:
             engine.dispose()
             raise

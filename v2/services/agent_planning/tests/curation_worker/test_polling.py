@@ -8,6 +8,7 @@ from amphora_agent_planning.curation_worker.polling import CurationPoller
 def poller():
     result = object.__new__(CurationPoller)
     result.worker_id = 'bounded-worker'
+    result.fulfillments, result.fulfillment_turn = None, False
     result.discovery = SimpleNamespace(next=lambda principal: 'original')
     result.worker = SimpleNamespace(tick=lambda *args: args)
     return result

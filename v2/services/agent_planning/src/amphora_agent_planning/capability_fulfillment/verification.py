@@ -6,11 +6,11 @@ from datetime import UTC
 from amphora_contracts_campaign_curation import CapabilityFulfillmentReceipt
 from sqlalchemy import text
 
-from ..capability_acceptance.review import AcceptanceRejected
 from ..context.policy import require
 from ..curation_intake.record import encoded
 from .original import OriginalFulfillment
 from .witness import VerificationWitness
+from .failures import rejection
 
 
 @dataclass(frozen=True)
@@ -83,8 +83,11 @@ class FulfillmentVerifier:
         try:
             review = self.collector.collect(original.capability, original.incoming.request.payload)
             witness = VerificationWitness.capture(original, review)
-        except AcceptanceRejected as error:
-            status, reason = 'rejected', str(error)
+        except ValueError as error:
+            reason = rejection(error)
+            if reason is None:
+                raise
+            status = 'rejected'
         return self._commit(original, key, status, reason, witness)
 
     def _commit(self, original, key, status, reason, witness):

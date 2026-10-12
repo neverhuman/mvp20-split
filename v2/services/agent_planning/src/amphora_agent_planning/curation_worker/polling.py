@@ -7,13 +7,24 @@ from .discovery import CurationDiscovery
 
 
 class CurationPoller:
-    def __init__(self, worker, policy_ids, worker_id):
+    def __init__(self, worker, policy_ids, worker_id, *, fulfillments=None):
         self.worker, self.worker_id = worker, worker_id
         self.discovery = CurationDiscovery(worker.engine, policy_ids)
+        self.fulfillments, self.fulfillment_turn = fulfillments, False
 
     def tick(self, principal):
+        if self.fulfillments is not None:
+            self.fulfillment_turn = not self.fulfillment_turn
+            if self.fulfillment_turn:
+                result = self.fulfillments.tick(principal)
+                if result is not None:
+                    return result
         identity = self.discovery.next(principal)
-        return None if identity is None else self.worker.tick(principal, identity, self.worker_id)
+        if identity is not None:
+            return self.worker.tick(principal, identity, self.worker_id)
+        if self.fulfillments is not None and not self.fulfillment_turn:
+            return self.fulfillments.tick(principal)
+        return None
 
     def sweep(self, principal, *, seconds=20, interval=1, stop=None):
         require(type(seconds) in (int, float) and math.isfinite(seconds) and 0 < seconds <= 86400

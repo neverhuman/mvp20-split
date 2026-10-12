@@ -19,10 +19,15 @@ GROUPS = {
         'curation_preparation', 'curation_policy', 'curation_input', 'curation_output', 'curation_budget', 'curation_openai'),
     'durable_execution': ('curation_declaration', 'curation_jobs', 'curation_result', 'curation_execution'),
     'compiler_process': ('curation_compiler', 'curation_worker'),
+    'capabilities': ('capability_requests', 'capability_acceptance', 'capability_fulfillment',
+        'curation_intake', 'curation_worker'),
 }
 
 
-def verify(output):
+def verify(output, groups=None):
+    selected = tuple(GROUPS) if groups is None else tuple(groups)
+    if not selected or len(set(selected)) != len(selected) or any(name not in GROUPS for name in selected):
+        raise ValueError('Select unique named qualification groups')
     output.mkdir(parents=True, exist_ok=False)
     python = install(output / 'owner', 'amphora-agent-planning',
         ['amphora_campaign_runtime', 'amphora_data_artifacts', 'amphora_research', 'amphora_knowledge',
@@ -54,7 +59,8 @@ def verify(output):
     run([ROOT / '.venv/Scripts/uv.exe', 'pip', 'install', '--python', python,
          'pytest>=8,<9', 'jsonschema>=4,<5', 'httpx>=0.28,<1'], output / 'test-install.log')
     counts = {}
-    for name, areas in GROUPS.items():
+    for name in selected:
+        areas = GROUPS[name]
         print('Verifying isolated curation group: ' + name, flush=True)
         xml = output / (name + '.xml')
         arguments = [*(str(tests / area) for area in areas), '--confcutdir=' + str(tests),
@@ -70,7 +76,7 @@ def verify(output):
         'tests': counts, 'external_provider_calls': 0,
         'installation': json.loads((output / 'owner/manifest.json').read_bytes()),
         'limits': ['Actual isolated Planning wheel with public dependency closure; copied test support only',
-            'Actual owned PostgreSQL fixture and new scoped requests; unchanged migration0025 replayed',
+            'Actual owned PostgreSQL fixture and new scoped requests; additive migrations through0027 replayed',
             'Scripted public owner/provider peers; actual configured CLI process death/replacement',
             'Environment excludes provider keys; no model network or scientific-validity claim',
             'Serving local/LAN demo installations unchanged; integrated actual-owner qualification remains P5']}
@@ -81,4 +87,6 @@ def verify(output):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--output', required=True, type=Path)
-    verify(parser.parse_args().output.absolute())
+    parser.add_argument('--group', action='append', choices=tuple(GROUPS))
+    args = parser.parse_args()
+    verify(args.output.absolute(), args.group)

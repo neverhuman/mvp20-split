@@ -70,3 +70,15 @@ through retained history. No paid calls or real credentials in this qualificatio
 Last reviewed:2026-10-12 00:50:48 America/Chicago. Architecture: [Planning](../../../../../docs/Architecture/Agents/Planning.md).
 Delivery: [UI-01.08](../../../../../docs/Build%20Plans/UI-01.08%20Campaign%20curation%20boundary%20decision.md).
 Independent replacement: curation-installation-20261012a,205 scoped checks, public-only wheel closure.
+
+UI-01.08/P3.2c: CurationHost also composes capability_fulfillment via public Registry
+metadata and Data processing readers. It retains the same fixed execute_curations
+principal, without fulfill_capabilities submission authority. Readiness requires0027.
+Polling alternates fulfillment/campaign turns with idle fallback; one pending tool
+review cannot starve campaigns. Provider-disabled processes can verify already
+owner-authorized fulfillment commands. No startup scientific/tool grants or model
+calls are introduced. See capability_fulfillment README for failure/replay semantics.
+
+Planning0.127 independently installed qualification passed150 capability/intake/worker
+checks458.67s, including compiler and process crash recovery. Evidence:
+capability-installation-20261012a/evidence.json. No paid calls/demo upgrade.

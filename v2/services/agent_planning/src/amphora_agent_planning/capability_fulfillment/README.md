@@ -1,8 +1,9 @@
 # Capability fulfillment journal
 
-UI-01.08/P3.2b complete. Owns immutable authorized fulfillment commands, original
-pending receipts and terminal verification evidence. Managed processing and the
-approved HTTP write route are P3.2c; neither is installed yet.
+UI-01.08/P3.2 complete, independently qualified. Owns immutable
+authorized fulfillment commands, original pending receipts, terminal verification
+evidence, the approved HTTP intake and bounded managed verification. Source package
+0.127; the immutable serving demo remains unchanged.
 
 FulfillmentJournal.receive requires the distinct fulfill_capabilities grant and
 exact authenticated scope/actor. It loads the original captured capability gap
@@ -53,3 +54,32 @@ Verification: intake30pass84.58s; acceptance/read regressions56pass with3 replay
 parser failures subsequently repaired; final20pass133.59s including witness,
 concurrency, rollback, actual process replacement and test ownership. Source JSON
 must be restored using strict JSON validation, preserving frozen tuple contracts.
+
+POST /v1/capability-requests/{request_id}/fulfillments requires fulfill_capabilities,
+exact path/payload reference and original numeric command.401/403 deny,404 hides
+missing/foreign originals,409 conflicts/history inconsistency,422 malformed input;
+whole-body limits apply and responses are no-store. Intake never contacts peers.
+Configured curation routes install this endpoint; that write grant without explicit
+curation configuration fails startup. Successful response is the original pending
+receipt even after verification; capability GET owns current winner readback.
+
+FulfillmentWorker scopes keyset discovery to authenticated actor/project and excludes
+terminal originals. A bounded turn collects public Registry/Data evidence outside
+SQL. Source denial/missing evidence and exact descriptor mismatches produce retained
+rejection. Named transient peer failures remain pending; unknown integrity faults
+propagate. Discovery wraps fairly over pending commands. CurationPoller alternates
+fulfillment and campaign work with idle fallback, at most one non-idle operation per
+turn. Shutdown drains the current bounded turn; no new job starts afterward.
+
+Verification has no effectful peer calls. Concurrent workers may repeat bounded
+reads, but the original command's unique terminal record and first-winner transaction
+lock prevent competing accepted histories. No paid retry, duplicate external write,
+or network exactly-once guarantee. A committed terminal result replays before peers;
+an outage before commit remains pending and a replacement can re-read it.
+
+Source qualification:56 HTTP/SQL/worker/configuration/process checks182.75s.
+Production CLI with scripted public HTTP peers stays pending on Registry503, then
+verifies after restart, then reads no peers on another restart. Four public GETs
+across those processes, no model calls. Independent installed qualification: capability-installation-20261012a,150pass458.67s;
+actual isolated0.127 wheel/public-only dependencies, SQL, HTTP and CLI replacement.
+No paid model calls, no real provider keys, serving demo unchanged.

@@ -57,4 +57,10 @@ origin route tests cover strict pins, auth, named missing/limit and sanitized fa
 P3.1: configured curations also expose GET /v1/capability-requests/{request_id}.
 Its independent read_capabilities grant does not confer read_curations or execution.
 Startup refuses that grant without configured curation storage; no request-side
-provider/peer work or new migration. Fulfillment writes remain P3.2.
+provider/peer work. Current capability readback requires0027.
+
+P3.2c installs the approved POST /v1/capability-requests/{request_id}/fulfillments
+with distinct fulfill_capabilities authority, exact original receipt replay and
+path/payload binding. The dedicated capability_fulfillment module owns admission;
+HTTP never verifies evidence or starts a model. That grant requires explicit
+curation configuration; readiness checks both immutable fulfillment tables.

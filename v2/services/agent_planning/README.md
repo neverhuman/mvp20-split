@@ -109,3 +109,6 @@ isolated installed/actual-owner qualification remain P3/P4; no live upgrade yet.
 UI-01.08/P3.2b: Planning0.126 adds immutable capability fulfillment intake and
 first-winner verification evidence; see [capability fulfillment](src/amphora_agent_planning/capability_fulfillment/README.md).
 Current curation readback requires0027; managed fulfillment/HTTP writes follow.
+
+UI-01.08/P3.2c: Planning0.127 connects approved fulfillment intake and managed
+verification with fair campaign polling.56 scoped checks and150 independently installed checks pass; P3.2 complete. Serving demo versions remain unchanged.

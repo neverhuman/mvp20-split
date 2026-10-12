@@ -1,16 +1,16 @@
 # Restore
 
-Refreshed 2026-10-12 01:34:08 America/Chicago. Read FIRST after compaction.
+Refreshed 2026-10-12 01:51:14 America/Chicago. Read FIRST after compaction.
 Continue until needed across commits/gates/compaction. No subagents/JARVIS.
 v1 read-only; preserve untracked ocular PDF/DOCX. No source/tests/module README
 edits while tests/installations run. Serving demo uses immutable source copies.
 
 ## Canonical position
 
-UI-01.08 approved; active P3.2c HTTP/managed verification.
-Child51.11%;P1=100%,P2=100%,P3=55.56%,P4/P5=0. P2.1/2.2=100%,P2.3=100%,P2.4=100.
+UI-01.08 approved; active P3.3a browser read contracts/transport/Gateway.
+Child53.33%;P1=100%,P2=100%,P3=66.67%,P4/P5=0. P2.1/2.2=100%,P2.3=100%,P2.4=100.
 P2.3a/b=100%;c100%(c.1policy/publication100,c.2provider/compiler100,c.3process100).
-ParentUI01=70.22%/Build87.78%/Verification0;UI01.05=83.70%,I1=51.11%.
+ParentUI01=70.67%/Build88.33%/Verification0;UI01.05=84.44%,I1=53.33%.
 UI01.06/07 closed100. Order UI01->UI02->POP01->ML01. LR01 paused25/Build33.33.
 Universal result index remains separately unapproved. No user decision pending.
 
@@ -66,8 +66,35 @@ Evidence capability-fulfillment-intake-a.log and capability-fulfillment-verifica
 No paid calls/keys/live-demo changes. P3.2=66.67%(a/b100,c0),P3=55.56%,child51.11%;
 parent70.22%/Build87.78%,UI01.05=83.70%. P3.2c HTTP/managed qualification next.
 
-No tests/installations running;0.126 locks synced. Commit/push this verified unit
-then implement P3.2c. Current schema0027; immutable demo still0021.
+No tests/installations running;0.126 locks synced. P3.2b committed/pushed162ae3da.
+P3.2c implementation now in progress. Current schema0027; immutable demo still0021.
+
+## Latest P3.2c checkpoint
+
+2026-10-12 01:51:14 America/Chicago: Planning0.127 P3.2c/P3.2 complete.
+Approved scoped fulfillment POST, original receipt replay, managed public Registry/
+Data verification and fair campaign/fulfillment polling. Source56pass182.75s;
+fresh isolated wheel/public-only closure150pass458.67s, including actual production
+CLI outage/replacement, terminal read recovery and curation/compiler regressions.
+Evidence capability-installation-20261012a/evidence.json and owner/manifest.json.
+No skips/failures, paid model calls, real keys or serving-demo changes.
+P3.2=100%(a/b/c100),P3=66.67%,child53.33%;parent70.67%/Build88.33%,UI01.05=84.44%.
+P3.3 read-only browser capability review next; P4 submission/diff/successor, P5 live.
+
+No tests/installations running. Source0.127/locks synced; commit/push c then P3.3a.
+
+P3.3 preparation only: UI_Coding_Guidelines.md and Interaction_References.md read.
+No UI edits. Use separate transport -> page model -> presentation, original
+curation ID from selected navigation (no new unapproved listing API). Lazy selected
+gap detail; preserve requested context vs retained proposal vs refreshed catalog.
+Gateway generic Planning forwarding exists but only origin has route/error bounds;
+add explicit approved curation/capability family method/path/error bounds as needed.
+Do NOT equate capability.proposal_sha256 with provider.output_sha256: parsed canonical
+proposal and original raw capture are different. Browser JSON.stringify can also
+normalize float lexemes differently than Python canonical proposal hashing; use
+owner-reported exact digest plus scoped curation/gap bindings, no false hash proof.
+Historical verified fulfillment does not grant current scientific/Runtime/source rights.
+Read-only P3.3 and curation writes/successor UI P4 remain distinct.
 
 ## Next concrete work
 
@@ -78,7 +105,7 @@ instead of duplicating mutable descriptions. Approved public types already exist
 in contracts/campaign_curation/models.py: CapabilityRequestView, fulfillment
 request/specification/receipt. Existing FulfillmentCommand lives in
 curation_intake/commands.py. Existing grants read_capabilities/fulfill_capabilities
-are in access.py; read route implemented, fulfillment HTTP/managed processing pending; storage/verification implemented.
+are in access.py; read route implemented, fulfillment HTTP/managed processing/storage/verification implemented and independently qualified.
 CurationView.proposal retains full typed gaps; public reads now derive capability_requests.
 Use focused domain projection objects, preserving original receipt/progress bytes.
 Explicit verified fulfillment needs real Registry lock/descriptor/ports and current

@@ -3,15 +3,15 @@
 ## Canonical tracker
 
 - Status: primary_active; connected demo flow implemented; N2 complete; approved N3 curation implementation active.
-- Last refreshed: 2026-10-12 01:34:08 (America/Chicago).
+- Last refreshed: 2026-10-12 01:51:14 (America/Chicago).
 - Baseline: 62ea4966; owner-reported disconnected canvas and navigation review on 2026-10-07.
 - Owner: Studio experience, page models and presentation; service owners retain their contracts and state.
 - Parent: none; priority and mirrors in [Master Build Tracker](Master%20Build%20Tracker.md).
-- Overall implementation: **70.22%**; Build87.78%, Verification0%. Five equal delivery gates: G1, N1, N2, N3, V1. Build averages G1/N1/N2/N3; Verification is V1. G0 is a separate design/review prerequisite and earns no implementation credit.
+- Overall implementation: **70.67%**; Build88.33%, Verification0%. Five equal delivery gates: G1, N1, N2, N3, V1. Build averages G1/N1/N2/N3; Verification is V1. G0 is a separate design/review prerequisite and earns no implementation credit.
 - Design readiness: G0 complete; ELK directed layout and bounded topology ownership implemented.
 - Demonstrated behavior: connected graphs and question-first navigation verified against retained owner records; result-first comparison and full replacement acceptance remain.
 - Current phase/task: N3/UI-01.05/I1; implementing approved [UI-01.08](UI-01.08%20Campaign%20curation%20boundary%20decision.md). N2 complete100%; launch/provenance remain closed.
-- Next task: UI-01.08/P3.2c approved HTTP route and managed verification qualification. P1=100%, P2=100%; N3/I1=51.11%.
+- Next task: UI-01.08/P3.3a published read contracts, scoped browser transport and Gateway bounds. P1=100%, P2=100%; N3/I1=53.33%.
 - Blocker: none for approved curation work. UI-01.01 public result index remains separate/unapproved; use the authorized bounded existing-API alternative.
 - Human acceptance: owner feedback is part of visual review; no new routine approval gates for campaign execution.
 - Active exception: owner explicitly reprioritized UI over worker diagnostics; LR-01 remains paused at25%, Build33.33%, Acceptance0%, with R2 receipt diagnosis preserved.
@@ -23,7 +23,7 @@
 | G1 usable connected graph | 100% | G0 complete | One real retained campaign opens as a readable connected graph; branches, joins and nested work navigable; visual and behavioral proof |
 | N1 research entry and navigation | 100% | G1 complete | Research-question landing and connected workflow navigation with preserved selection/context |
 | N2 approach, execution and results | 100% | N1 complete | Understand approach, follow autonomous work, inspect/compare results and supporting evidence |
-| N3 next-campaign iteration | 51.11% | N2 complete | Target weak/promising points, inspect proposed changes and follow predecessor/successor history |
+| N3 next-campaign iteration | 53.33% | N2 complete | Target weak/promising points, inspect proposed changes and follow predecessor/successor history |
 | V1 integrated acceptance and audit | 0% | N3 complete | Actual-owner user journey, independent consumer acceptance, scoped audit and explicit limitations |
 
 Each phase is a discrete unit of work. Complete its exit gate before dependent
