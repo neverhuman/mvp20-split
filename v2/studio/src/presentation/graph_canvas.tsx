@@ -17,7 +17,7 @@ const types = { task: TaskNode }, edgeTypes = { routed: RoutedConnection };
 const EMPTY_EDGES: readonly SceneEdge[] = [];
 type Props = { nodes: readonly SceneNode[]; edges?: readonly SceneEdge[]; selection: string | null; select: (id: string) => void;
   initialViewport?: Viewport | undefined; rememberViewport?: (viewport: Viewport) => void; label?: string; annotations?: Readonly<Record<string, string>>;
-  focusNodes?: readonly string[] | undefined; minimap?:boolean };
+  focusNodes?: readonly string[] | undefined; minimap?:boolean; fitOnResize?:boolean };
 
 function InitialViewport({ geometryKey, viewport, focusNodes }: { geometryKey: string; viewport?: Viewport | undefined; focusNodes?: readonly string[] | undefined }) {
   const initialized = useNodesInitialized(), flow = useReactFlow(), applied = useRef<string | null>(null);
@@ -32,7 +32,7 @@ function InitialViewport({ geometryKey, viewport, focusNodes }: { geometryKey: s
 
 /** Renders real links with local routed geometry; never invents execution connections. */
 export function GraphCanvas({ nodes, edges = EMPTY_EDGES, selection, select, initialViewport, rememberViewport,
-  label = 'Activation workspace', annotations = {}, focusNodes, minimap=false }: Props) {
+  label = 'Activation workspace', annotations = {}, focusNodes, minimap=false, fitOnResize=false }: Props) {
   const flow = useRef<Pick<ReactFlowInstance, 'setViewport' | 'getViewport' | 'fitView'> | null>(null);
   const region = useRef<HTMLElement|null>(null);
   const key = JSON.stringify([nodes.map(n => n.id).sort(), edges.map(e => [e.id, e.source, e.target]).sort()]);
@@ -60,6 +60,17 @@ export function GraphCanvas({ nodes, edges = EMPTY_EDGES, selection, select, ini
     const node = geometry?.nodes.find(n => n.id === selection) ?? geometry?.nodes[0];
     if (node) fit([node.id]);
   };
+  useEffect(() => {
+    const canvas=region.current?.querySelector('.react-flow');
+    if(!fitOnResize||!geometry||!canvas)return;
+    let frame=0;
+    const observer=new ResizeObserver(()=>{
+      cancelAnimationFrame(frame);
+      frame=requestAnimationFrame(()=>fit(focusNodes));
+    });
+    observer.observe(canvas);
+    return()=>{observer.disconnect();cancelAnimationFrame(frame);};
+  },[fitOnResize,geometry,focusNodes]);
   return <section ref={region} className="graph-region" aria-label={label} aria-busy={!geometry && !layout?.failed}>
     {!geometry && <p className="graph-message" role="status">{layout?.key === key && layout.failed ? 'Graph layout unavailable. Use the node list to inspect this scope.' : 'Arranging campaign connections...'}</p>}
     {geometry && !nodes.length && <p className="graph-message" role="status">No nodes loaded in this graph scope.</p>}

@@ -58,3 +58,8 @@ Local-library qualification:8focused tests,100%lines/95.16%branches/93.33%functi
 Some short-circuit/lifecycle and activation-pending alternatives remain uncovered in
 this selection; existing activation tests own command recovery. Actual localhost
 Runtime/Registry loading/validation and edit retention at1440/390 pass.
+
+GraphDefinitionComparison permits same-scope campaign identity changes for retained
+model proposal review and reports them explicitly. DraftComparison retains the
+editor's stricter same-campaign rule. Both provide bounded structural differences,
+not scientific equivalence or permission to admit a graph.

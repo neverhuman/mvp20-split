@@ -1,6 +1,6 @@
 # Restore
 
-Refreshed 2026-10-12 02:59:00 America/Chicago. Read FIRST after compaction.
+Refreshed 2026-10-12 03:19:00 America/Chicago. Read FIRST after compaction.
 Continue until needed across commits/gates/compaction. No subagents/JARVIS.
 v1 read-only; preserve untracked ocular PDF/DOCX. No source/tests/module README
 edits while tests/installations run. Serving demo uses immutable source copies.
@@ -8,8 +8,8 @@ edits while tests/installations run. Serving demo uses immutable source copies.
 ## Canonical position
 
 UI-01.08 approved; P4.3 graph comparison/validation/successor controls ACTIVE.
-Child70%;P1/P2/P3=100%,P4=50%,P5=0. P4.1/P4.2=100%,P4.3/4=0.
-ParentUI01=74%/Build92.5%/Verification0;UI01.05=90%,I1=70%.
+Child71.25%;P1/P2/P3=100%,P4=56.25%,P5=0. P4.1/P4.2=100%,P4.3=25%,P4.4=0.
+ParentUI01=74.25%/Build92.81%/Verification0;UI01.05=90.42%,I1=71.25%.
 Order UI01->UI02->POP01->ML01. LR01 paused25/Build33.33. No decision pending.
 P5 ONE synthetic scope4calls/$1,max$0.25original hold/call. ZERO paid calls/real keys.
 
@@ -37,31 +37,22 @@ checks; original full mode still supports container/receipt process probes.
 
 ## Next task
 
-367ba27e pushed Studio0.30 original command/receipt recovery. P4.2b/c Studio0.31
-uncommitted (commit/push next): exact preparation + composer + entry navigation.
-406checks pass(curation-composer-full-a.log); curation-request-browser-20261012a
-1440/390 inspected/WCAG/overflow, lost reply/reload exact query, one intake POST,
-queued-review/back. All tests FINISHED. No paid calls. P4.2 complete.
+77c873c8 pushed Studio0.31 P4.2. Studio0.32 graph review P4.3a complete, commit/push
+next.416checks pass(curation-graph-full-b.log); browser curation-graph-browser-20261012c
+1440/390 inspected. Initial mobile graph offcanvas repaired by GraphCanvas opt-in
+fitOnResize; browser asserts all nodes within canvas after resize. No active tests.
+GraphReview/Reader binds original/proposed/validation; GraphModel fences reads;
+GraphScene real control/data links, nested scopes,200-node windows, duplicate-ID
+suppression. GraphDefinitionComparison allows visible same-scope campaign-ID change;
+DraftComparison retains editor stricter guard.10new tests. Full-a import guard failed
+helper named require; renamed requireBinding, full-b416pass.
 
-Preparation reads fresh Runtime terminal cut, LaunchPlanningContext exact draft and
-OriginReader original provenance. Missing origin/Knowledge head explicit; no drops.
-PreparedCuration supports all8 heads. Legacy default run without browser launch link
-gets explanatory missing context, not guessed draft. P5 demo must start prepared run
-in browser or supply an equivalent verified launch binding. Policy binding constant
-INTERNAL_CURATION_POLICY=internal-curation-v1; configure Planning policy at cutover.
-CurationComposer hides/suspends request+preparation, reloads original journal/query,
-asks bounded direction, links separate curation readback; no successor activation yet.
-
-P4.3 next: exact original/proposed graph comparison, validation, successor controls,
-explicit next-request cycle after terminal curation. Reuse DraftComparison
-(page_models/design/draft_comparison.ts,presentation/draft_comparison.tsx).
-Need consume public campaign_successor_launch schemas and original numeric Runtime
-admission bytes; don't use curation integer-only canonical encoder for graph floats.
-Current CurationRequestModel retains one original per run; next-request after verified
-terminal outcome must be explicit (no scope/identity/budget retry evasion).
-P4.4 actual scripted owner/process/browser integration; P5 live bounded qualification.
-ONE synthetic scope4calls/$1,max$0.25hold, no retries/refunds/second-scope evasion.
-No active tests/installations. No approval needed.
+P4.3 units a graphreview100,b command/recovery0,c controls/newcycle0,d browser0.
+Next P4.3b: consume public campaign_successor_launch request/receipt + draft_successor
+schemas; original numeric Runtime command, exact Deployment receiptquery. Do not
+reuse integer-only curationencoder for graph floats. Then controls/newcycle and
+browser gate. P4.4 actual scripted owners/process; P5 ONE synthetic scope4calls/$1.
+P5 must configure internal-curation-v1 policy and preserve all Knowledge heads.
 
 ## Commands and guardrails
 

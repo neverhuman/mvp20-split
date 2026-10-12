@@ -12,7 +12,7 @@ owns inspection. Technical identities and evidence references are collapsed.
 The model owns all reads, immutable records and failure rules. Presentation makes
 no requests directly. The separate composer delegates commands to CurationRequestModel. Entry navigation preserves an exact
 curation hint; missing, malformed or duplicate hints grant no authority. P4 implements
-submission; successor navigation and graph comparison remain the next delivery. No listing endpoint or opaque-ID form is added.
+submission and graph comparison; successor navigation remains the next delivery. No listing endpoint or opaque-ID form is added.
 
 Root and detail loading, missing, failed, stale and denied states are explicit.
 Denial clears protected content. Hiding/unmounting clears state and fences responses;
@@ -40,3 +40,15 @@ Tests include preparation, request suspension, and curations_request browser fix
 and WCAG/overflow checks pass. Lost intake reply followed by reload makes exactly one
 intake POST and an exact receipt query, then opens the still-queued model record.
 This is scripted public-peer evidence; actual owner qualification remains P4.4/P5.
+
+## Graph proposal review
+
+CurationGraphPanel consumes a separate CurationGraphModel for exact revision and
+validation reads. Original/proposed switching, nested scope breadcrumbs, bounded
+step pages, capability labels, real control/data connections and structural details
+answer how the research steps change. Structural validation is distinct from current
+execution eligibility and scientific validity. The graph opts into refitting on
+canvas resize; ordinary selection preserves the viewport. Public-peer browser proof:
+curation-graph-browser-20261012c, desktop1440/mobile390 inspected, all nodes within
+canvas after resize, WCAG/overflow and changed-record/denial checks. No live-model
+or successor-launch qualification is claimed.

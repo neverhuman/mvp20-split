@@ -94,3 +94,8 @@ UI-01/N2.S adds [evaluation review](evaluation_review/README.md): a separate loc
 design graph, method procedure inspector and revision-pinned SME review export/import.
 It does not replace or rename execution history, attest provider generation or write
 owner state. Synthetic sessions include an explicitly Codex-authored design example.
+
+GraphCanvas supports opt-in fitOnResize for proposal previews without saved viewport
+state. ResizeObserver refits actual geometry after canvas dimensions change; other
+consumers retain their existing viewport behavior. Proposal browser checks assert
+node bounds after resizing as well as actual edges.

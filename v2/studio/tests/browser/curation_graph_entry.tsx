@@ -1,0 +1,12 @@
+import {createRoot} from 'react-dom/client';
+import {CurationModel} from '../../src/page_models/campaign_curation/model.js';
+import {CurationClient} from '../../src/transport/campaign_curation/client.js';
+import {CurationGraphModel} from '../../src/page_models/campaign_curation/graph_model.js';
+import {CurationGraphReader} from '../../src/page_models/campaign_curation/graph_review.js';
+import {AuthoringClient} from '../../src/transport/authoring.js';
+import {CurationPanel} from '../../src/presentation/campaign_curation/panel.js';
+import '../../src/presentation/style.css';
+const selection=await fetch('/binding').then(response=>response.json());
+const model=new CurationModel(new CurationClient()),graphs=new CurationGraphModel(new CurationGraphReader(new AuthoringClient()));
+createRoot(document.getElementById('root')!).render(<CurationPanel model={model} graphs={graphs} selection={selection} synthetic back={()=>{location.hash='view=design';}}/>);
+window.addEventListener('pagehide',()=>{model.dispose();graphs.dispose();});

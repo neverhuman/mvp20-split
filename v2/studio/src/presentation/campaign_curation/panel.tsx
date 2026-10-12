@@ -2,10 +2,13 @@ import { useCallback, useEffect, useId, useRef, useSyncExternalStore } from 'rea
 import type { CurationModel } from '../../page_models/campaign_curation/model.js';
 import type { CurationSelection } from '../../transport/campaign_curation/identity.js';
 import { CapabilityDetail } from './detail.js';
+import type { CurationGraphModel } from '../../page_models/campaign_curation/graph_model.js';
+import { CurationGraphPanel } from './graph_review.js';
 import './style.css';
 
-export function CurationPanel({ model, selection, invalid = false, synthetic, back }: {
+export function CurationPanel({ model, selection, invalid = false, synthetic, back, graphs }: {
   model: CurationModel; selection: CurationSelection | null; invalid?: boolean; synthetic: boolean; back: () => void;
+  graphs?: CurationGraphModel;
 }) {
   const listen = useCallback((notify: () => void) => model.subscribe(notify), [model]);
   const view = useSyncExternalStore(listen, () => model.snapshot);
@@ -34,7 +37,7 @@ export function CurationPanel({ model, selection, invalid = false, synthetic, ba
     <div className="curation-toolbar"><button onClick={back}>Back to next iteration</button>
       <button disabled={!selection || invalid || view.phase === 'loading'} onClick={() => void model.refresh()}>Refresh record</button></div>
     <div className="curation-title"><div><p className="curation-kicker">Next campaign · recorded proposal</p>
-      <h1>What does the next campaign need?</h1><p>Inspect the model's requested tools and the evidence recorded for their fulfillment.</p></div>
+      <h1>{data?.proposal?.outcome.kind==='propose_campaign'?'How would the next campaign change?':'What does the next campaign need?'}</h1><p>{data?.proposal?.outcome.kind==='propose_campaign'?'Compare the retained research steps and inspect the proposed changes.':"Inspect the model's requested tools and the evidence recorded for their fulfillment."}</p></div>
       {record && <span className="curation-state">{record.status}</span>}
     </div>
     {synthetic && <p className="curation-synthetic">Synthetic engineering context · not a scientific validation</p>}
@@ -51,6 +54,7 @@ export function CurationPanel({ model, selection, invalid = false, synthetic, ba
         {data.specification.context.knowledge.length > 0 && <ul>{data.specification.context.knowledge.map(head =>
           <li key={head.snapshot.graph.graph_id}>{head.snapshot.graph.graph_id} · revision {head.snapshot.revision}</li>)}</ul>}
       </details>
+      {graphs&&record&&data.proposal?.outcome.kind==='propose_campaign'&&<CurationGraphPanel model={graphs} record={record}/>}
       {record!.requests.length ? <div className="curation-layout">
         <section className="curation-request-list" aria-label="Requested capabilities"><h2>Requested capabilities <span>{record!.requests.length}</span></h2>
           <ol>{record!.requests.map(row => <li key={row.reference.request_id}><button aria-pressed={view.detail.index === row.index}
@@ -64,7 +68,7 @@ export function CurationPanel({ model, selection, invalid = false, synthetic, ba
             <button onClick={() => view.detail.index !== null && inspect(view.detail.index)}>Retry capability read</button></>}
           {view.detail.record && <CapabilityDetail ref={heading} record={view.detail.record}/>}
         </section>
-      </div> : <section className="curation-message"><h2>{data.proposal ? 'No additional capabilities requested' : terminal ? 'No retained proposal' : 'Awaiting a retained proposal'}</h2>
+      </div> : graphs&&data.proposal?.outcome.kind==='propose_campaign'?null:<section className="curation-message"><h2>{data.proposal ? 'No additional capabilities requested' : terminal ? 'No retained proposal' : 'Awaiting a retained proposal'}</h2>
         <p>{data.proposal ? 'This recorded outcome did not request new tools.' : terminal ? 'This recorded outcome has no model proposal. It will not restart automatically.' : 'No model proposal is recorded for this request yet.'}</p>
         {data.validated_draft && <p>Validated draft revision {data.validated_draft.revision}. Campaign launch is a separate step.</p>}
       </section>}

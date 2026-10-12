@@ -14,7 +14,7 @@ const object = (value: unknown): value is Record<string, unknown> => value !== n
 const pointer = (parts: string[]) => "/" + parts.map(part => part.replaceAll("~", "~0").replaceAll("/", "~1")).join("/");
 
 /** Structural review only: never a merge, compiler, compatibility verdict or admission grant. */
-export class DraftComparison {
+export class GraphDefinitionComparison {
   private readonly changes: DraftChange[] = [];
   private total = 0;
   private ambiguousNodes = false;
@@ -26,7 +26,7 @@ export class DraftComparison {
       if (new TextEncoder().encode(JSON.stringify(value)).byteLength > 262144) throw new Error("comparison_too_large");
     }
     const a = base.definition, b = local.definition;
-    if (a.scope.tenant_id !== b.scope.tenant_id || a.scope.project_id !== b.scope.project_id || a.campaign_id !== b.campaign_id)
+    if (a.scope.tenant_id !== b.scope.tenant_id || a.scope.project_id !== b.scope.project_id)
       throw new Error("comparison_context_mismatch");
     this.walk(base, local, []);
   }
@@ -76,5 +76,13 @@ export class DraftComparison {
       result.set(value.node_id, value);
     }
     return result;
+  }
+}
+
+/** Same-campaign editor comparison retains its original stricter identity guard. */
+export class DraftComparison extends GraphDefinitionComparison {
+  constructor(base:LocalDraft,local:LocalDraft,limit=200) {
+    if(base.definition.campaign_id!==local.definition.campaign_id)throw Error('comparison_context_mismatch');
+    super(base,local,limit);
   }
 }

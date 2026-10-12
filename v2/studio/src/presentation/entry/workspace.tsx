@@ -3,6 +3,8 @@ import { CampaignCurationEntry } from './curation.js';
 import type { CurationSelection } from '../../transport/campaign_curation/identity.js';
 import { CurationPanel } from '../campaign_curation/panel.js';
 import { CurationModel } from '../../page_models/campaign_curation/model.js';
+import { CurationGraphModel } from '../../page_models/campaign_curation/graph_model.js';
+import { CurationGraphReader } from '../../page_models/campaign_curation/graph_review.js';
 import { CurationClient } from '../../transport/campaign_curation/client.js';
 import { WorkspaceCurationSelection } from '../../page_models/session/curation_selection.js';
 import {GenerationModel} from '../../page_models/generation_comparison/model.js';
@@ -72,6 +74,8 @@ function Campaign({ context, search, launchControl, planning }: { context: Works
   const curationSelection = useMemo(() => new WorkspaceCurationSelection(search, context), [search, context.actor_id, context.run_id, context.scope.tenant_id, context.scope.project_id]);
   const curation = useMemo(() => new CurationModel(new CurationClient()), [context.actor_id, context.run_id, context.scope.tenant_id, context.scope.project_id]);
   useEffect(() => () => curation.dispose(), [curation]);
+  const curationGraphs=useMemo(()=>new CurationGraphModel(new CurationGraphReader(new AuthoringClient())),[context.actor_id,context.run_id,context.scope.tenant_id,context.scope.project_id]);
+  useEffect(()=>()=>curationGraphs.dispose(),[curationGraphs]);
   const curationLink = selectedCuration || curationSelection.phase !== 'missing' ? <button onClick={() => navigate('curation')}>Review proposed revision</button> : null;
   const owners = useMemo(() => {
     const client = new ObservationClient();
@@ -101,7 +105,7 @@ function Campaign({ context, search, launchControl, planning }: { context: Works
     const tick=async()=>{if(!document.hidden)await flow.refresh(true);if(!stopped)timer=setTimeout(()=>void tick(),2000);};
     timer=setTimeout(()=>void tick(),2000);return()=>{stopped=true;clearTimeout(timer);};
   },[flow,mode,flowView.snapshot?.status,flowView.retrySnapshot]);
-if(mode==='curation')return <CurationPanel model={curation} selection={selectedCuration??curationSelection.selection} invalid={!selectedCuration&&curationSelection.phase==='invalid'} synthetic={context.synthetic} back={()=>navigate('design')}/>;
+if(mode==='curation')return <CurationPanel graphs={curationGraphs} model={curation} selection={selectedCuration??curationSelection.selection} invalid={!selectedCuration&&curationSelection.phase==='invalid'} synthetic={context.synthetic} back={()=>navigate('design')}/>;
 if(flowView.phase==='ready')return <ConnectedCampaign curationControl={curationControl} curationLink={curationLink} reasoning={reasoning} generations={mode==='knowledge'?<details><summary>Evolutionary search history</summary><GenerationPanel model={generations}/></details>:null} provenance={provenance} launchControl={launchControl} view={flowView} mode={mode} navigate={navigate} refresh={()=>void flow.refresh()} knowledge={explored?<LocalKnowledge embedded selection={campaignSelection} feedbackSelection={feedbackSelection} outputSelection={outputSelection} campaign={{scope:context.scope,run:context.run_id}} active={mode==='domain'} synthetic={context.synthetic}/>:null} technical={<MonitorWorkspace {...owners} compact active={mode==='execution'} context={{scope:context.scope,run:context.run_id}} synthetic={context.synthetic}/>} />;
   if(['loading','idle','denied','failed'].includes(flowView.phase))return <main className="local-entry">{launchControl}<h1>{flowView.phase==='loading'||flowView.phase==='idle'?'Opening the retained campaign':'Campaign context unavailable'}</h1><p>{flowView.message??'Checking the plan and scientific evidence.'}</p>{flowView.phase!=='loading'&&flowView.phase!=='idle'&&<button onClick={()=>void flow.refresh()}>Retry campaign read</button>}</main>;
   return <div className="research-shell">

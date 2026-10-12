@@ -159,3 +159,7 @@ Current Studio0.25.0 includes bounded retained generation comparison.
 Current Studio0.26.0 adds direct recorded-model inspection from Results/Run. Actual
 original OpenAI rationale/outcome and restored scientific LAN unavailable-history
 checks pass with362 Studio regressions. No new provider issuance or public API.
+
+Studio0.32 adds exact retained curation graph comparison and bounded connected
+previews.416 checks pass; scripted desktop/mobile visual evidence is in
+curation-graph-browser-20261012c. Serving demo remains Studio0.26 pending cutover.

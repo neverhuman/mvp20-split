@@ -66,3 +66,15 @@ Requested context is not described as everything consumed by the model.
 context rather than taking the first or truncating. Scope/graph/cut checks precede
 request construction. Context reads never submit commands. Denial, clear and disposal
 remove preparation and fence late reads. Tests: preparation.test.ts.
+
+## Original and proposed graph review
+
+CurationGraphReader reads exact original and saved draft revisions and validation
+from Runtime. CurationGraphReview binds them to the retained model proposal and
+original context; substitution, scope drift and changed validation pins fail closed.
+An unsaved proposal remains inspectable without a validated claim. Campaign identity
+changes are visible. CurationGraphModel owns cancellation, denial and late responses.
+curationGraphScene projects real control/data links within one nested scope, at most
+200 nodes per window, with explicit omitted counts. Duplicate identities suppress
+the canvas. Missing nested scopes are never replaced by the parent scope.
+Tests: graph_review.test.ts and graph_model.test.ts; launch is a separate owner.
