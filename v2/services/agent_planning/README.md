@@ -1,8 +1,9 @@
 # Agent Planning service boundary
 
-Source: Planning0.112.0 / migration0023. UI-01.08 adds original curation intake,
+Source: Planning0.113.0 / migration0023. UI-01.08 adds original curation intake,
 exact campaign input/output, fixed qualification spending guard/direct adapter and
-fenced recoverable progress. Public curation/successor-launch contracts0.1.0 are
+fenced recoverable progress. Curation context now retains1..8 selected Knowledge
+graph slices and exact untrusted human intent through preparation replay. Public curation/successor-launch contracts0.1.0 are
 additive; existing Planning0.13.0 schemas and original receipt bytes are unchanged.
 Managed context/worker/compiler integration and browser curation remain incomplete.
 See [curation intake](src/amphora_agent_planning/curation_intake/README.md) and

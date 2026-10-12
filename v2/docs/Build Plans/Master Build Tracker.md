@@ -172,6 +172,7 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 
 | Timestamp | Checkpoint | Evidence |
 |---|---|---|
+| 2026-10-11 22:24:28 | UI-01.08/P2.3b.2 partial context checkpoint; percentages unchanged. |78 multi-graph/replay and69 intent/context/boundary checks; public reads/linkage remain;0paid calls. |
 | 2026-10-11 22:17:36 | UI-01.08/P2.3b.1 complete; P2=62.50%, child32.50%; UI01=66.50%/Build83.13%. |46 job/intake/HTTP/boundary checks; fenced replacement, immutable progress/original receipts;0paid calls. |
 | 2026-10-11 22:05:19 | UI-01.08/P2.3a complete; P2=58.33%, child31.67%; UI01=66.33%/Build82.92%, N3/I1=31.67%. |55 cost/dispatch/boundary checks;4-call/$1 fixed-scope guard, exact bounded transport,0paid calls. |
 | 2026-10-11 21:53:16 | UI-01.08/P2.2 complete; P2=50%, child30%; UI01=66%/Build82.5%, N3/I1=30%. | Distinct curation envelope/output;92 replay +108 SQL/compiler/provenance +13 boundary checks. Original graph/capture preserved;0paid calls. |
@@ -196,4 +197,3 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 | 2026-10-07 12:20:17 | SQ-01.01 approved; C1/C2 added, overall41.67%, Build50%, Verification66.67%. | 2.5 completed units preserved; denominator4 to6. C1 contracts active; C2 owners, B3 proposals and V1 follow. |
 | 2026-10-07 11:51:00 | SQ-01 human focus complete; overall62.5%, Build94.44%, Verification66.67%. | 38 scoped tests; desktop/mobile export/browser proof; SQ-01.01 criterion-target profile awaits owner direction. |
 | 2026-10-07 11:02:03 | BP-09 closed100%,20/20; SQ-01 next. | Frozen12gate ledger,391independent tests, actual original/successor/blocked smoke; LR-01 preserves unresolved worker faults. |
-| 2026-10-07 10:42:02 | BP-09.04 closed100%;parent95%,19/20. BP-09.05 next. | Independent354Deployment/38evaluator tests, actual installed readback,337/337catalog refs and0pending; scoped audit preserves operational follow-ups. |

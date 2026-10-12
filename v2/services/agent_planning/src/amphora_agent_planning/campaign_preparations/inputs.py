@@ -4,6 +4,8 @@ import base64
 import hashlib
 from dataclasses import dataclass
 
+from amphora_contracts_campaign_curation import campaign_curation_draft_schema
+
 from ..campaign_artifact_context import ArtifactContextItem, ArtifactContextPlan
 from ..campaign_context.records import canonical
 from ..campaign_packet_profiles import reviewed_for_request
@@ -42,8 +44,11 @@ def validate(request, candidates, context):
         if row.lane != 'artifact':
             require(row.required == (row.lane not in {'research_view', 'registry_inventory', 'retrieval'}),
                     'campaign_preparation_lane_requirement')
-    limits = {'artifact': 132, 'research': 1, 'research_view': 32, 'graph': 1, 'registry_scan': 1,
+    limits = {'curation': 0, 'artifact': 132, 'research': 1, 'research_view': 32, 'graph': 1, 'registry_scan': 1,
               'registry_inventory': 400, 'registry_exact': 64, 'runtime': 1, 'runtime_schema': 256, 'retrieval': 1}
+    if request.document().context.output_schema == campaign_curation_draft_schema():
+        limits['graph'] = 8
+        limits['curation'] = 1
     require(all(count <= limits[lane] for lane, count in counts.items()), 'campaign_preparation_lane_count')
     require(not (counts.get('registry_inventory') or counts.get('registry_exact')) or counts.get('registry_scan') == 1,
             'campaign_preparation_registry_scan')
@@ -62,6 +67,11 @@ def validate(request, candidates, context):
                 type(value['required']) is bool and value['required'] == candidate.required, 'campaign_preparation_slice_binding')
         require(type(value['payload']) is dict, 'campaign_preparation_payload_shape')
         payload = dict(value['payload'])
+        if candidate.lane == 'curation':
+            from ..curation_context import CurationIntent
+            intent = CurationIntent.from_payload(request, payload)
+            require(candidate.identity == intent.identity and not candidate.observations,
+                    'curation_intent_candidate')
         if candidate.lane == 'artifact' and payload.get('roles') == ['prompt']:
             require(payload.pop('body_location', None) == 'trusted_instructions' and 'body_base64' not in payload,
                     'campaign_preparation_prompt_location')

@@ -4,6 +4,8 @@ import hashlib
 import json
 from dataclasses import dataclass, replace
 
+from amphora_contracts_campaign_curation import campaign_curation_draft_schema
+
 from ..campaign_artifact_context import ArtifactContextProjection
 from ..campaign_context.records import canonical
 from ..campaign_graph_context import CampaignGraphProjection
@@ -58,6 +60,29 @@ class CampaignSlicePlan:
         value = json.loads(projection.canonical)
         row = ContextSlice._capture('graph', {'selection': projection.selection.sha256}, value, True, value['observations'])
         return self._add('graph', projection.selection.request, (row,))
+
+    def with_curation(self, intent):
+        from ..curation_context import CurationIntent
+        verified = CurationIntent.from_payload(intent.request, json.loads(intent.canonical))
+        row = ContextSlice._capture('curation', verified.identity, json.loads(verified.canonical), True)
+        return self._add('curation', verified.request, (row,))
+
+    def with_graphs(self, results):
+        # Only the new curation profile admits a bounded collection. Legacy
+        # with_graph and its canonical single-graph history remain unchanged.
+        require(self.request.document().context.output_schema == campaign_curation_draft_schema(),
+                'campaign_graph_collection_profile')
+        require(type(results) is tuple and 1 <= len(results) <= 8, 'campaign_graph_collection_bound')
+        projections = tuple(CampaignGraphProjection.from_result(result) for result in results)
+        require(all(item.selection.request == self.request for item in projections), 'campaign_slice_request')
+        graphs = tuple(item.selection.parts()[0].graph for item in projections)
+        require(len(set(graphs)) == len(graphs), 'campaign_graph_collection_duplicate')
+        rows = []
+        for projection in projections:
+            value = json.loads(projection.canonical)
+            rows.append(ContextSlice._capture('graph', {'selection': projection.selection.sha256},
+                value, True, value['observations']))
+        return self._add('graph', self.request, rows)
 
     def with_registry(self, result, exact=()):
         projection = RegistryContext.bind(result, exact)

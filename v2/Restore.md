@@ -129,3 +129,18 @@ Demo Planning0.107/0021 remains unchanged. Current b.2=0%: exact public-owner
 context and preparation linkage. Existing CampaignSlicePlan allows one graph family,
 while approved command selects up to8 heads; preserve explicit bounded multi-graph
 semantics instead of silently dropping graphs. No paid calls.
+
+P2.3b.1 committed/pushed765e00af. Working b.2: added curation-only with_graphs
+(1..8 distinct identities, one family) and matching preparation replay count.
+Tests pending campaign_slice_plan/test_curation_graphs plus packet/preparation
+regressions. b.2 remains0% until public reads and durable linkage complete.
+
+P2.3b.2 partial verified:78 multigraph/replay and69 intent/context/boundary tests
+pass. New curation_context/CurationIntent binds reviewed template to original
+command identity/digest and required untrusted slice; provider config unchanged.
+Source0.113 locks next. No tests running. b.2 remains0%; next actual bounded
+Runtime/Knowledge/Research/Registry/Data reads + durable preparation/job linkage.
+Important follow-up: campaign_origin/knowledge.py KnowledgeOrigin.from_proposal
+requires exactly one graph and CampaignOriginV2 has one knowledge field. P2.3c
+must resolve multi-graph provenance before actual compiler integration; never
+silently choose only the first. Current source does not yet execute a curation.
