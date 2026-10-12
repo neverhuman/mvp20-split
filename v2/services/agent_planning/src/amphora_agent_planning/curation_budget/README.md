@@ -43,3 +43,5 @@ issuance, no second physical ticket, legacy budget regressions. This is bounded
 local admission accounting, not a guarantee against remote billing anomalies.
 
 UI-01.08b approval2026-10-12 11:04:00 extends only the same exact scope to seven/$1.75 original holds: one additional supported call/$0.25 after offline qualification. Six older holds remain. Default scopes stay four/$1; no refund or reset.
+
+UI-01.08c approved2026-10-12 11:58:32 extends the same exact qualification scope to nine/$2.25 original holds. Seven prior holds remain; at most two new requests/$0.50, stop on success. The second requires a specifically identified repair and offline verification. The dev qualification freezes the first diagnostic request separately; the owner ledger enforces the aggregate ceiling and unchanged per-call bound. All other scopes remain four/$1.

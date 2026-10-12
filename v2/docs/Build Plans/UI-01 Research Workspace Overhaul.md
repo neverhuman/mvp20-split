@@ -11,8 +11,8 @@
 - Design readiness: G0 complete; ELK directed layout and bounded topology ownership implemented.
 - Demonstrated behavior: connected graphs and question-first navigation verified against retained owner records; result-first comparison and full replacement acceptance remain.
 - Current phase/task: N3/UI-01.05/I1; implementing approved [UI-01.08](UI-01.08%20Campaign%20curation%20boundary%20decision.md). N2 complete100%; launch/provenance remain closed.
-- Next task: P5.2 requires live provider diagnosis; [UI-01.08c](UI-01.08c%20Provider%20outcome%20diagnosis%20allowance.md) proposes at most two additional original calls/$0.50, pending owner approval. No call remains authorized.
-- Blocker: Seventh original is indeterminate with empty output and reported zero tokens. Seven/$1.75 original holds exhausted. Diagnostic repair and actual owner/browser recovery pass; no live supported graph or cutover.
+- Next task: P5.2 requires live provider diagnosis; [UI-01.08c](UI-01.08c%20Provider%20outcome%20diagnosis%20allowance.md) proposes at most two additional original calls/$0.50, approved2026-10-12 11:58:32. First diagnostic request follows offline/install/freeze gates; second requires an identified repair.
+- Blocker: Seventh original is indeterminate with empty output and reported zero tokens. Seven/$1.75 original holds retained; approved08c extends exact scope to nine/$2.25. Diagnostic repair and actual owner/browser recovery pass; no live supported graph or cutover.
 - Human acceptance: owner feedback is part of visual review; no new routine approval gates for campaign execution.
 - Active exception: owner explicitly reprioritized UI over worker diagnostics; LR-01 remains paused at25%, Build33.33%, Acceptance0%, with R2 receipt diagnosis preserved.
 - Pre-activation coherence: 2026-10-07 17:54:00, ready for G0. Existing topology/observation APIs, React Flow canvas and isolated Studio boundaries are available; meaningful layout and workflow acceptance are missing. No new backend contract is assumed approved by this plan.

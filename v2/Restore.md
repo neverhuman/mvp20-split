@@ -12,14 +12,34 @@ UI01=78/Build97.5/Verification0;N3/I1=90;UI01.05=96.67.
 UI01 -> UI02 -> POP01 -> ML01; LR01 paused25. Launch/provenance closed100.
 08a83.33%,08b66.67%; supported live successor remains unmet, no cutover.
 08b owner approval2026-10-12 11:04:00 has been fully exercised: seventh original
-slot/$0.25 consumed. ALL SEVEN/$1.75 ORIGINAL HOLDS USED. NO MORE CALLS AUTHORIZED.
+slot/$0.25 consumed. ALL SEVEN/$1.75 ORIGINAL HOLDS USED before new08c approval.
 Five live attempts cumulatively report$0.242380500; latest reportszero. Actual
 reported spend never releases original reservations or establishes billing.
 UI-01.08c Provider outcome diagnosis allowance.md proposes up to TWO additional
-originals/$0.50, exact same scope9/$2.25 total holds. NOT APPROVED/IMPLEMENTED.
+originals/$0.50, exact same scope9/$2.25 total holds. APPROVED2026-10-12 11:58:32; allowance source implementation active.
 Stop on success; second only after first exposes a specific repair and offline
 checks pass. If still no actionable cause, stop with second unused. No blind retry.
 Ordinary implementation already authorized; only additional allowance needs owner.
+
+## Active08c checkpoint2026-10-12 12:01:00
+
+Owner approved08c2026-10-12 11:58:32. ImplementingPlanning0.130.0 same exactscope9/$2.25.
+No new inference calls. User reports no visible OpenAI dashboard cost; asked asynchronously
+whether zero requests as well or only cost. Owner confirms requests/tokens appear; onlycostabsent. Continue; don't assumebilling.
+Checked no environmentkeyoverride; runner selectsauthorizedZ:/ssos/.env. No project/baseURL
+overrides. TLSverifiedapi.openai.com,GoogleTrustServicesissuer,actualGETmodel HTTP200
+returnedexpectedpinnedmodel, requestide1f501fc-d97c-446b-9b20-674a6180837b at17:00:59UTC.
+GET only, no generation. No org/projectheader returned. Localproofopenai-route-check-20261012.json.
+Added safe HTTPexchangeendpoint/status/requestID/bodyhash/UTC export for nextlivecall,
+no credentials/remoteprose. SharedsourceHTTPallowlist addsinvalid_json_schema/text.format.schema.
+Source92860FINISHED78PASS15.16s:curation-diagnosis-allowance-a.log; install71666FINISHEDPASS:
+curation-planning-installation-20261012f/owner,curation-diagnosis-installation-a.log.
+No source/tests/README edits untilbothfinish. Newprepare_diagnosis.py keepsv3schema;
+firststage requires7priorholds andpermitsonecallonly. run.py supports08c stage1.
+IsolatedPlanningnowf; internal-curation-diagnosis-v3 added. Preparation44884FINISHEDPASS/drained;
+logcuration-diagnosis-preparation-a.log. Five originalreplayspassed. Frozen usinglegacyv1/originalv2/previousv3 into curation-live-diagnosis-20261012a.
+Thencommit/push and firstauthorizeddiagnosticrequest. Secondonlywithactionablecause+
+offlineverifiedrepair. No newfunds/requestsneeded forcurrent firstapproval.
 
 ## Latest implementation and evidence
 
@@ -55,7 +75,7 @@ ledger confirms7/$1.75held,0remaining; no provider enabled. Durable evidence
 v2/docs/Audits/Evidence/UI-01.08-Live-v3 retains emptyrawoutput, accounting, observation,
 view, declaration, recovery/browser/finalledger and five-replay proof withmanifest.
 Earlier evidenceUI-01.08-Live and UI-01.08-Live-v2 unchanged. See latest Git commit
-for diagnosticrepair/evidence checkpoint. Next requires08c allowance decision.
+for diagnosticrepair/evidence checkpoint. Next implement approved08c allowance/offline/install/freeze, then first diagnostic request.
 
 V2missingacceptedcuration2b6dcf326fc127817c983b2fe5ea59288cf43fd0aa447b34223b9c7a61331429
 contains one unfulfilled ordered molecular-process capability. It does not invent
@@ -119,3 +139,6 @@ uvv2/.venv/Scripts/uv.exe; --offline installs/locks. Git safe.directory=
 Use rg--files before paths. Deploymentv2/deploy/local,Studiov2/studio.
 Read UI guidelines before changes. OpenAI Docs skill already read; official model
 page checked earlier this session, snapshot/Responses and$0.75/$4.50 per1Mtexttokens.
+
+2026-10-12 12:04:54: Planning0.130.0 passes78 focused checks, independent install, five exact old replays and actual-owner stage1 freeze. Seven original holds/$1.75 retained; aggregate9/$2.25 approved, this stage permits only one diagnostic original. No new inference yet. UI-01.08c66.67%; parent90/P5=50 unchanged.
+Next commit/push then one stage1 diagnostic call. No pending processes.

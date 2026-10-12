@@ -2,6 +2,8 @@
 import hashlib
 import http.client
 import json
+import re
+from datetime import datetime, timezone
 import time
 
 from ..context.policy import require
@@ -17,9 +19,11 @@ class OpenAIHTTP:
         require(type(maximum_body_bytes) is int and maximum_body_bytes in {16384,32768,65536,262144}, "openai_http_limit")
         self.maximum_body_bytes = maximum_body_bytes
         self.last_failure = None
+        self.last_exchange = None
     def send(self, body):
         require(type(body) is bytes and 0 < len(body) <= self.maximum_body_bytes, "openai_http_body")
         self.last_failure = None
+        self.last_exchange = None
         deadline=time.monotonic()+self.timeout
         connection=self.factory("api.openai.com",timeout=self.timeout)
         try:
@@ -28,6 +32,14 @@ class OpenAIHTTP:
             if remaining <= 0: raise TimeoutError("openai_deadline")
             if connection.sock is not None: connection.sock.settimeout(remaining)
             response=connection.getresponse()
+            request_id = getattr(response, 'getheader', lambda _name: None)('x-request-id')
+            request_id = request_id if (type(request_id) is str and
+                re.fullmatch(r'[A-Za-z0-9_-]{1,128}', request_id) and not request_id.startswith('sk-')) else None
+            self.last_exchange = {'endpoint': 'https://api.openai.com/v1/responses',
+                'method': 'POST', 'http_status': response.status, 'request_id': request_id,
+                'request_body_sha256': hashlib.sha256(body).hexdigest(),
+                'received_at_utc': datetime.now(timezone.utc).isoformat()}
+
             if response.status != 200:
                 self.last_failure = {"http_status": response.status,
                     "request_body_sha256": hashlib.sha256(body).hexdigest(), "code": "unclassified", "parameter": None}
@@ -36,9 +48,9 @@ class OpenAIHTTP:
                 try:
                     error = json.loads(response.read1(8192)).get("error", {})
                     code, parameter = error.get("code"), error.get("param")
-                    if code in {"insufficient_quota", "invalid_api_key", "rate_limit_exceeded", "model_not_found", "unsupported_parameter", "unsupported_value", "invalid_request_error"}:
+                    if code in {"insufficient_quota", "invalid_api_key", "rate_limit_exceeded", "model_not_found", "unsupported_parameter", "unsupported_value", "invalid_request_error", "invalid_json_schema"}:
                         self.last_failure["code"] = code
-                    if parameter in {"model", "reasoning", "reasoning.effort", "max_output_tokens", "text.format", "service_tier", "store", "input", "instructions"}:
+                    if parameter in {"model", "reasoning", "reasoning.effort", "max_output_tokens", "text.format", "text.format.schema", "service_tier", "store", "input", "instructions"}:
                         self.last_failure["parameter"] = parameter
                 except (ValueError, AttributeError, TypeError, OSError):
                     pass

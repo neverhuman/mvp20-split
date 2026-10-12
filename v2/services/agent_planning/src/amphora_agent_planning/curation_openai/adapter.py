@@ -23,6 +23,7 @@ class CurationOpenAI:
         self._key, self.timeout, self._factory = api_key, timeout_seconds, transport_factory
         self.last_response = None
         self.last_transport_failure = None
+        self.last_exchange = None
 
     def supports(self, model):
         try:
@@ -37,6 +38,7 @@ class CurationOpenAI:
     def reply(self, binding, packet, *, deadline_unix_ms):
         self.last_response = None
         self.last_transport_failure = None
+        self.last_exchange = None
         original = binding.request.document()
         require(original.reference.scope == self.scope, 'curation_provider_scope')
         CurationAllowance.cost(original.context.model, original.context.limits)
@@ -53,3 +55,4 @@ class CurationOpenAI:
         finally:
             self.last_response = decoder.last_response
             self.last_transport_failure = getattr(transport, "last_failure", None)
+            self.last_exchange = getattr(transport, "last_exchange", None)

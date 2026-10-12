@@ -51,3 +51,7 @@ review.py and the Studio curation_live_review probe qualify the actual v2 capabi
 UI-01.08b: prepare_v3/material_v3 preserve four original v1/v2 envelopes and acceptance outcomes, export the strict generation schema/hash and freeze a seventh-slot/$1.75 declaration. Six previous holds count; only one new supported scenario is permitted. No key read or provider call during preparation. Original files remain unchanged.
 
 The worker exporter now retains response/transport diagnostics when exposed by installed Planning0.129.1. Closed classifications and whole-response digest/size explain future failures without logging remote prose or credentials. They cannot reconstruct the already-drained v3 response. No automatic retry or added allowance.
+
+UI-01.08c prepare_diagnosis freezes unchanged v3 profile plus diagnostic installation and nine-slot declaration. Stage1 requires seven prior holds and permits one original request; the second authorized aggregate slot cannot be selected through this first-stage helper. It requires a documented actionable repair and offline evidence. No repeated request, refund or implicit fallback.
+
+Transport exchange exports include fixed endpoint, UTC, HTTP status, request-body hash and safe request ID for account-side reconciliation. A reported token estimate remains distinct from verified invoice cost. No key/Authorization header or arbitrary response prose is exported.

@@ -24,3 +24,5 @@ HTTP accepts an explicit65536-byte body ceiling for that caller; the original163
 and32768 evaluation profile remain unchanged. See [checkpoint adapter](../checkpoint_openai/README.md).
 
 UI-01.08b diagnostic repair: after a decoded response, retain only an immutable response digest/size, closed status/error/incomplete classifications and refusal boolean in process memory. Curation exposes that diagnostic and existing sanitized transport failure for the qualification exporter. No remote prose, API key, output repair, extra request or public schema change. Existing persisted observations and accounting stay authoritative; diagnostics are not retroactively recoverable after a process exits.
+
+Cost reconciliation2026-10-12: curation additionally exposes HTTP status, fixed endpoint/method, exact request-body digest, receive UTC and bounded x-request-id for qualification export on success or error. No Authorization header or arbitrary response headers/prose are retained. Missing/invalid request IDs remain null; this evidence correlates transport requests, not billing invoices. Existing request body bytes and retry behavior remain unchanged.

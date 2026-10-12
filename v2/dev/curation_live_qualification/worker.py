@@ -35,6 +35,8 @@ def export(host, curation_id, output):
         retain(output / 'original-observation.json', observed.canonical)
         retain(output / 'provider-accounting.json', outcome.provider.model_dump_json().encode())
         provider = worker.executor.provider
+        if provider is not None and provider.last_exchange is not None:
+            retain(output / "transport-exchange.json", json.dumps(provider.last_exchange, sort_keys=True).encode())
         if provider is not None and provider.last_response is not None:
             retain(output / 'response-diagnostic.json', json.dumps(provider.last_response.document(), sort_keys=True).encode())
         if provider is not None and provider.last_transport_failure is not None:
