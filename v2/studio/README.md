@@ -1,6 +1,10 @@
 # Graph Studio
 
-Source release **0.27.0** adds read-only campaign-curation/capability contract and
+Source release **0.28.0** adds scoped curation inspection state and lazy capability
+detail (UI-01.08/P3.3b).22 model/transport/import checks and tsc pass. Visual
+integration/qualification remains P3.3c; serving demo stays Studio0.26.
+
+Source foundation **0.27.0** adds read-only campaign-curation/capability contract and
 transport foundations (UI-01.08/P3.3a). Eight scoped boundary/binding/cancellation
 checks and schema generation/TypeScript compilation pass. Page-model and visual
 review remain P3.3b/c; no new live UI/model interaction claim. The serving demo

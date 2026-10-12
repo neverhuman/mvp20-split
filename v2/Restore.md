@@ -1,17 +1,17 @@
 # Restore
 
-Refreshed 2026-10-12 02:03:35 America/Chicago. Read FIRST after compaction.
+Refreshed 2026-10-12 02:13:56 America/Chicago. Read FIRST after compaction.
 Continue until needed across commits/gates/compaction. No subagents/JARVIS.
 v1 read-only; preserve untracked ocular PDF/DOCX. No source/tests/module README
 edits while tests/installations run. Serving demo uses immutable source copies.
 
 ## Canonical position
 
-UI-01.08 approved; active P3.3b page-model state/selection.
-Child55.56%;P1/P2=100%,P3=77.78%,P4/P5=0. P3.1/P3.2=100%,P3.3=33.33.
-P3.3 has three equal units: a transport/schema/Gateway100, b page model0 ACTIVE,
-c visual integration/qualification0. Complete each before the next.
-ParentUI01=71.11%/Build88.89%/Verification0;UI01.05=85.19%,I1=55.56%.
+UI-01.08 approved; active P3.3c visual integration/browser qualification.
+Child57.78%;P1/P2=100%,P3=88.89%,P4/P5=0. P3.1/P3.2=100%,P3.3=66.67.
+P3.3 has three equal units: a transport/schema/Gateway100, b page model100,
+c visual integration/qualification0 ACTIVE. Complete each before the next.
+ParentUI01=71.56%/Build89.44%/Verification0;UI01.05=85.93%,I1=57.78%.
 UI01.06/07 closed100. Order UI01->UI02->POP01->ML01. LR01 paused25/Build33.33.
 Universal result index remains separately unapproved. No user decision pending.
 
@@ -47,7 +47,7 @@ Unknown provider issuance retains full original reservation; no retry/refund/fal
 Compiler lease is independent; Runtime commits survive curation lease replacement.
 Module READMEs own reconstruction details; no need broad old-history reads.
 
-## Latest P3.3a work (verified, commit next)
+## P3.3a completed foundation (pushed875efbf7)
 
 Studio0.27/Gateway0.6 source; dev and service locks synced. Planning stays0.127.
 Studio generated/campaign_curation roots consume unchanged published CurationView /
@@ -66,7 +66,7 @@ caught assumed DraftSelection.scope; actual DTO is scope-less inside scoped rece
 so corrected that consumer assumption. No public contract changes.
 Independent Gateway0.6 install FINISHED (exec38551):78pass2.19s, no skips/failures.
 Evidence .test-results/curation-gateway-installation-20261012a/evidence.json.
-All tests/installations finished. Need commit/push qualified P3.3a then P3.3b model.
+All tests/installations finished. P3.3a committed/pushed875efbf7.
 2026-10-12 02:03:35 America/Chicago: P3.3a read-contract/transport/Gateway foundation complete.
 Studio0.27 consumes two unchanged published read roots with standalone validators;
 exact scoped curation/gap/fulfillment binding, named absence, bounds and cancellation.
@@ -77,6 +77,25 @@ Evidence curation-gateway-installation-20261012a/evidence.json; source log curat
 No visual/browser acceptance claim yet, no model calls or serving-demo change.
 P3.3=33.33%(a100,b/c0),P3=77.78%,child55.56%;parent71.11%/Build88.89%,UI01.05=85.19%.
 P3.3b page-model state/selection/denial fencing next.
+
+## Latest P3.3b state (verified, commit next)
+
+2026-10-12 02:13:56 America/Chicago: Studio0.28 P3.3b page-model state complete.
+One curation region and lazy detail lane; immutable domain projections, scoped
+selection, original/terminal replay, verified-winner preservation, visible refresh,
+hide/denial/disposal clearing, late/reentrant fencing and no duplicate detail read.
+22 model/transport/import checks pass605.7ms; tsc passes. Evidence curation-studio-model-a.log.
+No writes, model calls, catalog refresh, visual acceptance or serving-demo changes.
+P3.3=66.67%(a/b100,c0),P3=88.89%,child57.78%;parent71.56%/Build89.44%,UI01.05=85.93%.
+P3.3c visual integration and1440/390 keyboard/overflow/negative qualification next.
+
+No tests/installations running. New page_models/campaign_curation/{records,model}.ts
+and README/tests. Studio0.28 manifest/lock updated. Commit/push b then P3.3c.
+Records class uses semantic comparison only, not canonical SHA. Model holds two
+RequestLanes; clears protected state on denial/hide/dispose, remembers minimal
+selection/bookmark for fresh visible reload, no auto polling. Baselines reject
+rewritten original input/capture/terminal state and changed known fulfillment winner.
+All current model/transport tests pass22; log .test-results/curation-studio-model-a.log.
 
 ## Browser continuation notes
 
