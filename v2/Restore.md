@@ -1,15 +1,15 @@
 # Restore
 
-Refreshed 2026-10-12 02:48:30 America/Chicago. Read FIRST after compaction.
+Refreshed 2026-10-12 02:59:00 America/Chicago. Read FIRST after compaction.
 Continue until needed across commits/gates/compaction. No subagents/JARVIS.
 v1 read-only; preserve untracked ocular PDF/DOCX. No source/tests/module README
 edits while tests/installations run. Serving demo uses immutable source copies.
 
 ## Canonical position
 
-UI-01.08 approved; P4.2 Studio curation submission/receipt recovery ACTIVE.
-Child66.67%;P1/P2/P3=100%,P4=33.33%,P5=0. P4.1=100%,P4.2=33.33%,P4.3/4=0. P4.2a100,b/c0.
-ParentUI01=73.33%/Build91.67%/Verification0;UI01.05=88.89%,I1=66.67%.
+UI-01.08 approved; P4.3 graph comparison/validation/successor controls ACTIVE.
+Child70%;P1/P2/P3=100%,P4=50%,P5=0. P4.1/P4.2=100%,P4.3/4=0.
+ParentUI01=74%/Build92.5%/Verification0;UI01.05=90%,I1=70%.
 Order UI01->UI02->POP01->ML01. LR01 paused25/Build33.33. No decision pending.
 P5 ONE synthetic scope4calls/$1,max$0.25original hold/call. ZERO paid calls/real keys.
 
@@ -37,26 +37,31 @@ checks; original full mode still supports container/receipt process probes.
 
 ## Next task
 
-P4.2a Studio0.30 uncommitted,399checks pass (curation-request-foundation-a.log).
-Commit/push exact files then b exact predecessor/context preparation, c form/browser.
-New transport/campaign_curation/{submission,commands}.ts; model/{journal,request}.ts.
-Original command stores ASCII canonical integer/reference-only bytes; Python public
-parser parity fixtures include Unicode. Receipt query returns ORIGINAL queued ack,
-not mutable progress (separate CurationModel GET). Storage keyed actor/scope/run;
-reload hides stored ack until live query. Unknown replies allow explicit original
-retry only. One original currently retained; explicit next-request transition after
-terminal outcome still needs wiring during P4.3. All tests FINISHED; no paid calls.
+367ba27e pushed Studio0.30 original command/receipt recovery. P4.2b/c Studio0.31
+uncommitted (commit/push next): exact preparation + composer + entry navigation.
+406checks pass(curation-composer-full-a.log); curation-request-browser-20261012a
+1440/390 inspected/WCAG/overflow, lost reply/reload exact query, one intake POST,
+queued-review/back. All tests FINISHED. No paid calls. P4.2 complete.
 
-P4.2b derive actual terminal snapshot with ObservationClient, original draft via
-LaunchPlanningContext.selection(snapshot), original context via OriginReader.
-Legacy provenance includes one Knowledge head; keep unavailable context explicit,
-never silently drop/choose first when multi-Knowledge is carried by curation flow.
-Origin research selection has questions/needs arrays; source context receipts are
-not automatic extra scientific evidence. Need bounded selected artifacts explicitly.
-No arbitrary IDs/prompts/provider/budget from UI. Operator policy name can be a
-reviewed local deployment binding; Planning remains final configured-policy authority.
-P4.3 owns graph diff/validation/successor controls; P4.4 actual scripted integration.
-P5 live qualification ONE scope4calls/$1, no retries/refunds/second-scope evasion.
+Preparation reads fresh Runtime terminal cut, LaunchPlanningContext exact draft and
+OriginReader original provenance. Missing origin/Knowledge head explicit; no drops.
+PreparedCuration supports all8 heads. Legacy default run without browser launch link
+gets explanatory missing context, not guessed draft. P5 demo must start prepared run
+in browser or supply an equivalent verified launch binding. Policy binding constant
+INTERNAL_CURATION_POLICY=internal-curation-v1; configure Planning policy at cutover.
+CurationComposer hides/suspends request+preparation, reloads original journal/query,
+asks bounded direction, links separate curation readback; no successor activation yet.
+
+P4.3 next: exact original/proposed graph comparison, validation, successor controls,
+explicit next-request cycle after terminal curation. Reuse DraftComparison
+(page_models/design/draft_comparison.ts,presentation/draft_comparison.tsx).
+Need consume public campaign_successor_launch schemas and original numeric Runtime
+admission bytes; don't use curation integer-only canonical encoder for graph floats.
+Current CurationRequestModel retains one original per run; next-request after verified
+terminal outcome must be explicit (no scope/identity/budget retry evasion).
+P4.4 actual scripted owner/process/browser integration; P5 live bounded qualification.
+ONE synthetic scope4calls/$1,max$0.25hold, no retries/refunds/second-scope evasion.
+No active tests/installations. No approval needed.
 
 ## Commands and guardrails
 

@@ -54,3 +54,15 @@ This is recovery, not a multi-tab lock or owner authority. A changed pending ori
 cannot be overwritten. New curation cycles after terminal outcome are a separate
 explicit transition still to be wired during the remaining successor UI delivery.
 Tests: campaign_curation/request.test.ts and transport/campaign_curation/commands.test.ts.
+
+## Exact campaign preparation
+
+`CurationPreparation` reads a fresh scoped Runtime cut and requires a terminal run
+before loading the exact launch-bound draft/provenance. OriginalCurationContext
+uses verified original Planning provenance; missing origin or unavailable selected
+Knowledge blocks preparation explicitly. It preserves original Research refs.
+Requested context is not described as everything consumed by the model.
+`PreparedCuration` retains up to8 Knowledge heads and rejects duplicates/oversized
+context rather than taking the first or truncating. Scope/graph/cut checks precede
+request construction. Context reads never submit commands. Denial, clear and disposal
+remove preparation and fence late reads. Tests: preparation.test.ts.

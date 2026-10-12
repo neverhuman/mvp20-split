@@ -48,6 +48,10 @@ export class CurationRequestModel {
   reconcile(){if(!this.canReconcile)throw Error('curation_not_reconcilable');return this.perform(false);}
   retryOriginal(){if(!this.canReconcile||this.view.phase!=='unresolved')throw Error('curation_not_retryable');return this.perform(true);}
   deny(){this.lane.cancel();this.command=undefined;this.previous=undefined;this.patch({phase:'denied',receipt:null,reason:'denied'});}
+  suspend(){
+    this.lane.cancel();this.command=undefined;this.previous=undefined;this.initialized=false;
+    this.patch({phase:'restoring',receipt:null,reason:null});
+  }
   dispose(){this.disposed=true;this.lane.cancel();this.command=undefined;this.previous=undefined;this.view=Object.freeze({phase:'denied',receipt:null,reason:null});this.listeners.clear();}
   private async perform(post:boolean){
     const command=this.command!,lane=this.lane.begin();

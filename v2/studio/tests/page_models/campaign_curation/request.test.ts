@@ -30,6 +30,12 @@ test('reload hides cached acceptance until original receipt query verifies it',a
   assert.equal(replacement.snapshot.phase,'unresolved');assert.equal(replacement.snapshot.receipt,null);assert.equal(replacement.submission,undefined);
   await replacement.reconcile();assert.equal(replacement.snapshot.phase,'accepted');assert.equal(f.calls.length,2);assert.equal(f.calls[1],'query');
 });
+test('hiding clears in-memory acceptance and resumes through the retained original',async()=>{
+  const f=setup();await f.model.initialize();await f.model.submit(request);
+  f.model.suspend();assert.equal(f.model.snapshot.receipt,null);assert.equal(f.model.submission,undefined);
+  await f.model.initialize();assert.equal(f.model.snapshot.phase,'unresolved');
+  await f.model.reconcile();assert.equal(f.model.snapshot.phase,'accepted');assert.equal(f.calls.length,2);assert.equal(f.calls[1],'query');
+});
 test('lost reply and missing receipt preserve exact original retry bytes',async()=>{
   const f=setup();let accepted=false;
   const model=new CurationRequestModel({submit:async command=>{f.calls.push(command.body);if(!accepted)throw new CurationCommandFailure('unavailable');return receipt(command);},

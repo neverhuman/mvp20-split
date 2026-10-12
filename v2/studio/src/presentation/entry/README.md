@@ -105,3 +105,13 @@ Studio0.26 exposes recorded model decisions directly from Results/Run, with a
 dedicated SupervisionModel independent of the technical monitor visibility lane.
 The reasoning route preserves scope/run pins and invalidates proposal detail on
 return. Actual prior OpenAI history is not a new live curation request.
+
+## Curation entry
+
+Next iteration composes CampaignCurationEntry when an exact LaunchPlanningContext
+links the run to its saved draft. Historical sessions without that link explain the
+missing context and retain inspection; they cannot silently choose a draft. The
+reviewed internal deployment binding is policy_id internal-curation-v1; Planning
+must configure that policy at cutover and owns provider/cost authority. The browser
+carries no provider configuration or spending override. Proposal navigation retains
+its exact reference across views. A curation request does not launch a successor.
