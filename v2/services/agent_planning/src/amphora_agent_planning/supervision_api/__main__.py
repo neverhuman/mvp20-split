@@ -31,9 +31,15 @@ def main():
             if path is not None:
                 from ..topology.hosting import ConfiguredTopology
                 topology=ConfiguredTopology.load(path).operations(engine)
-            app=create_app(SupervisionIntake(engine), credentials,topology=topology)
+            curations = None
+            curation_config = os.environ.get('AMPHORA_PLANNING_CURATION_POLICIES')
+            if curation_config is not None:
+                from ..curation_intake.configuration import policy_ids
+                from ..curation_intake.journal import CurationJournal
+                curations = CurationJournal(engine, policy_ids(curation_config))
+            app=create_app(SupervisionIntake(engine), credentials,topology=topology,curations=curations)
         except (OSError,KeyError,TypeError,ValueError,RecursionError):
-            raise SystemExit('Valid Planning topology configuration required') from None
+            raise SystemExit('Valid Planning topology/curation configuration required') from None
         uvicorn.run(app, host=args.host, port=args.port)
     finally:
         engine.dispose()

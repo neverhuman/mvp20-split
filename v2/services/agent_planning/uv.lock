@@ -18,11 +18,12 @@ wheels = [
 
 [[package]]
 name = "amphora-agent-planning"
-version = "0.107.0"
+version = "0.109.0"
 source = { editable = "." }
 dependencies = [
     { name = "alembic" },
     { name = "amphora-contracts-artifacts" },
+    { name = "amphora-contracts-campaign-curation" },
     { name = "amphora-contracts-campaigns" },
     { name = "amphora-contracts-commands" },
     { name = "amphora-contracts-core" },
@@ -48,6 +49,7 @@ dependencies = [
 requires-dist = [
     { name = "alembic", specifier = ">=1.16,<2" },
     { name = "amphora-contracts-artifacts", editable = "../../contracts/artifacts" },
+    { name = "amphora-contracts-campaign-curation", editable = "../../contracts/campaign_curation" },
     { name = "amphora-contracts-campaigns", editable = "../../contracts/campaigns" },
     { name = "amphora-contracts-commands", editable = "../../contracts/commands" },
     { name = "amphora-contracts-core", editable = "../../contracts/core" },
@@ -83,6 +85,33 @@ dependencies = [
 requires-dist = [
     { name = "amphora-contracts-commands", editable = "../../contracts/commands" },
     { name = "amphora-contracts-core", editable = "../../contracts/core" },
+    { name = "pydantic", specifier = ">=2.12,<3" },
+]
+
+[[package]]
+name = "amphora-contracts-campaign-curation"
+version = "0.1.0"
+source = { editable = "../../contracts/campaign_curation" }
+dependencies = [
+    { name = "amphora-contracts-commands" },
+    { name = "amphora-contracts-core" },
+    { name = "amphora-contracts-graph-runtime" },
+    { name = "amphora-contracts-knowledge" },
+    { name = "amphora-contracts-planning" },
+    { name = "amphora-contracts-research" },
+    { name = "amphora-contracts-tools" },
+    { name = "pydantic" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "amphora-contracts-commands", editable = "../../contracts/commands" },
+    { name = "amphora-contracts-core", editable = "../../contracts/core" },
+    { name = "amphora-contracts-graph-runtime", editable = "../../contracts/graph_runtime" },
+    { name = "amphora-contracts-knowledge", editable = "../../contracts/knowledge" },
+    { name = "amphora-contracts-planning", editable = "../../contracts/planning" },
+    { name = "amphora-contracts-research", editable = "../../contracts/research" },
+    { name = "amphora-contracts-tools", editable = "../../contracts/tools" },
     { name = "pydantic", specifier = ">=2.12,<3" },
 ]
 

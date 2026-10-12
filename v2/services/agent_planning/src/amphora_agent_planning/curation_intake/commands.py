@@ -29,10 +29,16 @@ class CurationCommand:
 
     @classmethod
     def bind(cls, principal, raw, policy_ids):
+        value = cls.restore(raw)
+        _actor(principal, value.command, 'record_curations')
+        require(value.request.payload.policy_id in policy_ids, 'curation_policy_unavailable')
+        return value
+
+    @classmethod
+    def restore(cls, raw):
+        """Validate historical bytes without reapplying current admission configuration."""
         command = parse_curation(raw)
-        _actor(principal, command, 'record_curations')
         request = CurationRequest.model_validate_json(command.canonical_bytes)
-        require(request.payload.policy_id in policy_ids, 'curation_policy_unavailable')
         context = request.payload.context
         _unique(context.knowledge, lambda item: item.snapshot.graph.graph_id, 'duplicate_curation_graph')
         _unique(context.questions, lambda item: item.question_id, 'duplicate_curation_question')

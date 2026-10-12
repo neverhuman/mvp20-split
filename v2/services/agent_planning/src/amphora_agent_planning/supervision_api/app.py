@@ -29,13 +29,17 @@ from .bounds import RequestBounds
 from .credentials import AuthenticationError
 
 
-def create_app(intake=None, credentials=None, *, topology=None, campaign_origins=None):
+def create_app(intake=None, credentials=None, *, topology=None, campaign_origins=None, curations=None):
     if (intake is None) != (credentials is None):
         raise ValueError('complete_supervision_configuration_required')
     if topology is not None and intake is None:
         raise ValueError('topology_requires_configured_planning')
     if campaign_origins is not None and intake is None:
         raise ValueError('campaign_origins_require_configured_planning')
+    if curations is not None and intake is None:
+        raise ValueError('curation_requires_configured_planning')
+    if credentials is not None and curations is None and credentials.has_any_action({'record_curations', 'read_curations'}):
+        raise ValueError('curation_configuration_required')
     if credentials is not None and topology is None and credentials.has_any_action({'propose_topology','read_topology'}):
         raise ValueError('topology_configuration_required')
     app = FastAPI(title='Amphora Planning supervisor intake', version=version("amphora-agent-planning"))
@@ -94,13 +98,22 @@ def create_app(intake=None, credentials=None, *, topology=None, campaign_origins
         if topology is not None:
             with topology.journal.engine.connect() as conn:
                 conn.execute(text('SELECT record_bytes FROM planning.topology_proposals LIMIT 0'))
-        return {'status': 'ready', 'mode': 'supervisor_intake_and_topology' if topology is not None else 'supervisor_intake_only'}
+        if curations is not None:
+            with curations.engine.connect() as conn:
+                conn.execute(text('SELECT receipt_bytes FROM planning.curation_requests LIMIT 0'))
+        mode = 'supervisor_intake_and_topology' if topology is not None else 'supervisor_intake_only'
+        if curations is not None:
+            mode = 'supervisor_intake_topology_and_curation' if topology is not None else 'supervisor_intake_and_curation'
+        return {'status': 'ready', 'mode': mode}
 
     if intake is None:
         return app
     from ..campaign_origin.http import install_campaign_origins
     from ..campaign_origin.reader import CampaignOriginReader
     install_campaign_origins(app, campaign_origins if campaign_origins is not None else CampaignOriginReader(intake.engine), credentials)
+    if curations is not None:
+        from ..curation_intake.http import install_curations
+        install_curations(app, curations, credentials)
     if topology is not None:
         from ..topology.http import install_topology
         install_topology(app,topology,credentials)

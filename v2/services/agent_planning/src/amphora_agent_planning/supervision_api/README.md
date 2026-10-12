@@ -1,5 +1,10 @@
 # Planning supervisor HTTP boundary
 
+Planning0.109 adds optional [curation intake](../curation_intake/README.md),
+configured through AMPHORA_PLANNING_CURATION_POLICIES and distinct scoped grants.
+It records queued intent only; no request handler calls a model. Enabled readiness
+requires planning0022; legacy deployments without this option retain their routes.
+
 Planning0.99 (BP-09.02/B2.01) enforces planning_service at configured-host startup and in readiness. The migrator/postgres roles and other drivers are rejected before serving, and authenticated current_user is checked against the required role. This repairs an actual isolated0.98 probe that reported ready with planning_migrator. No schema, command bytes or migration changes. Existing0.98 installations remain preserved for comparison. Fresh role/replacement qualification is owned by the active deployment plan.
 
 Current Planning0.98/planning0020, verified2026-10-06 16:22:40: optional [topology proposals](../topology/README.md) adds authenticated publication/history and explicit environment-file configuration. New topology grants require that configuration; readiness checks the owner table. Existing supervision routes/command profiles remain compatible.153scoped regression/API/CLI checks passed64.96s. Historical version notes below retain their original scope.

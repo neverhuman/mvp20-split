@@ -1,6 +1,6 @@
 # Restore
 
-Refreshed2026-10-11 21:24:47 America/Chicago. Read FIRST after compaction.
+Refreshed2026-10-11 21:34:41 America/Chicago. Read FIRST after compaction.
 Continue until needed persists across commits/milestones. No subagents/JARVIS.
 v1 read-only; preserve untracked ocular PDF/DOCX. No source/tests/module README
 edits while verification/installations run. Immutable serving processes are okay.
@@ -8,19 +8,22 @@ edits while verification/installations run. Immutable serving processes are okay
 ## Canonical position
 
 UI-01/N2 complete100%; N2.2 provenance, N2.3 generation comparison and N2.4
-recorded model inspection all qualified. UI01=64%, Build80%, Verification0%.
-NEXT approved UI-01.08/P2.1; N3/I1=20%; K1/R1=100%, UI01.05=73.33%.
+recorded model inspection all qualified. UI01=65%, Build81.25%, Verification0%.
+NEXT approved UI-01.08/P2.2; P2=25%, child25%, N3/I1=25%; K1/R1=100%, UI01.05=75%.
 UI01.06/UI01.07 closed100%. Order UI01 -> UI02 -> POP01 -> ML01.
 LR01 paused25%/Build33.33%. UI01.01 universal index remains unapproved;
 bounded existing-API comparison is qualified.
 
 ## Latest checkpoints
 
-P1 UI-01.08 verified: two new public packages0.1.0; source Planning0.108 pure
-curation command policy.219 contract/publication,74 focused/boundary,38 SQL/API
-regression checks pass. No new paid calls or migrations. Commit/push this milestone
-then P2.1. Existing served Planning remains0.107; Studio0.26/Gateway0.5.
-N2.4 closeout2ee0f9cc already pushed; no outstanding approval gate.
+P1 contracts pushed cef2c541. P2.1 source Planning0.109/planning0022 complete:
+original intent/receipt, optional HTTP/config, original-byte replay, scoped reads,
+concurrent retries/rollback, actual process replacement and UTC receipt stability.
+72 SQL/API +35 boundary/host +23 final intake checks pass; logs curations-intake
+(actual filenames curation-intake-a/b/c.log). No tests running. No paid calls.
+Local/LAN roots200; serving Planning0.107/Studio0.26/Gateway0.5 unchanged.
+Commit/push P2.1, then P2.2 exact live campaign envelope/output; P2.3 worker,
+P2.4 scripted/replacement. P3 inventory/fulfillment, P4 successor, P5 live review.
 
 ## Evidence and current serving processes
 
@@ -63,17 +66,22 @@ Data0.30/Registry0.1/Research0.40/Knowledge0.18. LAN --baseline is gateway.json.
 
 ## Next task / approved implementation
 
-Owner approved UI-01.08; P1 complete100%, P2 active0%, child20%. No reapproval needed.
-P1 two new contract packages0.1.0, Planning0.108 pure command policy complete.
-219 contract/publication +74 focused/boundary +38 actual-SQL policy/API tests pass.
-Next P2.1 durable original-intent journal, read-only reconciliation and scoped HTTP.
-Then P2.2 exact envelope, P2.3 worker/issuance/compiler, P2.4 scripted/replacement.
-No curation routes/migrations/live deployment yet. Preserve serving0.107.
-Boundary guard found preexisting overlapping test ownership; fixed owner roots,
-Planning --area curation_intake/campaign_origin; generation direct script unchanged. Approval includes synthetic-only live qualification
-maximum$1/four calls/$0.25 reservation each, once-only issuance; no calls made yet.
-Coherence review and tracker approval recorded. Last closeout2ee0f9cc pushed.
-Existing supervision-only envelope cannot be relabelled as campaign curation.
+UI-01.08 approved; P1=100%, P2=25%, child25%. No reapproval needed.
+P2.2 exact campaign envelope and original output interpretation next.
+Existing checkpoint_input is supervision-only. PacketBudget selects it for all
+OpenAI inputs; add distinctly identified curation profile without changing old bytes.
+Provider OutputProfiles closed catalog must add exact curation output schema.
+New CampaignCurationDraft.outcome distinguishes propose_campaign/request_capabilities/
+abstain. Generic old ProposalAction lacks request_capabilities; design explicit
+non-executable outcome interpretation preserving full raw gaps, never relabel outputs.
+PreparedCampaignProposal currently parses CampaignOutput only; compiler adaptation
+must preserve original proposal/capture and exact proposed definition, not hand-authored
+replacement. Read module READMEs then focused source before changes.
+Approval includes synthetic-only live qualification max$1/four calls/$0.25 reserved
+per call, once-only issuance; none made. Existing pinned model and pricing preserved.
+Current service0022 migration applied to owned TEST fixture only; demo0021 unchanged.
+New CurationJournal has immutable queued receipt only; worker/job state is next.
+OpenAI Docs skill was already read; consult official docs for new API behavior if needed.
 
 Latest evidence:
 - reasoning-studio-tests-20261011a.log362pass.
