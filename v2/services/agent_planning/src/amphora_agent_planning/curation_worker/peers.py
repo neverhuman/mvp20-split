@@ -5,6 +5,7 @@ from dataclasses import dataclass
 from amphora_tool_protocol import ArtifactClient, WorkerIdentity
 
 from ..campaign_artifact_context import CampaignArtifactContextReader
+from ..capability_acceptance.collection import AcceptanceCollector
 from ..campaign_data_access import CampaignArtifactReader
 from ..campaign_exchanges import RegistryEligibilityClient, RuntimeAuthoringClient
 from ..campaign_refresh import RefreshCollector
@@ -29,6 +30,7 @@ class CurationPeers:
     refresh: RefreshCollector
     runtime: RuntimeAuthoringClient
     registry: RegistryEligibilityClient
+    acceptance: AcceptanceCollector
 
     @classmethod
     def bind(cls, reviewed):
@@ -46,7 +48,8 @@ class CurationPeers:
             knowledge=CurationKnowledgeReader(KnowledgeTransport(config.knowledge.endpoint, tokens['knowledge'])),
             research=research, originals=CurationRuntimeReader(runtime))
         refresh = RefreshCollector(artifacts=CampaignArtifactReader(data), research=research,
-            registry=registry, runtime=runtime)
+            registry=assembler.registry, runtime=assembler.runtime)
         return cls(data, artifacts, assembler, refresh,
             RuntimeAuthoringClient(config.runtime_owner, config.actor_id, config.runtime.endpoint, tokens['runtime']),
-            RegistryEligibilityClient(config.eligibility.owner_id, config.actor_id, config.registry.endpoint, tokens['registry']))
+            RegistryEligibilityClient(config.eligibility.owner_id, config.actor_id, config.registry.endpoint, tokens['registry']),
+            AcceptanceCollector(registry, data))

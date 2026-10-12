@@ -82,3 +82,14 @@ calls are introduced. See capability_fulfillment README for failure/replay seman
 Planning0.127 independently installed qualification passed150 capability/intake/worker
 checks458.67s, including compiler and process crash recovery. Evidence:
 capability-installation-20261012a/evidence.json. No paid calls/demo upgrade.
+
+
+P4.4a integration repair, Planning0.127.1: CurationPeers supplies RegistryReader
+and RuntimeMetadataReader to compiler refresh. Capability acceptance receives its
+own composed AcceptanceCollector over the Registry metadata transport and Data
+reader. These interfaces differ: refresh validates exact release/universe records;
+acceptance reads a public release DTO before verifying fulfillment evidence. They
+must not be interchanged. The production-composition regression calls all three
+interfaces with literal public records. No schema, original proposal, command or
+receipt changes; an already-retained compiler selection resumes without provider
+reissue after process replacement. Actual owner qualification remains P4.4.

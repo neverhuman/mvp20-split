@@ -78,12 +78,16 @@ def test_configured_replacement_resumes_pending_then_recovers_without_peer_reche
     with peers(collector) as (endpoint, state):
         config['data']['endpoint'] = config['registry']['endpoint'] = endpoint
         path.write_text(json.dumps(config), encoding='utf-8')
-        assert run().get('fulfillment_pending') == 1
+        pending = run().get('fulfillment_pending', 0)
+        assert pending >= 1
+        assert state['paths'] == ['/v1/releases/' + collector.release.lock.descriptor_sha256] * pending
         assert CapabilityRequestReader(stored.engine).read(owner, first.specification.request.request_id).fulfillment == first
         state['unavailable'] = False
         assert run().get('fulfillment_verified') == 1
         paths = list(state['paths'])
-        assert len(paths) == 4  # unavailable Registry, then exact Registry + metadata + processing.
+        # The bounded polling window can fit more than one unavailable read.
+        # Successful verification adds exactly Registry + metadata + processing.
+        assert len(paths) == pending + 3
         assert run().get('idle', 0) >= 1 and state['paths'] == paths
     result = CapabilityRequestReader(stored.engine).read(owner, first.specification.request.request_id)
     assert result.status == 'fulfilled' and result.fulfillment.status == 'verified'

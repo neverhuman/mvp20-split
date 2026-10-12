@@ -33,3 +33,17 @@ for byte under relative paths required by native workers. `session.py` starts on
 installed supervisor, uses public owner HTTP and drains its owned processes.
 Actual six-owner startup/seed standby/drain passed 2026-10-12 04:13:30; full
 curation/compiler/successor acceptance is still pending. No live-provider claim.
+
+
+`publication.py` publishes exact synthetic roots/specification and explicit Data
+processing rights. `campaign.py` retains commands before public writes, uses one
+ID for both launch and admission, and enforces the installed600s profile. Invalid
+initial helper envelopes remain separate; `-v3` names the corrected original.
+`planning.py` runs solely in the independent Planning interpreter and substitutes
+only a deterministic provider. Exclusive issuance markers prevent repeated
+synthetic sends. It logs compiler stages without modifying returned decisions.
+`verify.py` joins real owners and managed seed containers, retaining predecessor,
+proposal, validation, carry and lineage evidence. It remains an in-progress P4.4a
+acceptance probe: original seed/retained proposal/draft save pass; later compiler
+pending recovery is unresolved. A terminal applicability failure stays immutable;
+curation-02 is the corrected separate original request. No paid calls are made.

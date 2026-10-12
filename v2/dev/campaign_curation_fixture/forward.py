@@ -18,14 +18,14 @@ from local_numeric_configuration import write
 def migrate(root, installation, predecessor, output):
     identified = OwnerInstallation.from_directory('planning', installation,
         Path(__file__).resolve().parents[2] / 'services/agent_planning/uv.lock')
-    assert identified.release == '0.127.0'
+    assert identified.release in {'0.127.0', '0.127.1'}
     record_path = output / 'planning-forward.json'
     assert not record_path.exists(), 'Inspect an existing migration receipt before retrying'
     prior = predecessor / 'environment/Lib/site-packages/amphora_agent_planning/persistence/migrations/versions'
     hashes = {p.name: hashlib.sha256(p.read_bytes()).hexdigest() for p in prior.iterdir()
               if p.suffix in {'.py', '.sql'}}
     assert hashes
-    wheel = next((installation / 'wheels').glob('amphora_agent_planning-0.127.0-*.whl'))
+    wheel = next((installation / 'wheels').glob('amphora_agent_planning-' + identified.release + '-*.whl'))
     with zipfile.ZipFile(wheel) as archive:
         for name, digest in hashes.items():
             assert hashlib.sha256(archive.read('amphora_agent_planning/persistence/migrations/versions/' + name)).hexdigest() == digest

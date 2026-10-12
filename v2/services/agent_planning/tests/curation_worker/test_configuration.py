@@ -53,6 +53,30 @@ def test_public_client_composition_does_not_read_model_key_or_call_peers(tmp_pat
     assert list(reviewed.policy_map()) == ['synthetic']
 
 
+def test_composed_refresh_and_acceptance_use_real_reader_interfaces(tmp_path, monkeypatch):
+    from amphora_agent_planning.metadata_reads import MetadataWindow
+    from ..campaign_context.test_selection import request
+    from ..registry_access.test_discovery import Scripted, record
+    from ..runtime_metadata.test_reader import universe
+
+    path, _, _ = files(tmp_path, monkeypatch)
+    peers = CurationPeers.bind(ReviewedConfiguration.load(path))
+    release, reviewed = record(), universe()
+    registry_wire = Scripted(release, release)
+    runtime_wire = Scripted(reviewed)
+    monkeypatch.setattr(peers.assembler.registry.transport, 'read', registry_wire.read)
+    monkeypatch.setattr(peers.assembler.runtime.transport, 'read', runtime_wire.read)
+    # Refresh needs validated readers; capability acceptance needs the public
+    # metadata transport. Exercise both interfaces after production composition.
+    selected = peers.refresh.registry.exact(request(), release.lock, MetadataWindow('registry'))
+    assert selected.document() == release
+    assert peers.refresh.runtime.universe(request()).document() == reviewed
+    route = '/v1/releases/' + release.lock.descriptor_sha256
+    assert peers.acceptance.registry.read(route, MetadataWindow('registry')) == release
+    assert registry_wire.paths == [route, route]
+    assert runtime_wire.paths == ['/v1/definition-universe']
+
+
 @pytest.mark.parametrize('fault', ['actor', 'scope', 'duplicate_id', 'duplicate_path', 'oversized',
     'live_scope', 'live_missing', 'hidden_live', 'fixture', 'eligibility_actor'])
 def test_private_configuration_rejects_widening_and_ambiguous_policy(tmp_path, monkeypatch, fault):

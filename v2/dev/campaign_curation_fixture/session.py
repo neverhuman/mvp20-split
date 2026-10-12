@@ -19,9 +19,9 @@ class PublicOwners:
                           ('runtime', 'artifact', 'registry', 'planning', 'knowledge', 'research')}
         self.endpoints['deployment'] = 'http://127.0.0.1:' + str(launch_port)
 
-    def call(self, owner, path, body=None):
-        data = None if body is None else json.dumps(body).encode()
-        request = Request(self.endpoints[owner] + path, data=data, headers={
+    def call(self, owner, path, body=None, *, method=None, allowed=(200,)):
+        data = body if isinstance(body, bytes) else None if body is None else json.dumps(body).encode()
+        request = Request(self.endpoints[owner] + path, data=data, method=method, headers={
             'Authorization': 'Bearer ' + self.tokens[owner], 'Content-Type': 'application/json'})
         try:
             response = self.controller.opener.open(request, timeout=20)
@@ -31,7 +31,7 @@ class PublicOwners:
             raw = response.read(1048577)
             assert len(raw) <= 1048576
             value = json.loads(raw)
-            assert response.status == 200, f'{owner} {path}: HTTP {response.status}: {value}'
+            assert response.status in allowed, f'{owner} {path}: HTTP {response.status}: {value}'
             return value
 
 
