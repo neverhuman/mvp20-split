@@ -3,15 +3,15 @@
 ## Canonical tracker
 
 - Status: primary_active; connected demo flow implemented; remaining N2 integration gates explicit.
-- Last refreshed: 2026-10-11 19:26:42 (America/Chicago).
+- Last refreshed: 2026-10-11 19:50:00 (America/Chicago).
 - Baseline: 62ea4966; owner-reported disconnected canvas and navigation review on 2026-10-07.
 - Owner: Studio experience, page models and presentation; service owners retain their contracts and state.
 - Parent: none; priority and mirrors in [Master Build Tracker](Master%20Build%20Tracker.md).
-- Overall implementation: **57.5%**; Build71.88%, Verification0%. Five equal delivery gates: G1, N1, N2, N3, V1. Build averages G1/N1/N2/N3; Verification is V1. G0 is a separate design/review prerequisite and earns no implementation credit.
+- Overall implementation: **58.75%**; Build73.44%, Verification0%. Five equal delivery gates: G1, N1, N2, N3, V1. Build averages G1/N1/N2/N3; Verification is V1. G0 is a separate design/review prerequisite and earns no implementation credit.
 - Design readiness: G0 complete; ELK directed layout and bounded topology ownership implemented.
 - Demonstrated behavior: connected graphs and question-first navigation verified against retained owner records; result-first comparison and full replacement acceptance remain.
-- Current phase/task: N2.3 generational comparison. UI-01.07 provenance complete100%; N2.2=100%. UI-01.05 K1/R1 and closed launch remain complete.
-- Next task: N2.4 live-provider reasoning, then N3/UI-01.05/I1 LLM successor loop. Preserve closed launch/provenance scope.
+- Current phase/task: N2.4 live-provider reasoning; N2.3 complete100%. UI-01.07 provenance complete100%; N2.2=100%. UI-01.05 K1/R1 and closed launch remain complete.
+- Next task: N3/UI-01.05/I1 LLM successor loop after N2.4 closes. Preserve closed launch/provenance scope.
 - Blocker: none requiring owner direction for the current bounded comparison task. UI-01.01 public result index remains separate/unapproved; use the authorized bounded existing-API alternative.
 - Human acceptance: owner feedback is part of visual review; no new routine approval gates for campaign execution.
 - Active exception: owner explicitly reprioritized UI over worker diagnostics; LR-01 remains paused at25%, Build33.33%, Acceptance0%, with R2 receipt diagnosis preserved.
@@ -22,7 +22,7 @@
 | G0 graph review and design | 100% | Owner report and retained campaign | Recorded actual-screen diagnosis, topology/data map, layout design and graph acceptance cases |
 | G1 usable connected graph | 100% | G0 complete | One real retained campaign opens as a readable connected graph; branches, joins and nested work navigable; visual and behavioral proof |
 | N1 research entry and navigation | 100% | G1 complete | Research-question landing and connected workflow navigation with preserved selection/context |
-| N2 approach, execution and results | 87.5% | N1 complete | Understand approach, follow autonomous work, inspect/compare results and supporting evidence |
+| N2 approach, execution and results | 93.75% | N1 complete | Understand approach, follow autonomous work, inspect/compare results and supporting evidence |
 | N3 next-campaign iteration | 0% | N2 complete | Target weak/promising points, inspect proposed changes and follow predecessor/successor history |
 | V1 integrated acceptance and audit | 0% | N3 complete | Actual-owner user journey, independent consumer acceptance, scoped audit and explicit limitations |
 
@@ -250,7 +250,7 @@ reviewed. N2 still owns inner-view density, result-first hierarchy and compariso
 
 ## N2 bounded task tracker - 2026-10-07 18:07:35
 
-Eight equal tasks define N2 credit: six complete and two half complete give87.5%. Proposed public-contract additions require an
+Eight equal tasks define N2 credit: seven complete and one half complete give93.75%. Proposed public-contract additions require an
 explicit scope/denominator update after the owner decision; they earn no credit now.
 
 | Task | Completion | Exit |
@@ -260,7 +260,7 @@ explicit scope/denominator update after the owner decision; they earn no credit 
 | N2.C visible concurrency | 100% | Inline sibling branches and joins in campaign context; actual-state/omission proof and SME-visible behavior before result work |
 | N2.1 screen hierarchy | 100% | Single shell, compact execution status/actions, secondary technical controls, truthful absent-result notice |
 | N2.2 participating capabilities and result discovery | 100% | Retained plan/bounded discovery and exact Planning/Research provenance qualified; UI-01.07 audit |
-| N2.3 typed results and comparison | 50% | Candidate scientific comparison complete; generational comparison remains |
+| N2.3 typed results and comparison | 100% | Candidate and bounded retained-generation comparison qualified |
 | N2.4 evidence and reasoning traversal | 50% | First group complete; second group now has actual domain/source traversal via K1, but provider reasoning remains before group credit |
 | N2.5 actual-owner acceptance | 100% | Retained walkthrough plus actual local/LAN browser admission/workers/results, same-run/container recovery and installed replacement qualification; UI-01.06 closeout audit |
 
@@ -367,3 +367,8 @@ and workspace presentation implemented.13 focused/362 full Studio checks pass;
 scripted1440/390 browser passes. Actual original retained campaign qualification
 and scoped audit remain. N2.3 stays50% until its second delivery group passes.
 No population-wave engine, new Runtime result index or scientific validity claimed.
+
+2026-10-11 19:50:00: N2.3 second group qualified100%; parentN2=93.75%,
+overall58.75%, Build73.44%, Verification0%. [Scoped audit](../Audits/UI-01_N2.3_Generation_Comparison.md)
+records actual retained generations0/2,362 tests, desktop/narrow inspection and
+restored original-run LAN regression. N2.4 live-provider reasoning is next.

@@ -1,7 +1,7 @@
 # Retained generation comparison
 
-Owner: UI-01/N2.3, remaining generation group. Implementation in progress;
-2026-10-11 19:38:00 America/Chicago. Prerequisites: published SearchCheckpoint,
+Owner: UI-01/N2.3, remaining generation group. Implementation qualified100%;
+2026-10-11 19:50:00 America/Chicago. Prerequisites: published SearchCheckpoint,
 Runtime observation reads, protected Data content reads. No new public API.
 
 The research reviewer asks whether recorded numerical search populations changed
@@ -40,11 +40,15 @@ compact selection controls and one objective comparison table; candidate/ancestr
 detail is optional. Empty scientific demo campaigns state that no search checkpoints
 were found; no synthetic generations are invented for the four-tool demo.
 
-Tests belong under tests/page_models/generation_comparison. Actual owner and browser
-verification remain required; no delivery credit is claimed for this contract alone.
+Tests belong under tests/page_models/generation_comparison. Actual owner and browser qualification passed; evidence and limits are below.
 
 Checkpoint 2026-10-11 19:44:00:13 focused checks and full362 Studio checks pass.
 Scripted browser B verifies exact tool bytes, two stages,1440/390, accessibility
 and denied-data clearing. Header wrapping corrected after screenshot inspection.
 Actual retained campaign/independent serving qualification remains the active gate.
 Focused command after build: node --test dist/tests/page_models/generation_comparison/*.test.js.
+
+Qualified2026-10-11 19:50:00: actual independently installed Runtime/Data/Gateway
+read retained generations0 and2,39 activations;1440/390 inspected. Restored
+scientific demo/LAN original-run regression passes. No paid calls or new campaigns.
+[Scoped audit](../../../../docs/Audits/UI-01_N2.3_Generation_Comparison.md).

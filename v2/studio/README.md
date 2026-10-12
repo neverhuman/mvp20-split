@@ -142,4 +142,6 @@ actual-owner subsequent-campaign and independent replacement acceptance remain V
 UI-01/N2.3 generation comparison is in source qualification:362 tests and scoped
 scripted browser evidence pass. Existing search checkpoint contracts only; at most
 two selected256KiB artifacts,100 activation discovery ceiling, no new execution
-API or POP-01 implementation. Actual retained-owner qualification pending.
+API or POP-01 implementation. Actual retained-owner generations0/2 and restored scientific LAN regression pass.
+
+Current Studio0.25.0 includes bounded retained generation comparison.

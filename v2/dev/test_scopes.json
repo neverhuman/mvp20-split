@@ -1,4 +1,11 @@
 {
+  "studio-generation-comparison": {
+    "runner": "node",
+    "entrypoint": "studio/scripts/verify-generations.mjs",
+    "tests": "studio/tests/page_models/generation_comparison",
+    "coverage_sources": ["studio/src/page_models/generation_comparison", "studio/src/presentation/generation_comparison", "studio/src/contracts/search.ts"],
+    "acceptance_tests": ["studio/tests/browser/generation_comparison.mjs", "studio/tests/integration/generation_comparison.mjs"]
+  },
   "planning-campaign-origin": {
     "tests": "services/agent_planning/tests/campaign_origin",
     "coverage_sources": ["services/agent_planning/src/amphora_agent_planning/campaign_origin"]

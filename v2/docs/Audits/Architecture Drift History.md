@@ -316,3 +316,5 @@ Remaining R1/I1 work stays in the active parent; bounded K1 follow-up:none.
 LAN-01 aligned2026-10-08 21:01:59: HTTPS LAN profile implemented,32 installed
 tests and dual-origin browser proofs; owner accepted remote access and directed
 archival. [Scoped audit](LAN-01_Demo_Access.md). Follow-up: none in bounded scope.
+
+2026-10-11 19:50:00: [UI-01/N2.3](UI-01_N2.3_Generation_Comparison.md) aligned for bounded retained-generation comparison; no universal index or POP-01 scope.
