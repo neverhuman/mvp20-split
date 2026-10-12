@@ -47,3 +47,18 @@ def test_http_request_correlation_excludes_credentials_and_arbitrary_headers(sta
     assert evidence['request_body_sha256'] == hashlib.sha256(b'{}').hexdigest()
     assert 'secret-marker' not in json.dumps(evidence)
     assert evidence['endpoint'] == 'https://api.openai.com/v1/responses'
+
+
+@pytest.mark.parametrize('usage', [None, {}, {'input_tokens': 0, 'output_tokens': 0}])
+def test_shape_distinguishes_absent_usage_and_empty_output_without_text(usage):
+    value = {'output': [{'type': 'reasoning', 'summary': 'secret-marker'},
+                        {'type': 'message', 'content': [{'type': 'output_text', 'text': 'secret-marker'}]},
+                        {'type': 'secret-marker'}, None], 'usage': usage}
+    result = ResponseDiagnostic.capture(b'{}', value).document()
+    shape = result['shape']
+    assert (shape['message_items'], shape['reasoning_items'], shape['other_items']) == (1, 1, 2)
+    assert shape['output_text_blocks'] == 1 and shape['output_text_bytes'] == 13
+    assert shape['usage_present'] is (usage is not None)
+    assert shape['input_tokens_present'] is (usage is not None and 'input_tokens' in usage)
+    assert shape['output_tokens_present'] is (usage is not None and 'output_tokens' in usage)
+    assert 'secret-marker' not in json.dumps(result)

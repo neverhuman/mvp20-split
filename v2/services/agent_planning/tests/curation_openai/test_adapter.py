@@ -122,3 +122,21 @@ def test_structured_refusal_and_incomplete_never_become_accepted_output(status, 
     assert adapter.last_response.status == status
     assert adapter.last_response.refused is (status == 'completed')
     assert adapter.last_transport_failure is None
+
+
+def test_v5_exact_send_has_extended_output_only_for_reviewed_scope(monkeypatch):
+    from amphora_agent_planning.curation_budget import ceiling
+    selected = source(version='5', max_output_tokens=16384, total_tokens=278528,
+                      total_accounting_units=300000000)
+    scope = selected.request.document().reference.scope
+    monkeypatch.setattr(ceiling, 'REVIEWED_EXTENSION', (scope.tenant_id, scope.project_id))
+    calls = []
+    adapter = CurationOpenAI('test-only', scope=scope, egress='approved_synthetic_engineering_only',
+        transport_factory=lambda *_a, **_k: SimpleNamespace(send=lambda raw: calls.append(raw) or response()))
+    packet = prepare(selected).packet.canonical
+    reply = adapter.reply(AttemptBinding(selected.request, 1), packet,
+                          deadline_unix_ms=int(time.time() * 1000) + 10000)
+    assert b''.join(reply.chunks)
+    assert calls == [CurationEnvelope.bind(selected.request, packet).body]
+    assert json.loads(calls[0])['max_output_tokens'] == 16384
+    assert json.loads(calls[0])['reasoning'] == {'effort': 'none'}

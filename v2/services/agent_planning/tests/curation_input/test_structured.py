@@ -75,18 +75,18 @@ def test_v4_direct_generation_preserves_strict_schema_limits_and_old_effort():
     from amphora_agent_planning.curation_input import curation_tokenizer_reference
     from amphora_agent_planning.curation_budget.policy import CurationAllowance
     references = []
-    for version in ('1', '2', '3', '4'):
+    for version in ('1', '2', '3', '4', '5'):
         source = curation_plan(version=version)
         packet = prepare(source).packet
         envelope = CurationEnvelope.bind(source.request, packet.canonical)
         body = json.loads(envelope.body)
-        assert body['reasoning'] == {'effort': 'none' if version == '4' else 'low'}
+        assert body['reasoning'] == {'effort': 'none' if version in {'4', '5'} else 'low'}
         assert body['max_output_tokens'] == source.request.document().context.limits.max_output_tokens
         assert CurationAllowance.applies(source.request)
         assert CurationEnvelope.bind(source.request, packet.canonical).body == envelope.body
         references.append(curation_tokenizer_reference(version).sha256)
-        if version == '4':
+        if version in {'4', '5'}:
             assert body['text']['format'] == GenerationSchema.reviewed().format()
-            assert packet.fit.document()['format'] == 'planning-campaign-packet-fit.v6'
+            assert packet.fit.document()['format'] == ('planning-campaign-packet-fit.v6' if version == '4' else 'planning-campaign-packet-fit.v7')
             assert packet.fit.measurement.input_tokens == len(envelope.body) + 1024
-    assert len(set(references)) == 4
+    assert len(set(references)) == 5

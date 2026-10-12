@@ -27,7 +27,9 @@ def export(host, curation_id, output):
     retain(output / 'original-packet.json', frozen.preparation.packet.canonical)
     limits = frozen.preparation.packet.request.document().context.limits
     assert frozen.envelope.input_bound <= limits.max_input_tokens <= 262144
-    assert limits.max_output_tokens <= 8192 and limits.max_attempts == 1
+    model = frozen.preparation.packet.request.document().context.model
+    maximum = 16384 if model.tokenizer.schema_id == 'planning.curation-openai-input-bound.v5' else 8192
+    assert limits.max_output_tokens <= maximum and limits.max_attempts == 1
     outcome = worker.results.read(principal, curation_id)
     if outcome is not None:
         observed = outcome.attempt.observation

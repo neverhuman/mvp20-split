@@ -9,14 +9,14 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 ## Program Tracker
 
 - Status: UI-01 primary active; LAN-01 accepted/archived. LR-01 remains conditional; completed plans remain closed.
-- Last refreshed: 2026-10-12 12:21:38 (America/Chicago).
+- Last refreshed: 2026-10-12 12:56:06 (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
 - Current priority: schedule UI-01 Knowledge/run/LLM integration and UI-02 formula/structure views for2026-10-12 through2026-10-16; preserve the live demo.
 - Primary active task: UI-01/N3/I1, implementing approved [UI-01.08](UI-01.08%20Campaign%20curation%20boundary%20decision.md), P1=100%, P2=100%, P3=100%,P4=100%,P5=50%, child90%. N2=100%; launch/provenance remain closed. UI-01.05 K1/R1=100%, I1=90%, child96.67%.
-- Next task: Owner decision on [UI-01.08d](UI-01.08d%20Output%20ceiling%20decision.md): one16,384-token original capped$0.30, or provider investigation using retained request IDs. No further paid call is authorized.
+- Next task: Implement approved08d (owner2026-10-12 12:52:13):153 offline checks pass; isolated install, seven exact replays and freeze precede the single original/$0.30/16384output.
 - Implementation completion: LAN-01=100%; UI-01 active78%, Build97.5%, Verification0%; UI-02=0%, P1/P2/P3/P4=0%; LR-01 paused25%, Build33.33%, Acceptance0%.
-- Blockers/dependencies: Both instrumented originals return HTTP200 incomplete/max_output_tokens, including v4 reasoning none. Nine/$2.25 original holds retained; zero remaining. Recovery/browser/accounting pass; no supported graph or cutover. Further live work needs the explicit output/allowance decision.
-- Latest checkpoint: 2026-10-12 12:21:38: Final08c v4 original remains indeterminate/max_output_tokens; targeted repair did not resolve it. Recovery67709 passed/drained with exact receipt replay, real browser1440/390 and9/$2.25 holds/zero remaining.08c bounded diagnostics100%, supported P5.2=0; parent90/P5=50 unchanged. Decision08d proposed0%; existing demo preserved.
+- Blockers/dependencies: Supported live graph remains unqualified after two instrumented max_output_tokens responses. Owner approved one bounded08d experiment; no new inference yet. Prior nine/$2.25 reservations retained; current demo unchanged.
+- Latest checkpoint: 2026-10-12 12:58:36: Planning0.132.0 passes153 focused checks, independent installationh, seven byte-exact original replays and actual-owner extended freeze11742; drained. Nine/$2.25 holds retained; one approved16,384-output original/$0.30 remains. No new inference.08d66.67%; parent90/P5=50 unchanged.
 - Acceptance posture: N3/I1=90%, parent V1=0%; no full-engine acceptance or serving cutover. Seven live attempts cumulatively reported $0.242380500; existing demo preserved.
 - Active exception: owner scheduled four targets for next week. Preserve earned phase credit; sequence the bounded cross-plan handoffs below. Pull LR-01/UI-R01 forward only when their faults block the scheduled integration, with exact return points.
 
@@ -205,3 +205,5 @@ P5.3 missing-capability original and actual browser1440/390 passed; returned to 
 2026-10-12 12:14:25: First08c returned HTTP200 incomplete/max_output_tokens, no refusal, empty output and zero reported usage. Eight original holds/$2 retained; one conditional/$0.25 remains. Planning0.131.0 v4 selects reasoning none with same8192 ceiling, schema and prompt. 85 offline checks and independent installation g pass; new freeze pending. UI-01.08c83.33%; supported successor0%, parent90/P5=50; no cutover.
 
 2026-10-12 12:16:59: Planning0.131.0 v4 passes85 offline checks, independent installationg, six exact prior replays and actual-owner stage2 freeze46893; drained. Eight/$2 original holds retained; final approved original/$0.25 ready. No live v4 request yet. UI-01.08c83.33%; parent90/P5=50 unchanged.
+
+2026-10-12 12:58:36: Planning0.132.0 passes153 focused checks, independent installationh, seven byte-exact original replays and actual-owner extended freeze11742; drained. Nine/$2.25 holds retained; one approved16,384-output original/$0.30 remains. No new inference.08d66.67%; parent90/P5=50 unchanged.

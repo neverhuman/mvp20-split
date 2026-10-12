@@ -64,7 +64,18 @@ def verify(root, serving, qualification, scenario, key_file):
         assert hashlib.sha256((qualification / name).read_bytes()).hexdigest() == digest, 'Frozen live preparation changed'
     declaration = read(qualification / 'scope-declaration.json')
     allowance = read(qualification / 'live-allowance.json')
-    if declaration['authorization'] == 'UI-01.08c':
+    if declaration['authorization'] == 'UI-01.08d':
+        assert scenario == 'supported' and allowance['maximum_new_physical_calls'] == 1
+        assert allowance['diagnostic_stage'] == 3 and allowance['initial']['reserved_slots'] == 9
+        assert declaration['maximum_total_slots'] == 10 and declaration['maximum_original_units'] == 2550000000
+        assert declaration['maximum_per_call_units'] == 300000000 and declaration['maximum_output_tokens'] == 16384
+        assert allowance['maximum_new_original_units'] == 300000000
+        repair = read(qualification / 'repair-evidence.json')
+        assert repair == allowance['repair'] and repair['profile'] == 'curation-v5'
+        assert repair['maximum_output_tokens'] == 16384 and repair['reasoning_effort'] == 'none'
+        assert repair['diagnostic']['incomplete_reason'] == 'max_output_tokens'
+        assert repair['offline']['status'] == 'passed' and repair['offline']['provider_calls'] == 0
+    elif declaration['authorization'] == 'UI-01.08c':
         assert scenario == 'supported' and allowance['maximum_new_physical_calls'] == 1
         if allowance['diagnostic_stage'] == 1:
             assert allowance['initial']['reserved_slots'] == 7

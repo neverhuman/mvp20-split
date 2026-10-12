@@ -1,6 +1,6 @@
 # Build Plans
 
-- [UI-01.08d Output ceiling decision](UI-01.08d%20Output%20ceiling%20decision.md): proposed0%; previous08c diagnostic work complete100%, nine original holds exhausted. No new paid call authorized.
+- [UI-01.08d Output ceiling decision](UI-01.08d%20Output%20ceiling%20decision.md): approved08d66.67%;153 offline checks, installation and freeze pass. One16,384-output original/$0.30 authorized; nine prior holds retained.
 
 - [UI-01.08a Live curation correction](UI-01.08a%20Live%20curation%20qualification%20correction.md): approved input-profile and same-scope budget extension after two retained failed live outputs; historical allowance consumed; current parent/gates are in UI-01.08.
 
