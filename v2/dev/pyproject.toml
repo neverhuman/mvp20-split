@@ -7,7 +7,7 @@ dependencies = [
     "amphora-contracts-campaign-curation==0.1.0",
     "amphora-deployment==0.18.3",
     "amphora-contracts-campaign-launch==0.1.0",
-  "amphora-local-gateway==0.5.0",
+  "amphora-local-gateway==0.6.0",
     "amphora-contracts-draft-successor==0.1.0",
     "amphora-contracts-topology-search==0.1.0",
     "amphora-contracts-evaluation-reuse==0.1.0",

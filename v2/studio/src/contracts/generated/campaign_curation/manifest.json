@@ -1,0 +1,10 @@
+{
+  "curation": {
+    "source": "contracts/schemas/v1/planning.campaign-curation-view.serialization.json",
+    "sha256": "5c0d8c4a2d5c3050caa6c93510ce6df09a566197eb935d250c58bc96e9273831"
+  },
+  "capability": {
+    "source": "contracts/schemas/v1/planning.capability-request-view.serialization.json",
+    "sha256": "0647fa43f81537f81b74e87b6bb64ce4dd8373e5e5daeb839581b23f87097503"
+  }
+}

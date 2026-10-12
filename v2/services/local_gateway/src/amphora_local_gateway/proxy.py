@@ -7,6 +7,7 @@ import re
 from urllib.parse import parse_qsl, unquote, urlsplit
 
 from .configuration import require, GatewayError
+from .curation_routes import CurationRoute, ERRORS as CURATION_ERRORS
 
 
 ALIASES = {"runtime":"runtime", "artifacts":"artifact", "data":"artifact", "registry":"registry",
@@ -24,6 +25,10 @@ class Route:
     def campaign_origin(self):
         return self.owner == 'planning' and self.target.startswith('/v1/campaign-origins')
 
+    @property
+    def curation(self):
+        return CurationRoute.parse(self.target) if self.owner == 'planning' else None
+
     @classmethod
     def parse(cls, path):
         require(type(path) is str and len(path) <= 16384 and path.isascii() and not any(ord(c) < 32 for c in path), "gateway_route")
@@ -35,6 +40,8 @@ class Route:
         require("%2f" not in parsed.path.lower() and "\\" not in decoded and not any(part in (".", "..", "") for part in decoded.split("/")[1:]) and
                 "%" not in decoded and all(ord(c) >= 32 for c in decoded), "gateway_route_encoding")
         target = "/" + "/".join(parts[3:]) + ("?" + parsed.query if parsed.query else "")
+        if parts[2] == 'planning':
+            CurationRoute.parse(target)
         if parts[2] == 'planning' and parts[4].startswith('campaign-origins'):
             pairs = parse_qsl(parsed.query, keep_blank_values=True)
             query = dict(pairs)
@@ -57,6 +64,10 @@ def forward(peer, route, method, body, request_id):
     if route.campaign_origin:
         require(method == 'GET' and not body, 'gateway_campaign_origin_read_only')
     maximum_response = 262144 if route.campaign_origin else MAXIMUM_RESPONSE
+    curation = route.curation
+    if curation is not None:
+        curation.check(method, body)
+        maximum_response = 1048576
     if route.owner == 'deployment':
         require(len(body) <= 262144 and (method == 'GET' or route.target == '/v1/campaign-launches'), 'gateway_launch_request_bound')
     connection = http.client.HTTPConnection("127.0.0.1", peer.port, timeout=15)
@@ -69,7 +80,7 @@ def forward(peer, route, method, body, request_id):
         response = connection.getresponse()
         require(not 300 <= response.status < 400, "gateway_owner_redirect")
         if response.status >= 400:
-            if route.owner == 'deployment' or route.campaign_origin:
+            if route.owner == 'deployment' or route.campaign_origin or curation is not None:
                 raw = response.read(4097)
                 try:
                     error = json.loads(raw) if len(raw) <= 4096 else None
@@ -81,6 +92,8 @@ def forward(peer, route, method, body, request_id):
                 if route.campaign_origin:
                     allowed = {'campaign_origin_not_recorded', 'campaign_origin_inconsistent',
                         'campaign_origin_response_limit', 'invalid_campaign_origin_request', 'planning_access_denied'}
+                if curation is not None:
+                    allowed = CURATION_ERRORS
                 if type(error) is dict and type(error.get('reason_code')) is str and error['reason_code'] in allowed:
                     return response.status, 'application/json', json.dumps({'reason_code': error['reason_code']}).encode()
             # Preserve the status used by Studio, never expose private owner diagnostics.

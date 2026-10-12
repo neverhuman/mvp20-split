@@ -1,6 +1,12 @@
 # Graph Studio
 
-Current release **0.24.0** adds exact campaign provenance in Question/Evaluation,
+Source release **0.27.0** adds read-only campaign-curation/capability contract and
+transport foundations (UI-01.08/P3.3a). Eight scoped boundary/binding/cancellation
+checks and schema generation/TypeScript compilation pass. Page-model and visual
+review remain P3.3b/c; no new live UI/model interaction claim. The serving demo
+remains immutable Studio0.26.
+
+Historical release **0.24.0** adds exact campaign provenance in Question/Evaluation,
 independent Runtime save/draft verification, actual Research criteria and consumed
 Knowledge navigation. Browser launch/progress remains qualified from0.23.2.349 tests
 pass; actual local/LAN1440/390 origin/results/Knowledge and negative reads pass.

@@ -103,3 +103,21 @@ redacted. Configure a Planning peer token with read_campaign_origin for the view
 scope; no caller-selected credentials or write grants are introduced. Existing peer
 routes remain unchanged.69 combined Gateway/API transport checks pass; live deployment
 and browser qualification remain pending.
+
+## Curation and capability routes (UI-01.08/P3.3a)
+
+curation_routes.py owns exact approved Planning family paths and GET/POST pairs.
+Curation collection/receipt query use POST; exact curation/capability reads use GET;
+fulfillment uses only the approved per-request POST. Query additions, extra path
+segments, lookalike families, GET bodies and wrong methods reject before forwarding.
+Requests are bounded256KiB and successes1MiB; named owner errors are reduced to a
+closed reason-code allowlist with4KiB parsing. No private diagnostic fields cross.
+Gateway grants no new owner permissions, model work or verification authority.
+Planning credentials and original scoped commands remain authoritative. Earlier
+provenance, launch and legacy routes retain their existing bounds. Source-only;
+serving demo unchanged. Tests: tests/transport/test_curations.py plus transport
+regressions. Browser consumes published Planning contracts, never peer implementation.
+
+Gateway0.6 curation boundary qualified:84 source/boundary checks and78 fresh-wheel
+checks, including localhost HTTP/TLS and legacy transport. Independent evidence:
+curation-gateway-installation-20261012a/evidence.json. No live demo upgrade.

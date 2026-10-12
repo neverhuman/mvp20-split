@@ -30,3 +30,9 @@ See [AJV standalone generation](https://ajv.js.org/standalone).
 
 
 2026-10-07 15:41:38: SQ-01 adds four roots under generated/followup, with exact validation-profile SHA pins for dispatch: new criterion-followup, legacy checkpoint/campaign and full SupervisionResponse. Serialization schemas validate bytes; profiles select meaning. Unknown profiles stay unsupported.
+
+UI-01.08/P3.3a adds read-only generated/campaign_curation roots for CurationView and
+CapabilityRequestView from the unchanged campaign-curation0.1 publications. Existing
+standalone validators preserve CSP/no-coercion rules. Transport separately binds
+actor/scope/original curation/gap; a schema-valid fulfilled flag is insufficient.
+No write-contract consumer or provider permission is introduced by these roots.
