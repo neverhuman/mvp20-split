@@ -28,3 +28,7 @@ replay; no graph is silently omitted to fit context.
 Curation intent is a separately validated required lane for the exact new profile;
 replay checks original command/request binding and empty scientific observations.
 Existing retained curation fixtures without that later lane remain readable.
+
+Curation Knowledge summaries require original intent and exact selected-head
+coverage, bounded read accounting and one matching graph projection per available
+head. Summary/head mismatches reject even if payload hashes were recomputed.

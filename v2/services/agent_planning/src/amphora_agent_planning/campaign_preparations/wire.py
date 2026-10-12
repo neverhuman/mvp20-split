@@ -6,7 +6,7 @@ from amphora_contracts_core import Digest, Identifier, WireModel
 from amphora_contracts_planning import EngagementRef
 from pydantic import Field, JsonValue
 
-Lane = Literal['curation', 'artifact', 'research', 'research_view', 'graph', 'registry_scan', 'registry_inventory',
+Lane = Literal['curation_knowledge', 'curation', 'artifact', 'research', 'research_view', 'graph', 'registry_scan', 'registry_inventory',
                'registry_exact', 'runtime', 'runtime_schema', 'retrieval']
 
 

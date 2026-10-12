@@ -36,6 +36,8 @@ def test_original_human_intent_is_required_untrusted_and_replays_exactly():
     assert lane['identity']['command_sha256'] == incoming.command.sha256
     saved = CampaignPreparation.bind(combined, packet)
     assert CampaignPreparation.from_bytes(plan.request, saved.canonical, packet.canonical) == saved
+    assert intent.request.document().reference.engagement_id == 'curation-call-' + incoming.command.sha256
+    assert intent.request.document().decision_scope == curation_plan().request.document().decision_scope
     assert intent.request.document().runtime_cut is None
     assert intent.request.document().context.model == curation_plan().request.document().context.model
 

@@ -14,6 +14,11 @@ class CurationIntent:
     request: RequestSnapshot
     canonical: bytes
 
+    @staticmethod
+    def engagement_for(incoming):
+        incoming = CurationCommand.restore(incoming.command.canonical_bytes)
+        return 'curation-call-' + incoming.command.sha256
+
     @classmethod
     def bind(cls, request, incoming):
         incoming = CurationCommand.restore(incoming.command.canonical_bytes)
@@ -22,8 +27,7 @@ class CurationIntent:
         request = RequestSnapshot.bind(original, actor_id=identity.actor_id, scope=identity.scope)
         require(original.purpose == 'campaign_proposal'
                 and original.context.output_schema == campaign_curation_draft_schema(), 'curation_intent_profile')
-        require(original.reference.engagement_id == incoming.curation_id
-                and original.decision_scope == incoming.command.sha256, 'curation_intent_request_binding')
+        require(original.reference.engagement_id == cls.engagement_for(incoming), 'curation_intent_request_binding')
         selected = set(incoming.request.payload.context.artifacts)
         roots = {original.context.objective, original.context.prompt, original.context.policy,
                  original.context.model.configuration}
@@ -51,8 +55,8 @@ class CurationIntent:
         require(not value['context']['entries'] and not value['context']['omissions'], 'curation_template_sources')
         require(value['reference']['scope'] == identity.scope.model_dump(mode='json')
                 and value['actor_id'] == identity.actor_id, 'curation_template_identity')
-        value['reference']['engagement_id'] = incoming.curation_id
-        value['decision_scope'] = incoming.command.sha256
+        value['reference']['engagement_id'] = cls.engagement_for(incoming)
+        # decision_scope remains the reviewed compiler declaration digest.
         # A future campaign request has no invented Runtime frontier revision.
         value['runtime_cut'] = None
         roots = {template.document().context.objective, template.document().context.prompt,

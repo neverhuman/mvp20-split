@@ -67,6 +67,17 @@ class CampaignSlicePlan:
         row = ContextSlice._capture('curation', verified.identity, json.loads(verified.canonical), True)
         return self._add('curation', verified.request, (row,))
 
+    def with_curation_knowledge(self, context):
+        projections, summary = context.rows()
+        require(context.intent.request == self.request, 'campaign_slice_request')
+        require('graph' not in self.families, 'campaign_slice_family_duplicate')
+        rows = [ContextSlice._capture('curation_knowledge', context.intent.identity, summary, True)]
+        for projection in projections:
+            value = json.loads(projection.canonical)
+            rows.append(ContextSlice._capture('graph', {'selection': projection.selection.sha256},
+                value, True, value['observations']))
+        return self._add('graph', self.request, rows)
+
     def with_graphs(self, results):
         # Only the new curation profile admits a bounded collection. Legacy
         # with_graph and its canonical single-graph history remain unchanged.

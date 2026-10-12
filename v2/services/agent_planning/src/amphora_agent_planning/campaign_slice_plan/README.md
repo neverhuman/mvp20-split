@@ -28,3 +28,8 @@ CurationIntent adds one required, explicitly untrusted curation slice. The byte-
 command digest binds the generated request; duplicate/foreign intent rejects. The
 897-slice worst case remains within900. This lane is accepted only for the new
 curation profile and cannot replace trusted instructions or owner observations.
+
+with_curation_knowledge assembles exact-head public read results plus a required
+selection/gap/accounting summary. Whole-head-or-gap policy does not silently sample
+large graphs. It occupies the same graph family, so a second graph source rejects.
+The worst-case898 slices remains below900; existing generic graph entries persist.
