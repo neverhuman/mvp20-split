@@ -318,3 +318,5 @@ tests and dual-origin browser proofs; owner accepted remote access and directed
 archival. [Scoped audit](LAN-01_Demo_Access.md). Follow-up: none in bounded scope.
 
 2026-10-11 19:50:00: [UI-01/N2.3](UI-01_N2.3_Generation_Comparison.md) aligned for bounded retained-generation comparison; no universal index or POP-01 scope.
+
+2026-10-11 20:04:00: [N2.4](UI-01_N2.4_Recorded_Model_Inspection.md) aligned for exact recorded OpenAI rationale/outcome inspection and distinct unavailable history; N3/I1 remains separate.

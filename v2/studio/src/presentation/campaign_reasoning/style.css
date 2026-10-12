@@ -1,0 +1,4 @@
+.campaign-reasoning{max-width:76rem;margin:auto;padding:1.2rem;min-width:0}
+.campaign-reasoning h1{margin-block:1rem}
+.campaign-reasoning .supervision-inspector{min-width:0}
+@media(max-width:650px){.campaign-reasoning{padding:.7rem}}

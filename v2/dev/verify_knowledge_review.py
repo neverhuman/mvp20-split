@@ -15,7 +15,7 @@ if __name__ == '__main__':
     for name in ('root', 'session', 'output'):
         parser.add_argument('--' + name, type=Path, required=True)
     parser.add_argument('--tls', type=Path)
-    parser.add_argument('--suite', choices=['knowledge', 'connected', 'launch', 'generations'], default='knowledge')
+    parser.add_argument('--suite', choices=['knowledge', 'connected', 'launch', 'generations', 'reasoning'], default='knowledge')
     parser.add_argument('--launch-ready', type=Path, help='Prepared draft identity for the actual launch probe')
     parser.add_argument('--browser-recovery', type=Path, help='Original browser launch journal; never create another request')
     parser.add_argument('--review-only', action='store_true', help='Inspect original launch without a launch POST')
@@ -44,7 +44,7 @@ if __name__ == '__main__':
     path = args.output / 'browser-input.json'
     path.write_text(json.dumps(data), encoding='utf-8')
     script = {'knowledge': 'knowledge_review.mjs', 'connected': 'connected_flow.mjs',
-              'launch': 'campaign_launch.mjs', 'generations': 'generation_comparison.mjs'}[args.suite]
+              'launch': 'campaign_launch.mjs', 'generations': 'generation_comparison.mjs', 'reasoning': 'campaign_reasoning.mjs'}[args.suite]
     assert not args.review_only or args.browser_recovery and args.suite == 'launch'
     extra = [] if args.browser_recovery is None else [str(args.browser_recovery.absolute())]
     if args.review_only:

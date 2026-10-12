@@ -1,35 +1,36 @@
 # Restore
 
-Refreshed2026-10-11 19:51:00 America/Chicago. Read FIRST after compaction.
+Refreshed2026-10-11 20:04:00 America/Chicago. Read FIRST after compaction.
 Continue until needed persists across commits/milestones. No subagents/JARVIS.
 v1 read-only; preserve untracked ocular PDF/DOCX. No source/tests/module README
 edits while verification/installations run. Immutable serving processes are okay.
 
 ## Canonical position
 
-UI-01/N2.2 provenance and N2.3 generation comparison complete100%.
-UI-01.07 P1/P2/P3/P4=100%; audit aligned. N2=93.75%, UI01=58.75%,
-Build73.44%, Verification0%. NEXT N2.4 live-provider reasoning (50%), then
-N3/UI01.05/I1=0%. K1/R1=100%, UI01.05=66.67%. UI01.06 launch closed100%.
-Order UI01 -> UI02 -> POP01 -> ML01. LR01 paused25%/Build33.33%.
-UI01.01 universal result-index proposal remains separate/unapproved; bounded
-existing-API comparison qualified. No current owner approval blocker.
+UI-01/N2 complete100%; N2.2 provenance, N2.3 generation comparison and N2.4
+recorded model inspection all qualified. UI01=60%, Build75%, Verification0%.
+NEXT owner direction on UI-01.08 for N3/I1 (0%); K1/R1=100%, UI01.05=66.67%.
+UI01.06/UI01.07 closed100%. Order UI01 -> UI02 -> POP01 -> ML01.
+LR01 paused25%/Build33.33%. UI01.01 universal index remains unapproved;
+bounded existing-API comparison is qualified.
 
 ## Latest checkpoints
 
 Pushed provenance49c28ac1/ca056004/1a43c1ea/9cea8028/c0efa208/37e9127a.
-Generation source88d625d5 pushed; actual qualification/docs closeout ready tocommit.
-Studio0.25; Planning0.107/Gateway0.5/PlanningContracts0.13/private migration0021.
+Generation source88d625d5 and closeout0362f472 pushed. N2.4/decision docs
+closeout checks passed; final commit/push is the last action before the owner gate.
+Studio0.26; Planning0.107/Gateway0.5/PlanningContracts0.13/private migration0021.
 362 Studio tests;13 focused generation checks. Provenance264 isolated owner tests.
-All current calls deterministic; zero new paid calls.
+Current scientific proposal remains deterministic; actual prior OpenAI history
+was separately verified. Zero new paid calls.
 Audits: docs/Audits/UI-01.07_Campaign_Provenance.md and
 UI-01_N2.3_Generation_Comparison.md. Parent and MBT mirrors updated.
 
 ## Evidence and current serving processes
 
-Local http://127.0.0.1:57013 helper62237, origin-live-20261011d.
-LAN https://192.168.1.70:57013 helper34018, origin-lan-20261011c.
-Both24h from ~19:48; Studio0.25 immutable copied assets. Stop through session STOP,
+Local http://127.0.0.1:57013 helper74653, origin-live-20261011e.
+LAN https://192.168.1.70:57013 helper15635, origin-lan-20261011d.
+Both24h from ~20:00; Studio0.26 immutable copied assets. Stop through session STOP,
 wait graceful drain. One supervisor per physical root. LAN owns only Gateway.
 No active campaign. Original successful/released run6bb494556bb04010a72820d52f0e78e7,
 request404e2116-755a-4d22-9ab3-841860f9b74f.
@@ -64,22 +65,37 @@ python is environment/Scripts/python.exe (NOT .venv). Deployment0.18.3 at
 launch-live-installation-20261009e. Other independent owners remain Runtime0.65,
 Data0.30/Registry0.1/Research0.40/Knowledge0.18. LAN --baseline is gateway.json.
 
-## Next task starting point
+## Next task / owner gate
 
-N2.4 requires actual provider reasoning; deterministic origin earns no credit.
-Existing Planning openai_provider supports campaign JSON-mode outputs; checkpoint_openai
-has a separate packet/deadline/durable scope budget. Read their module READMEs.
-Current dev/campaign_origin_demo/compiler.py creates a deterministic provider from
-case proposal; don't relabel that as live. Existing old BP09 actual model evidence
-may help scope, but need an exact campaign-to-original-model link visible in UI.
-No new public API inferred. Original model requests/proposals and pin history immutable.
-Owner previously authorized OpenAI key in Z:/ssos/.env and cost-conscious model use;
-no key has been read this checkpoint. Prefer existing environment/vault credentials.
-OpenAI Docs skill just read for forthcoming API work; need announce usage and check
-current official docs before applying it. Existing pinned model is
- gpt-5.4-mini-2026-03-17, rates750/4500nanodollars/token, last reviewedOct6.
-Do not make paid calls without durable issuance, explicit synthetic-only context,
-bounded request/cost and no replay recapture. Check existing budget/public interfaces.
+N2.4 complete100%: direct read-only model-history navigation reused actual original
+OpenAI request/rationale/capture/Runtime outcome, no paid calls. N2=100%, UI01=60%,
+Build75%, Verification0%. N3/I1 remains0%, UI01.05 remains66.67%.
+STOP after committing final closeout: owner direction required for proposed
+UI-01.08 Campaign curation boundary decision.md (all five phases0%). It concretely
+scopes new Planning campaign-curation jobs, versioned output/missing-capability
+requests and explicit verified fulfillment, plus separate Deployment successor-launch
+contract using Runtime's existing graph.admit_draft_successor command. Existing
+launch/provenance approvals do not cover these new public writes. No dependent API
+implementation started. Final response should request this decision and cite
+v2/AGENTS.md material scope/sequence rule, not ask to reapprove provenance.
+
+Existing checkpoint OpenAI input accepts supervision only. Campaign packet live
+input needs a distinct identity; never relabel the deterministic compiler helper.
+No provider key was read this checkpoint. OpenAI Docs used; official mini model page
+reviewedOct11 confirms existing rates/Responses support. Proposed future qualification
+cap$1 total/four calls/$0.25 each, synthetic-only; no calls made under that proposal.
+
+Latest evidence:
+- reasoning-studio-tests-20261011a.log362pass.
+- reasoning-actual-browser-20261011a: actual retained OpenAI rationale, included
+ Knowledge, selected capture, committed abstention/weak point;1440/390 inspected,
+ keyboard route from results and return clearing detail. No API mutations.
+- reasoning-live-20261011a/evidence.json: numerical helper88738 drained; scientific
+ D/LANC helpers62237/34018 stopped before review; now E/LAND serving above.
+- reasoning-lan-regression-20261011b: original scientific run/provenance/results/
+ Knowledge plus unavailable-history check passes;0launchPOSTs. TrialA incorrectly
+ expected empty; actual404 remains unavailable, not proof of zero model calls.
+- UI-01_N2.4_Recorded_Model_Inspection.md aligned; next gap UI-01.08 proposed.
 
 ## Commands
 

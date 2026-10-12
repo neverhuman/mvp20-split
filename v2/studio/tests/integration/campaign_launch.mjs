@@ -90,6 +90,14 @@ try{
   await page.waitForFunction(()=>document.querySelectorAll('.explore-domain .react-flow__edge-path').length>0);
   await page.screenshot({path:resolve(output,'consumed-knowledge.png'),fullPage:true});
   evidence.checks.push({name:'exact_planning_research_and_consumed_knowledge',criteria,origin_sha256:origin.origin_sha256});
+  await page.getByRole('button',{name:/Results and evidence/}).click();
+  await page.getByRole('button',{name:'Inspect model decisions',exact:true}).click();
+  const decisions=page.getByRole('region',{name:'Recorded campaign decisions',exact:true});
+  await decisions.getByText('This checkpoint is unavailable.',{exact:true}).waitFor();
+  assert.equal(await decisions.getByRole('button',{name:'Inspect recorded proposal'}).count(),0);
+  await page.screenshot({path:resolve(output,'empty-model-history.png'),fullPage:true});
+  await decisions.getByRole('button',{name:'Return to results',exact:true}).click();
+  evidence.checks.push({name:'unavailable_runtime_history_does_not_invent_model_records'});
  }
  assert.ok(evidence.receipts.every(row=>row.run_id===null||row.run_id===evidence.run_id));
  assert.equal(evidence.launch_posts.length,reviewOnly?0:1);if(!reviewOnly)assert.equal(evidence.launch_posts[0].identity.command_id,evidence.request_id);assert.deepEqual(evidence.errors,[]);evidence.status='passed';evidence.review_only=reviewOnly;

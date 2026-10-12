@@ -100,3 +100,8 @@ can require Retry campaign read or reload; neither creates another campaign.
 Results include the bounded GenerationPanel, lazily discovered by GenerationModel.
 Unmapped numerical campaigns expose it directly; connected scientific campaigns
 expose optional evolutionary history. No generation is inferred from flat screens.
+
+Studio0.26 exposes recorded model decisions directly from Results/Run, with a
+dedicated SupervisionModel independent of the technical monitor visibility lane.
+The reasoning route preserves scope/run pins and invalidates proposal detail on
+return. Actual prior OpenAI history is not a new live curation request.

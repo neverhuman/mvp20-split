@@ -1,6 +1,6 @@
 # Build Plans
 
-- [Campaign provenance decision](UI-01.07%20Campaign%20provenance%20decision.md): proposed0%; parent UI-01/N2.2 awaits owner direction for a bounded Planning-owned exact-draft origin read and lookup. Qualified launch UI-01.06 stays complete.
+- [Campaign provenance decision](UI-01.07%20Campaign%20provenance%20decision.md): approved/qualified100%; bounded Planning-owned exact-draft origin read and lookup. Qualified launch UI-01.06 stays complete.
 
 - [POP-01 Population Campaign Execution and Experience](POP-01%20Population%20Campaign%20Execution%20and%20Experience.md): queued0%; three child plans for execution/recovery, bounded population UI and qualification. After UI-01/UI-02, before ML-01. Start at the parent for source-grounded reuse and scope.
 
@@ -35,9 +35,11 @@ Read the selected plan's tracker first. Complete each phase gate before advancin
 
 - [SME Evaluation Review MVP](UI-01.02%20SME%20Evaluation%20Review%20MVP.md): bounded local review delivered; actual Planning/scientific integration remains separate.
 
-- [Connected Demo Flow](UI-01.04%20Connected%20Demo%20Flow.md): bounded retained-plan/execution/results/review walkthrough complete; real browser run engagement remains outstanding.
+- [Connected Demo Flow](UI-01.04%20Connected%20Demo%20Flow.md): bounded retained-plan/execution/results/review walkthrough complete; real browser run engagement is qualified in UI-01.06.
 
 - [LAN-01 Local Network Demo Access](Completed/LAN-01%20Local%20Network%20Demo%20Access.md): complete100%, owner accepted and archived; deployed demo preserved.
 
-- [UI-01.05 Knowledge, Run and LLM Integration](UI-01.05%20Knowledge%20Run%20and%20LLM%20Integration.md): active41.67%; K1 complete100%, R1=40%, I1=0%. Real Knowledge/source traversal is served; approved launch implementation is active.
-- [UI-01.06 Campaign launch decision](UI-01.06%20Campaign%20launch%20decision.md): owner approved2026-10-09; contract/profile foundation complete, durable orchestration active. Runtime keeps admission/execution authority.
+- [UI-01.05 Knowledge, Run and LLM Integration](UI-01.05%20Knowledge%20Run%20and%20LLM%20Integration.md): 66.67%; K1/R1=100%, I1=0%. N2 complete; I1 awaits UI-01.08 direction.
+- [UI-01.06 Campaign launch decision](UI-01.06%20Campaign%20launch%20decision.md): owner approved2026-10-09; qualified100%, all implementation phases complete. Runtime keeps admission/execution authority.
+
+- [UI-01.08 Campaign curation boundary decision](UI-01.08%20Campaign%20curation%20boundary%20decision.md): proposed0%, P1/P2/P3/P4/P5=0%; new Planning curation/capability-request and separate Deployment successor-launch contracts for N3/I1.

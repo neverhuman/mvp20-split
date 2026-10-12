@@ -6,6 +6,7 @@ test('workflow route defaults safely and preserves exact owner selections withou
   assert.equal(workflowView(''), 'question');
   assert.equal(workflowView('view=knowledge'), 'knowledge');
   assert.equal(workflowView('view=domain'), 'domain');
+  assert.equal(workflowView('view=reasoning'), 'reasoning');
   assert.equal(workflowView('view=design&view=execution'), 'question');
   assert.equal(workflowView('view=unsupported'), 'question');
   const link = workflowLink('launch=secret&feedback=%7B%22q%22%3A1%7D&explore=a&explore=b&quality_output=c&unknown=x', 'execution');
