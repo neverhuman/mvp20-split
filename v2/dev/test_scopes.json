@@ -468,5 +468,11 @@
     "coverage_sources": [
       "dev/curation_managed_demo"
     ]
+  },
+  "dev-studio-installation": {
+    "tests": "dev/tests/studio_installation",
+    "coverage_sources": [
+      "dev/verify_studio.py"
+    ]
   }
 }

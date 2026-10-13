@@ -452,3 +452,5 @@ dependencies and runs copied curation context, execution, compiler and worker te
 It strips provider keys, uses scoped owned test SQL, verifies actual CLI crash/recovery
 and retains XML/logs/wheel hashes. It does not replace the serving demo or qualify
 scientific capability. Evidence curation-installation-20261012a:205pass,0paid calls.
+
+UI-01/V1: `verify_studio.py --expected-public <qualified-public-directory>` discovers every generated public manifest and validation profile, verifies exact schema pins, stages no private owner code, installs locked Node dependencies in an independent temporary directory, runs regeneration/type/owned checks and builds the local static bundle. It retains bundle bytes/hashes and optionally requires exact equality to the served baseline. Temporary staging is cleaned inside its validated temp root; actual owner/browser acceptance remains separate. Focused staging tests live under tests/studio_installation.

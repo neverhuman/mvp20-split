@@ -16,6 +16,30 @@ from zoneinfo import ZoneInfo
 ROOT = Path(__file__).absolute().parents[1]
 
 
+def public_schemas(source):
+    """Collect every generated public pin, including validation-profile variants."""
+    generated = source / "src/contracts/generated"
+    manifest = {}
+    for path in sorted(generated.rglob("manifest.json")):
+        group = path.parent.relative_to(generated).as_posix()
+        prefix = "" if group == "." else group.replace("/", ".") + "."
+        entries = json.loads(path.read_bytes())
+        for key, entry in entries.items():
+            assert prefix + key not in manifest, "Duplicate public schema key"
+            manifest[prefix + key] = entry
+        profiles = path.with_name("profiles.json")
+        if profiles.exists():
+            for key, pin in json.loads(profiles.read_bytes()).items():
+                original = entries[key]["source"]
+                assert original.endswith(".serialization.json")
+                manifest[prefix + "validation." + key] = {
+                    "source": original.removesuffix(".serialization.json") + ".validation.json",
+                    "sha256": pin["sha256"],
+                }
+    assert manifest, "No published Studio schema pins"
+    return manifest
+
+
 def stage_source(workspace):
     source = ROOT / "studio"
     copied = {}
@@ -29,16 +53,7 @@ def stage_source(workspace):
         target.parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(path, target)
         copied[path.relative_to(ROOT).as_posix()] = hashlib.sha256(path.read_bytes()).hexdigest()
-    manifest = json.loads((source / "src/contracts/generated/manifest.json").read_text(encoding="utf-8"))
-    for group in ("authoring", "knowledge", "research", "provenance", "feedback", "supervision", "followup"):
-        entries = json.loads((source / "src/contracts/generated" / group / "manifest.json").read_text(encoding="utf-8"))
-        manifest.update({group + "." + key: entry for key, entry in entries.items()})
-    profiles = json.loads((source / "src/contracts/generated/followup/profiles.json").read_text(encoding="utf-8"))
-    for key, pin in profiles.items():
-        manifest["followup.validation." + key] = {
-            "source": manifest["followup." + key]["source"].replace(".serialization.json", ".validation.json"),
-            "sha256": pin["sha256"],
-        }
+    manifest = public_schemas(source)
     for entry in manifest.values():
         path = (ROOT / entry["source"]).absolute()
         assert ".." not in Path(entry["source"]).parts
@@ -53,6 +68,7 @@ def stage_source(workspace):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--explore-browser", action="store_true", help="Run the owned Explore browser acceptance in the isolated source install")
+    parser.add_argument("--expected-public", type=Path, help="Compare independently rebuilt static bytes to this qualified bundle")
     args = parser.parse_args()
     node, npm = shutil.which("node"), shutil.which("npm.cmd" if os.name == "nt" else "npm")
     if not node or not npm:
@@ -66,7 +82,8 @@ def main():
         assert workspace.is_relative_to(Path(tempfile.gettempdir()).resolve())
         staged, copied, manifest = stage_source(workspace)
         commands = [("install", [npm, "ci", "--ignore-scripts", "--no-audit", "--no-fund"]),
-                    ("verify", [node, "scripts/verify.mjs", "--coverage"])]
+                    ("verify", [node, "scripts/verify.mjs", "--coverage"]),
+                    ("bundle", [node, "scripts/build-local.mjs"])]
         if args.explore_browser:
             commands.append(("explore-browser", [node, "tests/browser/explore.mjs"]))
         test_output = ""
@@ -83,6 +100,13 @@ def main():
             "status": "passed", "scope": "isolated Node dependency install, schema regeneration check, TypeScript build and owned tests",
             "tests": int(count.group(1)) if count else None, "source_sha256": copied, "public_schema_pins": manifest,
             "limits": ["No checkout imports or Python/service source copied", "No browser/live backend acceptance claim"]}
+        evidence["static_assets"] = {}
+        for name in ("index.html", "app.js", "app.css"):
+            artifact = staged / "dist/local" / name
+            if args.expected_public:
+                assert artifact.read_bytes() == (args.expected_public / name).read_bytes(), "Independent static asset drift: " + name
+            evidence["static_assets"][name] = hashlib.sha256(artifact.read_bytes()).hexdigest()
+        shutil.copytree(staged / "dist/local", output / "public")
         if args.explore_browser:
             browser_root = workspace / ".test-results/studio-explore-browser"
             assert browser_root.is_relative_to(workspace)

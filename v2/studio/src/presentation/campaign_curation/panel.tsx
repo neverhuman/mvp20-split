@@ -46,7 +46,8 @@ export function CurationPanel({ model, selection, invalid = false, synthetic, ba
     {synthetic && <p className="curation-synthetic">Synthetic engineering context · not a scientific validation</p>}
     {message && <p role="status" className="curation-message">{message}</p>}
     {data && <>
-      <section className="curation-intent" aria-label="Recorded revision direction"><h2>Requested direction</h2><p>{data.specification.direction}</p>
+      <section className="curation-intent" aria-label="Recorded revision direction"><h2>Requested direction</h2>
+        {data.specification.direction.length > 400 ? <details><summary>Read the full requested direction ({data.specification.direction.length} characters)</summary><p>{data.specification.direction}</p></details> : <p>{data.specification.direction}</p>}
         {data.proposal && <><h3>Recorded model explanation</h3><p>{data.proposal.rationale}</p></>}
       </section>
       <details className="curation-context"><summary>Context requested for this revision</summary>

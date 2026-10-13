@@ -2,17 +2,17 @@
 
 ## Canonical tracker
 
-- Status: primary_active; G1/N1/N2/N3 complete; V1 integrated acceptance active.
-- Last refreshed: 2026-10-13 10:07:31 (America/Chicago).
+- Status: complete; bounded integrated acceptance and scoped audit passed.
+- Last refreshed: 2026-10-13 10:32:42 (America/Chicago).
 - Baseline: 62ea4966; owner-reported disconnected canvas and navigation review on 2026-10-07.
 - Owner: Studio experience, page models and presentation; service owners retain their contracts and state.
-- Parent: none; priority and mirrors in [Master Build Tracker](Master%20Build%20Tracker.md).
-- Overall implementation: **80%**; Build100%, Verification0%. Five equal delivery gates: G1, N1, N2, N3, V1. Build averages G1/N1/N2/N3; Verification is V1. G0 is a separate design/review prerequisite and earns no implementation credit.
+- Parent: none; priority and mirrors in [Master Build Tracker](../Master%20Build%20Tracker.md).
+- Overall implementation: **100%**; Build100%, Verification100%. Five equal delivery gates: G1, N1, N2, N3, V1. Build averages G1/N1/N2/N3; Verification is V1. G0 is a separate design/review prerequisite and earns no implementation credit.
 - Design readiness: G0 complete; ELK directed layout and bounded topology ownership implemented.
-- Demonstrated behavior: actual scientific successor, connected execution/Knowledge, results and retained next-context verified locally/LAN; independent replacement and full interaction acceptance remain.
-- Current phase/task: V1 integrated acceptance; independent Studio consumer installation first.
-- Next task: keyboard/zoom/failure/context acceptance, then scoped parent drift audit.
-- Blocker: none requiring owner; no additional model call needed. Demo30slots/$7.50 remain unreserved.
+- Demonstrated behavior: actual scientific successor, connected execution/Knowledge, results and retained next-context verified locally/LAN; independent replacement and full interaction acceptance passed.
+- Current phase/task: none; G1/N1/N2/N3/V1 complete.
+- Next task: UI-02 activation audit and candidate producer/representation boundary.
+- Blocker: none within UI-01; scientific/model/scale/reliability successor limits remain explicit.
 - Human acceptance: owner feedback is part of visual review; no new routine approval gates for campaign execution.
 - Active exception: owner explicitly reprioritized UI over worker diagnostics; LR-01 remains paused at25%, Build33.33%, Acceptance0%, with R2 receipt diagnosis preserved.
 - Pre-activation coherence: 2026-10-07 17:54:00, ready for G0. Existing topology/observation APIs, React Flow canvas and isolated Studio boundaries are available; meaningful layout and workflow acceptance are missing. No new backend contract is assumed approved by this plan.
@@ -24,18 +24,19 @@
 | N1 research entry and navigation | 100% | G1 complete | Research-question landing and connected workflow navigation with preserved selection/context |
 | N2 approach, execution and results | 100% | N1 complete | Understand approach, follow autonomous work, inspect/compare results and supporting evidence |
 | N3 next-campaign iteration | 100% | N2 complete | Target weak/promising points, inspect proposed changes and follow predecessor/successor history |
-| V1 integrated acceptance and audit | 0% | N3 complete | Actual-owner user journey, independent consumer acceptance, scoped audit and explicit limitations |
+| V1 integrated acceptance and audit | 100% | N3 complete | Actual-owner user journey, independent consumer acceptance, scoped audit and explicit limitations |
 
 Each phase is a discrete unit of work. Complete its exit gate before dependent
 implementation. Expand the nearest phase into owned tasks as evidence warrants;
 do not create empty child plans or count plan-writing as delivered functionality.
 
 
+
 ## Objective and boundaries
 
 Owner schedule2026-10-08: target the week2026-10-12 through2026-10-16 for actual
 Knowledge UI, browser-started campaigns with live per-node progress, and LLM graph
-revision grounded in Knowledge. [UI-01.05](Completed/UI-01.05%20Knowledge%20Run%20and%20LLM%20Integration.md)
+revision grounded in Knowledge. [UI-01.05](UI-01.05%20Knowledge%20Run%20and%20LLM%20Integration.md)
 decomposes this existing unfinished N2/N3 scope: K1=100%, R1=100%, I1=0%. N2.2 owns service
 provenance, N2.4 Knowledge/reasoning and honest node-quality evidence, N2.5 admission/
 worker engagement, and N3 the between-campaign LLM/successor loop. Complete all N2
@@ -50,7 +51,7 @@ including inventory-fed LLM curation and durable new-capability requests under
 UI-01.05/I1, before standalone ML-01 inherited-model migration. Preserve current
 phase credit; N3 remains0%. This is a prerequisite sequence, not a calendar shortcut.
 Owner refinement2026-10-08 20:19:11: after this workflow and UI-02, complete
-[POP-01](POP-01%20Population%20Campaign%20Execution%20and%20Experience.md) population
+[POP-01](../POP-01%20Population%20Campaign%20Execution%20and%20Experience.md) population
 execution/experience before ML-01. Do not pull the population-scale tranche into
 the current Knowledge/LLM demonstration or reopen completed graph-layout phases.
 
@@ -58,11 +59,11 @@ An internal researcher should understand the question, the approach, what happen
 what the evidence supports, and what to explore next. The graph is the primary
 interactive workspace; technical inventories and receipts belong in drill-down.
 
-Authority: [Studio architecture](../Architecture/Experience/Studio.md),
-[human graph requirements](../Architecture/Requirements/Product_Requirements.md#human-graph-studio),
-[UI guidelines](../UI_Coding_Guidelines.md),
-[interaction references](../Architecture/Experience/Interaction_References.md) and
-[Studio module boundary](../../studio/README.md).
+Authority: [Studio architecture](../../Architecture/Experience/Studio.md),
+[human graph requirements](../../Architecture/Requirements/Product_Requirements.md#human-graph-studio),
+[UI guidelines](../../UI_Coding_Guidelines.md),
+[interaction references](../../Architecture/Experience/Interaction_References.md) and
+[Studio module boundary](../../../studio/README.md).
 
 Keep transport, page models, graph layout and rendering functionally isolated.
 Runtime owns executable topology and execution acceptance; Research/Knowledge own
@@ -176,10 +177,10 @@ V1 is four equal ordered acceptance units, no additional parent weight:
 
 | Unit | Completion | Exit evidence |
 |---|---:|---|
-| V1.1 independent consumer | 0% active | Fresh locked Studio dependencies, every exact public schema/profile, type/build/owned checks, reproducible served bundle |
-| V1.2 integrated interaction | 0% | Actual question/evaluation/run/results/Knowledge/next journey; keyboard and browser zoom; desktop/narrow context preservation |
-| V1.3 failures and recovery | 0% | Explicitly labelled failure probes; stale/denied/unavailable views and original intent/context recovery without duplicate commands |
-| V1.4 parent closeout | 0% | Scoped drift reconciliation, experience findings disposition, exact replacement/evidence and archive |
+| V1.1 independent consumer | 100% | Fresh locked Studio dependencies, every exact public schema/profile, type/build/owned checks, reproducible served bundle |
+| V1.2 integrated interaction | 100% | Actual question/evaluation/run/results/Knowledge/next journey; keyboard and browser zoom; desktop/narrow context preservation |
+| V1.3 failures and recovery | 100% | Explicitly labelled failure probes; stale/denied/unavailable views and original intent/context recovery without duplicate commands |
+| V1.4 parent closeout | 100% | Scoped drift reconciliation, experience findings disposition, exact replacement/evidence and archive |
 
 Earlier child evidence remains valid for unchanged behaviors; these units close
 only their additional integrated acceptance obligations. Long diagnostic direction
@@ -269,8 +270,8 @@ explicit scope/denominator update after the owner decision; they earn no credit 
 
 | Task | Completion | Exit |
 |---|---:|---|
-| N2.E scientific execution | 100% | [Scientific execution MVP](UI-01.03%20Scientific%20Execution%20MVP.md): actual solvency/viscosity tool invocations with retained evidence |
-| N2.S SME evaluation review | 100% | [MVP task](UI-01.02%20SME%20Evaluation%20Review%20MVP.md); inspect and challenge criteria, methods, assumptions and aggregation before further result work |
+| N2.E scientific execution | 100% | [Scientific execution MVP](../UI-01.03%20Scientific%20Execution%20MVP.md): actual solvency/viscosity tool invocations with retained evidence |
+| N2.S SME evaluation review | 100% | [MVP task](../UI-01.02%20SME%20Evaluation%20Review%20MVP.md); inspect and challenge criteria, methods, assumptions and aggregation before further result work |
 | N2.C visible concurrency | 100% | Inline sibling branches and joins in campaign context; actual-state/omission proof and SME-visible behavior before result work |
 | N2.1 screen hierarchy | 100% | Single shell, compact execution status/actions, secondary technical controls, truthful absent-result notice |
 | N2.2 participating capabilities and result discovery | 100% | Retained plan/bounded discovery and exact Planning/Research provenance qualified; UI-01.07 audit |
@@ -279,7 +280,7 @@ explicit scope/denominator update after the owner decision; they earn no credit 
 | N2.5 actual-owner acceptance | 100% | Retained walkthrough plus actual local/LAN browser admission/workers/results, same-run/container recovery and installed replacement qualification; UI-01.06 closeout audit |
 
 Each remaining N2 task has two equally scoped delivery groups named in its row.
-[UI-01.04](UI-01.04%20Connected%20Demo%20Flow.md) proves the first group; it does not
+[UI-01.04](../UI-01.04%20Connected%20Demo%20Flow.md) proves the first group; it does not
 claim full Runtime LLM orchestration, launch controls or generational discovery.
 Next-iteration review export is pulled into this demo by owner direction, without
 crediting N3 successor execution. UI-01.01's new public index remains unapproved;
@@ -362,13 +363,13 @@ N2.C scoped work100, N2=33.33, overall48.89, Build58.33, Verification0.
 Owner explicitly rejected generic parallel evaluator instances as product delivery.
 Added N2.S as a seventh equal task: denominator reset N2 from33.33 to28.57 before
 implementation; completion of the local review MVP brings N2 to42.86, overall48.57,
-Build60.71. G1/N2.C retain infrastructure credit only. [UI-01.02](UI-01.02%20SME%20Evaluation%20Review%20MVP.md)
+Build60.71. G1/N2.C retain infrastructure credit only. [UI-01.02](../UI-01.02%20SME%20Evaluation%20Review%20MVP.md)
 owns bounded scope and evidence. SME inspection of criteria, evaluation procedures,
 assumptions and aggregation is now mandatory product acceptance, independent of
 execution monitoring. Future N2.2 must bind actual retained Planning proposals,
 Research criteria and registered tools; a local authored proposal is not that link.
 
-2026-10-11 19:26:42: UI-01.07 complete100% with [provenance audit](../Audits/UI-01.07_Campaign_Provenance.md).
+2026-10-11 19:26:42: UI-01.07 complete100% with [provenance audit](../../Audits/UI-01.07_Campaign_Provenance.md).
 N2.2=100%, N2=87.5%, overall57.5%, Build71.88%, Verification0%. Actual local/LAN
 Research/Knowledge origin traversal and original-run completion pass; deterministic
 provider earns no N2.4/N3 credit. N2.3 generational comparison is the next task.
@@ -383,7 +384,7 @@ and scoped audit remain. N2.3 stays50% until its second delivery group passes.
 No population-wave engine, new Runtime result index or scientific validity claimed.
 
 2026-10-11 19:50:00: N2.3 second group qualified100%; parentN2=93.75%,
-overall58.75%, Build73.44%, Verification0%. [Scoped audit](../Audits/UI-01_N2.3_Generation_Comparison.md)
+overall58.75%, Build73.44%, Verification0%. [Scoped audit](../../Audits/UI-01_N2.3_Generation_Comparison.md)
 records actual retained generations0/2,362 tests, desktop/narrow inspection and
 restored original-run LAN regression. N2.4 live-provider reasoning is next.
 
@@ -394,7 +395,7 @@ scientific-campaign state. No new paid call or new campaign-input profile is nee
 for this read-only gate. Live graph conversation remains N3/I1.
 
 2026-10-11 21:11:13: N2.4 second group complete100%, N2=100%, overall60%,
-Build75%, Verification0%. [Scoped reasoning audit](../Audits/UI-01_N2.4_Recorded_Model_Inspection.md)
+Build75%, Verification0%. [Scoped reasoning audit](../../Audits/UI-01_N2.4_Recorded_Model_Inspection.md)
 records actual retained OpenAI request/rationale/outcome,362tests, desktop/narrow
 and restored LAN unavailable-history regression. Zero new paid calls. N3/I1
 requires the concrete additive public boundaries in UI-01.08; no code for those
@@ -402,6 +403,10 @@ unapproved boundaries is implemented.
 
 ## 2026-10-12 09:06:13 live evaluation checkpoint
 
-P5.3 missing-capability original and actual browser1440/390 passed; returned to P5.2 supported graph correction. Six original slots/$1.50 held; zero calls remain. UI-01.08b proposes constrained generation and one additional $0.25 supported call. No serving cutover. Four live calls reported $0.242380500 cumulatively; new calls $0.085049250. Evidence: [retained results](../Audits/Evidence/UI-01.08-Live-v2/README.md). Earlier checkpoints describe historical allowance and status.
+P5.3 missing-capability original and actual browser1440/390 passed; returned to P5.2 supported graph correction. Six original slots/$1.50 held; zero calls remain. UI-01.08b proposes constrained generation and one additional $0.25 supported call. No serving cutover. Four live calls reported $0.242380500 cumulatively; new calls $0.085049250. Evidence: [retained results](../../Audits/Evidence/UI-01.08-Live-v2/README.md). Earlier checkpoints describe historical allowance and status.
 
-2026-10-13 10:07:31: M3.4/M4 complete. Original g validated in28.859s; actual browser launched successor563e14a17f2e4539aeece1838dce80ec and four scientific tools completed. Exact Studio0.34.3 local/LAN1440/390 reviews pass, rendered screens inspected; serving-copy alias repair prevents stale bundles. No new model calls;30slots/$7.50 remain. [Scoped closeout audit](../Audits/UI-01.08_Managed_Curation_Delivery.md). Parent UI-01/V1 is next.
+2026-10-13 10:07:31: M3.4/M4 complete. Original g validated in28.859s; actual browser launched successor563e14a17f2e4539aeece1838dce80ec and four scientific tools completed. Exact Studio0.34.3 local/LAN1440/390 reviews pass, rendered screens inspected; serving-copy alias repair prevents stale bundles. No new model calls;30slots/$7.50 remain. [Scoped closeout audit](../../Audits/UI-01.08_Managed_Curation_Delivery.md). Parent UI-01/V1 is next.
+
+2026-10-13 10:18:44: V1.1 complete. Independent Studio0.34.3 install/build passes443 tests,90 exact public schema/profile pins and byte-identical index/JS/CSS against serving13e. Helper previously omitted newer groups; dynamic manifest/profile discovery covered by4 focused tests. Actual keyboard/native-zoom/failure browser49855 running, no new provider call. V1=25%, parent85%/Build100%/Verification25%.
+
+2026-10-13 10:32:42: V1.2-V1.4 complete. Studio0.34.4 fixes false idle-Knowledge warnings and long-direction disclosure.22 focused Explore/445 independent tests pass; actual native200% keyboard/context/labelled failure recovery and exact-assets local/LAN reviews pass. Screens visually inspected; [parent audit](../../Audits/UI-01_Research_Workspace_Closeout.md). UI-01=100%, Build100%, Verification100%. No new paid calls.

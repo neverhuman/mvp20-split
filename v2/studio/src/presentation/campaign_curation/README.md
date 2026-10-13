@@ -70,3 +70,5 @@ Explicit next-cycle preparation sends no launch/model POST. Changed predecessor 
 unsupported profiles disable launch. Full production workspace journey remains P4.3d.
 
 The composer shows the prepared input-artifact count alongside Knowledge and Research counts. Selection/validation belongs to the preparation page model; presentation does not scan graph nodes.
+
+Studio0.34.4: original requested direction over400 characters uses native details/summary disclosure so technical diagnostic text does not displace the graph. Full original text remains available, with no truncation, summary substitution or model call. Short directions and retained model explanation remain directly visible.

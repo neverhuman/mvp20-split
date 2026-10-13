@@ -113,6 +113,25 @@ test("hiding and disposal cancel reads, clear protected values and prohibit hidd
   model.bind(graphPins()); model.visibility(true); await model.search(search()); assert.equal(model.snapshot.context, null);
 });
 
+test("unrequested Explore lanes remain idle across hide, reveal and mode suspension", () => {
+  const model = new ExploreModel(peers()); model.bind(graphPins());
+  model.visibility(false); model.suspend(["neighborhood", "properties", "series"]); model.visibility(true);
+  for (const region of Object.values(model.snapshot.regions)) {
+    assert.equal(region.phase, "idle"); assert.equal(region.value, null);
+  }
+  model.dispose();
+});
+
+test("only previously requested lanes need a fresh read after visibility changes", async () => {
+  const model = new ExploreModel(peers()); model.bind(graphPins()); await model.search(search());
+  model.visibility(false); model.visibility(true);
+  assert.equal(model.snapshot.regions.search.phase, "stale"); assert.equal(model.snapshot.regions.search.value, null);
+  for (const [name, region] of Object.entries(model.snapshot.regions)) {
+    if (name !== "search") assert.equal(region.phase, "idle");
+  }
+  model.dispose();
+});
+
 for (const kind of ["denied", "query_conflict"] as const) test(`${kind} clears every region and prevents a late peer restoring data`, async () => {
   const source = peers(), model = new ExploreModel(source); model.bind(graphPins()); await model.search(search());
   const held = deferred<ReturnType<typeof decodeKnowledge<"neighborhood_page">>>(); source.knowledge.neighborhood = () => held.promise;

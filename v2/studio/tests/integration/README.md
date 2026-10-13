@@ -122,3 +122,5 @@ and scale fitted to available canvas space after viewport changes,
 and reload without another intent. review_only uses an existing successor journal
 for local/LAN recovery. No model request, injected graph or mocked owner route.
 The script is a gate, not evidence of success until an actual recorded run passes.
+
+UI-01/V1 `research_workspace_acceptance.mjs <input> <output>` checks retained actual-owner scientific successor navigation using keyboard, native Chromium200% zoom through an isolated test extension (getZoom and devicePixelRatio verified), unsent composer/context refresh, scientific step selection and explicitly intercepted403/503 read failures followed by real receipt recovery. Input adds run_id to the scientific-successor recovery input; launcher key stays environment-only. No campaign/curation command or model call is allowed. Temporary browser profile is independently retained, not a user profile; no production extension is installed. Screenshots and failure evidence require visual review; a passing script is not scientific validation.

@@ -1,18 +1,15 @@
 # Architecture Drift
 
 - Status: BP-01 through BP-09 closed/audited; named successor findings remain.
-- Last refreshed: `2026-10-13 10:07:31` (America/Chicago).
+- Last refreshed: `2026-10-13 10:33:46` (America/Chicago).
 - Scope: unresolved v2 design/implementation alignment and scoped successor boundaries.
 - Active focus: selected-host integration and named scientific/UI successor limits.
-- Next gate: UI-01/V1 independent consumer and integrated interaction acceptance. Managed curation delivery audited complete; LR-01 paused and UI-R01 retains feedback-read follow-up.
+- Next gate: UI-02 activation and candidate structure/selection boundary. UI-01 integrated acceptance is complete; LR-01/UI-R01 retain named reliability work.
 
 ## Active Findings
 
 | Finding | Owner / trigger | Disposition |
 |---|---|---|
-| Default graph is a disconnected inventory; authored layout ignores dependencies | [UI-01](../Build%20Plans/UI-01%20Research%20Workspace%20Overhaul.md), G0/G1 first | Source correction verified by UI-01/G1: ELK routes authored links; automatic root/fit, nested scopes, selection and viewport retention pass actual-owner browser review. Candidate assets only; frozen demo unchanged, V1 replacement qualification remains. N1 question-first navigation also verified. |
-| SME evaluation logic absent from executed numerical demo | UI-01/N2.S then N2.2 | Local design-review MVP now exposes criteria, actual solvency procedure, assumptions, evidence gaps and aggregation, with future-only concern export/import.306 tests and served SME browser pass. UI-01.03 now executes two standalone scientific tools with four verified result inspectors; [scoped audit](UI-01.03_Scientific_Execution.md). Runtime Planning generation and automatic feedback consumption remain unimplemented in this view. No complete-engine acceptance. |
-| Hidden sibling concurrency in graph presentation | UI-01/N2.C, Studio0.18 | Implemented and served for owner review: same-cut inline fan-out/rejoin, sequential iteration expansion, focus/overview map, explicit bounded omissions.301Studio checks and actual served browser checks pass; failed-state display uses a separately labelled intercepted fixture. This retained numeric campaign is not a formulation/solvency migration. |
 | Unbounded campaign result index remains a proposal | [UI-01.01](../Build%20Plans/UI-01.01%20Campaign%20result%20discovery%20decision.md), N2 | The authorized bounded existing-API alternative now supports two verified retained generations; [N2.3 audit](UI-01_N2.3_Generation_Comparison.md). A universal Runtime index remains unapproved; no collection/history completeness claim. |
 | Intermittent feedback read during demo rehearsal | [UI-R01](../Build%20Plans/UI-R01%20Feedback%20Read%20Diagnostics.md) | original-focus-c reported unverified records; later instrumented d passed8 Research reads200. Cause unresolved. Offline demo fallback provided; no reliability repair claim. See DEMO-01 audit. |
 | Intermittent local scientific attempt expiry | [LR-01](../Build%20Plans/LR-01%20Local%20Worker%20Reliability.md), queued after BP-09 handoff | Live and no-model six-owner runs retain expired/failed tool outcomes. Separate ten-connection regression proved default8 insufficient; Deployment0.10 uses existing16 ceiling and pressure counters. Independent279tests, original three-owner and six-owner no-model15/6/3/15 controls pass with zero denials. Historical expiry cause is not established; retain failures; bounded integrated/recovery gates now complete. BP-09.04 first rebuilt-evaluator campaign recurred as worker exit2 with12successful completions and1cancelled attempt, no completion; exact cause remains unproven. Second run failed unchanged collector with remaining lease/deadline time. Third reconstructed-tool campaign and337reference audit pass. New transport counters and750-read control do not establish cause; no kernel rejection or transport cause inferred from exit code alone. BP-09.05 must name a reliability successor; no operational-soak or unattended-reliability claim. Deployment worker owner investigates recurrence. [Evidence](Evidence/BP-09-Deployment/TLS_Capacity.json). |

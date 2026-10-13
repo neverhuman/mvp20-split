@@ -1,6 +1,6 @@
 # Master Build Tracker
 
-Latest checkpoint: 2026-10-13 10:07:31: M3.4/M4 complete. Original g validated in28.859s; actual browser launched successor563e14a17f2e4539aeece1838dce80ec and four scientific tools completed. Exact Studio0.34.3 local/LAN1440/390 reviews pass, rendered screens inspected; serving-copy alias repair prevents stale bundles. No new model calls;30slots/$7.50 remain. [Scoped closeout audit](../Audits/UI-01.08_Managed_Curation_Delivery.md). Parent UI-01/V1 is next.
+Latest checkpoint: 2026-10-13 10:33:46: UI-01 complete100%, Build100%, Verification100%, audited and archived. Studio0.34.4 independently passes445tests/90public pins with byte-identical bundle; final actual local/LAN and native200% keyboard/failure/recovery reviews pass. [Audit](../Audits/UI-01_Research_Workspace_Closeout.md). UI-02 activation is next.
 
 ## Purpose and Authority
 
@@ -10,16 +10,16 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 
 ## Program Tracker
 
-- Status: UI-01 primary active; LAN-01 accepted/archived. LR-01 remains conditional; completed plans remain closed.
-- Last refreshed: 2026-10-13 10:07:31 (America/Chicago).
+- Status: UI-02 activation review next; UI-01 and LAN-01 complete/archived. LR-01 remains paused.
+- Last refreshed: 2026-10-13 10:33:46 (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
 - Current priority: schedule UI-01 Knowledge/run/LLM integration and UI-02 formula/structure views for2026-10-12 through2026-10-16; preserve the live demo.
-- Primary active task: UI-01/V1 integrated acceptance. N3/UI-01.08 complete100%, P1-P5=100%; UI-01.05 K1/R1/I1=100%.
-- Next task: independent Studio consumer, keyboard/zoom/failure/context checks, then parent scoped closeout audit.
-- Implementation completion: LAN-01=100%; UI-01 active80%, Build100%, Verification0%; UI-02=0%, P1/P2/P3/P4=0%; LR-01 paused25%, Build33.33%, Acceptance0%.
-- Blockers/dependencies: no owner decision; demo30slots/$7.50 unreserved. No new model calls needed for current V1.
-- Latest checkpoint: actual original-g validation, completed scientific successor, exact local/LAN Studio0.34.3 review and managed-delivery audit passed.
-- Acceptance posture: bounded synthetic model/managed delivery complete; broader V1 acceptance remains.10 additional calls/$2.50 held; known reported$0.5213235 plus unknown b charge.
+- Primary active task: UI-02 pre-activation coherence audit and inventory of candidate representation/selection contracts. Implementation remains0%.
+- Next task: freeze a concrete bounded structure producer/representation boundary before P1 implementation.
+- Implementation completion: UI-01 and LAN-01=100% archived; UI-02=0%, P1/P2/P3/P4=0%; LR-01 paused25%, Build33.33%, Acceptance0%.
+- Blockers/dependencies: UI-02 needs explicit candidate representations; scalar demo parameters cannot provide molecules/formulas. Assess existing contracts before asking for any material addition.
+- Latest checkpoint: UI-01 scoped closeout, independent consumer, native zoom and current exact-assets local/LAN acceptance passed.
+- Acceptance posture: bounded synthetic UI flow qualified; no scientific accuracy or unattended-reliability claim. Demo30slots/$7.50 unreserved; V1 used no model calls.
 - Active exception: owner scheduled four targets for next week. Preserve earned phase credit; sequence the bounded cross-plan handoffs below. Pull LR-01/UI-R01 forward only when their faults block the scheduled integration, with exact return points.
 
 ## Initial Delivery Boundary
@@ -33,9 +33,8 @@ The initial program proves software behavior using deterministic/synthetic fixtu
 ## Current In-Flight Work
 
 LAN-01 complete100%, archived in Completed; deployed viewer preserved.
-UI-01 is active at80%, Build100%, Verification0%. G0 graph review/design
-is a prerequisite and earns no implementation credit. G1/N1/N2/N3/V1 are five equal
-delivery gates. Phase mirror: G0=100%, G1=100%, N1=100%, N2=100%, N3=100%, V1=0%.
+UI-01 complete100%, Build100%, Verification100%; G0/G1/N1/N2/N3/V1=100%, archived.
+UI-02 activation review:0%, P1/P2/P3/P4=0%.
 LR-01 is paused at25%, Build33.33%, Acceptance0%; R1=100%, R2/R3/V1=0%.
 Completed plans remain in the [completed index](Completed/README.md).
 
@@ -43,12 +42,11 @@ Completed plans remain in the [completed index](Completed/README.md).
 
 | Order | Canonical plan | Status | Overall | Build | Verification/Acceptance | Prerequisite |
 |---|---|---|---:|---:|---:|---|
-| 1 | [UI-01 Research Workspace Overhaul](UI-01%20Research%20Workspace%20Overhaul.md) | G1/N1/N2/N3=100%; V1 integrated acceptance active | 80% | 100% | 0% | Additive curation/capability/successor boundaries |
-| 2 | [UI-02 Candidate Structure and Recommendation Views](UI-02%20Candidate%20Structure%20and%20Recommendation%20Views.md) | Scheduled next week; P1/P2/P3/P4=0% | 0% | 0% | 0% | Typed retained candidate structures and explicit selection evidence; activation audit |
-| 3 | [POP-01 Population Campaign Execution and Experience](POP-01%20Population%20Campaign%20Execution%20and%20Experience.md) | Queued; Execution/Experience/Qualification=0% | 0% | 0% | 0% | Knowledge/LLM workflow UI-01/V1 and UI-02/P4 complete |
-| 4 | [ML-01 Inherited Scientific Model Integration](ML-01%20Inherited%20Scientific%20Model%20Integration.md) | Standalone queued; M1/M2/M3/M4/V1=0% | 0% | 0% | 0% | UI-01/V1 + UI-02/P4, then POP-01 complete; qualified population/tool handoff |
-| 5 | [LR-01 Local Worker Reliability](LR-01%20Local%20Worker%20Reliability.md) | Paused; pull R2 forward for blocking run failure | 25% | 33.33% | 0% | UI priority released or UI-01.05/R1 blocked; same-host diagnostic window |
-| 6 | [UI-R01 Feedback Read Diagnostics](UI-R01%20Feedback%20Read%20Diagnostics.md) | Queued; pull forward if it blocks UI-01 | 0% | 0% | 0% | Bounded read diagnostic and activation review |
+| 1 | [UI-02 Candidate Structure and Recommendation Views](UI-02%20Candidate%20Structure%20and%20Recommendation%20Views.md) | Scheduled next week; P1/P2/P3/P4=0% | 0% | 0% | 0% | Typed retained candidate structures and explicit selection evidence; activation audit |
+| 2 | [POP-01 Population Campaign Execution and Experience](POP-01%20Population%20Campaign%20Execution%20and%20Experience.md) | Queued; Execution/Experience/Qualification=0% | 0% | 0% | 0% | Knowledge/LLM workflow UI-01/V1 and UI-02/P4 complete |
+| 3 | [ML-01 Inherited Scientific Model Integration](ML-01%20Inherited%20Scientific%20Model%20Integration.md) | Standalone queued; M1/M2/M3/M4/V1=0% | 0% | 0% | 0% | UI-01/V1 + UI-02/P4, then POP-01 complete; qualified population/tool handoff |
+| 4 | [LR-01 Local Worker Reliability](LR-01%20Local%20Worker%20Reliability.md) | Paused; pull R2 forward for blocking run failure | 25% | 33.33% | 0% | UI priority released or UI-01.05/R1 blocked; same-host diagnostic window |
+| 5 | [UI-R01 Feedback Read Diagnostics](UI-R01%20Feedback%20Read%20Diagnostics.md) | Queued; pull forward if it blocks UI-01 | 0% | 0% | 0% | Bounded read diagnostic and activation review |
 
 The owning tracker controls exact task/percentages; MBT controls priority and
 mirrors current state. Complete each bounded gate before dependent implementation.

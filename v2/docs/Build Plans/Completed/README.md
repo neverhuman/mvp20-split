@@ -28,3 +28,5 @@ After required gates and a recorded closeout drift audit pass, move the plan and
 
 - [UI-01.08j Managed curation demo delivery](UI-01.08j%20Managed%20curation%20demo%20delivery.md):100%; M1-M4 complete; [audit](../../Audits/UI-01.08_Managed_Curation_Delivery.md).
 - [UI-01.05 Knowledge, Run and LLM Integration](UI-01.05%20Knowledge%20Run%20and%20LLM%20Integration.md):100%; K1/R1/I1 complete through owning audits; parent V1 remains.
+
+- [UI-01 Research Workspace Overhaul](UI-01%20Research%20Workspace%20Overhaul.md):100%, Build100%, Verification100%; [closeout audit](../../Audits/UI-01_Research_Workspace_Closeout.md).

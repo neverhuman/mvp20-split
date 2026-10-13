@@ -36,12 +36,18 @@ export class ExploreModel {
   }
   visibility(visible: boolean) {
     if (this.disposed || visible === this.snapshot.visible) return;
-    this.cancel(); this.publish(ExploreProjection.empty(this.context?.pins ?? null, visible, "stale"));
+    this.cancel();
+    let next = ExploreProjection.empty(this.context?.pins ?? null, visible);
+    for (const name of regionNames) if (this.snapshot.regions[name].phase !== "idle") next = next.region(name, "stale");
+    this.publish(next);
   }
   suspend(regions: ExploreRegion[]) {
     if (this.disposed) return;
     let next = this.projection;
-    for (const region of regions) { this.lanes[region].cancel(); next = next.region(region, "stale"); }
+    for (const region of regions) {
+      this.lanes[region].cancel();
+      if (next.snapshot.regions[region].phase !== "idle") next = next.region(region, "stale");
+    }
     this.publish(next);
   }
   clearInspection() {

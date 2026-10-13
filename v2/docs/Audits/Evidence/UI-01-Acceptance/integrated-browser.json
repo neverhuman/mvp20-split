@@ -1,0 +1,163 @@
+{
+  "timestamp_local": "2026-10-13 10:31:06",
+  "status": "passed",
+  "studio_version": "0.34.4",
+  "checks": {
+    "ui01-v1-browser-20261013c": {
+      "status": "passed",
+      "checks": [
+        "long original direction retained behind keyboard disclosure",
+        "keyboard navigation 1. Question",
+        "keyboard navigation 2. Evaluation design",
+        "keyboard navigation 3. Approach and run",
+        "keyboard navigation 4. Results and evidence",
+        "keyboard navigation 5. Knowledge graph",
+        "keyboard navigation 6. Next iteration",
+        "unsent direction survives verified context refresh; four inputs retained; tab reaches controls",
+        "keyboard step selector opens scientific result",
+        "original receipt recovered after injected 403",
+        "original receipt recovered after injected 503"
+      ],
+      "native_zoom": {
+        "baseline": {
+          "innerWidth": 1424,
+          "innerHeight": 1005,
+          "dpr": 1
+        },
+        "enlarged": {
+          "innerWidth": 712,
+          "innerHeight": 502,
+          "dpr": 2
+        },
+        "factor": 2,
+        "method": "chrome.tabs.setZoom; verified getZoom and devicePixelRatio"
+      },
+      "failure_injections": [
+        {
+          "status": 403,
+          "scope": "Browser-only retained curation GET; actual owner untouched"
+        },
+        {
+          "status": 503,
+          "scope": "Browser-only retained curation GET; actual owner untouched"
+        }
+      ],
+      "evidence_sha256": "c11e35afdac39d38018628036d79f3b68a7ee1757a497032dfe01975338f6d97",
+      "screenshots": {
+        "native-zoom200-1.png": "43839fd65f2aeeb8c9d8e5ea6b23b2f10dced4a99255084ca1921ece03fbd5f6",
+        "native-zoom200-2.png": "658c221364daa4be06ec450fd8986d56f08b402144c663574e534a2a0fb4e3d4",
+        "native-zoom200-3.png": "4e3533aa93d23f58d40edcc20d6a3f5b4f55d899e459f6bef7ccec2c27615d26",
+        "native-zoom200-4.png": "02749361f55c6caf6b2a163ec03940dc8efd0f5c5aae44fc619e3d2a5330d97f",
+        "native-zoom200-5.png": "4800c81af9c7bda4094c4cdbd88b036c7eb0bacd560ed604167e068e82154686",
+        "native-zoom200-6.png": "78e2d12dfa6526f697a407cdaeea42c4a471ba4f2c937bbf67e2c090f36dc509",
+        "keyboard-scientific-inspector.png": "3ae6e4185f0e3a8556ad958ca24c0d7270e8a389564914538c1450d4608ea052",
+        "injected-read-failure-403.png": "caed26d9150f1609f2376ec0310458a6569bde8d45ce985b273e642dddbf6163",
+        "injected-read-failure-503.png": "05526a841684895dbf0af3bde6fa3ff225354712f39cca1d54794fa5ff5013c7"
+      }
+    },
+    "curation-demo-successor-review-20261013d": {
+      "status": "passed",
+      "assets": {
+        "index.html": "0c60b48d2bf03c539e9f7f14f773d3fb7652fade37209178f9a3790c893e45c5",
+        "app.js": "21fa5c5d6f790ffd902f0074290a651c5bebcd5173cf136ba105ac43514db5f2",
+        "app.css": "9aa2cd9f892037c5b52c866cdabebdb002fda16db6d12fcc0248666eb4fa8f98"
+      },
+      "run_id": "563e14a17f2e4539aeece1838dce80ec",
+      "evidence_sha256": "28b6bc4d9540553ae802059d7cbc37d1c5d50616bafc75bd0dde955e65ba0249",
+      "screenshots": {
+        "proposed-scientific-graph-1440.png": "a67ae6d3a640cafc3b742f24af9a5b0be0131b993bd27afe7a1e10db3e4c0a5d",
+        "proposed-scientific-graph-390.png": "7de1075bbf37d9395b6f47123b71900533453e5a53f821931300b753cf6ac0ad",
+        "completed-scientific-successor-1440.png": "671cd3bee48be9ac17e638e16ed80d346a132853ce945a50c6a290eb3da9e8f5",
+        "completed-scientific-successor-390.png": "803c96e16afd999cd620c83e7e7818f29b091ad2c3862f82ccbdb2bbaadddc6a",
+        "scientific-successor-results-1440.png": "70a2bf2455a11b2e3cf406984c346dd6e37021fd85342a67ba782f310736e5c3",
+        "scientific-successor-results-390.png": "a18739f6d7fed87e0db63919d5cb81760b3779f53a863a14a1dfb1bb592546b7",
+        "selected-knowledge-1440.png": "a9a0ee010724a551384ad4eabca36c216a8383f392508af8508e430acee5e2ac",
+        "selected-knowledge-390.png": "da1b8ff2e2a280c9627823e6a00554c8216c98e6ab5ded1d2a60e41de17aa564",
+        "successor-next-context-1440.png": "568b2de05132a149c2893b140c0cc7e7c70973e0397b1cfabcab5628e879837b",
+        "successor-next-context-390.png": "3d5a382a48ce7ee1e6de654efb9f710a75f7ef06ae66f2c7ce2f91f1661987ae"
+      }
+    },
+    "curation-demo-lan-successor-20261013d": {
+      "status": "passed",
+      "assets": {
+        "index.html": "0c60b48d2bf03c539e9f7f14f773d3fb7652fade37209178f9a3790c893e45c5",
+        "app.js": "21fa5c5d6f790ffd902f0074290a651c5bebcd5173cf136ba105ac43514db5f2",
+        "app.css": "9aa2cd9f892037c5b52c866cdabebdb002fda16db6d12fcc0248666eb4fa8f98"
+      },
+      "run_id": "563e14a17f2e4539aeece1838dce80ec",
+      "evidence_sha256": "28b6bc4d9540553ae802059d7cbc37d1c5d50616bafc75bd0dde955e65ba0249",
+      "screenshots": {
+        "proposed-scientific-graph-1440.png": "a67ae6d3a640cafc3b742f24af9a5b0be0131b993bd27afe7a1e10db3e4c0a5d",
+        "proposed-scientific-graph-390.png": "7de1075bbf37d9395b6f47123b71900533453e5a53f821931300b753cf6ac0ad",
+        "completed-scientific-successor-1440.png": "671cd3bee48be9ac17e638e16ed80d346a132853ce945a50c6a290eb3da9e8f5",
+        "completed-scientific-successor-390.png": "803c96e16afd999cd620c83e7e7818f29b091ad2c3862f82ccbdb2bbaadddc6a",
+        "scientific-successor-results-1440.png": "70a2bf2455a11b2e3cf406984c346dd6e37021fd85342a67ba782f310736e5c3",
+        "scientific-successor-results-390.png": "a18739f6d7fed87e0db63919d5cb81760b3779f53a863a14a1dfb1bb592546b7",
+        "selected-knowledge-1440.png": "a9a0ee010724a551384ad4eabca36c216a8383f392508af8508e430acee5e2ac",
+        "selected-knowledge-390.png": "da1b8ff2e2a280c9627823e6a00554c8216c98e6ab5ded1d2a60e41de17aa564",
+        "successor-next-context-1440.png": "568b2de05132a149c2893b140c0cc7e7c70973e0397b1cfabcab5628e879837b",
+        "successor-next-context-390.png": "3d5a382a48ce7ee1e6de654efb9f710a75f7ef06ae66f2c7ce2f91f1661987ae"
+      }
+    }
+  },
+  "allowance": {
+    "scope": {
+      "tenant_id": "internal",
+      "project_id": "knowledge-demo-1b1dc25768334153b58973882627b858"
+    },
+    "canonical_check": "passed",
+    "original_reservations": [
+      {
+        "engagement_id": "curation-call-126bb6a7c12f5a0b8db39be7b7ac698ca3a786b2546ff3ce0dc5cce5f481e95f",
+        "ordinal": 1,
+        "accounting_units": 250000000
+      },
+      {
+        "engagement_id": "curation-call-2d25c22a10dec9961d7fb201b98c4ce7ed27c802db948020efd3a794ec1df31c",
+        "ordinal": 1,
+        "accounting_units": 250000000
+      },
+      {
+        "engagement_id": "curation-call-3d02bb80e1933a62062e5ae1021b4da88650c8ac6234034948162e9a37403bcb",
+        "ordinal": 1,
+        "accounting_units": 250000000
+      },
+      {
+        "engagement_id": "curation-call-43dd9d4eef61b9985a206b732650eb452b7b82e7d6db324fcced7bb57cdad5fa",
+        "ordinal": 1,
+        "accounting_units": 250000000
+      },
+      {
+        "engagement_id": "curation-call-61a6dc5b9c3fb59f66ae53e85a28c1f0e6419adc07089b5489a5c524130f8d86",
+        "ordinal": 1,
+        "accounting_units": 250000000
+      },
+      {
+        "engagement_id": "curation-call-96967869afb5130c4652e7c48d0e676012f49163da6ade11c1f70741ff0eefa3",
+        "ordinal": 1,
+        "accounting_units": 250000000
+      },
+      {
+        "engagement_id": "curation-call-a6c6350aaa1afed17745f0775e03edcfe01e8231dc9b6e320dbd9f6a09748cfa",
+        "ordinal": 1,
+        "accounting_units": 250000000
+      }
+    ],
+    "reserved_slots": 7,
+    "reserved_units": 1750000000,
+    "maximum_slots": 37,
+    "maximum_units": 9250000000,
+    "authorization": "UI-01.08j-demo-remainder",
+    "remaining_slots": 30,
+    "remaining_reservation_units": 7500000000,
+    "unit": "usd_nanodollars",
+    "provider_enabled": false
+  },
+  "limits": [
+    "Synthetic scientific parameters; no model reliability/scientific accuracy claim",
+    "Browser read failure injections are labelled and do not simulate an actual owner outage",
+    "LAN tested from same host; prior second-computer access not requalified",
+    "Native browser zoom is verified; no full screen-reader conformance claim",
+    "No new model or campaign commands during this acceptance"
+  ]
+}

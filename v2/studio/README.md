@@ -1,5 +1,14 @@
 # Graph Studio
 
+Source **0.34.4** is the bounded synthetic research workspace: question/evaluation,
+actual campaign launch/progress, scientific results, retained Knowledge and managed
+LLM revision/successor workflow. Studio owns public-consumer state, never scientific
+or execution authority. Long original directions use keyboard-accessible disclosure;
+unrequested Knowledge lanes remain idle across visibility changes while previously
+requested lanes still clear protected data and require fresh reads. Source-adjacent
+modules describe these boundaries; UI-01/V1 owns final independent/current-browser
+acceptance. Earlier release checkpoints below are historical, not current status.
+
 Source0.34.1 corrects execution canvas resize recovery: reveal loaded nodes when
 resizing hides the whole graph, preserving saved viewport and ordinary pan/zoom.
 UI-01.08/P5.2 actual-browser qualification owns acceptance; demo cutover separate.
