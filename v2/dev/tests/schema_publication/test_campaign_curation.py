@@ -12,7 +12,10 @@ def test_all_predecessor_schema_bytes_preserved():
     current = artifacts()
     for name, digest in pins['schemas'].items():
         assert hashlib.sha256(current[name]).hexdigest() == digest, name
-    assert len(current) - 1 == len(pins['schemas']) + 22
+    # Historical curation increment excludes independently published successor roots.
+    historical = {name for name in current if name != 'manifest.json'
+                  and not name.startswith('chemical-structure.')}
+    assert len(historical) == len(pins['schemas']) + 22
 
 
 def test_output_identity_and_publication():

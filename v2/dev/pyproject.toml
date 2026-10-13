@@ -3,6 +3,7 @@ name = "amphora-foundation-verification"
 version = "0.1.0"
 requires-python = ">=3.12,<3.13"
 dependencies = [
+    "amphora-contracts-chemical-structure==0.1.0",
     "amphora-contracts-campaign-successor-launch==0.1.0",
     "amphora-contracts-campaign-curation==0.1.1",
     "amphora-deployment==0.19.1",
@@ -64,6 +65,7 @@ package = false
 link-mode = "copy"
 
 [tool.uv.sources]
+amphora-contracts-chemical-structure = { path = "../contracts/chemical_structure", editable = true }
 amphora-contracts-campaign-successor-launch = { path = "../contracts/campaign_successor_launch", editable = true }
 amphora-contracts-campaign-curation = { path = "../contracts/campaign_curation", editable = true }
 amphora-deployment = { path = "../deploy/local", editable = true }

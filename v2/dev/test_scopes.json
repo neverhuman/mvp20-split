@@ -474,5 +474,11 @@
     "coverage_sources": [
       "dev/verify_studio.py"
     ]
+  },
+  "contracts-chemical-structure": {
+    "tests": "contracts/chemical_structure/tests",
+    "coverage_sources": [
+      "contracts/chemical_structure/src/amphora_contracts_chemical_structure"
+    ]
   }
 }

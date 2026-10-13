@@ -1,24 +1,19 @@
 # Restore
 
-Refreshed: 2026-10-13 10:44:11 America/Chicago. Read FIRST after compaction.
+Refreshed: 2026-10-13 11:30:04 America/Chicago. Read FIRST after compaction.
 
 ## Current checkpoint
 
 UI-01 is complete100%, Build100%, Verification100%, scoped-audited and archived in
 docs/Build Plans/Completed. UI-01.05 and08j also archived complete;08decision100%.
-UI-02 activation inventory/design is complete; implementation remains0%.
-Current gate: owner direction on docs/Build Plans/UI-02.01 Chemical structure
-boundary decision.md. Existing polymer_space is labelled synthetic sites, not atoms;
-Research CandidateProfiles only admits numeric/polymer/sequence synthetic encodings.
-Proposal adds versioned chemical_structure artifact/tool and explicit opt-in Research
-registration profile for supplied fully specified molecules/finite oligomers, with
-formula and2D PNG bound to exact candidate/source/accepted producer. Unsupported
-repeat/mixture forms remain explicit. Existing DTO/routes/schema bytes unchanged.
-This is a material semantic admission extension; do not publish/implement dependent
-new profile before owner direction. UI-02/P1.1-P1.4=0, P1/P2/P3/P4=0.
-Next after approval: P1.1 additive schemas then tool, Research profile, actual handoff.
-Activation audit docs/Audits/UI-02_Activation.md; all independent design work done.
-Latest implementation pushedf141257e; current boundary/audit doc checkpoint pending.
+UI-02.01 approved by owner 2026-10-13 11:23:21; implement supplied finite molecules/oligomers.
+P1.1 complete100%; P1=25%, UI-02 overall6.25%, Build8.33%, Verification0%.
+Next: P1.2 isolated tool, P1.3 opt-in Research profile,
+P1.4 actual registered graph handoff. No additional approval for this scope.
+Local79358 and LAN90134 cooperatively STOPPED, both exit0 before source work.
+Restore frozen serving13f after appropriate checks. Previous five stale NAS-read
+shells closed; no model calls. Container hosting deferred per owner.
+Latest pushed checkpoint155e2026; P1.1 verification complete; commit follows.
 
 Studio0.34.4 final independent install passes445 tests/90public schema pins and
 byte-identical static assets. Helper4tests, focused Explore22tests pass. Fixed idle
@@ -35,8 +30,8 @@ Independent manifest .test-results/studio-isolated/a539a0d5a4d94038bd21965a11f7b
 
 ## Running demo ? preserve
 
-LIVE local79358, session .test-results/curation-demo-session-20261013h.
-LIVE LAN90134, session .test-results/curation-demo-lan-20261013f.
+STOPPED local79358, session .test-results/curation-demo-session-20261013h.
+STOPPED LAN90134, session .test-results/curation-demo-lan-20261013f.
 Both use frozen .test-results/curation-demo-serving-20261013f, Studio0.34.4,
 duration86400. To stop: create STOP in each session then poll BOTH for drain.
 Do not edit source/tests/module READMEs while live/install/test/recovery workflows

@@ -1,0 +1,23 @@
+{
+  "wire_version": "1",
+  "scope": {
+    "tenant_id": "internal",
+    "project_id": "structure-demo"
+  },
+  "candidate": {
+    "scope": {
+      "tenant_id": "internal",
+      "project_id": "structure-demo"
+    },
+    "candidate_id": "supplied-ethylene-glycol",
+    "revision": 1
+  },
+  "semantic_profile": {
+    "schema_id": "chemical-structure.finite-smiles-2d",
+    "version": "1",
+    "sha256": "537435b380c2f36ffb5b7b404e352379beb0b14e899a560b554d5b588c70bc73"
+  },
+  "origin": "supplied",
+  "representation_kind": "finite_molecule",
+  "smiles": "OCCO"
+}

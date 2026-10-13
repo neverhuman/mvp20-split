@@ -2,6 +2,8 @@
 
 from amphora_contracts_draft_successor import AdmitDraftSuccessor
 
+from amphora_contracts_chemical_structure import StructureRequest, StructureResult
+
 import argparse
 import hashlib
 import json
@@ -440,6 +442,10 @@ for name, model in {'request': campaign_launch.LaunchRequest,
                     'receipt': campaign_launch.LaunchReceipt,
                     'profiles': campaign_launch.LaunchProfileCatalog}.items():
     MODELS['campaign-launch.' + name] = model
+
+
+MODELS["chemical-structure.request"] = StructureRequest
+MODELS["chemical-structure.result"] = StructureResult
 
 
 def encoded(value: object) -> bytes:

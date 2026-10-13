@@ -18,7 +18,7 @@ wheels = [
 
 [[package]]
 name = "amphora-agent-planning"
-version = "0.140.0"
+version = "0.142.0"
 source = { editable = "../services/agent_planning" }
 dependencies = [
     { name = "alembic" },
@@ -283,6 +283,23 @@ dependencies = [
 [package.metadata]
 requires-dist = [
     { name = "amphora-contracts-core", editable = "../contracts/core" },
+    { name = "pydantic", specifier = ">=2.12,<3" },
+]
+
+[[package]]
+name = "amphora-contracts-chemical-structure"
+version = "0.1.0"
+source = { editable = "../contracts/chemical_structure" }
+dependencies = [
+    { name = "amphora-contracts-core" },
+    { name = "amphora-contracts-research" },
+    { name = "pydantic" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "amphora-contracts-core", editable = "../contracts/core" },
+    { name = "amphora-contracts-research", editable = "../contracts/research" },
     { name = "pydantic", specifier = ">=2.12,<3" },
 ]
 
@@ -735,7 +752,7 @@ requires-dist = [
 
 [[package]]
 name = "amphora-deployment"
-version = "0.20.1"
+version = "0.20.2"
 source = { editable = "../deploy/local" }
 dependencies = [
     { name = "amphora-contracts-campaign-launch" },
@@ -796,6 +813,7 @@ dependencies = [
     { name = "amphora-contracts-campaigns" },
     { name = "amphora-contracts-candidate-canonicalization" },
     { name = "amphora-contracts-candidate-spaces" },
+    { name = "amphora-contracts-chemical-structure" },
     { name = "amphora-contracts-commands" },
     { name = "amphora-contracts-core" },
     { name = "amphora-contracts-draft-successor" },
@@ -858,6 +876,7 @@ requires-dist = [
     { name = "amphora-contracts-campaigns", editable = "../contracts/campaigns" },
     { name = "amphora-contracts-candidate-canonicalization", editable = "../contracts/candidate_canonicalization" },
     { name = "amphora-contracts-candidate-spaces", editable = "../contracts/candidate_spaces" },
+    { name = "amphora-contracts-chemical-structure", editable = "../contracts/chemical_structure" },
     { name = "amphora-contracts-commands", editable = "../contracts/commands" },
     { name = "amphora-contracts-core", editable = "../contracts/core" },
     { name = "amphora-contracts-draft-successor", editable = "../contracts/draft_successor" },
