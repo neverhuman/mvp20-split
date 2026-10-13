@@ -30,6 +30,12 @@ class ConfigurationPins:
         references = []
         if name == 'planning-checkpoint':
             references += [entry['path'] for entry in record.get('templates', [])]
+        elif name == 'planning-curation':
+            policies = record.get('policies')
+            require(type(policies) is list and 1 <= len(policies) <= 32 and
+                    all(type(item) is str for item in policies) and len(set(policies)) == len(policies),
+                    'worker_curation_policy_references')
+            references += policies
         elif name in {'runtime-coordinate', 'runtime-deliver'}:
             for graph in record.get('graphs', []):
                 references += [graph['definition']]
@@ -76,9 +82,12 @@ def load_workers(path, owners):
             selected = fields(entry['scope'], 'actor tenant project', 'worker_scope')
             scope = WorkerScope(**selected)
         environment = dict(serving.environment)
-        if name == 'planning-checkpoint':
+        if name in {'planning-checkpoint', 'planning-curation'}:
             settings = json.loads(read(entry['configuration']))
-            if settings.get('provider') == 'openai_checkpoint_v1':
+            provider = 'openai_curation_v1' if name == 'planning-curation' else 'openai_checkpoint_v1'
+            if name == 'planning-curation':
+                require(settings.get('provider', 'disabled') in {'disabled', provider}, 'worker_curation_provider')
+            if settings.get('provider') == provider:
                 live = settings.get('live', {})
                 require(live.get('key_env') == 'AMPHORA_OPENAI_API_KEY' and
                         live.get('egress') == 'approved_synthetic_engineering_only', 'worker_live_policy')

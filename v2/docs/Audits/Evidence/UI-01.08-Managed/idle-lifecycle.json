@@ -1,0 +1,46 @@
+{
+  "status": "passed",
+  "timestamp_local": "2026-10-12 21:34:19",
+  "deployment_release": "0.20.0",
+  "planning_release": "0.136.0",
+  "running": {
+    "state": "running",
+    "exit_code": null,
+    "completed_turns": 0,
+    "faulted": false,
+    "execution_readiness": "not_assessed"
+  },
+  "quiescing": {
+    "state": "quiescing",
+    "exit_code": null,
+    "completed_turns": 0,
+    "faulted": false,
+    "execution_readiness": "not_assessed"
+  },
+  "drained": {
+    "state": "quiescent",
+    "exit_code": 0,
+    "completed_turns": 1,
+    "faulted": false,
+    "execution_readiness": "not_assessed"
+  },
+  "forced": {
+    "state": "failed",
+    "exit_code": 0,
+    "completed_turns": 2,
+    "faulted": true,
+    "execution_readiness": "not_assessed"
+  },
+  "recovered": {
+    "state": "quiescent",
+    "exit_code": 0,
+    "completed_turns": 3,
+    "faulted": false,
+    "execution_readiness": "not_assessed"
+  },
+  "original_reservations_unchanged": true,
+  "provider_calls": 0,
+  "new_campaigns": 0,
+  "peer_readiness": "not_exercised; probe-only sentinel references must not be promoted",
+  "scope": "installed idle lifecycle only"
+}

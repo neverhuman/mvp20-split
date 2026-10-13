@@ -112,3 +112,7 @@ loads the sidecar only for an explicit reference in Runtime/Registry manifests.
 Existing installations/manifests, package dependencies and state schemas are unchanged.
 
 Deployment0.12 adds read-only [offline backup inventory contracts](src/amphora_deployment/backup_restore/README.md). Exact manifest/file digests, owner release/schema compatibility and separate target identity are verified; this is not restored-service readiness. Existing configuration/state formats unchanged. Actual capture/restore remains BP-09.04/B1.2 onward.
+
+Deployment0.20.0 adds the closed planning-curation native recipe and policy-file
+pins under UI-01.08j. Source implementation only until installed lifecycle and
+actual local/LAN delivery pass; owner budget/dispatch contracts unchanged.

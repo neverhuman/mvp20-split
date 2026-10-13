@@ -47,5 +47,6 @@ NATIVE_RECIPES = {item.name: item for item in (
     NativeRecipe("runtime-coordinate", "runtime", "amphora_campaign_runtime", "coordinate", True),
     NativeRecipe("runtime-deliver", "runtime", "amphora_campaign_runtime", "deliver", True),
     NativeRecipe("runtime-checkpoint", "runtime", "amphora_campaign_runtime.supervision_loop", "run", False),
+    NativeRecipe("planning-curation", "planning", "amphora_agent_planning.curation_worker", "run", False),
     NativeRecipe("planning-checkpoint", "planning", "amphora_agent_planning.supervision_scheduling", "run", False),
 )}

@@ -7,7 +7,7 @@ No workers are active in the accepted read-only serving profile.
 Deployment owns process lifetime, not graph scheduling. Runtime's coordinator,
 artifact delivery and checkpoint loop, and Planning's checkpoint worker retain
 their existing public CLIs, permissions, database ownership, claim/replay and
-deadline rules. Four closed native recipes request two-second sweeps, with one
+deadline rules. Five closed native recipes request two-second sweeps, with one
 second between polls; an in-flight operation can exceed the sweep window.
 Runtime delivery now permits at most100items within that same two-second sweep,
 the existing owner CLI's supported ceiling. The earlier ten-item batch left artifact
@@ -43,7 +43,7 @@ of the configuration directory, bounded individually and in aggregate.
 
 The optional `--workers-manifest` for lifecycle serve selects a separate immutable
 `local-native-workers-v1` sidecar; existing `local-supervisor-v1` bytes are unchanged.
-Its workers map names a subset of the four native recipes. Each entry contains
+Its workers map names a subset of the five native recipes. Each entry contains
 configuration/source_lock absolute paths and scope (null for checkpoint workers;
 actor/tenant/project for coordinate/deliver). Workers must use exactly the serving
 owner's pinned installation and inherit only that owner's scoped environment.
@@ -77,3 +77,14 @@ quiescence and owner exits0; rebuilt wheel hashes identical. Final38worker tests
 3.54s cover281/292statements44/50branches94%. Aggregate forced cleanup, observation
 failure and some manifest variants remain coverage gaps; actual probe separately
 exercises disabled-provider loading. No campaigns or model calls.
+
+UI-01.08j/M1 adds planning-curation, invoking Planning's curation_worker run CLI
+with the same bounded two-second sweep and noninterrupting shutdown semantics.
+Its scope/actor/peer references belong to the pinned owner configuration; sidecar
+scope is null. Pin1..32 unique relative policy files as well as the worker file.
+Only disabled or explicit openai_curation_v1 is allowed; live composition requires
+AMPHORA_OPENAI_API_KEY plus synthetic-only policy. Disabled mode does not import
+that key. Owner serving environment and installation must match; no peer-private
+state or graph scheduling enters Deployment. Planning retains original holds,
+discovery/claims/dispatch and all execution acceptance. M2 installed lifecycle
+and M3 actual demo delivery are separate acceptance gates.

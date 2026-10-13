@@ -1,9 +1,10 @@
 # Restore
 
-Refreshed: 2026-10-12 21:21:14 America/Chicago. Read FIRST after compaction.
-All test/install/live/recovery processes FINISHED/drained. No agents/JARVIS;v1
-read-only. Preserve untracked ocularPDF/DOCX. Latest pushed004c3527; outcome/UI
-fix/docs not yet committed. Commit/push checkpoint, then CONTINUE P5.4 (no question).
+Refreshed: 2026-10-12 21:34:41 America/Chicago. Read FIRST after compaction.
+All processes FINISHED/drained. M2 actual managed lifecycle80941 passed;54 source
+and54 installed worker tests passed. Latest pushed dd8e7a48; commit M1/M2 now.
+Uncommitted Deployment0.20.0 recipe/tests/locks, helper and canonical evidence.
+No agents/JARVIS;v1 read-only; preserve ocular PDF/DOCX.
 
 ## Current achievement and next task
 
@@ -18,13 +19,15 @@ Isolated serving/public rebuilt (backup public-before-resize-20261012a).
 Strengthened recovery3705 passed/drained; actualowner/replay/browser1440/390,
 visible nodes/edges, nextiteration readiness, no duplicateintent. Screenshotsseen.
 
-NEXT UI-01.08j Managed curation demo delivery.md M1: Deployment private closed
-planning-curation recipe. Use existingNativeBinding/WorkerGroup; pin relative
-policyfiles, exact installed Planningowner, only AMPHORA_ environment. Existing
-fourrecipes/no-worker manifests unchanged. Planning owns claims/budget/dispatch.
-Tests module deploy/local/tests/workers. M2 actualinstalledprovider-disabled
-lifecycle; M3 inventorybackup/migrateexistingdemo andlocalLAN delivery; M4audit.
-No unnecessary approval gate for routine plannedrecipe. No source edits duringtests.
+NEXT UI-01.08j/M3: lifecycle80941 FINISHED/pass; output .test-results/curation-managed-idle-20261012a.
+Actual supervisor with independent Deploymentinstallb and Planninginstallo, provider
+disabled, private no-work policy. No paid calls. Knowledge/Research token references
+are UNUSED probe-only sentinels, NOT peer acceptance. M3 must provision dedicated
+PLANNING_KNOWLEDGE_TOKEN and PLANNING_RESEARCH_TOKEN (absent original vault), likely
+create-once scoped DPAPI sidecar as registry_access pattern; original vault unchanged.
+Do not promote idle config. Proper read_graph/read_declarations grants and real
+peer reads required. Then inventory/backup/migrate existing demo/localLAN. Update
+trackers/evidence, commit/push M1/M2 checkpoint before M3. No unnecessary gate.
 
 ## Money and boundaries
 
@@ -38,8 +41,8 @@ These are estimates, not invoices. Single syntheticcase, no general/scientificcl
 
 ## State and paths
 
-ParentUI-01.08=95/P5=75(P5.1/2/3=100,P5.4=0). N3/I1=95;UI01=79/Build98.75/V0;
-UI01.05=98.33;08j0(allM0). UI01->UI02->POP01->ML01;LR01paused25/Build33.33.
+ParentUI-01.08=97.5/P5=87.5(P5.1/2/3=100,P5.4=50). N3/I1=97.5;
+UI01=79.5/Build99.375/V0;UI01.05=99.17;08j50(M1/M2=100,M3/4=0). UI01->UI02->POP01->ML01;LR01paused25/Build33.33.
 Durableaudit docs/Audits/Evidence/UI-01.08-Feedback, attempts a/b/c. Source tests
 101passed26.40s, isolatedPlanninginstallo0.136.0;13old exactreplays preserved.
 Working .test-results/curation-live-medium-20261012a; recoveryb is finalvisualproof.
