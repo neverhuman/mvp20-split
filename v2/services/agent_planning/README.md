@@ -1,6 +1,6 @@
 # Agent Planning service boundary
 
-Source: Planning0.134.1 / migration0024. UI-01.08 adds original curation intake,
+Source: Planning0.135.0 / migration0024. UI-01.08 adds original curation intake,
 exact campaign input/output, fixed qualification spending guard/direct adapter and
 fenced recoverable progress. Curation context now retains1..8 selected Knowledge
 graph slices and exact untrusted human intent through preparation replay. Public curation/successor-launch contracts0.1.0 are
@@ -123,3 +123,6 @@ curation_input/README.md; full campaign qualification and serving cutover pendin
 V7/fit.v9 clarifies proposal versus admission and graph primitives versus tool
 capabilities. It preserves original context limitations and acceptance authority;
 provider behavior remains unqualified. Approved08g exact scope allowance is12/$3.05; eleven prior holds remain.
+
+V8 isolates low reasoning with unchanged v7 prompt/schema.08h exact scope13/$3.30
+preserves12prior holds and permits one$0.25 original only. No wider authority.

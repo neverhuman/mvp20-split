@@ -47,3 +47,5 @@ Its distinct prompt explains proposal-stage limitations and separates graph-lang
 primitives from scientific tool inventory. Neither non-admission nor unproven run
 origin alone vetoes authoring; neither is removed or promoted to acceptance. Old
 envelopes remain exact. Live effectiveness pending; no added paid allowance.
+
+V8/fit.v10 isolates reasoning none->low, keeping v7 prompt bytes and v6-compatible schema unchanged. Old request identities/captures remain immutable; no effectiveness claim before live qualification.

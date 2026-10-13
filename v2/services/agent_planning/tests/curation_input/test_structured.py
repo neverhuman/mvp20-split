@@ -92,7 +92,7 @@ def test_v4_direct_generation_preserves_strict_schema_limits_and_old_effort():
     assert len(set(references)) == 5
 
 
-@pytest.mark.parametrize('version,fit', [('6', '8'), ('7', '9')])
+@pytest.mark.parametrize('version,fit', [('6', '8'), ('7', '9'), ('8', '10')])
 def test_compatible_profiles_keep_local_rejection(version, fit):
     from amphora_contracts_campaigns.executable.values import NumberConstant
     old = GenerationSchema.reviewed()
@@ -113,3 +113,17 @@ def test_compatible_profiles_keep_local_rejection(version, fit):
     assert json.loads(envelope.body)['text']['format'] == compatible.format()
     assert packet.fit.document()['format'] == 'planning-campaign-packet-fit.v' + fit
     assert CurationEnvelope.bind(source.request, packet.canonical).body == envelope.body
+
+
+def test_v8_isolates_effort_without_changing_prompt_schema_or_limits():
+    bodies = {}
+    for version in ('7', '8'):
+        source = curation_plan(version=version)
+        packet = prepare(source).packet
+        bodies[version] = json.loads(CurationEnvelope.bind(source.request, packet.canonical).body)
+    old, new = bodies['7'], bodies['8']
+    assert old['reasoning'] == {'effort': 'none'}
+    assert new['reasoning'] == {'effort': 'low'}
+    for key in ('model', 'instructions', 'text', 'max_output_tokens', 'store', 'stream', 'service_tier'):
+        assert old[key] == new[key]
+    assert old['input'] != new['input']  # Versioned request/packet identities must differ.

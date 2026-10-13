@@ -6,6 +6,14 @@ JARVIS;v1 read-only. Preserve ocular PDF/DOCX. Existing demo unchanged.
 
 ## Current gate
 
+Owner approved08h one original/$0.25/8192 at 2026-10-12 20:20:43.
+Implementingv8/fit.v10 low reasoning, same v7prompt/schema; scope13/$3.30
+preserves12oldholds. 97tests17.18s and installm0.135.0 pass (25663/26130FINISHED).
+Preparation66074FINISHED/pass/drained. Ten old replays, sameprompt/schema
+checks pass;12old/$3.05 plus1/$0.25 remains.08h50%; next ONE v8 liveattempt.
+Earlier awaiting-approval language below is superseded; no retries/fallback.
+
+
 08g paid20107 FINISHED/drained. HTTP200completed55402input/202output, estimate
 $0.042460500. Valid ABSTENTION unsupported-wiring claim; no graph/successor.
 All12/$3.05 original holds consumed; NO more paid calls. Exact newcuration

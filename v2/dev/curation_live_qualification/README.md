@@ -90,3 +90,7 @@ review_semantics reconciles the v7 abstention, old capability request and exhaus
 structural_witness validates the prior deterministic executed carry graph against
 the exact current generation schema; it never substitutes that graph for the model
 output or claims a live graph passed. It records original hashes and prior run ID.
+
+UI-01.08h prepare_reasoning/material_reasoning preserve ten prior replays and
+verify unchanged prompt/schema before freezing v8 low reasoning. Original12/$3.05
+holds count toward13/$3.30; one original only, same8192/$0.25. No key in preparation.

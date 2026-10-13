@@ -13,13 +13,13 @@ from .test_journal import entry
 def test_extension_requires_exact_tenant_and_project():
     tenant, project = ceiling.REVIEWED_EXTENSION
     approved = ceiling.ceiling_for({'tenant': tenant, 'project': project})
-    assert (approved.maximum_calls, approved.maximum_units, approved.authorization) == (12, 3050000000, 'UI-01.08g')
+    assert (approved.maximum_calls, approved.maximum_units, approved.authorization) == (13, 3300000000, 'UI-01.08h')
     for key in ({'tenant': 'other', 'project': project}, {'tenant': tenant, 'project': 'other'}):
         default = ceiling.ceiling_for(key)
         assert (default.maximum_calls, default.maximum_units) == (4, 1000000000)
 
 
-def test_original_four_holds_survive_extension_and_twelfth_slot_race(stored, monkeypatch):
+def test_original_four_holds_survive_extension_and_thirteenth_slot_race(stored, monkeypatch):
     ledger = BudgetLedger(stored.engine)
     originals = [entry(stored, 'original-' + str(i)) for i in range(4)]
     retained = [ledger.reserve(stored.principal, *pair) for pair in originals]
@@ -35,7 +35,8 @@ def test_original_four_holds_survive_extension_and_twelfth_slot_race(stored, mon
         ledger.reserve(stored.principal, *entry(stored, name, version='3'))
     ledger.reserve(stored.principal, *entry(stored, 'tenth', units=300000000, version='5'))
     ledger.reserve(stored.principal, *entry(stored, 'eleventh', units=250000000, version='6'))
-    pairs = [entry(stored, 'twelfth-' + str(i), units=250000000, version='7') for i in range(2)]
+    ledger.reserve(stored.principal, *entry(stored, 'twelfth', units=250000000, version='7'))
+    pairs = [entry(stored, 'thirteenth-' + str(i), units=250000000, version='8') for i in range(2)]
     barrier = Barrier(2)
     def reserve(pair):
         barrier.wait(timeout=5)
@@ -50,8 +51,8 @@ def test_original_four_holds_survive_extension_and_twelfth_slot_race(stored, mon
         assert BudgetLedger(stored.engine).reserve(stored.principal, *pair) == original
     with stored.engine.begin() as connection:
         check(connection, {'tenant': scope.tenant_id, 'project': scope.project_id})
-    # Dispatch sees the same twelve-slot policy, rather than the predecessor four-slot cap.
+    # Dispatch sees the same thirteen-slot policy, rather than the predecessor four-slot cap.
     assert DispatchJournal(stored.engine).issue(stored.principal, fifth[0], 30) is not None
     assert DispatchJournal(stored.engine).issue(stored.principal, fifth[0], 30) is None
     with pytest.raises(ValueError, match='curation_group_calls_exhausted'):
-        ledger.reserve(stored.principal, *entry(stored, 'thirteenth', units=250000000, version='7'))
+        ledger.reserve(stored.principal, *entry(stored, 'fourteenth', units=250000000, version='8'))
