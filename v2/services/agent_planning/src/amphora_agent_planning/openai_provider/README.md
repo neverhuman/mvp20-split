@@ -28,3 +28,12 @@ UI-01.08b diagnostic repair: after a decoded response, retain only an immutable 
 Cost reconciliation2026-10-12: curation additionally exposes HTTP status, fixed endpoint/method, exact request-body digest, receive UTC and bounded x-request-id for qualification export on success or error. No Authorization header or arbitrary response headers/prose are retained. Missing/invalid request IDs remain null; this evidence correlates transport requests, not billing invoices. Existing request body bytes and retry behavior remain unchanged.
 
 UI-01.08d adds immutable ResponseShape diagnostics: closed message/reasoning/other item counts, output text block/UTF-8 byte counts and usage/input/output-field presence. No remote text or arbitrary names retained. Metadata never changes parsing, usage accounting or acceptance.
+
+Planning0.140 adds explicit scientific-v1 response window up to180s only for the
+reviewed demo scope and v10 model profile. Defaults remain60s; transport requires
+its own explicit profile and executor requires an explicit180s ceiling. Dispatch
+records the chosen deadline, provider narrows to remaining time, existing job
+heartbeat renews its60s fence independently. No retry, budget increase, reinterpretation
+of retained attempts or promise of remote cancellation. Provider-disabled checks
+validate model/window compatibility without loading keys. The earlier managed v10
+call remains indeterminate with unknown usage and its full0.25USD hold.

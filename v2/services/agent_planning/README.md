@@ -142,3 +142,12 @@ within the unchanged250000000 reservation. All prior profiles/holds remain valid
 other scopes cannot select this profile. This addresses a retained scientific
 request with45223 reported input/8192 output tokens and incomplete output; it is
 not a scientific-validity claim or a refund/retry of that original request.
+
+Planning0.140 adds explicit scientific-v1 response window up to180s only for the
+reviewed demo scope and v10 model profile. Defaults remain60s; transport requires
+its own explicit profile and executor requires an explicit180s ceiling. Dispatch
+records the chosen deadline, provider narrows to remaining time, existing job
+heartbeat renews its60s fence independently. No retry, budget increase, reinterpretation
+of retained attempts or promise of remote cancellation. Provider-disabled checks
+validate model/window compatibility without loading keys. The earlier managed v10
+call remains indeterminate with unknown usage and its full0.25USD hold.

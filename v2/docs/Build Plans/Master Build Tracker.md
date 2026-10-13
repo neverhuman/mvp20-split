@@ -1,6 +1,6 @@
 # Master Build Tracker
 
-Latest M3.4 checkpoint: 2026-10-12 23:03:10: Planning0.139 token rebalance source106 and independentr106 pass; all15 original envelopes/outcomes unchanged, actual scientific packet fits v10. prepare_scientific19855 passes actual owner publication/disabled-worker check and drains. Servingf prepared, not live-qualified. Preserves0.25USD per-call hold and36/$9.00 remainder; no new provider call.
+Latest M3.4 checkpoint: 2026-10-12 23:23:14: Planning0.140 explicit scientific180s window qualified:132 source,122 scoped independently installed tests pass;16 original envelopes/outcomes replay unchanged. Actual prepare83309 passes and drains servingg with no model call. Initial installed collection lacked unrelated dev-corpus support; scoped retry preserves installed isolation. Budget remains35 slots/$8.75; live scientific acceptance/localLAN still pending.
 
 ## Purpose and Authority
 

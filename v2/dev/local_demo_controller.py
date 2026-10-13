@@ -92,7 +92,7 @@ class Controller:
         for name, row in self.control('/status')['scientific_workers'].items():
             if row['faulted']:
                 self.control('/scientific-workers/' + name + '/recover', 'POST')
-        self.wait(lambda: all(row['state'] == 'quiescent' for row in self.control('/status').get('workers', {}).values()))
+        self.wait(lambda: all(row['state'] == 'quiescent' for row in self.control('/status').get('workers', {}).values()), timeout=210)
         for owner in ('runtime', 'artifact'):
             self.control('/tool-access/' + owner + '/drain', 'POST')
         self.wait(lambda: all(row['state'] == 'drained' for row in self.control('/status')['tool_access'].values()))

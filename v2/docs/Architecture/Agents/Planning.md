@@ -87,3 +87,16 @@ duplicating a human principal or sharing operator credentials. Private profilev2
 selects these two actors explicitly; legacyv1 keeps its original same-actor behavior.
 A configuration binding creates no grant: Runtime/Registry authenticate their own
 principals, and retained selections reject a changed peer identity on replay.
+
+## Provider response windows and output allocation
+
+Token allowance and response deadline are independent controls. Output allowance
+includes reasoning as well as visible graph text ([official OpenAI reasoning
+guidance](https://developers.openai.com/api/docs/guides/reasoning)). A larger graph
+can need both enough output tokens and a bounded longer wait. Keep spend reservations,
+request identity and recorded dispatch deadlines explicit; timeout does not prove
+zero provider spend or authorize resending an original. Curation job heartbeats renew
+ownership separately from provider timing, and quiescence waits for the bounded turn.
+Current scientific profile keeps the same0.25USD hold while reallocating input/output;
+the opt-in180s response window is separate from the default60s profile. Actual
+provider acceptance, software execution and scientific validity remain separate gates.

@@ -10,16 +10,17 @@ from ..context.policy import require
 from ..openai_provider.adapter import OpenAIProvider
 from ..openai_provider.http import OpenAIHTTP
 from ..providers.port import ProviderUnavailable
+from .window import CurationResponseWindow
 
 
 class CurationOpenAI:
     revision = 'curation-responses-v1'
 
-    def __init__(self, api_key, *, scope, egress, timeout_seconds=60, transport_factory=OpenAIHTTP):
+    def __init__(self, api_key, *, scope, egress, timeout_seconds=60, deadline_profile='standard-v1', transport_factory=OpenAIHTTP):
         require(egress == 'approved_synthetic_engineering_only', 'curation_egress_required')
-        require(type(timeout_seconds) is int and 1 <= timeout_seconds <= 60, 'curation_provider_timeout')
         self.scope = Scope.model_validate(scope.model_dump(mode='python', warnings=False))
-        transport_factory(api_key, timeout_seconds=timeout_seconds, maximum_body_bytes=262144)
+        self.window=CurationResponseWindow.bind(deadline_profile,timeout_seconds,self.scope)
+        transport_factory(api_key, timeout_seconds=timeout_seconds, maximum_body_bytes=262144,**self.window.transport_options)
         self._key, self.timeout, self._factory = api_key, timeout_seconds, transport_factory
         self.last_response = None
         self.last_transport_failure = None
@@ -42,13 +43,14 @@ class CurationOpenAI:
         original = binding.request.document()
         require(original.reference.scope == self.scope, 'curation_provider_scope')
         CurationAllowance.cost(original.context.model, original.context.limits)
+        self.window.require_model(original.context.model)
         prepared = CurationEnvelope.bind(binding.request, packet)
         require(prepared.input_bound <= original.context.limits.max_input_tokens, 'curation_input_reservation_exceeded')
         require(type(deadline_unix_ms) is int, 'curation_provider_deadline')
         remaining = math.floor((deadline_unix_ms - time.time() * 1000) / 1000)
         if remaining < 1:
             raise ProviderUnavailable()
-        transport = self._factory(self._key, timeout_seconds=min(self.timeout, remaining), maximum_body_bytes=262144)
+        transport = self._factory(self._key, timeout_seconds=min(self.timeout, remaining), maximum_body_bytes=262144,**self.window.transport_options)
         decoder = OpenAIProvider(transport, None)
         try:
             return decoder.reply_prepared(prepared)

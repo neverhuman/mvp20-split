@@ -15,8 +15,9 @@ from .packet import authorize, CurationProvider
 
 
 class CurationExecutor:
-    def __init__(self, engine, data, provider, *, timeout_seconds=60):
-        require(type(timeout_seconds) is int and 1 <= timeout_seconds <= 60, 'curation_execution_timeout')
+    def __init__(self, engine, data, provider, *, timeout_seconds=60, timeout_ceiling=60):
+        require(type(timeout_ceiling) is int and timeout_ceiling in {60,180},'curation_execution_timeout_profile')
+        require(type(timeout_seconds) is int and 1 <= timeout_seconds <= timeout_ceiling, 'curation_execution_timeout')
         self.engine, self.data, self.provider, self.timeout = engine, data, provider, timeout_seconds
         self.jobs, self.inputs = CurationJobs(engine), CurationPreparationJournal(engine)
         self.declarations, self.attempts = DeclarationJournal(engine), PlanningJournal(engine)

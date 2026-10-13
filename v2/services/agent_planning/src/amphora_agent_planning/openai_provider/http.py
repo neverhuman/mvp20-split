@@ -12,9 +12,11 @@ from ..providers.port import ProviderUnavailable
 MAX_ENVELOPE = 1048576
 
 class OpenAIHTTP:
-    def __init__(self, api_key, *, timeout_seconds=45, maximum_body_bytes=16384, connection_factory=http.client.HTTPSConnection):
+    def __init__(self, api_key, *, timeout_seconds=45, maximum_body_bytes=16384, timeout_profile='standard-v1', connection_factory=http.client.HTTPSConnection):
         require(type(api_key) is str and bool(api_key) and "\n" not in api_key and "\r" not in api_key, "openai_credentials_missing")
-        require(type(timeout_seconds) is int and 1 <= timeout_seconds <= 60, "openai_timeout")
+        require(timeout_profile in {'standard-v1','curation-scientific-v1'}, 'openai_timeout_profile')
+        maximum_timeout=180 if timeout_profile=='curation-scientific-v1' else 60
+        require(type(timeout_seconds) is int and 1 <= timeout_seconds <= maximum_timeout, "openai_timeout")
         self._key,self.timeout,self.factory = api_key,timeout_seconds,connection_factory
         require(type(maximum_body_bytes) is int and maximum_body_bytes in {16384,32768,65536,262144}, "openai_http_limit")
         self.maximum_body_bytes = maximum_body_bytes

@@ -75,6 +75,8 @@ class ReviewedConfiguration:
             request = policy.document().template
             require(request.actor_id == config.actor_id and request.reference.scope == config.scope,
                     'curation_worker_policy_identity')
+            if config.live is not None:
+                config.live.window.require_model(request.context.model)
         return cls(config, policies)
 
     def eligibility(self):

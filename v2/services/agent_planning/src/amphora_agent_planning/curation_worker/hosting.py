@@ -57,7 +57,8 @@ class CurationHost:
             publisher = DeclarationPublisher(DeclarationJournal(engine), peers.artifacts)
             worker = CurationWorker(engine, reviewed.policy_map(), peers.assembler, publisher,
                 CurationExecutor(engine, peers.data, provider,
-                    timeout_seconds=config.live.timeout_seconds if config.live is not None else 60), compiler)
+                    timeout_seconds=config.live.timeout_seconds if config.live is not None else 60,
+                    timeout_ceiling=config.live.window.maximum if config.live is not None else 60), compiler)
             fulfillments = FulfillmentWorker(FulfillmentVerifier(engine, peers.acceptance))
             return cls(engine, principal, CurationPoller(worker, list(reviewed.policy_map()), config.worker_id,
                 fulfillments=fulfillments))

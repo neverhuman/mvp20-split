@@ -1,0 +1,28 @@
+{
+  "scope": {
+    "tenant_id": "internal",
+    "project_id": "knowledge-demo-1b1dc25768334153b58973882627b858"
+  },
+  "canonical_check": "passed",
+  "original_reservations": [
+    {
+      "engagement_id": "curation-call-2d25c22a10dec9961d7fb201b98c4ce7ed27c802db948020efd3a794ec1df31c",
+      "ordinal": 1,
+      "accounting_units": 250000000
+    },
+    {
+      "engagement_id": "curation-call-a6c6350aaa1afed17745f0775e03edcfe01e8231dc9b6e320dbd9f6a09748cfa",
+      "ordinal": 1,
+      "accounting_units": 250000000
+    }
+  ],
+  "reserved_slots": 2,
+  "reserved_units": 500000000,
+  "maximum_slots": 37,
+  "maximum_units": 9250000000,
+  "authorization": "UI-01.08j-demo-remainder",
+  "remaining_slots": 35,
+  "remaining_reservation_units": 8750000000,
+  "unit": "usd_nanodollars",
+  "provider_enabled": false
+}

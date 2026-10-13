@@ -103,3 +103,12 @@ This exposes existing behavior, with no new public API, migration, impersonation
 mechanism or grant. V1 still rejects alternate peer identities and has unchanged
 defaults; V2 requires an explicit Runtime actor. Peer services retain unique
 identity configuration and enforce their own restricted actions. No admission grant.
+
+Planning0.140 adds explicit scientific-v1 response window up to180s only for the
+reviewed demo scope and v10 model profile. Defaults remain60s; transport requires
+its own explicit profile and executor requires an explicit180s ceiling. Dispatch
+records the chosen deadline, provider narrows to remaining time, existing job
+heartbeat renews its60s fence independently. No retry, budget increase, reinterpretation
+of retained attempts or promise of remote cancellation. Provider-disabled checks
+validate model/window compatibility without loading keys. The earlier managed v10
+call remains indeterminate with unknown usage and its full0.25USD hold.

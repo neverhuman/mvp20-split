@@ -15,8 +15,8 @@ from local_numeric_configuration import write
 
 
 def prepare(root,source,planning,material,output):
-    assert read(planning/'manifest.json')['packages']['amphora-agent-planning']=='0.139.0'
-    model=read(material);assert model['status']=='passed' and len(model['replays'])==15
+    assert read(planning/'manifest.json')['packages']['amphora-agent-planning']=='0.140.0'
+    model=read(material);assert model['status']=='passed' and len(model['replays'])==16
     shutil.copytree(source,output)
     def relocate(v):
         if isinstance(v,dict):return {k:relocate(x) for k,x in v.items()}
@@ -37,21 +37,23 @@ def prepare(root,source,planning,material,output):
         roots['configuration']=Publication(api,policy['template']['reference']['scope']).publish(
             b'OpenAI gpt-5.4-mini-2026-03-17 Responses v10, same medium reasoning and prompt/schema as v9. '
             b'Max input196608 and output16384, worst-case cost0.221184USD within unchanged0.25USD reservation. '
-            b'Exact approved demo remainder; original failed call and holds retained. Synthetic engineering only; no retries.',schema)
+            b'Explicit scientific-v1 response window180seconds, unchanged money/token limits. '
+            b'Exact approved demo remainder; both original failed calls and holds retained. Synthetic engineering only; no retries.',schema)
     policy['template']['context']['model'].update(configuration=roots['configuration'],tokenizer=model['tokenizer'])
     policy['template']['context']['limits']=model['limits']
     write(output/'curation-roots.json',roots);write(output/'curation-policy.json',policy)
     worker=read(output/'curation-worker.json');worker.update(provider='openai_curation_v1',
-        live={'key_env':'AMPHORA_OPENAI_API_KEY','scope':worker['scope'],'egress':'approved_synthetic_engineering_only','timeout_seconds':60})
+        live={'key_env':'AMPHORA_OPENAI_API_KEY','scope':worker['scope'],'egress':'approved_synthetic_engineering_only',
+              'timeout_seconds':180,'deadline_profile':'scientific-v1'})
     write(output/'curation-worker.json',worker)
-    # Check is provider-disabled and reads no model key; the original response
-    # deadline, single-attempt rule and reservation remain unchanged.
+    # Check is provider-disabled and reads no model key. The explicit response
+    # window does not alter token limits, single-attempt rule or reservation.
     from amphora_deployment.lifecycle.routes import Routes
     env=filtered_environment();env.update(load_bindings(root,output/'owners.json',Routes.load(root))['planning'].environment)
     with (output/'scientific-check.log').open('wb') as log:
         subprocess.run([str(planning/'environment/Scripts/python.exe'),'-I','-m','amphora_agent_planning.curation_worker',
             'check','--config',str(output/'curation-worker.json')],env=env,stdout=log,stderr=log,check=True,timeout=60)
-    prepared=read(output/'managed-prepared.json');prepared.update(status='prepared_v10_live_pending_activation',planning_release='0.139.0',source=str(source))
+    prepared=read(output/'managed-prepared.json');prepared.update(status='prepared_v10_live_pending_activation',planning_release='0.140.0',source=str(source))
     write(output/'managed-prepared.json',prepared)
     print('Scientific v10 prepared and checked without provider; original files and reservations preserved',flush=True)
 

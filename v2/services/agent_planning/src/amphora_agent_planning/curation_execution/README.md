@@ -19,3 +19,12 @@ erase the original observation/accounting; only job-progress writes need a curre
 lease. Unknown outcomes retain conservative accounting and never reissue.
 Tests: tests/curation_execution. Process heartbeat/managed scheduling and compiler
 handoff remain separate gates. Zero live calls in module qualification.
+
+Planning0.140 adds explicit scientific-v1 response window up to180s only for the
+reviewed demo scope and v10 model profile. Defaults remain60s; transport requires
+its own explicit profile and executor requires an explicit180s ceiling. Dispatch
+records the chosen deadline, provider narrows to remaining time, existing job
+heartbeat renews its60s fence independently. No retry, budget increase, reinterpretation
+of retained attempts or promise of remote cancellation. Provider-disabled checks
+validate model/window compatibility without loading keys. The earlier managed v10
+call remains indeterminate with unknown usage and its full0.25USD hold.

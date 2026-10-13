@@ -30,7 +30,7 @@ def main(root,output):
         ('curation-live-compatible-20261012a','supported',True),('curation-live-semantics-20261012a','supported',True),
         ('curation-live-reasoning-20261012a','supported',True),('curation-live-feedback-20261012a','supported',True),
         ('curation-live-feedback-20261012b','supported',True),('curation-live-medium-20261012a','supported',True),
-        ('curation-demo-live-browser-20261012a','',False)]
+        ('curation-demo-live-browser-20261012a','',False),('curation-demo-live-browser-20261012b','',False)]
     replays=[]
     for folder,scenario,accepted in cases:
         path=root/folder/scenario;raw=(path/'original-packet.json').read_bytes();packet=json.loads(raw)
@@ -59,7 +59,7 @@ def main(root,output):
         'limits':value['context']['limits'],'original_output_sha256':hashlib.sha256((path/'original-output.json').read_bytes()).hexdigest(),
         'limitations':['Offline fit only; new declaration/model artifact and actual provider acceptance still required']}
     assert not output.exists();output.write_text(json.dumps(material,indent=2)+'\n')
-    print('Fifteen original replays unchanged; actual scientific context fits v10 within original reservation',flush=True)
+    print('Sixteen original replays unchanged; actual scientific context fits v10 within original reservation',flush=True)
 
 
 if __name__=='__main__':main(*map(Path,sys.argv[1:]))

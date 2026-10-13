@@ -63,10 +63,14 @@ identity fields; peer uniqueness and restricted-action guards remain unchanged.
 
 serve.py starts the prepared scientific configuration through one installed supervisor, verifies all five directed peer reads against retained owner data, audits the exact remaining allowance in the Planning interpreter, and exposes a bounded local session. Optional explicit live mode forwards the approved key only in memory to the supervisor and starts the managed curation worker. No campaign or curation request is created automatically; STOP drains owned processes. Source preparation remains immutable while serving.
 
-material_scientific.py runs solely in the installed Planning interpreter: fifteen
+material_scientific.py runs solely in the installed Planning interpreter: sixteen
 original envelopes/parser outcomes replay unchanged and the retained scientific
 context fits v10 with unchanged prompt/schema/medium reasoning and0.25USD hold.
 prepare_scientific.py copies only configuration paths, preserves hash-pinned schema
 bytes, publishes a new model-configuration Artifact through Data, then freezes the
 new policy after drain. It checks the new installed worker without reading a key;
 actual model/browser acceptance is separate. No prior policy or request is rewritten.
+
+The explicit scientific-v1 response window permits180s for v10/demo only; legacy
+profiles keep60s. The dev controller allows210s for noninterrupting native-worker
+quiescence. Both prior scientific calls remain immutable and fully reserved.

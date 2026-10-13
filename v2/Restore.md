@@ -1,37 +1,42 @@
 # Restore
 
-Refreshed: 2026-10-12 23:01:36 America/Chicago. Read FIRST after compaction.
-Latest pushed f0b5470d. prepare_scientific19855 PASSED/drained newservingf withPlanning0.139r.
-No activeprocess. Next commit/push then liveactivation/newbrowseroriginal.
-Source62486106 PASS21.24s; independentr98568106 PASS; fifteenoriginalenvelope/parser
-replays PASS via new material_scientific.py. v10offline scientificbound fits196608;
-medium prompt/schema unchanged; output16384 worstcost0.221184 within same0.25hold.
-Locks updated. Uncommitted0.139 implementation and helpers/browser/docchanges.
-Next afterprepare: tracker/commit/push verified0.139, startserve --live servingf
-newsessione; newbrowseroutputb with originalcompletedlaunch recovery and samedirection,
-newcommandonly after newpolicy/tokenprofile verified. Do not retry oldrequest.
-Then actualgraphready/successor/browserLAN/M4; no morequalificationcalls.
-Helpers: serve.py optionalkeyenv through LaunchDemoController/session; prepare_scientific
-copiesconfigpathsonly, schemasexact, publishesnewmodelconfigArtifact thenupdatespolicy
-afterdrain. Keeps60s/singleattempt. material_scientific runsinsideinstalledPlanningr.
-No activepaidcall now. CurrentUI OFFLINE. Shared storesrunning/schema0027.
-Localbrowserlaunch88042 PASS, .test-results/curation-demo-browser-20261012a;
-actualscientificresults1440/390 screenshotsinspected. RecoveryJSONrecords exactlaunch.
-Livebrowser30365 FAILEDindeterminate/response_interrupted, output
-.test-results/curation-demo-live-browser-20261012a. Curationfea11860f36c4c1ff655778fd6e380602ed0425cb4a1d48f26e99540a0c977c6.
-45223input/8192output,7715capturedbytes; noacceptedproposal. Fullenvelope174730bytes.
-Readonlyexport88413 PASS, original-envelope/packet/output/observation/accounting and
-allowance-after retained. Demo1/$0.25held; oldqualification16/$4.05 unchanged;
-remaining36/$9.00 approved. Fournewcallssince$10approval reportedtotal$0.220470750;
-$1.00held. No refunds, noautoreties. Singlecallreservationunchanged afterv10repair.
-Servingc isoriginalprepared providerdisabled Planningq0.138; servingd failedstartup
-because shellclone reformattedhashpinnedJSON (preservedfailure); servinge corrected
-copy passedactualmanagedreadiness/peer/allowance andlivecall, explicitlydrained39794.
-Sessiona54409 Windowsbaseenvfault fixed; sessionb83584 disabledpass/drain;
-sessionc86667 d-schemafault; sessiond39794 livee passedreadiness/drain.
-Newtestcuration_managed_scientific.mjs oneoriginal->recordedoutcome, noautoretry/
-successor. Need newactualgraphbeforeM3.4credit. No agents/JARVIS;v1readonly;
-preserveocularPDF/DOCX. UI-01.08j68.75/M3.4=0 untilactualdelivery; parentsunchanged.
+Refreshed: 2026-10-12 23:16:42 America/Chicago. Read FIRST after compaction.
+Latest pushed d3cf1298 (Planning0.139 token rebalance/managed helpers/browser).
+Installedscopedtests16730 Planning0.140s PASSED122/112.68s.
+Actualprepare83309 PASSED/drained servingg. No activeprocess. Next commit/push
+then startserve live servingg/sessionf and newbrowserc original (same direction). Source98490131 PASS133.36s plus
+newlongdispatchdeadline/replay test327611 PASS8.02s (132total). Locks updated.
+No otherlive/process/model; sharedstoresrunning, UI OFFLINE.
+Sourcechanges: new CurationResponseWindow, LiveSettings deadline_profile default
+standard-v1<=60; scientific-v1<=180 exactdemo+v10; HTTPexplicittimeoutprofile;
+executor explicitceiling, hostpropagation, disabledcheckmodelguard; helpernative
+quiescencewait210. Version0.140/locksupdated; independentinstallationexists; scopedtests running. Newtestswindow.py.
+Latestlive: servingf0.139 / sessione28540 passedready then drained. Browser51074
+output .test-results/curation-demo-live-browser-20261012b indeterminate with no
+output/usage, reason dispatch_outcome_unknown; export53183 PASS.
+Originala v9 got8192output and7715capturedbytes, reported$0.07078125; originalb
+v10 emptyout, unknownusage; noacceptedscientificproposal. Both receipts/envelopes/
+packets/output/observations/accounting/allowanceafter retained. No retry ofeither.
+Demo2/$0.50holds, oldqualification16/$4.05intact; remaining35/$8.75. Additional$10
+fivecallstotal/$1.25held; reportedknownsum$0.220470750 PLUS oneunknowncharge.
+Next liveactivation aftercommit. Installeds material_scientific.py PASS all16exactreplays and fit;
+scientific-material.json alreadyexists. 17595 initialcollection failed on3 unrelated
+dev-corpus imports; allpassedsource, changedboundarysuite nowtargeted installed122.
+Helper already adds b as16th exactreplay; originalv10limits retained. prepare_scientific
+now pins0.140/material16 and newmodelconfig180deadline + worker scientific-v1/180.
+Use sourcec
+(providerdisabled) to newservingg. Current helperupdated; remember no sourceeditsduringinstall/tests. No migration/publicAPI/budgetincrease. Needactualnew
+request afterchecks, then graph/successor/localLAN/recovery/M4. No ownerneeded yet.
+Exactdemo scope internal/knowledge-demo-1b1dc25768334153b58973882627b858.
+Local scientific launch88042 PASSED .test-results/curation-demo-browser-20261012a,
+launch recoveryJSON supports next scientificcurationtest. Testsource
+studio/tests/integration/curation_managed_scientific.mjs oneoriginal/noautoretry.
+Newbrowserc input cancopya/input.json (freshlaunch-onlybrowserstate same direction).
+Source106/installedr106 and prior15replays passed for0.139. Preserve immutableschema
+bytes onclone (failedd reformattedthem); prepare_scientific doescorrectcopy.
+OpenAI Docs skill read+used; official reasoningpage confirmsmaxoutput includes
+reasoning; no modelchange. https://developers.openai.com/api/docs/guides/reasoning
+No agents/JARVIS;v1readonly;preserveocularPDF/DOCX. UI-01.08j68.75/M3.4=0 untildelivery.
 
 ## Current achievement and next task
 

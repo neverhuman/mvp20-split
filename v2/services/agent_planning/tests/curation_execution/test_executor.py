@@ -152,3 +152,14 @@ def test_revocation_after_issuance_records_unknown_without_sending(stored, monke
     result = executor.execute(principal, lease)
     assert result.observation.document().status == 'unknown' and provider.calls == 0
     assert CurationExecutor(stored.engine, None, None).execute(principal, lease) == result
+
+
+def test_explicit_long_window_records_deadline_and_replays_without_resend(stored):
+    import time
+    principal, lease, linked, original, provider, data = setup(stored)
+    executor = CurationExecutor(stored.engine, data, provider, timeout_seconds=180, timeout_ceiling=180)
+    result = executor.execute(principal, lease)
+    assert 120000 < provider.deadline - int(time.time() * 1000) <= 180000
+    assert provider.calls == 1
+    assert CurationExecutor(stored.engine, None, None).execute(principal, lease) == result
+    assert provider.calls == 1
