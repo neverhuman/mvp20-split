@@ -13,7 +13,7 @@ export interface CandidateSource {
  jsonArtifact(reference:ArtifactRef,signal:AbortSignal):Promise<unknown>;
 }
 export type CandidateInspection=Readonly<{result:StructureResult;candidate:CandidateRevision|null;recommendation:StructureRecommendation|null;
- depiction:string|null;execution:AcceptedToolExecution;source:ArtifactRef;representation:ArtifactRef}>;
+ depiction:string|null;execution:AcceptedToolExecution;source:ArtifactRef;representation:ArtifactRef;cut:GraphSnapshotPage['snapshot']['cut'];node:GraphNodeDetail['node']}>;
 type View=Readonly<{phase:'idle'|'loading'|'ready'|'failed'|'denied';inspection:CandidateInspection|null;error:string|null}>;
 
 /** One selected activation at a pinned read cut. Never reuses content after hide/rebind. */
@@ -44,7 +44,7 @@ export class CandidateInspectorModel {
     ({candidate,recommendation}=contents.registration(record));
     depiction=await verifiedPNG(result.outcome.depiction,ticket.signal);
    }
-   if(ticket.current())this.patch({phase:'ready',inspection:{result,candidate,recommendation,depiction,execution:proof,source:execution.input,representation:execution.output},error:null});
+   if(ticket.current())this.patch({phase:'ready',inspection:{result,candidate,recommendation,depiction,execution:proof,source:execution.input,representation:execution.output,cut:context.anchor.cut,node:context.detail.node},error:null});
   }catch(error){if(ticket.current())this.patch({phase:(error as {kind?:string})?.kind==='denied'?'denied':'failed',inspection:null,
    error:'Candidate evidence could not be verified. No structure is displayed. Refresh the execution snapshot or inspect the accepted attempt.'});}
  }

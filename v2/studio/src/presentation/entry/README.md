@@ -124,3 +124,5 @@ This bounded local navigation is not a server campaign directory. Successor cura
 uses full original requested Knowledge/Research/artifact pins through the optional
 CampaignPlanningContext.curationContext interface. Original launch provenance remains
 unchanged. Explicit next-cycle entry only prepares the composer after terminal proof.
+
+2026-10-13 17:55:20: UI-02/P3: Results now mounts CandidateResults independently of the legacy scalar campaign context. It discovers only direct chemical-structure outputs of the selected run, preserves partial-scan limits, and never supplies a molecule for Hansen/Arrhenius parameters. Hidden Results unmount the inspector and cancel protected reads.

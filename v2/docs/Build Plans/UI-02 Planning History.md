@@ -165,3 +165,17 @@ CRC, dimensions and decompressed scanlines; SVG/animation/metadata reject.
 12 focused transport/model/image tests and strict build pass, using actual P1 output
 with synthetic cut wrappers. No live/browser claim. P3=33.33%, overall58.33%,
 Build77.78%, Verification0%. Next P3.2 Results discovery/panel/navigation.
+
+## 2026-10-13 17:55:20 - P3 candidate inspector complete
+
+Studio0.36 Results/direct execution inspection renders protected supplied formula,
+2D PNG, exact candidate revision, method and source/result provenance; accepted
+execution disclosure preserves the original cut. No molecular selection/properties/
+synthesis evidence is invented. Discovery max2pages/100nodes explicitly marks
+collections and omitted outputs partial. Numerical generation panels expose P2
+recorded policy/selected count/fronts independently. Hidden/denied/rebound views clear.
+472 full Studio checks pass. Scripted browser e and numerical selection browser a
+pass image decode/CSP,1440/390/200%, axe, overflow and denial. Visual review caught
+inherited fixed-height header overlap; scoped override plus geometric oracle fixes
+it. P3=100%; overall75%, Build100%, Verification0%. Actual owners/new serving remain
+P4. No paid calls. P3.1 pushedc563db4e; this checkpoint follows.

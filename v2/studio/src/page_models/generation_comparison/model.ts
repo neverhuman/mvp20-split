@@ -3,11 +3,12 @@ import type {DataProvenanceClient} from '../../transport/provenance/data.js';
 import type {RunContext} from '../graph_window.js';
 import {RequestLane} from '../request_lane.js';
 import {discover,type Discovery} from './discovery.js';
+import {RetainedSelection} from '../candidate_evidence/selection.js';
 import {RetainedGeneration,GenerationComparison} from './checkpoint.js';
 type Phase='idle'|'loading'|'ready'|'denied'|'failed'|'stale';
-type Slot=Readonly<{phase:Phase;key:string|null;value:RetainedGeneration|null}>;
+type Slot=Readonly<{phase:Phase;key:string|null;value:RetainedGeneration|null;selection:RetainedSelection|null}>;
 export type GenerationView=Readonly<{phase:Phase;discovery:Discovery|null;left:Slot;right:Slot;message:string|null}>;
-const empty=():Slot=>({phase:'idle',key:null,value:null});
+const empty=():Slot=>({phase:'idle',key:null,value:null,selection:null});
 export class GenerationModel {
  private readonly lane=new RequestLane();private readonly lanes={left:new RequestLane(),right:new RequestLane()};
  private listeners=new Set<()=>void>();private disposed=false;
@@ -26,13 +27,13 @@ export class GenerationModel {
  async select(side:'left'|'right',key:string){
   if(this.disposed||this.view.phase!=='ready')return;
   const ticket=this.lanes[side].begin(),choice=this.view.discovery?.choices.find(c=>c.key===key);
-  this.patch({[side]:{phase:choice?'loading':'idle',key:choice?key:null,value:null},message:null});
+  this.patch({[side]:{phase:choice?'loading':'idle',key:choice?key:null,value:null,selection:null},message:null});
   if(!choice)return;
   try{
    const raw=await this.data.jsonArtifact(choice.reference,ticket.signal);
    if(!ticket.current())return;
-   const value=new RetainedGeneration(choice.reference,raw);
-   this.patch({[side]:{phase:'ready',key,value}});
+   const value=new RetainedGeneration(choice.reference,raw),selection=new RetainedSelection(value);
+   this.patch({[side]:{phase:'ready',key,value,selection}});
   }catch(error){if(ticket.current())this.fail(error,side,key);}
  }
  private fail(error:unknown,side?:'left'|'right',key?:string){
@@ -41,7 +42,7 @@ export class GenerationModel {
   if(kind==='denied'||kind==='resnapshot'||!side){
    this.lane.cancel();this.lanes.left.cancel();this.lanes.right.cancel();
    this.patch({phase:kind==='denied'?'denied':kind==='resnapshot'?'stale':'failed',discovery:null,left:empty(),right:empty(),message:kind==='denied'?'Search evidence is unavailable to this session.':kind==='resnapshot'?'The campaign changed during discovery. Refresh for a coherent read.':'Search outputs could not be verified.'});
-  }else this.patch({[side]:{phase:'failed',key:key??null,value:null},message:kind==='limit'?'This checkpoint exceeds the 256 KiB inspection limit.':'The selected checkpoint could not be verified.'});
+  }else this.patch({[side]:{phase:'failed',key:key??null,value:null,selection:null},message:kind==='limit'?'This checkpoint exceeds the 256 KiB inspection limit.':'The selected checkpoint could not be verified.'});
  }
  dispose(){this.disposed=true;this.lane.cancel();this.lanes.left.cancel();this.lanes.right.cancel();this.listeners.clear();}
 }

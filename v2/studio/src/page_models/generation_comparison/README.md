@@ -52,3 +52,5 @@ Qualified2026-10-11 19:50:00: actual independently installed Runtime/Data/Gatewa
 read retained generations0 and2,39 activations;1440/390 inspected. Restored
 scientific demo/LAN original-run regression passes. No paid calls or new campaigns.
 [Scoped audit](../../../../docs/Audits/UI-01_N2.3_Generation_Comparison.md).
+
+2026-10-13 17:55:20: UI-02/P3: Each loaded slot validates RetainedSelection alongside RetainedGeneration before becoming ready. The projection owns recorded policy/disposition/fronts; presentation does not reconstruct a ranking.

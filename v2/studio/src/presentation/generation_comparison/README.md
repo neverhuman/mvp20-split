@@ -15,3 +15,5 @@ Qualified2026-10-11 19:50:00: actual independently installed Runtime/Data/Gatewa
 read retained generations0 and2,39 activations;1440/390 inspected. Restored
 scientific demo/LAN original-run regression passes. No paid calls or new campaigns.
 [Scoped audit](../../../../docs/Audits/UI-01_N2.3_Generation_Comparison.md).
+
+2026-10-13 17:55:20: UI-02/P3: Selection policy, requested/selected count, recorded Pareto fronts and evaluator/constraint/context metadata now come from the page-model RetainedSelection projection. No browser ranking or inferred molecular applicability. Missing receipt remains explicit.

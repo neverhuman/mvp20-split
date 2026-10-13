@@ -113,3 +113,5 @@ would be outside the canvas. Initial/saved viewport, manual pan/zoom and partial
 visible context remain unchanged; no owner data or network behavior changes.
 Module browser checks require visible nodes after1440->390 resize and retain
 the existing hidden-pane/reopen viewport-memory assertion.
+
+2026-10-13 17:55:20: UI-02/P3: candidate_inspector/ owns supplied finite-molecule formula/2D/provenance presentation in Results and selected execution evidence. Candidate owner reads and protected image validation remain page-model concerns; see its replacement README.

@@ -9,7 +9,7 @@ import type {CandidateSource} from '../../../src/page_models/candidate_inspector
 export function fixture(){
  const result=decodeCandidate('result',structuredClone(retained.result)),request=decodeCandidate('request',structuredClone(retained.request));
  const scope=result.scope,anchor=snapshot().snapshot,detail=evidenceDetail(),record=completion();
- anchor.cut.scope=scope;detail.cut.scope=scope;record.scope=scope;
+ detail.node.status="succeeded";anchor.cut.scope=scope;detail.cut.scope=scope;record.scope=scope;
  const output:ArtifactRef={artifact_id:'chemical-output',scope,sha256:'a'.repeat(64),media_type:'application/json',size_bytes:16911,schema_ref:{...structureProfiles.result,version:'1'}};
  const input:ArtifactRef={...output,artifact_id:'chemical-input',sha256:result.source_sha256,size_bytes:650,schema_ref:{...structureProfiles.request,version:'1'}};
  detail.outputs[0]!.artifact=output;

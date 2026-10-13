@@ -30,3 +30,5 @@ BP-06.06 scientific/ owns distinct Knowledge/Research same-origin clients with e
 
 
 2026-10-07 15:41:38: SQ-01 followup/ reads a full public Runtime response, verifies inspection/request/capture identity and separately checks Data content permission/hash. Criterion reads pin exact Research records and optional assessment-status digest. See followup/README.md.
+
+2026-10-13 17:55:20: UI-02/P3: candidate/ adds only existing read-only Research candidate and Runtime accepted-producer routes to ScientificHTTP. Current Data metadata/content access is independent; no new Gateway or backend contract.

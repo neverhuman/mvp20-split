@@ -2,24 +2,23 @@
 
 ## Canonical tracker
 
-- Status: P1/P2 complete; P3 candidate inspector active.
-- Last refreshed: 2026-10-13 17:47:17 (America/Chicago).
-- Overall implementation:58.33%; Build77.78%, Verification0%. Four equal phases;
-  Build averages P1/P2/P3; Verification is P4. P1/P2=100%, P3=33.33%, P4=0%.
+- Status: P1/P2/P3 complete; P4 actual-owner browser qualification active.
+- Last refreshed: 2026-10-13 17:55:20 (America/Chicago).
+- Overall implementation:75%; Build100%, Verification0%. Four equal phases;
+  Build averages P1/P2/P3; Verification is P4. P1/P2/P3=100%, P4=0%.
 - Owner: Studio candidate inspection; tools own representations/evidence, Runtime
   owns accepted execution, Data owns artifacts and Research owns candidate identity.
-- Current task: P3.2 Results discovery and candidate presentation. P3.1 protected
-  owner reads/model/PNG validation complete;12 focused checks and strict build pass.
-- Next task: P3 scoped model/transport/presentation verification, then P4 actual
-  retained-owner/browser/local-LAN acceptance and final architecture audit.
-- Latest checkpoint: 2026-10-13 17:37:39; P2 RetainedSelection consumes explicit numerical
-  policy/objectives/constraints/fronts/selected set without reranking. Supplied
-  structure is unranked; numerical selection is inapplicable.18 focused tests and
-  strict TypeScript build pass. [P1 audit](../Audits/UI-02_Chemical_Representation.md).
-- Blockers: none for P3. No applicable molecular ranking/property/synthesis evidence;
-  initial supplied candidate remains unranked. UI-02 is not served yet.
-- Acceptance: P1 integration verified; P2 evidence projection verified; P3/P4 UI
-  acceptance not started. Demo drained for source work; old Studio0.34.4 restorable.
+- Current task: P4 independent actual-owner/Gateway browser proof and local/LAN
+  serving integration; preserve the existing scalar campaign without attaching a molecule.
+- Next task: P4 final architecture drift audit and handoff, then POP-01 activation.
+- Latest checkpoint: Studio0.36 candidate Results/execution inspector, exact producer/
+  candidate/Artifact binding, protected PNG and numerical retained-selection details.
+  472 Studio checks pass; scripted browser1440/390/200%, actual PNG decode, no overlap/
+  overflow, axe and denial clearance pass. [P1 audit](../Audits/UI-02_Chemical_Representation.md).
+- Blockers: none. Molecular ranking/property/synthesis evidence remains absent and
+  explicit. Actual new inspector is not served yet; P4 owns that qualification.
+- Acceptance: P1 actual integration; P2/P3 scoped software/browser gates complete.
+  Demo stopped for source work. P4 actual deployment/browser acceptance not complete.
 - Parent: none; priority owned by [Master Build Tracker](Master%20Build%20Tracker.md).
 
 ## User outcome and current gap
@@ -55,7 +54,7 @@ contracts/tool output, P2 selection evidence, P3 formula/structure detail, and P
 the actual browser proof. Show candidates even when unranked; use Recommended only
 when the retained policy/evidence supports it. Thu2026-10-15 is the target for P3,
 Fri2026-10-16 for P4, conditional on P1/P2 completion. These are scheduling targets,
-not permission to bypass producer or selection gates. P1/P2 are100%; P3 is active and P4 remains0%.
+not permission to bypass producer or selection gates. P1/P2/P3 are100%; P4 is active0%.
 
 Show a two-dimensional chemical structure or polymer repeat-unit representation,
 with composition and available architecture details: connectivity/attachment points,
@@ -84,14 +83,14 @@ Keep illustrative, generated, predicted and experimentally supported material di
 |---|---:|---|---|
 | P1 representation and provenance contracts | 100% | Activation audit | Inventory producers; define supported representations, identity/revision binding, unsupported/unknown states and artifact validation. Specify missing producer work explicitly; do not fabricate structures from scalar inputs. |
 | P2 recommendation evidence | 100% | P1 complete | Consume an explicit retained selection result, including objective/constraints/policy, candidate set and trade-offs. Verify missing policy, ties, incomparable candidates and insufficient evidence remain truthful. |
-| P3 candidate inspector | 33.33% | P2 complete | Results entry point, 2D structure/repeat-unit or composition rendering, property/synthesis evidence and selection rationale, linked to exact execution and lineage. Safe bounded rendering and module replacement README. |
+| P3 candidate inspector | 100% | P2 complete | Results entry point, 2D structure/repeat-unit or composition rendering, property/synthesis evidence and selection rationale, linked to exact execution and lineage. Safe bounded rendering and module replacement README. |
 | P4 verification and audit | 0% | P3 complete | Module-scoped contract/model/rendering tests and actual retained-artifact browser proof; inspect desktop/mobile/accessibility, wrong candidate/revision, malformed structures and missing evidence. Complete scoped architecture drift audit before closeout. |
 
 ## P3 bounded deliveries
 
 Three equal deliveries: P3.1 authenticated owner reads, projection and protected PNG
-loading (100%); P3.2 Results discovery, candidate panel and execution navigation (0%);
-P3.3 integrated scoped regression and replacement boundary closeout (0%).
+loading (100%); P3.2 Results discovery, candidate panel and execution navigation (100%);
+P3.3 integrated scoped regression and replacement boundary closeout (100%).
 Actual owner/browser/local-LAN acceptance remains P4.
 
 ## Integration boundaries and exclusions
