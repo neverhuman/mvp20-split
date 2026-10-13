@@ -76,3 +76,11 @@ This is two explicit release-policy allocations, not a cross-database global
 paymaster. Deployment must install the release on either active allocation and
 keep prior releases/keys inactive. Retained original replay/issuance stays valid;
 actual original accounting and both last-slot races are acceptance gates.
+
+Planning0.139 adds private curation input v10/fit.v12 for the exact reviewed demo
+scope: medium reasoning and identical v9 prompt/generation schema, input ceiling
+196608 and output ceiling16384. Maximum computed cost221184000 nanodollars stays
+within the unchanged250000000 reservation. All prior profiles/holds remain valid;
+other scopes cannot select this profile. This addresses a retained scientific
+request with45223 reported input/8192 output tokens and incomplete output; it is
+not a scientific-validity claim or a refund/retry of that original request.

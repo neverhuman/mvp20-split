@@ -20,7 +20,7 @@ def test_limits_cannot_be_widened(field, value):
         CurationAllowance.cost(context.model, context.limits.model_copy(update={field: value}))
 
 
-@pytest.mark.parametrize('version', ['1', '2', '3', '4', '6', '7', '8'])
+@pytest.mark.parametrize('version', ['1', '2', '3', '4', '6', '7', '8', '9'])
 def test_old_profiles_cannot_select_larger_output_even_in_approved_scope(version, monkeypatch):
     from amphora_agent_planning.curation_budget import ceiling
     context = source(version=version).request.document().context
@@ -43,3 +43,21 @@ def test_v5_larger_cost_requires_exact_scope_and_retains_hard_limits(monkeypatch
                          ('max_attempts', 2), ('total_accounting_units', 300000001)]:
         with pytest.raises(ValueError, match='curation_cost_limits'):
             CurationAllowance.cost(context.model, context.limits.model_copy(update={field: value}))
+
+
+def test_scientific_output_rebalances_without_larger_reservation(monkeypatch):
+    from amphora_agent_planning.curation_budget import ceiling
+    context = source(version='10', max_input_tokens=196608, max_output_tokens=16384,
+                     total_tokens=212992).request.document().context
+    with pytest.raises(ValueError, match='curation_scientific_scope'):
+        CurationAllowance.cost(context.model, context.limits)
+    scope = context.model.configuration.scope
+    monkeypatch.setattr(ceiling, 'REVIEWED_DEMO', (scope.tenant_id, scope.project_id))
+    assert CurationAllowance.cost(context.model, context.limits) == 221184000
+    for field, value in [('max_input_tokens',196609), ('max_output_tokens',16385),
+                         ('max_attempts',2), ('total_accounting_units',250000001)]:
+        with pytest.raises(ValueError, match='curation_cost_limits'):
+            CurationAllowance.cost(context.model, context.limits.model_copy(update={field:value}))
+    monkeypatch.setattr(ceiling, 'REVIEWED_DEMO', ('other',scope.project_id))
+    with pytest.raises(ValueError, match='curation_scientific_scope'):
+        CurationAllowance.cost(context.model, context.limits)

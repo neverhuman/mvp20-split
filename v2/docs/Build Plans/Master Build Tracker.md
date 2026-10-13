@@ -1,6 +1,6 @@
 # Master Build Tracker
 
-Latest M3.4 checkpoint: 2026-10-12 22:37:16: M3.4 identity repair qualified: Planning0.138 source110/installed56 pass; new servingc62905 preserves original scientific runs/provenance and passes provider-disabled worker check, then drains. Actual local/LAN delivery remains pending; percentages unchanged; no new paid calls.
+Latest M3.4 checkpoint: 2026-10-12 23:03:10: Planning0.139 token rebalance source106 and independentr106 pass; all15 original envelopes/outcomes unchanged, actual scientific packet fits v10. prepare_scientific19855 passes actual owner publication/disabled-worker check and drains. Servingf prepared, not live-qualified. Preserves0.25USD per-call hold and36/$9.00 remainder; no new provider call.
 
 ## Purpose and Authority
 

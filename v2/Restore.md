@@ -1,23 +1,37 @@
 # Restore
 
-Refreshed: 2026-10-12 22:37:16 America/Chicago. Read FIRST after compaction.
-Latest pushed b1059f20; next commit is Planning0.138 scoped peer identity repair.
-Source5674 PASSED110/255.10s; independentq89719 PASSED56/206.53s. Locks updated.
-prepare_serving c62905 PASSED/drained: actual new owners, original scientific
-campaigns and full provenance unchanged, synthetic roots published, providerdisabled
-worker check passed. No model/new campaign. Outputs .test-results/curation-demo-serving-20261012c.
-Original failed a/b preserved. Shared Planning schema0027; stores running, UI OFFLINE.
-NEXT M3.4 full restricted-peer/preparation proof, managed live serving and actual
-scientific local/LAN browser flow. Need optional in-memory model_key forwarding
-in LaunchDemoController/session (existing other controllers provide pattern),
-new bounded serve helper, then browser launch/curation. No processes currently.
-Planningq0.138, Deploymentd0.20.1; preparedc selects Gateway0.7/Studio0.34.1.
-Private worker v2 selects Runtime/Registry planning-author, Knowledge/Research
-planning-reader, Dataadmin restrictedtoken. Requester remainsadmin; existing
-compiler supports separate actors. Public contracts/v1 config unchanged.
-No more paid qualification calls. Exactly37/$9.25 approved remainder for shared
-scope;16/$4.05 old qualification holds remain. No agents/JARVIS;v1 read-only;
-preserve ocularPDF/DOCX. UI-01.08j68.75/M3.4=0 until actualdelivery.
+Refreshed: 2026-10-12 23:01:36 America/Chicago. Read FIRST after compaction.
+Latest pushed f0b5470d. prepare_scientific19855 PASSED/drained newservingf withPlanning0.139r.
+No activeprocess. Next commit/push then liveactivation/newbrowseroriginal.
+Source62486106 PASS21.24s; independentr98568106 PASS; fifteenoriginalenvelope/parser
+replays PASS via new material_scientific.py. v10offline scientificbound fits196608;
+medium prompt/schema unchanged; output16384 worstcost0.221184 within same0.25hold.
+Locks updated. Uncommitted0.139 implementation and helpers/browser/docchanges.
+Next afterprepare: tracker/commit/push verified0.139, startserve --live servingf
+newsessione; newbrowseroutputb with originalcompletedlaunch recovery and samedirection,
+newcommandonly after newpolicy/tokenprofile verified. Do not retry oldrequest.
+Then actualgraphready/successor/browserLAN/M4; no morequalificationcalls.
+Helpers: serve.py optionalkeyenv through LaunchDemoController/session; prepare_scientific
+copiesconfigpathsonly, schemasexact, publishesnewmodelconfigArtifact thenupdatespolicy
+afterdrain. Keeps60s/singleattempt. material_scientific runsinsideinstalledPlanningr.
+No activepaidcall now. CurrentUI OFFLINE. Shared storesrunning/schema0027.
+Localbrowserlaunch88042 PASS, .test-results/curation-demo-browser-20261012a;
+actualscientificresults1440/390 screenshotsinspected. RecoveryJSONrecords exactlaunch.
+Livebrowser30365 FAILEDindeterminate/response_interrupted, output
+.test-results/curation-demo-live-browser-20261012a. Curationfea11860f36c4c1ff655778fd6e380602ed0425cb4a1d48f26e99540a0c977c6.
+45223input/8192output,7715capturedbytes; noacceptedproposal. Fullenvelope174730bytes.
+Readonlyexport88413 PASS, original-envelope/packet/output/observation/accounting and
+allowance-after retained. Demo1/$0.25held; oldqualification16/$4.05 unchanged;
+remaining36/$9.00 approved. Fournewcallssince$10approval reportedtotal$0.220470750;
+$1.00held. No refunds, noautoreties. Singlecallreservationunchanged afterv10repair.
+Servingc isoriginalprepared providerdisabled Planningq0.138; servingd failedstartup
+because shellclone reformattedhashpinnedJSON (preservedfailure); servinge corrected
+copy passedactualmanagedreadiness/peer/allowance andlivecall, explicitlydrained39794.
+Sessiona54409 Windowsbaseenvfault fixed; sessionb83584 disabledpass/drain;
+sessionc86667 d-schemafault; sessiond39794 livee passedreadiness/drain.
+Newtestcuration_managed_scientific.mjs oneoriginal->recordedoutcome, noautoretry/
+successor. Need newactualgraphbeforeM3.4credit. No agents/JARVIS;v1readonly;
+preserveocularPDF/DOCX. UI-01.08j68.75/M3.4=0 untilactualdelivery; parentsunchanged.
 
 ## Current achievement and next task
 

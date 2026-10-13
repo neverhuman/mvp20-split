@@ -134,3 +134,11 @@ API/migration/provider envelope; see curation_budget replacement/accounting boun
 Planning0.138 exposes existing separate compiler Runtime/Registry identities through
 private worker profilev2; original human request ownership and v1 behavior remain.
 See curation_worker/README.md for the restricted directed-credential composition.
+
+Planning0.139 adds private curation input v10/fit.v12 for the exact reviewed demo
+scope: medium reasoning and identical v9 prompt/generation schema, input ceiling
+196608 and output ceiling16384. Maximum computed cost221184000 nanodollars stays
+within the unchanged250000000 reservation. All prior profiles/holds remain valid;
+other scopes cannot select this profile. This addresses a retained scientific
+request with45223 reported input/8192 output tokens and incomplete output; it is
+not a scientific-validity claim or a refund/retry of that original request.

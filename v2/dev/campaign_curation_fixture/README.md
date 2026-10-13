@@ -76,3 +76,5 @@ curation-owner-browser-20261012b. Two owner restarts preserve original and rejec
 receipts; actual desktop/narrow browser uses the generic authored seed graph and
 opens the exact successor and next request context. No response interception,
 new browser intent, paid provider call or live-demo cutover is claimed.
+
+The session helper can forward an explicitly supplied in-memory model key for later managed live delivery. Its default remains provider-key-free; the caller owns scope/budget approval, and Deployment owns worker credential selection.

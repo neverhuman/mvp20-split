@@ -1,0 +1,101 @@
+{
+  "status": "passed",
+  "provider_calls": 0,
+  "replays": [
+    {
+      "path": "v2\\.test-results\\curation-live-20261012a\\supported",
+      "envelope_sha256": "c7b1827d0f4c8d547a8dd190ae025e28813001abd227619fccbd6ca9bbf8c617",
+      "acceptance_unchanged": true
+    },
+    {
+      "path": "v2\\.test-results\\curation-live-20261012a\\missing",
+      "envelope_sha256": "167a7126d11c43918c696dc53d8c4240816035512e9c4d9b66994233ddb9ab81",
+      "acceptance_unchanged": true
+    },
+    {
+      "path": "v2\\.test-results\\curation-live-v2-20261012a\\supported",
+      "envelope_sha256": "457a46815484b5bd50894eec57a44204c74d5b11f00d5d182a1ca3ca63e8d9ce",
+      "acceptance_unchanged": true
+    },
+    {
+      "path": "v2\\.test-results\\curation-live-v2-20261012a\\missing",
+      "envelope_sha256": "17aefa8332107765190c027b8171e5e2d69ef330e0615efe2d371d01fddd8699",
+      "acceptance_unchanged": true
+    },
+    {
+      "path": "v2\\.test-results\\curation-live-v3-20261012a\\supported",
+      "envelope_sha256": "83b171a87ded40d48ed9d66859ccea9420ec3ff28a5c762ae6f6114e378cac48",
+      "acceptance_unchanged": true
+    },
+    {
+      "path": "v2\\.test-results\\curation-live-diagnosis-20261012a\\supported",
+      "envelope_sha256": "d192acd4d1c5d88c210b85a4927ac5a147039d7b95240b4ce7c3ff7d4395fedd",
+      "acceptance_unchanged": true
+    },
+    {
+      "path": "v2\\.test-results\\curation-live-direct-20261012a\\supported",
+      "envelope_sha256": "b2b206cdcccee7e170ffcc7339fe245421785fb4b82e240df9665b607fb20901",
+      "acceptance_unchanged": true
+    },
+    {
+      "path": "v2\\.test-results\\curation-live-extended-20261012a\\supported",
+      "envelope_sha256": "002fbc2604eae12da14996b145e5f3191370026b3923c7ab48263e243a23d6eb",
+      "acceptance_unchanged": true
+    },
+    {
+      "path": "v2\\.test-results\\curation-live-compatible-20261012a\\supported",
+      "envelope_sha256": "9315c22c2e312347c8bd547ab18761d195416d283798c0760bc57926b4e3df11",
+      "acceptance_unchanged": true
+    },
+    {
+      "path": "v2\\.test-results\\curation-live-semantics-20261012a\\supported",
+      "envelope_sha256": "2541e927ec8f469ee6b2ecc5b4fcf00c6bc7a9941f1d7cefd2119ce6acd374c5",
+      "acceptance_unchanged": true
+    },
+    {
+      "path": "v2\\.test-results\\curation-live-reasoning-20261012a\\supported",
+      "envelope_sha256": "b212fa064f781b6675882ecf28a5eff617276dcbba80d35c4d438e940a6501fc",
+      "acceptance_unchanged": true
+    },
+    {
+      "path": "v2\\.test-results\\curation-live-feedback-20261012a\\supported",
+      "envelope_sha256": "fca4baeb5e788dcbdb4dee1c664fdb0d5b54ef7b215ee41eb6b3ffa6bc6d9dc4",
+      "acceptance_unchanged": true
+    },
+    {
+      "path": "v2\\.test-results\\curation-live-feedback-20261012b\\supported",
+      "envelope_sha256": "bfa47b9ec8b41bca3b45cbf68dc205ef98d6b29bfe75f25c59db7b97cc92eed9",
+      "acceptance_unchanged": true
+    },
+    {
+      "path": "v2\\.test-results\\curation-live-medium-20261012a\\supported",
+      "envelope_sha256": "531f82af4a2c9bebd0b15059e2cd6cede294a9e492681f172bcd5f3ac409088a",
+      "acceptance_unchanged": true
+    },
+    {
+      "path": "v2\\.test-results\\curation-demo-live-browser-20261012a",
+      "envelope_sha256": "a104a277252891c995b5c98d5112719438816f469f131b5c91ad6dfd37227203",
+      "acceptance_unchanged": true
+    }
+  ],
+  "offline_scientific_input_bound": 175757,
+  "maximum_cost_units": 221184000,
+  "reservation_units": 250000000,
+  "tokenizer": {
+    "schema_id": "planning.curation-openai-input-bound.v10",
+    "version": "1",
+    "sha256": "a68ed9549ef72e04535f889240bd11d74402f1ce7a1ef8c506ae7d42f77e373a"
+  },
+  "limits": {
+    "accounting_unit": "usd_nanodollars",
+    "max_attempts": 1,
+    "max_input_tokens": 196608,
+    "max_output_tokens": 16384,
+    "total_accounting_units": 250000000,
+    "total_tokens": 212992
+  },
+  "original_output_sha256": "46edfe78ad116f003bbac1780ae8370fdcf094279d9045063e4e20a15341b29d",
+  "limitations": [
+    "Offline fit only; new declaration/model artifact and actual provider acceptance still required"
+  ]
+}

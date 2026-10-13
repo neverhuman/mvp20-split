@@ -106,3 +106,10 @@ UI-01.08/P5: curation_live_failure.mjs reads both original failed live-model rec
 curation_live_review.mjs qualifies the actual live-model missing-capability response and failed graph through production owners. It verifies requested ports/applicability/evidence and unfulfilled posture, failure isolation, original receipt recovery, responsive accessibility and no new intent on refresh. Qualification data comes only from retained real owner records.
 
 The live review probe also accepts the retained indeterminate outcome label; it verifies no graph/launch or new intent on reload while the existing capability request remains unfulfilled.
+
+curation_managed_scientific.mjs owns one actual scientific-demo revision request
+through the served UI and managed Planning worker. It recovers the exact completed
+browser campaign, requires selected Knowledge/research context, retains original
+receipt and terminal readback, checks responsive screens and fails without retry
+if the original provider/compiled graph is not ready. It does not launch a successor
+or claim scientific quality. Original incomplete outcomes remain evidence.

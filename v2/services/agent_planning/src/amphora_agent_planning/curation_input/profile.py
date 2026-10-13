@@ -14,19 +14,21 @@ from ..openai_provider.pricing import MODEL
 
 @cache
 def curation_tokenizer_reference(version='1'):
-    require(version in {'1', '2', '3', '4', '5', '6', '7', '8', '9'}, 'curation_input_profile')
+    require(version in {'1', '2', '3', '4', '5', '6', '7', '8', '9', '10'}, 'curation_input_profile')
     value = {'format': 'planning.curation-openai-input-bound.v' + version,
         'algorithm': 'serialized_responses_utf8_bytes_plus_1024', 'model': MODEL,
         'envelope': 'curation-responses-v' + version,
         'output_schema': campaign_curation_draft_schema().model_dump(mode='json'),
         'unit': 'conservative_input_token_bound', 'authorization': 'none'}
-    if version in {'3', '4', '5', '6', '7', '8', '9'}:
+    if version in {'3', '4', '5', '6', '7', '8', '9', '10'}:
         from .structured import GenerationSchema
-        value['generation_schema_sha256'] = (GenerationSchema.provider_compatible() if version in {'6', '7', '8', '9'} else GenerationSchema.reviewed()).sha256
-    if version in {'4', '5', '6', '7', '8', '9'}:
-        value['reasoning_effort'] = 'medium' if version == '9' else 'low' if version == '8' else 'none'
-    if version == '5':
+        value['generation_schema_sha256'] = (GenerationSchema.provider_compatible() if version in {'6', '7', '8', '9', '10'} else GenerationSchema.reviewed()).sha256
+    if version in {'4', '5', '6', '7', '8', '9', '10'}:
+        value['reasoning_effort'] = 'medium' if version in {'9', '10'} else 'low' if version == '8' else 'none'
+    if version in {'5', '10'}:
         value['maximum_output_tokens'] = 16384
+    if version == '10':
+        value['maximum_input_tokens'] = 196608
     descriptor = canonical(value)
     name = 'planning.curation-openai-input-bound' + ('' if version == '1' else '.v' + version)
     return SchemaRef(schema_id=name, version='1',
@@ -51,13 +53,13 @@ class CurationInputBound:
         model = ModelBinding.model_validate(supplied.model_dump(mode='python', warnings=False))
         require((model.provider_id, model.model_id, model.model_revision) == ('openai', MODEL, MODEL),
                 'curation_input_model')
-        require(model.tokenizer in (curation_tokenizer_reference('1'), curation_tokenizer_reference('2'), curation_tokenizer_reference('3'), curation_tokenizer_reference('4'), curation_tokenizer_reference('5'), curation_tokenizer_reference('6'), curation_tokenizer_reference('7'), curation_tokenizer_reference('8'), curation_tokenizer_reference('9')), 'curation_input_profile')
+        require(model.tokenizer in (curation_tokenizer_reference('1'), curation_tokenizer_reference('2'), curation_tokenizer_reference('3'), curation_tokenizer_reference('4'), curation_tokenizer_reference('5'), curation_tokenizer_reference('6'), curation_tokenizer_reference('7'), curation_tokenizer_reference('8'), curation_tokenizer_reference('9'), curation_tokenizer_reference('10')), 'curation_input_profile')
         return cls(model.tokenizer)
 
     @property
     def envelope_version(self):
-        require(self.reference in (curation_tokenizer_reference('1'), curation_tokenizer_reference('2'), curation_tokenizer_reference('3'), curation_tokenizer_reference('4'), curation_tokenizer_reference('5'), curation_tokenizer_reference('6'), curation_tokenizer_reference('7'), curation_tokenizer_reference('8'), curation_tokenizer_reference('9')), 'curation_input_profile')
-        return next(version for version in ('1', '2', '3', '4', '5', '6', '7', '8', '9') if self.reference == curation_tokenizer_reference(version))
+        require(self.reference in (curation_tokenizer_reference('1'), curation_tokenizer_reference('2'), curation_tokenizer_reference('3'), curation_tokenizer_reference('4'), curation_tokenizer_reference('5'), curation_tokenizer_reference('6'), curation_tokenizer_reference('7'), curation_tokenizer_reference('8'), curation_tokenizer_reference('9'), curation_tokenizer_reference('10')), 'curation_input_profile')
+        return next(version for version in ('1', '2', '3', '4', '5', '6', '7', '8', '9', '10') if self.reference == curation_tokenizer_reference(version))
 
     def measure(self, request, raw):
         from .envelope import CurationEnvelope

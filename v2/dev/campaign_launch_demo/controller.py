@@ -10,13 +10,16 @@ from local_demo_controller import Controller
 
 
 class LaunchDemoController(Controller):
-    def __init__(self, root, output, routes):
+    def __init__(self, root, output, routes, *, model_key=None):
         self.routes, self.token = routes, control_token(root)
         self.opener = urllib.request.build_opener(urllib.request.ProxyHandler({}))
         prepared = json.loads((output / 'launch-prepared.json').read_bytes())
         environment = {key: value for key, value in os.environ.items() if key.upper() in {
             'SYSTEMROOT', 'WINDIR', 'PATH', 'TEMP', 'TMP', 'USERPROFILE', 'LOCALAPPDATA', 'APPDATA', 'COMSPEC'}}
         environment['PYTHONUTF8'] = '1'
+        if model_key is not None:
+            assert type(model_key) is str and model_key
+            environment['AMPHORA_OPENAI_API_KEY'] = model_key
         self.job, self.process = ProcessJob(), None
         try:
             with (output / 'supervisor.log').open('ab') as log:

@@ -26,3 +26,5 @@ installed supervisor PID/manifest, waits for a new browser receipt and its bound
 pending Docker turn, records safe ownership evidence, then terminates only that
 supervisor. It neither stops Docker nor deletes containers/journals. Restart the same
 serving configuration and verify the original launch/run/container before acceptance.
+
+LaunchDemoController optionally forwards an explicit in-memory model key to the installed supervisor as AMPHORA_OPENAI_API_KEY. Defaults stay key-free; Deployment exposes it only to explicitly configured live worker bindings.

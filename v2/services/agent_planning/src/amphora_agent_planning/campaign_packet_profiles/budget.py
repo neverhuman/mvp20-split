@@ -24,7 +24,7 @@ class PacketBudget:
         require(original.purpose in {'campaign_proposal', 'supervision'}, 'campaign_packet_purpose')
         if original.context.model.provider_id == 'openai':
             from ..curation_input import CurationInputBound, curation_tokenizer_reference
-            if original.context.model.tokenizer in (curation_tokenizer_reference(), curation_tokenizer_reference('2'), curation_tokenizer_reference('3'), curation_tokenizer_reference('4'), curation_tokenizer_reference('5'), curation_tokenizer_reference('6'), curation_tokenizer_reference('7'), curation_tokenizer_reference('8'), curation_tokenizer_reference('9')):
+            if original.context.model.tokenizer in (curation_tokenizer_reference(), curation_tokenizer_reference('2'), curation_tokenizer_reference('3'), curation_tokenizer_reference('4'), curation_tokenizer_reference('5'), curation_tokenizer_reference('6'), curation_tokenizer_reference('7'), curation_tokenizer_reference('8'), curation_tokenizer_reference('9'), curation_tokenizer_reference('10')):
                 return cls(request, CurationInputBound.bind(original.context.model))
             from ..checkpoint_input import CheckpointInputBound
             return cls(request, CheckpointInputBound.bind(original.context.model))
@@ -84,4 +84,6 @@ class PacketFit:
                     value.update(format='planning-campaign-packet-fit.v10', framing='curation_reasoned_proposal_responses_utf8_bytes_plus_1024')
                 if self.budget.tokenizer.envelope_version == '9':
                     value.update(format='planning-campaign-packet-fit.v11', framing='curation_medium_proposal_responses_utf8_bytes_plus_1024')
+                if self.budget.tokenizer.envelope_version == '10':
+                    value.update(format='planning-campaign-packet-fit.v12', framing='curation_scientific_output_responses_utf8_bytes_plus_1024')
         return value

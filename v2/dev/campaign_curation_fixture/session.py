@@ -36,7 +36,7 @@ class PublicOwners:
 
 
 @contextmanager
-def session(root, output):
+def session(root, output, *, model_key=None):
     state = LocalState.snapshot(root)
     bundle = CredentialVault(root / 'credentials.dpapi', state['deployment_id']).load()
     names = ('runtime', 'artifact', 'registry', 'planning', 'knowledge', 'research')
@@ -44,7 +44,7 @@ def session(root, output):
     tokens = {name: refs[name.upper() + '_OPERATOR_TOKEN'] for name in names}
     tokens['deployment'] = launch_credential(root, state['deployment_id']).environment(['LAUNCH_GATEWAY_TOKEN'])['LAUNCH_GATEWAY_TOKEN']
     prepared = json.loads((output / 'launch-prepared.json').read_bytes())
-    controller = LaunchDemoController(root, output, Routes.load(root))
+    controller = LaunchDemoController(root, output, Routes.load(root), model_key=model_key)
     started = False
     try:
         controller.start_owners(tokens['registry']); started = True

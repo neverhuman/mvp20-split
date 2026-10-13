@@ -92,7 +92,7 @@ def test_v4_direct_generation_preserves_strict_schema_limits_and_old_effort():
     assert len(set(references)) == 5
 
 
-@pytest.mark.parametrize('version,fit', [('6', '8'), ('7', '9'), ('8', '10'), ('9', '11')])
+@pytest.mark.parametrize('version,fit', [('6', '8'), ('7', '9'), ('8', '10'), ('9', '11'), ('10', '12')])
 def test_compatible_profiles_keep_local_rejection(version, fit):
     from amphora_contracts_campaigns.executable.values import NumberConstant
     old = GenerationSchema.reviewed()

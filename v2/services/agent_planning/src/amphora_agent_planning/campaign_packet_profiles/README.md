@@ -20,3 +20,11 @@ UI-01.08a: curation descriptor v2 selects packaged curation-v2 instructions and 
 UI-01.08i v9/fit.v11 isolates low->medium reasoning under the existing additional
 $10 authority. Same v8 prompt bytes, compatible generation schema, model and8192/
 $0.25 limits. Versions1..8 replay unchanged; no new allowance or output repair.
+
+Planning0.139 adds private curation input v10/fit.v12 for the exact reviewed demo
+scope: medium reasoning and identical v9 prompt/generation schema, input ceiling
+196608 and output ceiling16384. Maximum computed cost221184000 nanodollars stays
+within the unchanged250000000 reservation. All prior profiles/holds remain valid;
+other scopes cannot select this profile. This addresses a retained scientific
+request with45223 reported input/8192 output tokens and incomplete output; it is
+not a scientific-validity claim or a refund/retry of that original request.
