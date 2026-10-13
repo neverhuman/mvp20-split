@@ -76,3 +76,14 @@ validity or current execution eligibility. [UI-01.07](../../Build%20Plans/UI-01.
 and the [owned module](../../../services/agent_planning/src/amphora_agent_planning/campaign_origin/README.md)
 record the concrete versioned API and qualification. This contract does not expose
 raw prompts, provider captures or hidden reasoning.
+
+## Managed curation peer identities
+
+Planning retains the human requester as owner of the curation intent and policy.
+Its compiler already records separate Runtime-author and Registry-eligibility
+identities in immutable selection records. Managed worker configuration must expose
+that separation so each peer can authorize a restricted service credential without
+duplicating a human principal or sharing operator credentials. Private profilev2
+selects these two actors explicitly; legacyv1 keeps its original same-actor behavior.
+A configuration binding creates no grant: Runtime/Registry authenticate their own
+principals, and retained selections reject a changed peer identity on replay.

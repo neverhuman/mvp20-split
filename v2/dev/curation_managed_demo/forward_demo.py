@@ -23,7 +23,7 @@ def migrate(root, installation, predecessor, inventory, output, rehearsal=None):
     backup_id='3771efc579754533993bb6a6affaf642'
     identity=OwnerInstallation.from_directory('planning',installation,
         Path(__file__).absolute().parents[2]/'services/agent_planning/uv.lock')
-    assert identity.release=='0.137.0'
+    assert identity.release=='0.138.0'
     original=Path(baseline['root'])
     if root==original:
         assert rehearsal is not None
@@ -39,7 +39,7 @@ def migrate(root, installation, predecessor, inventory, output, rehearsal=None):
     old=predecessor/'environment/Lib/site-packages/amphora_agent_planning/persistence/migrations/versions'
     hashes={p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in old.iterdir() if p.suffix in {'.py','.sql'}}
     assert hashes
-    wheel=next((installation/'wheels').glob('amphora_agent_planning-0.137.0-*.whl'))
+    wheel=next((installation/'wheels').glob('amphora_agent_planning-0.138.0-*.whl'))
     with zipfile.ZipFile(wheel) as archive:
         for name,digest in hashes.items():
             assert hashlib.sha256(archive.read('amphora_agent_planning/persistence/migrations/versions/'+name)).hexdigest()==digest

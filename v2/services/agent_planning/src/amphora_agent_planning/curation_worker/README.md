@@ -93,3 +93,13 @@ must not be interchanged. The production-composition regression calls all three
 interfaces with literal public records. No schema, original proposal, command or
 receipt changes; an already-retained compiler selection resumes without provider
 reissue after process replacement. Actual owner qualification remains P4.4.
+
+Planning0.138/UI-01.08j adds private planning-curation-worker.v2 configuration.
+actor_id still owns the human curation/policy/claim/publication. Explicit
+runtime_actor_id selects the separately authorized Runtime author; eligibility.actor_id
+selects the Registry reader. Existing CompilerSelection already persists all three
+identities independently; CompilerStore checks their original bindings on replay.
+This exposes existing behavior, with no new public API, migration, impersonation
+mechanism or grant. V1 still rejects alternate peer identities and has unchanged
+defaults; V2 requires an explicit Runtime actor. Peer services retain unique
+identity configuration and enforce their own restricted actions. No admission grant.

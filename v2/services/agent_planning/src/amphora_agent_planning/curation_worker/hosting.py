@@ -50,7 +50,7 @@ class CurationHost:
                     conn.execute(text('SELECT 1 FROM planning.' + table + ' LIMIT 0'))
             provider = config.live.provider(tuple(policy.budget() for policy in reviewed.policies)) if (
                 enable_provider and config.live is not None) else None
-            store = CompilerStore(engine, config.runtime_owner, config.actor_id, reviewed.eligibility())
+            store = CompilerStore(engine, config.runtime_owner, config.runtime_actor, reviewed.eligibility())
             journal = CompilerJournal(store)
             compiler = CurationCompiler(CurationCompilerJournal(store, journal), CompilerProgression(
                 CompilerDispatcher(journal, peers.refresh, peers.runtime, peers.registry)))

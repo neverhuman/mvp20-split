@@ -1,5 +1,7 @@
 # Master Build Tracker
 
+Latest M3.4 checkpoint: 2026-10-12 22:37:16: M3.4 identity repair qualified: Planning0.138 source110/installed56 pass; new servingc62905 preserves original scientific runs/provenance and passes provider-disabled worker check, then drains. Actual local/LAN delivery remains pending; percentages unchanged; no new paid calls.
+
 ## Purpose and Authority
 
 Program-level source of truth for Amphora v2 build priority, dependency order, current position and delivery gates. Each activated plan owns its detailed canonical phase/task tracker and evidence; MBT mirrors that status without duplicating task history. [Development Process](../Development_Process.md) governs execution.

@@ -18,7 +18,7 @@ class Peer(WireModel):
 
 
 class WorkerConfiguration(WireModel):
-    profile: Literal['planning-curation-worker.v1'] = 'planning-curation-worker.v1'
+    profile: Literal['planning-curation-worker.v1', 'planning-curation-worker.v2'] = 'planning-curation-worker.v1'
     database_url_env: Identifier
     actor_id: Identifier
     scope: Scope
@@ -30,6 +30,7 @@ class WorkerConfiguration(WireModel):
     knowledge: Peer
     research: Peer
     runtime_owner: Identifier
+    runtime_actor_id: Identifier | None = None
     eligibility: ConfigurationRecord
     provider: Literal['disabled', 'openai_curation_v1'] = 'disabled'
     live: LiveCurationSettings | None = None
@@ -38,9 +39,17 @@ class WorkerConfiguration(WireModel):
     def boundaries(self):
         require((self.provider == 'openai_curation_v1') == (self.live is not None), 'curation_worker_live_configuration')
         require(self.live is None or self.live.scope == self.scope, 'curation_worker_live_scope')
-        require(self.eligibility.actor_id == self.actor_id, 'curation_worker_eligibility_actor')
+        if self.profile == 'planning-curation-worker.v1':
+            require(self.runtime_actor_id is None, 'curation_worker_v1_runtime_actor')
+            require(self.eligibility.actor_id == self.actor_id, 'curation_worker_eligibility_actor')
+        else:
+            require(self.runtime_actor_id is not None, 'curation_worker_v2_runtime_actor')
         require(len(set(self.policies)) == len(self.policies), 'curation_worker_policy_files')
         return self
+
+    @property
+    def runtime_actor(self):
+        return self.actor_id if self.runtime_actor_id is None else self.runtime_actor_id
 
 
 def bounded_file(path, maximum):

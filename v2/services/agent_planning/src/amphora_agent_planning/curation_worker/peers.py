@@ -50,6 +50,6 @@ class CurationPeers:
         refresh = RefreshCollector(artifacts=CampaignArtifactReader(data), research=research,
             registry=assembler.registry, runtime=assembler.runtime)
         return cls(data, artifacts, assembler, refresh,
-            RuntimeAuthoringClient(config.runtime_owner, config.actor_id, config.runtime.endpoint, tokens['runtime']),
-            RegistryEligibilityClient(config.eligibility.owner_id, config.actor_id, config.registry.endpoint, tokens['registry']),
+            RuntimeAuthoringClient(config.runtime_owner, config.runtime_actor, config.runtime.endpoint, tokens['runtime']),
+            RegistryEligibilityClient(config.eligibility.owner_id, config.eligibility.actor_id, config.registry.endpoint, tokens['registry']),
             AcceptanceCollector(registry, data))

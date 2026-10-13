@@ -43,8 +43,20 @@ provider. Deployment launch journals remain in backup and are not rebound to old
 container IDs. RecordsController accepts an explicit installed Deployment interpreter.
 
 forward_demo verifies all predecessor0.107 migration bytes unchanged inside the
-independent0.137 wheel, then invokes only Planning's migration command with its
+independent0.138 wheel, then invokes only Planning's migration command with its
 migrator credential. Requires stopped listeners/released tool and launch journals.
 Shared-root migration additionally requires successful drained isolated readbacks
 of the same snapshot and exact target Planning installation. Initial Deployment
 migration receipts remain historical; an explicit new migration record owns progress.
+
+prepare_serving copies the existing scientific demo to a new configuration directory,
+retains graph/profile/artifact bytes and completed runs/provenance, and selects the
+qualified Planning/Deployment/Gateway/Studio packages. Adds directed scoped grants
+for all five Planning peers, publishes explicit synthetic roots through Data and
+checks the installed worker with provider disabled. Only after drain does it add
+the native recipe. This is preparation, not live provider or browser acceptance.
+
+Initial shared composition exposed unique Runtime/Registry actor identities.
+Private worker v2 now selects planning-author for both peer commands while retaining
+the human requester in the original curation/selection. This uses existing compiler
+identity fields; peer uniqueness and restricted-action guards remain unchanged.

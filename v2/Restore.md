@@ -1,15 +1,23 @@
 # Restore
 
-Refreshed: 2026-10-12 22:09:29 America/Chicago. Read FIRST after compaction.
-Latest pushed5efa6417 (backup/migration rehearsal). ALL PROCESSES FINISHED/drained. Final0.137 exactreadback73455 passed.
-Source89 Planningbudget/provider/worker tests pass140.70s; independentinstallp0.137
-passed25budgettests15.34s,14exactreplays87347 inclsuccess, v9materialunchanged.
-Allocationread78257 passed exact16/$4.05 qualification originals, shareddemo0holds.
-New ceilingcode0.137: oldqualification16/$4.05; exactdemo37/$9.25; totalunchanged.
-Uncommitted Planningversion/ceilings/tests/locks/README, devallocation_read.py,
-forward_demo pinned0.137 anddocs. Commit verified budget checkpoint after73455.
-No sharedschema/configcutover; olddemoOFFLINE/storesrunning. No new paid calls.
-No agents/JARVIS;v1 read-only; preserve ocularPDF/DOCX.
+Refreshed: 2026-10-12 22:37:16 America/Chicago. Read FIRST after compaction.
+Latest pushed b1059f20; next commit is Planning0.138 scoped peer identity repair.
+Source5674 PASSED110/255.10s; independentq89719 PASSED56/206.53s. Locks updated.
+prepare_serving c62905 PASSED/drained: actual new owners, original scientific
+campaigns and full provenance unchanged, synthetic roots published, providerdisabled
+worker check passed. No model/new campaign. Outputs .test-results/curation-demo-serving-20261012c.
+Original failed a/b preserved. Shared Planning schema0027; stores running, UI OFFLINE.
+NEXT M3.4 full restricted-peer/preparation proof, managed live serving and actual
+scientific local/LAN browser flow. Need optional in-memory model_key forwarding
+in LaunchDemoController/session (existing other controllers provide pattern),
+new bounded serve helper, then browser launch/curation. No processes currently.
+Planningq0.138, Deploymentd0.20.1; preparedc selects Gateway0.7/Studio0.34.1.
+Private worker v2 selects Runtime/Registry planning-author, Knowledge/Research
+planning-reader, Dataadmin restrictedtoken. Requester remainsadmin; existing
+compiler supports separate actors. Public contracts/v1 config unchanged.
+No more paid qualification calls. Exactly37/$9.25 approved remainder for shared
+scope;16/$4.05 old qualification holds remain. No agents/JARVIS;v1 read-only;
+preserve ocularPDF/DOCX. UI-01.08j68.75/M3.4=0 until actualdelivery.
 
 ## Current achievement and next task
 
@@ -46,7 +54,7 @@ Isolated root local-v2/curation-demo-restored-20261012a ida702fd5b991e4fbe8ac651
 configs .test-results/curation-demo-restored-20261012a; oldPlanning0.107/schema0021,
 now0.136/schema0027. Public reads pre a/post b: .test-results/curation-demo-restored-reads-20261012{a,b}.
 Migration .test-results/curation-demo-forward-20261012a0.136, b0.137 bothPASS.
-Finalpostread .test-results/curation-demo-restored-reads-20261012c uses0.137p, process73455 PASSED/drained. Original root NOT migrated.
+Finalpostread .test-results/curation-demo-restored-reads-20261012c uses0.137p, process73455 PASSED/drained. Original root NOW migrated0.137/schema0027;31760 PASS .test-results/curation-demo-shared-forward-20261012a. No new serving config/owners yet.
 Use forward_demo with --rehearsal postreadc for shared migration after finalrelease
 proof. All predecessor migration bytes must match. InitialDeploymentreceipt unchanged.
 Deployment0.20.1 independentinstall .test-results/curation-deployment-installation-20261012d/owner;
@@ -54,9 +62,9 @@ Deployment0.20.1 independentinstall .test-results/curation-deployment-installati
 Actual olddemo lacks Planning peers ALL5: add Data read/upload/finalize/source_history,
 Runtime read/author/validate (notadmit),Registryread/resolve, Knowledge read_graph,
 Research read_declarations. Use separate directed tokens, actoradmin where compiler
-commands require; do not reuse operator tokens. Planning config actoradmin vs old
+commands require; do not reuse operator tokens. Workerprofilev2 requesteradmin/runtimeactorplanning-author/registryactorplanning-author. Planning config actoradmin vs old
 operator; Gatewaycontextadmin. Newcreds sidecar optionalcuration_access for
-Knowledge/Research; other3 originalvault refs likelyexist need inventorynamesonly.
+Knowledge/Research; other3 originalvault refs CONFIRMED present. Dedicated reader sidecar now provisioned on sharedroot; no original vault change.
 Oldshared Gateway0.5.0 lacksnewcurationroutes; use isolated qualifiedgateway package
 from .test-results/curation-owner-20261012a/serving/owners.json. Studio0.34.1 public
 also there. Preserve scientific context from .test-results/knowledge-run-b/campaign-context.json.

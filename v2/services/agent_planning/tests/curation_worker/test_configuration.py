@@ -51,6 +51,37 @@ def test_public_client_composition_does_not_read_model_key_or_call_peers(tmp_pat
     assert peers.assembler.artifacts.reader.data is peers.data
     assert peers.refresh.artifacts.data is peers.data
     assert list(reviewed.policy_map()) == ['synthetic']
+    assert peers.runtime.actor_id == peers.registry.actor_id == config['actor_id']
+
+
+def test_v2_preserves_requester_and_binds_explicit_peer_actors(tmp_path, monkeypatch, planning_database):
+    path, config, policy = files(tmp_path, monkeypatch)
+    config.update(profile='planning-curation-worker.v2', runtime_actor_id='planning-author')
+    config['eligibility']['actor_id'] = 'planning-reader'
+    path.write_text(json.dumps(config))
+    reviewed = ReviewedConfiguration.load(path)
+    peers = CurationPeers.bind(reviewed)
+    assert peers.runtime.actor_id == 'planning-author'
+    assert peers.registry.actor_id == 'planning-reader'
+    assert peers.artifacts.identity.actor_id == config['actor_id']
+    assert reviewed.policies[0].document().template.actor_id == config['actor_id']
+    monkeypatch.setenv('CURATION_TEST_DATABASE', planning_database.render_as_string(hide_password=False))
+    host = CurationHost.load(path)
+    try:
+        assert host.principal.actor_id == config['actor_id']
+        assert host.poller.worker.compiler.journal.store.runtime_actor == 'planning-author'
+        assert host.poller.worker.compiler.journal.store.eligibility == reviewed.eligibility()
+    finally:
+        host.close()
+
+
+@pytest.mark.parametrize('profile,actor', [('planning-curation-worker.v1','planning-author'),
+    ('planning-curation-worker.v2',None)])
+def test_peer_actor_selection_requires_explicit_v2_profile(tmp_path,monkeypatch,profile,actor):
+    path,config,_ = files(tmp_path,monkeypatch)
+    config.update(profile=profile,runtime_actor_id=actor)
+    path.write_text(json.dumps(config))
+    with pytest.raises(ValueError):ReviewedConfiguration.load(path)
 
 
 def test_composed_refresh_and_acceptance_use_real_reader_interfaces(tmp_path, monkeypatch):
