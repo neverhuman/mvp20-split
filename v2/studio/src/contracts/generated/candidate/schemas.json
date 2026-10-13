@@ -1,0 +1,1322 @@
+{
+  "request": {
+    "$defs": {
+      "CandidateRevisionRef": {
+        "additionalProperties": false,
+        "properties": {
+          "candidate_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Candidate Id",
+            "type": "string"
+          },
+          "revision": {
+            "maximum": 9007199254740991,
+            "minimum": 1,
+            "title": "Revision",
+            "type": "integer"
+          },
+          "scope": {
+            "$ref": "#/$defs/Scope"
+          }
+        },
+        "required": [
+          "scope",
+          "candidate_id",
+          "revision"
+        ],
+        "title": "CandidateRevisionRef",
+        "type": "object"
+      },
+      "SchemaRef": {
+        "additionalProperties": false,
+        "properties": {
+          "schema_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Schema Id",
+            "type": "string"
+          },
+          "sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Sha256",
+            "type": "string"
+          },
+          "version": {
+            "const": "1",
+            "title": "Version",
+            "type": "string"
+          }
+        },
+        "required": [
+          "schema_id",
+          "version",
+          "sha256"
+        ],
+        "title": "SchemaRef",
+        "type": "object"
+      },
+      "Scope": {
+        "additionalProperties": false,
+        "properties": {
+          "project_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Project Id",
+            "type": "string"
+          },
+          "tenant_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Tenant Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "tenant_id",
+          "project_id"
+        ],
+        "title": "Scope",
+        "type": "object"
+      }
+    },
+    "$id": "urn:amphora:chemical-structure.request:1:serialization",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "additionalProperties": false,
+    "properties": {
+      "candidate": {
+        "$ref": "#/$defs/CandidateRevisionRef"
+      },
+      "origin": {
+        "const": "supplied",
+        "title": "Origin",
+        "type": "string"
+      },
+      "representation_kind": {
+        "const": "finite_molecule",
+        "title": "Representation Kind",
+        "type": "string"
+      },
+      "scope": {
+        "$ref": "#/$defs/Scope"
+      },
+      "semantic_profile": {
+        "$ref": "#/$defs/SchemaRef"
+      },
+      "smiles": {
+        "maxLength": 4096,
+        "minLength": 1,
+        "title": "Smiles",
+        "type": "string"
+      },
+      "wire_version": {
+        "const": "1",
+        "title": "Wire Version",
+        "type": "string"
+      }
+    },
+    "required": [
+      "scope",
+      "candidate",
+      "semantic_profile",
+      "origin",
+      "representation_kind",
+      "wire_version",
+      "smiles"
+    ],
+    "title": "StructureRequest",
+    "type": "object"
+  },
+  "result": {
+    "$defs": {
+      "Atom": {
+        "additionalProperties": false,
+        "properties": {
+          "aromatic": {
+            "title": "Aromatic",
+            "type": "boolean"
+          },
+          "atomic_number": {
+            "maximum": 118,
+            "minimum": 1,
+            "title": "Atomic Number",
+            "type": "integer"
+          },
+          "chiral_tag": {
+            "enum": [
+              "CHI_UNSPECIFIED",
+              "CHI_TETRAHEDRAL_CW",
+              "CHI_TETRAHEDRAL_CCW"
+            ],
+            "title": "Chiral Tag",
+            "type": "string"
+          },
+          "explicit_hydrogens": {
+            "maximum": 16,
+            "minimum": 0,
+            "title": "Explicit Hydrogens",
+            "type": "integer"
+          },
+          "formal_charge": {
+            "maximum": 16,
+            "minimum": -16,
+            "title": "Formal Charge",
+            "type": "integer"
+          },
+          "implicit_hydrogens": {
+            "maximum": 16,
+            "minimum": 0,
+            "title": "Implicit Hydrogens",
+            "type": "integer"
+          },
+          "index": {
+            "maximum": 511,
+            "minimum": 0,
+            "title": "Index",
+            "type": "integer"
+          },
+          "isotope": {
+            "maximum": 999,
+            "minimum": 0,
+            "title": "Isotope",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "index",
+          "atomic_number",
+          "isotope",
+          "formal_charge",
+          "explicit_hydrogens",
+          "implicit_hydrogens",
+          "aromatic",
+          "chiral_tag"
+        ],
+        "title": "Atom",
+        "type": "object"
+      },
+      "Bond": {
+        "additionalProperties": false,
+        "properties": {
+          "begin": {
+            "maximum": 511,
+            "minimum": 0,
+            "title": "Begin",
+            "type": "integer"
+          },
+          "end": {
+            "maximum": 511,
+            "minimum": 0,
+            "title": "End",
+            "type": "integer"
+          },
+          "order": {
+            "enum": [
+              "single",
+              "double",
+              "triple",
+              "aromatic"
+            ],
+            "title": "Order",
+            "type": "string"
+          },
+          "stereo": {
+            "enum": [
+              "STEREONONE",
+              "STEREOZ",
+              "STEREOE",
+              "STEREOCIS",
+              "STEREOTRANS"
+            ],
+            "title": "Stereo",
+            "type": "string"
+          },
+          "stereo_atoms": {
+            "items": {
+              "maximum": 511,
+              "minimum": 0,
+              "type": "integer"
+            },
+            "maxItems": 2,
+            "title": "Stereo Atoms",
+            "type": "array"
+          }
+        },
+        "required": [
+          "begin",
+          "end",
+          "order",
+          "stereo",
+          "stereo_atoms"
+        ],
+        "title": "Bond",
+        "type": "object"
+      },
+      "CandidateRevisionRef": {
+        "additionalProperties": false,
+        "properties": {
+          "candidate_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Candidate Id",
+            "type": "string"
+          },
+          "revision": {
+            "maximum": 9007199254740991,
+            "minimum": 1,
+            "title": "Revision",
+            "type": "integer"
+          },
+          "scope": {
+            "$ref": "#/$defs/Scope"
+          }
+        },
+        "required": [
+          "scope",
+          "candidate_id",
+          "revision"
+        ],
+        "title": "CandidateRevisionRef",
+        "type": "object"
+      },
+      "Depiction": {
+        "additionalProperties": false,
+        "properties": {
+          "height": {
+            "maximum": 768,
+            "minimum": 1,
+            "title": "Height",
+            "type": "integer"
+          },
+          "media_type": {
+            "const": "image/png",
+            "title": "Media Type",
+            "type": "string"
+          },
+          "png_base64": {
+            "maxLength": 174764,
+            "minLength": 4,
+            "pattern": "^[A-Za-z0-9+/]*={0,2}$",
+            "title": "Png Base64",
+            "type": "string"
+          },
+          "sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Sha256",
+            "type": "string"
+          },
+          "width": {
+            "maximum": 1024,
+            "minimum": 1,
+            "title": "Width",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "media_type",
+          "width",
+          "height",
+          "sha256",
+          "png_base64"
+        ],
+        "title": "Depiction",
+        "type": "object"
+      },
+      "DerivationMethod": {
+        "additionalProperties": false,
+        "properties": {
+          "environment_sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Environment Sha256",
+            "type": "string"
+          },
+          "method": {
+            "const": "finite-smiles-2d-v1",
+            "title": "Method",
+            "type": "string"
+          },
+          "toolkit": {
+            "const": "rdkit",
+            "title": "Toolkit",
+            "type": "string"
+          },
+          "toolkit_version": {
+            "maxLength": 256,
+            "minLength": 1,
+            "title": "Toolkit Version",
+            "type": "string"
+          }
+        },
+        "required": [
+          "toolkit",
+          "toolkit_version",
+          "method",
+          "environment_sha256"
+        ],
+        "title": "DerivationMethod",
+        "type": "object"
+      },
+      "DerivedStructure": {
+        "additionalProperties": false,
+        "properties": {
+          "authority": {
+            "const": "structural_derivation",
+            "title": "Authority",
+            "type": "string"
+          },
+          "canonical_isomeric_smiles": {
+            "maxLength": 8192,
+            "minLength": 1,
+            "title": "Canonical Isomeric Smiles",
+            "type": "string"
+          },
+          "depiction": {
+            "$ref": "#/$defs/Depiction"
+          },
+          "formula": {
+            "$ref": "#/$defs/Formula"
+          },
+          "graph": {
+            "$ref": "#/$defs/MolecularGraph"
+          },
+          "method": {
+            "$ref": "#/$defs/DerivationMethod"
+          },
+          "status": {
+            "const": "derived",
+            "title": "Status",
+            "type": "string"
+          },
+          "warnings": {
+            "items": {
+              "const": "unspecified_stereochemistry",
+              "type": "string"
+            },
+            "maxItems": 1,
+            "title": "Warnings",
+            "type": "array"
+          }
+        },
+        "required": [
+          "status",
+          "authority",
+          "method",
+          "canonical_isomeric_smiles",
+          "graph",
+          "formula",
+          "depiction",
+          "warnings"
+        ],
+        "title": "DerivedStructure",
+        "type": "object"
+      },
+      "Formula": {
+        "additionalProperties": false,
+        "properties": {
+          "charge_policy": {
+            "const": "explicit_net_formal_charge",
+            "title": "Charge Policy",
+            "type": "string"
+          },
+          "isotope_policy": {
+            "const": "separate_isotopes",
+            "title": "Isotope Policy",
+            "type": "string"
+          },
+          "net_formal_charge": {
+            "maximum": 2048,
+            "minimum": -2048,
+            "title": "Net Formal Charge",
+            "type": "integer"
+          },
+          "text": {
+            "maxLength": 256,
+            "minLength": 1,
+            "title": "Text",
+            "type": "string"
+          }
+        },
+        "required": [
+          "text",
+          "isotope_policy",
+          "charge_policy",
+          "net_formal_charge"
+        ],
+        "title": "Formula",
+        "type": "object"
+      },
+      "MolecularGraph": {
+        "additionalProperties": false,
+        "properties": {
+          "atoms": {
+            "items": {
+              "$ref": "#/$defs/Atom"
+            },
+            "maxItems": 512,
+            "minItems": 1,
+            "title": "Atoms",
+            "type": "array"
+          },
+          "bonds": {
+            "items": {
+              "$ref": "#/$defs/Bond"
+            },
+            "maxItems": 1024,
+            "title": "Bonds",
+            "type": "array"
+          }
+        },
+        "required": [
+          "atoms",
+          "bonds"
+        ],
+        "title": "MolecularGraph",
+        "type": "object"
+      },
+      "SchemaRef": {
+        "additionalProperties": false,
+        "properties": {
+          "schema_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Schema Id",
+            "type": "string"
+          },
+          "sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Sha256",
+            "type": "string"
+          },
+          "version": {
+            "const": "1",
+            "title": "Version",
+            "type": "string"
+          }
+        },
+        "required": [
+          "schema_id",
+          "version",
+          "sha256"
+        ],
+        "title": "SchemaRef",
+        "type": "object"
+      },
+      "Scope": {
+        "additionalProperties": false,
+        "properties": {
+          "project_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Project Id",
+            "type": "string"
+          },
+          "tenant_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Tenant Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "tenant_id",
+          "project_id"
+        ],
+        "title": "Scope",
+        "type": "object"
+      },
+      "StructureFailure": {
+        "additionalProperties": false,
+        "properties": {
+          "code": {
+            "enum": [
+              "invalid_smiles",
+              "unsupported_representation",
+              "unsupported_feature",
+              "profile_mismatch",
+              "size_limit",
+              "derivation_failed"
+            ],
+            "title": "Code",
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "invalid",
+              "unsupported",
+              "error"
+            ],
+            "title": "Status",
+            "type": "string"
+          }
+        },
+        "required": [
+          "status",
+          "code"
+        ],
+        "title": "StructureFailure",
+        "type": "object"
+      }
+    },
+    "$id": "urn:amphora:chemical-structure.result:1:serialization",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "additionalProperties": false,
+    "properties": {
+      "candidate": {
+        "$ref": "#/$defs/CandidateRevisionRef"
+      },
+      "origin": {
+        "const": "supplied",
+        "title": "Origin",
+        "type": "string"
+      },
+      "outcome": {
+        "discriminator": {
+          "mapping": {
+            "derived": "#/$defs/DerivedStructure",
+            "error": "#/$defs/StructureFailure",
+            "invalid": "#/$defs/StructureFailure",
+            "unsupported": "#/$defs/StructureFailure"
+          },
+          "propertyName": "status"
+        },
+        "oneOf": [
+          {
+            "$ref": "#/$defs/DerivedStructure"
+          },
+          {
+            "$ref": "#/$defs/StructureFailure"
+          }
+        ],
+        "title": "Outcome"
+      },
+      "representation_kind": {
+        "const": "finite_molecule",
+        "title": "Representation Kind",
+        "type": "string"
+      },
+      "scope": {
+        "$ref": "#/$defs/Scope"
+      },
+      "semantic_profile": {
+        "$ref": "#/$defs/SchemaRef"
+      },
+      "source_sha256": {
+        "pattern": "^[0-9a-f]{64}$",
+        "title": "Source Sha256",
+        "type": "string"
+      },
+      "wire_version": {
+        "const": "1",
+        "title": "Wire Version",
+        "type": "string"
+      }
+    },
+    "required": [
+      "scope",
+      "candidate",
+      "semantic_profile",
+      "origin",
+      "representation_kind",
+      "wire_version",
+      "source_sha256",
+      "outcome"
+    ],
+    "title": "StructureResult",
+    "type": "object"
+  },
+  "candidate": {
+    "$defs": {
+      "ArtifactRef": {
+        "additionalProperties": false,
+        "properties": {
+          "artifact_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Artifact Id",
+            "type": "string"
+          },
+          "media_type": {
+            "maxLength": 128,
+            "minLength": 3,
+            "pattern": "^[^\\s/]+/[^\\s/]+$",
+            "title": "Media Type",
+            "type": "string"
+          },
+          "schema_ref": {
+            "$ref": "#/$defs/SchemaRef"
+          },
+          "scope": {
+            "$ref": "#/$defs/Scope"
+          },
+          "sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Sha256",
+            "type": "string"
+          },
+          "size_bytes": {
+            "maximum": 9007199254740991,
+            "minimum": 0,
+            "title": "Size Bytes",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "artifact_id",
+          "scope",
+          "sha256",
+          "media_type",
+          "schema_ref",
+          "size_bytes"
+        ],
+        "title": "ArtifactRef",
+        "type": "object"
+      },
+      "CandidateRevisionRef": {
+        "additionalProperties": false,
+        "properties": {
+          "candidate_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Candidate Id",
+            "type": "string"
+          },
+          "revision": {
+            "maximum": 9007199254740991,
+            "minimum": 1,
+            "title": "Revision",
+            "type": "integer"
+          },
+          "scope": {
+            "$ref": "#/$defs/Scope"
+          }
+        },
+        "required": [
+          "scope",
+          "candidate_id",
+          "revision"
+        ],
+        "title": "CandidateRevisionRef",
+        "type": "object"
+      },
+      "SchemaRef": {
+        "additionalProperties": false,
+        "properties": {
+          "schema_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Schema Id",
+            "type": "string"
+          },
+          "sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Sha256",
+            "type": "string"
+          },
+          "version": {
+            "const": "1",
+            "title": "Version",
+            "type": "string"
+          }
+        },
+        "required": [
+          "schema_id",
+          "version",
+          "sha256"
+        ],
+        "title": "SchemaRef",
+        "type": "object"
+      },
+      "Scope": {
+        "additionalProperties": false,
+        "properties": {
+          "project_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Project Id",
+            "type": "string"
+          },
+          "tenant_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Tenant Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "tenant_id",
+          "project_id"
+        ],
+        "title": "Scope",
+        "type": "object"
+      }
+    },
+    "$id": "urn:amphora:research.candidate-revision:1:serialization",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "additionalProperties": false,
+    "properties": {
+      "reference": {
+        "$ref": "#/$defs/CandidateRevisionRef"
+      },
+      "representation": {
+        "$ref": "#/$defs/ArtifactRef"
+      },
+      "supersedes": {
+        "anyOf": [
+          {
+            "$ref": "#/$defs/CandidateRevisionRef"
+          },
+          {
+            "type": "null"
+          }
+        ]
+      },
+      "wire_version": {
+        "const": "1",
+        "title": "Wire Version",
+        "type": "string"
+      }
+    },
+    "required": [
+      "wire_version",
+      "reference",
+      "representation",
+      "supersedes"
+    ],
+    "title": "CandidateRevision",
+    "type": "object"
+  },
+  "producer": {
+    "$defs": {
+      "Abstained": {
+        "additionalProperties": false,
+        "properties": {
+          "reason_code": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Reason Code",
+            "type": "string"
+          },
+          "status": {
+            "const": "abstained",
+            "title": "Status",
+            "type": "string"
+          }
+        },
+        "required": [
+          "status",
+          "reason_code"
+        ],
+        "title": "Abstained",
+        "type": "object"
+      },
+      "ArtifactRef": {
+        "additionalProperties": false,
+        "properties": {
+          "artifact_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Artifact Id",
+            "type": "string"
+          },
+          "media_type": {
+            "maxLength": 128,
+            "minLength": 3,
+            "pattern": "^[^\\s/]+/[^\\s/]+$",
+            "title": "Media Type",
+            "type": "string"
+          },
+          "schema_ref": {
+            "$ref": "#/$defs/SchemaRef"
+          },
+          "scope": {
+            "$ref": "#/$defs/Scope"
+          },
+          "sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Sha256",
+            "type": "string"
+          },
+          "size_bytes": {
+            "maximum": 9007199254740991,
+            "minimum": 0,
+            "title": "Size Bytes",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "artifact_id",
+          "scope",
+          "sha256",
+          "media_type",
+          "schema_ref",
+          "size_bytes"
+        ],
+        "title": "ArtifactRef",
+        "type": "object"
+      },
+      "Completion": {
+        "additionalProperties": false,
+        "properties": {
+          "attempt_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Attempt Id",
+            "type": "string"
+          },
+          "fence": {
+            "maximum": 9007199254740991,
+            "minimum": 1,
+            "title": "Fence",
+            "type": "integer"
+          },
+          "invocation_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Invocation Id",
+            "type": "string"
+          },
+          "outcome": {
+            "discriminator": {
+              "mapping": {
+                "abstained": "#/$defs/Abstained",
+                "failed": "#/$defs/Failed",
+                "succeeded": "#/$defs/Succeeded",
+                "uncertain_external_effect": "#/$defs/Uncertain"
+              },
+              "propertyName": "status"
+            },
+            "oneOf": [
+              {
+                "$ref": "#/$defs/Succeeded"
+              },
+              {
+                "$ref": "#/$defs/Abstained"
+              },
+              {
+                "$ref": "#/$defs/Failed"
+              },
+              {
+                "$ref": "#/$defs/Uncertain"
+              }
+            ],
+            "title": "Outcome"
+          },
+          "schema_version": {
+            "const": "1",
+            "title": "Schema Version",
+            "type": "string"
+          }
+        },
+        "required": [
+          "schema_version",
+          "invocation_id",
+          "attempt_id",
+          "fence",
+          "outcome"
+        ],
+        "title": "Completion",
+        "type": "object"
+      },
+      "CompletionRecord": {
+        "additionalProperties": false,
+        "properties": {
+          "accepted_run_revision": {
+            "maximum": 9007199254740991,
+            "minimum": 0,
+            "title": "Accepted Run Revision",
+            "type": "integer"
+          },
+          "activation_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Activation Id",
+            "type": "string"
+          },
+          "canonical_result": {
+            "title": "Canonical Result",
+            "type": "boolean"
+          },
+          "completion_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Completion Id",
+            "type": "string"
+          },
+          "result": {
+            "$ref": "#/$defs/Completion"
+          },
+          "retention_reservation_ids": {
+            "default": [],
+            "items": {
+              "maxLength": 128,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+              "type": "string"
+            },
+            "maxItems": 65,
+            "title": "Retention Reservation Ids",
+            "type": "array"
+          },
+          "run_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Run Id",
+            "type": "string"
+          },
+          "schema_version": {
+            "const": "1",
+            "default": "1",
+            "title": "Schema Version",
+            "type": "string"
+          },
+          "scope": {
+            "$ref": "#/$defs/Scope"
+          }
+        },
+        "required": [
+          "scope",
+          "run_id",
+          "completion_id",
+          "activation_id",
+          "accepted_run_revision",
+          "canonical_result",
+          "result"
+        ],
+        "title": "CompletionRecord",
+        "type": "object"
+      },
+      "Failed": {
+        "additionalProperties": false,
+        "properties": {
+          "reason_code": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Reason Code",
+            "type": "string"
+          },
+          "retryable": {
+            "title": "Retryable",
+            "type": "boolean"
+          },
+          "status": {
+            "const": "failed",
+            "title": "Status",
+            "type": "string"
+          }
+        },
+        "required": [
+          "status",
+          "reason_code",
+          "retryable"
+        ],
+        "title": "Failed",
+        "type": "object"
+      },
+      "InputBinding": {
+        "additionalProperties": false,
+        "properties": {
+          "artifact": {
+            "$ref": "#/$defs/ArtifactRef"
+          },
+          "port": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Port",
+            "type": "string"
+          }
+        },
+        "required": [
+          "port",
+          "artifact"
+        ],
+        "title": "InputBinding",
+        "type": "object"
+      },
+      "PreparedInvocation": {
+        "additionalProperties": false,
+        "properties": {
+          "activation_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Activation Id",
+            "type": "string"
+          },
+          "checkpoint": {
+            "anyOf": [
+              {
+                "$ref": "#/$defs/ArtifactRef"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null
+          },
+          "inputs": {
+            "items": {
+              "$ref": "#/$defs/InputBinding"
+            },
+            "maxItems": 64,
+            "title": "Inputs",
+            "type": "array"
+          },
+          "invocation_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Invocation Id",
+            "type": "string"
+          },
+          "node_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Node Id",
+            "type": "string"
+          },
+          "side_effects": {
+            "const": "pure",
+            "default": "pure",
+            "title": "Side Effects",
+            "type": "string"
+          },
+          "timeout_seconds": {
+            "maximum": 86400,
+            "minimum": 1,
+            "title": "Timeout Seconds",
+            "type": "integer"
+          },
+          "tool": {
+            "$ref": "#/$defs/ToolBinding"
+          }
+        },
+        "required": [
+          "node_id",
+          "activation_id",
+          "invocation_id",
+          "tool",
+          "inputs",
+          "timeout_seconds"
+        ],
+        "title": "PreparedInvocation",
+        "type": "object"
+      },
+      "SchemaRef": {
+        "additionalProperties": false,
+        "properties": {
+          "schema_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Schema Id",
+            "type": "string"
+          },
+          "sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Sha256",
+            "type": "string"
+          },
+          "version": {
+            "const": "1",
+            "title": "Version",
+            "type": "string"
+          }
+        },
+        "required": [
+          "schema_id",
+          "version",
+          "sha256"
+        ],
+        "title": "SchemaRef",
+        "type": "object"
+      },
+      "Scope": {
+        "additionalProperties": false,
+        "properties": {
+          "project_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Project Id",
+            "type": "string"
+          },
+          "tenant_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Tenant Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "tenant_id",
+          "project_id"
+        ],
+        "title": "Scope",
+        "type": "object"
+      },
+      "Succeeded": {
+        "additionalProperties": false,
+        "properties": {
+          "checkpoint": {
+            "anyOf": [
+              {
+                "$ref": "#/$defs/ArtifactRef"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null
+          },
+          "outputs": {
+            "items": {
+              "$ref": "#/$defs/InputBinding"
+            },
+            "maxItems": 64,
+            "minItems": 1,
+            "title": "Outputs",
+            "type": "array"
+          },
+          "status": {
+            "const": "succeeded",
+            "title": "Status",
+            "type": "string"
+          }
+        },
+        "required": [
+          "status",
+          "outputs"
+        ],
+        "title": "Succeeded",
+        "type": "object"
+      },
+      "ToolBinding": {
+        "additionalProperties": false,
+        "properties": {
+          "capability_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Capability Id",
+            "type": "string"
+          },
+          "contract_version": {
+            "const": "1",
+            "title": "Contract Version",
+            "type": "string"
+          },
+          "image_sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Image Sha256",
+            "type": "string"
+          },
+          "release": {
+            "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$",
+            "title": "Release",
+            "type": "string"
+          }
+        },
+        "required": [
+          "capability_id",
+          "release",
+          "image_sha256",
+          "contract_version"
+        ],
+        "title": "ToolBinding",
+        "type": "object"
+      },
+      "Uncertain": {
+        "additionalProperties": false,
+        "properties": {
+          "operation_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Operation Id",
+            "type": "string"
+          },
+          "reason_code": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Reason Code",
+            "type": "string"
+          },
+          "status": {
+            "const": "uncertain_external_effect",
+            "title": "Status",
+            "type": "string"
+          }
+        },
+        "required": [
+          "status",
+          "operation_id",
+          "reason_code"
+        ],
+        "title": "Uncertain",
+        "type": "object"
+      }
+    },
+    "$id": "urn:amphora:execution-proofs.accepted-tool:1:serialization",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "additionalProperties": false,
+    "properties": {
+      "authority": {
+        "const": "accepted_execution",
+        "title": "Authority",
+        "type": "string"
+      },
+      "completion": {
+        "$ref": "#/$defs/CompletionRecord"
+      },
+      "invocation": {
+        "$ref": "#/$defs/PreparedInvocation"
+      },
+      "wire_version": {
+        "const": "1",
+        "title": "Wire Version",
+        "type": "string"
+      },
+      "worker_id": {
+        "maxLength": 128,
+        "minLength": 1,
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+        "title": "Worker Id",
+        "type": "string"
+      }
+    },
+    "required": [
+      "wire_version",
+      "authority",
+      "worker_id",
+      "invocation",
+      "completion"
+    ],
+    "title": "AcceptedToolExecution",
+    "type": "object"
+  }
+}

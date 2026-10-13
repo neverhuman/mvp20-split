@@ -1,4 +1,5 @@
 const postPaths = new Set([
+  "/api/research/v1/candidates/read",
   "/api/research/v1/assessments/read", "/api/research/v1/assessment-publications/read",
   "/api/research/v1/assessment-receipts/select", "/api/knowledge/v1/reasoning-receipts/select",
   "/api/knowledge/v1/graph-changes/read",
@@ -11,6 +12,7 @@ export function allowedRoute(method: "GET" | "POST", path: string): boolean {
   if (method === "POST") return postPaths.has(path);
   const matched = /^\/api\/knowledge\/v1\/graphs\/([^/]+)\/proposals\/([^/]+)$/.exec(path)
     ?? /^\/api\/runtime\/v1\/supervision\/responses\/([^/]+)$/.exec(path)
+    ?? /^\/api\/runtime\/v1\/runs\/([^/]+)\/completions\/([^/]+)\/producer$/.exec(path)
     ?? /^\/api\/data\/v1\/(?:artifacts\/([^/]+)(?:\/(?:content|derivation))?|acquisition\/traces\/([^/]+)|acquisition\/sources\/([^/]+)\/([^/]+))$/.exec(path);
   if (!matched) return false;
   return matched.slice(1).filter(value => value !== undefined).every(encoded => {

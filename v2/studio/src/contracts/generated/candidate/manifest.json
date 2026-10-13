@@ -1,0 +1,18 @@
+{
+  "request": {
+    "source": "contracts/schemas/v1/chemical-structure.request.serialization.json",
+    "sha256": "e47c8521687cf6eef0ff5585c3edc1442c7619d99c3a4bf83e4504b4cda04065"
+  },
+  "result": {
+    "source": "contracts/schemas/v1/chemical-structure.result.serialization.json",
+    "sha256": "3a9e6c998f266cc479aa893e333c21ea1e3a06120cef966b215b3ca3e3ce02bb"
+  },
+  "candidate": {
+    "source": "contracts/schemas/v1/research.candidate-revision.serialization.json",
+    "sha256": "5c6403c093e9693c7e7d0c9e4bc936bde59fea665d78a17893916b0f9c907a83"
+  },
+  "producer": {
+    "source": "contracts/schemas/v1/execution-proofs.accepted-tool.serialization.json",
+    "sha256": "3f6408f998efc944d91d223cd8aa6ea61ebcca2c1f7096e624ad58ae48a691a9"
+  }
+}

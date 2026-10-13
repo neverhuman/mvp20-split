@@ -1,0 +1,12 @@
+{
+  "request": {
+    "schema_id": "chemical-structure.request",
+    "version": "1",
+    "sha256": "add511e8856a23631faa2b46831c83b7ca27a65d9664758fd5b7df12f293930e"
+  },
+  "result": {
+    "schema_id": "chemical-structure.result",
+    "version": "1",
+    "sha256": "efcca10edae21dc833c53d594ac36e5e6c4f319eed1fed0059bb4de8b4730ecc"
+  }
+}

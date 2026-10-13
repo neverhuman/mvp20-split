@@ -155,3 +155,13 @@ synthetic Research fitness and numeric search cannot rank a molecular structure.
 backend DTO/API, transport route, model call or browser delivery. Tests are owned in
 studio/tests/page_models/candidate_evidence. P2=100%, P3/P4=0%; overall50%,
 Build66.67%, Verification0%. P3 now owns protected loads, formula/PNG and presentation.
+
+## 2026-10-13 17:47:17 - P3.1 protected candidate inspection complete
+
+Existing public Runtime accepted-producer and Research candidate reads require no
+new backend API. Studio binds visible cut/attempt/worker/input/output, exact Data
+bytes, candidate revision, profile and source hash. Bounded PNG validation checks
+CRC, dimensions and decompressed scanlines; SVG/animation/metadata reject.
+12 focused transport/model/image tests and strict build pass, using actual P1 output
+with synthetic cut wrappers. No live/browser claim. P3=33.33%, overall58.33%,
+Build77.78%, Verification0%. Next P3.2 Results discovery/panel/navigation.

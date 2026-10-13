@@ -1,11 +1,12 @@
 # Restore
 
-Refreshed: 2026-10-13 17:30:55 America/Chicago. Read FIRST after compaction.
+Refreshed: 2026-10-13 17:47:17 America/Chicago. Read FIRST after compaction.
 
 ## Current task
 
-UI-02/P1 and P2 COMPLETE. P3 candidate inspector is next, not implemented.
-Overall50%, Build66.67%, Verification0%; P1/P2=100%, P3/P4=0%. No owner gate.
+UI-02/P1 and P2 COMPLETE. P3.1 protected candidate model/transport/PNG COMPLETE.
+P3.2 Results discovery and presentation is next, not implemented.
+Overall58.33%, Build77.78%, Verification0%; P1/P2=100%, P3=33.33%, P4=0%. No owner gate.
 Continue P3 -> P4 actual browser acceptance, then POP-01/ML-01. LR-01 paused25%;
 UI-01/LAN-01 archived100%. Keep trackers/Restore current; commit/push; do not stop
 at milestones. Both demo wrappers remain stopped while source work continues.
@@ -20,7 +21,10 @@ Existing Research fitness grants only synthetic_owner_projection/reuse_authority
 Do not attach Hansen/Arrhenius scalars or synthetic digest policy to the molecule.
 P2 pure objects are not Artifact authentication; P3 must verify current owner reads.
 UI Coding Guidelines and Interaction References read this turn. P1 pushedef5375a4;
-P2 checkpoint commit follows. No UI-02 features served or frontend inspector written.
+P2 pushed92e417da; P3.1 checkpoint commit follows. No UI-02 features served. candidate_inspector model and candidate transport written;
+12 focused tests/strict build pass. Presentation/discovery not yet written.
+Generated candidate schemas, exact existing owner routes and P1 retained result
+fixture added. Read candidate_inspector/README.md and transport/candidate/README.md.
 
 ## Completed P1 proof
 

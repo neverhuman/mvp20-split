@@ -246,3 +246,10 @@ await generate({
 }, resolve(target, "followup"), ["followup", "checkpoint", "campaign"]);
 
 await generate({ checkpoint: ["search.checkpoint", "SearchCheckpoint"] }, resolve(target, "search"), ["checkpoint"]);
+
+await generate({
+  request: ["chemical-structure.request", "StructureRequest"],
+  result: ["chemical-structure.result", "StructureResult"],
+  candidate: ["research.candidate-revision", "CandidateRevision"],
+  producer: ["execution-proofs.accepted-tool", "AcceptedToolExecution"],
+}, resolve(target, "candidate"), ["request", "result"]);

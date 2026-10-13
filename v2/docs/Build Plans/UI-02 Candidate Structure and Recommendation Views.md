@@ -3,13 +3,13 @@
 ## Canonical tracker
 
 - Status: P1/P2 complete; P3 candidate inspector active.
-- Last refreshed: 2026-10-13 17:29:39 (America/Chicago).
-- Overall implementation:50%; Build66.67%, Verification0%. Four equal phases;
-  Build averages P1/P2/P3; Verification is P4. P1/P2=100%, P3/P4=0%.
+- Last refreshed: 2026-10-13 17:47:17 (America/Chicago).
+- Overall implementation:58.33%; Build77.78%, Verification0%. Four equal phases;
+  Build averages P1/P2/P3; Verification is P4. P1/P2=100%, P3=33.33%, P4=0%.
 - Owner: Studio candidate inspection; tools own representations/evidence, Runtime
   owns accepted execution, Data owns artifacts and Research owns candidate identity.
-- Current task: P3 candidate inspector: exact candidate/producer/Artifact reads, formula
-  and safe bounded depiction, Results navigation and absent property/synthesis status.
+- Current task: P3.2 Results discovery and candidate presentation. P3.1 protected
+  owner reads/model/PNG validation complete;12 focused checks and strict build pass.
 - Next task: P3 scoped model/transport/presentation verification, then P4 actual
   retained-owner/browser/local-LAN acceptance and final architecture audit.
 - Latest checkpoint: 2026-10-13 17:37:39; P2 RetainedSelection consumes explicit numerical
@@ -55,7 +55,7 @@ contracts/tool output, P2 selection evidence, P3 formula/structure detail, and P
 the actual browser proof. Show candidates even when unranked; use Recommended only
 when the retained policy/evidence supports it. Thu2026-10-15 is the target for P3,
 Fri2026-10-16 for P4, conditional on P1/P2 completion. These are scheduling targets,
-not permission to bypass producer or selection gates. P1 is100% from four verified deliveries; P2/P3/P4 remain0%.
+not permission to bypass producer or selection gates. P1/P2 are100%; P3 is active and P4 remains0%.
 
 Show a two-dimensional chemical structure or polymer repeat-unit representation,
 with composition and available architecture details: connectivity/attachment points,
@@ -84,8 +84,15 @@ Keep illustrative, generated, predicted and experimentally supported material di
 |---|---:|---|---|
 | P1 representation and provenance contracts | 100% | Activation audit | Inventory producers; define supported representations, identity/revision binding, unsupported/unknown states and artifact validation. Specify missing producer work explicitly; do not fabricate structures from scalar inputs. |
 | P2 recommendation evidence | 100% | P1 complete | Consume an explicit retained selection result, including objective/constraints/policy, candidate set and trade-offs. Verify missing policy, ties, incomparable candidates and insufficient evidence remain truthful. |
-| P3 candidate inspector | 0% | P2 complete | Results entry point, 2D structure/repeat-unit or composition rendering, property/synthesis evidence and selection rationale, linked to exact execution and lineage. Safe bounded rendering and module replacement README. |
+| P3 candidate inspector | 33.33% | P2 complete | Results entry point, 2D structure/repeat-unit or composition rendering, property/synthesis evidence and selection rationale, linked to exact execution and lineage. Safe bounded rendering and module replacement README. |
 | P4 verification and audit | 0% | P3 complete | Module-scoped contract/model/rendering tests and actual retained-artifact browser proof; inspect desktop/mobile/accessibility, wrong candidate/revision, malformed structures and missing evidence. Complete scoped architecture drift audit before closeout. |
+
+## P3 bounded deliveries
+
+Three equal deliveries: P3.1 authenticated owner reads, projection and protected PNG
+loading (100%); P3.2 Results discovery, candidate panel and execution navigation (0%);
+P3.3 integrated scoped regression and replacement boundary closeout (0%).
+Actual owner/browser/local-LAN acceptance remains P4.
 
 ## Integration boundaries and exclusions
 
