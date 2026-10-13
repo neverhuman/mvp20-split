@@ -2,20 +2,19 @@
 
 ## Canonical tracker
 
-- Status: scheduled for2026-10-12 through2026-10-16; planning only, implementation not started.
-- Last refreshed: 2026-10-08 20:19:11 (America/Chicago).
+- Status: P1 scoped design ready; awaiting owner direction on the material chemical registration boundary; implementation not started.
+- Last refreshed: 2026-10-13 10:43:09 (America/Chicago).
 - Overall implementation: 0%; Build0%, Verification0%. Four equal delivery phases;
   Build averages P1/P2/P3, Verification is P4. Planning earns no implementation credit.
 - Owner: Studio candidate inspection; scientific tools own candidate representations
   and evaluation/selection outputs, Runtime owns accepted execution references,
   Data owns immutable artifact access.
-- Current focus: capture the missing candidate structure and recommendation experience.
-- Next gate: bounded activation audit, inventory actual candidate-producing contracts,
-  then freeze the initial representation and selection-evidence boundary.
+- Current focus: [UI-02.01 chemical structure boundary](UI-02.01%20Chemical%20structure%20boundary%20decision.md); inventory/design complete, no implementation credit.
+- Next gate: approve the additive chemical profile, then P1.1 contracts/compatibility; P1.2 tool, P1.3 Research profile, P1.4 actual handoff remain ordered.
 - Dependencies: retained candidate structures and explicit recommendation evidence;
   existing demo parameter sets provide neither. New public contracts require the
   normal schema-first review. No dependency is assumed implemented by this plan.
-- Acceptance: not started; current demo and active-plan percentages remain unchanged.
+- Acceptance: not started; [activation audit](../Audits/UI-02_Activation.md) identifies the synthetic-only admission gap. P1.1/P1.2/P1.3/P1.4=0%; demo remains live.
 - Parent: none; priority is owned by [Master Build Tracker](Master%20Build%20Tracker.md).
 
 ## User outcome and current gap

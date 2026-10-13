@@ -1,15 +1,24 @@
 # Restore
 
-Refreshed: 2026-10-13 10:34:34 America/Chicago. Read FIRST after compaction.
+Refreshed: 2026-10-13 10:44:11 America/Chicago. Read FIRST after compaction.
 
 ## Current checkpoint
 
 UI-01 is complete100%, Build100%, Verification100%, scoped-audited and archived in
 docs/Build Plans/Completed. UI-01.05 and08j also archived complete;08decision100%.
-Next authorized task: UI-02 pre-activation coherence audit and representation/
-selection-contract inventory, then concrete bounded P1 design. UI-02 remains0%.
-Do not invent approvals; material public additions still require owner direction.
-Latest pushed0608f1b3; current final UI-01 acceptance changes await commit/push.
+UI-02 activation inventory/design is complete; implementation remains0%.
+Current gate: owner direction on docs/Build Plans/UI-02.01 Chemical structure
+boundary decision.md. Existing polymer_space is labelled synthetic sites, not atoms;
+Research CandidateProfiles only admits numeric/polymer/sequence synthetic encodings.
+Proposal adds versioned chemical_structure artifact/tool and explicit opt-in Research
+registration profile for supplied fully specified molecules/finite oligomers, with
+formula and2D PNG bound to exact candidate/source/accepted producer. Unsupported
+repeat/mixture forms remain explicit. Existing DTO/routes/schema bytes unchanged.
+This is a material semantic admission extension; do not publish/implement dependent
+new profile before owner direction. UI-02/P1.1-P1.4=0, P1/P2/P3/P4=0.
+Next after approval: P1.1 additive schemas then tool, Research profile, actual handoff.
+Activation audit docs/Audits/UI-02_Activation.md; all independent design work done.
+Latest implementation pushedf141257e; current boundary/audit doc checkpoint pending.
 
 Studio0.34.4 final independent install passes445 tests/90public schema pins and
 byte-identical static assets. Helper4tests, focused Explore22tests pass. Fixed idle
