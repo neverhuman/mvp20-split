@@ -13,6 +13,10 @@ def test_closed_commands_keep_scope_and_bounded_owner_operation(tmp_path, name):
     assert command[1:4] == ('-I', '-m', recipe.module)
     assert command[4] == recipe.action
     assert '--time-budget' in command if recipe.scoped else '--seconds' in command
+    window = command[command.index('--time-budget' if recipe.scoped else '--seconds') + 1]
+    assert window == ('20' if name == 'planning-curation' else '2')
+    if not recipe.scoped:
+        assert command[command.index('--interval') + 1] == '1'
     assert 'serve' not in command
     with pytest.raises(ProfileError, match='scope_binding'):
         recipe.command(tmp_path / 'python.exe', tmp_path / 'worker.json',

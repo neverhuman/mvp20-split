@@ -1,32 +1,34 @@
 # Restore
 
-Refreshed: 2026-10-12 23:47:55 America/Chicago. Read FIRST after compaction.
+Refreshed: 2026-10-13 09:10:24 America/Chicago. Read FIRST after compaction.
 
-## Active work and running processes
+## Active work and next steps
 
-UI-01.08j/M3.4 managed scientific curation delivery. Latest pushed93144537;
-Studio0.34.2 artifact handoff verified, commit pending. No source/test/module README
-edits while serving/browser/model workflows run. No agents/JARVIS; v1 read-only.
-Preserve user untracked ocular PDF/DOCX under docs/Artifacts (not read or sent).
-Continue until owner genuinely needed; commit/push significant verified changes.
+UI-01.08j/M3.4. All managed owners/workers/local/LAN STOPPED/drained45142;
+shared stores unchanged. No agents/JARVIS/v1 edits. Preserve ocular user PDF/DOCX.
+Continue until owner needed; no source/test edits while workflows run.
 
-Local79958 LIVE: .test-results/curation-demo-session-20261012g, servingh
-(.test-results/curation-demo-serving-20261012h). HTTP127.0.0.1:57013.
-LAN72252 LIVE: .test-results/curation-demo-lan-20261012b, HTTPS192.168.1.70:57013.
-Each duration3600; create session/STOP for clean drain, then poll. Do not kill blindly.
-CURRENT browser11591: one new scientific curation f; poll then inspect original outcome.
-Output .test-results/curation-demo-live-browser-20261012f. No automatic retries.
-
-## Immediate next actions
-
-1. Poll f, inspect current-record.json/proposal. Export original envelope/output and
-   exact allowance using installed Planning0.140s read-only host. Preserve all outcomes.
-2. If ready, actual browser successor launch/execution, local/LAN1440/390, Knowledge
-   and read-only recovery with no duplicate intent. Need scientific successor journey;
-   existing curation_recovery.mjs assumes minimal graph, do not claim it covers this.
-3. If failure, diagnose exact evidence; do not weaken compiler, substitute fixture
-   graph or repeat blindly. Model uncertainty is permitted, no scientific validity claim.
-4. M3.4 remains0 until actual delivery; then scoped M4 audit and synchronized trackers.
+Planning0.141 preparation cache source59/independent159 pass,21 originals unchanged.
+Installed .test-results/curation-planning-installation-20261013a/owner.
+Serving .test-results/curation-demo-serving-20261013b, session counterpart stopped.
+Deployment0.20.2 sweep20s source69/installed69 pass; Studio0.34.2 unchanged.
+Controlled managed original-g recovery90590 saved draft but validation pending.
+Quiesced at round15/16 (read23932); do NOT spend final round before repair.
+Read-only profile59660:243 schemas regenerated,8.13/9.83s under profiling;
+OutputProfiles.supported eagerly creates all7 schema refs for each observation.
+Next repair: process-local closed immutable identity catalog in providers/profiles.py;
+keep exact identity/digest comparisons and all observation verification, no authority cache.
+Then source/provider/persistence+independent tests,21 original replays, read-only
+performance recheck BEFORE resuming originalg. No new model request necessary.
+Evidence .test-results/curation-demo-compiler-recovery-20261013c/{managed-watch.json,
+managed-record.json,after-managed-round.json,readonly-profile.log}.
+All service source edits require stopped runtime (now met). Update version/lock and
+README/test scope. Restore serving with matching installation; paused start supported.
+New scientific successor browser script still unqualified; actual compile+launch+
+Knowledge+next composer/localLAN remain acceptance gates. No percentage credit yet.
+Budget unchanged30slots/$7.50; unknown b charge retained; originals immutable.
+NAS recovered; prior201passed/1failure/3errors were corrected test tuple/huge-id bugs,
+59 rerun pass; old large log remains original. No running test/install workflow now.
 
 ## Current repair and qualification
 
@@ -44,20 +46,21 @@ Actual e: all4 restricted Planning Data processing reads pass and exact transmit
 188804-byte envelope contains all4 available artifacts. Conservative preliminary size
 heuristic failed (overcounted), retained preflight.log; actual production fit passed.
 e valid abstain/not_applicable inferred synthesis requirement absent from request.
-f new feedback direction explicitly screening-only title/identity change, synthesis/lab
-remain advisory gaps. No provider prompt/model/timeout/graph fixture change.
+f returned graph but decision_future_context rejects old3 pins vs declared8.
+g clarifies exact8 future.context tags verified from f original declaration, not a
+substitute graph. No provider prompt/model/timeout/graph fixture change. f export passed.
 
 ## Budget under approved next $10
 
 Old qualification16/$4.05 holds frozen (includes13/$3.30 preapproval); no more calls there.
 Demo allocation37/$9.25. e exported ledger5/$1.25 holds,32/$8.00 remain.
-f expected6/$1.50 holds,31/$7.75 remain; VERIFY actual ledger.
-Since approval through e:8 calls/$2.00 held; known reported$0.393372750 PLUS unknown b charge.
+f verified6/$1.50 holds,31/$7.75 remain; g expected7/$1.75,30/$7.50; VERIFIED export61528 ledger.
+Since approval through g:10 calls/$2.50 held; known reported$0.521323500 PLUS unknown b charge.
 Three qualification estimates sum$0.1496895. Demo a$0.07078125,b unknown,c$0.05590875,
-d$0.0657855,e$0.05120775. All originals immutable; no refunds, unknown is not zero.
+d$0.0657855,e$0.05120775,f$0.0646365,g$0.06331425. All originals immutable; no refunds, unknown is not zero.
 a8192output interrupted; b empty60s unknown; c180s complete abstain/conflicting counters;
 d proposal missing consumed artifact inputs; e advisory synthesis misread. Evidence
-under .test-results/curation-demo-live-browser-20261012{a,b,c,d,e,f}. a..e exported.
+under .test-results/curation-demo-live-browser-20261012{a,b,c,d,e,f,g}. a..f exported.
 Approved synthetic engineering only. Key from Z:/ssos/.env OPENAI_API_KEY, env/memory
 only; never print. Ocular user artifacts excluded from model context.
 
@@ -67,7 +70,7 @@ Shared root C:/Users/alb_p/AppData/Local/Packages/PythonSoftwareFoundation.Pytho
 Deploymentid19fe8146b54c46dfb934075ab28c6d39. Shared PostgreSQL/Qdrant running.
 Scope internal/knowledge-demo-1b1dc25768334153b58973882627b858.
 Planning0.140 .test-results/curation-planning-installation-20261012s/owner;
-Deployment0.20.1 curation-deployment-installation-20261012d/owner;
+Deployment0.20.2 curation-deployment-installation-20261013a/owner (previous0.20.1d preserved);
 Gateway0.7.0 successor-gateway-installation-20261012a/owner; Studio0.34.2 servingh/public.
 Planning schema0027; source-lock packages must match current installed identity.
 0.140 explicit scientific-v1 window180s requires demo/v10; default60 unchanged.

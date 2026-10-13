@@ -39,7 +39,10 @@ class NativeRecipe:
             else:
                 command += ("--limit", "100")
         else:
-            command += ("--seconds", "2", "--interval", "1")
+            # Keep adjacent curation/compiler phases in one bounded process;
+            # restarting between every check can outlast tool capacity evidence.
+            seconds = "20" if self.name == "planning-curation" else "2"
+            command += ("--seconds", seconds, "--interval", "1")
         return command
 
 

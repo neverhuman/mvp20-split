@@ -7,8 +7,9 @@ No workers are active in the accepted read-only serving profile.
 Deployment owns process lifetime, not graph scheduling. Runtime's coordinator,
 artifact delivery and checkpoint loop, and Planning's checkpoint worker retain
 their existing public CLIs, permissions, database ownership, claim/replay and
-deadline rules. Five closed native recipes request two-second sweeps, with one
-second between polls; an in-flight operation can exceed the sweep window.
+deadline rules. Planning curation requests a twenty-second sweep; the other four
+closed native recipes keep two-second sweeps. Poll intervals remain one second;
+an in-flight operation can exceed the sweep window.
 Runtime delivery now permits at most100items within that same two-second sweep,
 the existing owner CLI's supported ceiling. The earlier ten-item batch left artifact
 confirmations waiting behind retries for unconfigured notification targets during
@@ -79,7 +80,7 @@ failure and some manifest variants remain coverage gaps; actual probe separately
 exercises disabled-provider loading. No campaigns or model calls.
 
 UI-01.08j/M1 adds planning-curation, invoking Planning's curation_worker run CLI
-with the same bounded two-second sweep and noninterrupting shutdown semantics.
+with a bounded sweep and noninterrupting shutdown semantics.
 Its scope/actor/peer references belong to the pinned owner configuration; sidecar
 scope is null. Pin1..32 unique relative policy files as well as the worker file.
 Only disabled or explicit openai_curation_v1 is allowed; live composition requires
@@ -88,3 +89,16 @@ that key. Owner serving environment and installation must match; no peer-private
 state or graph scheduling enters Deployment. Planning retains original holds,
 discovery/claims/dispatch and all execution acceptance. M2 installed lifecycle
 and M3 actual demo delivery are separate acceptance gates.
+
+UI-01.08j/M3.4: Deployment0.20.2 gives only planning-curation a20-second sweep.
+Actual scientific compilation exposed15-second capacity observations expiring
+between2-second native sweeps plus interpreter/installation startup. Keeping the
+owner alive permits adjacent bounded compiler steps to reuse its immutable cache.
+Every compiler step still acquires/releases its own lease and sends at most one
+POST; fresh source, eligibility and pre-send expiry checks stay unchanged. This
+window does not guarantee large tool sets fit capacity lifetime. No heartbeat TTL,
+receipt, provider retry or public command changes. The native sweep checks its
+window between operations;20+180seconds bounds an active scientific call started
+near the end. The existing dev210-second quiescence allowance accommodates this;
+quiescence still requires actual process exit. Actual original-proposal recovery,
+without another model call, remains the acceptance gate.

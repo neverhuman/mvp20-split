@@ -15,6 +15,8 @@ from postgres_fixture import ROOT, owned_state
 
 
 GROUPS = {
+    'preparation_cache': ('campaign_preparations', 'campaign_preparation_storage',
+        'campaign_dispatch_coordinator', 'campaign_dispatch_transport', 'curation_compiler', 'curation_worker'),
     'scientific_window': ('curation_openai','openai_provider/test_adapter.py','openai_provider/test_diagnostics.py','curation_execution','curation_worker'),
     'scientific_output': ('curation_input', 'curation_budget', 'curation_openai', 'campaign_packet_profiles'),
     'contracts_context': ('curation_intake', 'curation_context', 'curation_runtime', 'curation_knowledge',

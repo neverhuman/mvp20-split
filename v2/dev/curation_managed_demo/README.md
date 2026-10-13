@@ -74,3 +74,14 @@ actual model/browser acceptance is separate. No prior policy or request is rewri
 The explicit scientific-v1 response window permits180s for v10/demo only; legacy
 profiles keep60s. The dev controller allows210s for noninterrupting native-worker
 quiescence. Both prior scientific calls remain immutable and fully reserved.
+
+Deployment0.20.2 tests a20-second planning-curation sweep so short capacity evidence
+can survive adjacent compiler phases without interpreter restarts. Other recipes
+remain2seconds; heartbeat TTL15seconds and compiler maximum-age/final expiry checks
+are unchanged. No claim of recovery until the retained scientific proposal actually
+compiles and executes through the managed profile.
+
+serve --pause-curation keeps the native curation worker unstarted while owner APIs,
+tool standby and UI are available. It permits measured recovery of retained work
+without exhausting bounded compiler rounds during diagnosis. It changes neither
+the provider policy nor the round ceiling; later start uses Deployment control.

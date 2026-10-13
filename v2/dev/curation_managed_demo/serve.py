@@ -31,7 +31,7 @@ def peer_reads(api, environment, serving, output):
         'matches_operator_readbacks':True,'provider_calls':0,'timestamp_local':datetime.now().strftime('%Y-%m-%d %H:%M:%S')})
 
 
-def serve(root, serving, output, *, duration, live=False):
+def serve(root, serving, output, *, duration, live=False, pause_curation=False):
     output.mkdir(parents=True, exist_ok=False)
     config=read(serving/'curation-worker.json')
     assert (config['provider']=='openai_curation_v1') == live
@@ -54,13 +54,15 @@ def serve(root, serving, output, *, duration, live=False):
         assert allowance['maximum_slots']==37 and allowance['maximum_units']==9250000000
         if live:
             assert allowance['remaining_slots']>0
-            api.controller.control('/workers/planning-curation/start','POST')
+            if not pause_curation:
+                api.controller.control('/workers/planning-curation/start','POST')
         origin='http://127.0.0.1:57013'
         prepared=read(serving/'managed-prepared.json')
         write(output/'browser-input.json',{'origin':origin,'draft_id':prepared['draft']['draft_id'],
             'scope':config['scope']})
         write(output/'ready.json',{'status':'ready','origin':origin,'scope':config['scope'],
-            'serving':str(serving),'live_curation':live,'campaigns_automatically_launched':0,
+            'serving':str(serving),'live_curation':live,'curation_started':live and not pause_curation,
+            'campaigns_automatically_launched':0,
             'timestamp_local':datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
             'supervisor_pid':api.controller.process.pid,'initial_allowance':allowance})
         print('Managed scientific demo ready at '+origin+'; live curation '+str(live),flush=True)
@@ -79,7 +81,9 @@ if __name__=='__main__':
     for name in ('root','serving','output'):parser.add_argument('--'+name,type=Path,required=True)
     parser.add_argument('--duration',type=int,default=3600)
     parser.add_argument('--live',action='store_true')
+    parser.add_argument('--pause-curation',action='store_true',
+        help='Start owners and tool standby without advancing curation; operator control may start it later.')
     args=parser.parse_args()
     assert 1<=args.duration<=86400
     serve(*(Path(os.path.abspath(getattr(args,name))) for name in ('root','serving','output')),
-          duration=args.duration,live=args.live)
+          duration=args.duration,live=args.live,pause_curation=args.pause_curation)

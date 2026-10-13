@@ -41,3 +41,18 @@ Curation registration supplies an optional SQL guard before a NEW preparation
 insert, checking the current job fence while holding the request lock. Exact replay
 returns immutable history without a new write. Generic registration is unchanged;
 callbacks must not perform peer/provider I/O or open nested transactions.
+
+UI-01.08j/M3.4 Planning0.141 bounds an exact-byte verification cache to one retained
+preparation. from_bytes validates request/manifest/packet types and size ceilings
+before lookup; its key includes the complete immutable request, manifest and packet
+bytes. A miss runs the original canonical/profile/budget/candidate/observation checks;
+failures do not populate the cache. The result contains only frozen byte-owned
+CampaignPreparation/PacketEvidence/RequestSnapshot objects. document/context methods
+still decode fresh projections, so mutating a returned DTO cannot change the proof.
+Eviction and process replacement revalidate normally. Maximum retained input is
+256KiB request +2MiB manifest +8MiB packet (plus bounded derived fit bytes); no growing
+cross-campaign cache. This contains no principal grants, leases, fresh processing
+permission, Registry capacity or mutable owner projection. SQL readers still check
+stored row identities/digests and callers still perform fresh dispatch prerequisites.
+Tests: test_verified_cache plus existing corruption, fit and storage/dispatch suites.
+Actual original scientific compilation is a separate acceptance gate.

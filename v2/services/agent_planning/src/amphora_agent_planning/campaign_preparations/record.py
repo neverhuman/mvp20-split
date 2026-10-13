@@ -2,10 +2,12 @@
 
 import hashlib
 from dataclasses import dataclass
+from functools import lru_cache
 
 from ..campaign_context.records import canonical
 from ..campaign_packet import reconstruct
 from ..context.policy import require
+from ..context import RequestSnapshot
 from .encoding import decode
 from .inputs import PreparationInputs
 from .packet import PacketEvidence
@@ -29,6 +31,19 @@ class CampaignPreparation:
 
     @classmethod
     def from_bytes(cls, request, manifest, raw_packet):
+        require(isinstance(request, RequestSnapshot) and type(request.canonical) is bytes
+                and 0 < len(request.canonical) <= 262144, 'campaign_preparation_request_binding')
+        require(type(manifest) is bytes and 0 < len(manifest) <= 2097152
+                and type(raw_packet) is bytes and 0 < len(raw_packet) <= 8388608,
+                'campaign_preparation_size')
+        return cls._verified(request.canonical, manifest, raw_packet)
+
+    @classmethod
+    @lru_cache(maxsize=1)
+    def _verified(cls, request_bytes, manifest, raw_packet):
+        # The key and entire returned object contain immutable bytes only.
+        # This validates retained input, never current rights or owner state.
+        request = RequestSnapshot(request_bytes)
         value = decode(manifest, 2097152)
         document = PreparationRecord.model_validate_json(canonical(value))
         require(canonical(document.model_dump(mode='json')) == manifest, 'campaign_preparation_manifest_canonical')
