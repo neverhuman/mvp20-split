@@ -41,3 +41,5 @@ CampaignPlanningContext defines selection/reference and an optional complete cur
 context reader. Original LaunchPlanningContext behavior is unchanged; successor
 context has its own owner under page_models/successor_launch and must preserve all
 requested Knowledge heads instead of using legacy single-head origin projection.
+
+LaunchPlanningContext.inputArtifacts exposes artifact-valued original admission inputs only after the same run/scope/plan check. Curation combines these explicit pins with verified draft dependencies; no runtime result is guessed.

@@ -39,3 +39,5 @@ Runtime snapshot. Future curation reads the exact saved draft and original curat
 preserving all Knowledge heads and Research/artifact selections. They remain requested
 context, not a claim of provider/tool consumption. Legacy single-head provenance is
 not used to reconstruct successor curation. Tests cover all8 heads and changed pins.
+
+Successor curation retains original artifact selections and adds exact literal dependencies from its verified saved draft plus artifact-valued admission inputs. Shared bounded collection rejects scope/conflict/size violations; this is requested context, not a consumption assertion.

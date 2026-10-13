@@ -32,3 +32,5 @@ qualification evidence are recorded in UI-01.07/P4. Independent replacement pres
 localhost and LAN at1440/390. Manual draft absence and altered pins are explicit.
 Screenshots inspected; no serious/critical axe findings. See UI-01.07 audit for
 retained failures and limits; no live-model or scientific-validity claim.
+
+OriginReader.readBound returns the verified provenance together with the exact saved draft it already checked. read remains the provenance-only interface. Both preserve save-receipt, scope, revision, content and node/tool checks; curation does not fetch a second unbound draft.

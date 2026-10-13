@@ -8,6 +8,7 @@ import type {CampaignPlanningContext} from '../launch/planning_context.js';
 import type {CurationGraphReview} from '../campaign_curation/graph_review.js';
 import {RecordedCuration,sameValue} from '../campaign_curation/records.js';
 import {isCampaignContext} from '../campaign_flow/context.js';
+import {CurationArtifactInputs} from '../campaign_curation/artifact_inputs.js';
 
 /** Accepted successor plus original curation pins; no single-Knowledge legacy projection. */
 export class SuccessorPlanningContext implements CampaignPlanningContext{
@@ -43,12 +44,13 @@ export class SuccessorPlanningContext implements CampaignPlanningContext{
     if(refs.length>1)throw Error('successor_context_ambiguous');return refs[0]??null;
   }
   async curationContext(snapshot:GraphSnapshotPage['snapshot'],signal:AbortSignal){
-    const draft=this.selection(snapshot);await this.draft(snapshot,signal);
+    const draft=this.selection(snapshot),saved=await this.draft(snapshot,signal);
     const raw=await this.curations.curation(this.review.record.selection,signal);
     if(signal.aborted||!raw)throw Error('curation_origin_unavailable');
     const record=new RecordedCuration(raw,this.review.record.selection);this.review.record.reconcile(record);
     const original=record.data.specification.context;
     return {predecessor:{run_id:snapshot.cut.run_id,revision:snapshot.cut.revision,plan_sha256:snapshot.cut.plan_sha256},draft,
-      knowledge:structuredClone(original.knowledge),questions:structuredClone(original.questions),needs:structuredClone(original.needs),artifacts:structuredClone(original.artifacts)};
+      knowledge:structuredClone(original.knowledge),questions:structuredClone(original.questions),needs:structuredClone(original.needs),
+      artifacts:CurationArtifactInputs.collect(saved.definition,[...original.artifacts,...this.command.request.payload.admission.payload.inputs.flatMap(input=>input.value.kind==='artifact'?[input.value.artifact]:[])])};
   }
 }

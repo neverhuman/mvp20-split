@@ -1,116 +1,117 @@
 # Restore
 
-Refreshed: 2026-10-12 23:16:42 America/Chicago. Read FIRST after compaction.
-Latest pushed d3cf1298 (Planning0.139 token rebalance/managed helpers/browser).
-Installedscopedtests16730 Planning0.140s PASSED122/112.68s.
-Actualprepare83309 PASSED/drained servingg. No activeprocess. Next commit/push
-then startserve live servingg/sessionf and newbrowserc original (same direction). Source98490131 PASS133.36s plus
-newlongdispatchdeadline/replay test327611 PASS8.02s (132total). Locks updated.
-No otherlive/process/model; sharedstoresrunning, UI OFFLINE.
-Sourcechanges: new CurationResponseWindow, LiveSettings deadline_profile default
-standard-v1<=60; scientific-v1<=180 exactdemo+v10; HTTPexplicittimeoutprofile;
-executor explicitceiling, hostpropagation, disabledcheckmodelguard; helpernative
-quiescencewait210. Version0.140/locksupdated; independentinstallationexists; scopedtests running. Newtestswindow.py.
-Latestlive: servingf0.139 / sessione28540 passedready then drained. Browser51074
-output .test-results/curation-demo-live-browser-20261012b indeterminate with no
-output/usage, reason dispatch_outcome_unknown; export53183 PASS.
-Originala v9 got8192output and7715capturedbytes, reported$0.07078125; originalb
-v10 emptyout, unknownusage; noacceptedscientificproposal. Both receipts/envelopes/
-packets/output/observations/accounting/allowanceafter retained. No retry ofeither.
-Demo2/$0.50holds, oldqualification16/$4.05intact; remaining35/$8.75. Additional$10
-fivecallstotal/$1.25held; reportedknownsum$0.220470750 PLUS oneunknowncharge.
-Next liveactivation aftercommit. Installeds material_scientific.py PASS all16exactreplays and fit;
-scientific-material.json alreadyexists. 17595 initialcollection failed on3 unrelated
-dev-corpus imports; allpassedsource, changedboundarysuite nowtargeted installed122.
-Helper already adds b as16th exactreplay; originalv10limits retained. prepare_scientific
-now pins0.140/material16 and newmodelconfig180deadline + worker scientific-v1/180.
-Use sourcec
-(providerdisabled) to newservingg. Current helperupdated; remember no sourceeditsduringinstall/tests. No migration/publicAPI/budgetincrease. Needactualnew
-request afterchecks, then graph/successor/localLAN/recovery/M4. No ownerneeded yet.
-Exactdemo scope internal/knowledge-demo-1b1dc25768334153b58973882627b858.
-Local scientific launch88042 PASSED .test-results/curation-demo-browser-20261012a,
-launch recoveryJSON supports next scientificcurationtest. Testsource
-studio/tests/integration/curation_managed_scientific.mjs oneoriginal/noautoretry.
-Newbrowserc input cancopya/input.json (freshlaunch-onlybrowserstate same direction).
-Source106/installedr106 and prior15replays passed for0.139. Preserve immutableschema
-bytes onclone (failedd reformattedthem); prepare_scientific doescorrectcopy.
-OpenAI Docs skill read+used; official reasoningpage confirmsmaxoutput includes
-reasoning; no modelchange. https://developers.openai.com/api/docs/guides/reasoning
-No agents/JARVIS;v1readonly;preserveocularPDF/DOCX. UI-01.08j68.75/M3.4=0 untildelivery.
+Refreshed: 2026-10-12 23:47:55 America/Chicago. Read FIRST after compaction.
 
-## Current achievement and next task
+## Active work and running processes
 
-08i COMPLETE100. Mediumv9 Planning0.136.0, same grounded task/prompt/schema,
-produced valid originalgraph; live91968 passed compile/validation/successorcomplete.
-Curation curation-8f8645a9fcb62b4843d964c88a994c394f3c7bfa850380049cf225bea47bea76.
-Successor538bde8292ca4ca68b832cbab567768a carries/exports original hash unchanged.
-Initial recovery41999 automatedpassed but visualfound blankcanvas afterresize.
-Studio0.34.1 revealOnResize fixes only allnodesoffcanvas onactualresize; saved
-viewport/pan and partiallyvisible context preserved. Navigation73994 passed.
-Isolated serving/public rebuilt (backup public-before-resize-20261012a).
-Strengthened recovery3705 passed/drained; actualowner/replay/browser1440/390,
-visible nodes/edges, nextiteration readiness, no duplicateintent. Screenshotsseen.
+UI-01.08j/M3.4 managed scientific curation delivery. Latest pushed93144537;
+Studio0.34.2 artifact handoff verified, commit pending. No source/test/module README
+edits while serving/browser/model workflows run. No agents/JARVIS; v1 read-only.
+Preserve user untracked ocular PDF/DOCX under docs/Artifacts (not read or sent).
+Continue until owner genuinely needed; commit/push significant verified changes.
 
-NEXT UI-01.08j/M3.4. Backup/migration rehearsal DONE. Need actual shared migration,
-new immutable serving composition and meaningful scientific local/LAN flow.
-Cost protection IMPLEMENTED/qualified0.137: completed qualification scope has16holds/$4.05; remaining37/
-$9.25 belongs to approved$10. Packaged bounded allocation freezes qualification
-ceiling at16/$4.05, allocate37/$9.25 to exact existing demo scope internal/
-knowledge-demo-1b1dc25768334153b58973882627b858. No refund, unchanged per-call cap,
-no new public budget API; total53/$13.30 preserved. Implemented0.137 independentinstallp; finalisolatedread73455 passed/drained.
-forward_demo pins0.137. Old frozen inputs must replay unchanged. No new
-calls until deployment scope ledger accounted; oldqualification workers remain stopped.
-Source curation_budget/ceiling.py/tests/test_extension.py now split16+37; actual
-budget tests (AMPHORA_TEST_POSTGRES=1), exactoldreplays and independentinstall all PASS.
+Local79958 LIVE: .test-results/curation-demo-session-20261012g, servingh
+(.test-results/curation-demo-serving-20261012h). HTTP127.0.0.1:57013.
+LAN72252 LIVE: .test-results/curation-demo-lan-20261012b, HTTPS192.168.1.70:57013.
+Each duration3600; create session/STOP for clean drain, then poll. Do not kill blindly.
+CURRENT browser11591: one new scientific curation f; poll then inspect original outcome.
+Output .test-results/curation-demo-live-browser-20261012f. No automatic retries.
+
+## Immediate next actions
+
+1. Poll f, inspect current-record.json/proposal. Export original envelope/output and
+   exact allowance using installed Planning0.140s read-only host. Preserve all outcomes.
+2. If ready, actual browser successor launch/execution, local/LAN1440/390, Knowledge
+   and read-only recovery with no duplicate intent. Need scientific successor journey;
+   existing curation_recovery.mjs assumes minimal graph, do not claim it covers this.
+3. If failure, diagnose exact evidence; do not weaken compiler, substitute fixture
+   graph or repeat blindly. Model uncertainty is permitted, no scientific validity claim.
+4. M3.4 remains0 until actual delivery; then scoped M4 audit and synchronized trackers.
+
+## Current repair and qualification
+
+Call d produced a proposal but compiler correctly rejected campaign_tool_input_unconsumed:
+UI OriginalCurationContext sent artifacts:[] despite four literal parameter artifacts.
+Studio0.34.2 adds CurationArtifactInputs bounded nested input/checkpoint collector,
+verified OriginReader.readBound provenance+draft, exact admission refs and successor
+preservation. Scope conflicts, differing pins, >16 artifacts and traversal limits
+fail closed. Finish-only outputs are not input evidence; no guessed carried values.
+Composer shows4 input artifacts. Build +79 affected module tests pass. Actual screenshot
+requested-context.png inspected. Schema bytes preserved in new immutable servingh.
+No backend/public contract/compiler change. README and tests updated.
+
+Actual e: all4 restricted Planning Data processing reads pass and exact transmitted
+188804-byte envelope contains all4 available artifacts. Conservative preliminary size
+heuristic failed (overcounted), retained preflight.log; actual production fit passed.
+e valid abstain/not_applicable inferred synthesis requirement absent from request.
+f new feedback direction explicitly screening-only title/identity change, synthesis/lab
+remain advisory gaps. No provider prompt/model/timeout/graph fixture change.
+
+## Budget under approved next $10
+
+Old qualification16/$4.05 holds frozen (includes13/$3.30 preapproval); no more calls there.
+Demo allocation37/$9.25. e exported ledger5/$1.25 holds,32/$8.00 remain.
+f expected6/$1.50 holds,31/$7.75 remain; VERIFY actual ledger.
+Since approval through e:8 calls/$2.00 held; known reported$0.393372750 PLUS unknown b charge.
+Three qualification estimates sum$0.1496895. Demo a$0.07078125,b unknown,c$0.05590875,
+d$0.0657855,e$0.05120775. All originals immutable; no refunds, unknown is not zero.
+a8192output interrupted; b empty60s unknown; c180s complete abstain/conflicting counters;
+d proposal missing consumed artifact inputs; e advisory synthesis misread. Evidence
+under .test-results/curation-demo-live-browser-20261012{a,b,c,d,e,f}. a..e exported.
+Approved synthetic engineering only. Key from Z:/ssos/.env OPENAI_API_KEY, env/memory
+only; never print. Ocular user artifacts excluded from model context.
+
+## Installed identities and shared demo
+
 Shared root C:/Users/alb_p/AppData/Local/Packages/PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0/LocalCache/Local/Amphora/local-v2/restore-20261007b
-id19fe8146b54c46dfb934075ab28c6d39. Original PostgreSQL/Qdrant running; noowners.
-Serving .test-results/origin-live-20261011e; LAN origin-lan-20261011d; window expired.
-Meaningful run74de1629bdc6444398239de807df325d; inventory .test-results/curation-demo-inventory-20261012a
-contains exact runs/draft/provenance readbacks (source in inventoryrecord has dev/../).
-Backup physical local-v2/curation-demo-backup-20261012a, backupid3771efc579754533993bb6a6affaf642,
-trusted .test-results/curation-demo-backup-20261012a.json, manifestsha109aa72242637cb21e5e843a6f29cda7a785e47d7f5e875f3b08dcf52a2d93c3.
-Isolated root local-v2/curation-demo-restored-20261012a ida702fd5b991e4fbe8ac651c3997ce5b2,
-configs .test-results/curation-demo-restored-20261012a; oldPlanning0.107/schema0021,
-now0.136/schema0027. Public reads pre a/post b: .test-results/curation-demo-restored-reads-20261012{a,b}.
-Migration .test-results/curation-demo-forward-20261012a0.136, b0.137 bothPASS.
-Finalpostread .test-results/curation-demo-restored-reads-20261012c uses0.137p, process73455 PASSED/drained. Original root NOW migrated0.137/schema0027;31760 PASS .test-results/curation-demo-shared-forward-20261012a. No new serving config/owners yet.
-Use forward_demo with --rehearsal postreadc for shared migration after finalrelease
-proof. All predecessor migration bytes must match. InitialDeploymentreceipt unchanged.
-Deployment0.20.1 independentinstall .test-results/curation-deployment-installation-20261012d/owner;
-92source/92installedtests; scoped Knowledge/Research peer27836 passed/drained.
-Actual olddemo lacks Planning peers ALL5: add Data read/upload/finalize/source_history,
-Runtime read/author/validate (notadmit),Registryread/resolve, Knowledge read_graph,
-Research read_declarations. Use separate directed tokens, actoradmin where compiler
-commands require; do not reuse operator tokens. Workerprofilev2 requesteradmin/runtimeactorplanning-author/registryactorplanning-author. Planning config actoradmin vs old
-operator; Gatewaycontextadmin. Newcreds sidecar optionalcuration_access for
-Knowledge/Research; other3 originalvault refs CONFIRMED present. Dedicated reader sidecar now provisioned on sharedroot; no original vault change.
-Oldshared Gateway0.5.0 lacksnewcurationroutes; use isolated qualifiedgateway package
-from .test-results/curation-owner-20261012a/serving/owners.json. Studio0.34.1 public
-also there. Preserve scientific context from .test-results/knowledge-run-b/campaign-context.json.
-Need publish actualscope roots/policy with scoped grants, staticallowance no model
-until qualified. No substitution of minimal2nodegraph for scientificdemo.
+Deploymentid19fe8146b54c46dfb934075ab28c6d39. Shared PostgreSQL/Qdrant running.
+Scope internal/knowledge-demo-1b1dc25768334153b58973882627b858.
+Planning0.140 .test-results/curation-planning-installation-20261012s/owner;
+Deployment0.20.1 curation-deployment-installation-20261012d/owner;
+Gateway0.7.0 successor-gateway-installation-20261012a/owner; Studio0.34.2 servingh/public.
+Planning schema0027; source-lock packages must match current installed identity.
+0.140 explicit scientific-v1 window180s requires demo/v10; default60 unchanged.
+v10 medium input196608/output16384, worstpinnedcost$0.221184 <=$0.25 reservation.
+Source132/installed122 pass;16 older exact envelopes replay unchanged. No schema/API change.
+Native quiescence helper210s, worker lease renews independently. Never silently retry.
+Separate peer actors: requesteradmin, Runtime/Registry planning-author,
+Knowledge/Research planning-reader, Data directed existing credential.
 
-## Money and boundaries
+Meaningful baseline74de1629bdc6444398239de807df325d; actual browser-launched completed
+run ae03d1a0d62143f4930f67819a0dc6a9. Launch recovery
+.test-results/curation-demo-browser-20261012a/browser-recovery.json.
+Draft planning-75a08c857eb96dcdf1f7070430beb4cedfba48425c671412bbcf56f4dab7984a,
+head1/hash7debf9d55718f8c459ae87566ae0d3c07e06449cb1b49ea1c229fbeac0fceaa7;
+definition polymer-screening-mvp revision3, runstate33, declaredfuture4 are distinct counters.
+Original four concurrent Hansen/Arrhenius invokes + finish. Preserve meaningful graph.
 
-User APPROVED NEXT$10. Exactscope ceiling53/$13.30 preserves13/$3.30 oldholds.
-Three newcalls reported$0.149689500 ($0.045138,$0.044787750,$0.059763750),$.75held.
-All16holds/$4.05 intact;37slots/$9.25 remain. STOP PAID QUALIFICATION CALLS because
-casepassed; unspentauthoritypersists. No refunds or new scope to evade budget.
-14campaigncalls cumulative$0.527476500; schema probes separate$0.012626250.
-These are estimates, not invoices. Single syntheticcase, no general/scientificclaim.
-08g/h originals remain abstained/rejected; deferredacceptance supplied08i, nowclosed.
+## Canonical percentages and order
 
-## State and paths
+UI-01.08j68.75: M1=100,M2=100,M3=75,M4=0; M3.1/2/3=100,M3.4=0.
+UI-01.08=98.4375;P1..4=100,P5=92.1875;P5.1/2/3=100,P5.4=68.75.
+UI01=79.6875,Build99.609375,Verification0;N3/I1=98.4375.
+UI01.05=99.48rounded,K1/R1=100. UI01 -> UI02 -> POP01 -> ML01; LR01paused.
+08i closed100,08g/h failed originals preserved. No invented owner gate now.
 
-ParentUI-01.08=98.4375/P5=92.1875(P5.4=68.75). N3/I1=98.4375;
-UI01=79.6875/Build99.609375/V0;UI01.05=99.48;08j68.75(M1/M2=100,M3=75,M4=0).  UI01->UI02->POP01->ML01;LR01paused25/Build33.33.
-Durableaudit docs/Audits/Evidence/UI-01.08-Feedback, attempts a/b/c. Source tests
-101passed26.40s, isolatedPlanninginstallo0.136.0;13old exactreplays preserved.
-Working .test-results/curation-live-medium-20261012a; recoveryb is finalvisualproof.
-Reusable dev/curation_live_qualification/review_success.py; no modelcall inreview.
-Physicalroot C:/Users/alb_p/AppData/Local/Packages/PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0/LocalCache/Local/Amphora/curation-qualification-20261012a.
-Serving .test-results/curation-owner-20261012a/serving. Planninginstallo, Studio0.34.1
-isolatedpublic. Originaldemo remainsolderPlanning0.107/schema0021+Studio0.26,
-helpermayexpired; no servingcutover. Read scopedREADME first for M3 actualstate.
-Onlykey Z:/ssos/.env OPENAI_API_KEY memoryonly; no keyneeded M1/M2.
-Use dev/.venv python-Xutf8, uv .venv/Scripts/uv.exe. Exactpathstage excludesocular.
+## Backup and tools
+
+Physical backup local-v2/curation-demo-backup-20261012a id3771efc579754533993bb6a6affaf642;
+manifestSHA109aa72242637cb21e5e843a6f29cda7a785e47d7f5e875f3b08dcf52a2d93c3,
+2317files/200383279bytes. Isolated restore/migration/readbacks passed; shared31760passed.
+No repeat backup for static UI repair. Original stores and histories preserved.
+
+Dev Python v2/dev/.venv/Scripts/python.exe -X utf8; uv v2/.venv/Scripts/uv.exe.
+serve: -m curation_managed_demo.serve --root ROOT --serving servingh --output NEW
+--duration3600 --live; starts owners +managed curation, no spontaneous campaigns.
+LAN: serve_lan_review.py serve with servingh/gateway.json, existing TLS under
+Local/Amphora/lan-demo-20261008 and installedgatewaypython. invite issues clipboard
+singleuse link, never print token. Last LAN browser verified earliera with read-only
+recovery from samehostprivateIP, not independent second-computer firewall test.
+
+Export from independently installed Planning only: dev loads directed env via
+load_bindings(root,serving/owners.json,Routes.load(root)); subprocess installedpython
+-I runpy worker.py export(host,id,out), CurationHost.load(providerdisabled), then
+curation_live_qualification/allowance.py config output. No private cross-owner imports.
+Actual scientific browser: tests/integration/curation_managed_scientific.mjs input out,
+launchkey from Deployment vault GATEWAY_SESSION_KEY; expected_artifacts4 guards POST.
+Exact-path stage; git -c core.safecrlf=false -c gc.auto=0 commit; pushoriginmain.

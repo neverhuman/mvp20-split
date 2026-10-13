@@ -12,6 +12,9 @@ export class OriginReader {
   constructor(private readonly planning: Pick<CampaignOriginClient, "read">,
     private readonly runtime: Pick<AuthoringClient, "draft" | "receipt">) {}
   async read(expected: OriginDraft, signal: AbortSignal): Promise<CampaignOrigin | null> {
+    return (await this.readBound(expected,signal))?.origin??null;
+  }
+  async readBound(expected: OriginDraft, signal: AbortSignal) {
     const result = await this.planning.read(expected, signal);
     active(signal);
     if (!result) return null;
@@ -45,6 +48,6 @@ export class OriginReader {
       }
     }
     requireReply(selected.size === 0);
-    return immutable(result);
+    return immutable({origin:result,draft});
   }
 }

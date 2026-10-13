@@ -1,6 +1,6 @@
 # Master Build Tracker
 
-Latest M3.4 checkpoint: 2026-10-12 23:23:14: Planning0.140 explicit scientific180s window qualified:132 source,122 scoped independently installed tests pass;16 original envelopes/outcomes replay unchanged. Actual prepare83309 passes and drains servingg with no model call. Initial installed collection lacked unrelated dev-corpus support; scoped retry preserves installed isolation. Budget remains35 slots/$8.75; live scientific acceptance/localLAN still pending.
+Latest M3.4 checkpoint: 2026-10-12 23:47:55: Studio0.34.2 artifact handoff qualified by typecheck/79 scoped tests and actual composer. Four exact parameter artifacts pass restricted Planning processing reads and appear available in the transmitted188804-byte envelope. Model e validly abstains, incorrectly inferring synthesis as a screening prerequisite; no execution claim. f is one new feedback-informed request clarifying screening-only title/identity change, preserving evidence gaps. Servingh local79958/LAN72252 live; browser11591 pending. e ledger5/$1.25 held,32/$8.00 remain. Expected after f31/$7.75; verify original ledger. No public contract or model-settings change.
 
 ## Purpose and Authority
 
@@ -11,15 +11,15 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 ## Program Tracker
 
 - Status: UI-01 primary active; LAN-01 accepted/archived. LR-01 remains conditional; completed plans remain closed.
-- Last refreshed: 2026-10-12 21:58:45 (America/Chicago).
+- Last refreshed: 2026-10-12 23:47:55 (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
 - Current priority: schedule UI-01 Knowledge/run/LLM integration and UI-02 formula/structure views for2026-10-12 through2026-10-16; preserve the live demo.
 - Primary active task: UI-01/N3/I1, implementing approved [UI-01.08](UI-01.08%20Campaign%20curation%20boundary%20decision.md), P1=100%, P2=100%, P3=100%,P4=100%,P5=92.1875%, child98.4375%. N2=100%; launch/provenance remain closed. UI-01.05 K1/R1=100%, I1=98.4375%, child99.48%.
 - Next task: UI-01.08j/M3.4 bounded live-budget allocation and managed local/LAN delivery.
 - Implementation completion: LAN-01=100%; UI-01 active79.6875%, Build99.609375%, Verification0%; UI-02=0%, P1/P2/P3/P4=0%; LR-01 paused25%, Build33.33%, Acceptance0%.
-- Blockers/dependencies: Supported model/actual successor/browser qualified via08i100%; no owner decision needed. Managed demo lifecycle/cutover remains. $9.25 of additional authority unreserved; no more qualification calls.
-- Latest checkpoint: 2026-10-12 22:10:12: Planning0.137 allocation verified;89source/25installedtests,14exactreplays, originalledger reconciliation and finalrestoredread73455 pass. Existing$10 authority unchanged; M3.4 shared delivery next.
-- Acceptance posture: Supported live synthetic case and missing-capability case qualified; managed demo cutover and parent V1 remain. Three new calls estimated$0.149689500, $.75 held; demo unchanged.
+- Blockers/dependencies: Supported model/actual successor/browser qualified via08i100%; no owner decision needed. Managed demo lifecycle/cutover remains. $8.00 verified unreserved before f (expected$7.75 after); no more qualification calls.
+- Latest checkpoint: Studio artifact handoff repair passes79 scoped tests; actual delivery remains M3.4.
+- Acceptance posture: Isolated supported/missing-capability cases qualified. Shared scientific proposal rejected for missing consumed artifact context; repair and actual successor delivery pending. Seven additional calls/$1.75 reserved; known reported$0.342165 plus unknown b charge.
 - Active exception: owner scheduled four targets for next week. Preserve earned phase credit; sequence the bounded cross-plan handoffs below. Pull LR-01/UI-R01 forward only when their faults block the scheduled integration, with exact return points.
 
 ## Initial Delivery Boundary

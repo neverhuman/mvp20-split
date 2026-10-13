@@ -42,7 +42,7 @@ export function CurationComposer({request,preparation,review,synthetic}:{request
     {message&&<p role="status">{message}</p>}
     {request.canSubmit&&<form onSubmit={event=>{event.preventDefault();if(prepared&&direction.trim())void request.submit(prepared.request(direction,crypto.randomUUID()));}}>
       <label>What should the next campaign investigate?<textarea rows={4} maxLength={4096} required value={direction} onChange={event=>setDirection(event.target.value)}/></label>
-      {prepared&&<p className="curation-context-summary">Original campaign definition · {prepared.context.knowledge.length} Knowledge revisions · {prepared.context.questions.length} research questions · {prepared.context.needs.length} evidence needs</p>}
+      {prepared&&<p className="curation-context-summary">Original campaign definition · {prepared.context.knowledge.length} Knowledge revisions · {prepared.context.questions.length} research questions · {prepared.context.needs.length} evidence needs · {prepared.context.artifacts.length} input artifacts</p>}
       <div className="curation-compose-actions"><button className="primary" disabled={!prepared||!direction.trim()||busy}>Request graph revision</button>
         <button type="button" disabled={context.phase==='loading'} onClick={()=>void preparation.load()}>Refresh campaign context</button></div>
       <p className="curation-context-summary">This requests a proposal for a future campaign. It does not change the original run or launch the proposed graph.</p>

@@ -20,6 +20,7 @@ try{
  await page.getByLabel('What should the next campaign investigate?').fill(input.direction);
  await page.waitForFunction(()=>[...document.querySelectorAll('button')].some(b=>b.textContent==='Request graph revision'&&!b.disabled),{},{timeout:60000});
  const summary=await page.locator('.curation-composer').innerText();
+ if(input.expected_artifacts!==undefined)assert.ok(summary.includes(input.expected_artifacts+' input artifacts'),summary);
  assert.match(summary,/1 Knowledge revisions/);assert.match(summary,/1 research questions/);
  await page.screenshot({path:resolve(output,'requested-context.png'),fullPage:true});
  const receiptPromise=page.waitForResponse(r=>r.request().method()==='POST'&&r.url().endsWith('/v1/campaign-curations'));
@@ -46,7 +47,9 @@ try{
   await page.screenshot({path:resolve(output,'proposal-'+width+'.png'),fullPage:true});
   assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),true);
  }
- assert.equal(evidence.requests.length,1);assert.equal(evidence.requests[0].payload.context.knowledge.length,1);
+ assert.equal(evidence.requests.length,1);
+ if(input.expected_artifacts!==undefined)assert.equal(evidence.requests[0].payload.context.artifacts.length,input.expected_artifacts);
+ assert.equal(evidence.requests[0].payload.context.knowledge.length,1);
  assert.equal(evidence.requests[0].payload.context.questions.length,1);assert.deepEqual(evidence.errors,[]);
  assert.equal(record.receipt.phase,'ready','Actual model outcome retained; do not retry automatically');
  await page.reload();await page.getByRole('heading',{name:'How would the next campaign change?',exact:true}).waitFor();

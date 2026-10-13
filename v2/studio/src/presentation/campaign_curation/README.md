@@ -68,3 +68,5 @@ Socket reset caused3 physical browser POSTs of ONE byte-identical intent; recove
 reads that original. This does not replace Deployment idempotency qualification.
 Explicit next-cycle preparation sends no launch/model POST. Changed predecessor and
 unsupported profiles disable launch. Full production workspace journey remains P4.3d.
+
+The composer shows the prepared input-artifact count alongside Knowledge and Research counts. Selection/validation belongs to the preparation page model; presentation does not scan graph nodes.

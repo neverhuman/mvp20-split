@@ -89,3 +89,5 @@ next composer creates a separate request only on explicit submission. No provide
 retry, budget refund, scope change or automatic command occurs. Earlier journal
 records remain readable; the null current marker represents deliberate preparation
 for another direction. Tests: next_cycle.test.ts.
+
+CurationArtifactInputs derives exact literal input/checkpoint ArtifactRefs across nested draft scopes from OriginReader.readBound. Admission artifacts are explicit, deduplicated and scope checked; conflicting pins, more than16 artifacts or excessive graph traversal fail closed. Finish-only exports and inferred runtime outputs are not input evidence. Preparation selects refs only; Planning retains rights, content reads and consumption authority. Tests: artifact_inputs.test.ts and preparation.test.ts.

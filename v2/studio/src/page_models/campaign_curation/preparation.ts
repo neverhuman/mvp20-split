@@ -1,5 +1,5 @@
 import { decodeCurationRequest, type CurationRequest } from '../../contracts/campaign_curation.js';
-import type { GraphSnapshotPage } from '../../contracts/observations.js';
+import type { ArtifactRef,GraphSnapshotPage } from '../../contracts/observations.js';
 import type { OriginDraft } from '../../contracts/campaign_origin.js';
 import type { ObservationSource } from '../../transport/observations.js';
 import type { OriginReader } from '../campaign_origin/reader.js';
@@ -8,23 +8,25 @@ import { sameScope } from '../../transport/campaign_curation/identity.js';
 import { immutable } from '../explore/context.js';
 import { RequestLane } from '../request_lane.js';
 import type { CurationActor } from './journal.js';
+import {CurationArtifactInputs} from './artifact_inputs.js';
 
 type Snapshot=GraphSnapshotPage['snapshot'];
 type Context=CurationRequest['payload']['context'];
-export interface CampaignDraftBinding { selection(snapshot:Snapshot):OriginDraft }
+export interface CampaignDraftBinding { selection(snapshot:Snapshot):OriginDraft; inputArtifacts?(snapshot:Snapshot):ArtifactRef[] }
 
 /** Retained original provenance supplies explicit next-request pins, not consumed-context claims. */
 export class OriginalCurationContext {
-  constructor(private readonly binding:CampaignDraftBinding,private readonly origin:Pick<OriginReader,'read'>) {}
+  constructor(private readonly binding:CampaignDraftBinding,private readonly origin:Pick<OriginReader,'readBound'>) {}
   async read(snapshot:Snapshot,signal:AbortSignal):Promise<Context> {
-    const draft=this.binding.selection(snapshot), record=await this.origin.read(draft,signal);
+    const draft=this.binding.selection(snapshot), bound=await this.origin.readBound(draft,signal),record=bound?.origin;
     if(signal.aborted)throw Error('aborted');
     if(!record)throw Error('curation_origin_unavailable');
     if(!same(record.origin.draft,draft))throw Error('curation_origin_mismatch');
     const knowledge=record.origin.knowledge, research=record.origin.research.selection;
     if(knowledge&&(knowledge.status!=='available'||!knowledge.head))throw Error('curation_knowledge_unavailable');
     return {predecessor:{run_id:snapshot.cut.run_id,revision:snapshot.cut.revision,plan_sha256:snapshot.cut.plan_sha256},
-      draft,knowledge:knowledge?.head?[knowledge.head]:[],questions:research?.questions??[],needs:research?.needs??[],artifacts:[]};
+      draft,knowledge:knowledge?.head?[knowledge.head]:[],questions:research?.questions??[],needs:research?.needs??[],
+      artifacts:CurationArtifactInputs.collect(bound!.draft.definition,this.binding.inputArtifacts?.(snapshot)??[])};
   }
 }
 

@@ -12,6 +12,7 @@ export interface CampaignPlanningContext{
   selection(snapshot:GraphSnapshotPage['snapshot']):OriginDraft;
   reference(snapshot:GraphSnapshotPage['snapshot'],signal:AbortSignal):Promise<ArtifactRef|null>;
   curationContext?(snapshot:GraphSnapshotPage['snapshot'],signal:AbortSignal):Promise<CurationRequest['payload']['context']>;
+  inputArtifacts?(snapshot:GraphSnapshotPage['snapshot']):ArtifactRef[];
 }
 
 /** A launch-bound planning artifact is context before it becomes a retained finish output. */
@@ -27,6 +28,10 @@ export class LaunchPlanningContext {
       snapshot.cut.plan_sha256 !== admission.plan_sha256) throw Error("launch_observation_mismatch");
     return { scope: structuredClone(request.identity.scope), draft_id: draft.draft_id,
       revision: draft.revision, content_sha256: draft.content_sha256 };
+  }
+  inputArtifacts(snapshot:GraphSnapshotPage['snapshot']):ArtifactRef[]{
+    this.selection(snapshot);
+    return this.command.request.payload.admission.payload.inputs.flatMap(input=>input.value.kind==='artifact'?[input.value.artifact]:[]);
   }
   async reference(snapshot: GraphSnapshotPage["snapshot"], signal: AbortSignal): Promise<ArtifactRef | null> {
     const request = this.command.request, admission = request.payload.admission.payload, selection = this.selection(snapshot);

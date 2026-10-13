@@ -4,6 +4,7 @@ import { readFileSync } from 'node:fs';
 import { CurationPreparation,OriginalCurationContext,PreparedCuration } from '../../../src/page_models/campaign_curation/preparation.js';
 import type { CurationRequest } from '../../../src/contracts/campaign_curation.js';
 import type { GraphSnapshotPage } from '../../../src/contracts/observations.js';
+import type {DraftRevision} from '../../../src/contracts/authoring.js';
 import type { CampaignOrigin } from '../../../src/contracts/campaign_origin.js';
 const request=JSON.parse(readFileSync('tests/fixtures/campaign_curation/commands.json','utf8'))[0].request as CurationRequest;
 const actor={actor_id:request.identity.actor_id,scope:request.identity.scope,run_id:request.payload.context.predecessor.run_id};
@@ -42,13 +43,14 @@ test('all selected Knowledge heads survive and duplicate or oversized contexts r
   assert.throws(()=>new PreparedCuration(actor,'synthetic',{...context,knowledge:[context.knowledge[0]!,context.knowledge[0]!]}));
 });
 test('legacy original context keeps unavailable Knowledge explicit',async()=>{
-  const origin=JSON.parse(readFileSync('tests/fixtures/campaign_origin/record.json','utf8')).origin as CampaignOrigin;
+  const source=JSON.parse(readFileSync('tests/fixtures/campaign_origin/record.json','utf8'));
+  const origin=source.origin as CampaignOrigin, saved=source.draft as DraftRevision;
   const f=fixture();const draft=origin.origin.draft;
-  const reader=new OriginalCurationContext({selection:()=>draft},{read:async()=>origin});
+  const reader=new OriginalCurationContext({selection:()=>draft},{readBound:async()=>({origin,draft:saved})});
   const context=await reader.read(f.page.snapshot,new AbortController().signal);
   assert.equal(context.knowledge.length,origin.origin.knowledge?1:0);
   assert.deepEqual(context.questions,origin.origin.research.selection?.questions??[]);
-  const missing=new OriginalCurationContext({selection:()=>draft},{read:async()=>null});
+  const missing=new OriginalCurationContext({selection:()=>draft},{readBound:async()=>null});
   await assert.rejects(()=>missing.read(f.page.snapshot,new AbortController().signal),/origin_unavailable/);
   if(origin.origin.knowledge){origin.origin.knowledge.head=null;await assert.rejects(()=>reader.read(f.page.snapshot,new AbortController().signal),/knowledge_unavailable/);}
 });
@@ -59,4 +61,19 @@ test('clearing or disposal fences late context and removes prior preparation',as
     const pending=f.model.load();while(!release)await new Promise(resolve=>setTimeout(resolve,1));
     f.model[action]();release(f.context);await pending;assert.equal(f.model.snapshot.prepared,null);assert.equal(f.model.snapshot.phase,'idle');
   }
+});
+
+test('verified original draft supplies exact literal scientific inputs and admission artifacts',async()=>{
+  const source=JSON.parse(readFileSync('tests/fixtures/campaign_origin/record.json','utf8'));
+  const origin=source.origin as CampaignOrigin,saved=source.draft as DraftRevision;
+  const literal={scope:saved.scope,artifact_id:'parameters',sha256:'a'.repeat(64),schema_ref:{schema_id:'synthetic',version:'1' as const,sha256:'d'.repeat(64)},media_type:'application/json',size_bytes:12};
+  const node=saved.definition.body.nodes.find(node=>node.kind==='invoke')!;
+  assert.equal(node.kind,'invoke');if(node.kind!=='invoke')throw Error('fixture');
+  node.inputs=[{port:'value',source:{kind:'artifact',artifact:literal,representation:'parameters',unit:'1'}}];
+  const admitted={...literal,artifact_id:'admitted'};
+  const reader=new OriginalCurationContext({selection:()=>origin.origin.draft,inputArtifacts:()=>[admitted]},
+    {readBound:async()=>({origin,draft:saved})});
+  const context=await reader.read(fixture().page.snapshot,new AbortController().signal);
+  assert.deepEqual(context.artifacts,[admitted,literal]);
+  literal.sha256='b'.repeat(64);assert.equal(context.artifacts[1]!.sha256,'a'.repeat(64));
 });

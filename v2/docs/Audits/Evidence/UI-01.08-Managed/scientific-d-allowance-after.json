@@ -1,0 +1,38 @@
+{
+  "scope": {
+    "tenant_id": "internal",
+    "project_id": "knowledge-demo-1b1dc25768334153b58973882627b858"
+  },
+  "canonical_check": "passed",
+  "original_reservations": [
+    {
+      "engagement_id": "curation-call-126bb6a7c12f5a0b8db39be7b7ac698ca3a786b2546ff3ce0dc5cce5f481e95f",
+      "ordinal": 1,
+      "accounting_units": 250000000
+    },
+    {
+      "engagement_id": "curation-call-2d25c22a10dec9961d7fb201b98c4ce7ed27c802db948020efd3a794ec1df31c",
+      "ordinal": 1,
+      "accounting_units": 250000000
+    },
+    {
+      "engagement_id": "curation-call-96967869afb5130c4652e7c48d0e676012f49163da6ade11c1f70741ff0eefa3",
+      "ordinal": 1,
+      "accounting_units": 250000000
+    },
+    {
+      "engagement_id": "curation-call-a6c6350aaa1afed17745f0775e03edcfe01e8231dc9b6e320dbd9f6a09748cfa",
+      "ordinal": 1,
+      "accounting_units": 250000000
+    }
+  ],
+  "reserved_slots": 4,
+  "reserved_units": 1000000000,
+  "maximum_slots": 37,
+  "maximum_units": 9250000000,
+  "authorization": "UI-01.08j-demo-remainder",
+  "remaining_slots": 33,
+  "remaining_reservation_units": 8250000000,
+  "unit": "usd_nanodollars",
+  "provider_enabled": false
+}
