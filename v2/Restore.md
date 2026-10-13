@@ -1,14 +1,14 @@
 # Restore
 
-Refreshed: 2026-10-12 21:58:45 America/Chicago. Read FIRST after compaction.
-Latest pushed c53e70f3. ALL PROCESSES FINISHED/drained.
-M3.2 inventory31631 passed, M3.3 coldbackup37781/restore49231/pre-read48483/
-migration66160/post-read27577 all passed. Commit verified checkpoint now then
-CONTINUE M3.4 budget/composition/shared migration/localLAN. No owner gate yet.
-Uncommitted dev helpers inventory_demo,backup_demo,restored_reads,forward_demo;
-optional CurrentDemoCut integration in capture_local_backup; optional installed
-interpreter RecordsController; six scoped guardtests pass, testscope registered.
-Shared demo STILL original schema/config and UI OFFLINE; original stores running.
+Refreshed: 2026-10-12 22:09:29 America/Chicago. Read FIRST after compaction.
+Latest pushed5efa6417 (backup/migration rehearsal). ALL PROCESSES FINISHED/drained. Final0.137 exactreadback73455 passed.
+Source89 Planningbudget/provider/worker tests pass140.70s; independentinstallp0.137
+passed25budgettests15.34s,14exactreplays87347 inclsuccess, v9materialunchanged.
+Allocationread78257 passed exact16/$4.05 qualification originals, shareddemo0holds.
+New ceilingcode0.137: oldqualification16/$4.05; exactdemo37/$9.25; totalunchanged.
+Uncommitted Planningversion/ceilings/tests/locks/README, devallocation_read.py,
+forward_demo pinned0.137 anddocs. Commit verified budget checkpoint after73455.
+No sharedschema/configcutover; olddemoOFFLINE/storesrunning. No new paid calls.
 No agents/JARVIS;v1 read-only; preserve ocularPDF/DOCX.
 
 ## Current achievement and next task
@@ -26,16 +26,15 @@ visible nodes/edges, nextiteration readiness, no duplicateintent. Screenshotssee
 
 NEXT UI-01.08j/M3.4. Backup/migration rehearsal DONE. Need actual shared migration,
 new immutable serving composition and meaningful scientific local/LAN flow.
-First protect cost: completed qualification scope has16holds/$4.05; remaining37/
-$9.25 belongs to approved$10. Plan packaged bounded allocation: freeze qualification
+Cost protection IMPLEMENTED/qualified0.137: completed qualification scope has16holds/$4.05; remaining37/
+$9.25 belongs to approved$10. Packaged bounded allocation freezes qualification
 ceiling at16/$4.05, allocate37/$9.25 to exact existing demo scope internal/
 knowledge-demo-1b1dc25768334153b58973882627b858. No refund, unchanged per-call cap,
-no new public budget API; total53/$13.30 preserved. Not implemented yet. NewPlanning
-release0.137 likely; update/requalify isolated actualreadback after budget change,
-forward_demo currently pins0.136. Old frozen inputs must replay unchanged. No new
+no new public budget API; total53/$13.30 preserved. Implemented0.137 independentinstallp; finalisolatedread73455 passed/drained.
+forward_demo pins0.137. Old frozen inputs must replay unchanged. No new
 calls until deployment scope ledger accounted; oldqualification workers remain stopped.
-Source curation_budget/ceiling.py/tests/test_extension.py have53 scope; use actual
-budget tests (AMPHORA_TEST_POSTGRES=1), exactoldreplays, independentinstall.
+Source curation_budget/ceiling.py/tests/test_extension.py now split16+37; actual
+budget tests (AMPHORA_TEST_POSTGRES=1), exactoldreplays and independentinstall all PASS.
 Shared root C:/Users/alb_p/AppData/Local/Packages/PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0/LocalCache/Local/Amphora/local-v2/restore-20261007b
 id19fe8146b54c46dfb934075ab28c6d39. Original PostgreSQL/Qdrant running; noowners.
 Serving .test-results/origin-live-20261011e; LAN origin-lan-20261011d; window expired.
@@ -46,8 +45,9 @@ trusted .test-results/curation-demo-backup-20261012a.json, manifestsha109aa72242
 Isolated root local-v2/curation-demo-restored-20261012a ida702fd5b991e4fbe8ac651c3997ce5b2,
 configs .test-results/curation-demo-restored-20261012a; oldPlanning0.107/schema0021,
 now0.136/schema0027. Public reads pre a/post b: .test-results/curation-demo-restored-reads-20261012{a,b}.
-Migration .test-results/curation-demo-forward-20261012a. Original root NOT migrated.
-Use forward_demo with --rehearsal postreadb for shared migration after finalrelease
+Migration .test-results/curation-demo-forward-20261012a0.136, b0.137 bothPASS.
+Finalpostread .test-results/curation-demo-restored-reads-20261012c uses0.137p, process73455 PASSED/drained. Original root NOT migrated.
+Use forward_demo with --rehearsal postreadc for shared migration after finalrelease
 proof. All predecessor migration bytes must match. InitialDeploymentreceipt unchanged.
 Deployment0.20.1 independentinstall .test-results/curation-deployment-installation-20261012d/owner;
 92source/92installedtests; scoped Knowledge/Research peer27836 passed/drained.

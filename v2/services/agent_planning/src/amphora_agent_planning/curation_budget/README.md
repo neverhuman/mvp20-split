@@ -62,3 +62,17 @@ UI-01.08i additional$10 approved 2026-10-12 20:48:00: exact scope53/$13.30, pres
 UI-01.08i v9/fit.v11 isolates low->medium reasoning under the existing additional
 $10 authority. Same v8 prompt bytes, compatible generation schema, model and8192/
 $0.25 limits. Versions1..8 replay unchanged; no new allowance or output repair.
+
+UI-01.08j/Planning0.137 allocation of the already approved remainder: qualification
+completed with16 original holds/$4.05. Exact qualification ceiling is now16/$4.05
+(no new reservation room); exact existing demo scope internal/knowledge-demo-
+1b1dc25768334153b58973882627b858 receives37/$9.25. Combined ceilings remain53/$13.30,
+not a new authorization or refund. Per-original limits and frozen provider envelopes
+are unchanged. Old qualification worker/policies remain stopped; do not run an older
+release with its superseded allowance alongside demo spending. Other synthetic
+scopes retain default limits and have no authorization for external calls.
+
+This is two explicit release-policy allocations, not a cross-database global
+paymaster. Deployment must install the release on either active allocation and
+keep prior releases/keys inactive. Retained original replay/issuance stays valid;
+actual original accounting and both last-slot races are acceptance gates.

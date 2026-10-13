@@ -126,3 +126,7 @@ provider behavior remains unqualified. Approved08g exact scope allowance is12/$3
 
 V8 isolates low reasoning with unchanged v7 prompt/schema.08h exact scope13/$3.30
 preserves12prior holds and permits one$0.25 original only. No wider authority.
+
+Planning0.137: UI-01.08j preserves16 qualification reservations/$4.05 and assigns
+only the approved37-slot/$9.25 remainder to the exact existing demo scope. No new
+API/migration/provider envelope; see curation_budget replacement/accounting boundary.

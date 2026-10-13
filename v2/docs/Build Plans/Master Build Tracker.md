@@ -16,7 +16,7 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 - Next task: UI-01.08j/M3.4 bounded live-budget allocation and managed local/LAN delivery.
 - Implementation completion: LAN-01=100%; UI-01 active79.6875%, Build99.609375%, Verification0%; UI-02=0%, P1/P2/P3/P4=0%; LR-01 paused25%, Build33.33%, Acceptance0%.
 - Blockers/dependencies: Supported model/actual successor/browser qualified via08i100%; no owner decision needed. Managed demo lifecycle/cutover remains. $9.25 of additional authority unreserved; no more qualification calls.
-- Latest checkpoint: 2026-10-12 21:58:45: M3.3 cold backup/isolated restore/migration/exact readbacks complete;08j68.75%,M3=75. Actual serving delivery/accounting remains; no provider calls.
+- Latest checkpoint: 2026-10-12 22:10:12: Planning0.137 allocation verified;89source/25installedtests,14exactreplays, originalledger reconciliation and finalrestoredread73455 pass. Existing$10 authority unchanged; M3.4 shared delivery next.
 - Acceptance posture: Supported live synthetic case and missing-capability case qualified; managed demo cutover and parent V1 remain. Three new calls estimated$0.149689500, $.75 held; demo unchanged.
 - Active exception: owner scheduled four targets for next week. Preserve earned phase credit; sequence the bounded cross-plan handoffs below. Pull LR-01/UI-R01 forward only when their faults block the scheduled integration, with exact return points.
 

@@ -43,7 +43,7 @@ provider. Deployment launch journals remain in backup and are not rebound to old
 container IDs. RecordsController accepts an explicit installed Deployment interpreter.
 
 forward_demo verifies all predecessor0.107 migration bytes unchanged inside the
-independent0.136 wheel, then invokes only Planning's migration command with its
+independent0.137 wheel, then invokes only Planning's migration command with its
 migrator credential. Requires stopped listeners/released tool and launch journals.
 Shared-root migration additionally requires successful drained isolated readbacks
 of the same snapshot and exact target Planning installation. Initial Deployment

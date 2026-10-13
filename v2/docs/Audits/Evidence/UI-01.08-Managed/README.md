@@ -18,3 +18,5 @@ provision scoped readers, qualify actual reads and delivery. Shared demo unchang
 2026-10-12 21:50:45: [Existing demo inventory](demo-inventory.json)31631 passed/drained through unchanged installed owners. Original scientific campaign/draft/provenance retained; M3.2 complete. Backup/isolated migration and shared serving delivery remain.
 
 2026-10-12 21:58:45: M3.3 complete. [Cold backup](cold-backup.json), [separate restore](isolated-restore.json), [before readbacks](before-migration.json), [additive migration](isolated-migration.json), [after readbacks](after-migration.json). All passed/drained; original meaningful scientific campaign/draft/provenance exact. Shared demo schema/config unchanged. No provider calls/new campaigns; no claim that Deployment worker journals were rebound in the isolated target.
+
+2026-10-12 22:09:29: Planning0.137 allocation proof: [retained qualification](allocation-qualification.json), [existing demo](allocation-demo.json).89 source tests,25 installed budget tests,14 exact original replays pass. Combined ceiling unchanged; no additional live calls. Actual demo delivery remains.
