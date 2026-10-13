@@ -51,3 +51,6 @@ UI-01.08d approved2026-10-12 12:52:13: exact scope now10 originals/$2.55. Only v
 UI-01.08f: exact reviewed scope extends to11 originals/$2.80; ten prior holds
 remain. One new v6 original capped$0.25/8192 output, no retry/refund. Other scopes
 unchanged. This does not extend the completed dev isolation probe series.
+
+UI-01.08g approved 2026-10-12 20:03:38: exact scope12/$3.05, all11 prior holds
+retained; one new v7 original/$0.25/8192. Other scopes and per-call caps unchanged.

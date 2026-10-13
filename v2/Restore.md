@@ -6,6 +6,14 @@ JARVIS;v1 read-only. Preserve ocular PDF/DOCX. Existing demo unchanged.
 
 ## Current gate
 
+Owner explicitly approved08g one original/$0.25/8192 at 2026-10-12 20:03:38.
+Scope12/$3.05 preserving11old holds. Preparing0.134.1 allowance patch and
+prepare_semantics helper; 22budget tests pass7.32s(14232FINISHED); installl13461FINISHED/pass; preparation
+33940FINISHED/pass/drained.9exact replays,11old/$2.80 plus1/$0.25 remaining.
+08g50% (offline100/live50/acceptance0); next ONE live semantics qualification.
+Earlier awaiting-approval language below is superseded. No retry/fallback.
+
+
 08f complete100% (offline100/preparation100/outcome-recovery100). Its ONE authorized
 original returned HTTP200 completed,55110input/258output,$0.042493500 reported
 estimate. Valid ABSTENTION (successor_not_admitted), no graph/successor. Provider

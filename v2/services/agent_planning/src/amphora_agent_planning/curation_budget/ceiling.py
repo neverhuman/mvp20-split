@@ -9,12 +9,12 @@ class ScopeCeiling:
     authorization: str = 'UI-01.08'
 
 
-# UI-01.08f owner continuation 2026-10-12 19:46:22. Exact tenant AND project are required.
+# UI-01.08g explicit owner approval 2026-10-12 20:03:38. Exact tenant AND project are required.
 # This is a bounded release policy, not a general budget-management interface.
 REVIEWED_EXTENSION = ('internal', 'owner-records-7e21ca85bd6044198b1585aa2c41d336')
 
 
 def ceiling_for(key):
     if (key['tenant'], key['project']) == REVIEWED_EXTENSION:
-        return ScopeCeiling(11, 2800000000, 'UI-01.08f')
+        return ScopeCeiling(12, 3050000000, 'UI-01.08g')
     return ScopeCeiling()

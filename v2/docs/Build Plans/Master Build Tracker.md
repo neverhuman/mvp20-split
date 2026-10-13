@@ -9,14 +9,14 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 ## Program Tracker
 
 - Status: UI-01 primary active; LAN-01 accepted/archived. LR-01 remains conditional; completed plans remain closed.
-- Last refreshed: 2026-10-12 19:58:47 (America/Chicago).
+- Last refreshed: 2026-10-12 20:04:25 (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
 - Current priority: schedule UI-01 Knowledge/run/LLM integration and UI-02 formula/structure views for2026-10-12 through2026-10-16; preserve the live demo.
 - Primary active task: UI-01/N3/I1, implementing approved [UI-01.08](UI-01.08%20Campaign%20curation%20boundary%20decision.md), P1=100%, P2=100%, P3=100%,P4=100%,P5=50%, child90%. N2=100%; launch/provenance remain closed. UI-01.05 K1/R1=100%, I1=90%, child96.67%.
-- Next task: Review proposed08g one-original/$0.25/8192 evaluation (aggregate12/$3.05, old holds preserved). No further paid call or serving cutover before decision.
+- Next task: Approved08g single v7 original/$0.25/8192, aggregate12/$3.05; finish isolated allowance installation/preparation before paid evaluation.
 - Implementation completion: LAN-01=100%; UI-01 active78%, Build97.5%, Verification0%; UI-02=0%, P1/P2/P3/P4=0%; LR-01 paused25%, Build33.33%, Acceptance0%.
-- Blockers/dependencies: 08f full request completed normally but returned a valid abstention (proposal/admission confusion); no supported successor. All11/$2.80 holds retained, zero remaining.08g v7 clarification passes94 tests, independent installk and nine exact prior replays; live effectiveness pending owner-authorized evaluation.
-- Latest checkpoint: 2026-10-12 19:58:47:08f100% (offline100/preparation100/outcome-recovery100); actual abstention recovery77158 passes/drains, browser1440/390 and ledger11/$2.80/zero.08g33.33% (offline100/evaluation0/acceptance0);94 tests, installk,9exactreplays pass. Parent90/P5=50 unchanged.
+- Blockers/dependencies: Supported graph remains unqualified. Owner approved one v7 evaluation; preserve11old/$2.80 holds and stop after new original. No serving cutover.
+- Latest checkpoint: 2026-10-12 20:06:46:08g50% (offline100/live50/acceptance0);22budget tests, isolated0.134.1 installationl, preparation33940 and9old replays pass.11old/$2.80 holds plus1/$0.25 approved. Single live outcome next; parent90/P5=50 unchanged.
 - Acceptance posture: N3/I1=90%, parent V1=0%; no supported full-engine acceptance/cutover. Nine campaign live attempts report cumulative$0.284874000; separate schema probes$0.012626250, not invoices. Demo unchanged.
 - Active exception: owner scheduled four targets for next week. Preserve earned phase credit; sequence the bounded cross-plan handoffs below. Pull LR-01/UI-R01 forward only when their faults block the scheduled integration, with exact return points.
 

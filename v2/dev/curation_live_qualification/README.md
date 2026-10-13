@@ -80,3 +80,7 @@ is enabled; no graph is synthesized to replace the retained model abstention.
 material_semantics verifies nine original envelopes/acceptance outcomes including
 v6 abstention, and exports v7 prompt material without provider calls or allowance
 changes. It cannot convert a retained abstention into an accepted graph.
+
+UI-01.08g prepare_semantics requires the retained v6 abstention,9old replays,
+11prior/$2.80 holds and explicitly approved12/$3.05 ceiling. One v7 original only;
+no credentials during preparation, no retries/fallback/reset.
