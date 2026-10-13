@@ -456,5 +456,11 @@
     "coverage_sources": [
       "dev/curation_isolation"
     ]
+  },
+  "deployment-curation-access": {
+    "tests": "deploy/local/tests/curation_access",
+    "coverage_sources": [
+      "deploy/local/src/amphora_deployment/curation_access"
+    ]
   }
 }

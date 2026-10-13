@@ -9,14 +9,14 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 ## Program Tracker
 
 - Status: UI-01 primary active; LAN-01 accepted/archived. LR-01 remains conditional; completed plans remain closed.
-- Last refreshed: 2026-10-12 21:35:47 (America/Chicago).
+- Last refreshed: 2026-10-12 21:44:46 (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
 - Current priority: schedule UI-01 Knowledge/run/LLM integration and UI-02 formula/structure views for2026-10-12 through2026-10-16; preserve the live demo.
-- Primary active task: UI-01/N3/I1, implementing approved [UI-01.08](UI-01.08%20Campaign%20curation%20boundary%20decision.md), P1=100%, P2=100%, P3=100%,P4=100%,P5=87.5%, child97.5%. N2=100%; launch/provenance remain closed. UI-01.05 K1/R1=100%, I1=97.5%, child99.17%.
+- Primary active task: UI-01/N3/I1, implementing approved [UI-01.08](UI-01.08%20Campaign%20curation%20boundary%20decision.md), P1=100%, P2=100%, P3=100%,P4=100%,P5=89.0625%, child97.8125%. N2=100%; launch/provenance remain closed. UI-01.05 K1/R1=100%, I1=97.8125%, child99.27%.
 - Next task: UI-01.08/P5.4; UI-01.08j/M3 scoped credentials, existing-demo backup/migration and local/LAN delivery.
-- Implementation completion: LAN-01=100%; UI-01 active79.5%, Build99.375%, Verification0%; UI-02=0%, P1/P2/P3/P4=0%; LR-01 paused25%, Build33.33%, Acceptance0%.
+- Implementation completion: LAN-01=100%; UI-01 active79.5625%, Build99.453125%, Verification0%; UI-02=0%, P1/P2/P3/P4=0%; LR-01 paused25%, Build33.33%, Acceptance0%.
 - Blockers/dependencies: Supported model/actual successor/browser qualified via08i100%; no owner decision needed. Managed demo lifecycle/cutover remains. $9.25 of additional authority unreserved; no more qualification calls.
-- Latest checkpoint: 2026-10-12 21:35:47: Deployment0.20.0 M1/M2 complete;54 source and54 installed tests pass; actual idle force-stop/recovery80941 passed/drained, receipts/allowance unchanged.08j50%, M3 next.
+- Latest checkpoint: 2026-10-12 21:44:46: M3.1 scoped peer access complete;92 source/92 installed tests and actual peer read/denial27836 passed/drained.08j56.25%; M3=25; inventory/backup/delivery remain.
 - Acceptance posture: Supported live synthetic case and missing-capability case qualified; managed demo cutover and parent V1 remain. Three new calls estimated$0.149689500, $.75 held; demo unchanged.
 - Active exception: owner scheduled four targets for next week. Preserve earned phase credit; sequence the bounded cross-plan handoffs below. Pull LR-01/UI-R01 forward only when their faults block the scheduled integration, with exact return points.
 
@@ -31,9 +31,9 @@ The initial program proves software behavior using deterministic/synthetic fixtu
 ## Current In-Flight Work
 
 LAN-01 complete100%, archived in Completed; deployed viewer preserved.
-UI-01 is active at79.5%, Build99.375%, Verification0%. G0 graph review/design
+UI-01 is active at79.5625%, Build99.453125%, Verification0%. G0 graph review/design
 is a prerequisite and earns no implementation credit. G1/N1/N2/N3/V1 are five equal
-delivery gates. Phase mirror: G0=100%, G1=100%, N1=100%, N2=100%, N3=97.5%, V1=0%.
+delivery gates. Phase mirror: G0=100%, G1=100%, N1=100%, N2=100%, N3=97.8125%, V1=0%.
 LR-01 is paused at25%, Build33.33%, Acceptance0%; R1=100%, R2/R3/V1=0%.
 Completed plans remain in the [completed index](Completed/README.md).
 
@@ -41,7 +41,7 @@ Completed plans remain in the [completed index](Completed/README.md).
 
 | Order | Canonical plan | Status | Overall | Build | Verification/Acceptance | Prerequisite |
 |---|---|---|---:|---:|---:|---|
-| 1 | [UI-01 Research Workspace Overhaul](UI-01%20Research%20Workspace%20Overhaul.md) | N2=100%; N3/I1 approved; UI-01.08/P5 active; P3 complete; P4 complete; P5 live qualification active | 79.5% | 99.375% | 0% | Additive curation/capability/successor boundaries |
+| 1 | [UI-01 Research Workspace Overhaul](UI-01%20Research%20Workspace%20Overhaul.md) | N2=100%; N3/I1 approved; UI-01.08/P5 active; P3 complete; P4 complete; P5 live qualification active | 79.5625% | 99.453125% | 0% | Additive curation/capability/successor boundaries |
 | 2 | [UI-02 Candidate Structure and Recommendation Views](UI-02%20Candidate%20Structure%20and%20Recommendation%20Views.md) | Scheduled next week; P1/P2/P3/P4=0% | 0% | 0% | 0% | Typed retained candidate structures and explicit selection evidence; activation audit |
 | 3 | [POP-01 Population Campaign Execution and Experience](POP-01%20Population%20Campaign%20Execution%20and%20Experience.md) | Queued; Execution/Experience/Qualification=0% | 0% | 0% | 0% | Knowledge/LLM workflow UI-01/V1 and UI-02/P4 complete |
 | 4 | [ML-01 Inherited Scientific Model Integration](ML-01%20Inherited%20Scientific%20Model%20Integration.md) | Standalone queued; M1/M2/M3/M4/V1=0% | 0% | 0% | 0% | UI-01/V1 + UI-02/P4, then POP-01 complete; qualified population/tool handoff |

@@ -3,11 +3,11 @@
 ## Canonical tracker
 
 - Status: primary_active; connected demo flow implemented; N2 complete; approved N3 curation implementation active.
-- Last refreshed: 2026-10-12 21:35:47 (America/Chicago).
+- Last refreshed: 2026-10-12 21:44:46 (America/Chicago).
 - Baseline: 62ea4966; owner-reported disconnected canvas and navigation review on 2026-10-07.
 - Owner: Studio experience, page models and presentation; service owners retain their contracts and state.
 - Parent: none; priority and mirrors in [Master Build Tracker](Master%20Build%20Tracker.md).
-- Overall implementation: **79.5%**; Build99.375%, Verification0%. Five equal delivery gates: G1, N1, N2, N3, V1. Build averages G1/N1/N2/N3; Verification is V1. G0 is a separate design/review prerequisite and earns no implementation credit.
+- Overall implementation: **79.5625%**; Build99.453125%, Verification0%. Five equal delivery gates: G1, N1, N2, N3, V1. Build averages G1/N1/N2/N3; Verification is V1. G0 is a separate design/review prerequisite and earns no implementation credit.
 - Design readiness: G0 complete; ELK directed layout and bounded topology ownership implemented.
 - Demonstrated behavior: connected graphs and question-first navigation verified against retained owner records; result-first comparison and full replacement acceptance remain.
 - Current phase/task: N3/UI-01.05/I1; implementing approved [UI-01.08](UI-01.08%20Campaign%20curation%20boundary%20decision.md). N2 complete100%; launch/provenance remain closed.
@@ -23,7 +23,7 @@
 | G1 usable connected graph | 100% | G0 complete | One real retained campaign opens as a readable connected graph; branches, joins and nested work navigable; visual and behavioral proof |
 | N1 research entry and navigation | 100% | G1 complete | Research-question landing and connected workflow navigation with preserved selection/context |
 | N2 approach, execution and results | 100% | N1 complete | Understand approach, follow autonomous work, inspect/compare results and supporting evidence |
-| N3 next-campaign iteration | 97.5% | N2 complete | Target weak/promising points, inspect proposed changes and follow predecessor/successor history |
+| N3 next-campaign iteration | 97.8125% | N2 complete | Target weak/promising points, inspect proposed changes and follow predecessor/successor history |
 | V1 integrated acceptance and audit | 0% | N3 complete | Actual-owner user journey, independent consumer acceptance, scoped audit and explicit limitations |
 
 Each phase is a discrete unit of work. Complete its exit gate before dependent

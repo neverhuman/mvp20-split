@@ -116,3 +116,6 @@ Deployment0.12 adds read-only [offline backup inventory contracts](src/amphora_d
 Deployment0.20.0 adds the closed planning-curation native recipe and policy-file
 pins under UI-01.08j. Source implementation only until installed lifecycle and
 actual local/LAN delivery pass; owner budget/dispatch contracts unchanged.
+
+Deployment0.20.1 adds optional [curation peer reader credentials](src/amphora_deployment/curation_access/README.md);
+original vault preserved. Installed peer/read and serving qualification remain pending.

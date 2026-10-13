@@ -121,3 +121,7 @@ Deployment0.11 accepts the optional RUNTIME_REGISTRY_TOKEN reference only for it
 two endpoint owners and resolves it from the deployment-bound registry_access
 sidecar. No arbitrary extra credential file or cross-owner operator key is accepted.
 Manifests lacking that reference never require the new sidecar.
+
+Deployment0.20.1 optionally resolves [Planning reader credentials](../curation_access/README.md)
+from an identity-bound sidecar, only for explicitly selected endpoint owners.
+Legacy manifests do not load it; this conveys no peer action grant by itself.

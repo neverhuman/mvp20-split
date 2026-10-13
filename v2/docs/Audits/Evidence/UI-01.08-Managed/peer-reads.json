@@ -1,0 +1,35 @@
+{
+  "status": "passed",
+  "timestamp_local": "2026-10-12 21:43:32",
+  "deployment_release": "0.20.1",
+  "scope": {
+    "tenant_id": "internal",
+    "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336"
+  },
+  "snapshot": {
+    "graph": {
+      "scope": {
+        "tenant_id": "internal",
+        "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336"
+      },
+      "graph_id": "domain"
+    },
+    "revision": 1,
+    "sha256": "9d24c091b34a72bf865618352d30cb1a428189d17b415d2bde3202901f39fdec"
+  },
+  "question": {
+    "scope": {
+      "tenant_id": "internal",
+      "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336"
+    },
+    "question_id": "question",
+    "revision": 1
+  },
+  "original_vault_unchanged": true,
+  "same_scope_reads": "exact originals",
+  "peer_writes": "403",
+  "foreign_scope": "403",
+  "swapped_credentials": "401",
+  "provider_calls": 0,
+  "new_campaigns": 0
+}

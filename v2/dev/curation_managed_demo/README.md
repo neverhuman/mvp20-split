@@ -14,3 +14,10 @@ are absent from this installation. Those sentinels are NOT valid peer credential
 The no-work policy is not offered by intake; the configuration is probe-only and
 must never be promoted to a live demo. M3 must provision proper scoped peer edges
 and qualify reads before live curation can start. No private cross-owner SQL.
+
+M3 peer_reads provisions directed reader identities through independently installed
+Deployment, composes immutable scoped peer grants and checks exact restored graph/
+Research question reads. Mutation and foreign-scope reads must fail403; swapped
+peer tokens401. It reconciles original campaign receipts and original vault bytes,
+then drains. No paid provider or campaign. This is isolated peer acceptance, not
+shared-demo migration/delivery or live scientific curation acceptance.

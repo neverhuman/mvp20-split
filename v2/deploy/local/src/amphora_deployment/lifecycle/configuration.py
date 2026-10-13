@@ -11,9 +11,12 @@ from ..persistence.state import LocalState
 from ..profile import require
 from .supervisor import OwnerBinding
 from .planning_configuration import planning_environment
+from ..curation_access import REFERENCES as CURATION_READERS, curation_credentials
 
 
 def allowed_reference(owner, name):
+    if name in CURATION_READERS:
+        return owner in CURATION_READERS[name]
     if owner == "gateway":
         return name in {"GATEWAY_SESSION_KEY", "LAUNCH_GATEWAY_TOKEN"} or name in {key.upper() + "_OPERATOR_TOKEN" for key in OWNERS}
     if name == owner.upper() + "_OPERATOR_TOKEN":
@@ -68,8 +71,11 @@ def load_bindings(root, manifest, routes):
                     ("installation", "source_lock", "configuration")), "lifecycle_binding_path")
         references = record["secret_references"]
         require(type(references) is list and len(references) <= 64 and all(type(name) is str and allowed_reference(owner, name) for name in references), "lifecycle_credential_scope")
-        selected = [name for name in references if name not in {'WORKER_REGISTRY_TOKEN', 'RUNTIME_REGISTRY_TOKEN', 'LAUNCH_GATEWAY_TOKEN'}]
+        selected = [name for name in references if name not in {'WORKER_REGISTRY_TOKEN', 'RUNTIME_REGISTRY_TOKEN', 'LAUNCH_GATEWAY_TOKEN'} and name not in CURATION_READERS]
         values = bundle.environment(selected)
+        readers = [name for name in references if name in CURATION_READERS]
+        if readers:
+            values.update(curation_credentials(root, state['deployment_id']).environment(readers))
         if 'LAUNCH_GATEWAY_TOKEN' in references:
             from ..campaign_launch.credentials import launch_credential
             require(owner == 'gateway', 'lifecycle_credential_scope')
