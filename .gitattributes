@@ -41,3 +41,8 @@ v2/dev/scientific_execution/*.json text eol=lf
 v2/studio/src/page_models/campaign_flow/context.schema.json text eol=lf
 v2/studio/src/page_models/campaign_flow/context.v2.schema.json text eol=lf
 v2/dev/scientific_execution/knowledge_source.txt text eol=lf
+
+# Chemical semantic profile pins must survive Windows checkouts.
+/v2/contracts/chemical_structure/profiles/*.json text eol=lf
+/v2/tools/chemical_structure/src/amphora_chemical_structure/profile.json text eol=lf
+/v2/tools/chemical_structure/src/amphora_chemical_structure/environment.json text eol=lf

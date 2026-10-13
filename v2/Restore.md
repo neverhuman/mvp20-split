@@ -7,13 +7,26 @@ Refreshed: 2026-10-13 11:30:04 America/Chicago. Read FIRST after compaction.
 UI-01 is complete100%, Build100%, Verification100%, scoped-audited and archived in
 docs/Build Plans/Completed. UI-01.05 and08j also archived complete;08decision100%.
 UI-02.01 approved by owner 2026-10-13 11:23:21; implement supplied finite molecules/oligomers.
-P1.1 complete100%; P1=25%, UI-02 overall6.25%, Build8.33%, Verification0%.
-Next: P1.2 isolated tool, P1.3 opt-in Research profile,
+P1.1/P1.2 complete100%; P1=50%, UI-02 overall12.5%, Build16.67%, Verification0%.
+Next: P1.3 opt-in Research profile,
 P1.4 actual registered graph handoff. No additional approval for this scope.
 Local79358 and LAN90134 cooperatively STOPPED, both exit0 before source work.
 Restore frozen serving13f after appropriate checks. Previous five stale NAS-read
 shells closed; no model calls. Container hosting deferred per owner.
 Latest pushed checkpoint155e2026; P1.1 verification complete; commit follows.
+
+P1.2 complete100%; tool0.1.0 independent verification passes32 tests, exact schema
+bytes, fresh-process deterministic formula/PNG, service import isolation. PNG viewed.
+Evidence .test-results/ui02-chemical-independent-20261013a. Sessions62417 and75672
+finished exit0. Source30 earlier passed; independent32 includes duplicate JSON and
+graph-reference checks. RDKit2025.9.6/numpy2.5.4/Pillow12.3.0 pinned.
+Next P1.3: Research candidate_registration currently supports only synthetic kinds;
+add explicit chemical profile and exact CandidateRevisionRef matching. Current
+validate(reference,body) receives ArtifactRef only: pass candidate identity from
+registrar for chemical profile without changing old synthetic behavior. Own tests
+under candidate_registration; run actual PostgreSQL rights/retry/history gates.
+Then P1.4 actual separately installed tool + Registry/Runtime/Data/Research handoff.
+No new owner decision needed; no paid calls. P1.2 commit follows.
 
 Studio0.34.4 final independent install passes445 tests/90public schema pins and
 byte-identical static assets. Helper4tests, focused Explore22tests pass. Fixed idle

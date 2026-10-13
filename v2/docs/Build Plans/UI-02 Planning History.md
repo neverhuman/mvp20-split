@@ -21,3 +21,22 @@ an older aggregate-count assertion; corrected its scope, both affected tests pas
 Production dependency boundary check passes. P1.1 complete100%; P1=25%, overall6.25%, Build8.33%, Verification0%. Next P1.2 isolated tool.
 Development sync also reconciled existing Planning0.142/Deployment0.20.2 editable
 versions; immutable installed serving directories are unchanged.
+
+## 2026-10-13 11:37:38 ? P1.2 independent chemistry tool
+
+Pinned RDKit2025.9.6 with locked numpy2.5.4/Pillow12.3.0. Separate profile,
+parsed molecule, display bundle and request derivation objects. Exact original
+request SHA-256, duplicate-key rejection, strict scope, unsupported feature checks,
+explicit/isotopic hydrogen, charge/stereo preservation,800x600 inert bounded PNG.
+No source-level formula/depiction generation in Research/Runtime/Studio.
+
+Independent .test-results/ui02-chemical-independent-20261013a passes32 copied
+kernel tests; installed schemas equal publication, two fresh CLI processes return
+identical retained bytes. Service and sibling tool imports absent. Supplied ethylene
+glycol formula C2H6O2 and PNG visually inspected; finite oligomer C4H10O3 golden
+also passes. Dependency boundary check passes. Earlier test harness oversized-case
+ID exceeded Windows path bounds; named case IDs repaired, all tests pass.
+All668 predecessor schema bytes remain unchanged; chemical semantic profiles now
+have explicit LF Git attributes to preserve digest identity across Windows clones.
+P1.2=100%; P1=50%; overall12.5%, Build16.67%, Verification0%. P1.3 next; Linux
+worker/Registry/Runtime/Data/Research acceptance remains P1.4, not claimed here.

@@ -1,0 +1,62 @@
+{
+  "schema_version": "1",
+  "tool": {
+    "schema_version": "1",
+    "binding": {
+      "capability_id": "chemistry.chemical-structure",
+      "release": "0.1.0",
+      "contract_version": "1"
+    },
+    "purpose": "Derive formula and 2D depiction for a supplied finite molecule; structural evidence only.",
+    "applicability": [
+      "supplied-finite-molecules"
+    ],
+    "inputs": [
+      {
+        "name": "structure",
+        "representation": "finite-smiles-request",
+        "unit": "1",
+        "required": true
+      }
+    ],
+    "outputs": [
+      {
+        "name": "result",
+        "representation": "finite-molecule-structure",
+        "unit": "1",
+        "required": true
+      }
+    ],
+    "side_effects": "pure",
+    "checkpoint_schema": null
+  },
+  "resources": {
+    "architectures": [
+      "x86_64"
+    ],
+    "operating_systems": [
+      "linux"
+    ],
+    "cpu_millicores": 1000,
+    "memory_mib": 512,
+    "gpu_count": 0,
+    "timeout_seconds": 60,
+    "max_parallel_invocations": 1,
+    "max_batch_size": 1
+  },
+  "egress": {
+    "mode": "deny"
+  },
+  "checkpoint": {
+    "mode": "none",
+    "readable_schema_sha256": []
+  },
+  "reproducibility": "deterministic",
+  "authority_ceiling": "evidence_proposal",
+  "examples": [
+    "A supplied fully specified finite oligomer with explicit end groups."
+  ],
+  "anti_examples": [
+    "No molecular generation, efficacy, synthesis feasibility or property ranking; no unspecified polymers or mixtures."
+  ]
+}

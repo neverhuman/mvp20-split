@@ -2,19 +2,19 @@
 
 ## Canonical tracker
 
-- Status: P1 active; owner approved UI-02.01; P1.1 complete; P1.2 isolated tool next.
+- Status: P1 active; owner approved UI-02.01; P1.1 complete; P1.2 complete; P1.3 opt-in Research profile next.
 - Last refreshed: 2026-10-13 11:23:21 (America/Chicago).
-- Overall implementation: 6.25%; Build8.33%, Verification0%. Four equal delivery phases;
+- Overall implementation: 12.5%; Build16.67%, Verification0%. Four equal delivery phases;
   Build averages P1/P2/P3, Verification is P4. Planning earns no implementation credit.
 - Owner: Studio candidate inspection; scientific tools own candidate representations
   and evaluation/selection outputs, Runtime owns accepted execution references,
   Data owns immutable artifact access.
-- Current focus: [UI-02.01 chemical structure boundary](UI-02.01%20Chemical%20structure%20boundary%20decision.md); P1.1 contracts verified; P1.2 isolated chemical tool is current.
-- Next gate: P1.2 independently packaged tool and chemical goldens; then P1.3 Research profile and P1.4 actual handoff.
+- Current focus: [UI-02.01 chemical structure boundary](UI-02.01%20Chemical%20structure%20boundary%20decision.md); P1.1 contracts verified; P1.2 independent tool verified; P1.3 Research registration is current.
+- Next gate: P1.3 opt-in Research registration with exact candidate binding and rights/retry checks; then P1.4 actual handoff.
 - Dependencies: retained candidate structures and explicit recommendation evidence;
   existing demo parameter sets provide neither. New public contracts require the
   normal schema-first review. No dependency is assumed implemented by this plan.
-- Acceptance: not started; [activation audit](../Audits/UI-02_Activation.md) identifies the synthetic-only admission gap. P1.1=100%, P1.2/P1.3/P1.4=0%; local/LAN demo cooperatively drained for source work.
+- Acceptance: not started; [activation audit](../Audits/UI-02_Activation.md) identifies the synthetic-only admission gap. P1.1/P1.2=100%, P1.3/P1.4=0%; local/LAN demo cooperatively drained for source work.
 - Parent: none; priority is owned by [Master Build Tracker](Master%20Build%20Tracker.md).
 
 ## User outcome and current gap
@@ -50,7 +50,7 @@ contracts/tool output, P2 selection evidence, P3 formula/structure detail, and P
 the actual browser proof. Show candidates even when unranked; use Recommended only
 when the retained policy/evidence supports it. Thu2026-10-15 is the target for P3,
 Fri2026-10-16 for P4, conditional on P1/P2 completion. These are scheduling targets,
-not permission to bypass producer or selection gates. P1 is25% from one of four equal deliveries; P2/P3/P4 remain0%.
+not permission to bypass producer or selection gates. P1 is50% from two of four equal deliveries; P2/P3/P4 remain0%.
 
 Show a two-dimensional chemical structure or polymer repeat-unit representation,
 with composition and available architecture details: connectivity/attachment points,
@@ -77,7 +77,7 @@ Keep illustrative, generated, predicted and experimentally supported material di
 
 | Phase | Completion | Prerequisite | Deliverable / exit gate |
 |---|---:|---|---|
-| P1 representation and provenance contracts | 25% | Activation audit | Inventory producers; define supported representations, identity/revision binding, unsupported/unknown states and artifact validation. Specify missing producer work explicitly; do not fabricate structures from scalar inputs. |
+| P1 representation and provenance contracts | 50% | Activation audit | Inventory producers; define supported representations, identity/revision binding, unsupported/unknown states and artifact validation. Specify missing producer work explicitly; do not fabricate structures from scalar inputs. |
 | P2 recommendation evidence | 0% | P1 complete | Consume an explicit retained selection result, including objective/constraints/policy, candidate set and trade-offs. Verify missing policy, ties, incomparable candidates and insufficient evidence remain truthful. |
 | P3 candidate inspector | 0% | P2 complete | Results entry point, 2D structure/repeat-unit or composition rendering, property/synthesis evidence and selection rationale, linked to exact execution and lineage. Safe bounded rendering and module replacement README. |
 | P4 verification and audit | 0% | P3 complete | Module-scoped contract/model/rendering tests and actual retained-artifact browser proof; inspect desktop/mobile/accessibility, wrong candidate/revision, malformed structures and missing evidence. Complete scoped architecture drift audit before closeout. |
@@ -106,3 +106,5 @@ as a predicted conformation. Simulation capability, compute budgets and scientif
 validation are outside this first delivery.
 
 Latest checkpoint 2026-10-13 11:30:04: P1.1 complete;12 focused checks,24 unaffected publication checks plus2 corrected historical-count checks pass; all668 predecessor pins unchanged; dependency boundary guard passes. [History](UI-02%20Planning%20History.md).
+
+2026-10-13 11:37:38: P1.2 complete;32 copied tests pass in independent wheel installation, exact public schemas, two fresh-process deterministic results and visually inspected PNG. No service implementations installed;0model calls. Actual graph/Research acceptance remains P1.4.

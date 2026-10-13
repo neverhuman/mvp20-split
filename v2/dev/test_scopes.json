@@ -480,5 +480,11 @@
     "coverage_sources": [
       "contracts/chemical_structure/src/amphora_contracts_chemical_structure"
     ]
+  },
+  "tool-chemical-structure": {
+    "tests": "tools/chemical_structure/tests",
+    "coverage_sources": [
+      "tools/chemical_structure/src/amphora_chemical_structure"
+    ]
   }
 }
