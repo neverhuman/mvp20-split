@@ -68,3 +68,7 @@ UI-01.08e material_compatible exports installed v6 material and verifies all eig
 prior envelope bytes/acceptance outcomes without keys, provider calls or owner
 startup. Schema exactly matches the passing no-large-number probe. No campaign
 budget is added and no campaign is qualified by this helper.
+
+UI-01.08f prepare_compatible freezes v6 with all8 prior exact replays, ten retained
+holds and one new$0.25/8192 original under11/$2.80 aggregate. run.py enforces this
+declaration; no keys read in preparation, no retries or budget reset.

@@ -6,6 +6,12 @@ replay processes FINISHED. Demo unchanged. No source edits during verification.
 
 ## Current position
 
+Owner continuation now authorizes proposed ONE v6 original/$0.25/8192.08f active66.67%;
+aggregate11/$2.80 preserves ten old holds. Patch0.133.1 passes92tests and installj. Preparation15778 FINISHED/pass/drained; eight replays pass,10/$2.55 retained,
+exactly1/$0.25 remains. Next run compatible qualification once; frozen08f roots.
+Earlier awaiting-decision language below is historical and superseded.
+
+
 Owner requested a specific architecture note: Architecture.md now records the
 isolated numeric-bound trigger and versioned provider projection/local validation
 principle. Documentation-only; no new inference authorization or plan progress.

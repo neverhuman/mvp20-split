@@ -47,3 +47,7 @@ UI-01.08b approval2026-10-12 11:04:00 extends only the same exact scope to seven
 UI-01.08c approved2026-10-12 11:58:32 extends the same exact qualification scope to nine/$2.25 original holds. Seven prior holds remain; at most two new requests/$0.50, stop on success. The second requires a specifically identified repair and offline verification. The dev qualification freezes the first diagnostic request separately; the owner ledger enforces the aggregate ceiling and unchanged per-call bound. All other scopes remain four/$1.
 
 UI-01.08d approved2026-10-12 12:52:13: exact scope now10 originals/$2.55. Only v5 within that exact scope permits16384 output tokens/$0.30 per original; all other profiles retain8192/$0.25, and other scopes retain4/$1. CallCeiling owns this conjunction. Nine earlier holds remain immutable; SQL race tests cover the final slot. No refund/retry.
+
+UI-01.08f: exact reviewed scope extends to11 originals/$2.80; ten prior holds
+remain. One new v6 original capped$0.25/8192 output, no retry/refund. Other scopes
+unchanged. This does not extend the completed dev isolation probe series.
