@@ -1,14 +1,17 @@
 # Restore
 
-Refreshed: 2026-10-13 18:26:47 America/Chicago. Read FIRST after compaction.
+Refreshed: 2026-10-13 18:46:18 America/Chicago. Read FIRST after compaction.
 
 ## Current task
 
 UI-02 COMPLETE100%, audited/archived and pushed a614e594. POP-01 activation
 corrected_ready for E1 design; source inventory and37existing wire/ranking tests pass.
 Concrete decision: docs/Build Plans/POP-01.04 Population contract decision.md.
-Await owner direction on additive population profile BEFORE new code contracts.
-Do not treat prior UI-02 approval as approval of this new proposal. Next after direction:
+Owner explicitly APPROVED POP-01.04 2026-10-13 18:45:57. Current interruption: remote LAN
+access failure reported. Local/LAN listeners alive; HTTPS app.js200/exact Studio0.36
+hash verified from host; invite script rerun,5min one-use link copied to host clipboard.
+Question pending: timeout vs login/refresh vs certificate. Do not print invitation.
+Keep live wrappers during access check; drain both before source changes. Return to:
 POP-01.01/E1 records/domain validation and compatibility goldens, then concrete
 composition/write sets before E2. New Runtime commands are not assumed authorized.
 POP-01 implementation0%, all children/phases0%; ML-01 next, LR-01 paused25%.
@@ -56,7 +59,7 @@ fixture, no model call, no molecule attached to old scalar campaign. No example 
 P3 model/transport/presentation READMEs own replacement boundaries. CandidateResults
 scans2pages/100nodes direct invoke outputs; finish forwarding excluded. Numeric
 selection/fronts are separate from molecular unranked/absent properties/synthesis.
-Source must remain frozen while serving/testing; demo is restored at the POP-01.04 owner gate; drain before further source work. POP-01.04 is prepared and awaiting concrete owner contract direction.
+Source must remain frozen while serving/testing; demo is restored at the POP-01.04 owner gate; drain before further source work. POP-01.04 is approved; resume E1 after LAN verification.
 
 ## Completed P1 proof
 

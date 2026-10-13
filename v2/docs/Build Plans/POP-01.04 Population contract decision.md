@@ -1,12 +1,12 @@
 # POP-01.04 Population contract decision
 
-- Status: proposed; owner decision required before new boundary implementation.
+- Status: approved by owner 2026-10-13 18:45:57 America/Chicago; implementation not started.
 - Reviewed: 2026-10-13 18:26:00 America/Chicago.
 - Parent: [POP-01.01/E1](POP-01.01%20Population%20Execution.md).
 - Baseline: `a614e594`; [activation inventory](../Audits/POP-01_Activation.md).
 - Implementation: 0%. This decision is part of E1, not a fourth weighted child.
-- Requested direction: approve the additive population profile and its E1 contract,
-  domain-validation and compatibility work below. Existing profiles remain exact.
+- Owner direction: additive population profile and E1 contract/domain-validation/compatibility work approved. Existing profiles remain exact.
+- Active interruption: restore/verify remote LAN access at owner request; return to E1 afterward.
 - Next gate: tested E1 schemas/goldens and concrete execution/write-set review before
   E2 activation. New public Runtime routes or graph primitives are not assumed needed.
 
