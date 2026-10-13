@@ -13,7 +13,7 @@ from install_owner_peer import install
 from postgres_fixture import owned_state
 
 
-def verify(output, installations=None):
+def verify(output, installations=None, registry_installation=None):
     if os.environ.get("AMPHORA_TEST_POSTGRES") != "1":
         raise ValueError("Explicit owned PostgreSQL fixture opt-in required")
     state = owned_state()
@@ -31,11 +31,11 @@ def verify(output, installations=None):
     interpreters, evidence = {}, {}
     for key, package in packages.items():
         forbidden = tuple(module for name, module in modules.items() if name != key)
-        if installations is None:
+        if installations is None and not (key == "registry" and registry_installation):
             interpreters[key] = str(install(output / key, package, forbidden))
             evidence[key] = json.loads((output / key / "manifest.json").read_bytes())
         else:
-            existing=installations.absolute()/key
+            existing=registry_installation.absolute() if key == "registry" and registry_installation else installations.absolute()/key
             evidence[key]=json.loads((existing/"manifest.json").read_bytes())
             if evidence[key]["owner"]!=package or evidence[key]["status"]!="installed":
                 raise ValueError("wrong_installed_owner")
@@ -85,5 +85,6 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--installations",type=Path)
+    parser.add_argument("--registry-installation",type=Path)
     args=parser.parse_args()
-    verify(args.output,args.installations)
+    verify(args.output,args.installations,args.registry_installation)

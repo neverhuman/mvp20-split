@@ -19,8 +19,7 @@ allow synthetic_only/synthetic-tests. Tool truthfully declares evidence_proposal
 supplied-finite-molecules. Original activation inventory missed this prerequisite.
 Do not relabel tool synthetic, skip Registry or silently broaden activation policy.
 Concrete owner proposal: [UI-02.02](docs/Build%20Plans/UI-02.02%20Structural%20tool%20registry%20profile%20decision.md). Scoped opt-in exact-pin structural policy
-shared by activation/selection; old default/digests/receipts unchanged. Await owner
-direction before implementing that material policy extension. Independent work done.
+shared by activation/selection; old default/digests/receipts unchanged. Owner approved 2026-10-13 16:24:02; implement this material policy extension now.
 No chemical campaign admitted; no P1.4 credit. UI candidate inspector not yet built.
 After approval complete Registry correction and actual P1.4 gate, then P2 in order.
 
@@ -40,8 +39,8 @@ Image digests in handoff are declared fixture pins, NOT built Linux/container pr
 
 ## Demo restoration
 
-LIVE local31118, .test-results/curation-demo-session-20261013i.
-LIVE LAN47144, .test-results/curation-demo-lan-20261013g (ready11:53:41).
+STOPPED local31118, .test-results/curation-demo-session-20261013i.
+STOPPED LAN47144, .test-results/curation-demo-lan-20261013g (ready11:53:41).
 Local ready11:54:42; both local/LAN app.js200 and exact frozen SHA verified.
 Both use unchanged frozen .test-results/curation-demo-serving-20261013f, Studio0.34.4,
 duration86400. Old79358/90134 (13h/LAN13f) cooperatively drained before source work.
@@ -73,3 +72,22 @@ Known estimate$0.521323500 PLUS unknown original demo-b charge. No refunds/reset
 Secrets env/memory only; authorized Z:/ssos/.env key source; launcher uses Deployment
 vault. Never print raw browser exceptions/cookies. UI-02 precedes POP-01 then ML-01;
 LR-01 remains paused25%. Restoring old demo is not UI-02 visual acceptance.
+
+UI-02.02 current task: shared bounded structural policy and host configuration; both demo wrappers cooperatively drained exit0 before source edits.
+
+Registry0.2.0 structural_profiles implemented; current test session5279 runs full Registry suite with PostgreSQL. Poll before source edits. Legacy default policy/hash preserved; new exact-grant config shares activation and selection. New frozen review pins live in structural_profiles/reviewed.json. Next: resolve test failures, independent Registry replacement plus P1.4 actual public deploy/heartbeat/resolve/graph handoff.
+
+Registry source suite now149passed (session52354 complete0); first test-only import
+error corrected. Active independent Registry0.2 install session24233 at
+.test-results/ui02-registry-installation-20261013a. Poll before source edits.
+Host config structural_profiles implemented. Shared StructuralPolicy exact scope/
+LockEntry/semantic/context, pure/denied-egress; legacy default branch/hash unchanged.
+Golden policy digest measured from old installed0.1; receipt removal/addition replay
+and selection capacity tests pass. Actual chemical fixture now configures grant and
+calls deploy/heartbeat/resolve before graph. Next copy structural unit tests into
+fresh Registry install, run them, then verify_chemical_handoff.py --output new-c
+--installations .test-results/ui02-chemical-handoff-20261013a
+--registry-installation .test-results/ui02-registry-installation-20261013a.
+No paid calls. P1.4 not credited until actual full handoff/audit. Demo stopped.
+
+Registry independent session24233 finished0, copied22tests session89237 passed; schema/boundary90422 passed. No running workflows. Next actual handoff c using fresh Registry0.2 installation with previous a peers. Source checkpoint commit follows.

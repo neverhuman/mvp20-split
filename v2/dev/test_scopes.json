@@ -486,5 +486,11 @@
     "coverage_sources": [
       "tools/chemical_structure/src/amphora_chemical_structure"
     ]
+  },
+  "registry-structural-profiles": {
+    "tests": "services/capability_registry/tests/structural_profiles",
+    "coverage_sources": [
+      "services/capability_registry/src/amphora_capability_registry/structural_profiles"
+    ]
   }
 }

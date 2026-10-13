@@ -7,6 +7,7 @@ from amphora_contracts_tools import ResolveRelease
 from sqlalchemy import text
 
 from ..descriptors.assessments import CapacityObservation
+from ..structural_profiles import StructuralPolicy
 from ..descriptors.policy import EligibilityEvaluator, EvaluationPolicy
 from ..descriptors.requirements import CapabilityNeed, PortRequirement
 from ..persistence.store import scope_bindings
@@ -15,8 +16,9 @@ from .releases import read_release
 
 
 class Resolver:
-    def __init__(self, resources, permissions):
+    def __init__(self, resources, permissions, structural=None):
         self.resources, self.permissions = resources, permissions
+        self.structural = structural or StructuralPolicy()
 
     def resolve(self, connection, scope, raw, factory):
         payload = ResolveRelease.model_validate_json(json.dumps(raw))
@@ -36,7 +38,7 @@ class Resolver:
         capacity = CapacityObservation(scope, record.document.digest, len(rows), sum(row["free_slots"] for row in rows), now, expiry)
         need = CapabilityNeed(scope, payload.context, tuple(PortRequirement.from_port(p) for p in payload.inputs),
                               tuple(PortRequirement.from_port(p) for p in payload.outputs))
-        policy = EvaluationPolicy(scope, self.resources, self.permissions)
+        policy = EvaluationPolicy(scope, self.resources, self.permissions, self.structural)
         decision = EligibilityEvaluator().evaluate(record.descriptor, need, policy, capacity, now=now).to_wire()
         if decision.status == "candidate":
             return factory.accepted("candidate", release=record.to_wire(scope), decision=decision)

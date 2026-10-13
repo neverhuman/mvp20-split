@@ -48,3 +48,20 @@ A descriptor claims biological applicability but its validation packet covers on
 ## Design Basis and Open Decisions
 
 [Tool Specification](../Requirements/Scientific_Tools_and_Graph_Execution.md) defines the semantic invocation contract. Remaining choices: package format, compatibility version rules, trust roots and descriptor-index implementation. The 300-descriptor acceptance fixture tests discovery and boundaries, not scientific readiness of a large tool fleet.
+
+## Explicit structural mapping profile
+
+UI-02.02 adds opt-in Registry structural grants. A grant pins scope, complete
+immutable release LockEntry, reviewed input/output schemas, semantic profile and
+applicability context. Activation and selection share the same policy object.
+The first profile permits only supplied finite-molecule structural mapping with
+pure effects and denied egress; eligibility does not imply efficacy, synthesis,
+ranking or property accuracy. Configuration is explicit, not automatic promotion
+of evidence_proposal descriptors. Registry does not interpret artifact chemistry.
+
+Absent grants, the original synthetic-only behavior and policy digest are retained.
+Structural selection fingerprints the full reviewed configuration plus resource/
+permission policy. Historical receipts replay exactly; policy changes neither
+rewrite prior observations nor repin running campaigns. Current capacity and all
+ordinary compatibility/resource checks remain required. Actual registered chemistry
+handoff is UI-02/P1.4's acceptance gate, separate from native package verification.

@@ -10,6 +10,7 @@ from amphora_contracts_core import Scope
 from amphora_contracts_tools import EligibilityDecision, EligibilityResult
 
 from .assessments import Assessment, SyntheticScientificPolicy, aware
+from ..structural_profiles import StructuralPolicy
 from .identity import ReleaseDocument
 from .requirements import ResourceAllowance, compatibility_rejections
 from .validation import DescriptorValidator, ValidationReport
@@ -40,6 +41,7 @@ class EvaluationPolicy:
     scope: Scope
     resources: ResourceAllowance
     permissions: PermissionPolicy
+    structural: StructuralPolicy = StructuralPolicy()
 
     @property
     def digest(self):
@@ -92,7 +94,10 @@ class EligibilityEvaluator:
             raise ValueError("policy_scope_mismatch")
         release = ReleaseDocument.from_descriptor(descriptor)
         structural = DescriptorValidator().validate(descriptor)
-        scientific = SyntheticScientificPolicy().assess(descriptor, need, structural)
+        legacy = not policy.structural.grants or descriptor.authority_ceiling == "synthetic_only" or need.context == "synthetic-tests"
+        scientific = (SyntheticScientificPolicy().assess(descriptor, need, structural) if legacy
+                      else policy.structural.assess(descriptor, need, structural))
+        policy_digest = policy.digest if legacy else policy.structural.fingerprint(policy.digest)
         observed = Assessment("unknown", ("capacity_unobserved",)) if capacity is None else capacity.assess(
             need.scope, release.digest, now, descriptor.resources.max_parallel_invocations)
         reasons = compatibility_rejections(descriptor, need) + policy.permissions.rejections(descriptor) + policy.resources.rejections(descriptor.resources)
@@ -101,5 +106,5 @@ class EligibilityEvaluator:
         reasons = tuple(dict.fromkeys(reasons))
         admission = Assessment("denied", reasons) if reasons else Assessment("allowed", ("policy_compatible",))
         expires = capacity.expires_at if capacity is not None and observed.status != "unknown" else None
-        return SelectionEvaluation(need.scope, release, policy.digest, AssessmentSet(structural, scientific, observed, admission),
+        return SelectionEvaluation(need.scope, release, policy_digest, AssessmentSet(structural, scientific, observed, admission),
                                    ObservationWindow(now, expires))

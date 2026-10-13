@@ -2,7 +2,7 @@
 
 ## Canonical tracker
 
-- Status: P1 active; owner approved UI-02.01; P1.1-P1.3 complete; P1.4 blocked on Registry profile decision UI-02.02.
+- Status: P1 active; owner approved UI-02.01; P1.1-P1.3 complete; P1.4 Registry profile correction active UI-02.02.
 - Last refreshed: 2026-10-13 11:53:07 (America/Chicago).
 - Overall implementation: 18.75%; Build25%, Verification0%. Four equal delivery phases;
   Build averages P1/P2/P3, Verification is P4. Planning earns no implementation credit.
@@ -10,7 +10,7 @@
   and evaluation/selection outputs, Runtime owns accepted execution references,
   Data owns immutable artifact access.
 - Current focus: [UI-02.01 chemical structure boundary](UI-02.01%20Chemical%20structure%20boundary%20decision.md); P1.1 contracts verified; P1.3 opt-in Research registration verified; P1.4 registered handoff blocked: Registry activation_profile_denied; [UI-02.02](UI-02.02%20Structural%20tool%20registry%20profile%20decision.md) is reviewable.
-- Next gate: owner direction on UI-02.02, then configured Registry activation/selection and actual P1.4 handoff.
+- Next gate: approved UI-02.02 implementation, then configured Registry activation/selection and actual P1.4 handoff.
 - Dependencies: retained candidate structures and explicit recommendation evidence;
   existing demo parameter sets provide neither. New public contracts require the
   normal schema-first review. No dependency is assumed implemented by this plan.

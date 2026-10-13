@@ -6,6 +6,7 @@ from amphora_contracts_tools import ChangeRelease, RegisterRelease, ReleasePage
 from sqlalchemy import text
 
 from ..descriptors.identity import ReleaseDocument
+from ..structural_profiles import StructuralPolicy
 from ..descriptors.validation import DescriptorValidator
 from ..persistence.store import scope_bindings
 from .model import RegistryDenied, ReleaseRecord
@@ -38,6 +39,9 @@ def list_releases(connection, scope, *, limit, after, capability_id, release):
 
 
 class Releases:
+    def __init__(self, structural=None):
+        self.structural = structural or StructuralPolicy()
+
     def register(self, connection, scope, raw, factory):
         payload = RegisterRelease.model_validate_json(json.dumps(raw))
         document = ReleaseDocument.from_descriptor(payload.descriptor)
@@ -69,10 +73,7 @@ class Releases:
         record = read_release(connection, scope, payload.release.descriptor_sha256)
         record.document.verify_lock(payload.release)
         lifecycle = record.lifecycle.changed(action, payload.expected_revision)
-        # This profile can activate only synthetic pure tools; real scientific promotion is a later authority.
-        if action == "activate" and (record.descriptor.authority_ceiling != "synthetic_only"
-                                    or record.descriptor.tool.side_effects != "pure"
-                                    or "synthetic-tests" not in record.descriptor.tool.applicability):
+        if action == "activate" and not self.structural.can_activate(scope, record.descriptor):
             raise RegistryDenied("activation_profile_denied")
         connection.execute(text("UPDATE registry.release_states SET status=:status,revision=:revision "
             "WHERE tenant_id=:tenant AND project_id=:project AND descriptor_sha256=:digest"),

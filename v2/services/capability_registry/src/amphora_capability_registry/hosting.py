@@ -5,7 +5,9 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Annotated, Literal
 
-from amphora_contracts_core import Identifier, SafePositiveInt, Scope, WireModel
+from amphora_contracts_core import Identifier, SafePositiveInt, Scope, SchemaRef, WireModel
+from amphora_contracts_tools import LockEntry
+from .structural_profiles import StructuralGrant, StructuralPolicy
 from pydantic import Field
 from sqlalchemy import create_engine, text
 
@@ -38,11 +40,23 @@ class PrincipalConfig(WireModel):
     actions: Annotated[tuple[Action, ...], Field(min_length=1, max_length=10)]
 
 
+class StructuralGrantConfig(WireModel):
+    profile: Literal["supplied-finite-structure-v1"]
+    scope: Scope
+    release: LockEntry
+    semantic_profile: SchemaRef
+    context: Literal["supplied-finite-molecules"]
+
+    def to_domain(self):
+        return StructuralGrant(self.scope, self.release, self.semantic_profile, self.context)
+
+
 class HostConfig(WireModel):
     database_url_env: EnvironmentName
     principals: Annotated[tuple[PrincipalConfig, ...], Field(min_length=1, max_length=64)]
     resources: ResourceProfile
     allowed_egress_hosts: Annotated[tuple[str, ...], Field(max_length=64)] = ()
+    structural_profiles: Annotated[tuple[StructuralGrantConfig, ...], Field(max_length=64)] = ()
 
 
 @dataclass(slots=True)
@@ -73,6 +87,7 @@ class Host:
         credentials = Credentials(entries)
         resources = ResourceAllowance(**config.resources.model_dump())
         permissions = PermissionPolicy(config.allowed_egress_hosts)
+        structural = StructuralPolicy(tuple(grant.to_domain() for grant in config.structural_profiles))
         engine = create_engine(os.environ[config.database_url_env], pool_pre_ping=True,
                                connect_args={"options": "-c statement_timeout=5000"})
         try:
@@ -82,7 +97,7 @@ class Host:
                 connection.execute(text("SELECT canonical_bytes,lock_entry FROM registry.releases LIMIT 0"))
                 connection.execute(text("SELECT revision,status FROM registry.release_states LIMIT 0"))
                 connection.execute(text("SELECT receipt FROM registry.commands LIMIT 0"))
-            return cls(Registry(engine, resources, permissions), credentials)
+            return cls(Registry(engine, resources, permissions, structural), credentials)
         except BaseException:
             engine.dispose()
             raise

@@ -11,11 +11,11 @@ from .resolution import Resolver
 
 
 class Registry:
-    def __init__(self, engine, resources, permissions):
+    def __init__(self, engine, resources, permissions, structural=None):
         self.engine = engine
         self.commands = CommandStore(engine)
-        self.releases, self.inventory = Releases(), Inventory()
-        self.resolver = Resolver(resources, permissions)
+        self.releases, self.inventory = Releases(structural), Inventory()
+        self.resolver = Resolver(resources, permissions, structural)
 
     def execute(self, principal, command):
         action = command.identity.command_family.removeprefix("registry.")

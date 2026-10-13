@@ -74,3 +74,21 @@ and immutable receipt replay unchanged. No Registry change, workaround or synthe
 relabelling performed. P1.4=0%, P1=75%, overall18.75% unchanged pending decision.
 
 2026-10-13 11:55:57: prior frozen Studio0.34.4 demo restored, local31118/session13i and LAN47144/LAN13g. Both ready; app.js HTTP200 and exact21fa5c5d6f790ffd902f0074290a651c5bebcd5173cf136ba105ac43514db5f2 match. No UI-02 cutover or new model calls. Final normalized-LF tool installation passes32 copied tests.
+
+## 2026-10-13 16:29:46 ? UI-02.02 approved; Registry policy source gates
+
+Owner approved bounded structural Registry extension. Demo local31118/LAN47144
+cooperatively drained exit0 before source edits. Registry0.2.0 implements shared
+StructuralPolicy for activation and selection, optional host grants with exact
+scope/LockEntry/schema/semantic/context pins, pure effects and denied egress. Default
+synthetic behavior and fingerprint remain unchanged; golden hash measured against
+independently installed0.1. No public DTO/route or migration changes.
+
+149 full Registry/PostgreSQL tests pass, including old fixture failure oracles and
+new pin/context/scope rejection, capacity, host DTO and original receipt replay
+across enabling/disabling grants. UI-02.02 source tasks1/2 complete; independent
+actual task3/audit4 remain (50%). Parent P1.4=0 until full integration acceptance.
+Fresh Registry install is running; actual chemical fixture now includes explicit
+profile and public deployment/heartbeat/resolve before graph execution.
+
+2026-10-13 16:31:50: Registry0.2.0 independent installation passes22 copied structural-policy tests, excludes peer implementations/RDKit, includes exact reviewed profile resource. Publication and production dependency checks pass. Source gates149tests retained; next actual handoff with independently rebuilt Registry and retained unchanged peer installations.

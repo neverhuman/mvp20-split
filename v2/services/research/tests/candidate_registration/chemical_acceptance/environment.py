@@ -124,7 +124,8 @@ class CandidateEnvironment(GRAPH.GraphEnvironment):
             )
         self.registry = self.host("registry", "amphora_capability_registry", {
             "database_url_env":"DATABASE_URL",
-            "principals":[self.principal("admin",["register","activate","read"])],
+            "principals":[self.principal("admin",["register","activate","read","deploy","resolve"]),self.principal("worker1",["heartbeat"])],
+            "structural_profiles":[{"profile":"supplied-finite-structure-v1","scope":self.scope,"release":GRAPH.BASE.WIRE.release_lock(self.descriptors[kind]),"semantic_profile":self.semantic[kind]["profile"],"context":"supplied-finite-molecules"} for kind in KINDS],
             "resources":{"architecture":"x86_64","operating_system":"linux","cpu_millicores":4000,"memory_mib":4096,"gpu_count":0,"timeout_seconds":300,"max_parallel_invocations":8,"max_batch_size":128}}, "AMPHORA_REGISTRY_DATABASE_URL")
         self.registry_receipts=[]
         for kind in KINDS:
@@ -137,6 +138,11 @@ class CandidateEnvironment(GRAPH.GraphEnvironment):
                 raise RuntimeError("chemical_activation_blocked:"+activated["reason_code"])
             assert activated["release"]["status"]=="active"
             self.registry_receipts.append({"registration":registered,"activation":activated})
+        for kind in KINDS:
+            lock=GRAPH.BASE.WIRE.release_lock(self.descriptors[kind])
+            deployed=self.registry_call("deploy",{"deployment_id":"chemical","release":lock,"architecture":"x86_64","operating_system":"linux","workers":["worker1"]})
+            assert deployed["status"]=="accepted"
+            self.registry_receipts[-1]["deployment"]=deployed
         port = HTTP.free_port()
         (self.root / "storage").mkdir()
         self.artifact_config = {
@@ -239,6 +245,17 @@ class CandidateEnvironment(GRAPH.GraphEnvironment):
         )
         self.resources.append(self.research)
         self.research.ready(self.tokens["admin"], "/health")
+
+    def resolve_chemical(self, kind):
+        beat=self.registry_call("heartbeat",{"deployment_id":"chemical","replica_id":"chemical-worker","expected_revision":0,"free_slots":1,"ttl_seconds":60},"worker1")
+        assert beat["status"]=="accepted"
+        descriptor=self.descriptors[kind]
+        payload={"release":GRAPH.BASE.WIRE.release_lock(descriptor),"context":"supplied-finite-molecules","inputs":descriptor["tool"]["inputs"],"outputs":descriptor["tool"]["outputs"]}
+        resolved=self.registry_call("resolve",payload)
+        assert resolved["status"]=="accepted" and resolved["decision"]["status"]=="candidate"
+        assert resolved["decision"]["observations"]["scientific"]["reason_codes"]==["supplied_structure_mapping_only"]
+        self.registry_receipts[-1].update(heartbeat=beat,selection=resolved)
+        return resolved
 
     def publish_input(self, kind):
         data = json.loads((ROOT / "contracts/chemical_structure/examples/supplied-request.json").read_bytes())

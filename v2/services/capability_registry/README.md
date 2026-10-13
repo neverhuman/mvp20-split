@@ -19,3 +19,5 @@ Latest full foundation gate: 448 tests, nine independent packages, fresh registr
 Current owner coverage: 126 cases, 93% of 829 statements/224 branches. CLI/migration subprocess paths, some defensive configuration/corruption/exhaustion/retry branches are outside measured parent-process coverage. See [registry closeout](../../docs/Audits/BP-03.02_Registry_Closeout.md) for evidence and limits.
 
 [Integrated replica acceptance](../../docs/Audits/BP-03.04_Replica_Closeout.md) records exact registry selection, actual peer/worker processes, stale fences, release cutover and preserved history. The fixture controller remains test-only; no production graph scheduler or deployment supervisor is implied.
+
+UI-02.02: Registry0.2.0 adds optional structural_profiles host grants; [module contract](src/amphora_capability_registry/structural_profiles/README.md). No new routes, wire schemas or migrations. Default synthetic behavior remains; verification in progress.
