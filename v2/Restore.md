@@ -1,10 +1,14 @@
 # Restore
 
-Refreshed: 2026-10-12 18:39:10 America/Chicago. Read FIRST after compaction.
+Refreshed: 2026-10-12 19:32:29 America/Chicago. Read FIRST after compaction.
 No agents/JARVIS; v1 read-only. Preserve untracked ocular PDF/DOCX. All test/install/
 replay processes FINISHED. Demo unchanged. No source edits during verification.
 
 ## Current position
+
+Owner requested a specific architecture note: Architecture.md now records the
+isolated numeric-bound trigger and versioned provider projection/local validation
+principle. Documentation-only; no new inference authorization or plan progress.
 
 Owner directed isolation. UI-01.08e complete100%: probe100/isolation100/repair100.
 Trigger: NumberConstant.value minimum=-1e100,maximum=1e100. Tiny schema reproduces

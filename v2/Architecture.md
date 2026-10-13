@@ -1,7 +1,7 @@
 # Amphora Master Architecture
 
 - Design status: v2 bounded synthetic software foundations, durable graph execution, Studio inspection, evidence integration and bounded campaign proposal/compiler handoff implemented; bounded autonomous checkpoint supervision implemented; bounded synthetic live-model evaluation and numeric graph execution verified; synthetic representation/fitness and authenticated evaluation reuse with replacement verified; bounded local model/tool/context/browser deployment and daemon recovery verified; bounded drained-backup recovery, independent evaluator reconstruction/replacement and final local acceptance handoff verified; broader scientific/topology capability remains successor scope
-- Last reviewed: `2026-10-07 11:03:54` (America/Chicago)
+- Last reviewed: `2026-10-12 19:32:29` (America/Chicago)
 - Scope: system principles, construction boundary and functional responsibility domains
 - Requirement authority: Product_Requirements.md in docs/Architecture/Requirements
 
@@ -24,6 +24,28 @@ Strict behavioral and functional isolation applies to every primary service and 
 7. **Human interaction is part of the engine.** Users navigate massive context, inspect decisions, compare alternatives, edit graphs and intervene through role-appropriate views.
 8. **Authority crosses every boundary.** Tenant, purpose, rights, approval, cost and audit constraints accompany work. Operational health, scientific validity and external qualification are separate claims.
 9. **Build in bounded stages.** Architecture owns intent; focused contracts own behavior; implementation plans own sequence and evidence. Technology and service extraction decisions follow contracts and measured needs.
+
+## Provider Generation Schemas and Local Validation
+
+Provider-facing generation schemas are versioned compatibility projections of our
+contracts. They guide model output; local validation remains authoritative for
+acceptance. A provider workaround must preserve domain constraints, immutable
+request/replay history and explicit schema identity. Agents owns this projection;
+receiving owners retain their validation and execution authority.
+
+Specific observed failure (2026-10-12, UI-01.08e): on the pinned OpenAI Responses
+model `gpt-5.4-mini-2026-03-17`, a tiny strict schema with numeric bounds
+`minimum: -1e100` and `maximum: 1e100` reproduced HTTP200
+`incomplete/max_output_tokens`, empty output and explicit zero token usage.
+Removing only those bounds from `NumberConstant.value` let the full generation
+schema succeed. Planning0.133.0 introduces v6/fit.v8 to omit these two bounds only
+from provider generation; local numeric range and finite-value validation remain
+unchanged. Prior profiles and all eight retained request replays remain unchanged.
+This isolates a triggering schema fragment, not the provider's internal cause or
+exact failing threshold. Schema-probe success does not qualify full campaign
+generation. Diagnose such failures through bounded isolation before increasing
+budgets or weakening contracts; the reported truncation reason alone is not proof
+of token exhaustion.
 
 ## Immediate Architectural Children
 
