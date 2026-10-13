@@ -125,3 +125,17 @@ chemical environment lock hash updated. Scientific kernels unchanged. New actual
 fixture exercises draft admission and cold reconstruction after grant removal.
 UI-02.03=37.5% (100/50/0/0); P1.4=0 until actual handoff/audit, parent18.75% unchanged.
 No new model calls. Source checkpoint and independent actual handoff follow.
+
+## 2026-10-13 17:29:39 - P1 actual handoff and audit complete
+
+Session3199 exit0: independently built Runtime0.67/Data/Research0.41/chemical0.1/
+SDK0.3 with Registry0.2 passed complete public lifecycle, draft admission, worker,
+exact artifact/candidate registration, wrong identity, rights revocation, Research
+restart and cold Runtime grant-removal replay. Scope1d2b100fc17044f3bda2967c3f754a7b,
+rune38b5e124f4b4c96a38ccbf439adfeb3. Supplied OCCOCCO -> C4H10O3; 10649byte PNG visually
+inspected. Copied isolated tool32/SDK11 tests passed (session11547 exit0). All probe
+hosts closed. No model calls. Audit/Evidence/UI-02-Chemical/Structural_Handoff.json
+and P1 component audit retained. UI-02.02/.03 complete100%; P1=100%, P2/P3/P4=0%;
+overall25%, Build33.33%, Verification0%. Next P2 explicit selection-or-unranked
+projection; existing fitness authority is synthetic_owner_projection and cannot
+rank a chemical molecule. Do not attach existing synthetic scalar parameters.

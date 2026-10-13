@@ -22,8 +22,5 @@
 
 Use [Development Process](../Development_Process.md) and the [audit template](../Templates/Plan%20Audit%20Template.md). Each discrepancy names evidence, boundary, blocking classification, owner and disposition. Aligned records with no follow-up belong in history.
 
-UI-02/P1.4 blocking drift: Registry structural activation/selection now passes actual
-lifecycle plus149 source/22 independent checks. Runtime compiler and SDK worker
-still require synthetic-only tools; Runtime retained universe/draft context also
-needs correction. [Scoped audit](UI-02_Chemical_Representation.md), [UI-02.03 decision](../Build%20Plans/UI-02.03%20Structural%20execution%20profile%20decision.md).
-Owner decision pending; no campaign admitted or execution guard bypassed.
+
+UI-02/P1 structural profile gaps are closed; [P1 audit](UI-02_Chemical_Representation.md). UI-02/P2-P4 still own unranked/recommendation projection, candidate inspector and browser acceptance.

@@ -54,4 +54,4 @@ Read the selected plan's tracker first. Complete each phase gate before advancin
 
 - [UI-02.01 Chemical structure boundary decision](UI-02.01%20Chemical%20structure%20boundary%20decision.md): proposed additive artifact/tool and explicit Research registration profile; parent implementation0%, awaiting owner direction.
 
-- [UI-02.03 Structural execution profile decision](UI-02.03%20Structural%20execution%20profile%20decision.md): pending owner decision; Registry lifecycle passes, Runtime/SDK synthetic-only guards block P1.4.
+- [UI-02.03 Structural execution profile decision](UI-02.03%20Structural%20execution%20profile%20decision.md): complete100%; actual structural draft/tool/Data/Research handoff and grant-removal history proof pass. UI-02/P2 next.

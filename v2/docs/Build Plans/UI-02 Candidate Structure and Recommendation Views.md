@@ -2,20 +2,25 @@
 
 ## Canonical tracker
 
-- Status: P1 active; P1.1-P1.3 complete; P1.4 implementing approved UI-02.03 Runtime/SDK execution profiles.
-- Last refreshed: 2026-10-13 16:40:14 (America/Chicago).
-- Overall implementation: 18.75%; Build25%, Verification0%. Four equal delivery phases;
-  Build averages P1/P2/P3, Verification is P4. Planning earns no implementation credit.
+- Status: P1 complete; P2 recommendation evidence active.
+- Last refreshed: 2026-10-13 17:29:39 (America/Chicago).
+- Overall implementation:25%; Build33.33%, Verification0%. Four equal phases;
+  Build averages P1/P2/P3; Verification is P4. P1=100%, P2/P3/P4=0%.
 - Owner: Studio candidate inspection; tools own representations/evidence, Runtime
-  owns accepted execution, Data owns immutable artifacts and Research owns identity.
-- Current focus: Registry0.2.0 passes actual register/activate/deploy/heartbeat/resolve;
-  independent Runtime and SDK reject non-synthetic execution. [UI-02.03](UI-02.03%20Structural%20execution%20profile%20decision.md) names the complete correction and retained-history boundary.
-- Next gate: approved profile verification and actual P1.4 handoff/audit before P2.
-- Dependencies: retained candidate structures and explicit recommendation evidence;
-  existing demo parameter sets provide neither. New public contracts require the
-  normal schema-first review. No dependency is assumed implemented by this plan.
-- Acceptance: not started; [activation audit](../Audits/UI-02_Activation.md) identifies the synthetic-only admission gap. P1.1/P1.2/P1.3=100%, P1.4=0%; existing frozen local/LAN demo restored and exact served JS verified after source work; UI-02 features not served.
-- Parent: none; priority is owned by [Master Build Tracker](Master%20Build%20Tracker.md).
+  owns accepted execution, Data owns artifacts and Research owns candidate identity.
+- Current task: P2 inventory retained selection contracts and implement explicit
+  recommendation-or-unranked evidence without treating synthetic fitness as chemistry.
+- Next task: verify P2 missing-policy/tie/incomparable/insufficient-evidence behavior;
+  then P3 candidate inspector and actual retained-artifact browser acceptance.
+- Latest checkpoint: actual supplied oligomer graph completed, source/result/formula/
+  depiction/candidate bound exactly; wrong identity, rights revocation, cold Runtime
+  grant removal, immutable replay and Research restart pass. Tool32/SDK11 isolated
+  tests pass; [P1 scoped audit](../Audits/UI-02_Chemical_Representation.md).
+- Blockers: none for P2. No molecular ranking policy/property/synthesis evidence exists;
+  initial supplied candidate must be explicitly unranked. UI-02 is not served yet.
+- Acceptance: P1 integration verified; P2-P4/UI acceptance not started. Demo wrappers
+  drained for active source work; frozen prior Studio0.34.4 remains restorable.
+- Parent: none; priority owned by [Master Build Tracker](Master%20Build%20Tracker.md).
 
 ## User outcome and current gap
 
@@ -50,7 +55,7 @@ contracts/tool output, P2 selection evidence, P3 formula/structure detail, and P
 the actual browser proof. Show candidates even when unranked; use Recommended only
 when the retained policy/evidence supports it. Thu2026-10-15 is the target for P3,
 Fri2026-10-16 for P4, conditional on P1/P2 completion. These are scheduling targets,
-not permission to bypass producer or selection gates. P1 is75% from three of four equal deliveries; P2/P3/P4 remain0%.
+not permission to bypass producer or selection gates. P1 is100% from four verified deliveries; P2/P3/P4 remain0%.
 
 Show a two-dimensional chemical structure or polymer repeat-unit representation,
 with composition and available architecture details: connectivity/attachment points,
@@ -77,7 +82,7 @@ Keep illustrative, generated, predicted and experimentally supported material di
 
 | Phase | Completion | Prerequisite | Deliverable / exit gate |
 |---|---:|---|---|
-| P1 representation and provenance contracts | 75% | Activation audit | Inventory producers; define supported representations, identity/revision binding, unsupported/unknown states and artifact validation. Specify missing producer work explicitly; do not fabricate structures from scalar inputs. |
+| P1 representation and provenance contracts | 100% | Activation audit | Inventory producers; define supported representations, identity/revision binding, unsupported/unknown states and artifact validation. Specify missing producer work explicitly; do not fabricate structures from scalar inputs. |
 | P2 recommendation evidence | 0% | P1 complete | Consume an explicit retained selection result, including objective/constraints/policy, candidate set and trade-offs. Verify missing policy, ties, incomparable candidates and insufficient evidence remain truthful. |
 | P3 candidate inspector | 0% | P2 complete | Results entry point, 2D structure/repeat-unit or composition rendering, property/synthesis evidence and selection rationale, linked to exact execution and lineage. Safe bounded rendering and module replacement README. |
 | P4 verification and audit | 0% | P3 complete | Module-scoped contract/model/rendering tests and actual retained-artifact browser proof; inspect desktop/mobile/accessibility, wrong candidate/revision, malformed structures and missing evidence. Complete scoped architecture drift audit before closeout. |

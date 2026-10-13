@@ -77,4 +77,4 @@ No generic evidence_proposal bypass; the tool owns chemistry. Runtime retains
 versioned profile materials for reconstruction, while new admission requires the
 current configured grant and fresh Registry observations. Default synthetic profile
 bytes/history remain unchanged; removing a grant never repins active campaigns.
-Source verification is complete; actual installed handoff is the remaining gate.
+Source verification and actual independently installed draft/tool/Data/Research handoff pass, including cold Runtime grant-removal history/replay and new-admission denial. UI consumption remains UI-02/P2-P4.

@@ -1,0 +1,236 @@
+{
+  "timestamp_local": "2026-10-13 17:29:39",
+  "status": "passed",
+  "source_commit": "146e89f2",
+  "scope": {
+    "tenant_id": "chemical-handoff",
+    "project_id": "1d2b100fc17044f3bda2967c3f754a7b"
+  },
+  "run": {
+    "run_id": "e38b5e124f4b4c96a38ccbf439adfeb3",
+    "status": "completed",
+    "spent": 1
+  },
+  "candidate": {
+    "wire_version": "1",
+    "reference": {
+      "scope": {
+        "tenant_id": "chemical-handoff",
+        "project_id": "1d2b100fc17044f3bda2967c3f754a7b"
+      },
+      "candidate_id": "chemical",
+      "revision": 1
+    },
+    "representation": {
+      "artifact_id": "de41d02630614742bfd15f8c5b16227d",
+      "scope": {
+        "tenant_id": "chemical-handoff",
+        "project_id": "1d2b100fc17044f3bda2967c3f754a7b"
+      },
+      "sha256": "dfd9d6460f22357cca9d83db4348afa563a7ee067a408d8c338ed98d577a5d87",
+      "media_type": "application/json",
+      "schema_ref": {
+        "schema_id": "chemical-structure.result",
+        "version": "1",
+        "sha256": "efcca10edae21dc833c53d594ac36e5e6c4f319eed1fed0059bb4de8b4730ecc"
+      },
+      "size_bytes": 16911
+    },
+    "supersedes": null
+  },
+  "completion": {
+    "completion_id": "98d90971d9ff4847bf4e4362bc3e4b27",
+    "activation_id": "4f944499ff9c790cfadc5b7acbd7b3eeea70552839c73f978df63dc53e7a6f25",
+    "accepted_run_revision": 8,
+    "canonical_result": true,
+    "retention_reservation_ids": [
+      "e9847a813cb94ae9888a9848f998562b"
+    ]
+  },
+  "formula": {
+    "text": "C4H10O3",
+    "isotope_policy": "separate_isotopes",
+    "charge_policy": "explicit_net_formal_charge",
+    "net_formal_charge": 0
+  },
+  "canonical_isomeric_smiles": "OCCOCCO",
+  "source_sha256": "3069ae0617ff9b6b49c57d040ef792a4aaf770c41af7112862d6b47a908c259d",
+  "semantic_profile": {
+    "schema_id": "chemical-structure.finite-smiles-2d",
+    "version": "1",
+    "sha256": "537435b380c2f36ffb5b7b404e352379beb0b14e899a560b554d5b588c70bc73"
+  },
+  "method": {
+    "toolkit": "rdkit",
+    "toolkit_version": "2025.09.6",
+    "method": "finite-smiles-2d-v1",
+    "environment_sha256": "cddd4c0f30340975f85d8535016446339e6184a46d3b55b3e1d3f7633a372166"
+  },
+  "depiction": {
+    "media_type": "image/png",
+    "width": 800,
+    "height": 600,
+    "sha256": "25bad158e7ef045f4ee74df8e1b0d01880c43ba3b2f6510fa254d2734bad846f"
+  },
+  "registry_lifecycle": [
+    {
+      "operation": "registration",
+      "status": "accepted",
+      "reason_code": "registered"
+    },
+    {
+      "operation": "activation",
+      "status": "accepted",
+      "reason_code": "active"
+    },
+    {
+      "operation": "deployment",
+      "status": "accepted",
+      "reason_code": "deployed"
+    },
+    {
+      "operation": "heartbeat",
+      "status": "accepted",
+      "reason_code": "observed"
+    },
+    {
+      "operation": "selection",
+      "status": "accepted",
+      "reason_code": "candidate"
+    }
+  ],
+  "draft_validation": {
+    "schema_version": "1",
+    "scope": {
+      "tenant_id": "chemical-handoff",
+      "project_id": "1d2b100fc17044f3bda2967c3f754a7b"
+    },
+    "validation_id": "237f394de3284e59899e21ab4df03ce7",
+    "draft_id": "structure",
+    "revision": 1,
+    "content_sha256": "67de45948662b3cf7983f0b8c4f1ee0dc9fae90a21a5c7c65f671b25159e8641",
+    "universe_sha256": "05cf744adcb99cfa2b85c79c129d453b3339e74f8ffd32079403a28bf7601c4c",
+    "structurally_valid": true,
+    "plan_sha256": "591785437a2e40f45be54220b58b51acc77bfc07efc6dba515b1ed52f778a298",
+    "findings": [],
+    "pending_checks": [
+      "current_eligibility",
+      "activation",
+      "scientific_applicability"
+    ],
+    "scientific_acceptance": "not_established"
+  },
+  "removed_grant_new_admission": {
+    "schema_version": "1",
+    "outcome": {
+      "status": "rejected",
+      "binding": {
+        "identity": {
+          "schema_version": "1",
+          "command_family": "graph.admit_draft",
+          "command_id": "163c6c56b5b34d519eaa37eb912f26d1",
+          "scope": {
+            "tenant_id": "chemical-handoff",
+            "project_id": "1d2b100fc17044f3bda2967c3f754a7b"
+          },
+          "actor_id": "admin"
+        },
+        "request_sha256": "dc696d1ede4deaf691a0093593223e5958c0048985c7a28229cac855c95a2705",
+        "operation_id": "c385f16089234a50b0dbcf079948d499"
+      },
+      "reason_code": "draft_universe_changed"
+    }
+  },
+  "admission_replay_identical": true,
+  "completed_history_identical": true,
+  "rights_denial_preserves_history": true,
+  "research_restart_preserves_history": true,
+  "wrong_candidate_rejected": true,
+  "packages": {
+    "runtime": {
+      "amphora-campaign-runtime": "0.67.0",
+      "amphora-contracts-artifacts": "0.2.0",
+      "amphora-contracts-campaigns": "0.4.1",
+      "amphora-contracts-commands": "0.2.0",
+      "amphora-contracts-core": "0.1.0",
+      "amphora-contracts-draft-successor": "0.1.0",
+      "amphora-contracts-evidence": "0.5.13",
+      "amphora-contracts-execution-proofs": "0.1.0",
+      "amphora-contracts-graph-runtime": "0.13.0",
+      "amphora-contracts-knowledge": "0.8.0",
+      "amphora-contracts-planning": "0.13.0",
+      "amphora-contracts-research": "0.14.0",
+      "amphora-contracts-runtime": "0.1.0",
+      "amphora-contracts-supervision": "0.10.2",
+      "amphora-contracts-tools": "0.1.0"
+    },
+    "artifact": {
+      "amphora-contracts-artifacts": "0.2.0",
+      "amphora-contracts-campaigns": "0.4.1",
+      "amphora-contracts-commands": "0.2.0",
+      "amphora-contracts-core": "0.1.0",
+      "amphora-contracts-evidence": "0.5.13",
+      "amphora-contracts-graph-runtime": "0.13.0",
+      "amphora-contracts-representations": "0.3.0",
+      "amphora-contracts-research": "0.14.0",
+      "amphora-contracts-runtime": "0.1.0",
+      "amphora-contracts-tools": "0.1.0",
+      "amphora-data-artifacts": "0.31.0"
+    },
+    "research": {
+      "amphora-contracts-artifacts": "0.2.0",
+      "amphora-contracts-campaigns": "0.4.1",
+      "amphora-contracts-candidate-canonicalization": "0.1.0",
+      "amphora-contracts-candidate-spaces": "0.1.0",
+      "amphora-contracts-chemical-structure": "0.1.0",
+      "amphora-contracts-commands": "0.2.0",
+      "amphora-contracts-core": "0.1.0",
+      "amphora-contracts-evaluation-identity": "0.1.0",
+      "amphora-contracts-evaluation-reuse": "0.1.0",
+      "amphora-contracts-evidence": "0.5.13",
+      "amphora-contracts-execution-proofs": "0.1.0",
+      "amphora-contracts-fitness": "0.1.0",
+      "amphora-contracts-graph-runtime": "0.13.0",
+      "amphora-contracts-knowledge": "0.8.0",
+      "amphora-contracts-research": "0.14.0",
+      "amphora-contracts-research-views": "0.1.0",
+      "amphora-contracts-runtime": "0.1.0",
+      "amphora-contracts-synthetic-evaluation": "0.1.0",
+      "amphora-contracts-tools": "0.1.0",
+      "amphora-research": "0.41.0",
+      "amphora-tool-protocol": "0.3.0"
+    },
+    "chemical": {
+      "amphora-chemical-structure": "0.1.0",
+      "amphora-contracts-artifacts": "0.2.0",
+      "amphora-contracts-campaigns": "0.4.1",
+      "amphora-contracts-chemical-structure": "0.1.0",
+      "amphora-contracts-commands": "0.2.0",
+      "amphora-contracts-core": "0.1.0",
+      "amphora-contracts-graph-runtime": "0.13.0",
+      "amphora-contracts-research": "0.14.0",
+      "amphora-contracts-runtime": "0.1.0",
+      "amphora-contracts-tools": "0.1.0",
+      "amphora-tool-protocol": "0.3.0"
+    },
+    "registry": {
+      "amphora-capability-registry": "0.2.0",
+      "amphora-contracts-commands": "0.2.0",
+      "amphora-contracts-core": "0.1.0",
+      "amphora-contracts-tools": "0.1.0"
+    },
+    "controller": {
+      "amphora-contracts-artifacts": "0.2.0",
+      "amphora-contracts-commands": "0.2.0",
+      "amphora-contracts-core": "0.1.0",
+      "amphora-contracts-runtime": "0.1.0",
+      "amphora-contracts-tools": "0.1.0",
+      "amphora-tool-protocol": "0.3.0"
+    }
+  },
+  "evidence_sha256": "afd2f1575acad5ccc838d5dd83797f71ccc17fce54a3e1ef79604f49f7b7892a",
+  "isolated_tool_tests": 32,
+  "isolated_sdk_profile_tests": 11,
+  "provider_calls": 0,
+  "limits": "Supplied connected finite oligomer; native Windows processes and declared image fixture pins. No generation, ranking, property/synthesis/biological validation, image build, cluster or UI acceptance."
+}

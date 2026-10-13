@@ -1,17 +1,16 @@
 # UI-02 chemical representation boundary audit
 
-- Status: blocked on Runtime/SDK execution profiles; Registry lifecycle verified.
-- Reviewed: 2026-10-13 16:40:14 America/Chicago; Registry baseline0bc5f436.
-- Owner: UI-02/P1. Overall18.75%, P1=75%, P2/P3/P4=0%.
-- Next gate: actual Registry registration/activation, Runtime execution/retention,
-  Data byte attribution, Research registration/replay/denial and mismatch rejection.
-- Blocker: unsupported_compiler_tool_profile and unsupported_worker_profile; UI-02.03 owner decision required.
+- Status: P1 representation/provenance complete; UI-02.01/.02/.03 component scope aligned.
+- Reviewed: 2026-10-13 17:29:39 America/Chicago; implementation146e89f2.
+- Owner: UI-02/P1. Overall25%, Build33.33%, Verification0%; P1=100%, P2/P3/P4=0%.
+- Next gate: P2 selection evidence or explicit unranked projection, then P3 inspector.
+- Blockers: none for completed P1. UI has not yet consumed or displayed these results.
 
 | Boundary | Evidence | Disposition |
 |---|---|---|
 | Additive public contracts |12 wire/publication checks;668 predecessor pins unchanged | aligned |
-| Independent chemical tool |32 copied tests, schema bytes/fresh-process determinism, PNG inspected | aligned; actual handoff pending |
-| Research opt-in identity |75 PostgreSQL/registration/identity tests,2 compatibility checks and dependency guard | aligned; actual Research handoff blocked upstream at Runtime |
+| Independent chemical tool |32 copied tests, schema bytes/fresh-process determinism, PNG inspected | aligned; actual independent graph/Data/Research handoff passed |
+| Research opt-in identity |75 PostgreSQL/registration/identity tests,2 compatibility checks and dependency guard | aligned; actual registration/replay/mismatch/denial/restart passed |
 | UI formula/recommendation | Not implemented | P2-P4; do not imply viewer availability |
 | Scientific claims | Supplied finite oligomer/structure only | No property, synthesis, clinical or ranking authority |
 
@@ -20,6 +19,8 @@ molecule/profile/display objects own behavior. No private peer imports or tables
 new Research migration or existing schema/receipt rewrite. PNG is inert, bounded,
 source-bound and contains no metadata; Research validates header/hash/dimensions,
 while full consumer decoding/attribution remains UI acceptance work.
+
+## Earlier prerequisite evidence (historical)
 
 Standalone isolated output: .test-results/ui02-chemical-independent-20261013a.
 Six independent installations completed in .test-results/ui02-chemical-handoff-20261013a.
@@ -41,3 +42,33 @@ profile; draft eligibility context and retained universe need a versioned correc
 is proposed. No graph admission/worker claim or P1.4 credit. Initial inventory missed
 these downstream restrictions; no guards bypassed. Planning evolutionary topology
 remains separately synthetic-only, outside this supplied-structure handoff.
+
+## 2026-10-13 17:29:39 - P1 closeout
+
+[Exact handoff evidence](Evidence/UI-02-Chemical/Structural_Handoff.json) qualifies
+independent Runtime0.67/SDK0.3/chemical0.1/Research0.41/Data and Registry0.2 processes.
+Actual register/activate/deploy/heartbeat/resolve -> draft save/validate/admit ->
+worker -> immutable result -> candidate registration succeeds. The supplied OCCOCCO
+result is C4H10O3; accepted source/result/candidate pins agree and Data reservations
+are confirmed. Accepted PNG hash/bytes were checked and visually inspected (800x600,
+10649bytes). No measured/property/fitness/synthesis result is inferred.
+
+Cold Runtime replacement removes the execution grant: original admission receipt,
+validation and completed run read identically; a new admission rejects
+draft_universe_changed. Research restart preserves registration; revoked Research
+Data access rejects even registration retries while historical identity remains
+readable. Wrong candidate identity rejects. All probe hosts closed; no live demo
+state reset or provider call. Source gates:234 Runtime/compiler/definitions tests,
+105 final SDK tests,53 additional multi-input/Runtime cases; copied independent
+tool32/SDK11 tests pass. Schema publication and production dependency guard pass.
+
+Default synthetic compiler/plan/universe-v1 encodings and receipt replay remain
+unchanged. Exact opt-in materials use universe-v2; current admission authority is
+separate from historical reconstruction. Runtime/SDK policy modules import only
+public contracts; chemistry/RDKit remains tool-local. No new HTTP DTO/route/table.
+The SDK version required24 dependency-lock refreshes; no inherited kernels changed.
+
+Earlier blockers below/above are retained chronology, not current gates. Planning
+evolutionary topology remains synthetic-only and is a POP/ML integration limitation.
+Declared image pins are not container qualification. Browser verification, complete
+PNG consumer validation and recommendation-or-unranked presentation remain P2-P4.
