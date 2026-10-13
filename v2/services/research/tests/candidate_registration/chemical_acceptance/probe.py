@@ -33,7 +33,7 @@ def main():
     try:
         e.setup()
         for kind in module.KINDS:
-            selection=e.resolve_chemical(kind)
+            selection=e.registry_receipts[module.KINDS.index(kind)]["selection"]
             reference = e.publish_input(kind)
             port = e.descriptors[kind]["tool"]["inputs"][0]
             admission = http.decoded(

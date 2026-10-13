@@ -92,3 +92,19 @@ Fresh Registry install is running; actual chemical fixture now includes explicit
 profile and public deployment/heartbeat/resolve before graph execution.
 
 2026-10-13 16:31:50: Registry0.2.0 independent installation passes22 copied structural-policy tests, excludes peer implementations/RDKit, includes exact reviewed profile resource. Publication and production dependency checks pass. Source gates149tests retained; next actual handoff with independently rebuilt Registry and retained unchanged peer installations.
+
+## 2026-10-13 16:40:14 - Registry lifecycle passes; execution boundary isolated
+
+Pushed0bc5f436. Actual d run uses Registry0.2.0 with unchanged independently installed
+peers: registration/activation/deployment/heartbeat/selection all accepted; selection
+is candidate with supplied_structure_mapping_only. Lifecycle evidence retained before
+Runtime startup. Runtime startup fails; separate installed compiler isolates
+unsupported_compiler_tool_profile. Installed SDK separately reproduces
+unsupported_worker_profile before a claim. Probe37801 finished1 and closed owners.
+No database outage or provider issue; no paid calls. Initial inventory missed these
+synthetic-only boundaries. UI-02.03 proposes exact-profile compiler/SDK plus versioned
+retained universe and draft eligibility context; historical profiles unchanged.
+P1.4=0%, P1=75%, overall18.75%; UI-02.02 remains50% because its final handoff/audit
+still depends on execution. No user files changed. Frozen demo restoration follows.
+
+2026-10-13 16:43:12: frozen Studio0.34.4 restored local76406/session13j and LAN88221/LAN13h; both ready, app.js HTTP200 and exact21fa5c5d6f790ffd902f0074290a651c5bebcd5173cf136ba105ac43514db5f2. No UI-02 cutover or model call.

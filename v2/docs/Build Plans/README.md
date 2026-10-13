@@ -53,3 +53,5 @@ Read the selected plan's tracker first. Complete each phase gate before advancin
 - [UI-01.08j Managed curation demo delivery](Completed/UI-01.08j%20Managed%20curation%20demo%20delivery.md): complete100%; M1-M4 qualified/audited; parent V1 remains.
 
 - [UI-02.01 Chemical structure boundary decision](UI-02.01%20Chemical%20structure%20boundary%20decision.md): proposed additive artifact/tool and explicit Research registration profile; parent implementation0%, awaiting owner direction.
+
+- [UI-02.03 Structural execution profile decision](UI-02.03%20Structural%20execution%20profile%20decision.md): pending owner decision; Registry lifecycle passes, Runtime/SDK synthetic-only guards block P1.4.

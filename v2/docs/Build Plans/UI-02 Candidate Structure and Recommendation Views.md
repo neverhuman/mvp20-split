@@ -2,19 +2,19 @@
 
 ## Canonical tracker
 
-- Status: P1 active; owner approved UI-02.01; P1.1-P1.3 complete; P1.4 Registry profile correction active UI-02.02.
-- Last refreshed: 2026-10-13 11:53:07 (America/Chicago).
+- Status: P1 active; P1.1-P1.3 complete; P1.4 blocked on UI-02.03 Runtime/SDK execution profile decision.
+- Last refreshed: 2026-10-13 16:40:14 (America/Chicago).
 - Overall implementation: 18.75%; Build25%, Verification0%. Four equal delivery phases;
   Build averages P1/P2/P3, Verification is P4. Planning earns no implementation credit.
-- Owner: Studio candidate inspection; scientific tools own candidate representations
-  and evaluation/selection outputs, Runtime owns accepted execution references,
-  Data owns immutable artifact access.
-- Current focus: [UI-02.01 chemical structure boundary](UI-02.01%20Chemical%20structure%20boundary%20decision.md); P1.1 contracts verified; P1.3 opt-in Research registration verified; P1.4 registered handoff blocked: Registry activation_profile_denied; [UI-02.02](UI-02.02%20Structural%20tool%20registry%20profile%20decision.md) is reviewable.
-- Next gate: approved UI-02.02 implementation, then configured Registry activation/selection and actual P1.4 handoff.
+- Owner: Studio candidate inspection; tools own representations/evidence, Runtime
+  owns accepted execution, Data owns immutable artifacts and Research owns identity.
+- Current focus: Registry0.2.0 passes actual register/activate/deploy/heartbeat/resolve;
+  independent Runtime and SDK reject non-synthetic execution. [UI-02.03](UI-02.03%20Structural%20execution%20profile%20decision.md) names the complete correction and retained-history boundary.
+- Next gate: owner decision on UI-02.03, then actual P1.4 handoff/audit before P2.
 - Dependencies: retained candidate structures and explicit recommendation evidence;
   existing demo parameter sets provide neither. New public contracts require the
   normal schema-first review. No dependency is assumed implemented by this plan.
-- Acceptance: not started; [activation audit](../Audits/UI-02_Activation.md) identifies the synthetic-only admission gap. P1.1/P1.2/P1.3=100%, P1.4=0%; existing frozen local/LAN demo restored after source work; UI-02 features not served.
+- Acceptance: not started; [activation audit](../Audits/UI-02_Activation.md) identifies the synthetic-only admission gap. P1.1/P1.2/P1.3=100%, P1.4=0%; existing frozen local/LAN demo restored and exact served JS verified after source work; UI-02 features not served.
 - Parent: none; priority is owned by [Master Build Tracker](Master%20Build%20Tracker.md).
 
 ## User outcome and current gap

@@ -143,6 +143,11 @@ class CandidateEnvironment(GRAPH.GraphEnvironment):
             deployed=self.registry_call("deploy",{"deployment_id":"chemical","release":lock,"architecture":"x86_64","operating_system":"linux","workers":["worker1"]})
             assert deployed["status"]=="accepted"
             self.registry_receipts[-1]["deployment"]=deployed
+        for kind in KINDS:
+            self.resolve_chemical(kind)
+        (self.root / "registry-lifecycle.json").write_text(
+            json.dumps(self.registry_receipts, indent=2) + "\n", encoding="utf-8"
+        )
         port = HTTP.free_port()
         (self.root / "storage").mkdir()
         self.artifact_config = {

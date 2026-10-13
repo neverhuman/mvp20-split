@@ -1,0 +1,18 @@
+{
+  "timestamp_local": "2026-10-13 16:40:14",
+  "registry_lifecycle_sha256": "cf0ba282ba7865419137f6e6c0328fa15c17864cf84d6c9ed38dd32df1fb6840",
+  "runtime": {
+    "version": "0.66.1",
+    "probe": "independently installed compile_plans.py against handoff c/http/runtime.json",
+    "result": "unsupported_compiler_tool_profile"
+  },
+  "sdk": {
+    "version": "0.2.0",
+    "probe": "independently installed PureToolWorker with chemical descriptor; guard runs before client access",
+    "result": "unsupported_worker_profile"
+  },
+  "campaign_admitted": false,
+  "worker_claimed": false,
+  "provider_calls": 0,
+  "qualification_limit": "native processes with declared fixture image digest; no container image proof"
+}
