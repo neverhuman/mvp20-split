@@ -4,21 +4,23 @@ Refreshed: 2026-10-13 17:30:55 America/Chicago. Read FIRST after compaction.
 
 ## Current task
 
-UI-02/P1 is COMPLETE and audited. P2 recommendation-or-unranked evidence is next,
-not implemented. Parent overall25%, Build33.33%, Verification0%; P1=100%, P2/P3/P4=0%.
-UI-02.01/.02/.03 approved corrections all complete100%. No owner gate. Continue
-in MBT order: P2 -> P3 candidate inspector -> P4 actual browser acceptance, then
-POP-01 and ML-01. LR-01 paused25%; UI-01/LAN-01 archived100%. Keep trackers canonical,
-commit/push significant verified work, continue across commits/compaction.
+UI-02/P1 and P2 COMPLETE. P3 candidate inspector is next, not implemented.
+Overall50%, Build66.67%, Verification0%; P1/P2=100%, P3/P4=0%. No owner gate.
+Continue P3 -> P4 actual browser acceptance, then POP-01/ML-01. LR-01 paused25%;
+UI-01/LAN-01 archived100%. Keep trackers/Restore current; commit/push; do not stop
+at milestones. Both demo wrappers remain stopped while source work continues.
 
-P2 needs careful existing-contract inventory: contracts/fitness only grants
-synthetic_owner_projection/reuse_authority=none. It cannot rank chemical molecules.
-UI-02.01 explicitly permits an initial supplied, unranked candidate with missing
-selection/property/synthesis evidence. Do not attach Hansen/Arrhenius scalar results
-or synthetic digest policy to the molecule. Parent P2 still calls for explicit
-selection-result consumption and missing-policy/tie/incomparable/insufficient states;
-read owning contracts before implementation. UI guidelines and interaction references
-read this turn. No UI-02 frontend code written or served yet.
+P2 Studio0.35 candidate_evidence: RetainedSelection consumes decoded numerical
+SearchCheckpoint policy/selected set/fronts/objectives/evaluator/constraint/context
+without reranking. Missing receipt differs from configured policy; incomplete/zero/
+insufficient/incomparable states are explicit. suppliedStructureEvidence binds
+candidate/revision/scope but always unranked; numeric selection cannot rank chemical
+structure. 18 scoped tests + strict TypeScript build pass. No browser/transport change.
+Existing Research fitness grants only synthetic_owner_projection/reuse_authority=none.
+Do not attach Hansen/Arrhenius scalars or synthetic digest policy to the molecule.
+P2 pure objects are not Artifact authentication; P3 must verify current owner reads.
+UI Coding Guidelines and Interaction References read this turn. P1 pushedef5375a4;
+P2 checkpoint commit follows. No UI-02 features served or frontend inspector written.
 
 ## Completed P1 proof
 
@@ -53,7 +55,7 @@ Cold Runtime replacement with no structural grant: original admission receipt,
 validation and completed graph read identically; new admission rejects
  draft_universe_changed. Retained draft-replacement.json proves this. No model calls.
 Committed compact evidence is docs/Audits/Evidence/UI-02-Chemical/Structural_Handoff.json;
-P1 audit docs/Audits/UI-02_Chemical_Representation.md. Closeout docs commit follows.
+P1 audit docs/Audits/UI-02_Chemical_Representation.md. P1 closeout pushedef5375a4.
 Declared c-image pins prove native processes, NOT Linux images/container deployment.
 
 Scientific authority: structural_derivation only; no generation, ranking, properties,

@@ -2,24 +2,24 @@
 
 ## Canonical tracker
 
-- Status: P1 complete; P2 recommendation evidence active.
+- Status: P1/P2 complete; P3 candidate inspector active.
 - Last refreshed: 2026-10-13 17:29:39 (America/Chicago).
-- Overall implementation:25%; Build33.33%, Verification0%. Four equal phases;
-  Build averages P1/P2/P3; Verification is P4. P1=100%, P2/P3/P4=0%.
+- Overall implementation:50%; Build66.67%, Verification0%. Four equal phases;
+  Build averages P1/P2/P3; Verification is P4. P1/P2=100%, P3/P4=0%.
 - Owner: Studio candidate inspection; tools own representations/evidence, Runtime
   owns accepted execution, Data owns artifacts and Research owns candidate identity.
-- Current task: P2 inventory retained selection contracts and implement explicit
-  recommendation-or-unranked evidence without treating synthetic fitness as chemistry.
-- Next task: verify P2 missing-policy/tie/incomparable/insufficient-evidence behavior;
-  then P3 candidate inspector and actual retained-artifact browser acceptance.
-- Latest checkpoint: actual supplied oligomer graph completed, source/result/formula/
-  depiction/candidate bound exactly; wrong identity, rights revocation, cold Runtime
-  grant removal, immutable replay and Research restart pass. Tool32/SDK11 isolated
-  tests pass; [P1 scoped audit](../Audits/UI-02_Chemical_Representation.md).
-- Blockers: none for P2. No molecular ranking policy/property/synthesis evidence exists;
-  initial supplied candidate must be explicitly unranked. UI-02 is not served yet.
-- Acceptance: P1 integration verified; P2-P4/UI acceptance not started. Demo wrappers
-  drained for active source work; frozen prior Studio0.34.4 remains restorable.
+- Current task: P3 candidate inspector: exact candidate/producer/Artifact reads, formula
+  and safe bounded depiction, Results navigation and absent property/synthesis status.
+- Next task: P3 scoped model/transport/presentation verification, then P4 actual
+  retained-owner/browser/local-LAN acceptance and final architecture audit.
+- Latest checkpoint: 2026-10-13 17:37:39; P2 RetainedSelection consumes explicit numerical
+  policy/objectives/constraints/fronts/selected set without reranking. Supplied
+  structure is unranked; numerical selection is inapplicable.18 focused tests and
+  strict TypeScript build pass. [P1 audit](../Audits/UI-02_Chemical_Representation.md).
+- Blockers: none for P3. No applicable molecular ranking/property/synthesis evidence;
+  initial supplied candidate remains unranked. UI-02 is not served yet.
+- Acceptance: P1 integration verified; P2 evidence projection verified; P3/P4 UI
+  acceptance not started. Demo drained for source work; old Studio0.34.4 restorable.
 - Parent: none; priority owned by [Master Build Tracker](Master%20Build%20Tracker.md).
 
 ## User outcome and current gap
@@ -83,7 +83,7 @@ Keep illustrative, generated, predicted and experimentally supported material di
 | Phase | Completion | Prerequisite | Deliverable / exit gate |
 |---|---:|---|---|
 | P1 representation and provenance contracts | 100% | Activation audit | Inventory producers; define supported representations, identity/revision binding, unsupported/unknown states and artifact validation. Specify missing producer work explicitly; do not fabricate structures from scalar inputs. |
-| P2 recommendation evidence | 0% | P1 complete | Consume an explicit retained selection result, including objective/constraints/policy, candidate set and trade-offs. Verify missing policy, ties, incomparable candidates and insufficient evidence remain truthful. |
+| P2 recommendation evidence | 100% | P1 complete | Consume an explicit retained selection result, including objective/constraints/policy, candidate set and trade-offs. Verify missing policy, ties, incomparable candidates and insufficient evidence remain truthful. |
 | P3 candidate inspector | 0% | P2 complete | Results entry point, 2D structure/repeat-unit or composition rendering, property/synthesis evidence and selection rationale, linked to exact execution and lineage. Safe bounded rendering and module replacement README. |
 | P4 verification and audit | 0% | P3 complete | Module-scoped contract/model/rendering tests and actual retained-artifact browser proof; inspect desktop/mobile/accessibility, wrong candidate/revision, malformed structures and missing evidence. Complete scoped architecture drift audit before closeout. |
 

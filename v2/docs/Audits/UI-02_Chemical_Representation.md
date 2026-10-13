@@ -72,3 +72,5 @@ Earlier blockers below/above are retained chronology, not current gates. Plannin
 evolutionary topology remains synthetic-only and is a POP/ML integration limitation.
 Declared image pins are not container qualification. Browser verification, complete
 PNG consumer validation and recommendation-or-unranked presentation remain P2-P4.
+
+2026-10-13 17:37:39: P2 pure evidence projection aligned with numeric-only search/fitness authority.18 focused checks/TypeScript pass; no reranking, numeric-to-molecule promotion or fabricated winner. UI loading/rendering/browser gates remain P3/P4.

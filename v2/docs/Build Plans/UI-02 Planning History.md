@@ -139,3 +139,19 @@ and P1 component audit retained. UI-02.02/.03 complete100%; P1=100%, P2/P3/P4=0%
 overall25%, Build33.33%, Verification0%. Next P2 explicit selection-or-unranked
 projection; existing fitness authority is synthetic_owner_projection and cannot
 rank a chemical molecule. Do not attach existing synthetic scalar parameters.
+
+## 2026-10-13 17:37:39 - P2 retained selection-or-unranked evidence complete
+
+Studio0.35 candidate_evidence owns pure projections, reusing already decoded
+RetainedGeneration and published SearchCheckpoint selection. Configured policy is
+separate from an absent receipt; final selected set/fronts/objective units/directions/
+evaluator/constraint/context and candidate quality remain exact. No UI ranking or
+winner inference. Unknown/infeasible values stay unknown; partial/zero selections
+and incompatible contexts are explicit. Equal-value and same-front sets do not
+collapse to one winner. Contradictory retained feasibility/counts reject.
+Structure evidence binds exact candidate/revision/scope and stays unranked; existing
+synthetic Research fitness and numeric search cannot rank a molecular structure.
+18 focused projection/predecessor checks and strict TypeScript build pass. No new
+backend DTO/API, transport route, model call or browser delivery. Tests are owned in
+studio/tests/page_models/candidate_evidence. P2=100%, P3/P4=0%; overall50%,
+Build66.67%, Verification0%. P3 now owns protected loads, formula/PNG and presentation.
