@@ -462,5 +462,11 @@
     "coverage_sources": [
       "deploy/local/src/amphora_deployment/curation_access"
     ]
+  },
+  "dev-curation-managed-demo": {
+    "tests": "dev/tests/curation_managed_demo",
+    "coverage_sources": [
+      "dev/curation_managed_demo"
+    ]
   }
 }

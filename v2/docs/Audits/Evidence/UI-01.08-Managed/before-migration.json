@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "timestamp_local": "2026-10-12 21:53:57",
+  "target_deployment_id": "a702fd5b991e4fbe8ac651c3997ce5b2",
+  "backup_id": "3771efc579754533993bb6a6affaf642",
+  "planning_installation": "Z:\\mvp20-split\\v2\\.test-results\\origin-installation-20261011a\\planning",
+  "readbacks_sha256": "f366e71f1906d024ba913ab6922a28ccc192a45914daa85f0e70f5899545b849",
+  "exact_original_runs": [
+    "6bb494556bb04010a72820d52f0e78e7",
+    "74de1629bdc6444398239de807df325d"
+  ],
+  "exact_draft_and_origin": true,
+  "provider_calls": 0,
+  "campaigns_launched": 0,
+  "deployment_launch_history": "retained in backup, not restored as live worker ownership"
+}

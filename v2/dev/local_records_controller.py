@@ -11,7 +11,7 @@ from local_demo_controller import Controller
 
 
 class RecordsController(Controller):
-    def __init__(self, root, output, routes, *, workers=False, model_key=None):
+    def __init__(self, root, output, routes, *, workers=False, model_key=None, deployment_python=None):
         self.routes, self.token = routes, control_token(root)
         self.opener = urllib.request.build_opener(urllib.request.ProxyHandler({}))
         environment = {key: value for key, value in os.environ.items() if key.upper() in {
@@ -22,7 +22,7 @@ class RecordsController(Controller):
             environment['AMPHORA_OPENAI_API_KEY'] = model_key
         self.job, self.process = ProcessJob(), None
         try:
-            command = [sys.executable, '-I', '-m', 'amphora_deployment.lifecycle', 'serve',
+            command = [str(deployment_python or sys.executable), '-I', '-m', 'amphora_deployment.lifecycle', 'serve',
                 '--root', str(root), '--manifest', str(output / 'owners.json')]
             if workers:
                 command += ['--workers-manifest', str(output / 'native.json')]

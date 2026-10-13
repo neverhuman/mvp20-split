@@ -1,0 +1,18 @@
+{
+  "timestamp_local": "2026-10-12 21:50:23",
+  "status": "cold_backup_verified",
+  "verification": {
+    "backup_id": "3771efc579754533993bb6a6affaf642",
+    "manifest_sha256": "109aa72242637cb21e5e843a6f29cda7a785e47d7f5e875f3b08dcf52a2d93c3",
+    "file_count": 2317,
+    "total_bytes": 200383279,
+    "status": "inventory_verified_not_restore_ready"
+  },
+  "source_stores_restored": true,
+  "capture_seconds": 24.905999999959022,
+  "objective": "last fully drained backup; measure recovery time without hard limit",
+  "limits": [
+    "Same-machine protected local backup; no host-loss or online snapshot guarantee",
+    "Cold bytes and release/schema pins verified; restored owner semantics remain B2"
+  ]
+}

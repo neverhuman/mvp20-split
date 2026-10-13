@@ -21,3 +21,30 @@ Research question reads. Mutation and foreign-scope reads must fail403; swapped
 peer tokens401. It reconciles original campaign receipts and original vault bytes,
 then drains. No paid provider or campaign. This is isolated peer acceptance, not
 shared-demo migration/delivery or live scientific curation acceptance.
+
+M3 inventory_demo starts the unchanged existing installed owners, reads retained
+baseline/browser-launched scientific campaigns, exact draft and Planning provenance,
+records configuration/package hashes and drains. It does not compile, launch,
+migrate or call a provider. This readback is the pre-migration comparison point.
+
+M3 backup_demo supplies the current demo cut to the existing cold capture helper.
+It requires exact retained readback hashes and unchanged original configuration/
+installation identities, pins Planning0.107/schema0021, and snapshots normalized
+relative JSON inputs alongside untouched original serving files/readbacks. Gateway
+is preserved as serving configuration, not invented as a seventh database owner.
+Legacy BP-09 capture retains its original three-readback gate and schema pins.
+Only the exact owned PostgreSQL/Qdrant pair stops for cold volume export; original
+IDs restart in finally. Backup inventory verification is not restored-owner acceptance.
+
+restored_reads verifies exact retained scientific campaign, draft and complete
+Planning provenance on the isolated current backup, before/after forward migration.
+Uses independently installed supervisor/owners; no tool workers, new campaigns or
+provider. Deployment launch journals remain in backup and are not rebound to old
+container IDs. RecordsController accepts an explicit installed Deployment interpreter.
+
+forward_demo verifies all predecessor0.107 migration bytes unchanged inside the
+independent0.136 wheel, then invokes only Planning's migration command with its
+migrator credential. Requires stopped listeners/released tool and launch journals.
+Shared-root migration additionally requires successful drained isolated readbacks
+of the same snapshot and exact target Planning installation. Initial Deployment
+migration receipts remain historical; an explicit new migration record owns progress.

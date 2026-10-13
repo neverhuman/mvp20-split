@@ -1,13 +1,15 @@
 # Restore
 
-Refreshed: 2026-10-12 21:34:41 America/Chicago. Read FIRST after compaction.
-All processes FINISHED/drained. Latest pushed7495dec1 (M1/M2).
-Uncommitted Deployment0.20.1 curation_access DPAPI readers/lifecycle selection,
-tests/locks/test_scopes and dev/curation_managed_demo/peer_reads.py.
-92 source and92 independent installed tests pass; actual peer27836 passed/drained.
-Installationd succeeds; c was invalid probe forbidding legitimate Pydantic dependency.
-Commit this verified M3.1 checkpoint then continue M3.2 inventory/readbacks.
-No agents/JARVIS;v1 read-only; preserve ocular PDF/DOCX.
+Refreshed: 2026-10-12 21:58:45 America/Chicago. Read FIRST after compaction.
+Latest pushed c53e70f3. ALL PROCESSES FINISHED/drained.
+M3.2 inventory31631 passed, M3.3 coldbackup37781/restore49231/pre-read48483/
+migration66160/post-read27577 all passed. Commit verified checkpoint now then
+CONTINUE M3.4 budget/composition/shared migration/localLAN. No owner gate yet.
+Uncommitted dev helpers inventory_demo,backup_demo,restored_reads,forward_demo;
+optional CurrentDemoCut integration in capture_local_backup; optional installed
+interpreter RecordsController; six scoped guardtests pass, testscope registered.
+Shared demo STILL original schema/config and UI OFFLINE; original stores running.
+No agents/JARVIS;v1 read-only; preserve ocularPDF/DOCX.
 
 ## Current achievement and next task
 
@@ -22,29 +24,44 @@ Isolated serving/public rebuilt (backup public-before-resize-20261012a).
 Strengthened recovery3705 passed/drained; actualowner/replay/browser1440/390,
 visible nodes/edges, nextiteration readiness, no duplicateintent. Screenshotsseen.
 
-NEXT UI-01.08j/M3.2 existing demo inventory/readbacks. M3.1 scoped readers COMPLETE:
-Deployment0.20.1 installed .test-results/curation-deployment-installation-20261012d/owner;
-actual proof .test-results/curation-managed-peers-20261012a. Dedicated readers
-read exact restored graph/question, denywrites/crossscope403/swappedtokens401.
-Original vault/retained receipts unchanged. No new paid work.
-Shared demo root C:/Users/alb_p/AppData/Local/Packages/PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0/LocalCache/Local/Amphora/local-v2/restore-20261007b
-id19fe8146b54c46dfb934075ab28c6d39. Its two Docker stores up; gateway57013 NOT LISTENING.
-Latest serving .test-results/origin-live-20261011e, LAN origin-lan-20261011d;
-ready window expired2026-10-12 19:59:57, no drain.json. Root scope internal/
-knowledge-demo-1b1dc25768334153b58973882627b858. Existing meaningful scientific run
-74de1629bdc6444398239de807df325d and draft planning-75a08c857eb96dcdf1f7070430beb4cedfba48425c671412bbcf56f4dab7984a revision1.
-Planning0.107/schema0021,Gateway0.5.0/Studio0.26; others old unchanged.
-Existing dev/campaign_launch_demo/controller.py and campaign_curation_fixture/session
-can start actual owners then drain; use cloned evidence/config so old evidence unchanged.
-Source capture_local_backup.py hardcodes6 owners/no gateway, Planning0020 and three
-oldreadbacks; do not falsely reuse for currentcut. Need bounded current backup
-helper preserving coldcapture/volume IDs/manifest verification, exact0021 plus
-new readbacks and configs/launchjournals. Qualify additive Planning migration in
-isolation before shared cutover. No provider for inventory/backup. Actual peer
-records source .test-results/local-owner-records-install-20261007a/scenario.
-Budget exact qualification scope still53/$13.30,16holds/$4.05; real demo scope differs.
-Do not bypass aggregate leftover$9.25 using default/newscope; constrain allocation
-before enabling live demo. Source code curation_budget/ceiling.py owns exactscope.
+NEXT UI-01.08j/M3.4. Backup/migration rehearsal DONE. Need actual shared migration,
+new immutable serving composition and meaningful scientific local/LAN flow.
+First protect cost: completed qualification scope has16holds/$4.05; remaining37/
+$9.25 belongs to approved$10. Plan packaged bounded allocation: freeze qualification
+ceiling at16/$4.05, allocate37/$9.25 to exact existing demo scope internal/
+knowledge-demo-1b1dc25768334153b58973882627b858. No refund, unchanged per-call cap,
+no new public budget API; total53/$13.30 preserved. Not implemented yet. NewPlanning
+release0.137 likely; update/requalify isolated actualreadback after budget change,
+forward_demo currently pins0.136. Old frozen inputs must replay unchanged. No new
+calls until deployment scope ledger accounted; oldqualification workers remain stopped.
+Source curation_budget/ceiling.py/tests/test_extension.py have53 scope; use actual
+budget tests (AMPHORA_TEST_POSTGRES=1), exactoldreplays, independentinstall.
+Shared root C:/Users/alb_p/AppData/Local/Packages/PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0/LocalCache/Local/Amphora/local-v2/restore-20261007b
+id19fe8146b54c46dfb934075ab28c6d39. Original PostgreSQL/Qdrant running; noowners.
+Serving .test-results/origin-live-20261011e; LAN origin-lan-20261011d; window expired.
+Meaningful run74de1629bdc6444398239de807df325d; inventory .test-results/curation-demo-inventory-20261012a
+contains exact runs/draft/provenance readbacks (source in inventoryrecord has dev/../).
+Backup physical local-v2/curation-demo-backup-20261012a, backupid3771efc579754533993bb6a6affaf642,
+trusted .test-results/curation-demo-backup-20261012a.json, manifestsha109aa72242637cb21e5e843a6f29cda7a785e47d7f5e875f3b08dcf52a2d93c3.
+Isolated root local-v2/curation-demo-restored-20261012a ida702fd5b991e4fbe8ac651c3997ce5b2,
+configs .test-results/curation-demo-restored-20261012a; oldPlanning0.107/schema0021,
+now0.136/schema0027. Public reads pre a/post b: .test-results/curation-demo-restored-reads-20261012{a,b}.
+Migration .test-results/curation-demo-forward-20261012a. Original root NOT migrated.
+Use forward_demo with --rehearsal postreadb for shared migration after finalrelease
+proof. All predecessor migration bytes must match. InitialDeploymentreceipt unchanged.
+Deployment0.20.1 independentinstall .test-results/curation-deployment-installation-20261012d/owner;
+92source/92installedtests; scoped Knowledge/Research peer27836 passed/drained.
+Actual olddemo lacks Planning peers ALL5: add Data read/upload/finalize/source_history,
+Runtime read/author/validate (notadmit),Registryread/resolve, Knowledge read_graph,
+Research read_declarations. Use separate directed tokens, actoradmin where compiler
+commands require; do not reuse operator tokens. Planning config actoradmin vs old
+operator; Gatewaycontextadmin. Newcreds sidecar optionalcuration_access for
+Knowledge/Research; other3 originalvault refs likelyexist need inventorynamesonly.
+Oldshared Gateway0.5.0 lacksnewcurationroutes; use isolated qualifiedgateway package
+from .test-results/curation-owner-20261012a/serving/owners.json. Studio0.34.1 public
+also there. Preserve scientific context from .test-results/knowledge-run-b/campaign-context.json.
+Need publish actualscope roots/policy with scoped grants, staticallowance no model
+until qualified. No substitution of minimal2nodegraph for scientificdemo.
 
 ## Money and boundaries
 
@@ -58,8 +75,8 @@ These are estimates, not invoices. Single syntheticcase, no general/scientificcl
 
 ## State and paths
 
-ParentUI-01.08=97.8125/P5=89.0625(P5.4=56.25). N3/I1=97.8125;
-UI01=79.5625/Build99.453125/V0;UI01.05=99.27;08j56.25(M1/M2=100,M3=25,M4=0).  UI01->UI02->POP01->ML01;LR01paused25/Build33.33.
+ParentUI-01.08=98.4375/P5=92.1875(P5.4=68.75). N3/I1=98.4375;
+UI01=79.6875/Build99.609375/V0;UI01.05=99.48;08j68.75(M1/M2=100,M3=75,M4=0).  UI01->UI02->POP01->ML01;LR01paused25/Build33.33.
 Durableaudit docs/Audits/Evidence/UI-01.08-Feedback, attempts a/b/c. Source tests
 101passed26.40s, isolatedPlanninginstallo0.136.0;13old exactreplays preserved.
 Working .test-results/curation-live-medium-20261012a; recoveryb is finalvisualproof.

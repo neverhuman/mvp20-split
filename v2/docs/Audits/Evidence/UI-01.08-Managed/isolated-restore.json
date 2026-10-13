@@ -1,0 +1,45 @@
+{
+  "timestamp_local": "2026-10-12 21:51:34",
+  "status": "stores_restored_owner_acceptance_pending",
+  "target_deployment_id": "a702fd5b991e4fbe8ac651c3997ce5b2",
+  "backup_id": "3771efc579754533993bb6a6affaf642",
+  "manifest_sha256": "109aa72242637cb21e5e843a6f29cda7a785e47d7f5e875f3b08dcf52a2d93c3",
+  "restore_seconds": 17.640999999828637,
+  "routes": {
+    "profile": "loopback-routes-v1",
+    "host": "127.0.0.1",
+    "ports": {
+      "artifact": 51500,
+      "gateway": 51501,
+      "knowledge": 51502,
+      "planning": 51503,
+      "registry": 51504,
+      "research": 51505,
+      "runtime": 51506,
+      "supervisor": 51507
+    }
+  },
+  "resources": {
+    "postgres": {
+      "container": "amphora-local-a702fd5b991e4fbe8ac651c3997ce5b2-postgres",
+      "volume": "amphora-local-a702fd5b991e4fbe8ac651c3997ce5b2-postgres-data",
+      "image": "postgres@sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f",
+      "host": "127.0.0.1",
+      "port": 51494
+    },
+    "qdrant": {
+      "container": "amphora-local-a702fd5b991e4fbe8ac651c3997ce5b2-qdrant",
+      "volume": "amphora-local-a702fd5b991e4fbe8ac651c3997ce5b2-qdrant-data",
+      "image": "qdrant/qdrant@sha256:12364fe851b9f17356fc88189fc06d1b521262e04659ec7345975b00c9246a10",
+      "host": "127.0.0.1",
+      "port": 51496
+    }
+  },
+  "traffic_enabled": false,
+  "owner_workers_started": false,
+  "provider_calls": 0,
+  "limits": [
+    "Same host/user DPAPI, preserved pinned images and independently installed owner binaries required",
+    "Infrastructure readiness only; public history/reference/schema acceptance remains required"
+  ]
+}

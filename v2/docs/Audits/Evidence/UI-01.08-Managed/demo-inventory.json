@@ -1,0 +1,160 @@
+{
+  "status": "passed",
+  "timestamp_local": "2026-10-12 21:47:40",
+  "scope": {
+    "tenant_id": "internal",
+    "project_id": "knowledge-demo-1b1dc25768334153b58973882627b858"
+  },
+  "source": "Z:\\mvp20-split\\v2\\dev\\..\\.test-results\\origin-live-20261011e",
+  "root": "C:\\Users\\alb_p\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\Local\\Amphora\\local-v2\\restore-20261007b",
+  "owners": {
+    "runtime": {
+      "installation": "Z:\\mvp20-split\\.test-results\\local-owner-inventory-20261006a\\owners\\runtime",
+      "manifest_sha256": "a26699514fb9a4c5d1dfd2f76cc61f1cca299ec13f0a119bd3ab36de32c96935",
+      "configuration_sha256": "3ca9f519bc9b1a764d3feb4b819549ed259ba9188a83cf657a91b8a6efbf1f08",
+      "packages": {
+        "amphora-campaign-runtime": "0.65.0",
+        "amphora-contracts-artifacts": "0.2.0",
+        "amphora-contracts-campaigns": "0.4.1",
+        "amphora-contracts-commands": "0.2.0",
+        "amphora-contracts-core": "0.1.0",
+        "amphora-contracts-draft-successor": "0.1.0",
+        "amphora-contracts-evidence": "0.5.13",
+        "amphora-contracts-execution-proofs": "0.1.0",
+        "amphora-contracts-graph-runtime": "0.13.0",
+        "amphora-contracts-knowledge": "0.8.0",
+        "amphora-contracts-planning": "0.10.0",
+        "amphora-contracts-research": "0.14.0",
+        "amphora-contracts-runtime": "0.1.0",
+        "amphora-contracts-supervision": "0.10.0",
+        "amphora-contracts-tools": "0.1.0"
+      }
+    },
+    "artifact": {
+      "installation": "Z:\\mvp20-split\\.test-results\\local-owner-inventory-20261006a\\owners\\artifact",
+      "manifest_sha256": "30ff10626495bfe1437ffd8c3417eb0e6fdf015326ffdac49d44acbd00b59700",
+      "configuration_sha256": "0a81e5d4286ca64519e2c63b2525299f3be6fa0f8094fd33e6d4b97f70ed83bc",
+      "packages": {
+        "amphora-contracts-artifacts": "0.2.0",
+        "amphora-contracts-campaigns": "0.4.1",
+        "amphora-contracts-commands": "0.2.0",
+        "amphora-contracts-core": "0.1.0",
+        "amphora-contracts-evidence": "0.5.13",
+        "amphora-contracts-graph-runtime": "0.13.0",
+        "amphora-contracts-representations": "0.3.0",
+        "amphora-contracts-research": "0.14.0",
+        "amphora-contracts-runtime": "0.1.0",
+        "amphora-contracts-tools": "0.1.0",
+        "amphora-data-artifacts": "0.30.0"
+      }
+    },
+    "registry": {
+      "installation": "Z:\\mvp20-split\\.test-results\\local-owner-inventory-20261006a\\owners\\registry",
+      "manifest_sha256": "42bea6ed62b9b5bbad10596e977277ad10aa22f572c9a07d6ef353eba04027b8",
+      "configuration_sha256": "bf6810dac5dcb55518cffb08e6904d25cdc4e8f9b8da13462f6aece18c529236",
+      "packages": {
+        "amphora-capability-registry": "0.1.0",
+        "amphora-contracts-commands": "0.2.0",
+        "amphora-contracts-core": "0.1.0",
+        "amphora-contracts-tools": "0.1.0"
+      }
+    },
+    "research": {
+      "installation": "Z:\\mvp20-split\\.test-results\\local-owner-inventory-20261006a\\owners\\research",
+      "manifest_sha256": "92e2b73029637205cf93eda1b69f83cb2db0588845b05d04d6b8df9c8ce1267d",
+      "configuration_sha256": "c73ebaa18e28064589a322c776e0d0a980ff2d316f74d6680e495d3659d6f03f",
+      "packages": {
+        "amphora-contracts-artifacts": "0.2.0",
+        "amphora-contracts-campaigns": "0.4.1",
+        "amphora-contracts-candidate-canonicalization": "0.1.0",
+        "amphora-contracts-candidate-spaces": "0.1.0",
+        "amphora-contracts-commands": "0.2.0",
+        "amphora-contracts-core": "0.1.0",
+        "amphora-contracts-evaluation-identity": "0.1.0",
+        "amphora-contracts-evaluation-reuse": "0.1.0",
+        "amphora-contracts-evidence": "0.5.13",
+        "amphora-contracts-execution-proofs": "0.1.0",
+        "amphora-contracts-fitness": "0.1.0",
+        "amphora-contracts-graph-runtime": "0.13.0",
+        "amphora-contracts-knowledge": "0.8.0",
+        "amphora-contracts-research": "0.14.0",
+        "amphora-contracts-research-views": "0.1.0",
+        "amphora-contracts-runtime": "0.1.0",
+        "amphora-contracts-synthetic-evaluation": "0.1.0",
+        "amphora-contracts-tools": "0.1.0",
+        "amphora-research": "0.40.0",
+        "amphora-tool-protocol": "0.2.0"
+      }
+    },
+    "knowledge": {
+      "installation": "Z:\\mvp20-split\\.test-results\\local-owner-inventory-20261006a\\owners\\knowledge",
+      "manifest_sha256": "c342a6ff08fc8123cd1e9eef5f60c5a869e2a0616fdc56d21579d34bb4c9689d",
+      "configuration_sha256": "c6f46c46b7384e9f1e6c25ae924909508bd84040f6d7cf9bab90dca15f223e8a",
+      "packages": {
+        "amphora-contracts-artifacts": "0.2.0",
+        "amphora-contracts-campaigns": "0.4.1",
+        "amphora-contracts-commands": "0.2.0",
+        "amphora-contracts-core": "0.1.0",
+        "amphora-contracts-evidence": "0.5.13",
+        "amphora-contracts-graph-runtime": "0.13.0",
+        "amphora-contracts-knowledge": "0.8.0",
+        "amphora-contracts-research": "0.14.0",
+        "amphora-contracts-runtime": "0.1.0",
+        "amphora-contracts-tools": "0.1.0",
+        "amphora-knowledge": "0.18.0",
+        "amphora-tool-protocol": "0.2.0"
+      }
+    },
+    "gateway": {
+      "installation": "Z:\\mvp20-split\\v2\\.test-results\\origin-installation-20261011a\\gateway",
+      "manifest_sha256": "2181ecf249cbeb5b0d4e3b9ac58f8451d2bc218ef0108d99b5212312986b0500",
+      "configuration_sha256": "3489dd71769211df8d9de5ac3f337cded858e5478d7a7969a18917c49e7edccd",
+      "packages": {
+        "amphora-local-gateway": "0.5.0"
+      }
+    },
+    "planning": {
+      "installation": "Z:\\mvp20-split\\v2\\.test-results\\origin-installation-20261011a\\planning",
+      "manifest_sha256": "5614635a562f80ced498caf4beef4c95b398b14d85b6c142e0b2477032f22b65",
+      "configuration_sha256": "11a03cd006d512787970f6c8aafa6156804265ad0723c01b2ce9756880fcbf44",
+      "packages": {
+        "amphora-agent-planning": "0.107.0",
+        "amphora-contracts-artifacts": "0.2.0",
+        "amphora-contracts-campaigns": "0.4.1",
+        "amphora-contracts-commands": "0.2.0",
+        "amphora-contracts-core": "0.1.0",
+        "amphora-contracts-evidence": "0.5.13",
+        "amphora-contracts-graph-runtime": "0.13.0",
+        "amphora-contracts-knowledge": "0.8.0",
+        "amphora-contracts-planning": "0.13.0",
+        "amphora-contracts-representations": "0.3.0",
+        "amphora-contracts-research": "0.14.0",
+        "amphora-contracts-research-views": "0.1.0",
+        "amphora-contracts-runtime": "0.1.0",
+        "amphora-contracts-supervision": "0.10.2",
+        "amphora-contracts-tools": "0.1.0",
+        "amphora-contracts-topology-search": "0.1.0",
+        "amphora-tool-protocol": "0.2.0"
+      }
+    }
+  },
+  "run_ids": [
+    "6bb494556bb04010a72820d52f0e78e7",
+    "74de1629bdc6444398239de807df325d"
+  ],
+  "draft": {
+    "scope": {
+      "tenant_id": "internal",
+      "project_id": "knowledge-demo-1b1dc25768334153b58973882627b858"
+    },
+    "draft_id": "planning-75a08c857eb96dcdf1f7070430beb4cedfba48425c671412bbcf56f4dab7984a",
+    "revision": 1,
+    "content_sha256": "7debf9d55718f8c459ae87566ae0d3c07e06449cb1b49ea1c229fbeac0fceaa7"
+  },
+  "origin_sha256": "dc3751c898099722d135b1878860a87143e04fa59a2862857beb7eca9a5069fe",
+  "readbacks_sha256": "f366e71f1906d024ba913ab6922a28ccc192a45914daa85f0e70f5899545b849",
+  "campaign_context_sha256": "379fbe32d699b248b4ed6d690d5209f4c35d1c7e7a769c694010b574a8e4414e",
+  "provider_calls": 0,
+  "campaigns_launched": 0,
+  "all_owned_processes_drained": true
+}

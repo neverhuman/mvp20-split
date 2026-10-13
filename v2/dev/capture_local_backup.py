@@ -42,7 +42,7 @@ def require_stopped(routes):
             assert probe.connect_ex(('127.0.0.1', port)) != 0, 'Owner/control listener remains live'
 
 
-def capture(root, artifact_root, configuration, output, readbacks, additional_artifact_roots=()):
+def capture(root, artifact_root, configuration, output, readbacks, additional_artifact_roots=(), *, basis=None):
     started = time.monotonic()
     assert not output.exists() and output.parent.is_dir()
     assert output != root and not output.is_relative_to(root) and not root.is_relative_to(output)
@@ -50,7 +50,8 @@ def capture(root, artifact_root, configuration, output, readbacks, additional_ar
     output.mkdir()
     backup_id = uuid.uuid4().hex
     owners = json.loads((configuration / 'owners.json').read_bytes())['owners']
-    assert set(owners) == set(SCHEMAS)
+    schemas = SCHEMAS if basis is None else basis.owner_schemas(root, owners)
+    assert set(owners) == set(schemas) == set(SCHEMAS)
     evidence = []
     for source in readbacks:
         value = json.loads(source.read_bytes())
@@ -58,7 +59,11 @@ def capture(root, artifact_root, configuration, output, readbacks, additional_ar
         assert all(row['exit_code'] == 0 and row['drain'] == 'drained' for row in value['final']['owners'].values())
         evidence.append({'sha256': hashlib.sha256(source.read_bytes()).hexdigest(), 'run_id': value['run_id'],
                          'timestamp_local': value['timestamp_local']})
-    assert len(evidence) == 3 and len({row['run_id'] for row in evidence}) == 3
+    if basis is None:
+        assert len(evidence) == 3 and len({row['run_id'] for row in evidence}) == 3
+    else:
+        assert not readbacks
+        evidence = basis.readback_evidence()
     docker = Docker()
     restarted, stopped, snapshots = [], [], {}
     with LocalState(root) as state:
@@ -80,7 +85,7 @@ def capture(root, artifact_root, configuration, output, readbacks, additional_ar
         copy_file(configuration / 'owners.json', output / 'installation' / 'owners.json')
         for name, row in sorted(owners.items()):
             installation = OwnerInstallation.from_directory(name, row['installation'], row['source_lock'])
-            owner_snapshots.append({'owner': name, 'release': installation.release, 'schema': SCHEMAS[name],
+            owner_snapshots.append({'owner': name, 'release': installation.release, 'schema': schemas[name],
                                     'checkpoint_sha256': installation.installation_manifest_sha256})
             directory = output / 'installation' / 'owners' / name
             directory.mkdir(parents=True)
@@ -118,6 +123,8 @@ def capture(root, artifact_root, configuration, output, readbacks, additional_ar
                 assert additional != artifact_root and not output.is_relative_to(additional)
                 merge_artifact_tree(additional, output / 'artifacts')
             copy_tree(root, output / 'installation' / 'state', excluded=('.operation.lock', 'logs'))
+            if basis is not None:
+                basis.copy_installation(output / 'installation')
             configuration_inputs([Path(row['configuration']) for row in owners.values()],
                                  output / 'installation' / 'configuration-inputs',
                                  [Path.cwd(), root.parent, Path(os.environ['LOCALAPPDATA']) / 'Amphora/local-v2'])
