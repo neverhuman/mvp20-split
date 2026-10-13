@@ -22,4 +22,18 @@ UI-02.03 fixture now uses public save/validate/admit-draft and current Registry
 resolution, wire-v4 execution readback and explicit worker grant. Cold Runtime
 replacement removes the configured grant: old admission receipt/validation/completed
 run must replay/read identically, while a new admission rejects draft_universe_changed.
-This final gate remains pending until an actual independent handoff passes.
+This gate passed in P1; evidence is UI-02-Chemical/Structural_Handoff.json.
+
+2026-10-13 18:00:43: Optional studio.py qualification runs built production Studio through
+an independently installed Gateway against these actual owners before grant-removal
+and rights-denial drills. Launcher/owner credentials are environment-only. Optional
+LAN profile uses existing owner-approved192.168.1.70:57013/TLS files, preserving
+loopback owners and closing every Gateway before return. Same-host LAN HTTPS is
+not a new second-computer firewall acceptance. No provider call. Browser evidence
+lives under each fresh run's http/studio and http/studio-lan.
+
+2026-10-13 18:13:52: Held example (--hold-seconds, localhost57014 only) passed actual browser,
+bodyless authenticated launcher invitation, ready/STOP/drain and remaining owner
+recovery gates. Node is derive_structure. INVITE renews only the short-lived local
+URL; token contents never enter evidence. Ready and stopped records carry absolute
+local timestamps. User review recipe: docs/Demo/Candidate_Structure_Review.md.

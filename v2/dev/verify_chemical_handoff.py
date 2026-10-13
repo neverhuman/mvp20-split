@@ -13,7 +13,9 @@ from install_owner_peer import install
 from postgres_fixture import owned_state
 
 
-def verify(output, installations=None, registry_installation=None):
+def verify(output, installations=None, registry_installation=None, studio=None, gateway_installation=None, lan_tls=None, hold_seconds=0):
+    if not 0 <= hold_seconds <= 86400 or hold_seconds and (not studio or lan_tls):
+        raise ValueError("Held example requires Studio, localhost only, and at most one day")
     if os.environ.get("AMPHORA_TEST_POSTGRES") != "1":
         raise ValueError("Explicit owned PostgreSQL fixture opt-in required")
     state = owned_state()
@@ -42,6 +44,16 @@ def verify(output, installations=None, registry_installation=None):
             interpreters[key]=str(existing/"environment/Scripts/python.exe")
             if not Path(interpreters[key]).is_file(): raise ValueError("missing_installed_interpreter")
     config = {**interpreters, "packages": evidence, "evidence": str(output / "http")}
+    if studio:
+        if not gateway_installation:
+            raise ValueError("Studio qualification requires an independent Gateway installation")
+        config["studio"] = {"public_directory": str(studio.absolute()),
+            "gateway_python": str(gateway_installation.absolute()/"environment/Scripts/python.exe"),
+            "hold_seconds":hold_seconds}
+        if lan_tls:
+            config["studio"]["lan"]={"address":"192.168.1.70","subnet":"192.168.1.0/24",
+                "certificate":str(lan_tls.absolute()/"server.pem"),"private_key":str(lan_tls.absolute()/"server.key"),
+                "ca":str(lan_tls.absolute()/"amphora-demo-ca.pem")}
     path = output / "acceptance.json"
     path.write_text(json.dumps(config), encoding="utf-8")
     host, port = state["endpoint"].split(":")
@@ -73,7 +85,7 @@ def verify(output, installations=None, registry_installation=None):
         text=True,
         encoding="utf-8",
         check=False,
-        timeout=600,
+        timeout=600+hold_seconds,
     )
     (output / "probe.log").write_text(result.stdout + result.stderr, encoding="utf-8")
     if result.returncode:
@@ -86,5 +98,9 @@ if __name__ == "__main__":
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--installations",type=Path)
     parser.add_argument("--registry-installation",type=Path)
+    parser.add_argument("--studio",type=Path)
+    parser.add_argument("--gateway-installation",type=Path)
+    parser.add_argument("--lan-tls",type=Path)
+    parser.add_argument("--hold-seconds",type=int,default=0)
     args=parser.parse_args()
-    verify(args.output,args.installations,args.registry_installation)
+    verify(args.output,args.installations,args.registry_installation,args.studio,args.gateway_installation,args.lan_tls,args.hold_seconds)

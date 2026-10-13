@@ -14,6 +14,10 @@ test('scalar outputs are not converted into molecules and collections remain a p
  f.detail.outputs.push({port:'population',kind:'collection',item_count:20,missing_count:0,artifact:null});
  const result=await discoverStructures(f.context,f.runtime,new AbortController().signal);assert.equal(result.choices.length,0);assert.equal(result.incomplete,true);
 });
+test('forwarding finish nodes do not become duplicate structure producers',async()=>{
+ const f=peers();f.detail.node.kind='finish';
+ const result=await discoverStructures(f.context,f.runtime,new AbortController().signal);assert.equal(result.choices.length,0);
+});
 test('mismatched detail cut or graph node is rejected',async()=>{
  for(const mutate of [(f:ReturnType<typeof peers>)=>{f.detail.cut.revision++;},(f:ReturnType<typeof peers>)=>{f.runtime.detail=async()=>({...f.detail,node:{...f.detail.node,activation_id:'b'.repeat(64)}});}]){
   const f=peers();f.page=structuredClone(f.page);const page=structuredClone(f.page);f.runtime.snapshot=async()=>page;mutate(f);

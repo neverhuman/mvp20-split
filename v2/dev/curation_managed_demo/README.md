@@ -94,3 +94,11 @@ configuration/public root and exact HTTP index/JS/CSS bytes before curation acti
 static-assets.json is the actual served-asset receipt; a successful build or copy
 alone is not cutover evidence. Tests/curation_managed_demo covers stale references,
 schema drift and a real HTTP endpoint returning stale assets.
+
+2026-10-13 18:13:52: ../verify_candidate_studio_upgrade.py composes serving_copy/static_identity
+with existing review-only scientific successor journeys on localhost and LAN. It
+uses the already-authorized key in memory to satisfy the existing live recipe's
+configuration guard, keeps the curation worker unstarted, sends no model/campaign
+request, compares original Planning records before/after and drains every owned
+process. Frozen serving h carries qualified Studio0.36; f remains unchanged. This
+is a static viewer upgrade, not structural-tool admission into the scalar campaign.

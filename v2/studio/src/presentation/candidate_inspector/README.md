@@ -18,3 +18,10 @@ collection or omitted-node coverage is explicitly partial. Hidden results cancel
 and clear discovery/inspection. Showing the tab again rereads owners. Browser tests
 live under tests/browser/candidate_inspector; P4 separately proves actual owners,
 installed Gateway and LAN integration. No browser credentials or external renderer.
+
+2026-10-13 18:13:52: Actual independently installed owner/Gateway local and existing LAN HTTPS
+qualification passed, including1440/390/200%, image decode and accessibility. Existing
+scalar demo/Knowledge/curation review journeys passed with new Studio assets and no
+new model request/campaign. See docs/Audits/UI-02_Candidate_Inspector.md and the
+separate supplied-structure review runbook. This does not claim remote-client firewall
+reacceptance or add structures to original scalar runs.

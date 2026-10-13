@@ -179,3 +179,40 @@ pass image decode/CSP,1440/390/200%, axe, overflow and denial. Visual review cau
 inherited fixed-height header overlap; scoped override plus geometric oracle fixes
 it. P3=100%; overall75%, Build100%, Verification0%. Actual owners/new serving remain
 P4. No paid calls. P3.1 pushedc563db4e; this checkpoint follows.
+
+## 2026-10-13 18:00:43 - P4 actual-owner browser gate passed
+
+Production Studio0.36 through independent Gateway0.7 and P1 qualified Runtime0.67,
+Data/Research0.41/Registry0.2/SDK0.3/tool0.1 installations passed public owner reads.
+Run7fbcf4c09c0e43a68f61df4d469bba78, scopead1cd574e02346a5be5dc3cad8463871,
+accepted completion75685ddb962f43a9887b2cc590d01c49. Exactly one producing invocation;
+finish forwarding is excluded. Retained input/output and Research revision verified;
+C4H10O3/800x600 PNG decoded.1440/390/200%, axe, no overflow, no unexpected writes or
+browser exceptions. Screenshots visually inspected. Probe15372 exited0 and all hosts
+closed. P1 grant-removal/restart/rights checks passed again. Forwarding exclusion has
+5 scoped discovery regressions. P3 final pusha555c57b. P4=25%, overall81.25%,
+Build100%, Verification25%; next existing LAN HTTPS, demo upgrade/regression, audit.
+
+## 2026-10-13 18:06:32 - P4 LAN candidate path qualified
+
+Actual production candidate inspector passes local and existing LAN HTTPS in
+qualification c, rune79d32593d324d7983f3969260a5e976. Exact original certificate SPKI
+is trusted by test browser; API uses existing CA. Earlier b failed before data reads,
+then drained. c passes1440/390/200%, PNG decode, exact producer/Data/Research reads,
+no browser exceptions/writes; session78700 exit0/all hosts closed. Same-host LAN
+qualification is not a new second-computer firewall assertion. P4=50%, overall87.5%,
+Build100%, Verification50%. Frozen demo Studio upgrade/regression active next.
+
+## 2026-10-13 18:16:04 - UI-02 closeout100%
+
+Final full Studio suite473 tests and production dependency guard pass. Held example
+probe55438 exited0: actual browser at localhost57014, derive_structure node,
+bodyless authenticated invitation, ready/drained records and remaining P1 recovery
+checks passed. Prior example a failed only on extra JSON body at launcher; corrected
+without weakening Gateway. Actual local+LAN candidate proof and existing demo upgrade
+are retained in Candidate_Inspector.json/screenshots. Selected frozen serving h has
+JS d7a79afaf5ae186381637771b05c7a0992996c923ef8ba986640c1f1096aa265; originalf preserved.
+473tests do not imply chemical efficacy. All qualification hosts closed; no paid calls.
+Component drift audit aligned; no blocker. UI-02/P1-P4=100%, Build/Verification100%.
+Archive parent/history/three completed decisions, repair links, then POP-01 E1 begins
+with its activation/compatibility audit. No owner decision required to reach this gate.

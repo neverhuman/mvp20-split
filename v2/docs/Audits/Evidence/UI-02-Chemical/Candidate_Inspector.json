@@ -1,0 +1,115 @@
+{
+  "timestamp_local": "2026-10-13 18:16:04",
+  "status": "passed",
+  "studio_version": "0.36.0",
+  "local": {
+    "status": "passed",
+    "stage": "complete",
+    "run_id": "e79d32593d324d7983f3969260a5e976",
+    "scope": {
+      "tenant_id": "chemical-handoff",
+      "project_id": "33ee1dfb0ed6444faf01d745c99338b4"
+    },
+    "tls_spki": null,
+    "errors": [],
+    "reads": [
+      {
+        "path": "/api/runtime/v1/runs/e79d32593d324d7983f3969260a5e976/completions/83bb276d74e44d7f8638de3039f76222/producer",
+        "status": 200
+      },
+      {
+        "path": "/api/data/v1/artifacts/72857f1d97704e218d15ca49ea6a61bc/content",
+        "status": 200
+      },
+      {
+        "path": "/api/data/v1/artifacts/2a0f7b9af32f49e9b83d3923f2d0f051/content",
+        "status": 200
+      },
+      {
+        "path": "/api/research/v1/candidates/read",
+        "status": 200
+      }
+    ],
+    "forbiddenWrites": [],
+    "choices": [
+      "Choose a retained structure",
+      "move"
+    ]
+  },
+  "lan": {
+    "status": "passed",
+    "stage": "complete",
+    "run_id": "e79d32593d324d7983f3969260a5e976",
+    "scope": {
+      "tenant_id": "chemical-handoff",
+      "project_id": "33ee1dfb0ed6444faf01d745c99338b4"
+    },
+    "tls_spki": "9V2vfLYRW7SJN+fBYjr/eNNmX5MyZq4HQ6u7dzS/7w0=",
+    "errors": [],
+    "reads": [
+      {
+        "path": "/api/runtime/v1/runs/e79d32593d324d7983f3969260a5e976/completions/83bb276d74e44d7f8638de3039f76222/producer",
+        "status": 200
+      },
+      {
+        "path": "/api/data/v1/artifacts/72857f1d97704e218d15ca49ea6a61bc/content",
+        "status": 200
+      },
+      {
+        "path": "/api/data/v1/artifacts/2a0f7b9af32f49e9b83d3923f2d0f051/content",
+        "status": 200
+      },
+      {
+        "path": "/api/research/v1/candidates/read",
+        "status": 200
+      }
+    ],
+    "forbiddenWrites": [],
+    "choices": [
+      "Choose a retained structure",
+      "move"
+    ]
+  },
+  "original_demo_upgrade": {
+    "status": "passed",
+    "timestamp_local": "2026-10-13 18:08:29",
+    "serving": "Z:\\mvp20-split\\v2\\.test-results\\curation-demo-serving-20261013h",
+    "assets": {
+      "index.html": "0c60b48d2bf03c539e9f7f14f773d3fb7652fade37209178f9a3790c893e45c5",
+      "app.js": "d7a79afaf5ae186381637771b05c7a0992996c923ef8ba986640c1f1096aa265",
+      "app.css": "af001e1fba03bc729aabb70143a0554c829b4e048682821203226c186a8f4513"
+    },
+    "surfaces": [
+      "local",
+      "lan"
+    ],
+    "rewritten_paths": 12,
+    "new_campaigns": 0,
+    "provider_calls": 0,
+    "original_planning_records": "unchanged",
+    "limits": [
+      "Original scalar campaigns correctly have no chemical structure",
+      "LAN check originates on this host; prior LAN-01 remote firewall acceptance unchanged"
+    ]
+  },
+  "source_checkpoint": "a555c57b plus P4 integration corrections",
+  "limits": [
+    "Supplied finite molecule only; unranked; no property/synthesis/generation authority",
+    "Same-host LAN path; prior remote LAN-01 acceptance is separate",
+    "Declared native image pins; not built container attestation"
+  ],
+  "studio_tests": 473,
+  "production_boundaries": "passed",
+  "held_example": {
+    "status": "passed",
+    "run_id": "fef11fbe993548bdbcaeef6722b9e42d",
+    "scope": {
+      "tenant_id": "chemical-handoff",
+      "project_id": "2441cd82557c44b8b1be3a3ede486018"
+    },
+    "origin": "http://127.0.0.1:57014",
+    "node": "derive_structure",
+    "invitation": "bodyless authenticated POST; short-lived URL not retained in evidence",
+    "drain": "passed"
+  }
+}

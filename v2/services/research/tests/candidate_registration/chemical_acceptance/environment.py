@@ -99,10 +99,10 @@ class CandidateEnvironment(GRAPH.GraphEnvironment):
         for kind in KINDS:
             graph = copy.deepcopy(template)
             graph.update(scope=self.scope, campaign_id="candidate-" + kind, schema_version="4", profile="deterministic-v3")
-            graph["body"]["nodes"][0]["node_id"] = "move"
+            graph["body"]["nodes"][0]["node_id"] = "derive_structure"
             graph["body"]["nodes"][0]["inputs"][0]["port"] = "structure"
-            graph["body"]["nodes"][1]["outputs"][0]["source"]["node_id"] = "move"
-            graph["body"]["edges"][0]["source"] = "move"
+            graph["body"]["nodes"][1]["outputs"][0]["source"]["node_id"] = "derive_structure"
+            graph["body"]["edges"][0]["source"] = "derive_structure"
             graph["body"]["nodes"][0]["tool"] = self.descriptors[kind]["tool"][
                 "binding"
             ]

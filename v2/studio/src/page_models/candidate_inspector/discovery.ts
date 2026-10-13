@@ -24,6 +24,8 @@ export async function discoverStructures(run:RunContext,runtime:Pick<Observation
    if(!equalValue(detail.node,node))throw new ReadFailure('invalid_response');
    const context=new EvidenceContext(window.snapshot,detail);
    if(detail.outputs.some(o=>o.kind==='collection'&&o.item_count>0))incomplete=true;
+   // Forwarding/finish nodes are projections of a producer, not new candidates.
+   if(node.kind!=='invoke')continue;
    if(!detail.outputs.some(o=>o.artifact&&isStructure(o.artifact)))continue;
    for(const output of detail.outputs)if(output.artifact)context.scopedArtifact(output.artifact);
    choices.push({key:node.activation_id,label:node.path.node_id+(node.path.occurrences??[]).map(o=>` / ${o.node_id} ${o.index}`).join(''),detail:structuredClone(detail)});

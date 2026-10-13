@@ -10,11 +10,11 @@
 
 - [ML-01 Inherited Scientific Model Integration](ML-01%20Inherited%20Scientific%20Model%20Integration.md): standalone queued0%; starts after UI-01/UI-02 end-to-end flow and POP-01 population qualification.
 
-- [UI-02 Candidate Structure and Recommendation Views](UI-02%20Candidate%20Structure%20and%20Recommendation%20Views.md): scheduled next week0%; chemical formula and2D structure/repeat-unit inspection, composition, properties, synthesis evidence and recommendation rationale. 3D modeling is separate follow-on scope.
+- [UI-02 Candidate Structure and Recommendation Views](Completed/UI-02%20Candidate%20Structure%20and%20Recommendation%20Views.md): complete100%; supplied finite-molecule formula/2D/provenance, explicit unranked/missing science, actual local/LAN proof. Broader representations and3D remain separate.
 
 [Master Build Tracker](Master%20Build%20Tracker.md) selects the primary plan and mirrors its canonical overall/per-phase completion. Owning plans define task position, tests and phase gates.
 
-BP-01 through BP-09 are [completed](Completed/README.md). SQ-01 is completed; UI-01 is the primary plan, beginning with graph review. MBT selects the primary task. Drafting does not earn implementation credit.
+BP-01 through BP-09 are [completed](Completed/README.md). SQ-01/UI-01/UI-02 are completed; POP-01 activation is next. MBT selects the primary task. Drafting does not earn implementation credit.
 
 - [BP-02 Durable Runtime and Artifact Foundation](Completed/BP-02%20Durable%20Runtime%20and%20Artifact%20Foundation.md).
 - [BP-03 Tool Index and Standalone Execution](Completed/BP-03%20Tool%20Index%20and%20Standalone%20Execution.md).
@@ -52,6 +52,6 @@ Read the selected plan's tracker first. Complete each phase gate before advancin
 
 - [UI-01.08j Managed curation demo delivery](Completed/UI-01.08j%20Managed%20curation%20demo%20delivery.md): complete100%; M1-M4 qualified/audited; parent V1 remains.
 
-- [UI-02.01 Chemical structure boundary decision](UI-02.01%20Chemical%20structure%20boundary%20decision.md): proposed additive artifact/tool and explicit Research registration profile; parent implementation0%, awaiting owner direction.
+- [UI-02.01 Chemical structure boundary decision](Completed/UI-02.01%20Chemical%20structure%20boundary%20decision.md): proposed additive artifact/tool and explicit Research registration profile; parent implementation0%, awaiting owner direction.
 
-- [UI-02.03 Structural execution profile decision](UI-02.03%20Structural%20execution%20profile%20decision.md): complete100%; actual structural draft/tool/Data/Research handoff and grant-removal history proof pass. UI-02/P2 next.
+- [UI-02.03 Structural execution profile decision](Completed/UI-02.03%20Structural%20execution%20profile%20decision.md): complete100%; actual structural draft/tool/Data/Research handoff and grant-removal history proof pass. UI-02/P2 next.

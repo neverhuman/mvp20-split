@@ -30,3 +30,8 @@ not zero/failed; synthetic numerical search does not establish molecular fitness
 Tests: `tests/page_models/candidate_inspector/` includes actual P1 tool output wrapped
 in synthetic read cuts plus wrong producer/identity/artifact/image, denial and race
 oracles. Replacement must preserve these boundaries and Data's separate byte checks.
+
+2026-10-13 18:00:43: Discovery lists producing invoke nodes only; a finish/pass-through
+copy of the same Artifact is not another structure or another producer. Actual
+installed Runtime/Data/Research/Gateway browser qualification passed on run
+7fbcf4c09c0e43a68f61df4d469bba78. P4 LAN and serving regression remain.

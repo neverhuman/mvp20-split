@@ -1,6 +1,6 @@
 # Role Workspaces and Deliverables
 
-- Design status: detailed proposed contract; implementation and scientific acceptance pending
+- Design status: broad role-workspace design proposed; bounded internal candidate inspection implemented by UI-02; scientific acceptance remains separate
 - Naming note: component/record/operation names below are proposed logical design, not implemented APIs or selected deployment technology
 - Last reviewed: `2026-09-22 18:56:40` (America/Chicago)
 - Parent: [Domain overview](Experience_Architecture.md)
@@ -46,3 +46,19 @@ A reviewer opens a package after one supporting measurement is superseded. Keep 
 ## Design Basis and Open Decisions
 
 Role-workspace and accessibility requirements supply the intended journeys. Remaining decisions: task-level screen/navigation design, accessibility targets, supported devices/locales and customer disclosure templates. Acceptance should use realistic role scenarios, not only component rendering tests.
+
+## Bounded candidate inspection implementation
+
+Reviewed 2026-10-13 18:10:47 (America/Chicago). UI-02 supplies a read-only Results/selected-step
+inspector for an explicitly supplied connected finite molecule. Its formula and
+inert2D PNG share a retained tool result; Runtime accepted-producer proof, exact Data
+input/output bytes and Research candidate revision bind the view to its original
+execution cut. Studio owns no chemistry kernel, selection algorithm or new owner API.
+Missing molecular selection/property/synthesis evidence remains explicit. Numerical
+search policy/fronts are separate retained evidence and cannot rank a molecule.
+Discovery is bounded to direct invoke outputs,2pages/100nodes; forwarding nodes are
+not candidates and collection/omission coverage is partial. POP-01 owns population
+aggregation/lineage; ML-01 owns qualified scientific evaluators. Broader mixtures,
+unspecified polymer repeats, biological adapters and3D require named successor scope.
+[Inspector audit](../../Audits/UI-02_Candidate_Inspector.md) records implementation
+and installed-owner/browser evidence; these bounds do not complete all role workspaces.

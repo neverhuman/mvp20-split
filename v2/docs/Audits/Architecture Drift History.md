@@ -337,3 +337,11 @@ Disconnected inventory/default layout, SME evaluation presentation and hidden co
 | Hidden sibling concurrency in graph presentation | UI-01/N2.C, Studio0.18 | Implemented and served for owner review: same-cut inline fan-out/rejoin, sequential iteration expansion, focus/overview map, explicit bounded omissions.301Studio checks and actual served browser checks pass; failed-state display uses a separately labelled intercepted fixture. This retained numeric campaign is not a formulation/solvency migration. |
 
 2026-10-13 17:29:39: UI-02/P1 Registry/Runtime/SDK synthetic-only mismatch closed with approved exact structural grants, versioned Runtime universe, actual independent handoff and removed-grant history/new-admission proof. [Audit](UI-02_Chemical_Representation.md). No remaining P1 drift; UI acceptance stays P2-P4.
+
+## 2026-10-13 18:16:51 - UI-02 aligned closeout
+
+Supplied finite-molecule formula/PNG and exact Runtime/Data/Research identity are
+qualified through Studio0.36 local/LAN; explicit unranked/absent science state.473
+Studio checks, dependency guard and retained original-demo regression pass.
+[Audit](UI-02_Candidate_Inspector.md). Follow-Up: none for bounded UI-02; POP-01/ML-01
+own broader already-planned populations/scientific evidence.

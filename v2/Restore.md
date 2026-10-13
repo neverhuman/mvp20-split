@@ -1,32 +1,59 @@
 # Restore
 
-Refreshed: 2026-10-13 17:47:17 America/Chicago. Read FIRST after compaction.
+Refreshed: 2026-10-13 18:18:04 America/Chicago. Read FIRST after compaction.
 
 ## Current task
 
-UI-02/P1 and P2 COMPLETE. P3.1 protected candidate model/transport/PNG COMPLETE.
-P3.2/P3.3 COMPLETE; P4 actual-owner/Gateway/browser and serving integration NEXT.
-Overall75%, Build100%, Verification0%; P1/P2/P3=100%, P4=0%. No owner gate.
-Continue P3 -> P4 actual browser acceptance, then POP-01/ML-01. LR-01 paused25%;
-UI-01/LAN-01 archived100%. Keep trackers/Restore current; commit/push; do not stop
-at milestones. Both demo wrappers remain stopped while source work continues.
+UI-02 COMPLETE100%, Build/Verification100%, P1-P4=100%, audited/archived. Parent,
+history and3approved decisions now under docs/Build Plans/Completed; links repaired.
+Next authorized work: POP-01 activation/coherence audit, then POP-01.01/E1 source
+inventory and concrete versioned contract proposal. That plan explicitly requires
+owner review of material contracts BEFORE implementing new DTOs/Runtime semantics.
+Do independent audit/design first; do not stop just because UI-02 completed.
+POP-01 remains0% until bounded deliveries earn credit; ML-01 follows; LR-01 paused25%.
 
-P2 Studio0.35 candidate_evidence: RetainedSelection consumes decoded numerical
-SearchCheckpoint policy/selected set/fronts/objectives/evaluator/constraint/context
-without reranking. Missing receipt differs from configured policy; incomplete/zero/
-insufficient/incomparable states are explicit. suppliedStructureEvidence binds
-candidate/revision/scope but always unranked; numeric selection cannot rank chemical
-structure. 18 scoped tests + strict TypeScript build pass. No browser/transport change.
-Existing Research fitness grants only synthetic_owner_projection/reuse_authority=none.
-Do not attach Hansen/Arrhenius scalars or synthetic digest policy to the molecule.
-P2 pure objects are not Artifact authentication; P3 must verify current owner reads.
-UI Coding Guidelines and Interaction References read this turn. P1 pushedef5375a4;
-P2 pushed92e417da; P3.1 pushedc563db4e; P3 final checkpoint follows. No UI-02 features served. candidate_inspector model/transport/presentation written;
-472 full Studio checks pass. Presentation/discovery implemented; scripted browser
-candidate e and selection a pass. Fixed header overlap visually verified. Studio0.36.
-No actual-owner browser or demo serving qualification yet.
-Generated candidate schemas, exact existing owner routes and P1 retained result
-fixture added. Read candidate_inspector/README.md and transport/candidate/README.md.
+Latest pushed a555c57b (Studio0.36/P3), c563db4e(P3.1),92e417da(P2).
+UI-02 P4 closeout pending commit/push. No running live/test/install workflow.
+Current change set includes actual-owner Gateway/browser fixtures, invoke-only
+structure discovery, existing TLS/LAN acceptance, frozen viewer upgrade and held
+example runbook. Preserve untracked user ocular PDF/DOCX. No agents/JARVIS/v1 edits.
+
+Final verification:473 full Studio tests + production dependency guard pass
+(sessions40440/96609 exit0). All candidate/example/managed-demo probes exited and
+closed owned hosts. Scripts/test/module source edits are now allowed.
+Actual candidate qualification c LOCAL+HTTPS192.168.1.70:57013 passed; scope
+chemical-handoff/33ee1dfb0ed6444faf01d745c99338b4; rune79d32593d324d7983f3969260a5e976.
+Runtime0.67, SDK0.3, Registry0.2, Research0.41, chemical0.1; installed independent
+owners+Gateway0.7. Formula C4H10O3/800x600 PNG, exact proof/input/output/candidate.
+1440/390/200%, axe, image decode, no unexpected writes. LAN uses existing CA plus
+exact public certificate SPKI allowance in test browser; no new remote firewall claim.
+Evidence docs/Audits/Evidence/UI-02-Chemical/Candidate_Inspector.json + screenshots.
+
+Selected frozen demo .test-results/curation-demo-serving-20261013h (Studio0.36),
+JS shad7a79afaf5ae186381637771b05c7a0992996c923ef8ba986640c1f1096aa265.
+Upgrade .test-results/ui02-serving-upgrade-20261013b passed LOCAL+LAN original retained
+proposal/successor/results/Knowledge/composer/reload, no model call/new campaign,
+original Planning record unchanged. Workflow61637 exit0. Originalf preserved.
+All wrappers currently STOPPED for continued implementation. Next sessions local13k,
+LAN13i. Existing serve --live supplies authorized key; --pause-curation permits
+read-only smoke while worker stays unstarted. Never print secrets.
+
+Separate supplied-structure example supports local57014 via verify_chemical_handoff
+--hold-seconds86400 (must include --studio/--gateway-installation; no LAN flag).
+Runbook docs/Demo/Candidate_Structure_Review.md. Probe55438 EXIT0 at3-second hold:
+.test-results/ui02-candidate-example-check-20261013b. Exact run is
+fef11fbe993548bdbcaeef6722b9e42d; derive_structure -> finite molecule. Bodyless launcher
+POST creates short-lived Open supplied structure.url only; INVITE refreshes; STOP
+drains. ready/stopped JSON contain no token. Do not print .url contents. Prior a
+failed from extra JSON body; corrected without weakening Gateway. Same producer
+fixture, no model call, no molecule attached to old scalar campaign. No example live.
+
+P3 model/transport/presentation READMEs own replacement boundaries. CandidateResults
+scans2pages/100nodes direct invoke outputs; finish forwarding excluded. Numeric
+selection/fronts are separate from molecular unranked/absent properties/synthesis.
+Source must remain frozen while serving/testing; restart demo only at an actual
+owner gate or after authorized implementation finishes. Current nextplan E1 likely
+needs owner contract direction after concrete audit/design; prepare it first.
 
 ## Completed P1 proof
 
@@ -96,9 +123,9 @@ No live demo currently. Shared Docker PostgreSQL/Qdrant untouched. Do not edit
 source/tests/module READMEs during live/test/install/recovery workflows. Ordinary
 tracker/docs/git allowed. Restore frozen prior demo only after source work stops,
 using fresh session suffixes (local13k/LAN13i next); do not overwrite old directories.
-Frozen serving .test-results/curation-demo-serving-20261013f, Studio0.34.4.
+Frozen serving .test-results/curation-demo-serving-20261013h, Studio0.36.0; priorf fallback.
 Local http://127.0.0.1:57013; LAN https://192.168.1.70:57013.
-JS sha21fa5c5d6f790ffd902f0074290a651c5bebcd5173cf136ba105ac43514db5f2.
+JS shad7a79afaf5ae186381637771b05c7a0992996c923ef8ba986640c1f1096aa265.
 ROOT C:/Users/alb_p/AppData/Local/Packages/PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0/LocalCache/Local/Amphora/local-v2/restore-20261007b
 TLS same LocalCache/Local/Amphora/lan-demo-20261008.
 Serving owners unchanged: Planning .test-results/curation-planning-installation-20261013b/owner0.142;

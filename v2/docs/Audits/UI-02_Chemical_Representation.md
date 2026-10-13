@@ -2,16 +2,16 @@
 
 - Status: P1 representation/provenance complete; UI-02.01/.02/.03 component scope aligned.
 - Reviewed: 2026-10-13 17:29:39 America/Chicago; implementation146e89f2.
-- Owner: UI-02/P1. Overall25%, Build33.33%, Verification0%; P1=100%, P2/P3/P4=0%.
-- Next gate: P2 selection evidence or explicit unranked projection, then P3 inspector.
-- Blockers: none for completed P1. UI has not yet consumed or displayed these results.
+- Owner: UI-02/P1, complete100%. Parent UI-02 is now closed100%; this records P1 evidence.
+- Next gate: none for P1; [final inspector audit](UI-02_Candidate_Inspector.md) records parent closeout.
+- Blockers: none. Subsequent P2-P4 consume and display this result with explicit unranked status.
 
 | Boundary | Evidence | Disposition |
 |---|---|---|
 | Additive public contracts |12 wire/publication checks;668 predecessor pins unchanged | aligned |
 | Independent chemical tool |32 copied tests, schema bytes/fresh-process determinism, PNG inspected | aligned; actual independent graph/Data/Research handoff passed |
 | Research opt-in identity |75 PostgreSQL/registration/identity tests,2 compatibility checks and dependency guard | aligned; actual registration/replay/mismatch/denial/restart passed |
-| UI formula/recommendation | Not implemented | P2-P4; do not imply viewer availability |
+| UI formula/recommendation | Subsequently completed by P2-P4 | See final inspector audit; live availability separately recorded |
 | Scientific claims | Supplied finite oligomer/structure only | No property, synthesis, clinical or ranking authority |
 
 RDKit dependency is isolated to the tool. DTOs only validate transport; parsed
@@ -29,7 +29,7 @@ missing accepted release. Corrected rerun b retains actual registered/rejected
 receipts in [Registry evidence](Evidence/UI-02-Chemical/Registry_Activation.json).
 Actual graph/tool/Data/Research portion did not run; no P1.4 credit.
 The earlier activation inventory missed Registry's synthetic-only restriction.
-[UI-02.02](../Build%20Plans/UI-02.02%20Structural%20tool%20registry%20profile%20decision.md)
+[UI-02.02](../Build%20Plans/Completed/UI-02.02%20Structural%20tool%20registry%20profile%20decision.md)
 specifies activation plus selection correction; no bypass or descriptor relabelling.
 Declared fixture image pins must never be described as built Linux images or a
 container deployment. Product hosting/containerization remains deferred per owner.
@@ -38,7 +38,7 @@ container deployment. Product hosting/containerization remains deferred per owne
 checks and actual register/activate/deploy/heartbeat/resolve. [Lifecycle receipts](Evidence/UI-02-Chemical/Registry_Lifecycle.json) and [execution blockers](Evidence/UI-02-Chemical/Execution_Profile_Blockers.json)
 retain the exact evidence. Runtime compiler and SDK worker reject synthetic-only
 profile; draft eligibility context and retained universe need a versioned correction.
-[UI-02.03](../Build%20Plans/UI-02.03%20Structural%20execution%20profile%20decision.md)
+[UI-02.03](../Build%20Plans/Completed/UI-02.03%20Structural%20execution%20profile%20decision.md)
 is proposed. No graph admission/worker claim or P1.4 credit. Initial inventory missed
 these downstream restrictions; no guards bypassed. Planning evolutionary topology
 remains separately synthetic-only, outside this supplied-structure handoff.

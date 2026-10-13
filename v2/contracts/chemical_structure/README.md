@@ -2,7 +2,7 @@
 
 Owner: UI-02/P1.1. Public package0.1.0. Transport validation only; no RDKit,
 chemical inference, database, ranking or candidate admission policy.
-Design: [approved boundary](../../docs/Build%20Plans/UI-02.01%20Chemical%20structure%20boundary%20decision.md).
+Design: [approved boundary](../../docs/Build%20Plans/Completed/UI-02.01%20Chemical%20structure%20boundary%20decision.md).
 
 StructureRequest binds supplied SMILES to exact CandidateRevisionRef/scope and
 semantic profile. StructureResult binds that identity and exact request byte digest

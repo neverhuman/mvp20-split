@@ -1,10 +1,10 @@
 # Architecture Drift
 
 - Status: BP-01 through BP-09 closed/audited; named successor findings remain.
-- Last refreshed: `2026-10-13 10:33:46` (America/Chicago).
+- Last refreshed: `2026-10-13 18:16:04` (America/Chicago).
 - Scope: unresolved v2 design/implementation alignment and scoped successor boundaries.
 - Active focus: selected-host integration and named scientific/UI successor limits.
-- Next gate: UI-02 activation and candidate structure/selection boundary. UI-01 integrated acceptance is complete; LR-01/UI-R01 retain named reliability work.
+- Next gate: POP-01 activation/compatibility. UI-01/UI-02 are closed; LR-01/UI-R01 retain named reliability work.
 
 ## Active Findings
 
@@ -23,4 +23,4 @@
 Use [Development Process](../Development_Process.md) and the [audit template](../Templates/Plan%20Audit%20Template.md). Each discrepancy names evidence, boundary, blocking classification, owner and disposition. Aligned records with no follow-up belong in history.
 
 
-UI-02/P1 structural profile gaps are closed; [P1 audit](UI-02_Chemical_Representation.md). UI-02/P2-P4 still own unranked/recommendation projection, candidate inspector and browser acceptance.
+UI-02/P1 structural profile gaps are closed; [P1 audit](UI-02_Chemical_Representation.md). UI-02/P2-P4 are complete and aligned; [inspector audit](UI-02_Candidate_Inspector.md). Population/lineage and qualified molecular evaluation remain POP-01/ML-01; no new unresolved inspector drift.

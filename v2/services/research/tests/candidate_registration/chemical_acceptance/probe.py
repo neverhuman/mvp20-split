@@ -192,6 +192,9 @@ def main():
                     "reservations": reservations,
                 }
             )
+        if config.get("studio"):
+            browser = module.load("chemical_browser_acceptance", Path(__file__).with_name("studio.py"))
+            browser.verify(e, config["studio"], reports[0])
         drafts.replace_without_grant(e, admission_command, admission, graph)
         old = e.research
         old.close()

@@ -4,7 +4,7 @@
 - Reviewed: 2026-10-13 10:43:09 America/Chicago; baseline f141257e.
 - Status: corrected_ready; owner approved UI-02.01; P1.1 contract implementation active.
 - Implementation: UI-02 overall0%, Build0%, Verification0%; P1/P2/P3/P4=0%.
-- Current task: approved scope in [UI-02.01](../Build%20Plans/UI-02.01%20Chemical%20structure%20boundary%20decision.md).
+- Current task: approved scope in [UI-02.01](../Build%20Plans/Completed/UI-02.01%20Chemical%20structure%20boundary%20decision.md).
 - Ordered work: P1.1 additive contracts/compatibility, then isolated producer, Research registration and actual graph handoff in order.
 
 UI-01 is independently qualified and archived; its actual run/result/Knowledge/

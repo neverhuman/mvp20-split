@@ -72,6 +72,10 @@ try{
  await page.getByRole('heading',{name:'Compare evidence, not just scores',exact:true}).waitFor();
  const table=await page.locator('.flow-table').innerText();assert.match(table,/inside/);assert.match(table,/outside/);assert.match(table,/Pa.s/);
  evidence.results=table;await capture('scientific-successor-results');
+ if(input.expect_no_structure){
+  await page.getByText('No supported chemical structure output was found.',{exact:false}).waitFor();
+  assert.equal(await page.locator('.candidate-inspector img').count(),0);
+ }
  await page.getByRole('button',{name:/Knowledge graph/}).click();
  await page.getByRole('heading',{name:'Follow the evidence',exact:true}).waitFor();
  await page.getByRole('button',{name:'Hansen solvency screen',exact:true}).first().click();
