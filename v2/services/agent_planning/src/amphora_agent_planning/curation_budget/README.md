@@ -56,3 +56,5 @@ UI-01.08g approved 2026-10-12 20:03:38: exact scope12/$3.05, all11 prior holds
 retained; one new v7 original/$0.25/8192. Other scopes and per-call caps unchanged.
 
 UI-01.08h approved 2026-10-12 20:20:43: exact scope13/$3.30 preserves12 prior holds; one new v8 original/$0.25/8192. Other scopes unchanged; no retries/refunds.
+
+UI-01.08i additional$10 approved 2026-10-12 20:48:00: exact scope53/$13.30, preserving13/$3.30 old holds. At most40 new$0.25 calls,8192 output each; unchanged model/profile and other scopes. Stop on qualification success; no refunded reservations or blind retry.

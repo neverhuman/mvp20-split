@@ -1,6 +1,6 @@
 # Agent Planning service boundary
 
-Source: Planning0.135.0 / migration0024. UI-01.08 adds original curation intake,
+Source: Planning0.135.1 / migration0024. UI-01.08 adds original curation intake,
 exact campaign input/output, fixed qualification spending guard/direct adapter and
 fenced recoverable progress. Curation context now retains1..8 selected Knowledge
 graph slices and exact untrusted human intent through preparation replay. Public curation/successor-launch contracts0.1.0 are

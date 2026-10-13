@@ -48,4 +48,4 @@ Read the selected plan's tracker first. Complete each phase gate before advancin
 
 - [UI-01.08 Campaign curation boundary decision](UI-01.08%20Campaign%20curation%20boundary%20decision.md): approved, active48.89%, P1=100%, P2=100%, P3=44.44%,P4/P5=0%; new Planning curation/capability-request and separate Deployment successor-launch contracts for N3/I1.
 
-- [UI-01.08i Validation feedback qualification](UI-01.08i%20Validation%20feedback%20qualification.md): proposed0%; one feedback-informed original, no paid authority.
+- [UI-01.08i Validation feedback qualification](UI-01.08i%20Validation%20feedback%20qualification.md): approved additional$10; offline/preparation active, one feedback-informed original at a time.

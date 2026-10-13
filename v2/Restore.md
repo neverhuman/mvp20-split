@@ -1,3 +1,16 @@
+# Active approval and preparation
+
+Refreshed: 2026-10-12 20:51:02. Owner approved additional$10; exactscope53/$13.30
+preserves13/$3.30 old holds. At most40 new$0.25/8192 originals, one at a time;
+stop on qualification success or budget. Historical no-authority text below superseded.
+23budget tests17.22s passed14786; independentinstalln0.135.1 passed3401.
+Eleven prior exact-envelope/parser replays pass; v8 prompt/schema unchanged.
+Preparation36909 FINISHED/pass/drained, no paid call sent. Do not edit source/tests/module READMEs
+until drained. Working .test-results/curation-live-feedback-20261012a.
+New policy internal-curation-feedback-v8 added to isolated serving planning.json;
+next run first frozen approved original.08i33.33%, offline/preparation100. No other source changes
+needed. Keep frozenconfiguration intact; no provider enabled during prep.
+
 # Restore
 
 Refreshed: 2026-10-12 20:37:18 America/Chicago. Read FIRST after compaction.

@@ -98,3 +98,9 @@ holds count toward13/$3.30; one original only, same8192/$0.25. No key in prepara
 review_reasoning verifies the rejected v8 graph, truthful duplicate-node review,
 original receipts and exhausted13/$3.30 ledger through actual owners/browser.
 No provider enabled; failed output is neither repaired nor admitted.
+
+UI-01.08i additional$10: prepare_feedback/material_feedback preserve11 prior
+envelopes and parse outcomes, same v8 prompt/schema, and13 old holds. Existing
+direction carries retained findings; no new API or automatic repair family. run.py
+selects one frozen original, inspecting outcome before any subsequent request.
+Production exact-scope ceiling53/$13.30 remains authoritative; no refund/reset.

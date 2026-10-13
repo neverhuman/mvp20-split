@@ -3,7 +3,7 @@
 ## Canonical tracker
 
 - Status: primary_active; connected demo flow implemented; N2 complete; approved N3 curation implementation active.
-- Last refreshed: 2026-10-12 20:37:18 (America/Chicago).
+- Last refreshed: 2026-10-12 20:49:41 (America/Chicago).
 - Baseline: 62ea4966; owner-reported disconnected canvas and navigation review on 2026-10-07.
 - Owner: Studio experience, page models and presentation; service owners retain their contracts and state.
 - Parent: none; priority and mirrors in [Master Build Tracker](Master%20Build%20Tracker.md).
@@ -11,8 +11,8 @@
 - Design readiness: G0 complete; ELK directed layout and bounded topology ownership implemented.
 - Demonstrated behavior: connected graphs and question-first navigation verified against retained owner records; result-first comparison and full replacement acceptance remain.
 - Current phase/task: N3/UI-01.05/I1; implementing approved [UI-01.08](UI-01.08%20Campaign%20curation%20boundary%20decision.md). N2 complete100%; launch/provenance remain closed.
-- Next task: Review proposed08i bounded validation-feedback original/$0.25/8192; no paid authority remains. Same v8 model/prompt/schema; aggregate14/$3.55 would preserve13old holds.
-- Blocker: 08h83.33% (offline100/evaluation100/acceptance-recovery50); live graph rejected for unselected Research evidence, independently duplicate_node. Recovery66647 passed/drained. Supported acceptance0%;13/$3.30 holds exhausted.
+- Next task: Approved08i additional$10; qualify same-scope53/$13.30 then first feedback-informed original. Stop on success or ceiling.
+- Blocker: No owner decision needed.08i33.33% offline/preparation100%;23budget tests/installn/preparation36909 passed. First live original next.08h83.33 supported acceptance remains0. Parent90/P5=50 unchanged.
 - Human acceptance: owner feedback is part of visual review; no new routine approval gates for campaign execution.
 - Active exception: owner explicitly reprioritized UI over worker diagnostics; LR-01 remains paused at25%, Build33.33%, Acceptance0%, with R2 receipt diagnosis preserved.
 - Pre-activation coherence: 2026-10-07 17:54:00, ready for G0. Existing topology/observation APIs, React Flow canvas and isolated Studio boundaries are available; meaningful layout and workflow acceptance are missing. No new backend contract is assumed approved by this plan.

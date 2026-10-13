@@ -9,14 +9,14 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 ## Program Tracker
 
 - Status: UI-01 primary active; LAN-01 accepted/archived. LR-01 remains conditional; completed plans remain closed.
-- Last refreshed: 2026-10-12 20:37:18 (America/Chicago).
+- Last refreshed: 2026-10-12 20:49:41 (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
 - Current priority: schedule UI-01 Knowledge/run/LLM integration and UI-02 formula/structure views for2026-10-12 through2026-10-16; preserve the live demo.
 - Primary active task: UI-01/N3/I1, implementing approved [UI-01.08](UI-01.08%20Campaign%20curation%20boundary%20decision.md), P1=100%, P2=100%, P3=100%,P4=100%,P5=50%, child90%. N2=100%; launch/provenance remain closed. UI-01.05 K1/R1=100%, I1=90%, child96.67%.
-- Next task: Review proposed08i bounded validation-feedback original/$0.25/8192; no paid authority remains. Same v8 model/prompt/schema; aggregate14/$3.55 would preserve13old holds.
+- Next task: Approved08i additional$10; qualify same-scope53/$13.30 then first feedback-informed original. Stop on success or ceiling.
 - Implementation completion: LAN-01=100%; UI-01 active78%, Build97.5%, Verification0%; UI-02=0%, P1/P2/P3/P4=0%; LR-01 paused25%, Build33.33%, Acceptance0%.
-- Blockers/dependencies: 08h83.33% (offline100/evaluation100/acceptance-recovery50); live graph rejected for unselected Research evidence, independently duplicate_node. Recovery66647 passed/drained. Supported acceptance0%;13/$3.30 holds exhausted.
-- Latest checkpoint: 2026-10-12 20:37:18:08h83.33%; low reasoning produced a graph, rejected by validation. Actual owner/browser recovery passed; no successor. Proposed08i0% awaits one bounded feedback-informed original. Parent90/P5=50 unchanged.
+- Blockers/dependencies: No owner decision needed.08i33.33% offline/preparation100%;23budget tests/installn/preparation36909 passed. First live original next.08h83.33 supported acceptance remains0. Parent90/P5=50 unchanged.
+- Latest checkpoint: 2026-10-12 20:53:04:08i33.33%, offline/preparation100%;53/$13.30 ceiling preserves13/$3.30,40slots/$10 remain. Parent90/P5=50.
 - Acceptance posture: N3/I1=90%, parent V1=0%; no supported full-engine acceptance/cutover. Eleven campaign live attempts report cumulative$0.377787000; separate schema probes$0.012626250, not invoices. Demo unchanged.
 - Active exception: owner scheduled four targets for next week. Preserve earned phase credit; sequence the bounded cross-plan handoffs below. Pull LR-01/UI-R01 forward only when their faults block the scheduled integration, with exact return points.
 

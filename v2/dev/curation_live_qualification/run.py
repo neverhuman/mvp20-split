@@ -64,7 +64,19 @@ def verify(root, serving, qualification, scenario, key_file):
         assert hashlib.sha256((qualification / name).read_bytes()).hexdigest() == digest, 'Frozen live preparation changed'
     declaration = read(qualification / 'scope-declaration.json')
     allowance = read(qualification / 'live-allowance.json')
-    if declaration['authorization'] == 'UI-01.08h':
+    if declaration['authorization'] == 'UI-01.08i':
+        assert scenario == 'supported' and allowance['maximum_new_physical_calls'] == 1
+        assert allowance['diagnostic_stage'] == 7 and allowance['initial']['reserved_slots'] == 13
+        assert allowance['initial']['reserved_units'] == 3300000000
+        assert declaration['maximum_total_slots'] == 53 and declaration['maximum_original_units'] == 13300000000
+        assert declaration['maximum_per_call_units'] == 250000000 and declaration['maximum_output_tokens'] == 8192
+        assert allowance['maximum_new_original_units'] == 250000000
+        repair = read(qualification / 'repair-evidence.json')
+        assert repair == allowance['repair'] and repair['profile'] == 'curation-v8'
+        assert repair['offline']['status'] == 'passed' and repair['offline']['provider_calls'] == 0
+        assert repair['offline']['original_replays'] == 11
+        assert repair['reasoning_effort'] == 'low' and repair['maximum_output_tokens'] == 8192
+    elif declaration['authorization'] == 'UI-01.08h':
         assert scenario == 'supported' and allowance['maximum_new_physical_calls'] == 1
         assert allowance['diagnostic_stage'] == 6 and allowance['initial']['reserved_slots'] == 12
         assert allowance['initial']['reserved_units'] == 3050000000
@@ -144,7 +156,8 @@ def verify(root, serving, qualification, scenario, key_file):
         draft = read(serving / 'original-draft.json')['head']
         sources = read(serving / 'original-carry-sources.json')
         command = campaign.original('curation', 'planning.curate_campaign', {
-            'direction': DIRECTIONS[scenario], 'policy_id': read(qualification / 'curation-policy.json')['policy_id'],
+            'direction': (read(qualification / 'feedback-direction.json')['proposed_direction']
+                if declaration['authorization'] == 'UI-01.08i' else DIRECTIONS[scenario]), 'policy_id': read(qualification / 'curation-policy.json')['policy_id'],
             'context': {'predecessor': sources['predecessor'], 'draft': {'scope': scope,
                 **{key: draft[key] for key in ('draft_id', 'revision', 'content_sha256')}},
                 'knowledge': [], 'questions': [], 'needs': [],
