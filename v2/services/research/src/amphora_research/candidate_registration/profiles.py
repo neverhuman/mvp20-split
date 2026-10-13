@@ -11,8 +11,10 @@ from amphora_contracts_candidate_spaces import (
     SequenceDesign,
 )
 from amphora_contracts_core import SchemaRef
+from amphora_contracts_chemical_structure import StructureResult
 
 MODELS = {
+    "chemical-structure.result": StructureResult,
     "candidate-space.numeric": NumericDesign,
     "candidate-space.polymer": PolymerDesign,
     "candidate-space.sequence": SequenceDesign,
@@ -127,7 +129,7 @@ class CandidateProfiles:
             raise CandidateRegistrationError("candidate_schema_unconfigured")
         return matches
 
-    def validate(self, reference, body):
+    def validate(self, reference, body, candidate=None):
         matches = self.admit(reference)
         if (
             type(body) is not bytes
@@ -137,7 +139,10 @@ class CandidateProfiles:
             raise CandidateRegistrationError("candidate_representation_integrity")
         for profile in matches:
             try:
-                return profile.decode(body, reference.scope)
+                decoded = profile.decode(body, reference.scope)
+                if isinstance(decoded, StructureResult) and decoded.candidate != candidate:
+                    raise CandidateRegistrationError("candidate_exact_identity_mismatch")
+                return decoded
             except CandidateRegistrationError as error:
                 if str(error) != "candidate_representation_binding_mismatch":
                     raise

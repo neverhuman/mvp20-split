@@ -40,3 +40,20 @@ All668 predecessor schema bytes remain unchanged; chemical semantic profiles now
 have explicit LF Git attributes to preserve digest identity across Windows clones.
 P1.2=100%; P1=50%; overall12.5%, Build16.67%, Verification0%. P1.3 next; Linux
 worker/Registry/Runtime/Data/Research acceptance remains P1.4, not claimed here.
+
+## 2026-10-13 11:43:38 ? P1.3 opt-in Research registration
+
+Research0.41.0 adds ChemicalCandidateProfile, enabled only by an explicit
+finite_molecule/schema/profile configuration. No RDKit or tool imports. Exact
+candidate/revision binding now passes from registrar into profile validation;
+old synthetic behavior remains. Validates successful derived bundle, graph topology,
+charge and bounded PNG header/hash/dimensions; does not claim chemical interpretation
+or producer authentication. Existing DTOs/routes/research_0016 tables unchanged.
+
+75 PostgreSQL/registration/identity checks pass, including chemical host startup,
+malformed bundle/identity/scope/profile failures, fresh access on retries and
+immutable historical reads after denial. Existing synthetic race/rollback/routes
+remain covered. Two schema compatibility checks and dependency guard pass. First
+invocation lacked dev pytest configuration; rerun with explicit -c passed.
+P1.3=100%, P1=75%, overall18.75%, Build25%, Verification0%. P1.4 actual independently
+installed registered graph/retention/Research handoff next. No new model calls.

@@ -7,9 +7,8 @@ Refreshed: 2026-10-13 11:30:04 America/Chicago. Read FIRST after compaction.
 UI-01 is complete100%, Build100%, Verification100%, scoped-audited and archived in
 docs/Build Plans/Completed. UI-01.05 and08j also archived complete;08decision100%.
 UI-02.01 approved by owner 2026-10-13 11:23:21; implement supplied finite molecules/oligomers.
-P1.1/P1.2 complete100%; P1=50%, UI-02 overall12.5%, Build16.67%, Verification0%.
-Next: P1.3 opt-in Research profile,
-P1.4 actual registered graph handoff. No additional approval for this scope.
+P1.1/P1.2/P1.3 complete100%; P1=75%, UI-02 overall18.75%, Build25%, Verification0%.
+Next: P1.4 actual registered graph handoff. No additional approval for this scope.
 Local79358 and LAN90134 cooperatively STOPPED, both exit0 before source work.
 Restore frozen serving13f after appropriate checks. Previous five stale NAS-read
 shells closed; no model calls. Container hosting deferred per owner.
@@ -20,13 +19,18 @@ bytes, fresh-process deterministic formula/PNG, service import isolation. PNG vi
 Evidence .test-results/ui02-chemical-independent-20261013a. Sessions62417 and75672
 finished exit0. Source30 earlier passed; independent32 includes duplicate JSON and
 graph-reference checks. RDKit2025.9.6/numpy2.5.4/Pillow12.3.0 pinned.
-Next P1.3: Research candidate_registration currently supports only synthetic kinds;
-add explicit chemical profile and exact CandidateRevisionRef matching. Current
-validate(reference,body) receives ArtifactRef only: pass candidate identity from
-registrar for chemical profile without changing old synthetic behavior. Own tests
-under candidate_registration; run actual PostgreSQL rights/retry/history gates.
-Then P1.4 actual separately installed tool + Registry/Runtime/Data/Research handoff.
-No new owner decision needed; no paid calls. P1.2 commit follows.
+P1.3 complete: Research0.41.0 opt-in ChemicalCandidateProfile, exact identity binding,
+no new routes/DTO/table/chemistry imports.75 PostgreSQL/registration/identity checks,
+2 schema compatibility and dependency guard pass; sessions25943/18059 finished0.
+P1.4 next: actual independently installed tool + Registry/Runtime/Data/Research
+handoff. Existing dev/verify_candidate_handoff.py and owned acceptance environment
+are synthetic3-tool patterns without actual Registry; adapt deliberately to one
+chemical tool plus real Registry acceptance, do not call declared image pins built.
+New standalone dev/verify_chemical_structure.py proved32 tool tests and byte equality.
+Environment resource normalized to LF; rerun new independent tool installation for
+P1.4 after this normalization. Original P1.2 results remain retained historical.
+All demo owners STOPPED. No other running workflows. No model calls. No owner gate.
+P1.3 commit follows; most recent prior pushed85c1ac97.
 
 Studio0.34.4 final independent install passes445 tests/90public schema pins and
 byte-identical static assets. Helper4tests, focused Explore22tests pass. Fixed idle

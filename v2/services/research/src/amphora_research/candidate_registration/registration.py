@@ -37,7 +37,7 @@ class CandidateRegistrar:
             self.profiles.admit(record.representation)
             # A fresh reader per attempt observes rights now; no peer call occurs under SQL.
             body = self.reader_factory(principal.scope).read(record.representation)
-            self.profiles.validate(record.representation, body)
+            self.profiles.validate(record.representation, body, record.reference)
             with self.ledger.engine.begin() as connection:
                 created = self.ledger.publish_prepared(connection, document)
                 connection.execute(

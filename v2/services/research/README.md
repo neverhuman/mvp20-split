@@ -1,7 +1,7 @@
 # Research Service
 
 - Status: BP-06.01/.03 are closed. BP-06.04 scientific storage, authenticated intake, exact normalization, per-action interpretation, immutable corrections/impacts and Artifact publication are implemented and verified. Independent rebuild/replacement and process recovery pass; scoped closeout is recorded in the BP-06.04 audit.
-- Package: `amphora-research` 0.40.0; Research contracts0.14.0 and migration research_0016. Exact dependencies belong to pyproject.toml, uv.lock and the generated package inventory.
+- Package: `amphora-research` 0.41.0; Research contracts0.14.0 and migration research_0016. Exact dependencies belong to pyproject.toml, uv.lock and the generated package inventory.
 - Design: [Research architecture](../../docs/Architecture/Research/Research_Architecture.md).
 
 Research owns candidate/sample/question/evidence-need identities and purpose-bound evidence sufficiency. It does not own Artifact bytes, Knowledge assertions, model execution or campaign acceptance. Dependencies are public contracts and the tool-protocol SDK plus Pydantic/FastAPI/Uvicorn and SQLAlchemy/psycopg/Alembic. No peer implementation imports, peer SQL or shared ORM.
@@ -52,3 +52,5 @@ BP-06.06 Research0.32 adds pure bounded [exploration](src/amphora_research/explo
 Research0.33 exposes authenticated research-explore catalog/specimens/properties/observation-series routes through optional scientific hosting. No schema/migration/new-grant change; complete selected-set existence is checked before bounded record loads. See exploration module for read and replacement contracts.
 
 [Evaluation reuse evidence](src/amphora_research/evaluation_reuse/README.md) owns authenticated Runtime producer inspection and exact Data evidence binding. It now also owns configured synthetic reuse qualification, immutable decisions and separate public qualify/read routes; actual multi-process reuse handoff passed2026-10-06 15:16:24; image/Registry/scientific qualification remains separate.
+
+UI-02/P1.3 adds opt-in finite-molecule chemical declarations with exact candidate/revision matching; [registration boundary](src/amphora_research/candidate_registration/README.md). No chemistry toolkit or default chemical admission. Existing wire schemas and research_0016 storage unchanged.

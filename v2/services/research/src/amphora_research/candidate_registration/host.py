@@ -4,6 +4,7 @@ from sqlalchemy import text
 from ..assessment.reader import AssessmentDataReader
 from .profiles import CandidateProfile, CandidateProfiles, CandidateRegistrationError
 from .registration import CandidateRegistrar
+from .chemical_profile import ChemicalCandidateProfile
 
 
 def configured(ledger, config, keys, secret):
@@ -16,7 +17,7 @@ def configured(ledger, config, keys, secret):
     for item in config["profiles"]:
         keys(item, ("schema", "kind", "semantic_profile"))
         profiles.append(
-            CandidateProfile(
+            (ChemicalCandidateProfile if item["kind"] == "finite_molecule" else CandidateProfile)(
                 SchemaRef.model_validate(item["schema"]),
                 item["kind"],
                 SchemaRef.model_validate(item["semantic_profile"]),

@@ -81,6 +81,23 @@ requires-dist = [
 ]
 
 [[package]]
+name = "amphora-contracts-chemical-structure"
+version = "0.1.0"
+source = { editable = "../../contracts/chemical_structure" }
+dependencies = [
+    { name = "amphora-contracts-core" },
+    { name = "amphora-contracts-research" },
+    { name = "pydantic" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "amphora-contracts-core", editable = "../../contracts/core" },
+    { name = "amphora-contracts-research", editable = "../../contracts/research" },
+    { name = "pydantic", specifier = ">=2.12,<3" },
+]
+
+[[package]]
 name = "amphora-contracts-commands"
 version = "0.2.0"
 source = { editable = "../../contracts/commands" }
@@ -342,13 +359,14 @@ requires-dist = [
 
 [[package]]
 name = "amphora-research"
-version = "0.40.0"
+version = "0.41.0"
 source = { editable = "." }
 dependencies = [
     { name = "alembic" },
     { name = "amphora-contracts-artifacts" },
     { name = "amphora-contracts-candidate-canonicalization" },
     { name = "amphora-contracts-candidate-spaces" },
+    { name = "amphora-contracts-chemical-structure" },
     { name = "amphora-contracts-core" },
     { name = "amphora-contracts-evaluation-identity" },
     { name = "amphora-contracts-evaluation-reuse" },
@@ -374,6 +392,7 @@ requires-dist = [
     { name = "amphora-contracts-artifacts", editable = "../../contracts/artifacts" },
     { name = "amphora-contracts-candidate-canonicalization", editable = "../../contracts/candidate_canonicalization" },
     { name = "amphora-contracts-candidate-spaces", editable = "../../contracts/candidate_spaces" },
+    { name = "amphora-contracts-chemical-structure", editable = "../../contracts/chemical_structure" },
     { name = "amphora-contracts-core", editable = "../../contracts/core" },
     { name = "amphora-contracts-evaluation-identity", editable = "../../contracts/evaluation_identity" },
     { name = "amphora-contracts-evaluation-reuse", editable = "../../contracts/evaluation_reuse" },

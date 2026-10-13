@@ -46,3 +46,5 @@ v2/dev/scientific_execution/knowledge_source.txt text eol=lf
 /v2/contracts/chemical_structure/profiles/*.json text eol=lf
 /v2/tools/chemical_structure/src/amphora_chemical_structure/profile.json text eol=lf
 /v2/tools/chemical_structure/src/amphora_chemical_structure/environment.json text eol=lf
+
+/v2/tools/chemical_structure/uv.lock text eol=lf

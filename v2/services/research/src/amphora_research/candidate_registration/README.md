@@ -1,6 +1,6 @@
-# Synthetic candidate registration
+# Candidate registration
 
-- Owner: Research0.35.0; BP-08.03/B1.03b.i, owned SQL/API verification passed.
+- Owner: Research0.41.0; UI-02/P1.3 chemical profile in verification; BP-08.03/B1.03b.i, owned SQL/API verification passed.
 - Design: [Candidate ingress](../../../../../docs/Architecture/Research/Candidates.md#synthetic-candidate-declaration-ingress).
 
 This module registers the existing CandidateRevision as an authenticated synthetic declaration. It does not prove scientific validity, operator legality, synthesis feasibility, fitness or Runtime acceptance. It never imports scientific tool implementations. Reviewed CandidateProfile configurations pin exact published candidate-space schema bytes, kind and semantic profile; private domain objects validate complete encoding, source integrity and scope. Different tool profiles remain explicit configuration.
@@ -18,3 +18,15 @@ Tests belong under tests/candidate_registration. Unit/schema policy, actual Post
 Verified 2026-10-06 13:19:41:70 candidate/declaration-regression/boundary checks18.74s;141statements/36branches100% in the new module. PostgreSQL race/rollback/append-only grants, exact history, current denial, explicit hosting and separate access pass. Scripted Data peer proves owner behavior only; actual public Data/worker handoff is separately verified below. Existing schema bytes unchanged.
 
 Actual handoff verified 2026-10-06 13:27:08: three independently installed operator workers, Runtime0.63,Data0.30 and Research0.35. Each accepted output becomes an exact candidate declaration with retry/readback; Research restart preserves history. Removing only Data's Research read principal causes subsequent writes403 while historical reads stay exact. Module-owned acceptance evidence distinguishes fixture images from future image/Registry/replacement gates.
+
+UI-02 adds an explicit finite_molecule configuration using chemical-structure.result
+and a pinned chemical-structure.finite-smiles-2d profile. ChemicalCandidateProfile
+validates bounded duplicate-free result JSON, successful structural derivation,
+connected indexed graph, charge consistency and PNG header/dimensions/hash/limits.
+CandidateRegistrar passes the exact registering CandidateRevisionRef to validation;
+chemical artifacts for another candidate/revision reject before SQL. Old synthetic
+profiles, routes, schemas, immutable ledger and default configuration stay unchanged.
+No RDKit/scientific tool dependency or automatic chemical profile enablement. This
+is a declaration, not a proven formula/producer or chemical efficacy: full depiction
+decoding and accepted Runtime/source attribution remain consumer acceptance gates.
+Current rights are checked on every retry; committed candidate history remains.
