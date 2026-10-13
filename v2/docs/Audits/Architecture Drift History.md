@@ -320,3 +320,10 @@ archival. [Scoped audit](LAN-01_Demo_Access.md). Follow-up: none in bounded scop
 2026-10-11 19:50:00: [UI-01/N2.3](UI-01_N2.3_Generation_Comparison.md) aligned for bounded retained-generation comparison; no universal index or POP-01 scope.
 
 2026-10-11 20:04:00: [N2.4](UI-01_N2.4_Recorded_Model_Inspection.md) aligned for exact recorded OpenAI rationale/outcome inspection and distinct unavailable history; N3/I1 remains separate.
+
+## 2026-10-13 10:07:31: managed curation delivery aligned
+
+Two former findings (managed demo delivery; unqualified curation/successor serving) closed by [scoped audit](UI-01.08_Managed_Curation_Delivery.md). Actual original-g validation and four-tool successor passed; exact local/LAN assets and browser reviewed. Parent V1 remains separate. Historical findings retained below.
+
+| Managed curation demo delivery remains | Deployment/UI-01.08/P5.4 | Supported model graph, carried successor and actual browser qualified08i100%. Recipe/installed lifecycle and existing-demo local/LAN cutover remain08j0%. No further qualification calls. [Live evidence/audit](Evidence/UI-01.08-Feedback/README.md). |
+| Integrated campaign curation/successor flow not yet qualified or served | UI-01/N3/I1, [UI-01.08](../Build%20Plans/UI-01.08%20Campaign%20curation%20boundary%20decision.md) | P1/P2/P3/P4.1-P4.3 complete; Studio0.34 scripted production workspace passes. P4.4 actual owners exposed missing Deployment curation policy configuration (0.19.1 repair) and wrong compiler reader composition (Planning0.127.1 repair). Scoped regressions pass; isolated original seed complete and exact retained proposal saved. Repeated fixed-schema generation also impeded compilation; Planning0.127.2/Contract0.1.1 preserve schema bytes with frozen identity memoization (98 focused checks; cold reconstruction32.5s->6.6s). Actual compiler/successor/carry and two-process receipt/failure recovery now pass (P4.4a/b100%). P4.4c actual browser1440/390 recovery also passes; P4 complete. P5 live qualification and cutover are not yet claimed. |

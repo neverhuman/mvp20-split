@@ -25,3 +25,6 @@ After required gates and a recorded closeout drift audit pass, move the plan and
 - [SQ-01 Scientific Quality and Iteration Views](SQ-01%20Scientific%20Quality%20and%20Iteration%20Views.md): complete100%, Build100%, Verification100%; [audit](../../Audits/SQ-01_Quality_Closeout.md).
 
 - [LAN-01 Local Network Demo Access](LAN-01%20Local%20Network%20Demo%20Access.md): complete100%, L1/L2/L3=100%; owner accepted2026-10-08 21:01:59; [audit](../../Audits/LAN-01_Demo_Access.md).
+
+- [UI-01.08j Managed curation demo delivery](UI-01.08j%20Managed%20curation%20demo%20delivery.md):100%; M1-M4 complete; [audit](../../Audits/UI-01.08_Managed_Curation_Delivery.md).
+- [UI-01.05 Knowledge, Run and LLM Integration](UI-01.05%20Knowledge%20Run%20and%20LLM%20Integration.md):100%; K1/R1/I1 complete through owning audits; parent V1 remains.

@@ -1,5 +1,12 @@
 # Studio Monitor presentation
 
+Studio0.34.3 explicitly fits the connected campaign/evaluation and domain-neighborhood
+canvases on container resize using GraphCanvas's existing opt-in policy. A narrow
+viewport must not leave a tiny graph after expanding to desktop. Ordinary data or
+selection updates do not reset geometry; the separate Monitor retains its saved
+viewport/reveal policy. Actual scientific-successor browser qualification checks
+rendered scale against available canvas space at1440/390, plus real links/results.
+
 Studio0.21 ConnectedCampaign renders a single retained context across the demo.
 Dashed context relationships and planning-only statuses are distinct from Runtime
 links/statuses. Comparison values come only from verified scientific outputs;

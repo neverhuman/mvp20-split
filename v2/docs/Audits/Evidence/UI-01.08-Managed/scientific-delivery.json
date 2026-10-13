@@ -1,0 +1,192 @@
+{
+  "timestamp_local": "2026-10-13 10:05:23",
+  "status": "passed",
+  "scope": "UI-01.08j M3.4 managed scientific successor and actual local/LAN UI delivery",
+  "browser_runs": {
+    "curation-demo-successor-20261013a": {
+      "status": "passed",
+      "run_id": "563e14a17f2e4539aeece1838dce80ec",
+      "command_posts": 1,
+      "assets": {},
+      "screenshots": {
+        "proposed-scientific-graph-1440.png": "c94cdf1e42bef9ff7983b340f46b8673f70ad7881313239c6908a103e0b09706",
+        "proposed-scientific-graph-390.png": "f6b94312b35cff8e14cbf80caea9a8c15620bb9681b056b0a76da2eb5eda9f5b",
+        "completed-scientific-successor-1440.png": "148eaa639445e737bcd15f20109902d253e6522cad1dc971de0a74e0f6895385",
+        "completed-scientific-successor-390.png": "d096637cfb05ce93e32f7846dc75684335958f0777365506c7da4e9880cec2d2",
+        "scientific-successor-results-1440.png": "70a2bf2455a11b2e3cf406984c346dd6e37021fd85342a67ba782f310736e5c3",
+        "scientific-successor-results-390.png": "a18739f6d7fed87e0db63919d5cb81760b3779f53a863a14a1dfb1bb592546b7",
+        "selected-knowledge-1440.png": "b5c1afbdaca13512416717354cd4171e8460f9969bcb6da6bbf9815a3498cf20",
+        "selected-knowledge-390.png": "ab02d349edd6807359c6cf6c0eb6d505063a3f9725bf34c86e0d3b446ba35997",
+        "successor-next-context-1440.png": "568b2de05132a149c2893b140c0cc7e7c70973e0397b1cfabcab5628e879837b",
+        "successor-next-context-390.png": "3d5a382a48ce7ee1e6de654efb9f710a75f7ef06ae66f2c7ce2f91f1661987ae"
+      }
+    },
+    "curation-demo-successor-review-20261013c": {
+      "status": "passed",
+      "run_id": "563e14a17f2e4539aeece1838dce80ec",
+      "command_posts": 0,
+      "assets": {
+        "app.js": "535779589ac691968bc309c367012341319bff6e17e2e4280aafe81ebc14d779",
+        "app.css": "9aa2cd9f892037c5b52c866cdabebdb002fda16db6d12fcc0248666eb4fa8f98",
+        "index.html": "0c60b48d2bf03c539e9f7f14f773d3fb7652fade37209178f9a3790c893e45c5"
+      },
+      "screenshots": {
+        "proposed-scientific-graph-1440.png": "5f7c3b4064caaa4d270c5fd0e348578cf1e15c0e4fcbcc1d9c1980475e7e6214",
+        "proposed-scientific-graph-390.png": "c43600fb6167d3c94d050ab9b6446995de3b48194d2d4c6847f6a93f8140e5a1",
+        "completed-scientific-successor-1440.png": "671cd3bee48be9ac17e638e16ed80d346a132853ce945a50c6a290eb3da9e8f5",
+        "completed-scientific-successor-390.png": "803c96e16afd999cd620c83e7e7818f29b091ad2c3862f82ccbdb2bbaadddc6a",
+        "scientific-successor-results-1440.png": "70a2bf2455a11b2e3cf406984c346dd6e37021fd85342a67ba782f310736e5c3",
+        "scientific-successor-results-390.png": "a18739f6d7fed87e0db63919d5cb81760b3779f53a863a14a1dfb1bb592546b7",
+        "selected-knowledge-1440.png": "a9a0ee010724a551384ad4eabca36c216a8383f392508af8508e430acee5e2ac",
+        "selected-knowledge-390.png": "da1b8ff2e2a280c9627823e6a00554c8216c98e6ab5ded1d2a60e41de17aa564",
+        "successor-next-context-1440.png": "568b2de05132a149c2893b140c0cc7e7c70973e0397b1cfabcab5628e879837b",
+        "successor-next-context-390.png": "3d5a382a48ce7ee1e6de654efb9f710a75f7ef06ae66f2c7ce2f91f1661987ae"
+      }
+    },
+    "curation-demo-lan-successor-20261013c": {
+      "status": "passed",
+      "run_id": "563e14a17f2e4539aeece1838dce80ec",
+      "command_posts": 0,
+      "assets": {
+        "app.js": "535779589ac691968bc309c367012341319bff6e17e2e4280aafe81ebc14d779",
+        "app.css": "9aa2cd9f892037c5b52c866cdabebdb002fda16db6d12fcc0248666eb4fa8f98",
+        "index.html": "0c60b48d2bf03c539e9f7f14f773d3fb7652fade37209178f9a3790c893e45c5"
+      },
+      "screenshots": {
+        "proposed-scientific-graph-1440.png": "5f7c3b4064caaa4d270c5fd0e348578cf1e15c0e4fcbcc1d9c1980475e7e6214",
+        "proposed-scientific-graph-390.png": "c43600fb6167d3c94d050ab9b6446995de3b48194d2d4c6847f6a93f8140e5a1",
+        "completed-scientific-successor-1440.png": "671cd3bee48be9ac17e638e16ed80d346a132853ce945a50c6a290eb3da9e8f5",
+        "completed-scientific-successor-390.png": "803c96e16afd999cd620c83e7e7818f29b091ad2c3862f82ccbdb2bbaadddc6a",
+        "scientific-successor-results-1440.png": "70a2bf2455a11b2e3cf406984c346dd6e37021fd85342a67ba782f310736e5c3",
+        "scientific-successor-results-390.png": "a18739f6d7fed87e0db63919d5cb81760b3779f53a863a14a1dfb1bb592546b7",
+        "selected-knowledge-1440.png": "a9a0ee010724a551384ad4eabca36c216a8383f392508af8508e430acee5e2ac",
+        "selected-knowledge-390.png": "da1b8ff2e2a280c9627823e6a00554c8216c98e6ab5ded1d2a60e41de17aa564",
+        "successor-next-context-1440.png": "568b2de05132a149c2893b140c0cc7e7c70973e0397b1cfabcab5628e879837b",
+        "successor-next-context-390.png": "3d5a382a48ce7ee1e6de654efb9f710a75f7ef06ae66f2c7ce2f91f1661987ae"
+      }
+    }
+  },
+  "evidence_hashes": {
+    "curation-demo-successor-20261013a/evidence.json": "59867bebfbee45da35c318b024e10ff80d8e188c94c9c7edb8ea09f462039dcc",
+    "curation-demo-successor-review-20261013c/evidence.json": "9e2cdddcf98de5e0b07992ba0cc5437f5b23a2ff66e233ff2ee31f3776cd2057",
+    "curation-demo-lan-successor-20261013c/evidence.json": "9e2cdddcf98de5e0b07992ba0cc5437f5b23a2ff66e233ff2ee31f3776cd2057"
+  },
+  "installed": {
+    "amphora-agent-planning": {
+      "version": "0.142.0",
+      "wheels": {
+        "amphora_agent_planning-0.142.0-py3-none-any.whl": "f60bb66de3d79c30f9aeaf974ebd80ee51c3da74770c0758d67d979efc7b0285",
+        "amphora_contracts_artifacts-0.2.0-py3-none-any.whl": "79ae37b497cf797edb529c6625329d211b81a0fe6c46bd2b151d18de6397b36f",
+        "amphora_contracts_campaigns-0.4.1-py3-none-any.whl": "9b4db455f8510db948a5d509ff38532746e1aab77d3172db0ae72cabea1a6962",
+        "amphora_contracts_campaign_curation-0.1.1-py3-none-any.whl": "d1d2d62fd813efb619aee0b1a403404c2f610c4877bec48edba950491494e847",
+        "amphora_contracts_commands-0.2.0-py3-none-any.whl": "ff4f2f2b1098baaf337288cc7344fe55b9436216badde5e580b4016bd42e256c",
+        "amphora_contracts_core-0.1.0-py3-none-any.whl": "8177015d59bbdd1ac0c52fcf095873bc73a8e875588272cbc4ad378b94420db9",
+        "amphora_contracts_evidence-0.5.13-py3-none-any.whl": "29647b1a5ec28bc657d8a6cf9b205a27bb6331b07c7a0124eea2f012934f4f5f",
+        "amphora_contracts_graph_runtime-0.13.0-py3-none-any.whl": "a45c41317bf21e57b84dc6116b02e5034f13a20b93e0526f8b4f5f007a61bbe1",
+        "amphora_contracts_knowledge-0.8.0-py3-none-any.whl": "0e6a8d007b067628ae1e4205f0683f54422d1dbaea69b748b494d6ee51fb5f57",
+        "amphora_contracts_planning-0.13.0-py3-none-any.whl": "636d59f6cc08b1fe4050a93ca6a2954412ab6cf37c41c580cbe80e3113957f05",
+        "amphora_contracts_representations-0.3.0-py3-none-any.whl": "523feb10556ea0fdc07e39f2a874309fa65782b3e9035f072dffddf9a98ae18d",
+        "amphora_contracts_research-0.14.0-py3-none-any.whl": "15509c66d293bdea414eee77aae275ce01e38fbd749fb170edc80d7120417eac",
+        "amphora_contracts_research_views-0.1.0-py3-none-any.whl": "50f010979f0868e61533f312639a1dfa9fc8a41795b2961817c3da45b33b67e8",
+        "amphora_contracts_runtime-0.1.0-py3-none-any.whl": "ad90c2af9b805305ef20edb8a868f87cd11bb766a0c197f7081cf5f72e6f3ad1",
+        "amphora_contracts_supervision-0.10.2-py3-none-any.whl": "bc08478b597e97f646c9aef51fad1a461a2aea6a6d88470905fc22d796fe281a",
+        "amphora_contracts_tools-0.1.0-py3-none-any.whl": "8876f6b8ac9e6fa4abcc1118d6d7dd34f05cf0e4aa5262250f7d0793336b4aee",
+        "amphora_contracts_topology_search-0.1.0-py3-none-any.whl": "e7f4e9da892895fd95832d5548d631e508930ea18aeba0209a41e1908e6d75e9",
+        "amphora_tool_protocol-0.2.0-py3-none-any.whl": "3954194e0d3c59dc5a0f3437905ccd56a6234cee545b7a76a5b4d69a242d1cd5"
+      },
+      "manifest_sha256": "f36b80eb427873134e98e427793a08bb5e8c81085b00d75f33bd6bf484e524ca"
+    },
+    "amphora-deployment": {
+      "version": "0.20.2",
+      "wheels": {
+        "amphora_contracts_campaigns-0.4.1-py3-none-any.whl": "9b4db455f8510db948a5d509ff38532746e1aab77d3172db0ae72cabea1a6962",
+        "amphora_contracts_campaign_launch-0.1.0-py3-none-any.whl": "93f3bc30acb0efe6b53e208cb5f4d52f82486d9a6d6ed519a2dd381fd44f1454",
+        "amphora_contracts_campaign_successor_launch-0.1.0-py3-none-any.whl": "a32e9f79a498e6a95cdca54dbad14ca4bb2fc1fdc046fe69a7ea2ee40ea8ba91",
+        "amphora_contracts_commands-0.2.0-py3-none-any.whl": "ff4f2f2b1098baaf337288cc7344fe55b9436216badde5e580b4016bd42e256c",
+        "amphora_contracts_core-0.1.0-py3-none-any.whl": "8177015d59bbdd1ac0c52fcf095873bc73a8e875588272cbc4ad378b94420db9",
+        "amphora_contracts_draft_successor-0.1.0-py3-none-any.whl": "8c6c90b1b3b847d7bef5c7c93e6e389085899c277d4e809a3f8a4cdebf393716",
+        "amphora_contracts_graph_runtime-0.13.0-py3-none-any.whl": "a45c41317bf21e57b84dc6116b02e5034f13a20b93e0526f8b4f5f007a61bbe1",
+        "amphora_contracts_runtime-0.1.0-py3-none-any.whl": "ad90c2af9b805305ef20edb8a868f87cd11bb766a0c197f7081cf5f72e6f3ad1",
+        "amphora_contracts_tools-0.1.0-py3-none-any.whl": "8876f6b8ac9e6fa4abcc1118d6d7dd34f05cf0e4aa5262250f7d0793336b4aee",
+        "amphora_deployment-0.20.2-py3-none-any.whl": "59f8fc19ebb8fe65023457c5973531ac61223be525589fcef8ed41c3398d261b"
+      },
+      "manifest_sha256": "67af22bf4108b149637bc1edf03c3b60d096a2e7f4a0c14f8ff64bce8387e135"
+    }
+  },
+  "static_assets": {
+    "index.html": {
+      "sha256": "0c60b48d2bf03c539e9f7f14f773d3fb7652fade37209178f9a3790c893e45c5",
+      "bytes": 299
+    },
+    "app.js": {
+      "sha256": "535779589ac691968bc309c367012341319bff6e17e2e4280aafe81ebc14d779",
+      "bytes": 9124159
+    },
+    "app.css": {
+      "sha256": "9aa2cd9f892037c5b52c866cdabebdb002fda16db6d12fcc0248666eb4fa8f98",
+      "bytes": 53621
+    }
+  },
+  "allowance": {
+    "scope": {
+      "tenant_id": "internal",
+      "project_id": "knowledge-demo-1b1dc25768334153b58973882627b858"
+    },
+    "canonical_check": "passed",
+    "original_reservations": [
+      {
+        "engagement_id": "curation-call-126bb6a7c12f5a0b8db39be7b7ac698ca3a786b2546ff3ce0dc5cce5f481e95f",
+        "ordinal": 1,
+        "accounting_units": 250000000
+      },
+      {
+        "engagement_id": "curation-call-2d25c22a10dec9961d7fb201b98c4ce7ed27c802db948020efd3a794ec1df31c",
+        "ordinal": 1,
+        "accounting_units": 250000000
+      },
+      {
+        "engagement_id": "curation-call-3d02bb80e1933a62062e5ae1021b4da88650c8ac6234034948162e9a37403bcb",
+        "ordinal": 1,
+        "accounting_units": 250000000
+      },
+      {
+        "engagement_id": "curation-call-43dd9d4eef61b9985a206b732650eb452b7b82e7d6db324fcced7bb57cdad5fa",
+        "ordinal": 1,
+        "accounting_units": 250000000
+      },
+      {
+        "engagement_id": "curation-call-61a6dc5b9c3fb59f66ae53e85a28c1f0e6419adc07089b5489a5c524130f8d86",
+        "ordinal": 1,
+        "accounting_units": 250000000
+      },
+      {
+        "engagement_id": "curation-call-96967869afb5130c4652e7c48d0e676012f49163da6ade11c1f70741ff0eefa3",
+        "ordinal": 1,
+        "accounting_units": 250000000
+      },
+      {
+        "engagement_id": "curation-call-a6c6350aaa1afed17745f0775e03edcfe01e8231dc9b6e320dbd9f6a09748cfa",
+        "ordinal": 1,
+        "accounting_units": 250000000
+      }
+    ],
+    "reserved_slots": 7,
+    "reserved_units": 1750000000,
+    "maximum_slots": 37,
+    "maximum_units": 9250000000,
+    "authorization": "UI-01.08j-demo-remainder",
+    "remaining_slots": 30,
+    "remaining_reservation_units": 7500000000,
+    "unit": "usd_nanodollars",
+    "provider_enabled": false
+  },
+  "new_provider_calls_during_recovery_and_review": 0,
+  "known_postapproval_reported_estimate_usd": "0.521323500",
+  "unknown_charge": "Original demo b; full reservation retained",
+  "limits": [
+    "Synthetic engineering context with explicit corrective direction; not scientific accuracy or general model reliability",
+    "LAN observed on same host via private IP; no fresh second-computer firewall acceptance",
+    "UI-01/V1 independent consumer and full interaction acceptance remain",
+    "Long diagnostic direction needs progressive disclosure review; narrow graphs use overview plus zoom/step selector"
+  ]
+}

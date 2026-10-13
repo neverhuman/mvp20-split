@@ -1,56 +1,62 @@
 # Restore
 
-Refreshed: 2026-10-13 09:30:08 America/Chicago. Read FIRST after compaction.
+Refreshed: 2026-10-13 10:09:34 America/Chicago. Read FIRST after compaction.
 
 ## Active work and next steps
 
-Next start frozen serving13c/session13c --live --pause-curation, then controlled
-managed worker resume originalg,120s watch, quiesce on completion. Last round15/16.
-All tests/installations complete; no new paid call needed. Actual successor browser
-input .test-results/curation-demo-successor-20261013a/input.json remains unlaunched.
+Latest pushed01209c5b (Planning0.142 static schema identities), priorcedccb7e.
+Original g compiled in28.859s and is ready/draft_validated; actual browser launched
+successor563e14a17f2e4539aeece1838dce80ec, now completed with four scientific tools.
+No new provider calls this resumed work. Budget30slots/$7.50 unreserved; unknown b
+charge remains held, not zero. No more compiler recovery rounds needed.
 
+LIVE local24283: serving .test-results/curation-demo-serving-20261013e,
+session .test-results/curation-demo-session-20261013e, http://127.0.0.1:57013.
+LIVE LAN2953: session .test-results/curation-demo-lan-20261013c,
+https://192.168.1.70:57013. Both duration86400. STOP files in each session then poll
+both to drain before any source/test/module README edit. Ordinary docs/audit/git
+allowed while live. Shared stores unchanged. No agents/JARVIS/v1. Preserve user
+untracked ocular PDF/DOCX. Keys never print. No paid calls needed for next gates.
 
-Installed0.142 read-only benchmark81640 PASSED: round15 unchanged, zero ticks/provider;
-warm reads0.407-0.500s; matching3-read profile9.832->2.349s, schemas243->12.
-Evidence .test-results/curation-demo-compiler-recovery-20261013d.
-21 original replays passed .test-results/curation-profile-catalog-replays-20261013b.
-Independent suite95463 PASSED365/416.90s. Source365/438.21s passed. New serving13c prepared.
+Final browser15884 passed local+LAN review_only with exact served Studio0.34.3
+asset hashes, fitted graph scale, real connections, results, Knowledge, four next
+input artifacts and reload without duplicate intent. Outputs:
+.test-results/curation-demo-successor-review-20261013c
+.test-results/curation-demo-lan-successor-20261013c
+10 screenshots each. Desktop/narrow execution and desktop proposal/Knowledge now
+visually inspected: corrected desktop fit, narrow overview plus inspect controls.
+Proposal/results/Knowledge desktop/narrow and LAN execution reviewed; M3.4 credited. Long diagnostic direction in
+proposal needs progressive disclosure follow-up; no science/reliability claim.
+LAN is same-host private-IP check, not new second-computer firewall acceptance.
 
-Latest pushed cedccb7e (preparation cache checkpoint). Planning0.142 source catalog
-repair now implemented: providers/profiles.py closed7 primitive identity tuples,
-all schema-id/version/digest fields matched; source tests12792 PASSED365/438.21s. Log
-.test-results/curation-profile-catalog-source-a.txt. No source edits until done.
-Tests new providers/test_profile_catalog.py plus persistence/output/dispatch/compiler/worker.
-Independent0.142 installation .test-results/curation-planning-installation-20261013b PASSED;
-log .test-results/curation-profile-catalog-install-b.txt; --group profile_catalog
-then21 replays and read-only timing before final original-g round16. No new model calls.
+Serving-copy bug fixed in uncommitted dev helpers: Path.resolve turns Z into UNC;
+old ad-hoc rebasing kept ancestor gateway/public paths. New serving_copy resolves
+aliases, validates counterpart/schema bytes and rewrites only named config paths.
+static_identity verifies actual HTTP index/JS/CSS before curation starts.11 dev
+tests passed. Actual12 path redirects recorded in curation-serving-rebase-20261013a.
+Current JS sha535779589ac691968bc309c367012341319bff6e17e2e4280aafe81ebc14d779.
+Failed review b used old bundle; preserve evidence, do not infer new canvas bug.
+Studio0.34.3 only opts campaign_flow and explore/domain into existing fitOnResize;
+14 scoped graph/flow tests and build pass. New actual successor browser test is
+uncommitted. No GraphCanvas internals or Monitor viewport policy change.
 
+Next: UI-01/V1 independent Studio consumer installation, keyboard/browser zoom,
+failure/context acceptance and scoped parent audit. Managed-delivery M3/M4 audited
+complete; j100/UI08=100/UI01.05=100; UI01overall80/Build100/V1=0. UI-01.08j and
+UI-01.05 moved to Build Plans/Completed, links/index repaired. Curation decision
+history remains beside its decision record. Delivery evidence scientific-delivery.json
+and audit UI-01.08_Managed_Curation_Delivery.md retained. No invented owner gate.
+Current verify_studio.py staging only copies seven old generated groups; new launch,
+successor_launch,campaign_origin,campaign_curation,search manifests are missing.
+V1 must include all exact public manifests/validation profiles in an isolated build.
+If modifying helper/tests, first stop current local/LAN and drain, per standing rule.
+Long diagnostic prompt progressive disclosure is a named V1 experience review item.
 
-UI-01.08j/M3.4. All managed owners/workers/local/LAN STOPPED/drained45142;
-shared stores unchanged. No agents/JARVIS/v1 edits. Preserve ocular user PDF/DOCX.
-Continue until owner needed; no source/test edits while workflows run.
-
-Planning0.141 preparation cache source59/independent159 pass,21 originals unchanged.
-Installed .test-results/curation-planning-installation-20261013a/owner.
-Serving .test-results/curation-demo-serving-20261013b, session counterpart stopped.
-Deployment0.20.2 sweep20s source69/installed69 pass; Studio0.34.2 unchanged.
-Controlled managed original-g recovery90590 saved draft but validation pending.
-Quiesced at round15/16 (read23932); do NOT spend final round before repair.
-Read-only profile59660:243 schemas regenerated,8.13/9.83s under profiling;
-OutputProfiles.supported eagerly creates all7 schema refs for each observation.
-Next repair: process-local closed immutable identity catalog in providers/profiles.py;
-keep exact identity/digest comparisons and all observation verification, no authority cache.
-Then source/provider/persistence+independent tests,21 original replays, read-only
-performance recheck BEFORE resuming originalg. No new model request necessary.
-Evidence .test-results/curation-demo-compiler-recovery-20261013c/{managed-watch.json,
-managed-record.json,after-managed-round.json,readonly-profile.log}.
-All service source edits require stopped runtime (now met). Update version/lock and
-README/test scope. Restore serving with matching installation; paused start supported.
-New scientific successor browser script still unqualified; actual compile+launch+
-Knowledge+next composer/localLAN remain acceptance gates. No percentage credit yet.
-Budget unchanged30slots/$7.50; unknown b charge retained; originals immutable.
-NAS recovered; prior201passed/1failure/3errors were corrected test tuple/huge-id bugs,
-59 rerun pass; old large log remains original. No running test/install workflow now.
+Planning0.142 source365/independent365 pass;21 original envelope/parser replays
+unchanged; three-read profile9.832->2.349s, schemas243->12. InstalledPlanning13b/owner.
+Deployment0.20.2 independent13a/owner; no TTL/round/authority/schema relaxation.
+Current local session static-assets.json proves new bundle. Initial actual launch
+curation-demo-successor-20261013a made one POST; final reviews made none.
 
 ## Current repair and qualification
 

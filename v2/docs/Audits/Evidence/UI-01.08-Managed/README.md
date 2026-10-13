@@ -1,5 +1,12 @@
 # Managed curation delivery evidence
 
+Current status: 2026-10-13 10:07:31 America/Chicago. M1-M4 complete100%.
+[Scientific delivery proof](scientific-delivery.json) retains installed identities,
+actual served bytes, local/LAN successor evidence and allowance. Parent V1 remains.
+[Scoped audit](../../UI-01.08_Managed_Curation_Delivery.md).
+
+Historical checkpoints follow; their pending states do not override closeout.
+
 2026-10-12 21:35:47 America/Chicago. UI-01.08j M1/M2 complete; M3/M4 pending.
 
 Deployment0.20.0 source worker tests54 pass (4.15s); independent installationb

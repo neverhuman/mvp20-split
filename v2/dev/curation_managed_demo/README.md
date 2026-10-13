@@ -85,3 +85,12 @@ serve --pause-curation keeps the native curation worker unstarted while owner AP
 tool standby and UI are available. It permits measured recovery of retained work
 without exhausting bounded compiler rounds during diagnosis. It changes neither
 the provider policy nor the round ceiling; later start uses Deployment control.
+
+serving_copy resolves filesystem identities before rebasing configuration, including
+Z: mapped-drive/UNC aliases and references to earlier serving ancestors. It preserves
+external installations and schema bytes, rejects missing counterparts before copying,
+and never modifies old serving directories. serve verifies the selected gateway
+configuration/public root and exact HTTP index/JS/CSS bytes before curation activation.
+static-assets.json is the actual served-asset receipt; a successful build or copy
+alone is not cutover evidence. Tests/curation_managed_demo covers stale references,
+schema drift and a real HTTP endpoint returning stale assets.

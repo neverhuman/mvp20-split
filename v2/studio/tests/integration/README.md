@@ -113,3 +113,12 @@ browser campaign, requires selected Knowledge/research context, retains original
 receipt and terminal readback, checks responsive screens and fails without retry
 if the original provider/compiled graph is not ready. It does not launch a successor
 or claim scientific quality. Original incomplete outcomes remain evidence.
+
+curation_scientific_successor.mjs consumes an actual ready curation and original
+browser recovery hints. It checks four scientific invokes/artifact inputs, clicks
+the real managed successor control, verifies completed scientific results, selected
+Knowledge, next-context artifact preservation,1440/390 graph visibility/accessibility
+and scale fitted to available canvas space after viewport changes,
+and reload without another intent. review_only uses an existing successor journal
+for local/LAN recovery. No model request, injected graph or mocked owner route.
+The script is a gate, not evidence of success until an actual recorded run passes.

@@ -29,7 +29,7 @@ export function DomainView({ model, view }: { model: ExploreModel; view: Explore
     <RegionStatus region={view.regions.neighborhood} label="neighborhood" />
     {scene && neighborhood ? <>
       <div className="explore-caption"><h2>Connected knowledge</h2><span>{scene.nodes.length} concepts / {scene.edges.length} relationships</span></div>
-      <GraphCanvas nodes={scene.nodes} edges={scene.edges} selection={detail?.kind === "entity" ? entityKey(detail.record.reference) : null}
+      <GraphCanvas fitOnResize nodes={scene.nodes} edges={scene.edges} selection={detail?.kind === "entity" ? entityKey(detail.record.reference) : null}
         label="Domain graph neighborhood" select={id => { const row = neighborhood.entities.find(entity => entityKey(entity.reference) === id); if (row) select(row.reference); }} />
       <p>{scene.omittedEntities} concepts and {scene.omittedAssertions} relationships omitted from this graph window. Pan or zoom to reach offscreen concepts. Arrows show declared relationships, not proven causation.</p>
       <details><summary>Concept list for this neighborhood</summary><ul>{neighborhood.entities.map(entity => <li key={entityKey(entity.reference)}><button onClick={() => select(entity.reference)}>{entity.label}</button></li>)}</ul></details>

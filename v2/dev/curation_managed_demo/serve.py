@@ -13,6 +13,7 @@ from campaign_curation_fixture.recovery import read
 from campaign_curation_fixture.verify import filtered_environment
 from curation_live_qualification.run import credential
 from local_numeric_configuration import write
+from .static_identity import verify_static
 
 
 def peer_reads(api, environment, serving, output):
@@ -39,6 +40,7 @@ def serve(root, serving, output, *, duration, live=False, pause_curation=False):
     key=credential(Path('Z:/ssos/.env')) if live else None
     with session(root,serving,model_key=key) as api:
         key=None
+        verify_static(api, serving, output)
         bindings=load_bindings(root,serving/'owners.json',api.controller.routes)
         planning=bindings['planning']
         peer_reads(api,planning.environment,serving,output)

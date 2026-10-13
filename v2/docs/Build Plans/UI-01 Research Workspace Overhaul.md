@@ -2,17 +2,17 @@
 
 ## Canonical tracker
 
-- Status: primary_active; connected demo flow implemented; N2 complete; approved N3 curation implementation active.
-- Last refreshed: 2026-10-12 21:58:45 (America/Chicago).
+- Status: primary_active; G1/N1/N2/N3 complete; V1 integrated acceptance active.
+- Last refreshed: 2026-10-13 10:07:31 (America/Chicago).
 - Baseline: 62ea4966; owner-reported disconnected canvas and navigation review on 2026-10-07.
 - Owner: Studio experience, page models and presentation; service owners retain their contracts and state.
 - Parent: none; priority and mirrors in [Master Build Tracker](Master%20Build%20Tracker.md).
-- Overall implementation: **79.6875%**; Build99.609375%, Verification0%. Five equal delivery gates: G1, N1, N2, N3, V1. Build averages G1/N1/N2/N3; Verification is V1. G0 is a separate design/review prerequisite and earns no implementation credit.
+- Overall implementation: **80%**; Build100%, Verification0%. Five equal delivery gates: G1, N1, N2, N3, V1. Build averages G1/N1/N2/N3; Verification is V1. G0 is a separate design/review prerequisite and earns no implementation credit.
 - Design readiness: G0 complete; ELK directed layout and bounded topology ownership implemented.
-- Demonstrated behavior: connected graphs and question-first navigation verified against retained owner records; result-first comparison and full replacement acceptance remain.
-- Current phase/task: N3/UI-01.05/I1; implementing approved [UI-01.08](UI-01.08%20Campaign%20curation%20boundary%20decision.md). N2 complete100%; launch/provenance remain closed.
-- Next task: UI-01.08j/M3.4 bounded live-budget allocation and managed local/LAN delivery.
-- Blocker: Supported model/actual successor/browser qualified via08i100%; no owner decision needed. Managed demo lifecycle/cutover remains. $9.25 of additional authority unreserved; no more qualification calls.
+- Demonstrated behavior: actual scientific successor, connected execution/Knowledge, results and retained next-context verified locally/LAN; independent replacement and full interaction acceptance remain.
+- Current phase/task: V1 integrated acceptance; independent Studio consumer installation first.
+- Next task: keyboard/zoom/failure/context acceptance, then scoped parent drift audit.
+- Blocker: none requiring owner; no additional model call needed. Demo30slots/$7.50 remain unreserved.
 - Human acceptance: owner feedback is part of visual review; no new routine approval gates for campaign execution.
 - Active exception: owner explicitly reprioritized UI over worker diagnostics; LR-01 remains paused at25%, Build33.33%, Acceptance0%, with R2 receipt diagnosis preserved.
 - Pre-activation coherence: 2026-10-07 17:54:00, ready for G0. Existing topology/observation APIs, React Flow canvas and isolated Studio boundaries are available; meaningful layout and workflow acceptance are missing. No new backend contract is assumed approved by this plan.
@@ -23,18 +23,19 @@
 | G1 usable connected graph | 100% | G0 complete | One real retained campaign opens as a readable connected graph; branches, joins and nested work navigable; visual and behavioral proof |
 | N1 research entry and navigation | 100% | G1 complete | Research-question landing and connected workflow navigation with preserved selection/context |
 | N2 approach, execution and results | 100% | N1 complete | Understand approach, follow autonomous work, inspect/compare results and supporting evidence |
-| N3 next-campaign iteration | 98.4375% | N2 complete | Target weak/promising points, inspect proposed changes and follow predecessor/successor history |
+| N3 next-campaign iteration | 100% | N2 complete | Target weak/promising points, inspect proposed changes and follow predecessor/successor history |
 | V1 integrated acceptance and audit | 0% | N3 complete | Actual-owner user journey, independent consumer acceptance, scoped audit and explicit limitations |
 
 Each phase is a discrete unit of work. Complete its exit gate before dependent
 implementation. Expand the nearest phase into owned tasks as evidence warrants;
 do not create empty child plans or count plan-writing as delivered functionality.
 
+
 ## Objective and boundaries
 
 Owner schedule2026-10-08: target the week2026-10-12 through2026-10-16 for actual
 Knowledge UI, browser-started campaigns with live per-node progress, and LLM graph
-revision grounded in Knowledge. [UI-01.05](UI-01.05%20Knowledge%20Run%20and%20LLM%20Integration.md)
+revision grounded in Knowledge. [UI-01.05](Completed/UI-01.05%20Knowledge%20Run%20and%20LLM%20Integration.md)
 decomposes this existing unfinished N2/N3 scope: K1=100%, R1=100%, I1=0%. N2.2 owns service
 provenance, N2.4 Knowledge/reasoning and honest node-quality evidence, N2.5 admission/
 worker engagement, and N3 the between-campaign LLM/successor loop. Complete all N2
@@ -170,6 +171,19 @@ fixture/provider boundary and unchanged prior history. Several unresolved points
 must remain compatible with useful progress; no routine in-campaign approval queue.
 
 ## V1 — Acceptance that matches the user's task
+
+V1 is four equal ordered acceptance units, no additional parent weight:
+
+| Unit | Completion | Exit evidence |
+|---|---:|---|
+| V1.1 independent consumer | 0% active | Fresh locked Studio dependencies, every exact public schema/profile, type/build/owned checks, reproducible served bundle |
+| V1.2 integrated interaction | 0% | Actual question/evaluation/run/results/Knowledge/next journey; keyboard and browser zoom; desktop/narrow context preservation |
+| V1.3 failures and recovery | 0% | Explicitly labelled failure probes; stale/denied/unavailable views and original intent/context recovery without duplicate commands |
+| V1.4 parent closeout | 0% | Scoped drift reconciliation, experience findings disposition, exact replacement/evidence and archive |
+
+Earlier child evidence remains valid for unchanged behaviors; these units close
+only their additional integrated acceptance obligations. Long diagnostic direction
+presentation and narrow graph inspection are explicit V1.2 review findings.
 
 Walk the actual local UI from question through approach, graph inspection, results
 and next iteration. Inspect real rendered screens, keyboard behavior, browser zoom,
@@ -389,3 +403,5 @@ unapproved boundaries is implemented.
 ## 2026-10-12 09:06:13 live evaluation checkpoint
 
 P5.3 missing-capability original and actual browser1440/390 passed; returned to P5.2 supported graph correction. Six original slots/$1.50 held; zero calls remain. UI-01.08b proposes constrained generation and one additional $0.25 supported call. No serving cutover. Four live calls reported $0.242380500 cumulatively; new calls $0.085049250. Evidence: [retained results](../Audits/Evidence/UI-01.08-Live-v2/README.md). Earlier checkpoints describe historical allowance and status.
+
+2026-10-13 10:07:31: M3.4/M4 complete. Original g validated in28.859s; actual browser launched successor563e14a17f2e4539aeece1838dce80ec and four scientific tools completed. Exact Studio0.34.3 local/LAN1440/390 reviews pass, rendered screens inspected; serving-copy alias repair prevents stale bundles. No new model calls;30slots/$7.50 remain. [Scoped closeout audit](../Audits/UI-01.08_Managed_Curation_Delivery.md). Parent UI-01/V1 is next.
