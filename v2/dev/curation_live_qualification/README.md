@@ -84,3 +84,9 @@ changes. It cannot convert a retained abstention into an accepted graph.
 UI-01.08g prepare_semantics requires the retained v6 abstention,9old replays,
 11prior/$2.80 holds and explicitly approved12/$3.05 ceiling. One v7 original only;
 no credentials during preparation, no retries/fallback/reset.
+
+review_semantics reconciles the v7 abstention, old capability request and exhausted
+12/$3.05 ledger through actual owners/browser without provider calls.
+structural_witness validates the prior deterministic executed carry graph against
+the exact current generation schema; it never substitutes that graph for the model
+output or claims a live graph passed. It records original hashes and prior run ID.

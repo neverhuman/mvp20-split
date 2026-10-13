@@ -1,0 +1,106 @@
+{
+  "capability_requests": [],
+  "proposal": {
+    "authority": "proposal_only",
+    "decision_scope": "df081e1c48f1690437e2da8772ffdd6728f235b1a82534b015498b1509ae7b1d",
+    "outcome": {
+      "kind": "abstain",
+      "reason_code": "no_supported_change_or_gapless_proposal_needed"
+    },
+    "profile": "planning.campaign-curation-draft.v1",
+    "rationale": "The supplied reviewed context already contains a complete, supported next synthetic campaign baseline and the request constrains output to JSON only. However, no new unresolved capability gap is required to satisfy the available primitives and pinned tool bindings, and the requested graph edit from the prompt would introduce an unsupported root input/output wiring pattern for this schema-level proposal. To avoid inventing unsupported structure, I abstain rather than fabricate a future graph or request an unnecessary capability.",
+    "schema_version": "1",
+    "scientific_authority": "not_established",
+    "unresolved": []
+  },
+  "provider": {
+    "attempt": {
+      "engagement": {
+        "engagement_id": "curation-call-65170377ee1cf61bb98c549c3a63e8d8e8aec1df25f6d29dcb67ca2250319252",
+        "scope": {
+          "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336",
+          "tenant_id": "internal"
+        }
+      },
+      "ordinal": 1,
+      "request_sha256": "793997ef22146e7d8c0feb37daab0b67e67b4590ba1c66ae9439c331547143b5"
+    },
+    "envelope_sha256": "2541e927ec8f469ee6b2ecc5b4fcf00c6bc7a9941f1d7cefd2119ce6acd374c5",
+    "output_sha256": "b186410a8a6f0fffa3af9b503bdb2d8f438657aa31fbb2c4b59e49afa40d1df5",
+    "reservation_units": 250000000,
+    "usage": {
+      "accounting_units": 42460500,
+      "certainty": "reported",
+      "input_tokens": 55402,
+      "output_tokens": 202
+    }
+  },
+  "receipt": {
+    "created_at": "2026-10-13T01:08:01.271617Z",
+    "identity": {
+      "actor_id": "admin",
+      "command_family": "planning.curate_campaign",
+      "command_id": "f118d640a26d45a69f098c05bb912dea",
+      "schema_version": "1",
+      "scope": {
+        "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336",
+        "tenant_id": "internal"
+      }
+    },
+    "phase": "abstained",
+    "reason_code": "provider_abstained",
+    "reference": {
+      "curation_id": "curation-3c409219392a5434509aba06b84b427f24c404d61b112a386fb075ff640ad48a",
+      "scope": {
+        "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336",
+        "tenant_id": "internal"
+      }
+    },
+    "request_sha256": "65170377ee1cf61bb98c549c3a63e8d8e8aec1df25f6d29dcb67ca2250319252",
+    "revision": 3,
+    "updated_at": "2026-10-13T01:08:21.515739Z",
+    "wire_version": "1"
+  },
+  "specification": {
+    "context": {
+      "artifacts": [
+        {
+          "artifact_id": "98228b80754543f3bb7eb666dbbae661",
+          "media_type": "application/json",
+          "schema_ref": {
+            "schema_id": "search.specification",
+            "sha256": "e829b92d2145b0916847b06cb6e73c4a5aea17addea8bbdd1e9706dbd1cc79a7",
+            "version": "1"
+          },
+          "scope": {
+            "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336",
+            "tenant_id": "internal"
+          },
+          "sha256": "d14234f2432410742138825bf475ab4e32f442315a6c75a3003e1d627b65d0b1",
+          "size_bytes": 1749
+        }
+      ],
+      "draft": {
+        "content_sha256": "9e3b725872892f3e7ff0db393e1341b9c8a359eb05eae48b5e3d24081ca6a7f9",
+        "draft_id": "curation-fixture-curation-owner-20261012a-original",
+        "revision": 1,
+        "scope": {
+          "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336",
+          "tenant_id": "internal"
+        }
+      },
+      "knowledge": [],
+      "needs": [],
+      "predecessor": {
+        "plan_sha256": "a40d42aff4b53b0c28e8ca5e6b6736c6484a53fa2c43210a58170f78523a0373",
+        "revision": 9,
+        "run_id": "f44f4f297b4a4622b54d2dd8399048c6"
+      },
+      "questions": []
+    },
+    "direction": "Create one revised synthetic engineering campaign. Keep the single numeric.search-seed invocation, its exact installed tool binding and existing parameters artifact. Keep the result export. Add a required root input named previous_result with exactly the same value type as the existing result output. Add a root output named previous_result of that type and bind that finish output directly to the root input. The operator will carry the predecessor result into this input through Runtime successor admission. Retain the seed-to-finish control edge. Use the exact future campaign revision/context from the reviewed declaration. This is a data-carry software test only, not chemistry or a scientific improvement. Return the complete revised graph.",
+    "policy_id": "internal-curation-semantics-v7"
+  },
+  "validated_draft": null,
+  "wire_version": "1"
+}

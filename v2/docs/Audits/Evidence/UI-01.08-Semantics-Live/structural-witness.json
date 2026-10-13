@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "provider_calls": 0,
+  "new_campaigns": 0,
+  "scope": "Prior deterministic executed witness validates against exact current generation schema; not model-generated acceptance",
+  "fixture_sha256": "e6ab572d89d124b26e6e96fb02db929b5dc767b50357a06113c6dd96640acf14",
+  "current_envelope_sha256": "2541e927ec8f469ee6b2ecc5b4fcf00c6bc7a9941f1d7cefd2119ce6acd374c5",
+  "generation_schema_sha256": "0c532be5470c09a73ee71f342bbf9d6138fd78a9bef0338eadf8cc81d6559d92",
+  "prior_completed_successor": "b81abfe02efa4790a6adb8f6d72ac99a",
+  "supported_binding": {
+    "kind": "input",
+    "name": "previous_result"
+  },
+  "reasoning_effort": "none",
+  "model_effectiveness_established": false
+}

@@ -3,7 +3,7 @@
 ## Canonical tracker
 
 - Status: primary_active; connected demo flow implemented; N2 complete; approved N3 curation implementation active.
-- Last refreshed: 2026-10-12 20:04:25 (America/Chicago).
+- Last refreshed: 2026-10-12 20:13:30 (America/Chicago).
 - Baseline: 62ea4966; owner-reported disconnected canvas and navigation review on 2026-10-07.
 - Owner: Studio experience, page models and presentation; service owners retain their contracts and state.
 - Parent: none; priority and mirrors in [Master Build Tracker](Master%20Build%20Tracker.md).
@@ -11,8 +11,8 @@
 - Design readiness: G0 complete; ELK directed layout and bounded topology ownership implemented.
 - Demonstrated behavior: connected graphs and question-first navigation verified against retained owner records; result-first comparison and full replacement acceptance remain.
 - Current phase/task: N3/UI-01.05/I1; implementing approved [UI-01.08](UI-01.08%20Campaign%20curation%20boundary%20decision.md). N2 complete100%; launch/provenance remain closed.
-- Next task: Approved08g single v7 original/$0.25/8192, aggregate12/$3.05; finish isolated allowance installation/preparation before paid evaluation.
-- Blocker: Supported graph remains unqualified. Owner approved one v7 evaluation; preserve11old/$2.80 holds and stop after new original. No serving cutover.
+- Next task: Owner decision on [08h reasoning isolation](UI-01.08h%20Reasoning%20isolation%20decision.md): one original/$0.25/8192, same prompt/schema/model/task, additive profile and13/$3.30 aggregate preserving12holds. No repeat or fallback.
+- Blocker: V7 completed but abstained with an unsupported-wiring claim; prior executed carry graph validates against its exact schema.12/$3.05 holds exhausted. Actual outcome/browser recovery passes.08g83.33% (offline100/live100/acceptance-recovery50); supported graph unqualified.08h proposed0% isolates reasoning none->low; no new paid authority.
 - Human acceptance: owner feedback is part of visual review; no new routine approval gates for campaign execution.
 - Active exception: owner explicitly reprioritized UI over worker diagnostics; LR-01 remains paused at25%, Build33.33%, Acceptance0%, with R2 receipt diagnosis preserved.
 - Pre-activation coherence: 2026-10-07 17:54:00, ready for G0. Existing topology/observation APIs, React Flow canvas and isolated Studio boundaries are available; meaningful layout and workflow acceptance are missing. No new backend contract is assumed approved by this plan.
