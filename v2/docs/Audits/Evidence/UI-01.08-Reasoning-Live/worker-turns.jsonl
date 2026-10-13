@@ -1,0 +1,3 @@
+{"curation_id": "curation-5f404e7a6108d0f0342cb471151226b206fd164eb7f5a2149c7c35d71317b661", "status": "advanced", "phase": "awaiting_provider", "reason": "context_prepared", "elapsed_seconds": 2.9431533999741077}
+{"curation_id": "curation-5f404e7a6108d0f0342cb471151226b206fd164eb7f5a2149c7c35d71317b661", "status": "advanced", "phase": "proposed", "reason": "provider_proposal", "elapsed_seconds": 15.33821770036593}
+{"curation_id": "curation-5f404e7a6108d0f0342cb471151226b206fd164eb7f5a2149c7c35d71317b661", "status": "terminal", "phase": "failed", "reason": "campaign_evidence_reference_unselected", "elapsed_seconds": 0.8158216001465917}

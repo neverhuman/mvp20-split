@@ -94,3 +94,7 @@ output or claims a live graph passed. It records original hashes and prior run I
 UI-01.08h prepare_reasoning/material_reasoning preserve ten prior replays and
 verify unchanged prompt/schema before freezing v8 low reasoning. Original12/$3.05
 holds count toward13/$3.30; one original only, same8192/$0.25. No key in preparation.
+
+review_reasoning verifies the rejected v8 graph, truthful duplicate-node review,
+original receipts and exhausted13/$3.30 ledger through actual owners/browser.
+No provider enabled; failed output is neither repaired nor admitted.

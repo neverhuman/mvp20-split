@@ -41,6 +41,10 @@ try{
   await page.goto(input.origin+'/#view=curation&curation='+input.failed);
   await page.getByText(input.failure_label??'Revision preparation failed',{exact:true}).waitFor();
   await page.getByRole('heading',{name:input.outcome_heading??'No retained proposal',exact:true}).waitFor();
+  if(input.duplicate_nodes){
+    await page.getByText('Duplicate step identities prevent a reliable canvas. Inspect the structural changes and correct the proposal.',{exact:true}).waitFor();
+    assert.equal(await page.getByRole('button',{name:'Open new campaign',exact:true}).count(),0);
+  }
   await capture('failed-graph');
   await page.getByRole('button',{name:'Refresh record',exact:true}).click();
   await page.reload();await page.getByRole('heading',{name:input.outcome_heading??'No retained proposal',exact:true}).waitFor();

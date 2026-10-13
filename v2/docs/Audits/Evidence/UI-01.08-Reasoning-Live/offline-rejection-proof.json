@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "actual_runtime_rejection": {
+    "code": "duplicate_node",
+    "location": "root",
+    "message": "duplicate node"
+  },
+  "planning_rejection": "campaign_evidence_reference_unselected",
+  "node_ids": [
+    "finish",
+    "finish",
+    "seed"
+  ],
+  "provider_calls": 0,
+  "output_modified": false
+}

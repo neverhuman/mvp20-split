@@ -9,15 +9,15 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 ## Program Tracker
 
 - Status: UI-01 primary active; LAN-01 accepted/archived. LR-01 remains conditional; completed plans remain closed.
-- Last refreshed: 2026-10-12 20:22:45 (America/Chicago).
+- Last refreshed: 2026-10-12 20:37:18 (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
 - Current priority: schedule UI-01 Knowledge/run/LLM integration and UI-02 formula/structure views for2026-10-12 through2026-10-16; preserve the live demo.
 - Primary active task: UI-01/N3/I1, implementing approved [UI-01.08](UI-01.08%20Campaign%20curation%20boundary%20decision.md), P1=100%, P2=100%, P3=100%,P4=100%,P5=50%, child90%. N2=100%; launch/provenance remain closed. UI-01.05 K1/R1=100%, I1=90%, child96.67%.
-- Next task: Approved08h one reasoning-low original/$0.25/8192; prepare exact-scope13/$3.30 while preserving12old holds.
+- Next task: Review proposed08i bounded validation-feedback original/$0.25/8192; no paid authority remains. Same v8 model/prompt/schema; aggregate14/$3.55 would preserve13old holds.
 - Implementation completion: LAN-01=100%; UI-01 active78%, Build97.5%, Verification0%; UI-02=0%, P1/P2/P3/P4=0%; LR-01 paused25%, Build33.33%, Acceptance0%.
-- Blockers/dependencies: Supported graph remains unqualified.08h50% (offline100/evaluation50/acceptance0);97 tests/installm/preparation66074 pass. No paid request sent yet.
-- Latest checkpoint: 2026-10-12 20:24:36:08h50% (offline100/evaluation50/acceptance0);97tests/installm0.135.0/preparation66074 pass. Ten old replays exact,12old/$3.05 plus1/$0.25 remain. Single low-reasoning live outcome next; parent90/P5=50 unchanged.
-- Acceptance posture: N3/I1=90%, parent V1=0%; no supported full-engine acceptance/cutover. Ten campaign live attempts report cumulative$0.327334500; separate schema probes$0.012626250, not invoices. Demo unchanged.
+- Blockers/dependencies: 08h83.33% (offline100/evaluation100/acceptance-recovery50); live graph rejected for unselected Research evidence, independently duplicate_node. Recovery66647 passed/drained. Supported acceptance0%;13/$3.30 holds exhausted.
+- Latest checkpoint: 2026-10-12 20:37:18:08h83.33%; low reasoning produced a graph, rejected by validation. Actual owner/browser recovery passed; no successor. Proposed08i0% awaits one bounded feedback-informed original. Parent90/P5=50 unchanged.
+- Acceptance posture: N3/I1=90%, parent V1=0%; no supported full-engine acceptance/cutover. Eleven campaign live attempts report cumulative$0.377787000; separate schema probes$0.012626250, not invoices. Demo unchanged.
 - Active exception: owner scheduled four targets for next week. Preserve earned phase credit; sequence the bounded cross-plan handoffs below. Pull LR-01/UI-R01 forward only when their faults block the scheduled integration, with exact return points.
 
 ## Initial Delivery Boundary

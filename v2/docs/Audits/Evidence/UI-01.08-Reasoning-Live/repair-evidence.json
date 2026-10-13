@@ -1,0 +1,42 @@
+{
+  "diagnostic": {
+    "error_code": null,
+    "incomplete_reason": null,
+    "refused": false,
+    "response_bytes": 73287,
+    "response_sha256": "5aa5b0cd987e7bd2021cc9ed7164c7dcbc796f6e6c2c7d1fbcc2a2887c0417b3",
+    "shape": {
+      "input_tokens_present": true,
+      "message_items": 1,
+      "other_items": 0,
+      "output_text_blocks": 1,
+      "output_text_bytes": 879,
+      "output_tokens_present": true,
+      "reasoning_items": 0,
+      "usage_present": true
+    },
+    "status": "completed"
+  },
+  "transport_exchange": {
+    "endpoint": "https://api.openai.com/v1/responses",
+    "http_status": 200,
+    "method": "POST",
+    "received_at_utc": "2026-10-13T01:08:20.678956+00:00",
+    "request_body_sha256": "2541e927ec8f469ee6b2ecc5b4fcf00c6bc7a9941f1d7cefd2119ce6acd374c5",
+    "request_id": "req_a7e62531f9494601ae25d40db4e155ee"
+  },
+  "offline": {
+    "status": "passed",
+    "profile": "curation-v8",
+    "provider_calls": 0,
+    "schema_matches_passing_probe": true,
+    "original_replays": 10,
+    "tests": "97 passed in17.18s",
+    "installation": "curation-planning-installation-20261012m",
+    "only_behavioral_change": "reasoning none to low; new request/profile/configuration identities; objective/policy/prompt references reused"
+  },
+  "profile": "curation-v8",
+  "reasoning_effort": "low",
+  "maximum_output_tokens": 8192,
+  "old_profiles_unchanged": true
+}
