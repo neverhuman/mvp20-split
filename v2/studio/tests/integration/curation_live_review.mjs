@@ -40,10 +40,10 @@ try{
   await page.reload();await page.getByText('Not yet supplied',{exact:true}).waitFor();
   await page.goto(input.origin+'/#view=curation&curation='+input.failed);
   await page.getByText(input.failure_label??'Revision preparation failed',{exact:true}).waitFor();
-  await page.getByRole('heading',{name:'No retained proposal',exact:true}).waitFor();
+  await page.getByRole('heading',{name:input.outcome_heading??'No retained proposal',exact:true}).waitFor();
   await capture('failed-graph');
   await page.getByRole('button',{name:'Refresh record',exact:true}).click();
-  await page.reload();await page.getByRole('heading',{name:'No retained proposal',exact:true}).waitFor();
+  await page.reload();await page.getByRole('heading',{name:input.outcome_heading??'No retained proposal',exact:true}).waitFor();
   assert.deepEqual(errors,[]);
   assert.deepEqual(evidence.requests.filter(row=>row.method==='POST'&&[
     '/api/planning/v1/campaign-curations','/api/deployment/v1/campaign-successor-launches','/api/deployment/v1/campaign-launches'].includes(row.path)),[]);

@@ -20,7 +20,7 @@ def test_limits_cannot_be_widened(field, value):
         CurationAllowance.cost(context.model, context.limits.model_copy(update={field: value}))
 
 
-@pytest.mark.parametrize('version', ['1', '2', '3', '4', '6'])
+@pytest.mark.parametrize('version', ['1', '2', '3', '4', '6', '7'])
 def test_old_profiles_cannot_select_larger_output_even_in_approved_scope(version, monkeypatch):
     from amphora_agent_planning.curation_budget import ceiling
     context = source(version=version).request.document().context

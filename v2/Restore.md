@@ -1,63 +1,61 @@
 # Restore
 
-Refreshed: 2026-10-12 19:32:29 America/Chicago. Read FIRST after compaction.
-No agents/JARVIS; v1 read-only. Preserve untracked ocular PDF/DOCX. All test/install/
-replay processes FINISHED. Demo unchanged. No source edits during verification.
+Refreshed: 2026-10-12 19:58:47 America/Chicago. Read FIRST after compaction.
+All test/install/replay/browser/boundary processes FINISHED/drained. No agents or
+JARVIS;v1 read-only. Preserve ocular PDF/DOCX. Existing demo unchanged.
 
-## Current position
+## Current gate
 
-Owner continuation now authorizes proposed ONE v6 original/$0.25/8192.08f active66.67%;
-aggregate11/$2.80 preserves ten old holds. Patch0.133.1 passes92tests and installj. Preparation15778 FINISHED/pass/drained; eight replays pass,10/$2.55 retained,
-exactly1/$0.25 remains. Next run compatible qualification once; frozen08f roots.
-Earlier awaiting-decision language below is historical and superseded.
+08f complete100% (offline100/preparation100/outcome-recovery100). Its ONE authorized
+original returned HTTP200 completed,55110input/258output,$0.042493500 reported
+estimate. Valid ABSTENTION (successor_not_admitted), no graph/successor. Provider
+schema fix works full context; model conflated proposal and admission, selected
+graph with exhaustive primitives. All11/$2.80 original holds retained; zero remaining.
+No retries, refund or replacement output. Requestreq_55834e4044ab4a2d849f36a3ff16506a.
+Curationcuration-960ab355c4d92fb47d1e3ae1ef846b1eb138ba7ee6a57041ad1d90f198051e4a.
 
+08g active33.33% (offline100/liveevaluation0/acceptance0). Planning0.134.0 adds
+v7/fit.v9 prompt clarification: proposal vs admission and graph language vs tool
+inventory. Preserves factual limitations, old envelopes, schema and cost guards.
+94 tests pass16.76s(98527), independent installk(82943),9exact prior replays and
+boundary check(78137) allpass/FINISHED. No prompt-effectiveness claim yet.
+08f actual recovery77158 passes/drains: original receipt/currentview + v2missing,
+ledger11/$2.80/zero, production browser1440/390, accessibility/overflow/reload/no
+duplicate intent. Narrow abstention screenshot visually inspected. Serving unchanged.
 
-Owner requested a specific architecture note: Architecture.md now records the
-isolated numeric-bound trigger and versioned provider projection/local validation
-principle. Documentation-only; no new inference authorization or plan progress.
+NEXT: OWNER DECISION for
+proposed one v7 original/$0.25/8192 under aggregate12/$3.05 preserving11old holds.
+NO new allowance implemented or inference authorized. Routine offline repair is
+complete; cannot evaluate model effect without next bounded budget decision.
+Do not bypass original holds or reuse a new project to reset spending.
 
-Owner directed isolation. UI-01.08e complete100%: probe100/isolation100/repair100.
-Trigger: NumberConstant.value minimum=-1e100,maximum=1e100. Tiny schema reproduces
-HTTP200 incomplete/max_output_tokens, empty output, explicit0usage. Full schema
-works removing ONLY these two bounds; regexes stay. Eight probes: $0.24 held of
-self-imposed16/$0.48; token estimate$0.012626250, not invoice. STOP paid probes.
-Original structure case HTTP400 was a probe traversal bug, repaired/regression
-verified in structure-v2; faulty original retained as invalid experimental evidence.
+UI01=78/Build97.5/Verification0;N3/I1=90;UI01.05=96.67. UI-01.08=90,P5=50,
+P5.1/P5.3=100,P5.2/P5.4=0.08e100,08f100,08g33.33. Order UI01 -> UI02 -> POP01 ->
+ML01;LR01paused25/Build33.33. Do not advance dependent plans on API-only success.
 
-Planning0.133.0 v6/fit.v8 omits only provider-generation bounds, preserves local
-validation/old profiles/limits.97 tests pass16.28s(session1780 FINISHED); isolated
-installi pass(91190 FINISHED); all8 old envelope bytes/acceptance outcomes unchanged.
-Installed schema exactly matches passing full-schema probe. Evidence/audit:
-docs/Audits/Evidence/UI-01.08-Isolation/README.md. No supported campaign accepted.
+## Resume references
 
-## Next gate
+Evidence docs/Audits/Evidence/UI-01.08-Compatible and UI-01.08-Semantics; provider
+brief updated.08f source92tests/installj/preparation15778 passed before paid53303;
+paidworker returned valid abstention, so supported scenario assertion failed safely.
+Paid campaign estimates cumulatively$0.284874000; separate08eprobes$0.012626250,
+not invoices.08e8/$0.24held complete; no more probes.?1e100 removed only from
+provider generation, full local bounds still enforced. Architecture.md records it.
 
-Boundary check passed;08e implementation committed a83b3f75. Next owner decision for ONE full
-supported campaign qualification capped$0.25/8192output on v6. Prior10/$2.55 campaign
-holds exhausted; diagnostic authority does not extend campaign budget. Never reset,
-refund or bypass old holds. No further inference before decision; no serving cutover.
-This is a paid-qualification ceiling gate, not approval for the routine repair.
+Current isolated serving owners use installationj0.133.1 (11/$2.80 allowance).
+Installationk0.134.0 is candidate only; not serving. Devvenv editable source.
+Working paths .test-results/curation-live-compatible-20261012a/recovery;
+curation-owner-20261012a/serving;curation-semantics-material.json.
+material_semantics.py runs installedk and checks9originals, acceptedv2missing and
+v6supported-abstention only. Earlier seven remain invalid; bytes unchanged.
+Original folders curation-live-20261012a,curation-live-v2/v3/diagnosis/direct/extended/
+compatible-20261012a (each full named folder, not nested). Old frozen files immutable.
+Exactscope internal/owner-records-7e21ca85bd6044198b1585aa2c41d336.
+Physicalroot C:/Users/alb_p/AppData/Local/Packages/PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0/LocalCache/Local/Amphora/curation-qualification-20261012a.
+Authorized credentials Z:/ssos/.env OPENAI_API_KEY into memory/envonly; never print.
 
-UI-01.08=90%,P1-P4=100%,P5=50%,P5.1/P5.3=100%,P5.2/P5.4=0.
-UI01=78/Build97.5/Verification0;N3/I1=90;UI01.05=96.67.
-UI01 -> UI02 -> POP01 -> ML01. LR01paused25/Build33.33. UI01.06/07closed100.
-08a83.33,08b66.67,08c100,08d100 bounded diagnostics;08e100.
-
-## Resume details
-
-Installed .test-results/curation-planning-installation-20261012i/owner/environment/
-Scripts/python.exe. Isolated configs still installationh0.132.0. Dev
-curation_live_qualification/material_compatible.py exports v6 and8 exact replays,
-without keys/provider/owner startup. Source devvenv editable; uv locks updated.
-Priorfolders curation-live-20261012a,curation-live-v2-20261012a,live-v3,live-diagnosis,
-live-direct,live-extended (latter also curation prefix and20261012a suffix).
-Only oldv2missing accepted. v6 ordinary8192/$0.25; onlyv5exactscope16384/$0.30.
-Exactscope internal/owner-records-7e21ca85bd6044198b1585aa2c41d336, aggregate10/$2.55.
-Pinnedmodelgpt-5.4-mini-2026-03-17, directHTTPS/noSDK/proxy/retries. Authorized key
-Z:/ssos/.env OPENAI_API_KEY in memory/envonly; never print or store.
-
-P5.4 needs Deployment managed-curation recipe beyond current4nativeworkers.
-Demo localhosthttp127.0.0.1:57013 / LANhttps192.168.1.70:57013 remains old
-Planning0.107/schema0021 + Studio0.26; no new journal applied. Helper may expire
-2026-10-12 around20:00. Preservebaseline; no newdemo cutover authorized here.
-08e implementation commit a83b3f75; inspect git for subsequent handoff/push checkpoint.
+P5.4 needs Deployment managed-curation recipe beyond4nativeworkers. Demo older
+Planning0.107/schema0021+Studio0.26 at http://127.0.0.1:57013 and
+https://192.168.1.70:57013. Helper may have expired2026-10-12 around20:00; no cutover.
+Prior preparation443fa34e; follow-on checkpoint retains08f outcome and08g prompt
+repair. Inspect git log for its commit/push identity. All verification complete.

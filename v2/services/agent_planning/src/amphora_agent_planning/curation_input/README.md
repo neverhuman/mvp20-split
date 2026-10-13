@@ -41,3 +41,9 @@ UI-01.08c adds v4/fit.v6 after the diagnostic original returned incomplete/max_o
 UI-01.08d adds v5/fit.v7 with the same strict schema, instructions and reasoning none. Its distinct descriptor declares16384 maximum output tokens. Oldv1-v4 envelopes replay unchanged. Scoped cost authority is owned by curation_budget, not this module.
 
 UI-01.08e controlled probes isolated NumberConstant.value minimum=-1e100/maximum=1e100 as a generation trigger: full schema without just those bounds passes; a tiny bounded-number schema reproduces zero-usage incomplete. V6/fit.v8 has a distinct generation-schema hash and omits only those two provider constraints. Public CampaignCurationDraft/NumberConstant validation retains the bounds, finite-number rules and all acceptance authority. Oldv1-v5 generation bytes remain unchanged. Same prompt/reasoning none; ordinary8192/$0.25 ceiling, no new campaign allowance. Local numeric-bound enforcement is replacement-critical.
+
+V7/fit.v9 keeps the v6 generation schema, local validation and8192/$0.25 limits.
+Its distinct prompt explains proposal-stage limitations and separates graph-language
+primitives from scientific tool inventory. Neither non-admission nor unproven run
+origin alone vetoes authoring; neither is removed or promoted to acceptance. Old
+envelopes remain exact. Live effectiveness pending; no added paid allowance.

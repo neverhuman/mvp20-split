@@ -36,7 +36,7 @@ class CurationAllowance:
         context = request.document().context
         return context.model.provider_id == 'openai' and (
             context.output_schema.schema_id == 'planning.campaign-curation-draft'
-            or context.model.tokenizer.schema_id in {'planning.curation-openai-input-bound', 'planning.curation-openai-input-bound.v2', 'planning.curation-openai-input-bound.v3', 'planning.curation-openai-input-bound.v4', 'planning.curation-openai-input-bound.v5', 'planning.curation-openai-input-bound.v6'})
+            or context.model.tokenizer.schema_id in {'planning.curation-openai-input-bound', 'planning.curation-openai-input-bound.v2', 'planning.curation-openai-input-bound.v3', 'planning.curation-openai-input-bound.v4', 'planning.curation-openai-input-bound.v5', 'planning.curation-openai-input-bound.v6', 'planning.curation-openai-input-bound.v7'})
 
     @classmethod
     def cost(cls, model, limits):

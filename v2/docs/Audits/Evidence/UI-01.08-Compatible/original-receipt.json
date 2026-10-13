@@ -1,0 +1,26 @@
+{
+  "created_at": "2026-10-13T00:50:46.788573Z",
+  "identity": {
+    "actor_id": "admin",
+    "command_family": "planning.curate_campaign",
+    "command_id": "3e33b29ecf3544bba064630c7a8060dd",
+    "schema_version": "1",
+    "scope": {
+      "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336",
+      "tenant_id": "internal"
+    }
+  },
+  "phase": "queued",
+  "reason_code": null,
+  "reference": {
+    "curation_id": "curation-960ab355c4d92fb47d1e3ae1ef846b1eb138ba7ee6a57041ad1d90f198051e4a",
+    "scope": {
+      "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336",
+      "tenant_id": "internal"
+    }
+  },
+  "request_sha256": "6c8c87706ad70a88b9c0ad2fe55b12acc90c2115c0e776e0277a7a0b4625db83",
+  "revision": 0,
+  "updated_at": "2026-10-13T00:50:46.788573Z",
+  "wire_version": "1"
+}

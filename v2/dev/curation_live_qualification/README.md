@@ -72,3 +72,11 @@ budget is added and no campaign is qualified by this helper.
 UI-01.08f prepare_compatible freezes v6 with all8 prior exact replays, ten retained
 holds and one new$0.25/8192 original under11/$2.80 aggregate. run.py enforces this
 declaration; no keys read in preparation, no retries or budget reset.
+
+review_compatible verifies the actual v6 abstention and retained missing-capability
+record, receipt replay, browser display and11/$2.80 exhausted ledger. No provider
+is enabled; no graph is synthesized to replace the retained model abstention.
+
+material_semantics verifies nine original envelopes/acceptance outcomes including
+v6 abstention, and exports v7 prompt material without provider calls or allowance
+changes. It cannot convert a retained abstention into an accepted graph.

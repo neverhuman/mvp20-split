@@ -1,0 +1,124 @@
+{
+  "scope": {
+    "tenant_id": "internal",
+    "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336"
+  },
+  "diagnostic_stage": 4,
+  "maximum_new_physical_calls": 1,
+  "maximum_new_original_units": 250000000,
+  "initial": {
+    "scope": {
+      "tenant_id": "internal",
+      "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336"
+    },
+    "canonical_check": "passed",
+    "original_reservations": [
+      {
+        "engagement_id": "curation-call-034d45a1131f08b617f0028a9df741e2df522caf226431d5e0c37a8806ca4830",
+        "ordinal": 1,
+        "accounting_units": 300000000
+      },
+      {
+        "engagement_id": "curation-call-07ac1bca90a0043292f7c97aeef6e9d086a5563b0b99da4c60affcfc30f98d8a",
+        "ordinal": 1,
+        "accounting_units": 250000000
+      },
+      {
+        "engagement_id": "curation-call-08b242d6e50839ef90fd0d6ca33f41465814941230e9235c475be35c60bde2b2",
+        "ordinal": 1,
+        "accounting_units": 250000000
+      },
+      {
+        "engagement_id": "curation-call-0ff63c924db0e439116715f9fa728e47fa5fe5067902fc64528f25e60f4dc5b6",
+        "ordinal": 1,
+        "accounting_units": 250000000
+      },
+      {
+        "engagement_id": "curation-call-2349703d65699f593c3f3d9611e726d4c0e0c82780883a833467e6f4c9440dcf",
+        "ordinal": 1,
+        "accounting_units": 250000000
+      },
+      {
+        "engagement_id": "curation-call-242d726bbf40ff10d6bcf7dce55a758e04728bc523c2b8f1e48072868e3029c1",
+        "ordinal": 1,
+        "accounting_units": 250000000
+      },
+      {
+        "engagement_id": "curation-call-61a40426e49b23fd6df79afcfa216550639fafcdd03e4e4c906f14e3600638c9",
+        "ordinal": 1,
+        "accounting_units": 250000000
+      },
+      {
+        "engagement_id": "curation-call-690a6f0547d8f7b0f4d4716e90c6947853bb2eaf4dcf4d6b78e2cfabe4f58777",
+        "ordinal": 1,
+        "accounting_units": 250000000
+      },
+      {
+        "engagement_id": "curation-call-8cc32e12a033f197264623f9ffc2534680ab6dfb6ea054b625595b969900b83e",
+        "ordinal": 1,
+        "accounting_units": 250000000
+      },
+      {
+        "engagement_id": "curation-call-d94c362f6ab13c3c1795313420ef97d66de39b3faf834f555dd0e36a62c1c3f0",
+        "ordinal": 1,
+        "accounting_units": 250000000
+      }
+    ],
+    "reserved_slots": 10,
+    "reserved_units": 2550000000,
+    "maximum_slots": 11,
+    "maximum_units": 2800000000,
+    "authorization": "UI-01.08f",
+    "remaining_slots": 1,
+    "remaining_reservation_units": 250000000,
+    "unit": "usd_nanodollars",
+    "provider_enabled": false
+  },
+  "scenarios": [
+    "supported graph change and successor"
+  ],
+  "prior_originals_retained": true,
+  "repair": {
+    "diagnostic": {
+      "error_code": null,
+      "incomplete_reason": "max_output_tokens",
+      "refused": false,
+      "response_bytes": 70610,
+      "response_sha256": "7df89a2fa57b35d2f0e5f32c3a448a9d8a40a8263547700ca993933f28247f6e",
+      "shape": {
+        "input_tokens_present": true,
+        "message_items": 0,
+        "other_items": 0,
+        "output_text_blocks": 0,
+        "output_text_bytes": 0,
+        "output_tokens_present": true,
+        "reasoning_items": 0,
+        "usage_present": true
+      },
+      "status": "incomplete"
+    },
+    "transport_exchange": {
+      "endpoint": "https://api.openai.com/v1/responses",
+      "http_status": 200,
+      "method": "POST",
+      "received_at_utc": "2026-10-12T18:00:11.566574+00:00",
+      "request_body_sha256": "002fbc2604eae12da14996b145e5f3191370026b3923c7ab48263e243a23d6eb",
+      "request_id": "req_8865f0b9f0514b60930e36e17381ad0f"
+    },
+    "offline": {
+      "status": "passed",
+      "profile": "curation-v6",
+      "provider_calls": 0,
+      "schema_matches_passing_probe": true,
+      "original_replays": 8,
+      "tests": "92 passed in 15.74s",
+      "installation": "curation-planning-installation-20261012j",
+      "prior_isolation": "UI-01.08e",
+      "schema_sha256": "0c532be5470c09a73ee71f342bbf9d6138fd78a9bef0338eadf8cc81d6559d92"
+    },
+    "profile": "curation-v6",
+    "reasoning_effort": "none",
+    "maximum_output_tokens": 8192,
+    "old_profiles_unchanged": true
+  }
+}
