@@ -2,6 +2,7 @@
 
 import hashlib
 import json
+from functools import lru_cache
 
 from amphora_contracts_planning import (
     ExtractionDraft,
@@ -28,12 +29,33 @@ from ..context.snapshot import _constant, _object
 from .proposal import ProposalPolicy
 
 
+def _identity(profile):
+    return (profile.schema_id, profile.version, profile.sha256)
+
+
+@lru_cache(maxsize=1)
+def _profile_catalog():
+    # Installed contract schemas are static. Retain scalar identities only;
+    # request data, observations, permissions and handler objects are not cached.
+    return tuple((name, _identity(factory())) for name, factory in (
+        ('reference', reference_proposal_schema), ('extraction', extraction_draft_schema),
+        ('extraction_edit', extraction_edit_schema), ('campaign', campaign_draft_schema),
+        ('checkpoint', checkpoint_draft_schema), ('followup', checkpoint_followup_draft_schema),
+        ('curation', campaign_curation_draft_schema)))
+
+
+def _profile_kind(profile):
+    identity = _identity(profile)
+    return next((name for name, expected in _profile_catalog() if identity == expected), None)
+
+
 class OutputProfiles:
     @staticmethod
     def draft_model(profile):
-        if profile == extraction_draft_schema():
+        kind = _profile_kind(profile)
+        if kind == 'extraction':
             return ExtractionDraft
-        require(profile == extraction_edit_schema(), "unsupported_output_profile")
+        require(kind == 'extraction_edit', "unsupported_output_profile")
         return ExtractionDraftV2
 
     @staticmethod
@@ -47,29 +69,28 @@ class OutputProfiles:
 
     @staticmethod
     def supported(attempt):
-        return attempt.request.document().context.output_schema in (reference_proposal_schema(),
-            extraction_draft_schema(), extraction_edit_schema(), campaign_draft_schema(), checkpoint_draft_schema(),
-            checkpoint_followup_draft_schema(), campaign_curation_draft_schema())
+        return _profile_kind(attempt.request.document().context.output_schema) is not None
 
     @staticmethod
     def observation_model(attempt):
-        if attempt.request.document().context.output_schema in (extraction_draft_schema(), extraction_edit_schema(),
-                campaign_draft_schema(), checkpoint_draft_schema(), checkpoint_followup_draft_schema(), campaign_curation_draft_schema()):
+        if _profile_kind(attempt.request.document().context.output_schema) in (
+                'extraction', 'extraction_edit', 'campaign', 'checkpoint', 'followup', 'curation'):
             return TaskProviderObservation
         return ProviderObservation
 
     @classmethod
     def parse(cls, raw, attempt):
         profile = attempt.request.document().context.output_schema
-        if profile == reference_proposal_schema():
+        kind = _profile_kind(profile)
+        if kind == 'reference':
             return ProposalPolicy.parse(raw, attempt)
-        if profile == campaign_curation_draft_schema():
+        if kind == 'curation':
             return CurationOutput.parse(raw, attempt.request).proposal()
-        if profile == campaign_draft_schema():
+        if kind == 'campaign':
             return CampaignOutput.parse(raw, attempt.request).proposal()
-        if profile == checkpoint_draft_schema():
+        if kind == 'checkpoint':
             return CheckpointOutput.parse(raw, attempt.request).proposal()
-        if profile == checkpoint_followup_draft_schema():
+        if kind == 'followup':
             return FollowupOutput.parse(raw, attempt.request).proposal()
         model = cls.draft_model(profile)
         require(type(raw) is bytes and 0 < len(raw) <= 65536, "typed_output_size")

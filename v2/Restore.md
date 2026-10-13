@@ -1,8 +1,30 @@
 # Restore
 
-Refreshed: 2026-10-13 09:10:24 America/Chicago. Read FIRST after compaction.
+Refreshed: 2026-10-13 09:30:08 America/Chicago. Read FIRST after compaction.
 
 ## Active work and next steps
+
+Next start frozen serving13c/session13c --live --pause-curation, then controlled
+managed worker resume originalg,120s watch, quiesce on completion. Last round15/16.
+All tests/installations complete; no new paid call needed. Actual successor browser
+input .test-results/curation-demo-successor-20261013a/input.json remains unlaunched.
+
+
+Installed0.142 read-only benchmark81640 PASSED: round15 unchanged, zero ticks/provider;
+warm reads0.407-0.500s; matching3-read profile9.832->2.349s, schemas243->12.
+Evidence .test-results/curation-demo-compiler-recovery-20261013d.
+21 original replays passed .test-results/curation-profile-catalog-replays-20261013b.
+Independent suite95463 PASSED365/416.90s. Source365/438.21s passed. New serving13c prepared.
+
+Latest pushed cedccb7e (preparation cache checkpoint). Planning0.142 source catalog
+repair now implemented: providers/profiles.py closed7 primitive identity tuples,
+all schema-id/version/digest fields matched; source tests12792 PASSED365/438.21s. Log
+.test-results/curation-profile-catalog-source-a.txt. No source edits until done.
+Tests new providers/test_profile_catalog.py plus persistence/output/dispatch/compiler/worker.
+Independent0.142 installation .test-results/curation-planning-installation-20261013b PASSED;
+log .test-results/curation-profile-catalog-install-b.txt; --group profile_catalog
+then21 replays and read-only timing before final original-g round16. No new model calls.
+
 
 UI-01.08j/M3.4. All managed owners/workers/local/LAN STOPPED/drained45142;
 shared stores unchanged. No agents/JARVIS/v1 edits. Preserve ocular user PDF/DOCX.

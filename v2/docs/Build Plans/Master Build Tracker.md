@@ -1,6 +1,6 @@
 # Master Build Tracker
 
-Latest M3.4 checkpoint: 2026-10-13 09:10:24: Planning0.141 managed recovery saved exact original g but validation remains pending. Controlled65s window quiesced at round15/16; two capacity receipts were8s apart. No more rounds consumed. Read-only profile:243 schema generations take8.13/9.83s, from OutputProfiles.supported rebuilding seven static schemas for each retained observation. Next bounded repair: immutable installed-schema identity catalog, preserving exact digest checks and original bytes. All managed owners stopped/drained45142; no model call; original g remains saved, not ready.159 installed tests and21 originals pass; M3.4 stays0.
+Latest M3.4 checkpoint: 2026-10-13 09:30:08: Planning0.142 closed immutable schema identity catalog qualified:365 source/365 independent tests pass(438.21s/416.90s),21 exact original replay cases unchanged. Read-only original-g proof leaves round15 unchanged; matching three-read profile improves9.832s->2.349s and schema builds243->12; warm reads0.407-0.500s. No provider or compiler tick during benchmark. Frozen serving13c prepared for controlled final-round recovery; actual validation/launch remain unaccepted. No TTL/round/API/schema changes.
 
 ## Purpose and Authority
 
@@ -11,14 +11,14 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 ## Program Tracker
 
 - Status: UI-01 primary active; LAN-01 accepted/archived. LR-01 remains conditional; completed plans remain closed.
-- Last refreshed: 2026-10-13 09:10:24 (America/Chicago).
+- Last refreshed: 2026-10-13 09:30:08 (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
 - Current priority: schedule UI-01 Knowledge/run/LLM integration and UI-02 formula/structure views for2026-10-12 through2026-10-16; preserve the live demo.
 - Primary active task: UI-01/N3/I1, implementing approved [UI-01.08](UI-01.08%20Campaign%20curation%20boundary%20decision.md), P1=100%, P2=100%, P3=100%,P4=100%,P5=92.1875%, child98.4375%. N2=100%; launch/provenance remain closed. UI-01.05 K1/R1=100%, I1=98.4375%, child99.48%.
 - Next task: UI-01.08j/M3.4 bounded live-budget allocation and managed local/LAN delivery.
 - Implementation completion: LAN-01=100%; UI-01 active79.6875%, Build99.609375%, Verification0%; UI-02=0%, P1/P2/P3/P4=0%; LR-01 paused25%, Build33.33%, Acceptance0%.
 - Blockers/dependencies: M3.4 compiler scheduling repair and actual scientific successor; no owner decision now. Demo30 slots/$7.50 unreserved; no more qualification/model calls needed for retained g.
-- Latest checkpoint: Original g saved, validation pending at round15/16. Static output-schema regeneration is the remaining measured bottleneck; owners stopped for bounded repair.
+- Latest checkpoint: Planning0.142 source365/installed365,21 original replays and read-only performance check pass; controlled actual recovery from round15 is next.
 - Acceptance posture: Scientific model g retained; compile/launch remains pending.10 additional calls/$2.50 reserved; known reported$0.5213235 plus unknown b charge. Local/LAN browser of original scientific run passed.
 - Active exception: owner scheduled four targets for next week. Preserve earned phase credit; sequence the bounded cross-plan handoffs below. Pull LR-01/UI-R01 forward only when their faults block the scheduled integration, with exact return points.
 

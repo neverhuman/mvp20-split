@@ -1,5 +1,16 @@
 # Provider boundary and diagnostic capture
 
+Planning0.142 resolves the seven closed installed output profiles through one
+process-local tuple of scalar (schema id, version, digest) identities. First use
+generates the public schema references; later checks compare all three fields
+without rebuilding Pydantic JSON schemas. It stores no DTOs, requests, observations,
+grants or handlers. A replacement process rebuilds from its installed contracts.
+Unsupported identities retain their prior rejection/fallback behavior; parsing,
+capture verification and request policy still run for every observation. Catalog
+membership never grants execution or scientific validity. Tests/providers includes
+all seven profiles, altered hashes/ids, unchanged observation families and bounded
+generation counts; original observation/parser replay remains a release gate.
+
 UI-01.08/P2.2 adds the exact campaign-curation output schema to the closed
 catalog. Raw capture and TaskProviderObservation preserve the full typed outcome.
 For request_capabilities, the generic observation abstains from executable proposal;
