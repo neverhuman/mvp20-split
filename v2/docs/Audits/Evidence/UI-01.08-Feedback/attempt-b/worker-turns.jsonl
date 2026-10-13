@@ -1,0 +1,2 @@
+{"curation_id": "curation-5e301bda716c89f6ef0aedf4a748da8b916d3cd7880b7bddd7124d424030e8ee", "status": "advanced", "phase": "awaiting_provider", "reason": "context_prepared", "elapsed_seconds": 3.262112000025809}
+{"curation_id": "curation-5e301bda716c89f6ef0aedf4a748da8b916d3cd7880b7bddd7124d424030e8ee", "status": "terminal", "phase": "abstained", "reason": "provider_abstained", "elapsed_seconds": 6.449011999648064}

@@ -15,8 +15,8 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 - Primary active task: UI-01/N3/I1, implementing approved [UI-01.08](UI-01.08%20Campaign%20curation%20boundary%20decision.md), P1=100%, P2=100%, P3=100%,P4=100%,P5=50%, child90%. N2=100%; launch/provenance remain closed. UI-01.05 K1/R1=100%, I1=90%, child96.67%.
 - Next task: Approved08i additional$10; qualify same-scope53/$13.30 then first feedback-informed original. Stop on success or ceiling.
 - Implementation completion: LAN-01=100%; UI-01 active78%, Build97.5%, Verification0%; UI-02=0%, P1/P2/P3/P4=0%; LR-01 paused25%, Build33.33%, Acceptance0%.
-- Blockers/dependencies: No owner decision needed.08i33.33% offline/preparation100%;23budget tests/installn/preparation36909 passed. First live original next.08h83.33 supported acceptance remains0. Parent90/P5=50 unchanged.
-- Latest checkpoint: 2026-10-12 20:53:04:08i33.33%, offline/preparation100%;53/$13.30 ceiling preserves13/$3.30,40slots/$10 remain. Parent90/P5=50.
+- Blockers/dependencies: No owner decision needed.08i55.56% (offline100/evaluation66.67/recovery0); two feedback calls abstained.101tests/installo/13replays pass; medium preparation94429 passed/drained; thirdoriginal next.15holds/$3.80;38slots/$9.50 remain. Parent90/P5=50.
+- Latest checkpoint: 2026-10-12 20:58:01:Firstfeedback abstained ($0.045138 estimate); second frozen clarification prepared6648/pass, live66127 active; samev8 profile.08i50%.
 - Acceptance posture: N3/I1=90%, parent V1=0%; no supported full-engine acceptance/cutover. Eleven campaign live attempts report cumulative$0.377787000; separate schema probes$0.012626250, not invoices. Demo unchanged.
 - Active exception: owner scheduled four targets for next week. Preserve earned phase credit; sequence the bounded cross-plan handoffs below. Pull LR-01/UI-R01 forward only when their faults block the scheduled integration, with exact return points.
 

@@ -33,7 +33,7 @@ def check(connection, key, demand=None):
         "AND (convert_from(q.canonical_bytes,'UTF8')::jsonb #>> '{context,output_schema,schema_id}'="
         "'planning.campaign-curation-draft' OR convert_from(q.canonical_bytes,'UTF8')::jsonb "
         "#>> '{context,model,tokenizer,schema_id}' IN ('planning.curation-openai-input-bound',"
-        "'planning.curation-openai-input-bound.v2','planning.curation-openai-input-bound.v3','planning.curation-openai-input-bound.v4','planning.curation-openai-input-bound.v5','planning.curation-openai-input-bound.v6','planning.curation-openai-input-bound.v7','planning.curation-openai-input-bound.v8')) LIMIT :scan_limit"),
+        "'planning.curation-openai-input-bound.v2','planning.curation-openai-input-bound.v3','planning.curation-openai-input-bound.v4','planning.curation-openai-input-bound.v5','planning.curation-openai-input-bound.v6','planning.curation-openai-input-bound.v7','planning.curation-openai-input-bound.v8','planning.curation-openai-input-bound.v9')) LIMIT :scan_limit"),
         {**key, 'scan_limit': ceiling.maximum_calls + 1}).mappings())
     require(len(rows) + (demand is not None) <= ceiling.maximum_calls, 'curation_group_calls_exhausted')
     units = 0

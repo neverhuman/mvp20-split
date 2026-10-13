@@ -1,0 +1,12 @@
+{
+  "scope-declaration.json": "a61fcdc4c96163342013cd3e41955ef7f300eaa42fa5cce9712b26a008cd0474",
+  "roots.json": "4531d158d8a2b803401202c99aac6f0c61f8e5bd637c8e9e0b4f9ae4f48dfc42",
+  "curation-policy.json": "9333e77a3a91984493e4b58e758459b5f35557726e443631119ea26ae1691e86",
+  "curation-worker.json": "f91aba7a44d01343bbdcb1f568af009071724bde99f1cd1446edb6a0d70e0788",
+  "initial-allowance.json": "8c3626c94f7155bb83de462a2b5795d010d1f1f45171ccdb4dea2898af87345f",
+  "live-allowance.json": "ca3079ba11c05906f02262593a50ebdb1941891aaa3640e1e7da9c88170834a5",
+  "planning-material.json": "06bca06c91fe30b74dcb203517d5f57581ae91bc2095e4531083e74b4663402b",
+  "repair-evidence.json": "869b592350b045418dcbe3854224f522cd043f2400b4bf736dad61c3b0689750",
+  "feedback-direction.json": "2d193448139f916d06078717146f0d89936ac617d5e9f8ed5224ae0aae7188ef",
+  "prior-replay.json": "05407ab75bb8bfe24e7bf5fbc97f9bb11ff4a1849f8c804c1e8a7a5ed7cf02e4"
+}

@@ -104,3 +104,14 @@ envelopes and parse outcomes, same v8 prompt/schema, and13 old holds. Existing
 direction carries retained findings; no new API or automatic repair family. run.py
 selects one frozen original, inspecting outcome before any subsequent request.
 Production exact-scope ceiling53/$13.30 remains authoritative; no refund/reset.
+
+prepare_followup freezes one specifically reviewed direction against its retained
+failed/abstained parent. It verifies exact parent replay, immutable prep and actual
+Planning-owned allowance without starting peers or enabling a provider. The owner
+read-only query receives credentials only in its child environment. Prior policy/
+prompt/schema/configuration stay identical; original output is never edited.
+
+material_medium/prepare_medium isolate medium reasoning v9 after two v8
+feedback abstentions. Thirteen prior envelopes/parser outcomes unchanged; same
+second direction and source pins, only model configuration/profile identities new.
+Existing08i budget applies, no additional allowance.

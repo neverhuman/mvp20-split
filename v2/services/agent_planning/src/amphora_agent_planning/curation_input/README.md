@@ -49,3 +49,7 @@ origin alone vetoes authoring; neither is removed or promoted to acceptance. Old
 envelopes remain exact. Live effectiveness pending; no added paid allowance.
 
 V8/fit.v10 isolates reasoning none->low, keeping v7 prompt bytes and v6-compatible schema unchanged. Old request identities/captures remain immutable; no effectiveness claim before live qualification.
+
+UI-01.08i v9/fit.v11 isolates low->medium reasoning under the existing additional
+$10 authority. Same v8 prompt bytes, compatible generation schema, model and8192/
+$0.25 limits. Versions1..8 replay unchanged; no new allowance or output repair.

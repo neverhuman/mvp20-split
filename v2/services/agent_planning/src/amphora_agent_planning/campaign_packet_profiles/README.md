@@ -16,3 +16,7 @@ CampaignInstructions accepts only the packaged campaign-v1 profile and the origi
 Tests under tests/campaign_packet_profiles cover Unicode byte accounting, exact input boundary/output reserve, unsupported model/tokenizer combinations, malformed/oversize input, original window/total checks and arbitrary instruction rejection. Independent wheel verification must include the packaged prompt. Replacement must retain existing reviewed profile bytes and descriptor identities or add a new profile while preserving old replay. Slice planning, full packet construction, consumed observations, omissions, live adapter framing and durable preparation are subsequent boundaries.
 
 UI-01.08a: curation descriptor v2 selects packaged curation-v2 instructions and fit.v4 with readable schema framing. V1 defaults and replay stay unchanged. Prompt selection follows the exact reviewed request descriptor, never model or human text. Full rendered envelope plus1024 and the original output reserve still govern fitting.
+
+UI-01.08i v9/fit.v11 isolates low->medium reasoning under the existing additional
+$10 authority. Same v8 prompt bytes, compatible generation schema, model and8192/
+$0.25 limits. Versions1..8 replay unchanged; no new allowance or output repair.

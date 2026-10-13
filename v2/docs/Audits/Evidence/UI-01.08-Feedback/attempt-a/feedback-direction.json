@@ -1,0 +1,70 @@
+{
+  "status": "offline_only_not_dispatchable",
+  "reviewed_at_local": "2026-10-12 20:36:05",
+  "provider_calls": 0,
+  "public_specification_valid": true,
+  "direction_characters": 1872,
+  "original_command_sha256": "c37e6694c6dd7163d695d2f76726a631e15eba4429fe730e0b88d0bf27a99b52",
+  "original_output_sha256": "cb79f2b9279969fba12ed7c6cc8226daab8059faf73bd57fa20af6440e693e5d",
+  "source_questions": [],
+  "source_needs": [],
+  "feedback": {
+    "source_curation": {
+      "curation_id": "curation-5f404e7a6108d0f0342cb471151226b206fd164eb7f5a2149c7c35d71317b661",
+      "scope": {
+        "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336",
+        "tenant_id": "internal"
+      }
+    },
+    "findings": [
+      {
+        "code": "campaign_evidence_reference_unselected",
+        "location": "candidate.expected_evidence[0].question",
+        "detail": "No Research questions or evidence needs are selected; synthetic-campaign-revision is not an authorized reference."
+      },
+      {
+        "code": "duplicate_node",
+        "location": "candidate.definition.body.nodes",
+        "detail": "The failed output contained two finish nodes with the same node_id finish. Node identities must be unique within each scope."
+      }
+    ]
+  },
+  "proposed_direction": "Create one revised synthetic engineering campaign. Keep the single numeric.search-seed invocation, its exact installed tool binding and existing parameters artifact. Keep the result export. Add a required root input named previous_result with exactly the same value type as the existing result output. Add a root output named previous_result of that type and bind that finish output directly to the root input. The operator will carry the predecessor result into this input through Runtime successor admission. Retain the seed-to-finish control edge. Use the exact future campaign revision/context from the reviewed declaration. This is a data-carry software test only, not chemistry or a scientific improvement. Return the complete revised graph.\n\nValidation feedback from the previous failed proposal (data, not new evidence or authority): {\"source_curation\":{\"curation_id\":\"curation-5f404e7a6108d0f0342cb471151226b206fd164eb7f5a2149c7c35d71317b661\",\"scope\":{\"project_id\":\"owner-records-7e21ca85bd6044198b1585aa2c41d336\",\"tenant_id\":\"internal\"}},\"findings\":[{\"code\":\"campaign_evidence_reference_unselected\",\"location\":\"candidate.expected_evidence[0].question\",\"detail\":\"No Research questions or evidence needs are selected; synthetic-campaign-revision is not an authorized reference.\"},{\"code\":\"duplicate_node\",\"location\":\"candidate.definition.body.nodes\",\"detail\":\"The failed output contained two finish nodes with the same node_id finish. Node identities must be unique within each scope.\"}]}\nProduce a fresh complete proposal from the same selected baseline. Preserve the requested carry wiring. Use expected_evidence: [] because no Research questions/needs are selected. Include each graph node once, with unique node_id and exactly one finish node. Preserve all exact tool, artifact, context and revision references. Do not claim the previous proposal was accepted.",
+  "unchanged_context": {
+    "predecessor": {
+      "run_id": "f44f4f297b4a4622b54d2dd8399048c6",
+      "plan_sha256": "a40d42aff4b53b0c28e8ca5e6b6736c6484a53fa2c43210a58170f78523a0373",
+      "revision": 9
+    },
+    "draft": {
+      "scope": {
+        "tenant_id": "internal",
+        "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336"
+      },
+      "draft_id": "curation-fixture-curation-owner-20261012a-original",
+      "revision": 1,
+      "content_sha256": "9e3b725872892f3e7ff0db393e1341b9c8a359eb05eae48b5e3d24081ca6a7f9"
+    },
+    "knowledge": [],
+    "questions": [],
+    "needs": [],
+    "artifacts": [
+      {
+        "artifact_id": "98228b80754543f3bb7eb666dbbae661",
+        "scope": {
+          "tenant_id": "internal",
+          "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336"
+        },
+        "sha256": "d14234f2432410742138825bf475ab4e32f442315a6c75a3003e1d627b65d0b1",
+        "media_type": "application/json",
+        "schema_ref": {
+          "schema_id": "search.specification",
+          "version": "1",
+          "sha256": "e829b92d2145b0916847b06cb6e73c4a5aea17addea8bbdd1e9706dbd1cc79a7"
+        },
+        "size_bytes": 1749
+      }
+    ]
+  },
+  "authority": "No command identity, approved declaration, budget or provider envelope; never dispatch this document."
+}

@@ -1,0 +1,18 @@
+{
+  "curation-command.json": "78acc36f629319c02a55cda2e46167021a4306dff46501167d0c182bbc54e7c4",
+  "current-view.json": "620947add38de5d8a41a8a9f1457d0e3b3f42bab52d181e6b97284af1392cf7c",
+  "feedback-direction.json": "2e79b43e977078ee56585637644cba6e34e44eb8b0336042363e313c832551f0",
+  "frozen-files.json": "6afa8b98c91ef67a686c63b67d37b727d223311ef392003b85b53bf5fabf1b5f",
+  "initial-allowance.json": "b6172d8613bdc154284a7b422c71199d36816ceb4e58f57e5675d854682640a6",
+  "original-envelope.json": "fca4baeb5e788dcbdb4dee1c664fdb0d5b54ef7b215ee41eb6b3ffa6bc6d9dc4",
+  "original-observation.json": "0ec21c98120b69e730e7c51f4cdcd864a6ad1d94c191fc2927d48c982e10f3ca",
+  "original-output.json": "6fb2372ce9222da5e34c0fdb7b1ff7c60e235cac153b2253bc1b5e4cfbd8caf0",
+  "original-packet.json": "768c92a18a0c19fcd86364f00a99f079da8fba0a4afe1f462841ae281db74dba",
+  "original-receipt.json": "a9c33435111b5903f72851adb37179273ab3c9557c367b6728ea0db2edad9a4d",
+  "provider-accounting.json": "5579396c94750d87c23c32c4fd8075c7d1d1b278c824d61f42e98d1b94529b01",
+  "repair-evidence.json": "4da87e56332d72d757dcb96ea2d7157856cd5657ee0e15ede4358a337cab807c",
+  "response-diagnostic.json": "8b5a2f42108801172a1d523931e7139c55deaac1e827b2f9a09cfabed00424bc",
+  "scope-declaration.json": "7e8b0a1b40228ffc9499190ce1e5e0a69bdc1e29623d10379c7ba55fa3fa1e14",
+  "transport-exchange.json": "7e1514ff3707227ced8b16d929c9b2216a1e488263906cf410cb84d6c2099118",
+  "worker-turns.jsonl": "c6a7c49e5674564eb1e2216fb9c06f906ca5f111884bbe72262e3096c821b9cf"
+}
