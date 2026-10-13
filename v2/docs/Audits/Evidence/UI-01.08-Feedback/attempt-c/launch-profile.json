@@ -1,0 +1,22 @@
+{
+  "reference": {
+    "profile_id": "curation-integration",
+    "version": "1",
+    "sha256": "1e46adedf3d7ec3cc2151985de6775e8e50b6746976c6053da7e91ddab999436"
+  },
+  "scope": {
+    "tenant_id": "internal",
+    "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336"
+  },
+  "title": "Synthetic numerical successor integration",
+  "tools": [
+    {
+      "capability_id": "numeric.search-seed",
+      "release": "0.5.0",
+      "image_sha256": "7538bece7dceb2f6c395890abbc632fe58e188ba5120ef2d6ef070267809e878",
+      "contract_version": "1"
+    }
+  ],
+  "maximum_invocations": 4,
+  "maximum_deadline_seconds": 600
+}

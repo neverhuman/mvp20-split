@@ -16,3 +16,32 @@ No causal efficacy claim or automatic production repairloop acceptance.
 
 Actualbrowser/recovery qualification remains after third result. Parent90/P5=50.
 Attempt manifests hash synthetic/public evidence; no credentials or reasoning text.
+
+## Completed outcome and scoped drift audit
+
+2026-10-12 21:21:14:08i100%; offline/evaluation/acceptance-recovery100. Original medium
+call91968 completed; exact unedited model graph saved/validated and successor
+538bde8292ca4ca68b832cbab567768a completed with predecessor hash unchanged.
+Input55835/output3975,$0.059763750 estimate. Three new calls$0.149689500 reported,
+$.75 held. All16/$4.05 reservations preserved;37slots/$9.25 remain. Stop paid
+qualification calls on this success. All14 campaign calls cumulative$0.527476500
+reported; separate schema probes$0.012626250. Estimates are not invoices.
+
+Recovery41999 passed automated checks but visual inspection found offscreen nodes
+at390width. Studio0.34.1 fixes only whole-graph hiding after actualresize; saved
+viewport/pan survives. Navigation73994 passed including memory/reopen and visible
+nodes. Strengthened actual recovery3705 passed/drained on rebuilt isolated UI:
+real proposal/successor navigation, completedrun, nextiteration readiness, exact
+prior failed/abstained receipts, reload without duplicate intent, accessibility/
+overflow and visiblegraph at1440/390. Screenshots visually inspected; both nodes
+and their edge visible on narrowcanvas. No paid call/new campaign in recovery.
+
+Aligned: schema compatibility with local validators, immutablepriorcaptures,
+conservativebudget enforcement, modelproposal authority, Runtimecompile/admission,
+statecarry, browserrecovery and truthfulgraph rendering. Single syntheticcase is
+not general reliability, scientific validity or automaticrepair-loop acceptance.
+Remaining scoped work: P5.4 Deployment managedcuration recipe, installed process
+qualification, servingmigration/localLAN delivery and final audit. Existing demo
+unchanged. ParentP5=75/child95; N3/I1=95; UI01=79/Build98.75/V0.
+08g/h originals remain abstained/rejected; their deferred supportedacceptance is
+supplied by08i, never relabeled as successful historical outputs.

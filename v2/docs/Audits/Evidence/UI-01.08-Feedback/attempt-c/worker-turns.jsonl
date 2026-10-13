@@ -1,0 +1,6 @@
+{"curation_id": "curation-8f8645a9fcb62b4843d964c88a994c394f3c7bfa850380049cf225bea47bea76", "status": "advanced", "phase": "awaiting_provider", "reason": "context_prepared", "elapsed_seconds": 3.372611700091511}
+{"curation_id": "curation-8f8645a9fcb62b4843d964c88a994c394f3c7bfa850380049cf225bea47bea76", "status": "advanced", "phase": "proposed", "reason": "provider_proposal", "elapsed_seconds": 21.2621307997033}
+{"curation_id": "curation-8f8645a9fcb62b4843d964c88a994c394f3c7bfa850380049cf225bea47bea76", "status": "advanced", "phase": "compiling", "reason": "compiler_pending", "elapsed_seconds": 9.486495399847627}
+{"curation_id": "curation-8f8645a9fcb62b4843d964c88a994c394f3c7bfa850380049cf225bea47bea76", "status": "advanced", "phase": "compiling", "reason": "draft_saved", "elapsed_seconds": 5.780130499973893}
+{"curation_id": "curation-8f8645a9fcb62b4843d964c88a994c394f3c7bfa850380049cf225bea47bea76", "status": "advanced", "phase": "compiling", "reason": "compiler_pending", "elapsed_seconds": 13.859768200200051}
+{"curation_id": "curation-8f8645a9fcb62b4843d964c88a994c394f3c7bfa850380049cf225bea47bea76", "status": "terminal", "phase": "ready", "reason": "draft_validated", "elapsed_seconds": 15.400700300000608}

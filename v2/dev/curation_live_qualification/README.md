@@ -115,3 +115,8 @@ material_medium/prepare_medium isolate medium reasoning v9 after two v8
 feedback abstentions. Thirteen prior envelopes/parser outcomes unchanged; same
 second direction and source pins, only model configuration/profile identities new.
 Existing08i budget applies, no additional allowance.
+
+review_success reconciles the actual model-generated validated graph and executed
+state-carrying successor, prior failed/abstained originals, all held allowance and
+production browser desktop/narrow review. No new model call or campaign; browser
+uses exact retained recovery hints and checks reload without duplicate intent.

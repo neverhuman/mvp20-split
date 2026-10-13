@@ -99,3 +99,10 @@ GraphCanvas supports opt-in fitOnResize for proposal previews without saved view
 state. ResizeObserver refits actual geometry after canvas dimensions change; other
 consumers retain their existing viewport behavior. Proposal browser checks assert
 node bounds after resizing as well as actual edges.
+
+UI-01.08/P5.2 visual recovery correction: execution navigation opts into
+revealOnResize. A real canvas dimension change refits only if all loaded nodes
+would be outside the canvas. Initial/saved viewport, manual pan/zoom and partially
+visible context remain unchanged; no owner data or network behavior changes.
+Module browser checks require visible nodes after1440->390 resize and retain
+the existing hidden-pane/reopen viewport-memory assertion.

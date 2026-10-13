@@ -1,0 +1,21 @@
+{
+  "qualification": "UI-01.08i-P5-20261012",
+  "scope": {
+    "tenant_id": "internal",
+    "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336"
+  },
+  "maximum_total_slots": 53,
+  "maximum_original_units": 13300000000,
+  "maximum_per_call_units": 250000000,
+  "unit": "usd_nanodollars",
+  "model": "gpt-5.4-mini-2026-03-17",
+  "endpoint": "https://api.openai.com/v1/responses",
+  "egress": "approved_synthetic_engineering_only",
+  "automatic_retries": 0,
+  "other_scopes_authorized": false,
+  "prior_synthetic_holds_count": true,
+  "authorization": "UI-01.08i",
+  "approved_at_local": "2026-10-12 20:47:21",
+  "previous_declaration_sha256": "a61fcdc4c96163342013cd3e41955ef7f300eaa42fa5cce9712b26a008cd0474",
+  "maximum_output_tokens": 8192
+}

@@ -1,0 +1,11 @@
+{
+  "scope-declaration.json": "16cd8195b9acd0322bf627ce9b6336d008e2fd64251c1ddf553d38f60f1a2d02",
+  "roots.json": "fde1d5ec79c5553fba2046e9066656bab02ec3ed5d5665bb99d972bd81f57c16",
+  "curation-policy.json": "312ee5f62ceee0a04f4ef74c8c105c0b76dbe3126c2da068e86c5f24cc993f55",
+  "curation-worker.json": "f91aba7a44d01343bbdcb1f568af009071724bde99f1cd1446edb6a0d70e0788",
+  "initial-allowance.json": "413673d155f5e0850ecb279af8c58956bfd93b54949dde6acb76ad9d73852dab",
+  "live-allowance.json": "b0190cb6b921aeecbfea984469eb0765e975c019883b331422963736310c3561",
+  "planning-material.json": "c29319f2399164f07653ace520ad0d65ccfdde7e89e65af6609f017aca3a4e6e",
+  "repair-evidence.json": "1e558057f0afa6186728483225c3ec6a0df4082a088193d5c86f0b3c04b45f8a",
+  "feedback-direction.json": "2d193448139f916d06078717146f0d89936ac617d5e9f8ed5224ae0aae7188ef"
+}

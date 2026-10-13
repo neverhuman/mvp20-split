@@ -1,0 +1,43 @@
+{
+  "diagnostic": {
+    "error_code": null,
+    "incomplete_reason": null,
+    "refused": false,
+    "response_bytes": 80817,
+    "response_sha256": "57bbe21541f5138f0e1d5c52ab763f7ed41a11e2f9c806500a2d013bfa72f93c",
+    "shape": {
+      "input_tokens_present": true,
+      "message_items": 1,
+      "other_items": 0,
+      "output_text_blocks": 1,
+      "output_text_bytes": 1035,
+      "output_tokens_present": true,
+      "reasoning_items": 1,
+      "usage_present": true
+    },
+    "status": "completed"
+  },
+  "transport_exchange": {
+    "endpoint": "https://api.openai.com/v1/responses",
+    "http_status": 200,
+    "method": "POST",
+    "received_at_utc": "2026-10-13T01:59:28.508988+00:00",
+    "request_body_sha256": "bfa47b9ec8b41bca3b45cbf68dc205ef98d6b29bfe75f25c59db7b97cc92eed9",
+    "request_id": "req_9355560e01384da69d7c6ec293445c75"
+  },
+  "offline": {
+    "status": "passed",
+    "profile": "curation-v9",
+    "provider_calls": 0,
+    "schema_matches_passing_probe": true,
+    "original_replays": 13,
+    "tests": 101,
+    "tests_seconds": 26.4,
+    "installation": "Planning0.136.0 o",
+    "prompt_schema_unchanged": true
+  },
+  "profile": "curation-v9",
+  "reasoning_effort": "medium",
+  "maximum_output_tokens": 8192,
+  "old_profiles_unchanged": true
+}

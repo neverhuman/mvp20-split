@@ -1,74 +1,52 @@
 # Restore
 
-Refreshed: 2026-10-12 21:03:10 America/Chicago. Read FIRST after compaction.
-Owner approved NEXT$10 OF CALLS. No more budget questions while authority remains.
-Continue plans until real blocker, not milestones. No agents/JARVIS;v1read-only.
-Preserve untracked ocularPDF/DOCX. Existing demo unchanged.6bb58a9e latest pushed.
+Refreshed: 2026-10-12 21:21:14 America/Chicago. Read FIRST after compaction.
+All test/install/live/recovery processes FINISHED/drained. No agents/JARVIS;v1
+read-only. Preserve untracked ocularPDF/DOCX. Latest pushed004c3527; outcome/UI
+fix/docs not yet committed. Commit/push checkpoint, then CONTINUE P5.4 (no question).
 
-## Current task and processes
+## Current achievement and next task
 
-UI-01.08i P5.2 model qualification. Two new v8 calls completed/drained:
-a81320 and b66127 both abstained unsupported_requested_wiring. a had specific
-validation feedback, b added exact ScopeInput/finish-binding schema grounding.
-Reported estimates a$0.045138,b$0.044787750,total$0.089925750.15holds/$3.80 total;
-38slots/$9.50 of new authority remain (actual owner allowance checked on nextprep).
+08i COMPLETE100. Mediumv9 Planning0.136.0, same grounded task/prompt/schema,
+produced valid originalgraph; live91968 passed compile/validation/successorcomplete.
+Curation curation-8f8645a9fcb62b4843d964c88a994c394f3c7bfa850380049cf225bea47bea76.
+Successor538bde8292ca4ca68b832cbab567768a carries/exports original hash unchanged.
+Initial recovery41999 automatedpassed but visualfound blankcanvas afterresize.
+Studio0.34.1 revealOnResize fixes only allnodesoffcanvas onactualresize; saved
+viewport/pan and partiallyvisible context preserved. Navigation73994 passed.
+Isolated serving/public rebuilt (backup public-before-resize-20261012a).
+Strengthened recovery3705 passed/drained; actualowner/replay/browser1440/390,
+visible nodes/edges, nextiteration readiness, no duplicateintent. Screenshotsseen.
 
-Third experiment isolates low->medium effort, same pinnedmodel/prompt/schema,
-b direction2755chars and exact source pins; versionedv9/fit.v11,Planning0.136.0.
-No model switch, larger output cap, validator relaxation or replacementgraph.
-Official modeldocs fetchedconfirmmedium supported; pricing unchanged.
-Source/harness edits done; tests56970 FINISHED/101pass26.40s; installationo16048 FINISHED/pass.
-NO SOURCE/TEST/MODULE README EDITS until both complete. No third paid call yet.
-Medium preparation94429 FINISHED/pass/drained.13 exact prior replays pass.
-Medium policy added to isolated serving config. Thirdoriginal next.
-Next finishpreparation;
-verify v8/v9 prompt/schema equality, write offline readiness JSON, switch isolated
-serving owners.json Planning installation to o, invoke prepare_medium.py.
-Arguments: root,serving,legacy,original,previous,diagnosis,direct,extended,
-compatible,semantics,reasoning,feedback_a,feedback_b,offline,output.
-Target .test-results/curation-live-medium-20261012a. Then add policyid
-internal-curation-medium-v9 to serving/planning.json curation_policies.
-Commit/push prep, run curation_live_qualification.run --scenario supported.
-All retained outputs/commands immutable. Inspect each result; no blind retries.
+NEXT UI-01.08j Managed curation demo delivery.md M1: Deployment private closed
+planning-curation recipe. Use existingNativeBinding/WorkerGroup; pin relative
+policyfiles, exact installed Planningowner, only AMPHORA_ environment. Existing
+fourrecipes/no-worker manifests unchanged. Planning owns claims/budget/dispatch.
+Tests module deploy/local/tests/workers. M2 actualinstalledprovider-disabled
+lifecycle; M3 inventorybackup/migrateexistingdemo andlocalLAN delivery; M4audit.
+No unnecessary approval gate for routine plannedrecipe. No source edits duringtests.
 
-## Helpers and verification
+## Money and boundaries
 
-dev/curation_live_qualification/material_medium.py checks old11 plus feedbacka/b,
-exports v9. prepare_medium uses b direction unchanged; new modelconfiguration only,
-same objective/policy/prompt refs. Verify its replacements carefully before run.
-run.py accepts08i v8/v9 profile and original count initialslots-2. Owner ceiling
-53/$13.30 retains13/$3.30 preapproval; eachnewcall$0.25/8192, atmost40new. Stopsuccess.
-prepare_followup.py/read-only allowance/replay_extra.py support same-profile
-reviewed followups; no API keys except explicit live run. Its initial v8 bprep6648
-passed. Not an automatic production repair loop or new public API.
-23budget tests17.22s/installn0.135.1/11replays/prepa36909 passed beforea.
-Pending medium tests cover input/schema/budget/prompt/provider.
+User APPROVED NEXT$10. Exactscope ceiling53/$13.30 preserves13/$3.30 oldholds.
+Three newcalls reported$0.149689500 ($0.045138,$0.044787750,$0.059763750),$.75held.
+All16holds/$4.05 intact;37slots/$9.25 remain. STOP PAID QUALIFICATION CALLS because
+casepassed; unspentauthoritypersists. No refunds or new scope to evade budget.
+14campaigncalls cumulative$0.527476500; schema probes separate$0.012626250.
+These are estimates, not invoices. Single syntheticcase, no general/scientificclaim.
+08g/h originals remain abstained/rejected; deferredacceptance supplied08i, nowclosed.
 
-## Context and next acceptance
+## State and paths
 
-08h low reasoning produced graph but unselectedResearch question and duplicatefinish
-rejected correctly. Priorv7 unsupportedwiring claim disproven by executed structural
-witness; nowa/b repeated sameincorrectclaim. No complete supportedmodelgraph yet.
-P5.2 needs exact modelproposal compile/validation, successor execution and browser.
-After pass, actualowner/browser recovery (adapt campaign_curation_fixture/browser.py
-and studio/tests/integration/curation_recovery.mjs) with no new provider call.
-Then P5.4 managedcuration Deploymentrecipe/localLAN delivery; not yet implemented.
-Existing four native recipes lack planning-curation. ConfigurationPins must pin
-relative policyfiles, environment only AMPHORA_ references, owner controlsclaims.
-Existingdevharness uses CURATION_ env; productionrecipe will need proper adapter.
-
-## Trackers and paths
-
-08i scope expanded third controlled comparison: offline/prep100,evaluation66.67,
-acceptance/recovery0 =>55.56. ParentUI-01.08=90/P5=50;
-UI01=78/Build97.5/V0;UI01.05=96.67/I1=90. UI01->UI02->POP01->ML01;
-LR01paused25/Build33.33.08h83.33 (supported0,recovery100). Mirrors need update.
-Firsta evidence retained docs/Audits/Evidence/UI-01.08-Feedback/attempt-a.
-Need retainb and eventualc, actualrecovery and ledger before audit closeout.
-Working .test-results/curation-live-feedback-20261012a and b. Previousfolders
-curation-live-20261012a,curation-live-v2/v3/diagnosis/direct/extended/compatible/
-semantics/reasoning-20261012a. All have full curations prefix.
+ParentUI-01.08=95/P5=75(P5.1/2/3=100,P5.4=0). N3/I1=95;UI01=79/Build98.75/V0;
+UI01.05=98.33;08j0(allM0). UI01->UI02->POP01->ML01;LR01paused25/Build33.33.
+Durableaudit docs/Audits/Evidence/UI-01.08-Feedback, attempts a/b/c. Source tests
+101passed26.40s, isolatedPlanninginstallo0.136.0;13old exactreplays preserved.
+Working .test-results/curation-live-medium-20261012a; recoveryb is finalvisualproof.
+Reusable dev/curation_live_qualification/review_success.py; no modelcall inreview.
 Physicalroot C:/Users/alb_p/AppData/Local/Packages/PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0/LocalCache/Local/Amphora/curation-qualification-20261012a.
-Serving .test-results/curation-owner-20261012a/serving. Use dev/.venv python-Xutf8.
-Only authorized key Z:/ssos/.env OPENAI_API_KEY; memoryonly, never print.
-Existing demoPlanning0.107/schema0021+Studio0.26; helper may beexpired. No cutover.
+Serving .test-results/curation-owner-20261012a/serving. Planninginstallo, Studio0.34.1
+isolatedpublic. Originaldemo remainsolderPlanning0.107/schema0021+Studio0.26,
+helpermayexpired; no servingcutover. Read scopedREADME first for M3 actualstate.
+Onlykey Z:/ssos/.env OPENAI_API_KEY memoryonly; no keyneeded M1/M2.
+Use dev/.venv python-Xutf8, uv .venv/Scripts/uv.exe. Exactpathstage excludesocular.

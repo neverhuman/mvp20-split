@@ -71,7 +71,7 @@ export function NavigationPane({ navigation, monitor, observation, namedViews, e
       {expanded?.notes.map(note=><p role="status" key={note}>{note}</p>)}
     </section>}
     <div className="work-area">
-      <GraphCanvas key={viewKey} minimap={inline} focusNodes={inline ? focusNodes : undefined} nodes={shown.nodes} edges={shown.edges} selection={observation.selection} select={select}
+      <GraphCanvas key={viewKey} revealOnResize minimap={inline} focusNodes={inline ? focusNodes : undefined} nodes={shown.nodes} edges={shown.edges} selection={observation.selection} select={select}
         annotations={expanded?.annotations ?? Object.fromEntries((page?.nodes ?? []).filter(node => node.child_scope_count > 0).map(node =>
           [node.activation.activation_id, `${node.child_scope_count} ${node.activation.kind === 'scatter' ? 'parallel branches' : 'iterations'} available`]))}
         initialViewport={page ? navigation.viewportFor(viewKey) : undefined} rememberViewport={viewport => navigation.setViewport(viewport,viewKey)} />

@@ -1,0 +1,128 @@
+{
+  "launch": {
+    "wire_version": "1",
+    "profile_kind": "campaign-successor-launch.v1",
+    "identity": {
+      "schema_version": "1",
+      "command_family": "campaign.launch_successor",
+      "command_id": "1f70a1082f904628979cde4b98542a9e",
+      "scope": {
+        "tenant_id": "internal",
+        "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336"
+      },
+      "actor_id": "admin"
+    },
+    "request_sha256": "30bb5a39782d8b402cd596dfc99d83346b98f99ba2c90c1360e6b0a6c8016574",
+    "profile": {
+      "profile_id": "curation-integration",
+      "version": "1",
+      "sha256": "1e46adedf3d7ec3cc2151985de6775e8e50b6746976c6053da7e91ddab999436"
+    },
+    "predecessor": {
+      "run_id": "f44f4f297b4a4622b54d2dd8399048c6",
+      "plan_sha256": "a40d42aff4b53b0c28e8ca5e6b6736c6484a53fa2c43210a58170f78523a0373",
+      "revision": 9
+    },
+    "revision": 8,
+    "phase": "released",
+    "reason_code": null,
+    "created_at": "2026-10-13T02:09:49.809430Z",
+    "updated_at": "2026-10-13T02:10:10.770590Z",
+    "admission": {
+      "schema_version": "1",
+      "outcome": {
+        "status": "accepted",
+        "binding": {
+          "identity": {
+            "schema_version": "1",
+            "command_family": "graph.admit_draft_successor",
+            "command_id": "1f70a1082f904628979cde4b98542a9e",
+            "scope": {
+              "tenant_id": "internal",
+              "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336"
+            },
+            "actor_id": "admin"
+          },
+          "request_sha256": "3c3c512815b94c6f953644d91c0eb6418e9754e7a46ce864ff9af1524d4d57ce",
+          "operation_id": "a28d23183cbb4964b180859189fa1e9e"
+        },
+        "committed": {
+          "kind": "run",
+          "object_id": "538bde8292ca4ca68b832cbab567768a",
+          "revision": 0
+        }
+      }
+    },
+    "run_id": "538bde8292ca4ca68b832cbab567768a",
+    "workers": {
+      "expected": 3,
+      "ready": 0
+    }
+  },
+  "run": {
+    "schema_version": "3",
+    "scope": {
+      "tenant_id": "internal",
+      "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336"
+    },
+    "run_id": "538bde8292ca4ca68b832cbab567768a",
+    "plan_sha256": "753adc39f1d9e228b0f052896fb4d573d28cf54c704be3e7648b092a9e8c0fa6",
+    "status": "completed",
+    "revision": 9,
+    "node_count": 2,
+    "budget_limit": 4,
+    "reserved": 0,
+    "spent": 1,
+    "stop_reason": null,
+    "nodes": [
+      {
+        "activation_id": "33d5ee87554435cbf34f34f9591f413859a5633f7ab409b886cc26ef05fae3a5",
+        "path": {
+          "schema_version": "2",
+          "node_id": "finish",
+          "occurrences": []
+        },
+        "kind": "finish",
+        "status": "succeeded",
+        "reason_code": null
+      },
+      {
+        "activation_id": "bdbb6d0ce80bff5bd3e9aa3531a48b25a9627f401351f889fca85041f03746a1",
+        "path": {
+          "schema_version": "2",
+          "node_id": "seed",
+          "occurrences": []
+        },
+        "kind": "invoke",
+        "status": "succeeded",
+        "reason_code": null
+      }
+    ],
+    "next_after": null
+  },
+  "lineage": {
+    "schema_version": "1",
+    "scope": {
+      "tenant_id": "internal",
+      "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336"
+    },
+    "run_id": "538bde8292ca4ca68b832cbab567768a",
+    "plan_sha256": "753adc39f1d9e228b0f052896fb4d573d28cf54c704be3e7648b092a9e8c0fa6",
+    "predecessor": {
+      "run_id": "f44f4f297b4a4622b54d2dd8399048c6",
+      "plan_sha256": "a40d42aff4b53b0c28e8ca5e6b6736c6484a53fa2c43210a58170f78523a0373",
+      "revision": 9
+    },
+    "carried": [
+      {
+        "target_port": "previous_result",
+        "source": {
+          "kind": "run_output",
+          "port": "result"
+        },
+        "expected_value_sha256": "94313a8063f3c8e962a2d092c733cc6fc273a3e84b9e2d024809e70c289264fa"
+      }
+    ],
+    "transfer_sha256": "fe335e798411f1539ea2ea1516bbb7dbcbfd88d7bd9bbb23871a3402bbdc6407"
+  }
+}

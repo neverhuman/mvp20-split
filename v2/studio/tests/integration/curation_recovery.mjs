@@ -24,6 +24,14 @@ try{
   async function screenshot(name,width){
     await page.setViewportSize({width,height:width===390?844:1100});
     assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),true);
+    if(name!=='next-curation-ready')await page.waitForFunction(()=>{
+      const canvas=document.querySelector('.react-flow');if(!canvas)return false;
+      const bounds=canvas.getBoundingClientRect();
+      return [...canvas.querySelectorAll('.react-flow__node')].some(node=>{
+        const box=node.getBoundingClientRect();
+        return box.width>0&&box.height>0&&box.right>bounds.left&&box.left<bounds.right&&box.bottom>bounds.top&&box.top<bounds.bottom;
+      });
+    });
     const issues=(await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21aa']).analyze()).violations;
     assert.deepEqual(issues.map(row=>row.id),[]);
     const file=name+'-'+width+'.png';await page.screenshot({path:resolve(output,file),fullPage:true});evidence.screenshots.push(file);

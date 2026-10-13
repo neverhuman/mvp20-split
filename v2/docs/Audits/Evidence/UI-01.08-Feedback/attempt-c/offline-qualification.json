@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "profile": "curation-v9",
+  "provider_calls": 0,
+  "schema_matches_passing_probe": true,
+  "original_replays": 13,
+  "tests": 101,
+  "tests_seconds": 26.4,
+  "installation": "Planning0.136.0 o",
+  "prompt_schema_unchanged": true
+}

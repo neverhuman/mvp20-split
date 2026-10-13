@@ -1,0 +1,276 @@
+{
+  "status": "passed",
+  "scenario": "supported",
+  "timestamp_local": "2026-10-12 21:10:11",
+  "curation": {
+    "capability_requests": [],
+    "proposal": {
+      "authority": "proposal_only",
+      "decision_scope": "bdb59210473b6833efef8c5d1983ec8f69e1c3bc2040988fac54eb9622d9b842",
+      "outcome": {
+        "candidate": {
+          "definition": {
+            "body": {
+              "edges": [
+                {
+                  "route": "next",
+                  "source": "seed",
+                  "target": "finish"
+                }
+              ],
+              "inputs": [
+                {
+                  "name": "previous_result",
+                  "value_type": {
+                    "kind": "artifact",
+                    "media_type": "application/json",
+                    "representation": "search.checkpoint",
+                    "schema_ref": {
+                      "schema_id": "search.checkpoint",
+                      "sha256": "2badaa34bf414e5749c0c0c646d7ed6d5fbbcb3d3a5dfa9f2a3c2a8354b28184",
+                      "version": "1"
+                    },
+                    "unit": "1"
+                  }
+                }
+              ],
+              "nodes": [
+                {
+                  "checkpoint": null,
+                  "inputs": [
+                    {
+                      "port": "parameters",
+                      "source": {
+                        "artifact": {
+                          "artifact_id": "98228b80754543f3bb7eb666dbbae661",
+                          "media_type": "application/json",
+                          "schema_ref": {
+                            "schema_id": "search.specification",
+                            "sha256": "e829b92d2145b0916847b06cb6e73c4a5aea17addea8bbdd1e9706dbd1cc79a7",
+                            "version": "1"
+                          },
+                          "scope": {
+                            "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336",
+                            "tenant_id": "internal"
+                          },
+                          "sha256": "d14234f2432410742138825bf475ab4e32f442315a6c75a3003e1d627b65d0b1",
+                          "size_bytes": 1749
+                        },
+                        "kind": "artifact",
+                        "representation": "search.specification",
+                        "unit": "1"
+                      }
+                    }
+                  ],
+                  "kind": "invoke",
+                  "node_id": "seed",
+                  "timeout_seconds": 60,
+                  "tool": {
+                    "capability_id": "numeric.search-seed",
+                    "contract_version": "1",
+                    "image_sha256": "7538bece7dceb2f6c395890abbc632fe58e188ba5120ef2d6ef070267809e878",
+                    "release": "0.5.0"
+                  }
+                },
+                {
+                  "kind": "finish",
+                  "node_id": "finish",
+                  "outputs": [
+                    {
+                      "port": "result",
+                      "source": {
+                        "kind": "output",
+                        "node_id": "seed",
+                        "port": "result"
+                      }
+                    },
+                    {
+                      "port": "previous_result",
+                      "source": {
+                        "kind": "input",
+                        "name": "previous_result"
+                      }
+                    }
+                  ]
+                }
+              ],
+              "outputs": [
+                {
+                  "name": "result",
+                  "value_type": {
+                    "kind": "artifact",
+                    "media_type": "application/json",
+                    "representation": "search.checkpoint",
+                    "schema_ref": {
+                      "schema_id": "search.checkpoint",
+                      "sha256": "2badaa34bf414e5749c0c0c646d7ed6d5fbbcb3d3a5dfa9f2a3c2a8354b28184",
+                      "version": "1"
+                    },
+                    "unit": "1"
+                  }
+                },
+                {
+                  "name": "previous_result",
+                  "value_type": {
+                    "kind": "artifact",
+                    "media_type": "application/json",
+                    "representation": "search.checkpoint",
+                    "schema_ref": {
+                      "schema_id": "search.checkpoint",
+                      "sha256": "2badaa34bf414e5749c0c0c646d7ed6d5fbbcb3d3a5dfa9f2a3c2a8354b28184",
+                      "version": "1"
+                    },
+                    "unit": "1"
+                  }
+                }
+              ]
+            },
+            "campaign_id": "synthetic-curation-seed",
+            "context": [
+              {
+                "identity": "3a4ac8e808774fb2a7e9ac492c5fb5f4",
+                "kind": "source",
+                "revision": "1",
+                "sha256": "7180a153401ef19b29a2e8c8903507ff1ebdc6974f02b1bb2a1f90046e58c89d"
+              },
+              {
+                "identity": "958a13ffbaf4448e8d0e312debbf6119",
+                "kind": "policy",
+                "revision": "1",
+                "sha256": "79e1031d4f9b36d685825ab6967ffa733baa4348e817684f1163544af1cd4e34"
+              },
+              {
+                "identity": "c023fcf7f33a4e81babcf2f218fa1dab",
+                "kind": "model",
+                "revision": "1",
+                "sha256": "50e0f3498d0cee9f589dec6840d1f717236305f40bc6c4bda47090c8f6dbbeec"
+              },
+              {
+                "identity": "98228b80754543f3bb7eb666dbbae661",
+                "kind": "source",
+                "revision": "1",
+                "sha256": "d14234f2432410742138825bf475ab4e32f442315a6c75a3003e1d627b65d0b1"
+              }
+            ],
+            "profile": "deterministic-v3",
+            "revision": 2,
+            "schema_version": "4",
+            "scope": {
+              "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336",
+              "tenant_id": "internal"
+            }
+          },
+          "expected_evidence": [],
+          "kind": "future_campaign",
+          "title": "Synthetic curation carry-forward revision"
+        },
+        "gaps": [],
+        "kind": "propose_campaign"
+      },
+      "profile": "planning.campaign-curation-draft.v1",
+      "rationale": "This proposal preserves the reviewed single numeric.search-seed step, keeps the explicit seed\u2192finish dependency and result export, and adds the requested successor carry-through via a root previous_result input/output pair without inventing any new capability. It is a software-graph revision only, with no scientific authority claim.",
+      "schema_version": "1",
+      "scientific_authority": "not_established",
+      "unresolved": []
+    },
+    "provider": {
+      "attempt": {
+        "engagement": {
+          "engagement_id": "curation-call-699fbac9550f89f657533a93c09731396982bbc015522374c1268749cf3141c9",
+          "scope": {
+            "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336",
+            "tenant_id": "internal"
+          }
+        },
+        "ordinal": 1,
+        "request_sha256": "74c3ec53d99116acb15e6f841fa1c065d794a5d98ce2f16b5b8716c4302e46d4"
+      },
+      "envelope_sha256": "531f82af4a2c9bebd0b15059e2cd6cede294a9e492681f172bcd5f3ac409088a",
+      "output_sha256": "46ef25b5606943fa57752d3c4aa05369e768624f9dae9d18e2b39803ba9b24aa",
+      "reservation_units": 250000000,
+      "usage": {
+        "accounting_units": 59763750,
+        "certainty": "reported",
+        "input_tokens": 55835,
+        "output_tokens": 3975
+      }
+    },
+    "receipt": {
+      "created_at": "2026-10-13T02:08:18.550840Z",
+      "identity": {
+        "actor_id": "admin",
+        "command_family": "planning.curate_campaign",
+        "command_id": "92c4d39b6aaf4906a5678f99fe592502",
+        "schema_version": "1",
+        "scope": {
+          "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336",
+          "tenant_id": "internal"
+        }
+      },
+      "phase": "ready",
+      "reason_code": "draft_validated",
+      "reference": {
+        "curation_id": "curation-8f8645a9fcb62b4843d964c88a994c394f3c7bfa850380049cf225bea47bea76",
+        "scope": {
+          "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336",
+          "tenant_id": "internal"
+        }
+      },
+      "request_sha256": "699fbac9550f89f657533a93c09731396982bbc015522374c1268749cf3141c9",
+      "revision": 8,
+      "updated_at": "2026-10-13T02:09:48.732796Z",
+      "wire_version": "1"
+    },
+    "specification": {
+      "context": {
+        "artifacts": [
+          {
+            "artifact_id": "98228b80754543f3bb7eb666dbbae661",
+            "media_type": "application/json",
+            "schema_ref": {
+              "schema_id": "search.specification",
+              "sha256": "e829b92d2145b0916847b06cb6e73c4a5aea17addea8bbdd1e9706dbd1cc79a7",
+              "version": "1"
+            },
+            "scope": {
+              "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336",
+              "tenant_id": "internal"
+            },
+            "sha256": "d14234f2432410742138825bf475ab4e32f442315a6c75a3003e1d627b65d0b1",
+            "size_bytes": 1749
+          }
+        ],
+        "draft": {
+          "content_sha256": "9e3b725872892f3e7ff0db393e1341b9c8a359eb05eae48b5e3d24081ca6a7f9",
+          "draft_id": "curation-fixture-curation-owner-20261012a-original",
+          "revision": 1,
+          "scope": {
+            "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336",
+            "tenant_id": "internal"
+          }
+        },
+        "knowledge": [],
+        "needs": [],
+        "predecessor": {
+          "plan_sha256": "a40d42aff4b53b0c28e8ca5e6b6736c6484a53fa2c43210a58170f78523a0373",
+          "revision": 9,
+          "run_id": "f44f4f297b4a4622b54d2dd8399048c6"
+        },
+        "questions": []
+      },
+      "direction": "Create one revised synthetic engineering campaign. Keep the single numeric.search-seed invocation, its exact installed tool binding and existing parameters artifact. Keep the result export. Add a required root input named previous_result with exactly the same value type as the existing result output. Add a root output named previous_result of that type and bind that finish output directly to the root input. The operator will carry the predecessor result into this input through Runtime successor admission. Retain the seed-to-finish control edge. Use the exact future campaign revision/context from the reviewed declaration. This is a data-carry software test only, not chemistry or a scientific improvement. Return the complete revised graph.\n\nValidation feedback from the previous failed proposal (data, not new evidence or authority): {\"source_curation\":{\"curation_id\":\"curation-5f404e7a6108d0f0342cb471151226b206fd164eb7f5a2149c7c35d71317b661\",\"scope\":{\"project_id\":\"owner-records-7e21ca85bd6044198b1585aa2c41d336\",\"tenant_id\":\"internal\"}},\"findings\":[{\"code\":\"campaign_evidence_reference_unselected\",\"location\":\"candidate.expected_evidence[0].question\",\"detail\":\"No Research questions or evidence needs are selected; synthetic-campaign-revision is not an authorized reference.\"},{\"code\":\"duplicate_node\",\"location\":\"candidate.definition.body.nodes\",\"detail\":\"The failed output contained two finish nodes with the same node_id finish. Node identities must be unique within each scope.\"}]}\nProduce a fresh complete proposal from the same selected baseline. Preserve the requested carry wiring. Use expected_evidence: [] because no Research questions/needs are selected. Include each graph node once, with unique node_id and exactly one finish node. Preserve all exact tool, artifact, context and revision references. Do not claim the previous proposal was accepted.\n\nThe latest abstention claimed unsupported_requested_wiring. Check that claim against the supplied reviewed execution schema: ScopeInput has kind=\"input\" and name; a finish output Binding may reference it. Root body.inputs and body.outputs are named port definitions, not tools. Add previous_result to both with the exact existing result value_type; add {\"port\":\"previous_result\",\"source\":{\"kind\":\"input\",\"name\":\"previous_result\"}} to the one existing finish node outputs. Keep its existing result binding and seed->finish edge. This is direct scope-input forwarding, with no invented carry tool, capability, or operation. Runtime admission separately supplies the input. Your earlier proposal already used this legal binding; only its invented evidence reference and duplicate node failed validation. Return your own complete graph conforming to the schema, not an admission claim.",
+      "policy_id": "internal-curation-medium-v9"
+    },
+    "validated_draft": {
+      "content_sha256": "4ed7fbef6d6e4d8c347967b93608f21ad60f01dfe4fc72fa71512bc56e2114a4",
+      "draft_id": "planning-11cd1845e5fafe48fc01ce3ae4b145669b24e1cd8c0cc1d3f249bb7ad2865bb2",
+      "revision": 1,
+      "universe_sha256": "86456d4b8358bb1a179f489d2984e43b8d0bd1f3cbd947dc18de8b9cf606f7d5",
+      "validation_id": "c81fa8fb2651482399b13a12ddc464bb"
+    },
+    "wire_version": "1"
+  },
+  "model_output_sha256": "46ef25b5606943fa57752d3c4aa05369e768624f9dae9d18e2b39803ba9b24aa",
+  "provider": "actual pinned OpenAI through installed production worker",
+  "scientific_validity": "not_established"
+}

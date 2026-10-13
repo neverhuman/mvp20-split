@@ -1,0 +1,44 @@
+{
+  "identity": {
+    "scope": {
+      "tenant_id": "internal",
+      "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336"
+    },
+    "actor_id": "admin",
+    "command_id": "1f70a1082f904628979cde4b98542a9e",
+    "command_family": "graph.admit_draft_successor"
+  },
+  "payload": {
+    "draft": {
+      "draft_id": "planning-11cd1845e5fafe48fc01ce3ae4b145669b24e1cd8c0cc1d3f249bb7ad2865bb2",
+      "revision": 1,
+      "content_sha256": "4ed7fbef6d6e4d8c347967b93608f21ad60f01dfe4fc72fa71512bc56e2114a4",
+      "validation_id": "c81fa8fb2651482399b13a12ddc464bb",
+      "universe_sha256": "86456d4b8358bb1a179f489d2984e43b8d0bd1f3cbd947dc18de8b9cf606f7d5"
+    },
+    "plan_sha256": "753adc39f1d9e228b0f052896fb4d573d28cf54c704be3e7648b092a9e8c0fa6",
+    "inputs": [],
+    "budget": {
+      "limit": 4
+    },
+    "limits": {
+      "deadline_seconds": 600
+    },
+    "predecessor": {
+      "run_id": "f44f4f297b4a4622b54d2dd8399048c6",
+      "plan_sha256": "a40d42aff4b53b0c28e8ca5e6b6736c6484a53fa2c43210a58170f78523a0373",
+      "revision": 9
+    },
+    "carried": [
+      {
+        "target_port": "previous_result",
+        "source": {
+          "kind": "run_output",
+          "port": "result"
+        },
+        "expected_value_sha256": "94313a8063f3c8e962a2d092c733cc6fc273a3e84b9e2d024809e70c289264fa"
+      }
+    ]
+  },
+  "encoding": "amphora-command-v2"
+}

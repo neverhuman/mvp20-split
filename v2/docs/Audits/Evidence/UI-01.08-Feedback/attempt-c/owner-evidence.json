@@ -1,0 +1,13 @@
+{
+  "status": "passed",
+  "timestamp_local": "2026-10-12 21:18:24",
+  "provider_calls": 0,
+  "new_campaigns": 0,
+  "original_replay": "unchanged",
+  "prior_failed_outcomes": 3,
+  "curation_id": "curation-8f8645a9fcb62b4843d964c88a994c394f3c7bfa850380049cf225bea47bea76",
+  "successor": "538bde8292ca4ca68b832cbab567768a",
+  "all_original_held_units": 4050000000,
+  "additional_allowance_remaining_units": 9250000000,
+  "scientific_validity": "not_established"
+}

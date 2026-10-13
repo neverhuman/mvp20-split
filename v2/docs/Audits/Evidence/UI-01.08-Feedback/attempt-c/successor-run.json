@@ -1,0 +1,41 @@
+{
+  "schema_version": "3",
+  "scope": {
+    "tenant_id": "internal",
+    "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336"
+  },
+  "run_id": "538bde8292ca4ca68b832cbab567768a",
+  "plan_sha256": "753adc39f1d9e228b0f052896fb4d573d28cf54c704be3e7648b092a9e8c0fa6",
+  "status": "completed",
+  "revision": 9,
+  "node_count": 2,
+  "budget_limit": 4,
+  "reserved": 0,
+  "spent": 1,
+  "stop_reason": null,
+  "nodes": [
+    {
+      "activation_id": "33d5ee87554435cbf34f34f9591f413859a5633f7ab409b886cc26ef05fae3a5",
+      "path": {
+        "schema_version": "2",
+        "node_id": "finish",
+        "occurrences": []
+      },
+      "kind": "finish",
+      "status": "succeeded",
+      "reason_code": null
+    },
+    {
+      "activation_id": "bdbb6d0ce80bff5bd3e9aa3531a48b25a9627f401351f889fca85041f03746a1",
+      "path": {
+        "schema_version": "2",
+        "node_id": "seed",
+        "occurrences": []
+      },
+      "kind": "invoke",
+      "status": "succeeded",
+      "reason_code": null
+    }
+  ],
+  "next_after": null
+}

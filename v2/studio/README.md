@@ -1,5 +1,9 @@
 # Graph Studio
 
+Source0.34.1 corrects execution canvas resize recovery: reveal loaded nodes when
+resizing hides the whole graph, preserving saved viewport and ordinary pan/zoom.
+UI-01.08/P5.2 actual-browser qualification owns acceptance; demo cutover separate.
+
 Source release **0.28.0** adds scoped curation inspection state and lazy capability
 detail (UI-01.08/P3.3b).22 model/transport/import checks and tsc pass. Visual
 integration/qualification remains P3.3c; serving demo stays Studio0.26.

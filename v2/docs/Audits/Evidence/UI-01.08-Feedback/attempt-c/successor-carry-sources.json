@@ -1,0 +1,29 @@
+{
+  "schema_version": "1",
+  "scope": {
+    "tenant_id": "internal",
+    "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336"
+  },
+  "predecessor": {
+    "run_id": "538bde8292ca4ca68b832cbab567768a",
+    "plan_sha256": "753adc39f1d9e228b0f052896fb4d573d28cf54c704be3e7648b092a9e8c0fa6",
+    "revision": 9
+  },
+  "predecessor_ready": true,
+  "sources": [
+    {
+      "source": {
+        "kind": "run_output",
+        "port": "previous_result"
+      },
+      "value_sha256": "94313a8063f3c8e962a2d092c733cc6fc273a3e84b9e2d024809e70c289264fa"
+    },
+    {
+      "source": {
+        "kind": "run_output",
+        "port": "result"
+      },
+      "value_sha256": "aaed2f5151edad39ea311dd68de0885ad0b06385afdc8b28d0d26d94a0dfdfb2"
+    }
+  ]
+}
