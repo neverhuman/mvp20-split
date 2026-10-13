@@ -73,7 +73,7 @@ requires-dist = [
 
 [[package]]
 name = "amphora-campaign-runtime"
-version = "0.66.1"
+version = "0.67.0"
 source = { editable = "../services/campaign_runtime" }
 dependencies = [
     { name = "alembic" },
@@ -1318,7 +1318,7 @@ requires-dist = [
 
 [[package]]
 name = "amphora-tool-protocol"
-version = "0.2.0"
+version = "0.3.0"
 source = { editable = "../sdk/tool_protocol" }
 dependencies = [
     { name = "amphora-contracts-artifacts" },

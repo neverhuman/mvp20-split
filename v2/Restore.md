@@ -4,7 +4,7 @@ Refreshed: 2026-10-13 16:43:12 America/Chicago. Read FIRST after compaction.
 
 ## Current task and owner gate
 
-UI-02/P1.4 awaits [UI-02.03](docs/Build%20Plans/UI-02.03%20Structural%20execution%20profile%20decision.md): bounded Runtime/SDK structural execution profile, versioned retained authoring universe and exact-context draft admission. Not yet approved or implemented.
+UI-02/P1.4 implements approved [UI-02.03](docs/Build%20Plans/UI-02.03%20Structural%20execution%20profile%20decision.md): bounded Runtime/SDK structural execution profile, versioned retained authoring universe and exact-context draft admission. Owner approved 2026-10-13 17:04:54; implementation active, both demo wrappers drained exit0; source work in progress.
 UI-02.01 chemical representation and UI-02.02 Registry correction ARE approved.
 Registry0.2.0 pushed0bc5f436;149 full source/PostgreSQL tests and22 copied independent
 tests pass; publication/boundary checks pass. Actual independent Registry lifecycle
@@ -20,7 +20,7 @@ supplied structure handoff. Deployment provider synthetic data policy is unrelat
 
 Canonical progress: P1.1/P1.2/P1.3=100%, P1.4=0%; P1=75%, P2/P3/P4=0%;
 overall18.75%, Build25%, Verification0%. UI-02.02 remains50%: its final full graph
-handoff/audit gates are not done. On approval implement UI-02.03's four ordered gates,
+handoff/audit gates are not done. Implement UI-02.03's four ordered gates,
 finish actual P1.4/audit, then P2 recommendation-or-unranked evidence, P3 inspector,
 P4 actual browser acceptance. No UI-02 features served yet. MBT then POP-01, ML-01;
 LR-01 paused25%. UI-01 closed100%, archived; do not reopen.
@@ -51,9 +51,9 @@ no property/synthesis/ranking authority. Structure-only candidate must be unrank
 
 ## Frozen demo restoration
 
-New local session76406: .test-results/curation-demo-session-20261013j.
-New LAN session88221: .test-results/curation-demo-lan-20261013h.
-Both ready; local/LAN app.js HTTP200 and exact frozen SHA verified. Old31118/47144
+STOPPED local session76406: .test-results/curation-demo-session-20261013j.
+STOPPED LAN session88221: .test-results/curation-demo-lan-20261013h.
+Both were ready and verified before this turn; now cooperatively drained for source work. Old31118/47144
 cooperatively drained exit0; do not reuse their session directories.
 Serving frozen .test-results/curation-demo-serving-20261013f, Studio0.34.4,
 duration86400. Shared PostgreSQL/Qdrant untouched. Two intentional long-lived shells.
@@ -84,3 +84,30 @@ Known estimate$0.521323500 PLUS unknown original demo-b charge. No refunds/reset
 Secrets env/memory only; Z:/ssos/.env source authorized; Deployment vault retained.
 Never print credentials/cookies/raw browser exceptions. Proposed UI-02.03 requires
 owner direction for the durable Runtime boundary, not reapproval of Registry work.
+
+## 2026-10-13 17:15:41 - Active implementation checkpoint
+Runtime0.67 exact execution_profiles domain/config/compiler and retained universe-v2
+implemented; synthetic v1 encoding/hash unchanged.234 scoped compiler/definitions/
+profile tests passed, including PostgreSQL. Added a further structural-context/reason
+oracle since that run; verify it next. SDK0.3 explicit WorkerConfig/profile wired,
+new11 SDK cases written. Exact SDK consumers/24 package locks updated offline;
+chemical environment lock fingerprint refreshed. Sync21670 active; poll before edits.
+Actual fixture now uses draft save/validate/admit with current Registry resolution,
+v4 graph read and explicit worker grant; verifies cold Runtime replacement after
+grant removal, old receipt/history and rejected new admission. Not executed yet.
+No source edits while sync/test/install runs. Next scoped SDK/multi-input/tool plus
+Runtime new cases; fix actual fixture, fresh independent owners/tool/controller
+install and full P1.4 handoff. No model calls. Demo stopped; no new owner gate.
+
+2026-10-13 17:19:28: SDK source suite105 passed; broader run53 other cases passed; old default
+constructor kwarg regression repaired. Runtime234 baseline plus new context/profile
+cases pass. Tool tests must use its independent Pillow/RDKit environment, not dev.
+UI-02.03=37.5% (delivery1=100%,2=50%,3/4=0%). Schema publication passed; dependency
+check session49380 running. Next finish guard, update module descriptions, commit,
+then verify_chemical_handoff.py --output new-e --registry-installation fresh0.2 path
+WITHOUT --installations to independently rebuild Runtime/Data/Research/tool/SDK.
+No source edits during workflow. Both demo wrappers stopped; no owner gate.
+
+Schema and dependency session49380 completed0. No running workflows. Source checkpoint
+commit follows, then fresh independent handoff e. SDK0.3 and Runtime0.67 source tested;
+UI-02.03 remains37.5 until independent installation and actual gates pass.

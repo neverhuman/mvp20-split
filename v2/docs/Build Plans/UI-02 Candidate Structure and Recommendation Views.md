@@ -2,7 +2,7 @@
 
 ## Canonical tracker
 
-- Status: P1 active; P1.1-P1.3 complete; P1.4 blocked on UI-02.03 Runtime/SDK execution profile decision.
+- Status: P1 active; P1.1-P1.3 complete; P1.4 implementing approved UI-02.03 Runtime/SDK execution profiles.
 - Last refreshed: 2026-10-13 16:40:14 (America/Chicago).
 - Overall implementation: 18.75%; Build25%, Verification0%. Four equal delivery phases;
   Build averages P1/P2/P3, Verification is P4. Planning earns no implementation credit.
@@ -10,7 +10,7 @@
   owns accepted execution, Data owns immutable artifacts and Research owns identity.
 - Current focus: Registry0.2.0 passes actual register/activate/deploy/heartbeat/resolve;
   independent Runtime and SDK reject non-synthetic execution. [UI-02.03](UI-02.03%20Structural%20execution%20profile%20decision.md) names the complete correction and retained-history boundary.
-- Next gate: owner decision on UI-02.03, then actual P1.4 handoff/audit before P2.
+- Next gate: approved profile verification and actual P1.4 handoff/audit before P2.
 - Dependencies: retained candidate structures and explicit recommendation evidence;
   existing demo parameter sets provide neither. New public contracts require the
   normal schema-first review. No dependency is assumed implemented by this plan.
@@ -110,3 +110,5 @@ Latest checkpoint 2026-10-13 11:30:04: P1.1 complete;12 focused checks,24 unaffe
 2026-10-13 11:37:38: P1.2 complete;32 copied tests pass in independent wheel installation, exact public schemas, two fresh-process deterministic results and visually inspected PNG. No service implementations installed;0model calls. Actual graph/Research acceptance remains P1.4.
 
 2026-10-13 11:43:38: P1.3 complete;75 actual PostgreSQL/registration/identity regressions pass, explicit chemical host configuration, exact candidate binding, denial/replay/immutable history and malformed bundles. Schema compatibility2 and dependency guard pass.
+
+2026-10-13 17:19:28: approved UI-02.03 execution correction37.5% (100/50/0/0); Runtime234 and SDK105 source tests pass; independent handoff next. Parent P1.4 remains0%, overall18.75%.

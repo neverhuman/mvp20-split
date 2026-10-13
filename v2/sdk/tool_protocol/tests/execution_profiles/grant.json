@@ -1,0 +1,44 @@
+{
+  "profile": "supplied-finite-structure-v1",
+  "scope": {
+    "tenant_id": "test",
+    "project_id": "structure"
+  },
+  "release": {
+    "schema_version": "1",
+    "tool": {
+      "capability_id": "chemistry.chemical-structure",
+      "release": "0.1.0",
+      "image_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+      "contract_version": "1"
+    },
+    "descriptor_sha256": "a32d748e2ac243752ec0a1e0201e99c3a32eea83161a2bd1fdced874968b3c65",
+    "input_schemas": [
+      {
+        "port": "structure",
+        "schema_ref": {
+          "schema_id": "chemical-structure.request",
+          "version": "1",
+          "sha256": "add511e8856a23631faa2b46831c83b7ca27a65d9664758fd5b7df12f293930e"
+        }
+      }
+    ],
+    "output_schemas": [
+      {
+        "port": "result",
+        "schema_ref": {
+          "schema_id": "chemical-structure.result",
+          "version": "1",
+          "sha256": "efcca10edae21dc833c53d594ac36e5e6c4f319eed1fed0059bb4de8b4730ecc"
+        }
+      }
+    ],
+    "checkpoint_schema": null
+  },
+  "semantic_profile": {
+    "schema_id": "chemical-structure.finite-smiles-2d",
+    "version": "1",
+    "sha256": "537435b380c2f36ffb5b7b404e352379beb0b14e899a560b554d5b588c70bc73"
+  },
+  "context": "supplied-finite-molecules"
+}

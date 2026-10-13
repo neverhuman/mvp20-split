@@ -7,6 +7,7 @@ from types import MappingProxyType
 
 from amphora_contracts_tools import LockEntry, ReleaseDescriptor
 
+from ..execution_profiles import StructuralExecutionProfile
 from .errors import require
 from .shapes import ArtifactShape, SchemaIdentity, TypedPort
 
@@ -23,6 +24,7 @@ def binding_key(binding):
 class ResolvedTool:
     descriptor: ReleaseDescriptor
     lock: LockEntry
+    execution_profile: StructuralExecutionProfile | None = None
 
     def __post_init__(self):
         descriptor, lock = self.descriptor, self.lock
@@ -37,8 +39,12 @@ class ResolvedTool:
             require(actual == expected, "schema_lock_mismatch", location)
             require(len({p[0] for p in actual}) == len(actual), "duplicate_tool_port", location)
         require(descriptor.tool.checkpoint_schema == lock.checkpoint_schema, "checkpoint_lock_mismatch", location)
-        require(descriptor.tool.side_effects == "pure" and descriptor.authority_ceiling == "synthetic_only",
-                "unsupported_compiler_tool_profile", location)
+        if self.execution_profile is None:
+            require(descriptor.tool.side_effects == "pure" and descriptor.authority_ceiling == "synthetic_only",
+                    "unsupported_compiler_tool_profile", location)
+        else:
+            require(type(self.execution_profile) is StructuralExecutionProfile, "unsupported_compiler_tool_profile", location)
+            self.execution_profile.require_descriptor(descriptor, lock)
         require(all(port.required for port in descriptor.tool.outputs), "unsupported_optional_tool_output", location)
 
     def ports(self, name):

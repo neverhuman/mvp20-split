@@ -1,6 +1,6 @@
 # Master Build Tracker
 
-Latest checkpoint: 2026-10-13 16:40:14: Registry0.2.0 actual lifecycle passes; UI-02 P1.4 blocked on Runtime/SDK synthetic-only execution. UI-02.03 ready for owner decision. Overall18.75%, Build25%, Verification0%.
+Latest checkpoint: 2026-10-13 16:40:14: Registry0.2.0 actual lifecycle passes; UI-02 P1.4 blocked on Runtime/SDK synthetic-only execution. UI-02.03 approved; Runtime/SDK correction active. Overall18.75%, Build25%, Verification0%.
 
 ## Purpose and Authority
 
@@ -10,14 +10,14 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 
 ## Program Tracker
 
-- Status: UI-02 P1.4 Runtime/SDK profile decision pending; Registry correction verified; UI-01 and LAN-01 complete/archived. LR-01 remains paused.
+- Status: UI-02 P1.4 Runtime/SDK correction active; Registry correction verified; UI-01 and LAN-01 complete/archived. LR-01 remains paused.
 - Last refreshed: 2026-10-13 16:40:14 (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
 - Current priority: schedule UI-01 Knowledge/run/LLM integration and UI-02 formula/structure views for2026-10-12 through2026-10-16; preserve the live demo.
 - Primary active task: UI-02/P1.4 [structural execution decision UI-02.03](UI-02.03%20Structural%20execution%20profile%20decision.md). P1.1/P1.2/P1.3=100%, P1.4=0%; P1=75%.
 - Next task: approved Runtime/SDK execution correction and actual P1.4 handoff/audit, then P2 recommendation evidence.
 - Implementation completion: UI-01 and LAN-01=100% archived; UI-02=18.75%, Build25%, Verification0%; P1=75%, P2/P3/P4=0%; LR-01 paused25%, Build33.33%, Acceptance0%.
-- Blockers/dependencies: Runtime compiler and SDK worker explicitly reject structural tools; retained authoring history/context also needs versioning. UI-02.03 owner decision pending. Registry149 source/22 independent tests and actual public lifecycle pass; frozen local/LAN demo restored with exact served JS.
+- Blockers/dependencies: Runtime compiler and SDK worker explicitly reject structural tools; retained authoring history/context also needs versioning. UI-02.03 approved; implementation active. Registry149 source/22 independent tests and actual public lifecycle pass; frozen local/LAN demo restored with exact served JS.
 - Latest checkpoint: Registry0.2.0 pushed0bc5f436; actual lifecycle evidence retained; P1.4 remains0% until full owner handoff succeeds.
 - Acceptance posture: bounded synthetic UI flow qualified; no scientific accuracy or unattended-reliability claim. Demo30slots/$7.50 unreserved; V1 used no model calls.
 - Active exception: owner scheduled four targets for next week. Preserve earned phase credit; sequence the bounded cross-plan handoffs below. Pull LR-01/UI-R01 forward only when their faults block the scheduled integration, with exact return points.
@@ -34,7 +34,7 @@ The initial program proves software behavior using deterministic/synthetic fixtu
 
 LAN-01 complete100%, archived in Completed; deployed viewer preserved.
 UI-01 complete100%, Build100%, Verification100%; G0/G1/N1/N2/N3/V1=100%, archived.
-UI-02 activation inventory/design complete; owner approved chemical and Registry profiles; P1.4 execution decision pending. Implementation18.75%, Build25%, Verification0%; P1=75%, P2/P3/P4=0%.
+UI-02 activation inventory/design complete; owner approved chemical and Registry profiles; P1.4 execution correction active. Implementation18.75%, Build25%, Verification0%; P1=75%, P2/P3/P4=0%.
 LR-01 is paused at25%, Build33.33%, Acceptance0%; R1=100%, R2/R3/V1=0%.
 Completed plans remain in the [completed index](Completed/README.md).
 
@@ -42,7 +42,7 @@ Completed plans remain in the [completed index](Completed/README.md).
 
 | Order | Canonical plan | Status | Overall | Build | Verification/Acceptance | Prerequisite |
 |---|---|---|---:|---:|---:|---|
-| 1 | [UI-02 Candidate Structure and Recommendation Views](UI-02%20Candidate%20Structure%20and%20Recommendation%20Views.md) | P1.4 execution decision pending; P1=75%, P2/P3/P4=0% | 18.75% | 25% | 0% | Typed retained candidate structures and explicit selection evidence; activation audit |
+| 1 | [UI-02 Candidate Structure and Recommendation Views](UI-02%20Candidate%20Structure%20and%20Recommendation%20Views.md) | P1.4 execution correction active; P1=75%, P2/P3/P4=0% | 18.75% | 25% | 0% | Typed retained candidate structures and explicit selection evidence; activation audit |
 | 2 | [POP-01 Population Campaign Execution and Experience](POP-01%20Population%20Campaign%20Execution%20and%20Experience.md) | Queued; Execution/Experience/Qualification=0% | 0% | 0% | 0% | Knowledge/LLM workflow UI-01/V1 and UI-02/P4 complete |
 | 3 | [ML-01 Inherited Scientific Model Integration](ML-01%20Inherited%20Scientific%20Model%20Integration.md) | Standalone queued; M1/M2/M3/M4/V1=0% | 0% | 0% | 0% | UI-01/V1 + UI-02/P4, then POP-01 complete; qualified population/tool handoff |
 | 4 | [LR-01 Local Worker Reliability](LR-01%20Local%20Worker%20Reliability.md) | Paused; pull R2 forward for blocking run failure | 25% | 33.33% | 0% | UI priority released or UI-01.05/R1 blocked; same-host diagnostic window |
@@ -209,3 +209,5 @@ P5.3 missing-capability original and actual browser1440/390 passed; returned to 
 2026-10-12 12:58:36: Planning0.132.0 passes153 focused checks, independent installationh, seven byte-exact original replays and actual-owner extended freeze11742; drained. Nine/$2.25 holds retained; one approved16,384-output original/$0.30 remains. No new inference.08d66.67%; parent90/P5=50 unchanged.
 
 UI-02.02 correction tracker50% (policy/source verification complete); actual configured Registry/chemical handoff and audit remain. Parent P1.4 completion gate remains unmet; overall18.75%.
+
+2026-10-13 17:19:28: approved UI-02.03 execution correction37.5% (100/50/0/0); Runtime234 and SDK105 source tests pass; independent handoff next. Parent P1.4 remains0%, overall18.75%.

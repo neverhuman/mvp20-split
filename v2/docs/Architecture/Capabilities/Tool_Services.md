@@ -67,3 +67,14 @@ Build and test a new immutable release independently. Publish it as a candidate,
 Scale replicas of the same pinned release subject to resources and admission policy. A deployment change does not alter scientific identity. Graceful termination stops new claims and drains or relinquishes attempts; forced death follows normal fenced recovery. External effects require reconciliation, not automatic resubmission.
 
 Acceptance proves independent build/start and fixtures; schema rejection; two replicas claiming distinct work; duplicate/stale completion rejection; replica death/checkpoint recovery; version-specific routing; unauthorized data/network access rejection; and replacement without changes to unrelated tool code. No cluster is required to prove the pure scientific kernel, but deployment claims require actual target-environment tests.
+
+### Bounded structural execution profile (UI-02.03)
+
+The approved supplied-finite-structure-v1 path requires separate owner-local grants
+in Registry activation/selection, Runtime compilation/admission and SDK execution.
+Each binds exact scope, release, public schema/semantic pins and applicability.
+No generic evidence_proposal bypass; the tool owns chemistry. Runtime retains
+versioned profile materials for reconstruction, while new admission requires the
+current configured grant and fresh Registry observations. Default synthetic profile
+bytes/history remain unchanged; removing a grant never repins active campaigns.
+Source verification is complete; actual installed handoff is the remaining gate.

@@ -1,7 +1,7 @@
 # Tool Protocol SDK
 
 - Status: BP-03 bounded tool/index/protocol scope complete; actual independent replica recovery and immutable release cutover verified. General graph interpretation remains BP-04.
-- Package: `amphora-tool-protocol` 0.2.0; explicit public client boundary.
+- Package: `amphora-tool-protocol` 0.3.0; explicit public client boundary.
 - Architecture: [tool services](../../docs/Architecture/Capabilities/Tool_Services.md).
 
 This library owns bounded authenticated HTTP and worker-facing claim, renew, complete, artifact publication and artifact reads. Import only `amphora_tool_protocol`. It has no server, database, graph scheduler, work-admission API, scientific algorithm, provider integration or shared business repository. Each tool owns its payload schemas and behavior. Its only internal package dependencies are public contracts; manifests/locks declare the independent install closure.
@@ -27,3 +27,5 @@ DER-01/D3 adds `ArtifactClient.begin_derived(content, declaration, command_id)` 
 `begin`, `begin_derived` and `finalize` accept `resume=True`: a reconstructed caller checks the original receipt before any POST or write guard. An exact pending receipt or authenticated404 permits identical-byte resubmission; unknown/denied lookup never permits blind writes. The caller must durably retain exact inputs/IDs and stream progress. An uncertain PUT is not retried or assumed finalized; bounded explicit replacement-upload attempts and their ambiguity history belong to the caller, not this stateless SDK. Default existing calls retain their previous behavior/bytes.
 
 D3 verification:94 complete SDK tests,99% branch-inclusive coverage (417 statements,3 uncovered defensive metadata/outcome branches);26 Data-derived PostgreSQL/domain tests run separately. Scripted SDK loss/recovery remains distinct from D4 actual installed-peer acceptance.
+
+UI-02.03 SDK0.3.0: WorkerConfig may explicitly bind execution_profile (supplied-finite-structure-v1, scope, complete release, semantic profile, exact context). PureToolWorker defaults to the unchanged synthetic-only profile; structural execution requires exact pins and denied egress/no checkpoints before claim. Scientific behavior remains tool-owned. Tests/execution_profiles owns profile policy and lifecycle tests retain lease/recovery coverage.

@@ -45,6 +45,8 @@ class _Compilation:
             node_inputs, node_outputs = (), ()
             if node.kind == "invoke":
                 tool = self.tools.require(node.tool, here)
+                if tool.execution_profile is not None:
+                    require(tool.execution_profile.scope == self.definition.scope, "structural_execution_scope_mismatch", here)
                 self.used_tools[binding_key(node.tool)] = tool
                 for identity in tool.schemas():
                     self.usage.catalog.require(identity, here)

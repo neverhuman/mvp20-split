@@ -27,6 +27,8 @@ class DraftAdmissionGuard:
     def prepare(self, scope, request):
         verified = self.material.load(scope, request.draft.validation_id)
         verified.require_selection(request)
+        universe = self.universes.get((scope.tenant_id, scope.project_id))
+        ensure(universe is not None and universe.sha256 == verified.universe.sha256, "draft_universe_changed")
         ensure(not verified.entry.descriptors or self.eligibility is not None, "draft_tool_eligibility_unavailable")
         observations = self.eligibility.observe(verified) if verified.entry.descriptors else ()
         ensure(len(observations) == len(verified.entry.plan.document.lock.tools), "draft_tool_eligibility_incomplete")
@@ -55,7 +57,8 @@ class DraftAdmissionGuard:
 
         if prepared.observations:
             payload = {"kind": "draft_eligibility_observed", "run_id": run_id,
-                       "profile": "synthetic-registry-observation-v1", "reservation": False,
+                       "profile": ("structural-registry-observation-v1" if verified.universe.profile == "amphora-authoring-universe-v2"
+                                   else "synthetic-registry-observation-v1"), "reservation": False,
                        "observations": [item.record() for item in prepared.observations]}
             conn.execute(text("INSERT INTO runtime.audit_events "
                 "(event_id,tenant_id,project_id,run_id,revision,ordinal,payload) "

@@ -54,3 +54,10 @@ V1 passed: five plans against actual public Registry and both installed tools, f
 BP-04.04A B1 focused verification (`2026-09-29 13:20:55`): 142 compiler tests passed; scoped compiler coverage 664/668 statements and 172/174 branches. The twenty binding cases include manual port/order oracles, incompatible collection types/bounds, scalar fields, empty arrays and reference manifests with explicit missing slots. Remaining uncovered binding branches are single-Artifact materialization and inline Artifact schema compatibility; actual assembled payload validation/publication remains B2 and failure/replacement proof B3/V1. Prior B3/V1 evidence above belongs to the closed compiler child, not to the new execution profile.
 
 Runtime 0.9.0 uses PinnedSchema.validate at the binding execution boundary: original pinned schema bytes retain decimal bounds, supported formats are checked explicitly, and unknown formats cannot silently pass. Runtime declares jsonschema format extras for parity between development and isolated installs. Compilation still performs no Artifact I/O.
+
+UI-02.03: ResolvedTool may carry an exact owner-local StructuralExecutionProfile.
+Default synthetic behavior/plan bytes stay unchanged. Structural scope must match
+the invoking definition; full descriptor/release/schema pins and pure/denied-egress
+profile are checked before compilation. This is structural eligibility only, never
+Registry lifecycle/capacity or execution authority. Historical profile pins live
+in separate authoring-universe-v2 records, not a rewritten old plan.

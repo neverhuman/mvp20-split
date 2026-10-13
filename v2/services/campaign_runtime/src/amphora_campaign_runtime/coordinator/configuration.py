@@ -9,6 +9,7 @@ from amphora_contracts_tools import LockEntry, ReleaseDescriptor
 
 from ..compiler import PinnedSchema, ResolvedTool, SchemaCatalog, SchemaIdentity, ToolCatalog
 from .plans import PlanCatalog, ReviewedPlan
+from ..execution_profiles import StructuralExecutionProfile
 
 
 def _bytes(root, name, maximum):
@@ -27,10 +28,11 @@ def load_materials(entry, root):
         raise ValueError("Graph configuration material bound")
     tools, schemas = [], []
     for tool in entry["releases"]:
-        if set(tool) != {"descriptor", "lock"}:
+        if not {"descriptor", "lock"} <= set(tool) or set(tool) - {"descriptor", "lock", "execution_profile"}:
             raise ValueError("Invalid graph release entry")
         tools.append(ResolvedTool(ReleaseDescriptor.model_validate_json(_bytes(Path(root), tool["descriptor"], 262144)),
-                                  LockEntry.model_validate_json(json.dumps(tool["lock"]))))
+                                  LockEntry.model_validate_json(json.dumps(tool["lock"])),
+                                  StructuralExecutionProfile.from_record(tool["execution_profile"]) if "execution_profile" in tool else None))
     for schema in entry["schemas"]:
         if set(schema) != {"schema_ref", "path"}:
             raise ValueError("Invalid graph schema entry")

@@ -30,18 +30,17 @@ def main():
     root.mkdir()
     e, http = module.CandidateEnvironment(config, root), module.HTTP
     reports = []
+    drafts = module.load("chemical_draft_handoff", Path(__file__).with_name("draft_handoff.py"))
+    e.public_http = http
     try:
         e.setup()
         for kind in module.KINDS:
             selection=e.registry_receipts[module.KINDS.index(kind)]["selection"]
             reference = e.publish_input(kind)
             port = e.descriptors[kind]["tool"]["inputs"][0]
-            admission = http.decoded(
-                e.runtime.endpoint,
-                "/v1/graph-runs",
-                e.tokens["admin"],
-                e.command(
-                    "graph.admit",
+            draft = drafts.prepare(e, kind)
+            admission_command = e.command(
+                    "graph.admit_draft",
                     {
                         "plan_sha256": e.plans["candidate-" + kind]["sha256"],
                         "inputs": [
@@ -56,9 +55,10 @@ def main():
                             }
                         ],
                         "budget": {"limit": 4},
+                        "draft": draft,
                     },
-                ),
-            )
+                )
+            admission = http.decoded(e.runtime.endpoint, "/v1/graph-runs/drafts", e.tokens["admin"], admission_command)
             assert admission["outcome"]["status"] == "accepted"
             e.active_run = admission["outcome"]["committed"]["object_id"]
             e.advance()
@@ -76,6 +76,9 @@ def main():
                     "token_env": "WORKER_TOKEN",
                 },
                 "lease_seconds": 90,
+                "execution_profile": {"profile":"supplied-finite-structure-v1","scope":e.scope,
+                    "release":module.GRAPH.BASE.WIRE.release_lock(e.descriptors[kind]),
+                    "semantic_profile":e.semantic[kind]["profile"],"context":"supplied-finite-molecules"},
             }
             path = root / (kind + "-worker.json")
             path.write_text(json.dumps(worker), encoding="utf-8")
@@ -189,6 +192,7 @@ def main():
                     "reservations": reservations,
                 }
             )
+        drafts.replace_without_grant(e, admission_command, admission, graph)
         old = e.research
         old.close()
         e.research = http.Service(

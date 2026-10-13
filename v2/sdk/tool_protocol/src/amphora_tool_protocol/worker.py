@@ -5,18 +5,19 @@ import json
 import os
 import uuid
 from pathlib import Path
-from typing import Annotated
+from typing import Annotated, Literal
 
 from amphora_contracts_artifacts import ContentDescriptor
-from amphora_contracts_core import Digest, Identifier, Scope, WireModel
+from amphora_contracts_core import Digest, Identifier, Scope, SchemaRef, WireModel
 from amphora_contracts_runtime import CompleteInvocation
-from amphora_contracts_tools import Completion
+from amphora_contracts_tools import Completion, LockEntry
 from pydantic import Field, TypeAdapter
 
 from .attempts import ToolAttemptContext
 from .clients import ArtifactClient, RuntimeClient
 from .commands import WorkerIdentity
 from .failures import ExecutionFailure
+from .execution_profiles import StructuralExecutionProfile
 from .transport import HttpTransport, ProtocolError
 
 
@@ -35,11 +36,23 @@ class ServiceEndpoint(WireModel):
         return HttpTransport(self.endpoint, os.environ[self.token_env])
 
 
+class StructuralProfileConfig(WireModel):
+    profile: Literal["supplied-finite-structure-v1"]
+    scope: Scope
+    release: LockEntry
+    semantic_profile: SchemaRef
+    context: Literal["supplied-finite-molecules"]
+
+    def to_domain(self):
+        return StructuralExecutionProfile.from_record(self.model_dump(mode="json"))
+
+
 class WorkerConfig(WireModel):
     actor_id: Identifier
     scope: Scope
     run_id: Identifier
     image_sha256: Digest
+    execution_profile: StructuralProfileConfig | None = None
     runtime: ServiceEndpoint
     artifacts: ServiceEndpoint
     lease_seconds: Annotated[int, Field(ge=10, le=300)] = 30
@@ -47,9 +60,20 @@ class WorkerConfig(WireModel):
 
 
 class PureToolWorker:
-    def __init__(self, runtime, artifacts, descriptor, compute, *, lease_seconds=30, skew_seconds=1.0):
+    def __init__(self, runtime, artifacts, descriptor, compute, *, lease_seconds=30, skew_seconds=1.0, execution_profile=None):
         tool = descriptor.tool
-        if (tool.side_effects != "pure" or descriptor.authority_ceiling != "synthetic_only"
+        if execution_profile is None:
+            authority_allowed = descriptor.authority_ceiling == "synthetic_only"
+        else:
+            try:
+                if type(execution_profile) is not StructuralExecutionProfile:
+                    raise ValueError("unknown_execution_profile")
+                execution_profile.require_descriptor(descriptor)
+                execution_profile.require_scope(runtime.identity.scope)
+            except ValueError as error:
+                raise ProtocolError("unsupported_worker_profile") from error
+            authority_allowed = True
+        if (tool.side_effects != "pure" or not authority_allowed
             or len(tool.inputs) != 1 or len(tool.outputs) != 1 or not tool.inputs[0].required
             or not tool.outputs[0].required or tool.checkpoint_schema is not None
             or descriptor.checkpoint.mode != "none" or descriptor.egress.mode != "deny"):
@@ -118,7 +142,11 @@ class PureToolWorker:
 def run_worker(config_path, descriptor_factory, compute):
     config = WorkerConfig.model_validate_json(Path(config_path).read_bytes())
     identity = WorkerIdentity(config.actor_id, config.scope)
+    profile_options = {} if config.execution_profile is None else {
+        "execution_profile": config.execution_profile.to_domain()
+    }
     worker = PureToolWorker(RuntimeClient(config.runtime.transport(), identity),
         ArtifactClient(config.artifacts.transport(), identity), descriptor_factory(config.image_sha256), compute,
-        lease_seconds=config.lease_seconds, skew_seconds=config.max_clock_skew_seconds)
+        lease_seconds=config.lease_seconds, skew_seconds=config.max_clock_skew_seconds,
+        **profile_options)
     return worker.run_once(config.run_id)

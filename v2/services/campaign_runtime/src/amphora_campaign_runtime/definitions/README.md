@@ -90,3 +90,5 @@ execution; B2.02ii/V1 retain those gates. Replacement preserves both immutable
 owner records and all original command receipts.
 
 BP-08.04/B3 verified 2026-10-06 18:58:33: test-only draft_successor_process.py interrupts combined admission after draft publication and lineage writes before commit, or after commit before reply. Actual process death followed by fresh owner process preserves rollback/original replay and exactly one child with both records; parent remains unchanged.14process/boundary checks30.71s plus155 scoped regressions; no new production hooks. Source coverage is separate from child-process scenario evidence.
+
+UI-02.03: structural materials retain versioned universe-v2 records with exact execution-profile pins. Synthetic universes retain v1 encoding/hash. Historical restoration validates pins but grants no current execution authority; current configured universe identity is checked before observation and again in the admission transaction.

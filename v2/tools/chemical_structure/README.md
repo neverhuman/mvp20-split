@@ -34,3 +34,5 @@ other toolkit/platform releases need separate qualification. Source tests do not
 prove independent installation or actual graph/Research acceptance (P1.4).
 Reference APIs: https://www.rdkit.org/docs/GettingStartedInPython.html and
 https://www.rdkit.org/docs/source/rdkit.Chem.rdMolDescriptors.html.
+
+UI-02.03 worker integration requires SDK0.3.0 and an explicit exact WorkerConfig.execution_profile grant. The worker validates its own descriptor and scope before claiming. Compute/SMILES interpretation is unchanged. A new dependency lock/environment fingerprint identifies the execution closure; capability/schema/semantic pins remain0.1.0/v1.

@@ -182,7 +182,7 @@ requires-dist = [
 
 [[package]]
 name = "amphora-tool-protocol"
-version = "0.2.0"
+version = "0.3.0"
 source = { editable = "../../sdk/tool_protocol" }
 dependencies = [
     { name = "amphora-contracts-artifacts" },

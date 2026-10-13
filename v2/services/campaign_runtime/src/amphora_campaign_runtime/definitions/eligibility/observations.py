@@ -35,6 +35,9 @@ class EligibilityObservation:
                 or decision.status != "candidate" or decision.capacity_valid_until is None
                 or decision.capacity_valid_until <= decision.assessed_at):
             raise EligibilityUnavailable("draft_registry_response_invalid")
+        if reviewed.execution_profile is not None:
+            if observations.scientific.reason_codes != ("supplied_structure_mapping_only",):
+                raise EligibilityUnavailable("draft_registry_response_invalid")
         return cls(command, receipt, maximum_age_seconds)
 
     def require_fresh(self, now):

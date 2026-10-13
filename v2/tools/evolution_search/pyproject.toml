@@ -2,7 +2,7 @@
 name = "amphora-evolution-search"
 version = "0.5.0"
 requires-python = ">=3.12,<3.13"
-dependencies = ["amphora-contracts-tools==0.1.0", "amphora-tool-protocol==0.2.0", "amphora-contracts-graph-runtime==0.13.0", "amphora-contracts-core==0.1.0", "amphora-contracts-search-steps==0.1.0", "amphora-contracts-search==0.1.0"]
+dependencies = ["amphora-contracts-tools==0.1.0", "amphora-tool-protocol==0.3.0", "amphora-contracts-graph-runtime==0.13.0", "amphora-contracts-core==0.1.0", "amphora-contracts-search-steps==0.1.0", "amphora-contracts-search==0.1.0"]
 
 [build-system]
 requires = ["hatchling>=1.27,<2"]

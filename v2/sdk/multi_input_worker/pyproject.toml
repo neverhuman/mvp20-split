@@ -2,7 +2,7 @@
 name = "amphora-multi-input-worker"
 version = "0.1.0"
 requires-python = ">=3.12,<3.13"
-dependencies = ["amphora-tool-protocol==0.2.0", "amphora-contracts-core==0.1.0", "amphora-contracts-tools==0.1.0", "amphora-contracts-runtime==0.1.0", "amphora-contracts-artifacts==0.2.0"]
+dependencies = ["amphora-tool-protocol==0.3.0", "amphora-contracts-core==0.1.0", "amphora-contracts-tools==0.1.0", "amphora-contracts-runtime==0.1.0", "amphora-contracts-artifacts==0.2.0"]
 
 [build-system]
 requires = ["hatchling>=1.27,<2"]

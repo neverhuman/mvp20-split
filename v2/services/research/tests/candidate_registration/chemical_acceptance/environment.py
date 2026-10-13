@@ -64,6 +64,9 @@ class CandidateEnvironment(GRAPH.GraphEnvironment):
                 {
                     "descriptor": filename,
                     "lock": GRAPH.BASE.WIRE.release_lock(descriptor),
+                    "execution_profile": {"profile":"supplied-finite-structure-v1","scope":self.scope,
+                        "release":GRAPH.BASE.WIRE.release_lock(descriptor),"semantic_profile":self.semantic[kind]["profile"],
+                        "context":"supplied-finite-molecules"},
                 }
             )
             for direction, ports in (("input", "inputs"), ("output", "outputs")):
@@ -95,7 +98,7 @@ class CandidateEnvironment(GRAPH.GraphEnvironment):
         graphs = []
         for kind in KINDS:
             graph = copy.deepcopy(template)
-            graph.update(scope=self.scope, campaign_id="candidate-" + kind)
+            graph.update(scope=self.scope, campaign_id="candidate-" + kind, schema_version="4", profile="deterministic-v3")
             graph["body"]["nodes"][0]["node_id"] = "move"
             graph["body"]["nodes"][0]["inputs"][0]["port"] = "structure"
             graph["body"]["nodes"][1]["outputs"][0]["source"]["node_id"] = "move"
@@ -156,7 +159,7 @@ class CandidateEnvironment(GRAPH.GraphEnvironment):
             "profiles": profiles,
             "principals": [
                 self.principal("worker1", ["upload", "finalize", "read"]),
-                self.principal("runtime", ["read", "retention"]),
+                self.principal("runtime", ["read", "retention", "upload", "finalize"]),
                 self.principal("research", ["read"]),
             ],
             "runtime": {
@@ -180,6 +183,9 @@ class CandidateEnvironment(GRAPH.GraphEnvironment):
             {
                 "database_url_env": "DATABASE_URL",
                 "fixtures": [],
+                "authoring": True,
+                "bindings": {"endpoint":self.artifact.endpoint,"token_env":"TOKEN_RUNTIME"},
+                "draft_registry": {"endpoint":self.registry.endpoint,"token_env":"TOKEN_ADMIN","actor_id":"admin","maximum_age_seconds":60},
                 "graphs": graphs,
                 "tools": [item["tool"] for item in self.descriptors.values()],
                 "principals": [
@@ -191,7 +197,7 @@ class CandidateEnvironment(GRAPH.GraphEnvironment):
                             "read",
                             "inspect_receipts",
                             "deliver",
-                            "maintain",
+                            "maintain", "author", "validate",
                         ],
                     ),
                     self.principal("artifact", ["outcome"]),
@@ -252,8 +258,9 @@ class CandidateEnvironment(GRAPH.GraphEnvironment):
         self.research.ready(self.tokens["admin"], "/health")
 
     def resolve_chemical(self, kind):
-        beat=self.registry_call("heartbeat",{"deployment_id":"chemical","replica_id":"chemical-worker","expected_revision":0,"free_slots":1,"ttl_seconds":60},"worker1")
+        beat=self.registry_call("heartbeat",{"deployment_id":"chemical","replica_id":"chemical-worker","expected_revision":getattr(self,"heartbeat_revision",0),"free_slots":1,"ttl_seconds":60},"worker1")
         assert beat["status"]=="accepted"
+        self.heartbeat_revision=beat["heartbeat"]["revision"]
         descriptor=self.descriptors[kind]
         payload={"release":GRAPH.BASE.WIRE.release_lock(descriptor),"context":"supplied-finite-molecules","inputs":descriptor["tool"]["inputs"],"outputs":descriptor["tool"]["outputs"]}
         resolved=self.registry_call("resolve",payload)
@@ -261,6 +268,9 @@ class CandidateEnvironment(GRAPH.GraphEnvironment):
         assert resolved["decision"]["observations"]["scientific"]["reason_codes"]==["supplied_structure_mapping_only"]
         self.registry_receipts[-1].update(heartbeat=beat,selection=resolved)
         return resolved
+
+    def graph(self):
+        return HTTP.decoded(self.runtime.endpoint, "/v3/graph-runs/" + self.active_run, self.tokens["admin"])
 
     def publish_input(self, kind):
         data = json.loads((ROOT / "contracts/chemical_structure/examples/supplied-request.json").read_bytes())

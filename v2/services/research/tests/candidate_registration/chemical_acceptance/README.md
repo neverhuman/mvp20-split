@@ -17,3 +17,9 @@ Runtime so downstream failure cannot erase completed Registry evidence. No share
 model calls, private peer imports or reset. Isolated fixture SQL roles are supplied
 through process environment; evidence never includes credentials. Every owned host
 is closed in finally. Copied fixtures are tests, not scientific property evidence.
+
+UI-02.03 fixture now uses public save/validate/admit-draft and current Registry
+resolution, wire-v4 execution readback and explicit worker grant. Cold Runtime
+replacement removes the configured grant: old admission receipt/validation/completed
+run must replay/read identically, while a new admission rejects draft_universe_changed.
+This final gate remains pending until an actual independent handoff passes.

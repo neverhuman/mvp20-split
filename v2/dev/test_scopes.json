@@ -492,5 +492,17 @@
     "coverage_sources": [
       "services/capability_registry/src/amphora_capability_registry/structural_profiles"
     ]
+  },
+  "runtime-execution-profiles": {
+    "tests": "services/campaign_runtime/tests/execution_profiles",
+    "coverage_sources": [
+      "services/campaign_runtime/src/amphora_campaign_runtime/execution_profiles"
+    ]
+  },
+  "worker-execution-profiles": {
+    "tests": "sdk/tool_protocol/tests/execution_profiles",
+    "coverage_sources": [
+      "sdk/tool_protocol/src/amphora_tool_protocol/execution_profiles"
+    ]
   }
 }

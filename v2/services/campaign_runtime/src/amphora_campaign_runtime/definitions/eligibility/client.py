@@ -46,9 +46,8 @@ class RegistryEligibility:
             tool = reviewed[lock.descriptor_sha256]
             identity = CommandIdentity(actor_id=self.actor_id, scope=verified.draft.content.definition.scope,
                 command_family="registry.resolve", command_id=uuid.uuid4().hex)
-            # Existing Registry admits only synthetic fixtures. This is an explicit fixed profile,
-            # never a claim that arbitrary scientific context has been assessed.
-            need = ResolveRelease(release=lock, context="synthetic-tests",
+            context = "synthetic-tests" if tool.execution_profile is None else tool.execution_profile.context
+            need = ResolveRelease(release=lock, context=context,
                                   inputs=tool.descriptor.tool.inputs, outputs=tool.descriptor.tool.outputs)
             command = parse_registry_command("registry.resolve", json.dumps({
                 "identity": identity.model_dump(mode="json"), "payload": need.model_dump(mode="json")}))

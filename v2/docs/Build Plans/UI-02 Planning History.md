@@ -108,3 +108,20 @@ P1.4=0%, P1=75%, overall18.75%; UI-02.02 remains50% because its final handoff/au
 still depends on execution. No user files changed. Frozen demo restoration follows.
 
 2026-10-13 16:43:12: frozen Studio0.34.4 restored local76406/session13j and LAN88221/LAN13h; both ready, app.js HTTP200 and exact21fa5c5d6f790ffd902f0074290a651c5bebcd5173cf136ba105ac43514db5f2. No UI-02 cutover or model call.
+
+## 2026-10-13 17:19:28 - Approved execution profiles source verification
+
+Both old demo sessions76406/88221 drained before source edits. Runtime0.67 implements
+owner-local scope/lock/schema/semantic/context profile, unchanged synthetic compiler
+plans and universe-v1 bytes, opt-in universe-v2 retention, current-grant admission
+checks and exact structural Registry context/reason.234 focused profile/compiler/
+definitions tests pass (including PostgreSQL). SDK0.3 explicit worker profile rejects
+wrong scope/pins before claim;105 full SDK tests pass. A constructor-oracle failure
+caught an extra default kwarg, repaired without changing the old oracle;53 other
+multi-input/Runtime cases had passed. Chemical tests belong in the isolated tool
+environment (dev intentionally lacks Pillow/RDKit); initial combined collection was
+replaced with correct ownership scope.24 exact dependency locks resolved offline,
+chemical environment lock hash updated. Scientific kernels unchanged. New actual
+fixture exercises draft admission and cold reconstruction after grant removal.
+UI-02.03=37.5% (100/50/0/0); P1.4=0 until actual handoff/audit, parent18.75% unchanged.
+No new model calls. Source checkpoint and independent actual handoff follow.

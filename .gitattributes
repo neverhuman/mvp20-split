@@ -50,3 +50,6 @@ v2/dev/scientific_execution/knowledge_source.txt text eol=lf
 /v2/tools/chemical_structure/uv.lock text eol=lf
 
 /v2/services/capability_registry/src/amphora_capability_registry/structural_profiles/*.json text eol=lf
+
+v2/services/campaign_runtime/src/amphora_campaign_runtime/execution_profiles/reviewed.json text eol=lf
+v2/sdk/tool_protocol/src/amphora_tool_protocol/execution_profiles/reviewed.json text eol=lf
