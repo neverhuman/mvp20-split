@@ -57,3 +57,20 @@ remain covered. Two schema compatibility checks and dependency guard pass. First
 invocation lacked dev pytest configuration; rerun with explicit -c passed.
 P1.3=100%, P1=75%, overall18.75%, Build25%, Verification0%. P1.4 actual independently
 installed registered graph/retention/Research handoff next. No new model calls.
+
+## 2026-10-13 11:53:07 ? Actual integration exposes Registry gate
+
+Six independent installations completed (Runtime/Data/Research/chemical/Registry/
+SDK controller). Actual Registry accepted chemical descriptor registration, then
+rejected activation_profile_denied. Initial harness dereferenced absent release;
+corrected fresh-scope rerun retained the denial explicitly. Both probes closed owned
+processes; no chemical campaign admitted or model calls. Exact receipts committed
+under docs/Audits/Evidence/UI-02-Chemical/Registry_Activation.json.
+
+Code confirms both activation and separate scientific selection are synthetic-only;
+the original inventory missed this prerequisite. UI-02.02 proposes a scoped exact-pin
+structural profile shared by activation/selection, default legacy behavior/digests
+and immutable receipt replay unchanged. No Registry change, workaround or synthetic
+relabelling performed. P1.4=0%, P1=75%, overall18.75% unchanged pending decision.
+
+2026-10-13 11:55:57: prior frozen Studio0.34.4 demo restored, local31118/session13i and LAN47144/LAN13g. Both ready; app.js HTTP200 and exact21fa5c5d6f790ffd902f0074290a651c5bebcd5173cf136ba105ac43514db5f2 match. No UI-02 cutover or new model calls. Final normalized-LF tool installation passes32 copied tests.

@@ -52,3 +52,24 @@ A route can be literature-supported but blocked because the required equipment o
 BP-08.03 adds a focused Research registration boundary. Authorized callers submit the existing CandidateRevision, with an exact representation Artifact. Reviewed host profiles pin the representation schema, kind and synthetic semantic profile. Research resolves current Data access and exact bytes before entering its identity transaction; it validates scope/encoding but does not import operator implementations or infer chemical legality. Registration declares a proposed candidate only. Tool execution acceptance, evaluation fitness and scientific eligibility remain separate evidence.
 
 Identity and first-public-registration provenance commit atomically. Exact retries retain the original actor/history and recheck source access; changed immutable bytes or stale succession conflict. Authorized historical identity reads do not fetch source bytes or erase records when rights later change. The read authorization observed before commit is not a distributed transaction guarantee or a new retention lease. Public registration is explicitly configured and separately granted from questions/needs and scientific decisions.
+
+## Supplied finite chemical structure declarations
+
+UI-02.01 owner approval extends candidate ingress through an explicit, separately
+configured chemical profile. Research0.41.0 accepts successful chemical-structure
+bundles only for the exact registered candidate/revision/scope; synthetic defaults,
+DTOs, immutable identity ledger and current-rights retry rules remain intact.
+An independently packaged chemical_structure tool owns parsing/normalization,
+formula and bounded inert2D PNG. Research has no RDKit/scientific-tool dependency.
+
+The first profile accepts supplied connected finite molecules/oligomers with explicit
+end groups. It preserves isotope, formal charge, explicit H and supported stereo;
+unspecified stereo remains visible. Unspecified polymers, mixtures, biological
+sequences and unsupported chemical features require separate adapters. A structural
+derivation is neither a generated candidate, a recommendation, synthesizability
+assessment nor efficacy evidence. Exact accepted Runtime producer plus current Data
+bytes/rights establish attribution; self-reported hashes alone do not.
+
+UI-02/P1.1-P1.3 component gates are implemented; actual registered owner handoff
+P1.4 and candidate UI P2-P4 remain acceptance gates. No claim of image deployment
+or property-model integration follows from the native independent tool tests.

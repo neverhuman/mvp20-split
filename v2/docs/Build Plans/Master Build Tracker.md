@@ -1,6 +1,6 @@
 # Master Build Tracker
 
-Latest checkpoint: 2026-10-13 11:29:12: UI-02.01 approved; P1.1 contracts complete; production dependency boundary check passes; P1.4 actual handoff next. UI-01 remains complete/archived. Local/LAN demo drained for source work; frozen serving baseline retained.
+Latest checkpoint: 2026-10-13 11:53:07: UI-02 P1.4 blocked on actual Registry activation_profile_denied; reviewable UI-02.02 proposal. P1.1-P1.3 complete; overall18.75%, Build25%, Verification0%.
 
 ## Purpose and Authority
 
@@ -10,15 +10,15 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 
 ## Program Tracker
 
-- Status: UI-02 P1.4 actual handoff active; boundary approved; UI-01 and LAN-01 complete/archived. LR-01 remains paused.
-- Last refreshed: 2026-10-13 11:23:21 (America/Chicago).
+- Status: UI-02 P1.4 blocked on Registry profile decision; boundary approved; UI-01 and LAN-01 complete/archived. LR-01 remains paused.
+- Last refreshed: 2026-10-13 11:53:07 (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
 - Current priority: schedule UI-01 Knowledge/run/LLM integration and UI-02 formula/structure views for2026-10-12 through2026-10-16; preserve the live demo.
-- Primary active task: UI-02/P1 scoped design complete; owner approved [chemical structure boundary](UI-02.01%20Chemical%20structure%20boundary%20decision.md). P1.1/P1.2/P1.3=100%, P1.4=0%; P1=75%.
-- Next task: P1.4 actual graph/Research handoff, then P2 recommendation evidence.
+- Primary active task: UI-02/P1.4 blocked on UI-02.02 Registry activation/selection profile; owner approved [chemical structure boundary](UI-02.01%20Chemical%20structure%20boundary%20decision.md). P1.1/P1.2/P1.3=100%, P1.4=0%; P1=75%.
+- Next task: owner direction on UI-02.02, then Registry policy correction/P1.4 and P2 recommendation evidence.
 - Implementation completion: UI-01 and LAN-01=100% archived; UI-02=18.75%, Build25%, Verification0%; P1=75%, P2/P3/P4=0%; LR-01 paused25%, Build33.33%, Acceptance0%.
-- Blockers/dependencies: none requiring owner direction; approved chemical admission extension follows P1.1/P1.2. Source-work drain is temporary; container hosting deferred.
-- Latest checkpoint: UI-01 scoped closeout, independent consumer, native zoom and current exact-assets local/LAN acceptance passed.
+- Blockers/dependencies: Registry synthetic-only activation/selection blocks approved chemical tool; UI-02.02 owner decision required. Existing frozen local/LAN demo restored; container hosting deferred.
+- Latest checkpoint: P1.1-P1.3 verified and pushed88bb5cb9;32 independent tool tests,75 Research/identity checks,668 unchanged predecessor pins.
 - Acceptance posture: bounded synthetic UI flow qualified; no scientific accuracy or unattended-reliability claim. Demo30slots/$7.50 unreserved; V1 used no model calls.
 - Active exception: owner scheduled four targets for next week. Preserve earned phase credit; sequence the bounded cross-plan handoffs below. Pull LR-01/UI-R01 forward only when their faults block the scheduled integration, with exact return points.
 
@@ -42,7 +42,7 @@ Completed plans remain in the [completed index](Completed/README.md).
 
 | Order | Canonical plan | Status | Overall | Build | Verification/Acceptance | Prerequisite |
 |---|---|---|---:|---:|---:|---|
-| 1 | [UI-02 Candidate Structure and Recommendation Views](UI-02%20Candidate%20Structure%20and%20Recommendation%20Views.md) | P1.4 active; P1=75%, P2/P3/P4=0% | 18.75% | 25% | 0% | Typed retained candidate structures and explicit selection evidence; activation audit |
+| 1 | [UI-02 Candidate Structure and Recommendation Views](UI-02%20Candidate%20Structure%20and%20Recommendation%20Views.md) | P1.4 policy-blocked; P1=75%, P2/P3/P4=0% | 18.75% | 25% | 0% | Typed retained candidate structures and explicit selection evidence; activation audit |
 | 2 | [POP-01 Population Campaign Execution and Experience](POP-01%20Population%20Campaign%20Execution%20and%20Experience.md) | Queued; Execution/Experience/Qualification=0% | 0% | 0% | 0% | Knowledge/LLM workflow UI-01/V1 and UI-02/P4 complete |
 | 3 | [ML-01 Inherited Scientific Model Integration](ML-01%20Inherited%20Scientific%20Model%20Integration.md) | Standalone queued; M1/M2/M3/M4/V1=0% | 0% | 0% | 0% | UI-01/V1 + UI-02/P4, then POP-01 complete; qualified population/tool handoff |
 | 4 | [LR-01 Local Worker Reliability](LR-01%20Local%20Worker%20Reliability.md) | Paused; pull R2 forward for blocking run failure | 25% | 33.33% | 0% | UI priority released or UI-01.05/R1 blocked; same-host diagnostic window |

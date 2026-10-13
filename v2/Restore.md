@@ -1,87 +1,75 @@
 # Restore
 
-Refreshed: 2026-10-13 11:30:04 America/Chicago. Read FIRST after compaction.
+Refreshed: 2026-10-13 11:55:01 America/Chicago. Read FIRST after compaction.
 
-## Current checkpoint
+## Current checkpoint and owner gate
 
-UI-01 is complete100%, Build100%, Verification100%, scoped-audited and archived in
-docs/Build Plans/Completed. UI-01.05 and08j also archived complete;08decision100%.
-UI-02.01 approved by owner 2026-10-13 11:23:21; implement supplied finite molecules/oligomers.
-P1.1/P1.2/P1.3 complete100%; P1=75%, UI-02 overall18.75%, Build25%, Verification0%.
-Next: P1.4 actual registered graph handoff. No additional approval for this scope.
-Local79358 and LAN90134 cooperatively STOPPED, both exit0 before source work.
-Restore frozen serving13f after appropriate checks. Previous five stale NAS-read
-shells closed; no model calls. Container hosting deferred per owner.
-Latest pushed checkpoint155e2026; P1.1 verification complete; commit follows.
+UI-02.01 approved and implemented through P1.3. P1.1/P1.2/P1.3=100%, P1.4=0%;
+P1=75%, P2/P3/P4=0%; overall18.75%, Build25%, Verification0%.
+Contracts chemical_structure0.1.0 additive;668 predecessor schema bytes unchanged.
+Tool chemical_structure0.1.0:32 independent tests, source/identity/formula/PNG,
+RDKit2025.9.6/numpy2.5.4/Pillow12.3.0. Research0.41.0 opt-in profile, exact
+candidate/revision matching;75 PostgreSQL/registration/identity regressions pass.
+No new Research DTO/route/table, no scientific/property/ranking authority.
+Pushed: ffa64615 contracts,85c1ac97 tool,88bb5cb9 Research.
 
-P1.2 complete100%; tool0.1.0 independent verification passes32 tests, exact schema
-bytes, fresh-process deterministic formula/PNG, service import isolation. PNG viewed.
-Evidence .test-results/ui02-chemical-independent-20261013a. Sessions62417 and75672
-finished exit0. Source30 earlier passed; independent32 includes duplicate JSON and
-graph-reference checks. RDKit2025.9.6/numpy2.5.4/Pillow12.3.0 pinned.
-P1.3 complete: Research0.41.0 opt-in ChemicalCandidateProfile, exact identity binding,
-no new routes/DTO/table/chemistry imports.75 PostgreSQL/registration/identity checks,
-2 schema compatibility and dependency guard pass; sessions25943/18059 finished0.
-P1.4 next: actual independently installed tool + Registry/Runtime/Data/Research
-handoff. Existing dev/verify_candidate_handoff.py and owned acceptance environment
-are synthetic3-tool patterns without actual Registry; adapt deliberately to one
-chemical tool plus real Registry acceptance, do not call declared image pins built.
-New standalone dev/verify_chemical_structure.py proved32 tool tests and byte equality.
-Environment resource normalized to LF; rerun new independent tool installation for
-P1.4 after this normalization. Original P1.2 results remain retained historical.
-All demo owners STOPPED. No other running workflows. No model calls. No owner gate.
-P1.3 commit follows; most recent prior pushed85c1ac97.
+BLOCKER: actual Registry registers the chemical descriptor but rejects activation
+with activation_profile_denied. Its activation AND separate selection policy only
+allow synthetic_only/synthetic-tests. Tool truthfully declares evidence_proposal /
+supplied-finite-molecules. Original activation inventory missed this prerequisite.
+Do not relabel tool synthetic, skip Registry or silently broaden activation policy.
+Concrete owner proposal: [UI-02.02](docs/Build%20Plans/UI-02.02%20Structural%20tool%20registry%20profile%20decision.md). Scoped opt-in exact-pin structural policy
+shared by activation/selection; old default/digests/receipts unchanged. Await owner
+direction before implementing that material policy extension. Independent work done.
+No chemical campaign admitted; no P1.4 credit. UI candidate inspector not yet built.
+After approval complete Registry correction and actual P1.4 gate, then P2 in order.
 
-Studio0.34.4 final independent install passes445 tests/90public schema pins and
-byte-identical static assets. Helper4tests, focused Explore22tests pass. Fixed idle
-Knowledge lanes falsely marked stale on hide/reveal; previously requested lanes
-still cancel/clear. Long directions use full-text native disclosure. No API change.
-Actual browser1946 passed all3: ui01-v1-browser-20261013c (native200% Chromium zoom,
-keyboard6views, actual Knowledge, unsent context preservation, labelled403/503 GET
-failures/recovery); curation-demo-successor-review-20261013d and
-curation-demo-lan-successor-20261013d (exact assets,1440/390, existing successor).
-Screens visually inspected.0new campaigns/model calls. Native zoom is getZoom/DPR
-verified; CDP layout capture avoids earlier harness clipping. Preserve failed a/b.
-Final proof docs/Audits/Evidence/UI-01-Acceptance and UI-01_Research_Workspace_Closeout.md.
-Independent manifest .test-results/studio-isolated/a539a0d5a4d94038bd21965a11f7b013.
+## Exact integration evidence
 
-## Running demo ? preserve
+Six independent installations: .test-results/ui02-chemical-handoff-20261013a,
+Runtime/Data/Research/chemical/Registry/SDK controller. New helper
+ dev/verify_chemical_handoff.py; --installations can reuse these exact installations.
+Owned probe: services/research/tests/candidate_registration/chemical_acceptance.
+Original a probe dereferenced absent release after rejection. Corrected fresh-scope
+b explicitly retains registration accepted / activation rejected, no bypass.
+Committed compact evidence: docs/Audits/Evidence/UI-02-Chemical/Registry_Activation.json.
+Audit: docs/Audits/UI-02_Chemical_Representation.md. Proposal/evidence checkpoint commit follows; demo restored. Sessions54278/62826 ended1; both cleaned owners.
+Final normalized-LF installed tool still passes32 tests (session13528 exit0).
+Standalone tool evidence .test-results/ui02-chemical-independent-20261013a.
+Image digests in handoff are declared fixture pins, NOT built Linux/container proof.
 
-STOPPED local79358, session .test-results/curation-demo-session-20261013h.
-STOPPED LAN90134, session .test-results/curation-demo-lan-20261013f.
-Both use frozen .test-results/curation-demo-serving-20261013f, Studio0.34.4,
-duration86400. To stop: create STOP in each session then poll BOTH for drain.
-Do not edit source/tests/module READMEs while live/install/test/recovery workflows
-run. Ordinary audit/tracker/git edits allowed. Shared PostgreSQL/Qdrant unchanged.
+## Demo restoration
+
+LIVE local31118, .test-results/curation-demo-session-20261013i.
+LIVE LAN47144, .test-results/curation-demo-lan-20261013g (ready11:53:41).
+Local ready11:54:42; both local/LAN app.js200 and exact frozen SHA verified.
+Both use unchanged frozen .test-results/curation-demo-serving-20261013f, Studio0.34.4,
+duration86400. Old79358/90134 (13h/LAN13f) cooperatively drained before source work.
+To stop: create STOP in each current session directory; poll both for exit/drain.
+Do not edit source/tests/module READMEs while live/install/test workflows run.
+Ordinary audit/tracker/git edits allowed. Shared PostgreSQL/Qdrant unchanged.
 Local http://127.0.0.1:57013; LAN https://192.168.1.70:57013.
-Actual JS sha21fa5c5d6f790ffd902f0074290a651c5bebcd5173cf136ba105ac43514db5f2.
-
-ROOT = C:/Users/alb_p/AppData/Local/Packages/PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0/LocalCache/Local/Amphora/local-v2/restore-20261007b
-TLS = same LocalCache/Local/Amphora/lan-demo-20261008
-Planning installed .test-results/curation-planning-installation-20261013b/owner0.142;
+Frozen JS sha21fa5c5d6f790ffd902f0074290a651c5bebcd5173cf136ba105ac43514db5f2.
+ROOT C:/Users/alb_p/AppData/Local/Packages/PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0/LocalCache/Local/Amphora/local-v2/restore-20261007b
+TLS same LocalCache/Local/Amphora/lan-demo-20261008.
+Installed serving owners unchanged: Planning .test-results/curation-planning-installation-20261013b/owner0.142;
 Deployment .test-results/curation-deployment-installation-20261013a/owner0.20.2;
 Gateway .test-results/successor-gateway-installation-20261012a/owner0.7.
 Scope internal/knowledge-demo-1b1dc25768334153b58973882627b858.
-
-Original g curation-717107e66edc0c82e9cbb951e9e17d30d6938f5fce48cd05d38fcd87f3bc7670
-is ready/draft_validated, compiled28.859s; no more recovery rounds. One actual launch
-completed successor563e14a17f2e4539aeece1838dce80ec with4 scientific invokes.
-Predecessor ae03d1a0d62143f4930f67819a0dc6a9. Body preserved baseline Hansen/Arrhenius;
-title/futurecontext changed through explicit8tag corrective direction, not science/
-autonomous reliability proof.21 originals replayed unchanged; no TTL15s/freshness60s/
-round16 weakening. Audit UI-01.08_Managed_Curation_Delivery.md retains details.
+Existing completed successor563e14a17f2e4539aeece1838dce80ec, predecessor
+ ae03d1a0d62143f4930f67819a0dc6a9. Original g proposal remains ready/draft_validated;
+no recovery/model resubmission needed. Four synthetic Hansen/Arrhenius invokes,
+no generated molecule or winner. UI-01 complete100%, audited/archived;445 Studio
+checks and actual local/LAN/native200% browser acceptance retained in UI-01 audit.
 
 ## Authority and money
 
-Continue until actually needing owner. No agents/JARVIS/v1. Preserve user untracked
-ocular PDF/DOCX. Exact-path staging; commit/push significant verified work to main.
-User approved next$10: qualification frozen16holds/$4.05 includes preapproval$3.30.
-Demo7holds/$1.75,30slots/$7.50 unreserved. Since approval10physicalcalls/$2.50 held;
-known reported estimate$0.521323500 PLUS unknown original demo-b charge. No refunds.
-Private Planning probes only in installed Planning interpreter. Secrets stay env/
-memory; never print raw browser exception logs (cookies possible). Existing model
-key source Z:/ssos/.env authorized. Launcher key comes from Deployment vault only.
-
-UI-02 must bind formula/structure to a real supplied/generated representation;
-current scalar fixtures cannot imply chemistry or a winner. POP-01 follows UI-02,
-then ML-01; LR-01 paused25%. Read canonical plans before selecting implementation.
+Continue until an actual owner gate; this turn reached UI-02.02. No agents/JARVIS/v1
+writes. Preserve user untracked ocular PDF/DOCX. Exact-path staging; commit/push
+significant verified work to main. Container hosting deferred per owner.
+No new model calls. Approved next$10: qualification16holds/$4.05 includes prior$3.30.
+Demo7holds/$1.75;30slots/$7.50 unreserved. Since approval10physicalcalls/$2.50 held.
+Known estimate$0.521323500 PLUS unknown original demo-b charge. No refunds/resets.
+Secrets env/memory only; authorized Z:/ssos/.env key source; launcher uses Deployment
+vault. Never print raw browser exceptions/cookies. UI-02 precedes POP-01 then ML-01;
+LR-01 remains paused25%. Restoring old demo is not UI-02 visual acceptance.

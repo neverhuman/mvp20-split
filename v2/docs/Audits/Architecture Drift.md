@@ -21,3 +21,5 @@
 [BP-06 parent audit](BP-06_Knowledge_Evidence_Closeout.md) reconciles six accepted children. Protocol fixtures, receipt/correction integration, independent reconstruction and scoped views are implemented; old partial notes remain in [drift history](Architecture%20Drift%20History.md). Live-model quality, scientific efficacy and deployed operations retain separate gates.
 
 Use [Development Process](../Development_Process.md) and the [audit template](../Templates/Plan%20Audit%20Template.md). Each discrepancy names evidence, boundary, blocking classification, owner and disposition. Aligned records with no follow-up belong in history.
+
+UI-02/P1.4 blocking drift: approved chemical tool/Research profile exceeds Registry synthetic-only activation and selection policy. Actual registration accepted, activation rejected; no campaign admitted. [Scoped audit](UI-02_Chemical_Representation.md), [owner decision UI-02.02](../Build%20Plans/UI-02.02%20Structural%20tool%20registry%20profile%20decision.md). Registry owns correction; default/receipt compatibility must be preserved.

@@ -1,0 +1,139 @@
+{
+  "timestamp_local": "2026-10-13 11:53:07",
+  "status": "blocked",
+  "reason": "activation_profile_denied",
+  "scope": "Actual independently installed Registry registration accepted; activation rejected under synthetic-only policy. No chemical campaign admitted.",
+  "registration": {
+    "schema_version": "1",
+    "operation_id": "2d1e4f30b28e4cbe906e0fd49b398a04",
+    "status": "accepted",
+    "reason_code": "registered",
+    "release": {
+      "scope": {
+        "tenant_id": "chemical-handoff",
+        "project_id": "cca09a57d64f4edfa4d9405f8da82392"
+      },
+      "descriptor": {
+        "schema_version": "1",
+        "tool": {
+          "schema_version": "1",
+          "binding": {
+            "capability_id": "chemistry.chemical-structure",
+            "release": "0.1.0",
+            "image_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+            "contract_version": "1"
+          },
+          "purpose": "Derive formula and 2D depiction for a supplied finite molecule; structural evidence only.",
+          "applicability": [
+            "supplied-finite-molecules"
+          ],
+          "inputs": [
+            {
+              "name": "structure",
+              "schema_ref": {
+                "schema_id": "chemical-structure.request",
+                "version": "1",
+                "sha256": "add511e8856a23631faa2b46831c83b7ca27a65d9664758fd5b7df12f293930e"
+              },
+              "representation": "finite-smiles-request",
+              "unit": "1",
+              "required": true
+            }
+          ],
+          "outputs": [
+            {
+              "name": "result",
+              "schema_ref": {
+                "schema_id": "chemical-structure.result",
+                "version": "1",
+                "sha256": "efcca10edae21dc833c53d594ac36e5e6c4f319eed1fed0059bb4de8b4730ecc"
+              },
+              "representation": "finite-molecule-structure",
+              "unit": "1",
+              "required": true
+            }
+          ],
+          "side_effects": "pure",
+          "checkpoint_schema": null
+        },
+        "resources": {
+          "architectures": [
+            "x86_64"
+          ],
+          "operating_systems": [
+            "linux"
+          ],
+          "cpu_millicores": 1000,
+          "memory_mib": 512,
+          "gpu_count": 0,
+          "timeout_seconds": 60,
+          "max_parallel_invocations": 1,
+          "max_batch_size": 1
+        },
+        "egress": {
+          "mode": "deny"
+        },
+        "checkpoint": {
+          "mode": "none",
+          "readable_schema_sha256": []
+        },
+        "reproducibility": "deterministic",
+        "authority_ceiling": "evidence_proposal",
+        "examples": [
+          "A supplied fully specified finite oligomer with explicit end groups."
+        ],
+        "anti_examples": [
+          "No molecular generation, efficacy, synthesis feasibility or property ranking; no unspecified polymers or mixtures."
+        ]
+      },
+      "lock": {
+        "schema_version": "1",
+        "tool": {
+          "capability_id": "chemistry.chemical-structure",
+          "release": "0.1.0",
+          "image_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+          "contract_version": "1"
+        },
+        "descriptor_sha256": "a32d748e2ac243752ec0a1e0201e99c3a32eea83161a2bd1fdced874968b3c65",
+        "input_schemas": [
+          {
+            "port": "structure",
+            "schema_ref": {
+              "schema_id": "chemical-structure.request",
+              "version": "1",
+              "sha256": "add511e8856a23631faa2b46831c83b7ca27a65d9664758fd5b7df12f293930e"
+            }
+          }
+        ],
+        "output_schemas": [
+          {
+            "port": "result",
+            "schema_ref": {
+              "schema_id": "chemical-structure.result",
+              "version": "1",
+              "sha256": "efcca10edae21dc833c53d594ac36e5e6c4f319eed1fed0059bb4de8b4730ecc"
+            }
+          }
+        ],
+        "checkpoint_schema": null
+      },
+      "revision": 1,
+      "status": "registered"
+    },
+    "deployment": null,
+    "heartbeat": null,
+    "decision": null
+  },
+  "activation": {
+    "schema_version": "1",
+    "operation_id": "1ca295e7335d4d6b8180c62031fdea8c",
+    "status": "rejected",
+    "reason_code": "activation_profile_denied",
+    "release": null,
+    "deployment": null,
+    "heartbeat": null,
+    "decision": null
+  },
+  "source": "ui02-chemical-handoff-20261013b",
+  "provider_calls": 0
+}
