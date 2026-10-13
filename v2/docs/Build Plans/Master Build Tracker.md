@@ -1,6 +1,6 @@
 # Master Build Tracker
 
-Latest checkpoint: 2026-10-13 18:16:51: UI-02 complete/audited100%, archived. POP-01 activation/compatibility next; implementation0%. Studio0.36 and original demo local/LAN qualified, no paid calls.
+Latest checkpoint: 2026-10-13 18:26:00: POP-01 activation inventory and37legacy wire/ranking tests pass; concrete additive profile decision POP-01.04 awaits owner direction. Implementation0%; UI-02 pushed a614e594. No paid calls.
 
 ## Purpose and Authority
 
@@ -10,16 +10,16 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 
 ## Program Tracker
 
-- Status: UI-02 closed/audited100%; POP-01 activation audit next. LR-01 paused25%.
-- Last refreshed: 2026-10-13 18:16:51 (America/Chicago).
+- Status: UI-02 closed/audited100%; POP-01 E1 design active, contract decision pending. LR-01 paused25%.
+- Last refreshed: 2026-10-13 18:26:00 (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
 - Current priority: POP-01 population execution/experience before ML-01; preserve the qualified internal demo.
-- Primary active task: POP-01 activation/coherence review, then POP-01.01/E1 contracts and compatibility.
-- Next task: establish the bounded additive population contract decision before implementation.
+- Primary active task: POP-01.01/E1 inventory complete; [POP-01.04](POP-01.04%20Population%20contract%20decision.md) ready for owner review.
+- Next task: after direction, implement additive population records/domain validation and compatibility goldens.
 - Implementation completion: POP-01=0%, Execution/Experience/Qualification0%; Build/Verification0%. UI-01/UI-02/LAN-01 archived100%; LR-01 paused25%.
-- Blockers/dependencies: no inherited UI-02 blocker. POP-01 E1 still owns material contract decisions; no population-scale/scientific capability inferred from inspector proof.
-- Latest checkpoint: Studio0.36/473tests/boundary guard; actual candidate local/LAN, original demo regression, held example and component audit pass. Frozen serving h qualified; previousf preserved.
-- Acceptance posture: supplied finite structure is unranked; original scalar campaigns have no molecule. No new model calls. Demo wrappers drained during implementation; live availability is separate.
+- Blockers/dependencies: POP-01.04 additive population/material profile requires owner direction before implementation. No inherited UI-02 blocker; no scale/scientific capability inferred.
+- Latest checkpoint: activation corrected_ready for E1 design; existing scatter cursor/transaction reuse confirmed,37legacy tests pass. Versioned population/selection/page/material contracts proposed; all child gates remain0%.
+- Acceptance posture: supplied finite structure is unranked; original scalar campaigns have no molecule. No new model calls. Local13k/LAN13i restored for review2026-10-13 18:27:28; exact Studio0.36 JS verified. Drain before source edits.
 - Active exception: none. Pull LR-01/UI-R01 forward only for a demonstrated blocker with exact return point.
 
 ## Initial Delivery Boundary
@@ -32,7 +32,7 @@ The initial program proves software behavior using deterministic/synthetic fixtu
 
 ## Current In-Flight Work
 
-POP-01 activation review pending; implementation0%, all children/phases0%.
+POP-01 E1 design active; POP-01.04 decision pending. Implementation0%, all children/phases0%.
 LR-01 paused25%, Build33.33%, Acceptance0%; R1=100%, R2/R3/V1=0%.
 Completed UI-01/UI-02/LAN-01 are in the [completed index](Completed/README.md).
 
@@ -40,7 +40,7 @@ Completed UI-01/UI-02/LAN-01 are in the [completed index](Completed/README.md).
 
 | Order | Canonical plan | Status | Overall | Build | Verification/Acceptance | Prerequisite |
 |---|---|---|---:|---:|---:|---|
-| 1 | [POP-01 Population Campaign Execution and Experience](POP-01%20Population%20Campaign%20Execution%20and%20Experience.md) | Queued; Execution/Experience/Qualification=0% | 0% | 0% | 0% | Knowledge/LLM workflow UI-01/V1 and UI-02/P4 complete |
+| 1 | [POP-01 Population Campaign Execution and Experience](POP-01%20Population%20Campaign%20Execution%20and%20Experience.md) | E1 design active; POP-01.04 decision pending; Execution/Experience/Qualification=0% | 0% | 0% | 0% | Knowledge/LLM workflow UI-01/V1 and UI-02/P4 complete |
 | 2 | [ML-01 Inherited Scientific Model Integration](ML-01%20Inherited%20Scientific%20Model%20Integration.md) | Standalone queued; M1/M2/M3/M4/V1=0% | 0% | 0% | 0% | UI-01/V1 + UI-02/P4, then POP-01 complete; qualified population/tool handoff |
 | 3 | [LR-01 Local Worker Reliability](LR-01%20Local%20Worker%20Reliability.md) | Paused; pull R2 forward for blocking run failure | 25% | 33.33% | 0% | UI priority released or UI-01.05/R1 blocked; same-host diagnostic window |
 | 4 | [UI-R01 Feedback Read Diagnostics](UI-R01%20Feedback%20Read%20Diagnostics.md) | Queued; pull forward if it blocks UI-01 | 0% | 0% | 0% | Bounded read diagnostic and activation review |
@@ -169,6 +169,7 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 
 | Timestamp | Checkpoint | Evidence |
 |---|---|---|
+| 2026-10-13 18:26:00 | POP-01 E1 inventory/design complete; implementation0%, POP-01.04 owner decision pending. | Activation corrected_ready;37legacy wire/ranking checks; UI-02 pushed a614e594; no new profile or paid calls. |
 | 2026-10-12 11:20:06 | UI-01.08/P5.2 remains unmet; child90/P5=50. | Seventh original indeterminate;0 reported tokens. Diagnostic90 checks, five replays and actual browser pass. Seven/$1.75 held; UI-01.08c proposed. |
 | 2026-10-12 09:06:13 | UI-01.08=90/P5=50; parent78/Build97.5. | Missing capability and actual browser passed; supported graph failed. Six/$1.50 holds exhausted. UI-01.08b pending. |
 | 2026-10-12 08:54:22 | Approved UI-01.08a correction66.67%; parent85/P5=25 unchanged. | Planning0.128.0:124 scoped checks, isolated install, original v1 replay and actual-owner v2 preparation pass. Exact scope6/$1.50 retains four old holds; two new slots remain. |
@@ -193,7 +194,6 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 | 2026-10-11 19:26:42 | UI-01.07 closed100%; N2.2=100%, N2=93.75%; UI01=57.5%/Build71.88%. N2.3 next. | [Audit](../Audits/UI-01.07_Campaign_Provenance.md); actual compiler/draft/Research/Knowledge, original-run local/LAN1440/390, negative reads and process replacement.264 isolated owner and349 Studio tests. |
 | 2026-10-11 18:51:49 | UI-01.07 P1/P2/P3=100%, P4 active75%, child75%; parent N2.2 remains50%. | Planning0.107/Gateway0.5 API; Studio0.24 with349 tests and scripted1440/390 provenance/launch regression. Actual owners and isolated install next. |
 | 2026-10-09 10:20:00 | UI-01.06/R1=100%; UI-01.05=66.67%. N2.5=100%, N2=93.75%; parent518.75%/Build70.31%. | Actual local/LAN launch/results, same-run/container outage recovery and Knowledge traversal pass. Deployment502 installed tests/four probes, Studio337 checks. Scoped audit aligned; N2.2 resumes. |
-| 2026-10-09 09:17:45 | UI-01.06=60%, L3 complete100%, L4 active0%; UI-01.05=53.33%, R1=60%. Parent55% unchanged. |335 Studio/125 owner checks; browser launch/reload/pinned plan/node polling at1440/390. [Audit](../Audits/UI-01.06_Launch_UI.md). Actual owners/workers next. |
 
 ## 2026-10-12 09:06:13 live evaluation checkpoint
 

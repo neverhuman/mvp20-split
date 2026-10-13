@@ -2,8 +2,8 @@
 
 ## Canonical tracker
 
-- Status: queued after Knowledge/LLM integration and UI-02; before ML-01.
-- Last refreshed: 2026-10-08 20:58:22 (America/Chicago).
+- Status: E1 design active; additive contract decision pending; before ML-01.
+- Last refreshed: 2026-10-13 18:26:00 (America/Chicago).
 - Scope revision: planning baseline1; no implementation started.
 - Overall implementation: 0%; Execution0%, Experience0%, Qualification0%.
   Three equally weighted children, each with four equal delivery gates. Parent
@@ -12,7 +12,8 @@
 - Owner: cross-owner population workflow; responsibilities assigned below.
 - Prerequisite: UI-01/V1 and UI-02/P4 prove actual Knowledge, inventory-grounded
   LLM graph curation/missing-capability requests, browser Run and candidate detail.
-- Current task: none; queued. Next: POP-01.01/E1 compatibility and contract gate.
+- Current task: POP-01.01/E1 source inventory and decision prepared. Next: owner
+  direction on [POP-01.04](POP-01.04%20Population%20contract%20decision.md), then tested contracts.
 - Design readiness: source-grounded decomposition; proposed additive contracts,
   selection policies and service routes still require E1 review before coding.
 - Demonstrated behavior: BP-08 numeric evolution/recovery exists; the current
@@ -22,8 +23,10 @@
   for deterministic engineering qualification. Actual polymer operators are separate.
 - Acceptance: actual owner/process/browser proof, including restart and scale;
   no blanket human approval gate between generations.
-- Activation audit: pending at activation; read-only planning review below is not
-  an implementation or deployment qualification. v1 and completed BP plans stay closed.
+- Activation audit: [corrected_ready for E1 design](../Audits/POP-01_Activation.md),
+  2026-10-13 18:26:00; source inventory and37legacy checks pass. New contracts await
+  owner direction; design earns no implementation credit. v1/completed plans stay closed.
+- Active exception: none. UI-01/V1 and UI-02/P4 prerequisites complete.
 
 ## Sequence and immediate children
 

@@ -1,14 +1,19 @@
 # POP-01.01 Population Execution
 
-- Status: queued; parent [POP-01](POP-01%20Population%20Campaign%20Execution%20and%20Experience.md).
-- Last refreshed: 2026-10-08 20:58:22 (America/Chicago).
+- Status: E1 design active, contract decision pending; parent [POP-01](POP-01%20Population%20Campaign%20Execution%20and%20Experience.md).
+- Last refreshed: 2026-10-13 18:26:00 (America/Chicago).
 - Implementation: 0%; E1/E2/E3/E4=0%, four equal delivery gates.
-- Prerequisite: parent entry gate. Current task: none; next E1.
+- Prerequisite: parent entry gate satisfied. Current: E1 inventory/decision prepared;
+  next owner direction on [POP-01.04](POP-01.04%20Population%20contract%20decision.md),
+  then new-profile records/domain validation and compatibility tests.
 - Owners: public contracts, Search tools, Runtime scheduling/acceptance, Data artifacts,
   Research evidence eligibility. No implementation credited for this design.
 - Exit: independently installed versioned population execution and recovery work
   through public graph APIs; semantic selection cannot depend on dispatch batch order.
-- Blockers: schema/version and authority decisions listed in E1. Acceptance pending.
+- Blocker: concrete additive boundary decision awaits owner direction; no new code
+  profile implemented. [Activation inventory](../Audits/POP-01_Activation.md) and37
+  existing wire/ranking tests pass. E1/E2/E3/E4 remain0%; design is not implementation.
+- Active exception: none. Acceptance remains actual independent execution/recovery.
 
 ## E1: inventory, semantic contracts and compatibility
 

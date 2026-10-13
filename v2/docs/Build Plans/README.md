@@ -6,7 +6,7 @@
 
 - [Campaign provenance decision](UI-01.07%20Campaign%20provenance%20decision.md): approved/qualified100%; bounded Planning-owned exact-draft origin read and lookup. Qualified launch UI-01.06 stays complete.
 
-- [POP-01 Population Campaign Execution and Experience](POP-01%20Population%20Campaign%20Execution%20and%20Experience.md): queued0%; three child plans for execution/recovery, bounded population UI and qualification. After UI-01/UI-02, before ML-01. Start at the parent for source-grounded reuse and scope.
+- [POP-01 Population Campaign Execution and Experience](POP-01%20Population%20Campaign%20Execution%20and%20Experience.md): E1 design active, implementation0%; activation inventory complete and [additive contract decision](POP-01.04%20Population%20contract%20decision.md) pending owner direction. Execution/recovery, population UI and qualification remain ordered before ML-01.
 
 - [ML-01 Inherited Scientific Model Integration](ML-01%20Inherited%20Scientific%20Model%20Integration.md): standalone queued0%; starts after UI-01/UI-02 end-to-end flow and POP-01 population qualification.
 
@@ -14,7 +14,7 @@
 
 [Master Build Tracker](Master%20Build%20Tracker.md) selects the primary plan and mirrors its canonical overall/per-phase completion. Owning plans define task position, tests and phase gates.
 
-BP-01 through BP-09 are [completed](Completed/README.md). SQ-01/UI-01/UI-02 are completed; POP-01 activation is next. MBT selects the primary task. Drafting does not earn implementation credit.
+BP-01 through BP-09 are [completed](Completed/README.md). SQ-01/UI-01/UI-02 are completed; POP-01 E1 is current. MBT selects the primary task. Drafting does not earn implementation credit.
 
 - [BP-02 Durable Runtime and Artifact Foundation](Completed/BP-02%20Durable%20Runtime%20and%20Artifact%20Foundation.md).
 - [BP-03 Tool Index and Standalone Execution](Completed/BP-03%20Tool%20Index%20and%20Standalone%20Execution.md).
