@@ -21,7 +21,8 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
   two335test isolated installs/legacy replay pass; no population deployment claim.
 - Gate: POP-01.05 new public bounded-admission command needs owner direction.
 - Acceptance: actual execution/population UI/scientific qualification remain distinct gates.
-- Active exception: owner asks about missing demo Knowledge content; read-only diagnosis complete.
+- Active exception: owner detour complete2026-10-14 12:14:01: [Early-stage compute estimates](../Early_Stage_Compute_Estimates.pdf),22pages, current primary-source prices and v1 model workload references; cost/PDF verification PASS. Implementation priority/percentages unchanged. Await owner direction before returning to POP-01 E1/D4.
+  Prior Knowledge-content diagnosis complete:
   Only6synthetic concepts/5claims seeded; no inherited v1 knowledge import. Frozen UI restored.
 
 ## Initial Delivery Boundary

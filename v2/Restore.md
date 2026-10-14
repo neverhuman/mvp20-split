@@ -1,14 +1,48 @@
 # Restore
 
-Refreshed: 2026-10-13 22:38:12 America/Chicago. Read FIRST after compaction.
+Refreshed: 2026-10-14 12:14:01 America/Chicago. Read FIRST after compaction.
 
 ## Current task
+
+OWNER DETOUR COMPLETE2026-10-14: [Early-stage compute estimates](docs/Early_Stage_Compute_Estimates.pdf).
+Business90day analysis: two future concurrent campaigns,20ML releases/week,
+v1 models read-only; USD1-10k/month includes infra/storage/training/agent APIs;
+labor/data licenses separate.22pages,32external primary references/74links plus11
+local evidence references. Arithmetic, page/text bounds, links and rendered visual
+inspection PASS. Provision~$6.5k/month; exact base$6327,lean$2594,stress$32267.
+CPU-first Amphora models; separate v1NOMAD GPU/8000feature program explicitly scoped.
+AWS/Azure/GCP, ML vendors and physical rental analyzed; no cloud procurement, paid
+calls, model training, code/service changes or new containers. Reproduction/check
+scripts and public price snapshots under ignored .test-results/compute-estimate*;
+generator build_compute_estimates.py. POP E1/D4 position preserved; STOP and await
+owner's next direction. This estimate does not qualify two-campaign execution.
+
+2026-10-14 reboot recovery: owner requests STOP after restoration for a detour;
+do not resume POP implementation automatically. D4 checkpoint already committed AND
+pushed as 75eaa03b (zero commits ahead of upstream); older "ready to commit" text below
+is stale. POP-01.05 remains proposed, E1=93.75%, D4=75%, E2=0.
+Docker Desktop and exact retained demo PostgreSQL/Qdrant pair restarted; historical
+test containers not restarted. LAN wrapper .test-results/curation-demo-lan-20261014a
+ready. Local attempts14a/14b ended on 60-second NAS import/readiness timeouts;
+local14c READY at11:30:58; wrapper PID6544. Uses ignored restart-20261014.py with180-second startup/read-only budget
+check allowance, no source/package/execution-limit changes. Curation stays PAUSED.
+Verified11:31:26: all7owners running; Hansen/Arrhenius standby, no faults;
+planning-curation/runtime-coordinate/runtime-deliver quiescent with0turns. Frozen
+static identity and retained peer reads PASS; read-only allowance PASS,7reserved/
+30remaining slots unchanged. Local http://127.0.0.1:57013; LAN https://192.168.1.70:57013.
+Five-minute LAN invite issued11:31:26 has expired; mint fresh only when needed.
+Open Amphora.url in LAN14a; serve_lan_review.py invite uses this exact session.
+Both wrappers bounded86400seconds. STOP each output folder to drain before source work.
+Restoration complete; STOP WORK for owner's detour. Owner requires temporary
+test containers removed after verification; rule recorded in AGENTS.md. No containers
+created during this restart. Baseline verifier reports ADDED v1/LICENSE (tracked);
+no v1 modifications or manifest regeneration made. User ocular files preserved.
 
 Refreshed checkpoint 2026-10-13 22:38:12. Continue-until-needed persists. POP-01.04 approved;
 POP-01.05 is proposed ONLY. Public bounded admission command needs owner direction.
 D3 pushed9e15ca43 (D2 2a161097): Search0.12 two335test isolated installs/replay/wheels,
 356source checks +corrected publication rerun/guard;740schema pins unchanged.
-D4 current work ready to commit: compiler-only nested generation/batch/scatter,
+D4 committed/pushed75eaa03b: compiler-only nested generation/batch/scatter,
 parallel unequal method branches,19stage multi-input process and exact resource math.
 13fixture/resource +4ownership checks PASS22381. Five duplicate test-scope aliases
 removed; parent ownership/dev coverage preserved. No public Runtime source changes.
@@ -32,9 +66,9 @@ Do not edit source/tests/module README while serving. Stop via each session/STOP
 and wait drained before source work. Docs/git allowed. No duplicate wrapper start.
 Fresh invite for LAN can use serve_lan_review.py invite (secret link clipboard only).
 
-Before owner handoff: commit/push current D4 work/trackers; ask exact POP-01.05
-bounded admission decision, explaining AGENTS material scope requirement. Latest
-user focus is Knowledge content; answer candidly without implying v1 import exists.
+After owner's detour/resume direction: next POP gate is exact POP-01.05 bounded
+admission decision, under AGENTS material scope requirement. D4 commit/push is done.
+Knowledge diagnosis remains valid; do not imply v1 corpus import exists.
 
 Demo selected .test-results/curation-demo-serving-20261013h Studio0.36, UI-02 complete
 pusheda614e594. Local13k/LAN13i drained; local13l/LAN13j now RUNNING (see current task).

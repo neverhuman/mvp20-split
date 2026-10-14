@@ -76,6 +76,8 @@ Short continuity notes for future relaunches so work can resume from the extract
 - If a source file, plan, or doc repeatedly requires long reads to answer narrow questions, treat that as a decomposition smell. Prefer creating or updating a module README, index, contract summary, or generated inventory rather than continuing to rely on large file scans.
 
 ## Development Debugging Patterns
+
+- Remove temporary test containers after their verification completes (owner instruction, 2026-10-14). Do not leave stopped test containers accumulating. Distinguish temporary fixtures from the active demo and explicitly retained recovery state; preserve user data and volumes unless their removal is authorized. Test workflows must include owned-container cleanup.
 - Prefer iterative deconstruction when a rich behavior fails and the intended approach is still valuable. Start from the smallest known-good shape, add one meaningful component at a time, and keep passing components instead of reverting to a weaker design by default.
 - Make component probes reusable when they expose a real system failure mode. A good probe should name each variant, keep the production route or boundary intact when possible, isolate rendered inputs independently, and record enough prompt/shape/telemetry markers to explain both passes and failures.
 - Restart or reset stateful runtimes between isolated model-failure probes when a failed run can poison later evidence. Treat contaminated follow-on failures as invalid until the runtime has been reset and the variant is rerun.
