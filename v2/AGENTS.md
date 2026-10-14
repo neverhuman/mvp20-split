@@ -2,6 +2,8 @@
 
 ## v2 Local Architecture Override
 
+- Production uses Linux with isolated containerized services/workers (owner correction, 2026-10-14). Windows is the current development workstation only; do not propose Windows as the production core OS or infer production OS from the demo host.
+
 - The active workspace is `Z:\mvp20-split\v2`; the Git repository root is its parent. `../v1/` is a read-only implementation baseline; do not modify it. External JARVIS references are provenance only; do not access that workspace unless the user requests it.
 - The active architecture direction is [Master Architecture](Architecture.md).
 - Amphora is now a flexible graph-native research engine rather than an epoxy-shaped fixed pipeline. It has two first-class authored graph types: executable campaign graphs and neuro-symbolic domain graphs. Execution/provenance lineage is a derived projection.

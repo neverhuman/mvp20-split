@@ -5,9 +5,15 @@ Refreshed: 2026-10-14 12:14:01 America/Chicago. Read FIRST after compaction.
 ## Current task
 
 OWNER DETOUR COMPLETE2026-10-14: [Early-stage compute estimates](docs/Early_Stage_Compute_Estimates.pdf).
+Owner correction: production is LINUX/containerized; Windows is development only.
+PDF replaced with FOUR-page business brief at owner's request (3-4page maximum),
+retaining~$6500/month ballpark, capacity assumptions/provider tradeoffs/90day approach.
+Four-page count, readable rendering,12clickable pricing links and text checks PASS.
+Reproduce current version using .test-results/build_compute_estimates_brief.py;
+older22page generator/audit below are historical and must not overwrite this brief.
 Business90day analysis: two future concurrent campaigns,20ML releases/week,
 v1 models read-only; USD1-10k/month includes infra/storage/training/agent APIs;
-labor/data licenses separate.22pages,32external primary references/74links plus11
+labor/data licenses separate. Original research used32external primary references plus11
 local evidence references. Arithmetic, page/text bounds, links and rendered visual
 inspection PASS. Provision~$6.5k/month; exact base$6327,lean$2594,stress$32267.
 CPU-first Amphora models; separate v1NOMAD GPU/8000feature program explicitly scoped.
