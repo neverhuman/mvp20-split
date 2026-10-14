@@ -86,6 +86,25 @@ requires-dist = [
 ]
 
 [[package]]
+name = "amphora-contracts-population"
+version = "0.1.0"
+source = { editable = "../../contracts/population" }
+dependencies = [
+    { name = "amphora-contracts-core" },
+    { name = "amphora-contracts-search" },
+    { name = "amphora-contracts-tools" },
+    { name = "pydantic" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "amphora-contracts-core", editable = "../../contracts/core" },
+    { name = "amphora-contracts-search", editable = "../../contracts/search" },
+    { name = "amphora-contracts-tools", editable = "../../contracts/tools" },
+    { name = "pydantic", specifier = ">=2.12,<3" },
+]
+
+[[package]]
 name = "amphora-contracts-runtime"
 version = "0.1.0"
 source = { editable = "../../contracts/runtime" }
@@ -159,11 +178,12 @@ requires-dist = [
 
 [[package]]
 name = "amphora-evolution-search"
-version = "0.5.0"
+version = "0.6.0"
 source = { editable = "." }
 dependencies = [
     { name = "amphora-contracts-core" },
     { name = "amphora-contracts-graph-runtime" },
+    { name = "amphora-contracts-population" },
     { name = "amphora-contracts-search" },
     { name = "amphora-contracts-search-steps" },
     { name = "amphora-contracts-tools" },
@@ -174,6 +194,7 @@ dependencies = [
 requires-dist = [
     { name = "amphora-contracts-core", editable = "../../contracts/core" },
     { name = "amphora-contracts-graph-runtime", specifier = "==0.13.0" },
+    { name = "amphora-contracts-population", editable = "../../contracts/population" },
     { name = "amphora-contracts-search", editable = "../../contracts/search" },
     { name = "amphora-contracts-search-steps", editable = "../../contracts/search_steps" },
     { name = "amphora-contracts-tools", editable = "../../contracts/tools" },

@@ -504,5 +504,11 @@
     "coverage_sources": [
       "sdk/tool_protocol/src/amphora_tool_protocol/execution_profiles"
     ]
+  },
+  "contracts-population": {
+    "tests": "contracts/population/tests",
+    "coverage_sources": [
+      "contracts/population/src/amphora_contracts_population"
+    ]
   }
 }

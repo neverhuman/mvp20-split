@@ -1,0 +1,208 @@
+{
+  "schema_version": "1",
+  "profile": "numeric-population-v1",
+  "scope": {
+    "tenant_id": "search-fixture",
+    "project_id": "numeric"
+  },
+  "search_id": "population-fixture",
+  "revision": 1,
+  "seed": "0000000000000000000000000000000000000000000000000000000000000000",
+  "representation": {
+    "schema_id": "search.numeric-vector",
+    "version": "1",
+    "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+  },
+  "variables": [
+    {
+      "variable_id": "x",
+      "unit": "dimensionless",
+      "lower": 0.0,
+      "upper": 1.0
+    }
+  ],
+  "method_graph": {
+    "definition": {
+      "artifact_id": "method-graph",
+      "scope": {
+        "tenant_id": "search-fixture",
+        "project_id": "numeric"
+      },
+      "sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+      "media_type": "application/json",
+      "schema_ref": {
+        "schema_id": "search.synthetic-policy",
+        "version": "1",
+        "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      "size_bytes": 2
+    },
+    "plan_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "methods": [
+      {
+        "method_id": "cost",
+        "node_path": [
+          "evaluate",
+          "cost"
+        ],
+        "tool": {
+          "capability_id": "synthetic-objectives",
+          "release": "0.1.0",
+          "image_sha256": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+          "contract_version": "1"
+        },
+        "input_schema": {
+          "schema_id": "search.numeric-vector",
+          "version": "1",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "output_schema": {
+          "schema_id": "search.numeric-vector",
+          "version": "1",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "required": true,
+        "conditions": {
+          "artifact_id": "cost-conditions",
+          "scope": {
+            "tenant_id": "search-fixture",
+            "project_id": "numeric"
+          },
+          "sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+          "media_type": "application/json",
+          "schema_ref": {
+            "schema_id": "search.synthetic-policy",
+            "version": "1",
+            "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          },
+          "size_bytes": 2
+        }
+      },
+      {
+        "method_id": "quality",
+        "node_path": [
+          "evaluate",
+          "quality"
+        ],
+        "tool": {
+          "capability_id": "synthetic-objectives",
+          "release": "0.1.0",
+          "image_sha256": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+          "contract_version": "1"
+        },
+        "input_schema": {
+          "schema_id": "search.numeric-vector",
+          "version": "1",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "output_schema": {
+          "schema_id": "search.numeric-vector",
+          "version": "1",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "required": true,
+        "conditions": {
+          "artifact_id": "quality-conditions",
+          "scope": {
+            "tenant_id": "search-fixture",
+            "project_id": "numeric"
+          },
+          "sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+          "media_type": "application/json",
+          "schema_ref": {
+            "schema_id": "search.synthetic-policy",
+            "version": "1",
+            "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          },
+          "size_bytes": 2
+        }
+      }
+    ]
+  },
+  "assembly": {
+    "tool": {
+      "capability_id": "synthetic-objectives",
+      "release": "0.1.0",
+      "image_sha256": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+      "contract_version": "1"
+    },
+    "policy": {
+      "artifact_id": "assembly-policy",
+      "scope": {
+        "tenant_id": "search-fixture",
+        "project_id": "numeric"
+      },
+      "sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+      "media_type": "application/json",
+      "schema_ref": {
+        "schema_id": "search.synthetic-policy",
+        "version": "1",
+        "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      "size_bytes": 2
+    },
+    "objectives": [
+      {
+        "objective": {
+          "objective_id": "cost",
+          "unit": "dimensionless",
+          "direction": "minimize"
+        },
+        "method_ids": [
+          "cost",
+          "quality"
+        ]
+      }
+    ]
+  },
+  "constraints": {
+    "artifact_id": "constraints",
+    "scope": {
+      "tenant_id": "search-fixture",
+      "project_id": "numeric"
+    },
+    "sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+    "media_type": "application/json",
+    "schema_ref": {
+      "schema_id": "search.synthetic-policy",
+      "version": "1",
+      "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    },
+    "size_bytes": 2
+  },
+  "context": [],
+  "knowledge": [],
+  "operators": {
+    "selection": "constrained-pareto-feasible-v1",
+    "variation": "box-convex-uniform-v1",
+    "rng": "sha256-counter-u53-v1",
+    "crossover_probability": 0.8,
+    "mutation_probability": 0.2,
+    "mutation_fraction": 0.1
+  },
+  "selection": {
+    "completion": "all_required_terminal",
+    "unavailable": "exclude_required_unavailable",
+    "ordering": "constrained-pareto-feasible-v1",
+    "minimum_parents": 2,
+    "insufficient": "stop_below_minimum_continue_reduced"
+  },
+  "budget": {
+    "population_size": 1000,
+    "successor_generations": 4,
+    "max_evaluations": 10000,
+    "max_attempts": 12000,
+    "max_activations": 100000,
+    "deadline_seconds": 86400,
+    "dispatch_slice": 16,
+    "active_invocations": 4,
+    "unchanged_front_limit": null
+  },
+  "implementations": [
+    {
+      "name": "numeric-kernel-fixture",
+      "version": "0.1.0",
+      "sha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
+    }
+  ]
+}

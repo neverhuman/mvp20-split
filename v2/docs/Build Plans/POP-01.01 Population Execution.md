@@ -1,21 +1,37 @@
 # POP-01.01 Population Execution
 
-- Status: E1 contract work authorized; LAN access interruption; parent [POP-01](POP-01%20Population%20Campaign%20Execution%20and%20Experience.md).
-- Last refreshed: 2026-10-13 18:46:18 (America/Chicago).
-- Implementation: 0%; E1/E2/E3/E4=0%, four equal delivery gates.
-- Prerequisite: parent entry gate satisfied. Current: E1 inventory/decision prepared;
-  [POP-01.04](POP-01.04%20Population%20contract%20decision.md) approved;
-  next new-profile records/domain validation and compatibility tests after LAN verification.
-- Owners: public contracts, Search tools, Runtime scheduling/acceptance, Data artifacts,
-  Research evidence eligibility. No implementation credited for this design.
-- Exit: independently installed versioned population execution and recovery work
-  through public graph APIs; semantic selection cannot depend on dispatch batch order.
-- Contract direction received; no new code
-  profile implemented. [Activation inventory](../Audits/POP-01_Activation.md) and37
-  existing wire/ranking tests pass. E1/E2/E3/E4 remain0%; design is not implementation.
-- Active exception: owner-requested remote LAN access verification. Keep demo live;
-  drain wrappers before source work. Return to E1 after access is confirmed.
-- Acceptance remains actual independent execution/recovery.
+- Status: active E1; parent [POP-01](POP-01%20Population%20Campaign%20Execution%20and%20Experience.md).
+- Last refreshed: 2026-10-13 20:31:45 (America/Chicago).
+- Implementation: 1.56%; E1=6.25%, E2/E3/E4=0%, four equal delivery gates.
+- Current: E1/D1 specification and membership foundation implemented; independent
+  two-install proof passed227tests each. Next: candidate birth and evaluation identities/outcomes.
+- Approval: [POP-01.04](POP-01.04%20Population%20contract%20decision.md) approved.
+- Evidence:209 scoped Search/population/publication tests pass;678 generated schemas,
+  all672 predecessor schema bytes unchanged. Pure checks are not runtime admission.
+- Owners: public contracts, Search domain, Runtime acceptance/dispatch, Data artifacts,
+  Research eligibility. E2 starts only after the whole E1 gate passes.
+- Blockers: none for remaining approved E1 records. New Runtime commands, if needed,
+  require a concrete decision. No population execution or performance claim yet.
+- Active exception: none; owner confirmed LAN access. Review wrappers drained before edits.
+- Exit: independent versioned population execution/recovery through public graph APIs;
+  selection cannot depend on dispatch order. Actual acceptance remains E2-E4.
+
+### E1 delivery accounting
+
+Four equal deliveries refine the existing E1 gate; they add no new scope. D1 contains
+8 equally weighted record/domain families: specification, membership, candidate birth,
+evaluation, fitness, selection, successor and process material lineage. Its first2
+are implemented/tested. Integration/qualification and later families remain uncredited.
+E1=(25+0+0+0)/4=6.25%; Execution=6.25/4=1.5625%, displayed1.56%.
+
+| Delivery | Completion | Remaining exit |
+|---|---:|---|
+| D1 records/domain invariants | 25% | Remaining6families, producers/consumers and graph-step DTOs |
+| D2 compatibility and numerical policy | 0% | Complete new-profile entry/policies, final legacy replay/schema oracles |
+| D3 semantic/negative qualification | 0% | Full coverage, selection, RNG/batch and process-mapping oracles |
+| D4 composition and write sets | 0% | Executable graph fixture, resource math, transition review; resolve any minimal Runtime extension |
+
+Detailed checkpoints belong to [POP-01 History](POP-01%20History.md).
 
 ## E1: inventory, semantic contracts and compatibility
 

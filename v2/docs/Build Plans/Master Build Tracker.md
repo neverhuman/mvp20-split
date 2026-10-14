@@ -1,6 +1,6 @@
 # Master Build Tracker
 
-Latest checkpoint: 2026-10-13 18:45:57: POP-01.04 approved; LAN access interruption. Listener and HTTPS Studio0.36 identity pass from host; fresh invitation issued, remote result pending. Implementation0%; UI-02 pushed a614e594. No paid calls.
+Latest checkpoint: 2026-10-13 20:28:54: POP-01 E1 specification/membership implemented;209 scoped tests pass, two independent installs227tests each/replay passed. Parent0.52%, Build0.78%, Execution1.56%, E1=6.25%; all other child gates0%. No paid calls.
 
 ## Purpose and Authority
 
@@ -10,17 +10,18 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 
 ## Program Tracker
 
-- Status: UI-02 closed/audited100%; POP-01 E1 design active, contract work approved; LAN access interruption. LR-01 paused25%.
-- Last refreshed: 2026-10-13 18:46:18 (America/Chicago).
-- Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
-- Current priority: POP-01 population execution/experience before ML-01; preserve the qualified internal demo.
-- Primary active task: POP-01.01/E1 inventory complete; [POP-01.04](POP-01.04%20Population%20contract%20decision.md) approved; resume E1 after LAN verification.
-- Next task: after LAN verification/draining live wrappers, implement additive population records/domain validation and compatibility goldens.
-- Implementation completion: POP-01=0%, Execution/Experience/Qualification0%; Build/Verification0%. UI-01/UI-02/LAN-01 archived100%; LR-01 paused25%.
-- Blockers/dependencies: POP-01.04 approved; remote LAN access verification is the current user interruption. No inherited UI-02 blocker; no scale/scientific capability inferred.
-- Latest checkpoint: activation corrected_ready for E1 design; existing scatter cursor/transaction reuse confirmed,37legacy tests pass. Versioned population/selection/page/material contracts proposed; all child gates remain0%.
-- Acceptance posture: supplied finite structure is unranked; original scalar campaigns have no molecule. No new model calls. Local13k/LAN13i restored for review2026-10-13 18:27:28; exact Studio0.36 JS verified. Drain before source edits.
-- Active exception: owner-requested remote LAN access verification. LAN listener/HTTPS asset check pass locally; fresh sign-in invitation issued. Await remote result, then return to POP-01.01/E1.
+- Status: POP-01.01/E1 active; UI-01/UI-02 closed100%, LR-01 paused25%.
+- Last refreshed: 2026-10-13 20:31:45 (America/Chicago).
+- Baseline: approved [POP-01.04](POP-01.04%20Population%20contract%20decision.md).
+- Current priority/task: POP-01 E1/D1 candidate birth and evaluation records.
+- Next task: candidate birth and evaluation identities/outcomes, then remaining E1 gates.
+- Implementation: parent0.52%, Build0.78%, Verification0%; Execution1.56%, Experience/Qualification0%.
+  Execution E1=6.25%, E2-E4=0%; Experience U1-U4=0%, Qualification Q1-Q4=0%.
+- Latest checkpoint:209 scoped tests;678schemas preserve672predecessor bytes; boundaries pass.
+  Two-install proof227tests each/replay passed; no deployment/performance claim for Search0.6.
+- Blockers: none for approved E1 records; any new Runtime command requires concrete review.
+- Acceptance: actual execution/population UI/scientific qualification remain distinct gates.
+- Active exception: none. LAN access confirmed by owner; demo wrappers drained for source work.
 
 ## Initial Delivery Boundary
 
@@ -32,7 +33,7 @@ The initial program proves software behavior using deterministic/synthetic fixtu
 
 ## Current In-Flight Work
 
-POP-01 E1 design active; POP-01.04 approved; LAN verification. Implementation0%, all children/phases0%.
+POP-01 E1 active: parent0.52%, Build0.78%, Execution1.56%, E1=6.25%; remaining gates0%.
 LR-01 paused25%, Build33.33%, Acceptance0%; R1=100%, R2/R3/V1=0%.
 Completed UI-01/UI-02/LAN-01 are in the [completed index](Completed/README.md).
 
@@ -40,7 +41,7 @@ Completed UI-01/UI-02/LAN-01 are in the [completed index](Completed/README.md).
 
 | Order | Canonical plan | Status | Overall | Build | Verification/Acceptance | Prerequisite |
 |---|---|---|---:|---:|---:|---|
-| 1 | [POP-01 Population Campaign Execution and Experience](POP-01%20Population%20Campaign%20Execution%20and%20Experience.md) | E1 design active; POP-01.04 approved; LAN verification; Execution/Experience/Qualification=0% | 0% | 0% | 0% | Knowledge/LLM workflow UI-01/V1 and UI-02/P4 complete |
+| 1 | [POP-01 Population Campaign Execution and Experience](POP-01%20Population%20Campaign%20Execution%20and%20Experience.md) | Active E1=6.25%; Execution1.56%, Experience/Qualification0% | 0.52% | 0.78% | 0% | UI-01/UI-02 complete; POP-01.04 approved |
 | 2 | [ML-01 Inherited Scientific Model Integration](ML-01%20Inherited%20Scientific%20Model%20Integration.md) | Standalone queued; M1/M2/M3/M4/V1=0% | 0% | 0% | 0% | UI-01/V1 + UI-02/P4, then POP-01 complete; qualified population/tool handoff |
 | 3 | [LR-01 Local Worker Reliability](LR-01%20Local%20Worker%20Reliability.md) | Paused; pull R2 forward for blocking run failure | 25% | 33.33% | 0% | UI priority released or UI-01.05/R1 blocked; same-host diagnostic window |
 | 4 | [UI-R01 Feedback Read Diagnostics](UI-R01%20Feedback%20Read%20Diagnostics.md) | Queued; pull forward if it blocks UI-01 | 0% | 0% | 0% | Bounded read diagnostic and activation review |
@@ -87,8 +88,8 @@ multiple candidate generations, bounded scheduling/global selection, checkpoint
 recovery and population-oriented visualization. Only after POP-01 qualification
 activate [ML-01](ML-01%20Inherited%20Scientific%20Model%20Integration.md).
 
-POP-01 overall0%, Build0%, Verification0%; phase mirrors:
-Execution0% (POP-01.01 E1/E2/E3/E4=0%), Experience0% (POP-01.02 U1/U2/U3/U4=0%),
+POP-01 overall0.52%, Build0.78%, Verification0%; phase mirrors:
+Execution1.56% (POP-01.01 E1=6.25%, E2/E3/E4=0%), Experience0% (POP-01.02 U1/U2/U3/U4=0%),
 Qualification0% (POP-01.03 Q1/Q2/Q3/Q4=0%). Twelve equal child gates counted once.
 Existing BP-08 generation/recovery implementation remains closed and reusable;
 legacy population128/retained-attempt256/262144-byte bounds are not evidence of
@@ -99,7 +100,7 @@ is distinct from candidate scatter/selection. UI-01.05/I1 owns LLM authoring of
 multi-input/output staged graphs; POP-01.01 owns typed intermediates, local joins,
 bounded pairing and recovery; POP-01.02 owns stage/lineage visualization; POP-01.03
 qualifies a19-stage synthetic process with repeated width changes. A control join
-does not chemically combine materials. All affected queued phases remain0%; no
+does not chemically combine materials. At that planning checkpoint all affected phases were0%; no
 change to the Knowledge/LLM -> UI-02 -> POP-01 -> ML-01 priority sequence.
 
 ML-01 remains standalone0%, Build0%, Verification0%; M1/M2/M3/M4/V1=0%.

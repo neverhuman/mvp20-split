@@ -1,39 +1,53 @@
 # Restore
 
-Refreshed: 2026-10-13 18:46:18 America/Chicago. Read FIRST after compaction.
+Refreshed: 2026-10-13 20:24:12 America/Chicago. Read FIRST after compaction.
 
 ## Current task
 
-UI-02 COMPLETE100%, audited/archived and pushed a614e594. POP-01 activation
-corrected_ready for E1 design; source inventory and37existing wire/ranking tests pass.
-Concrete decision: docs/Build Plans/POP-01.04 Population contract decision.md.
-Owner explicitly APPROVED POP-01.04 2026-10-13 18:45:57. Current interruption: remote LAN
-access failure reported. Local/LAN listeners alive; HTTPS app.js200/exact Studio0.36
-hash verified from host; invite script rerun,5min one-use link copied to host clipboard.
-Owner confirms page loads but sign-in/Refresh workspace stuck. 2026-10-13 20:08:14:
-authenticated LAN probe POST/session200, actual Studio graph-observations nodes200
-(2417bytes), logout200. Earlier diagnostic v3 graph route502 was an invalid probe
-path, NOT an application fault. Fresh invitation reissued; pending whether owner
-used full fresh ticket link or base/bookmark. Do not print invitation.
-Keep live wrappers during access check; drain both before source changes. Return to:
-POP-01.01/E1 records/domain validation and compatibility goldens, then concrete
-composition/write sets before E2. New Runtime commands are not assumed authorized.
-POP-01 implementation0%, all children/phases0%; ML-01 next, LR-01 paused25%.
-Audit docs/Audits/POP-01_Activation.md inventories actual limits and reusable scatter
-transaction. Proposed default missing fitness exclusion/minimum2 parents, population
-1000/union2000,8methods,paged immutable artifacts; old profiles remain exact.
+Owner approved POP-01.04 at2026-10-13 18:45:57. Owner confirms LAN works after fresh
+invitation, then explicitly requested continue-until-needed. LAN interruption closed.
+Both wrappers local49406/k and LAN6535/i STOPPED/drained; stopped.json verified and
+no owned57012..57021 listeners. Demo OFF during implementation. Do not change source
+while tests/install/runtime workflows execute; docs updates permitted.
 
-Documentation-only POP checkpoint; git log records the commit. No new schemas/source/paid calls.
-Preserve user ocular PDF/DOCX untracked. No agents/JARVIS/v1 edits.
-Demo READY: local session49406/outputcuration-demo-session-20261013k;
-LAN session6535/outputcuration-demo-lan-20261013i; servingh Studio0.36. No source,
-test or module README edits while these run. STOP markers drain each wrapper.
-2026-10-13 18:27:28: both ready, exact JS hash verified over localhost and CA-verified
-LAN HTTPS. Live curation enabled under existing budget; no new request submitted.
+POP-01.01/E1 in progress: new contracts/population0.1 with specification and membership
+page/manifest roots; Search0.6 adds population/OriginalPopulation and GenerationMembership.
+Old numerical algorithms/worker modes unchanged;0.6 NOT deployed/Registry-qualified.
+No edits to v1 or user untracked ocular PDF/DOCX. No agents, JARVIS or paid calls.
+Tests:209 scoped source checks pass92.57s. Independent install session6516 EXIT0;
+227tests per installation and identical wheel closure/legacy checkpoint+RNG replay.
+Evidence docs/Audits/Evidence/POP-01/Specification_Membership.json. No workflows running.
+Source edits allowed. All Search tests except workspace-only reuse audit included.
+Test scopes use owning module/area, no duplicate ownership entries.
+
+Specification/membership checkpoint ready for commit; git log owns exact hash. uv locks refreshed offline for dev, Search, new
+contracts; editable dev population0.1/Search0.6 installed. Production boundary guard
+passed session65037. Schema publication678:6new schemas,672predecessor bytes pinned
+at8b866781. New roots are specification, membership-page and membership-manifest.
+Pure domains enforce originals, method coverage, scopes, deterministic bounded pages;
+no Artifact access/existence/birth-content or Runtime acceptance is inferred.
+
+NEXT: commit/push specification/membership foundation, then remaining E1 records: candidate birth,
+evaluation identities/outcomes, fitness/selection/successor, process material lineage,
+and graph-step composition/write sets. New public Runtime commands require a concrete
+separate review if demonstrated necessary; POP-01.04 does not authorize unspecified
+commands. Do not stop at checkpoint. Keep E1 prerequisites ahead of E2.
+Canonical trackers now reflect source-verified first partial delivery.
+Progress basis: E1 four equal deliveries; D1 eight record families, first2
+(spec/membership) verified =D1 25%,E1 6.25%,Execution1.5625%,parent0.52%,Build0.78%.
+Remaining D2-D4 and other child gates0%. Do not claim whole E1 complete.
+
+Demo selected .test-results/curation-demo-serving-20261013h Studio0.36, UI-02 complete
+pusheda614e594. Local13k/LAN13i now drained; fresh sessions local13l/LAN13j when needed.
+LAN access confirmed by user after fresh sign-in. Gateway restart invalidates sessions;
+base URL/Refresh workspace cannot mint one. serve_lan_review.py invite writes .url and
+copies5min single-use link to host clipboard; do not print ticket. Authenticated probe
+session200, actual v1/graph-observations/{run}/nodes200,logout200. Earlier v3route502
+was an invalid probe, not an application fault. Keep frozen demo unchanged.
 
 Final verification:473 full Studio tests + production dependency guard pass
 (sessions40440/96609 exit0). All candidate/example/managed-demo probes exited and
-closed owned probe hosts. Subsequent review wrappers are LIVE; freeze source now.
+closed owned probe hosts. Subsequent review wrappers have now drained for POP implementation.
 Actual candidate qualification c LOCAL+HTTPS192.168.1.70:57013 passed; scope
 chemical-handoff/33ee1dfb0ed6444faf01d745c99338b4; rune79d32593d324d7983f3969260a5e976.
 Runtime0.67, SDK0.3, Registry0.2, Research0.41, chemical0.1; installed independent
@@ -47,7 +61,7 @@ JS shad7a79afaf5ae186381637771b05c7a0992996c923ef8ba986640c1f1096aa265.
 Upgrade .test-results/ui02-serving-upgrade-20261013b passed LOCAL+LAN original retained
 proposal/successor/results/Knowledge/composer/reload, no model call/new campaign,
 original Planning record unchanged. Workflow61637 exit0. Originalf preserved.
-Wrappers READY for owner review: local13k/LAN13i; exact static identity checked. Existing serve --live supplies authorized key; --pause-curation permits
+Wrappers13k/LAN13i now STOPPED after confirmed remote access; static identity was checked. Existing serve --live supplies authorized key; --pause-curation permits
 read-only smoke while worker stays unstarted. Never print secrets.
 
 Separate supplied-structure example supports local57014 via verify_chemical_handoff
@@ -63,7 +77,7 @@ fixture, no model call, no molecule attached to old scalar campaign. No example 
 P3 model/transport/presentation READMEs own replacement boundaries. CandidateResults
 scans2pages/100nodes direct invoke outputs; finish forwarding excluded. Numeric
 selection/fronts are separate from molecular unranked/absent properties/synthesis.
-Source must remain frozen while serving/testing; demo is restored at the POP-01.04 owner gate; drain before further source work. POP-01.04 is approved; resume E1 after LAN verification.
+Source must remain frozen while serving/testing; demo is now drained and POP-01.04 is approved. Continue E1 after active verification completes.
 
 ## Completed P1 proof
 
@@ -126,8 +140,8 @@ transport -> page model -> props -> presentation and module boundaries.
 
 ## Demo state
 
-Current local49406 (.test-results/curation-demo-session-20261013k) and LAN6535
-(.test-results/curation-demo-lan-20261013i) are LIVE, ready/JS identity verified at
+Historical local49406 (.test-results/curation-demo-session-20261013k) and LAN6535
+(.test-results/curation-demo-lan-20261013i) are now STOPPED; ready/JS identity was verified at
 2026-10-13 18:27:28. Shared Docker PostgreSQL/Qdrant untouched. Before new source,
 test or module README edits, touch STOP in both session directories and wait for
 stopped.json/process exit. Fresh next names local13l/LAN13j; never overwrite history.

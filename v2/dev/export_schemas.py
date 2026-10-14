@@ -4,6 +4,8 @@ from amphora_contracts_draft_successor import AdmitDraftSuccessor
 
 from amphora_contracts_chemical_structure import StructureRequest, StructureResult
 
+from amphora_contracts_population import PopulationSpecification, MembershipManifest, MembershipPage
+
 import argparse
 import hashlib
 import json
@@ -56,6 +58,9 @@ from amphora_contracts_tools import Completion, Invocation, ToolBinding, ToolDes
 
 ROOT = Path(__file__).absolute().parents[1]
 MODELS = {
+    "population.specification": PopulationSpecification,
+    "population.membership-manifest": MembershipManifest,
+    "population.membership-page": MembershipPage,
     "campaign-successor-launch.request": successor_launch.SuccessorLaunchRequest,
     "campaign-successor-launch.receipt-query": successor_launch.SuccessorLaunchReceiptQuery,
     "campaign-successor-launch.receipt": successor_launch.SuccessorLaunchReceipt,

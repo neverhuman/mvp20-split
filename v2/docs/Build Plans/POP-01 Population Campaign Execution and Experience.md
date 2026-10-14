@@ -2,17 +2,17 @@
 
 ## Canonical tracker
 
-- Status: E1 contract work approved; LAN verification interruption; before ML-01.
-- Last refreshed: 2026-10-13 18:46:18 (America/Chicago).
-- Scope revision: planning baseline1; no implementation started.
-- Overall implementation: 0%; Execution0%, Experience0%, Qualification0%.
+- Status: active POP-01.01/E1 contracts and compatibility; before ML-01.
+- Last refreshed: 2026-10-13 20:31:45 (America/Chicago).
+- Scope revision: approved POP-01.04; E1 implementation started.
+- Overall implementation: 0.52%; Execution1.56%, Experience0%, Qualification0%.
   Three equally weighted children, each with four equal delivery gates. Parent
-  counts the twelve child gates once; Build0% is the first two children, Verification0%
+  counts the twelve child gates once; Build0.78% is the first two children, Verification0%
   is the third. Planning/design maturity is separate from implementation.
 - Owner: cross-owner population workflow; responsibilities assigned below.
 - Prerequisite: UI-01/V1 and UI-02/P4 prove actual Knowledge, inventory-grounded
   LLM graph curation/missing-capability requests, browser Run and candidate detail.
-- Current task: LAN access verification. Owner approved [POP-01.04](POP-01.04%20Population%20contract%20decision.md); tested contracts after LAN verification.
+- Current task: E1/D1 candidate birth and evaluation records. Next candidate birth/evaluation records under approved POP-01.04.
 - Design readiness: POP-01.04 contracts/selection policy approved. New public Runtime
   extensions, if needed, still require concrete E1 review before implementation.
 - Demonstrated behavior: BP-08 numeric evolution/recovery exists; the current
@@ -24,13 +24,13 @@
   no blanket human approval gate between generations.
 - Activation audit: [corrected_ready for E1 design](../Audits/POP-01_Activation.md),
   2026-10-13 18:26:00; source inventory and37legacy checks pass. New contracts approved 2026-10-13 18:45:57; design earns no implementation credit. v1/completed plans stay closed.
-- Active exception: owner-requested LAN access verification; return to E1 afterward. UI-01/V1 and UI-02/P4 prerequisites complete.
+- Active exception: none; owner confirmed LAN access, wrappers drained before edits. UI-01/V1 and UI-02/P4 prerequisites complete.
 
 ## Sequence and immediate children
 
 | Child / parent phase | Completion | Prerequisite | Delivery |
 |---|---:|---|---|
-| [POP-01.01 Population Execution](POP-01.01%20Population%20Execution.md) / Execution | 0%; E1-E4=0% | Entry gate above | Explicit population/evaluation identities, bounded dispatch, global selection and durable recovery |
+| [POP-01.01 Population Execution](POP-01.01%20Population%20Execution.md) / Execution | 1.56%; E1=6.25%, E2-E4=0% | Entry gate above | Explicit population/evaluation identities, bounded dispatch, global selection and durable recovery |
 | [POP-01.02 Population Experience](POP-01.02%20Population%20Experience.md) / Experience | 0%; U1-U4=0% | POP-01.01 complete | Bounded authoritative projections, stable method graph, generation navigation and population comparison |
 | [POP-01.03 Qualification](POP-01.03%20Population%20Qualification.md) / Qualification | 0%; Q1-Q4=0% | POP-01.02 complete | Fresh UI-started evolutionary campaigns, restart/failure/scale proof and ML-01 handoff |
 
