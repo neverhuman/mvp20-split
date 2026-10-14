@@ -54,7 +54,9 @@
       "check_boundaries",
       "export_schemas",
       "run_tests",
-      "numeric_comparison"
+      "numeric_comparison",
+      "dev/curation_managed_demo",
+      "dev/verify_studio.py"
     ]
   },
   "commands": {
@@ -463,18 +465,6 @@
       "deploy/local/src/amphora_deployment/curation_access"
     ]
   },
-  "dev-curation-managed-demo": {
-    "tests": "dev/tests/curation_managed_demo",
-    "coverage_sources": [
-      "dev/curation_managed_demo"
-    ]
-  },
-  "dev-studio-installation": {
-    "tests": "dev/tests/studio_installation",
-    "coverage_sources": [
-      "dev/verify_studio.py"
-    ]
-  },
   "contracts-chemical-structure": {
     "tests": "contracts/chemical_structure/tests",
     "coverage_sources": [
@@ -485,24 +475,6 @@
     "tests": "tools/chemical_structure/tests",
     "coverage_sources": [
       "tools/chemical_structure/src/amphora_chemical_structure"
-    ]
-  },
-  "registry-structural-profiles": {
-    "tests": "services/capability_registry/tests/structural_profiles",
-    "coverage_sources": [
-      "services/capability_registry/src/amphora_capability_registry/structural_profiles"
-    ]
-  },
-  "runtime-execution-profiles": {
-    "tests": "services/campaign_runtime/tests/execution_profiles",
-    "coverage_sources": [
-      "services/campaign_runtime/src/amphora_campaign_runtime/execution_profiles"
-    ]
-  },
-  "worker-execution-profiles": {
-    "tests": "sdk/tool_protocol/tests/execution_profiles",
-    "coverage_sources": [
-      "sdk/tool_protocol/src/amphora_tool_protocol/execution_profiles"
     ]
   },
   "contracts-population": {

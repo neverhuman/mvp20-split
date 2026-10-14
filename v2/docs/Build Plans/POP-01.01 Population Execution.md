@@ -1,16 +1,16 @@
 # POP-01.01 Population Execution
 
 - Status: active E1; parent [POP-01](POP-01%20Population%20Campaign%20Execution%20and%20Experience.md).
-- Last refreshed: 2026-10-13 22:25:31 (America/Chicago).
-- Implementation: 18.75%; E1=75%, E2/E3/E4=0%, four equal delivery gates.
-- Current: E1/D1-D3 complete. Current: D4 composition, resource math and write sets.
+- Last refreshed: 2026-10-13 22:34:04 (America/Chicago).
+- Implementation: 23.44%; E1=93.75%, E2/E3/E4=0%, four equal delivery gates.
+- Current: E1/D1-D3 complete. Current: D4 final resource-contract decision; other review units complete.
 - Approval: [POP-01.04](POP-01.04%20Population%20contract%20decision.md) approved.
 - Evidence:356 source checks plus corrected two-test publication rerun/guard PASS;740schema pins unchanged.
   Search0.12 two isolated335test installs and legacy replay/wheels pass. Pure checks are not runtime admission.
 - Owners: public contracts, Search domain, Runtime acceptance/dispatch, Data artifacts,
   Research eligibility. E2 starts only after the whole E1 gate passes.
-- Blockers: none for remaining approved E1 records. New Runtime commands, if needed,
-  require a concrete decision. No population execution or performance claim yet.
+- Gate: owner decision on POP-01.05 additive bounded admission. Independent E1 work
+  complete; E2 remains0. No population execution or performance claim yet.
 - Active exception: none; owner confirmed LAN access. Review wrappers drained before edits.
 - Exit: independent versioned population execution/recovery through public graph APIs;
   selection cannot depend on dispatch order. Actual acceptance remains E2-E4.
@@ -23,14 +23,20 @@ birth, evaluation, fitness, selection, successor, material lineage), producer/co
 map, and graph-step transport. All ten are source-verified; D1=100%.
 This corrects the earlier record-only denominator, which omitted two already-scoped
 D1 exits; it adds no scope or acceptance credit. [Owner map](../Audits/POP-01_E1_Contracts.md).
-E1=(100+100+100+0)/4=75%; Execution=75/4=18.75%.
+E1=(100+100+100+75)/4=93.75%; Execution=93.75/4=23.44%.
 
 | Delivery | Completion | Remaining exit |
 |---|---:|---|
 | D1 records/domain invariants | 100% | Complete; actual owner acceptance remains E2-E4 |
 | D2 compatibility and numerical policy | 100% | Complete; [policy/compatibility report](../Audits/POP-01_Numerical_Compatibility.md) |
 | D3 semantic/negative qualification | 100% | Complete; [semantic report](../Audits/POP-01_Semantic_Qualification.md) |
-| D4 composition and write sets | 0% | Executable graph fixture, resource math, transition review; resolve any minimal Runtime extension |
+| D4 composition and write sets | 75% | Compiled fixtures/resource/write-set review complete; bounded admission decision pending |
+
+D4 four equal review units: compiled topology, resource accounting, transaction/write
+sets, resolved admission contract. First three complete (13 compiler/resource checks;
+4 test-ownership checks). [Transition review](../Audits/POP-01_Composition_Transitions.md).
+[POP-01.05 decision](POP-01.05%20Bounded%20graph%20admission%20decision.md) remains proposed.
+This refines existing D4 scope, not a new dependent implementation phase.
 
 Detailed checkpoints belong to [POP-01 History](POP-01%20History.md).
 

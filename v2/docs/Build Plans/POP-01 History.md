@@ -125,3 +125,21 @@ replay and2000eligible global ranks pass.356source checks plus corrected two-tes
 curation publication rerun; dependency guard; two335test isolated installs and exact
 legacy replay pass.740schema pins unchanged. D4 composition/write sets next.
 [Report](../Audits/POP-01_Semantic_Qualification.md). No Runtime population claim.
+
+## 2026-10-13 22:34:04 ? E1/D4 independent review ready
+
+D4=75% (compiled topology/resource/write-set units complete, admission decision open).
+E1=93.75%, Execution23.44%, parent7.81%, Build11.72%, Verification0.13fixture checks
+and4ownership checks pass. Test scope aliases had seven existing duplicate owners;
+removed five overlapping aliases, preserved parent ownership/dev coverage. No public
+Runtime source changes. [Review](../Audits/POP-01_Composition_Transitions.md).
+POP-01.05 owner direction is the remaining E1 gate; E2 not started.
+
+## 2026-10-13 22:38:12 ? owner Knowledge-content question
+
+Read-only UI/content check: frozen demo exposes six authored synthetic concepts and
+five hypotheses, not an imported v1 corpus. Browser domain route loaded all six;
+Hansen neighborhood rendered three concepts/two relationships. Local56570/l and
+LAN89119/j restored with curation paused, no model calls/campaign. Owner expects
+useful inherited starting content. No new import or plan ordering change made.
+Population remains at POP-01.05 decision gate; independent D4 work complete.

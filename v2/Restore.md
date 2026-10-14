@@ -1,48 +1,43 @@
 # Restore
 
-Refreshed: 2026-10-13 22:25:31 America/Chicago. Read FIRST after compaction.
+Refreshed: 2026-10-13 22:38:12 America/Chicago. Read FIRST after compaction.
 
 ## Current task
 
-POP-01.04 owner approved; LAN issue confirmed resolved; continue-until-needed persists.
-Both review wrappers local49406/k and LAN6535/i STOPPED/drained; no owned57012..57021
-listeners. Demo OFF during implementation. Do not edit source/tests/module README
-while tests/install/runtime workflows run; docs updates allowed. No agents/JARVIS/v1
-edits or paid calls. Preserve user untracked ocular PDF/DOCX.
+Refreshed checkpoint 2026-10-13 22:38:12. Continue-until-needed persists. POP-01.04 approved;
+POP-01.05 is proposed ONLY. Public bounded admission command needs owner direction.
+D3 pushed9e15ca43 (D2 2a161097): Search0.12 two335test isolated installs/replay/wheels,
+356source checks +corrected publication rerun/guard;740schema pins unchanged.
+D4 current work ready to commit: compiler-only nested generation/batch/scatter,
+parallel unequal method branches,19stage multi-input process and exact resource math.
+13fixture/resource +4ownership checks PASS22381. Five duplicate test-scope aliases
+removed; parent ownership/dev coverage preserved. No public Runtime source changes.
+D1-D3=100,D4=75; E1=93.75%, Execution23.44%, parent7.81%, Build11.72%, Verification0.
+See docs/Audits/POP-01_Composition_Transitions.md. Independent work complete;
+remaining unit is resolved POP-01.05 resource contract. E2 remains0. No test running.
 
-PUSHED e7db03f3: population0.3/Search0.8 fitness/selection,267source tests,
-two isolated284tests each;704schemas preserve684predecessor. Earlier e15c8672/500141aa.
+USER INTERRUPTION: Knowledge content missing in demo. Read-only diagnosis complete:
+actual browser shows6synthetic concepts; Hansen neighborhood3concepts/2relationships.
+Seed source dev/scientific_execution/knowledge_records.py creates6concepts/5claims.
+No inherited v1 Knowledge corpus imported. UI waits for concept click to draw graph.
+User expects starting domain content from prior versions; explanation given. Content
+seeding is separate from trained-model recovery. No import/new plan/priority change
+made yet. v1 remains read-only; no JARVIS/agents/API calls. Preserve ocular PDF/DOCX.
 
-PUSHED25e4ce4b: population0.4/Search0.9 successor and independent process-mapping0.1.
-288source+11finalsuccessor checks; Search two295test installs/replay/wheels PASSd;
-process two10test installsPASSa.718schemas preserve704predecessor. D1 source9/10units90%.
+FROZEN DEMO RESTORED: local56570/.test-results/curation-demo-session-20261013l;
+LAN89119/.test-results/curation-demo-lan-20261013j. Both ready. Studio0.36/servingh.
+Curation deliberately PAUSED (--live --pause-curation), scientific owners/standby
+running. No paid calls or new campaigns. Local browser actual Knowledge readPASS.
+Do not edit source/tests/module README while serving. Stop via each session/STOP
+and wait drained before source work. Docs/git allowed. No duplicate wrapper start.
+Fresh invite for LAN can use serve_lan_review.py invite (secret link clipboard only).
 
-PUSHEDdde8f290: D1 complete, population0.5/population_steps0.1/Search0.10,
-740schemas, source300, two306test installs/replay. Declared slots separate from late
-resolved input keys; reference-backed graph-step transport and CandidateSlice verified.
-
-CURRENT D3 checkpoint ready to commit (2026-10-13 22:25:31): D2 pushed2a161097.
-Search0.12 combined page/evidence bounds, membership schema/alias checks, immutable
-indexes, four-generation batch1/8/32/reverse replay and2000eligible rank oracle.
-356source checks + corrected two-test historical curation publication rerun PASS;
-guardPASS; Search isolatedg93172 EXIT0 two335tests, identical wheels/legacy replay.
-740schema pins unchanged. Evidence Semantic_Qualification.json and audit report.
-D1-D3=100, D4=0; E1=75%, Execution18.75%, parent6.25%, Build9.38%, Verification0.
-No workflow running. Commit/push then D4 compiled fixture/resource/write-set review.
-No source Runtime command implementation yet. No model calls. DemoOFF.
-
-POP-01.05 Bounded graph admission decision.md is PROPOSED ONLY. Runtime claims has
-no campaign-wide active cap; scatter counts child scopes. Proposed distinct
- graph.admit_draft_bounded /v1/graph-drafts/admit-bounded, immutable maxactive1..8,
-existing reserved counter under run lock, old wire bytes unchanged. NOT approved;
-finish independent E1 work and review concrete proposal before asking. New public
-Runtime command is outside POP-01.04 blanket authorization. D2-D4 still open.
-
-Final proof/evidence/trackers updated: commit/push
-current significant work before continuing. Preserve user ocular PDF/DOCX. DemoOFF.
+Before owner handoff: commit/push current D4 work/trackers; ask exact POP-01.05
+bounded admission decision, explaining AGENTS material scope requirement. Latest
+user focus is Knowledge content; answer candidly without implying v1 import exists.
 
 Demo selected .test-results/curation-demo-serving-20261013h Studio0.36, UI-02 complete
-pusheda614e594. Local13k/LAN13i now drained; fresh sessions local13l/LAN13j when needed.
+pusheda614e594. Local13k/LAN13i drained; local13l/LAN13j now RUNNING (see current task).
 LAN access confirmed by user after fresh sign-in. Gateway restart invalidates sessions;
 base URL/Refresh workspace cannot mint one. serve_lan_review.py invite writes .url and
 copies5min single-use link to host clipboard; do not print ticket. Authenticated probe
@@ -65,7 +60,7 @@ JS shad7a79afaf5ae186381637771b05c7a0992996c923ef8ba986640c1f1096aa265.
 Upgrade .test-results/ui02-serving-upgrade-20261013b passed LOCAL+LAN original retained
 proposal/successor/results/Knowledge/composer/reload, no model call/new campaign,
 original Planning record unchanged. Workflow61637 exit0. Originalf preserved.
-Wrappers13k/LAN13i now STOPPED after confirmed remote access; static identity was checked. Existing serve --live supplies authorized key; --pause-curation permits
+Wrappers13k/LAN13i STOPPED; new local13l/LAN13j RUNNING. Static identity checked. Existing serve --live supplies authorized key; --pause-curation permits
 read-only smoke while worker stays unstarted. Never print secrets.
 
 Separate supplied-structure example supports local57014 via verify_chemical_handoff

@@ -1,7 +1,7 @@
 # POP-01.05 Bounded graph admission decision
 
 - Status: proposed; no public Runtime implementation authorized by this record.
-- Reviewed: 2026-10-13 21:27:00 America/Chicago.
+- Reviewed: 2026-10-13 22:34:04 America/Chicago.
 - Owner: [POP-01.01/E1](POP-01.01%20Population%20Execution.md), within its original D1/D4 scope.
 - Scope: additive admission profile and run-wide claim capacity; no second runner,
   numerical ranking inside Runtime or new chemistry authority.
@@ -112,6 +112,15 @@ only after their upstream producer is accepted. That requires explicit declared
 occurrence coverage before final selection, not invented future Artifact references.
 This decision does not approve a new graph primitive for it; E1 must first demonstrate
 composition from existing graph/input/Artifact mechanisms.
+
+## Concrete independent review
+
+[Composition/transition review](../Audits/POP-01_Composition_Transitions.md) and13
+Runtime-owned compiler/resource checks now demonstrate the existing topology
+primitives, including nested generation/slice/scatter and nineteen-stage multi-input
+processes. These are synthetic compiler adapters, not implemented scientific workers.
+The campaign-wide cap gap remains; no new graph primitive is proposed. D4
+composition/resource/write-set units are complete; this decision is the remaining gate.
 
 ## Requested owner direction
 
