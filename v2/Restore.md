@@ -1,6 +1,6 @@
 # Restore
 
-Refreshed: 2026-10-13 21:44:48 America/Chicago. Read FIRST after compaction.
+Refreshed: 2026-10-13 21:59:44 America/Chicago. Read FIRST after compaction.
 
 ## Current task
 
@@ -17,25 +17,29 @@ PUSHED25e4ce4b: population0.4/Search0.9 successor and independent process-mappin
 288source+11finalsuccessor checks; Search two295test installs/replay/wheels PASSd;
 process two10test installsPASSa.718schemas preserve704predecessor. D1 source9/10units90%.
 
-CURRENT checkpoint ready to commit: population0.5/Search0.10 + population_steps0.1,
-process0.1.1 dependency repin. DeclaredEvaluations freezes method slots independently
-of future inputs; exact resolved key coverage required. PreparedGeneration/CandidateSlice
-recomputes typed candidate-context references/cursor/complete; no per-page selection.
-300source tests PASS29.53s; guard corrected explicit Pydantic dependency and PASS.
-740schemas preserve718predecessor bytes. Proofe workflow82341 EXIT0: two306test
-isolated Search installs, identical wheels and legacy replay. New harness copies
-population_steps tests. Evidence docs/Audits/Evidence/POP-01/Declarations_Transport.json.
-No workflow running; source edits allowed. Commit/push before next D2 implementation.
-D1=100%, E1=25%, Execution6.25%, parent2.08%, Build3.13%, Verification0.
+PUSHEDdde8f290: D1 complete, population0.5/population_steps0.1/Search0.10,
+740schemas, source300, two306test installs/replay. Declared slots separate from late
+resolved input keys; reference-backed graph-step transport and CandidateSlice verified.
 
-NEXT D2: finish primary numerical allocation/zero-budget/duplicate-only/front-stagnation
-policy and final legacy compatibility. D3 full semantic oracles then D4 compiled graph
-fixture/resource/write sets; E2 still gated. For D2, no Runtime changes authorized:
-PrimaryBirthBatch can deterministically allocate seed/successor births independent of
-batching, exact draw use, explicit duplicate/rejected dispositions and fullmethod costs.
-Separate logical evaluation counts from physical attempts. Verify zero budgets/minimum
-parents/reduced survivors/optional weak outcomes. Front comparison should preserve old
-objective-vector semantics, not compare candidate IDs. No policy code written yet.
+CURRENT D2 checkpoint ready to commit: Search0.11 PrimaryBirthBatch/EvaluationCapacity
+and FitnessFront/front_progress. Source320PASS31.37s;6reuse/schema tests+guardPASS.
+740predecessor schemas unchanged. Prooff20703 EXIT0 two326test isolated builds,
+identicalwheels and legacy replay. Evidence docs/Audits/Evidence/POP-01/Numerical_Policy.json.
+No workflow running. Docs/trackers reflect D1/D2=100 E1=50%, Execution12.50%,
+parent4.17%, Build6.25%, Verification0. Commit/push then D3; no user decision yet.
+
+D3 next: combined semantic/boundary oracles, including aggregate generation closure
+(page bounds currently checked per-family; need total <=512pages/64MiB), fully
+eligible large ranking, multi-generation pure numerical batch/reordered-outcome replay.
+Concrete membership gaps to verify/fix: birth schema currently not checked by
+GenerationMembership; predecessor schema only scoped; conflicting Artifact aliases
+across members not yet rejected there. Fix with focused negative tests, preserve
+public schemas; update fake fixture predecessor refs to valid checkpoint schema.
+No changes for these D3 findings yet. Primary policy suite covers partial/zero budgets,
+duplicates, optional evidence, explicit one-parent continuation, numerical front
+comparison. Remaining-capacity changes (same original) preserve birth ID/draws;
+changing original spec intentionally changes identity. This wording in module README
+may need tightening when next touched. Arbitrary process cost remains D4 admission.
 
 POP-01.05 Bounded graph admission decision.md is PROPOSED ONLY. Runtime claims has
 no campaign-wide active cap; scatter counts child scopes. Proposed distinct

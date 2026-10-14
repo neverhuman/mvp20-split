@@ -104,3 +104,14 @@ bytes. Two fresh Search0.10 installs each pass306 copied owner/public tests, ide
 wheels and legacy checkpoint/RNG replay at2026-10-13 21:43:11. [Evidence](../Audits/Evidence/POP-01/Declarations_Transport.json).
 D1 all ten units100%; E1=25%, Execution6.25%, parent2.08%, Build3.13%. D2 numerical
 policy and compatibility next; Runtime capacity proposal05 remains unapproved.
+
+## 2026-10-13 21:59:44 - D2 numerical policy and compatibility complete
+
+Search0.11 adds explicit PrimaryBirthBatch/EvaluationCapacity and objective-vector
+FitnessFront. Zero/partial budgets retain every birth/draw; duplicates consume no new
+evaluations; optional unavailable annotations do not exclude, explicit minimum1 can
+continue reduced. Primary method cost is not arbitrary process expansion math.
+320source tests pass31.37s;6reuse/schema checks and guard pass. Frozen v1 references
+remain unchanged.740schema pins unchanged. Two isolated builds326tests EACH and
+identical legacy checkpoint/RNG replay/wheels at2026-10-13 21:56:11. [Report](../Audits/POP-01_Numerical_Compatibility.md).
+D1/D2=100%, E1=50%, Execution12.50%, parent4.17%, Build6.25%; D3 next. No paid calls.

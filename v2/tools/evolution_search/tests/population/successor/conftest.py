@@ -16,9 +16,17 @@ from amphora_evolution_search.variation import ParentVector
 
 
 @pytest.fixture
-def population_original(population_original):
+def population_original(population_original, request):
     record = population_original.record
-    return OriginalPopulation(record.model_copy(update={"budget": record.budget.model_copy(update={"population_size": 2})}))
+    record = record.model_copy(update={"budget": record.budget.model_copy(update={"population_size": 2})})
+    mode = getattr(request, "param", None)
+    if mode == "no_variation":
+        record = record.model_copy(update={"operators": record.operators.model_copy(update={"crossover_probability": 0.0, "mutation_probability": 0.0})})
+    if mode == "evaluation_tail":
+        record = record.model_copy(update={"budget": record.budget.model_copy(update={"max_evaluations": 5})})
+    if mode == "attempt_tail":
+        record = record.model_copy(update={"budget": record.budget.model_copy(update={"max_attempts": 5})})
+    return OriginalPopulation(record)
 
 
 @pytest.fixture
@@ -54,6 +62,8 @@ def successor_case(assessment_factory):
     members = {m.candidate_id: m for m in pool.members}
     parents = tuple(PopulationArtifact(members[key].birth, canonical(seeds[key].record)) for key in decision.selected)
     source = SelectedGeneration.verify(checkpoint, selection, decision, pool_ref, fitness_ref, parents)
+    if source.stop_reason is not None:
+        return {"source": source}
     identity = GenerationIdentity(scope=cohort.identity.scope, run_id=cohort.identity.run_id, specification_sha256=original.digest,
         generation=1, predecessor=checkpoint.reference)
     vectors = tuple(ParentVector(b.record.candidate_id, b.record.genes) for b in source.parents)

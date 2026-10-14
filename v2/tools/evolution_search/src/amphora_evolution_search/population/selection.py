@@ -16,6 +16,7 @@ from .membership import GenerationMembership
 from .pages import RecordPages
 from .specification import canonical
 from .evaluations import observation_cut
+from .fronts import FitnessFront
 
 
 @dataclass(frozen=True)
@@ -67,6 +68,21 @@ class PopulationSelection:
         members = tuple(sorted((*rows, *excluded), key=lambda row: row.candidate_id))
         cut = observation_cut(tuple(record for item in self.fitness for record in item.evidence.observations))
         return PopulationDecision(self.pool, requested, selected, members, disposition, stopped, cut)
+
+    def front_progress(self, previous_count):
+        generation = self.pool.identity.generation
+        require(type(previous_count) is int and 0 <= previous_count <= max(0, generation - 1), "front_generation_count")
+        if generation == 0:
+            return 0
+        decision = self.decide()
+        by_id = {item.record.candidate_id: item for item in self.fitness}
+        parent_ids = tuple(m.candidate_id for m in self.pool.members if m.source == "parent")
+        require(bool(parent_ids), "front_parent_membership")
+        parents = tuple(by_id[key].score for key in parent_ids)
+        require(all(score.eligible and score.violation == 0 for score in parents), "front_parent_fitness")
+        current = tuple(by_id[key].score for key in decision.selected)
+        directions = tuple(o.objective.direction for o in self.pool.original.record.assembly.objectives)
+        return FitnessFront.from_scores(directions, current).unchanged_count(FitnessFront.from_scores(directions, parents), previous_count)
 
 
 @dataclass(frozen=True)

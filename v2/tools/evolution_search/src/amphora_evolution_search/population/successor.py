@@ -62,13 +62,19 @@ class SelectedGeneration:
     @property
     def stop_reason(self):
         budget, progress = self.decision.pool.original.record.budget, self.record.progress
+        # Before any fitness exists, resource exhaustion is not a scientific failure.
+        if not progress.evaluations_issued:
+            if budget.max_evaluations < len(self.decision.pool.original.record.method_graph.methods):
+                return "evaluation_budget"
+            if budget.max_attempts < len(self.decision.pool.original.record.method_graph.methods):
+                return "attempt_budget"
         if self.decision.stopped:
             return self.decision.disposition
         if self.record.generation.generation == budget.successor_generations:
             return "generation_budget"
-        if progress.evaluations_issued == budget.max_evaluations:
+        if budget.max_evaluations - progress.evaluations_issued < len(self.decision.pool.original.record.method_graph.methods):
             return "evaluation_budget"
-        if progress.attempts_issued == budget.max_attempts:
+        if budget.max_attempts - progress.attempts_issued < len(self.decision.pool.original.record.method_graph.methods):
             return "attempt_budget"
         if progress.activations_created == budget.max_activations:
             return "activation_budget"
@@ -118,8 +124,8 @@ class SuccessorContinuity:
         costs = {}
         for key in evaluations.frozen.keys:
             costs[key.record.candidate_id] = costs.get(key.record.candidate_id, 0) + 1
-        remaining = min(original.record.budget.max_evaluations - old.progress.evaluations_issued,
-                        original.record.budget.max_attempts - old.progress.attempts_issued)
+        remaining_evaluations = original.record.budget.max_evaluations - old.progress.evaluations_issued
+        remaining_attempts = original.record.budget.max_attempts - old.progress.attempts_issued
         required = sum(method.required for method in original.record.method_graph.methods)
         for birth in births:
             row = birth.record
@@ -129,12 +135,15 @@ class SuccessorContinuity:
             if row.genes in seen:
                 require(row.disposition == "duplicate" and row.duplicate_of == seen[row.genes], "successor_duplicate")
             elif row.disposition == "rejected":
-                require(row.reason_code == "evaluation_budget" and remaining < required, "successor_rejection_policy")
+                cost = len(original.record.method_graph.methods)
+                reason = "evaluation_budget" if remaining_evaluations < cost else "attempt_budget" if remaining_attempts < cost else None
+                require(reason is not None and row.reason_code == reason, "successor_rejection_policy")
                 rejected += 1
             else:
                 require(row.disposition == "proposed", "successor_birth_disposition")
-                require(required <= costs.get(row.candidate_id, 0) <= remaining, "successor_birth_evaluation_budget")
-                remaining -= costs[row.candidate_id]
+                require(required <= costs.get(row.candidate_id, 0) <= min(remaining_evaluations, remaining_attempts), "successor_birth_evaluation_budget")
+                remaining_evaluations -= costs[row.candidate_id]
+                remaining_attempts -= costs[row.candidate_id]
                 proposed[row.candidate_id] = birth
                 seen[row.genes] = row.candidate_id
         require(record.rng == rng.to_record(), "successor_rng_tail")

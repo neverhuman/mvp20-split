@@ -9,7 +9,7 @@ from export_schemas import ROOT, artifacts
 
 def test_population_publication_preserves_predecessor_bytes():
     pins = json.loads((Path(__file__).parent / "fixtures/population_predecessor_schema_pins.json").read_bytes())
-    assert pins["baseline"] == "25e4ce4b"
+    assert pins["baseline"] == "dde8f290"
     for name, digest in pins["schemas"].items():
         assert hashlib.sha256((ROOT / "contracts/schemas" / name).read_bytes()).hexdigest() == digest
     published = artifacts()

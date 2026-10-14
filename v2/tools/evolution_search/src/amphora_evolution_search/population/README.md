@@ -90,8 +90,9 @@ selection and selected birth Artifacts, RNG position and completed evaluation/wo
 counters. SuccessorContinuity replays each birth from the retained selected parents,
 checks contiguous RNG, dispositions, full parent/offspring union, birth pages and
 frozen evaluation membership/budgets. All population slots retain a birth disposition.
-Rejected evaluation-budget births require remaining capacity below the required-method
-floor; complex per-candidate allocation still belongs to the admitted graph policy.
+Rejected budget births use evaluation/attempt reason precedence and the explicit
+primary-method reservation cost; complex per-candidate allocation still belongs to
+the admitted graph policy.
 Runtime must authenticate predecessor acceptance, counters, producer identity and
 resource limits. These pure records grant no execution or budget authority. Process
 material lineage/mapping lives in the independent process_mapping package.
@@ -106,3 +107,20 @@ PreparedGeneration/CandidateSlice verify reference-backed preparation and canoni
 candidate-context slices (1..admitted slice limit); false complete/cursor/member data
 reject. Runtime alone turns those contexts into admitted method subgraphs. No new
 scheduler, eager downstream inputs, or per-slice winner selection is introduced.
+
+PrimaryBirthBatch is the explicit primary-method numerical fixture policy: reserve
+one logical evaluation/first-attempt floor per configured method for a unique birth,
+record every ordinal/draw even when duplicate or rejected, and never split a method
+set to spend a remainder. Duplicate genes reference the first proposed equal vector;
+budget changes affect disposition, not birth identity/RNG draws. Optional method
+failure does not make its admitted reservation disappear. Runtime still accounts for
+actual retries, orchestration attempts, local readiness and all resource limits.
+This helper does not infer arbitrary process expansion costs from method count.
+
+FitnessFront compares feasible first-front objective vectors rather than candidate
+IDs. PopulationSelection.front_progress compares retained parents with selected
+survivors, resets on improvement/change and checks generation-bound stagnation count.
+SelectedGeneration stops on unavailable parents, generation/budget/activation limits
+or configured stagnation; an initial lack of resource budget is not reported as a
+scientific infeasibility conclusion. Legacy Search generation/selection policy is
+unchanged and remains separately tested.

@@ -61,7 +61,8 @@ def assessment_factory(born_cohort):
         candidate = cohort.members[index].candidate_id
         original = cohort.original.record
         objective = original.assembly.objectives[0].objective
-        sources = tuple(key.digest for key in keys if key.record.candidate_id == candidate)
+        sources = tuple(key.digest for key in keys if key.record.candidate_id == candidate
+                        and key.record.method_id in original.assembly.objectives[0].method_ids)
         return FitnessRecord(schema_version="1", profile="population-fitness-v1", generation=cohort.identity,
             candidate_id=candidate, assembly=original.assembly.tool, policy=original.assembly.policy,
             evaluation_set_sha256=evidence.evaluations.digest, outcome=AvailableFitness(status="evaluated",
