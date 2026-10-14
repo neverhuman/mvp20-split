@@ -1,0 +1,71 @@
+{
+  "schema_version": "1",
+  "profile": "population-evaluation-key-v1",
+  "generation": {
+    "scope": {
+      "tenant_id": "search-fixture",
+      "project_id": "numeric"
+    },
+    "run_id": "synthetic-run",
+    "specification_sha256": "eb4f5f4d33ab921a4d55f9c61c839af3c9ce85aec839096e99d7746a7d255587",
+    "generation": 0,
+    "predecessor": null
+  },
+  "candidate_id": "74c4a3229c4d40441689b4151aef5988465d773e061343a5afd132b2e931e38d",
+  "occurrence_id": "primary",
+  "method_id": "cost",
+  "tool": {
+    "capability_id": "synthetic-objectives",
+    "release": "0.1.0",
+    "image_sha256": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+    "contract_version": "1"
+  },
+  "material": {
+    "artifact_id": "material",
+    "scope": {
+      "tenant_id": "search-fixture",
+      "project_id": "numeric"
+    },
+    "sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+    "media_type": "application/json",
+    "schema_ref": {
+      "schema_id": "search.numeric-vector",
+      "version": "1",
+      "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    },
+    "size_bytes": 2
+  },
+  "inputs": [
+    {
+      "artifact_id": "material",
+      "scope": {
+        "tenant_id": "search-fixture",
+        "project_id": "numeric"
+      },
+      "sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+      "media_type": "application/json",
+      "schema_ref": {
+        "schema_id": "search.numeric-vector",
+        "version": "1",
+        "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      "size_bytes": 2
+    }
+  ],
+  "conditions": {
+    "artifact_id": "cost-conditions",
+    "scope": {
+      "tenant_id": "search-fixture",
+      "project_id": "numeric"
+    },
+    "sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+    "media_type": "application/json",
+    "schema_ref": {
+      "schema_id": "search.synthetic-policy",
+      "version": "1",
+      "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    },
+    "size_bytes": 2
+  },
+  "objective_policy_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+}

@@ -1,8 +1,8 @@
 # Numeric evolutionary search boundary
 
-- Source release0.6.0 adds the opt-in [population domain](src/amphora_evolution_search/population/README.md)
-  specification/membership foundation under POP-01.01/E1. Existing worker operations
-  and numeric algorithms are unchanged. No0.6 Runtime/Registry deployment is claimed;
+- Source release0.7.0 adds the opt-in [population domain](src/amphora_evolution_search/population/README.md)
+  specification/membership and candidate/evaluation identities under POP-01.01/E1. Existing worker operations
+  and numeric algorithms are unchanged. No0.7 Runtime/Registry deployment is claimed;
   the installed0.5 baseline and frozen demo remain independently pinned.
 
 - Owner: BP-08.02; package 0.5.0. Current-release image, Registry, independent installation and actual-owner replacement/recovery checks passed 2026-10-06 12:46:43 (America/Chicago).

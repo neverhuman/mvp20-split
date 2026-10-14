@@ -31,3 +31,20 @@ Next E1/D1: candidate birth, evaluation/outcome, fitness, selection, successor a
 material lineage. Source-level membership verification is not proof of Artifact
 rights/retention, birth content, Registry eligibility or accepted predecessor history.
 No paid calls, scientific-validity claim or scale benchmark.
+
+## 2026-10-13 20:42:58 ? E1 candidate birth and method identities
+
+contracts/population0.2/Search0.7 adds candidate-birth, evaluation-key and
+method-observation roots plus NumericBirth, BoundEvaluation and FrozenEvaluations.
+CounterRandom/NumericBox/BoxVariation mathematics remain unchanged. Stable births
+across batch1/8/32, separately supplied parent-pool replay, exact named method/material
+pins, required coverage and unique terminal-key collection pass. Empty-set digests
+retain run/generation identity; conflicting Artifact aliases reject. Producer pointers
+remain unverified locators until Runtime/Data acceptance, never scientific evidence.
+
+119 scoped population/public-wire/randomness/variation/publication tests pass13.11s.
+684generated schemas preserve all678predecessor bytes at500141aa. One negative fixture
+initially used invalid release99; corrected to schema-valid99.0.0 to test pin mismatch.
+Existing0.6 independent-install proof remains the prior checkpoint, not a0.7 claim.
+Remaining four D1 families: fitness, selection, successor, process lineage. No paid
+calls, runtime deployment, accepted-generation or scientific-validity claim.

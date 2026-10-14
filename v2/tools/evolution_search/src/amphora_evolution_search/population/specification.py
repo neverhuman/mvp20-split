@@ -7,6 +7,7 @@ from dataclasses import dataclass
 from amphora_contracts_population import PopulationSpecification
 
 from ..ranking import require
+from ..specification import NumericBox
 
 
 def canonical(record):
@@ -56,6 +57,10 @@ class OriginalPopulation:
     @property
     def digest(self):
         return hashlib.sha256(b"amphora.population/specification-v1\0" + canonical(self.record)).hexdigest()
+
+    @property
+    def box(self):
+        return NumericBox(tuple((v.lower, v.upper) for v in self.record.variables))
 
     def require_binding(self, record, digest):
         other = OriginalPopulation(record)

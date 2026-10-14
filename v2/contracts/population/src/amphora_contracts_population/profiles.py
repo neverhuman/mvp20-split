@@ -8,6 +8,8 @@ from amphora_contracts_core import SchemaRef
 
 from .specification import PopulationSpecification
 from .membership import MembershipManifest, MembershipPage
+from .candidates import CandidateBirth
+from .evaluations import EvaluationKey, MethodObservation
 
 
 def _reference(model, name):
@@ -31,3 +33,18 @@ def membership_page_schema():
 @lru_cache(maxsize=1)
 def membership_manifest_schema():
     return _reference(MembershipManifest, "population.membership-manifest")
+
+
+@lru_cache(maxsize=1)
+def candidate_birth_schema():
+    return _reference(CandidateBirth, "population.candidate-birth")
+
+
+@lru_cache(maxsize=1)
+def evaluation_key_schema():
+    return _reference(EvaluationKey, "population.evaluation-key")
+
+
+@lru_cache(maxsize=1)
+def method_observation_schema():
+    return _reference(MethodObservation, "population.method-observation")

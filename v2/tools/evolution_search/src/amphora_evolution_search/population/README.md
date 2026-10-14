@@ -25,6 +25,32 @@ schema/hash/size and canonical partitioning. It does not fetch files, prove birt
 identity/content, authorize access or accept predecessors. Source-generation checks
 keep seeds separate from successor parents/offspring. No page is a selection batch.
 
-Tests belong to `tools/evolution_search/tests/population/specification` and
-`membership`. Evaluation coverage, selection and successor rules are subsequent E1 deliveries.
+NumericBirth reuses NumericBox/CounterRandom and the unchanged BoxVariation kernel.
+Seed ordinal fixes the draw interval independently of batching. Birth ID hashes the
+compact JSON array `[numeric-population-birth-v1, original digest, generation,
+ordinal, operator, float.hex genes, ordered unique parents, draw start, draw end]`.
+Disposition/reason/duplicate links do not change the birth ID. Supplied variation
+records require verify_parent_pool against the separately retained ordered pool;
+constructor checks alone do not establish ancestry or cross-birth duplicate claims.
+No member's representation Artifact bytes are inferred from its genotype.
+
+BoundEvaluation ties a named method/occurrence to the exact frozen membership,
+candidate material and original release/conditions/objective policy. Its digest
+uses ASCII `amphora.population/evaluation-v1`, zero, canonical EvaluationKey bytes.
+Attempts are observations under the key, not new scientific identities. A terminal
+result must match that key, producer run, scoped outputs and exactly one primary
+method-result schema. Duplicate output ports and conflicting Artifact aliases reject.
+Actual input compatibility, node/attempt/producer authenticity, evidence access and
+accepted history still require Runtime/Data/Registry checks.
+
+FrozenEvaluations rejects missing required candidate-method coverage and mixed
+memberships; it permits explicit repeated occurrences within frozen limits. Its
+identity binds generation/role/member IDs and sorted evaluation digests even for
+empty sets. Terminal collection must cover exactly the frozen keys once, in stable
+digest order; failure stays explicit. It does not decide fitness, authorize a new
+occurrence from an outcome, or accept post-close updates. Coverage/identity checks
+are not a scheduler, budget authority or scientific calibration.
+
+Tests belong to `tools/evolution_search/tests/population/{specification,membership,
+birth,evaluations}`. Fitness, selection and successor rules are subsequent E1 deliveries.
 Current adapters do not expose this module; no peer-private imports or I/O allowed.

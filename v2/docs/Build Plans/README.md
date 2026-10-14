@@ -6,7 +6,7 @@
 
 - [Campaign provenance decision](UI-01.07%20Campaign%20provenance%20decision.md): approved/qualified100%; bounded Planning-owned exact-draft origin read and lookup. Qualified launch UI-01.06 stays complete.
 
-- [POP-01 Population Campaign Execution and Experience](POP-01%20Population%20Campaign%20Execution%20and%20Experience.md): active E1=6.25%, parent0.52%; specification/membership foundation verified, two independent installs227tests each/replay passed. [Additive contract decision](POP-01.04%20Population%20contract%20decision.md) approved. Execution/recovery, population UI and qualification remain ordered before ML-01.
+- [POP-01 Population Campaign Execution and Experience](POP-01%20Population%20Campaign%20Execution%20and%20Experience.md): active E1=12.50%, parent1.04%; specification/membership and birth/evaluation foundations verified. Latest119tests; prior0.6 independent227tests each/replay passed. [Additive contract decision](POP-01.04%20Population%20contract%20decision.md) approved. Execution/recovery, population UI and qualification remain ordered before ML-01.
 
 - [ML-01 Inherited Scientific Model Integration](ML-01%20Inherited%20Scientific%20Model%20Integration.md): standalone queued0%; starts after UI-01/UI-02 end-to-end flow and POP-01 population qualification.
 

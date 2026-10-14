@@ -4,7 +4,7 @@ from amphora_contracts_draft_successor import AdmitDraftSuccessor
 
 from amphora_contracts_chemical_structure import StructureRequest, StructureResult
 
-from amphora_contracts_population import PopulationSpecification, MembershipManifest, MembershipPage
+from amphora_contracts_population import PopulationSpecification, MembershipManifest, MembershipPage, CandidateBirth, EvaluationKey, MethodObservation
 
 import argparse
 import hashlib
@@ -58,6 +58,9 @@ from amphora_contracts_tools import Completion, Invocation, ToolBinding, ToolDes
 
 ROOT = Path(__file__).absolute().parents[1]
 MODELS = {
+    "population.candidate-birth": CandidateBirth,
+    "population.evaluation-key": EvaluationKey,
+    "population.method-observation": MethodObservation,
     "population.specification": PopulationSpecification,
     "population.membership-manifest": MembershipManifest,
     "population.membership-page": MembershipPage,

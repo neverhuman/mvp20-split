@@ -1,41 +1,45 @@
 # Restore
 
-Refreshed: 2026-10-13 20:24:12 America/Chicago. Read FIRST after compaction.
+Refreshed: 2026-10-13 20:43:36 America/Chicago. Read FIRST after compaction.
 
 ## Current task
 
-Owner approved POP-01.04 at2026-10-13 18:45:57. Owner confirms LAN works after fresh
-invitation, then explicitly requested continue-until-needed. LAN interruption closed.
-Both wrappers local49406/k and LAN6535/i STOPPED/drained; stopped.json verified and
-no owned57012..57021 listeners. Demo OFF during implementation. Do not change source
-while tests/install/runtime workflows execute; docs updates permitted.
+POP-01.04 owner approved; LAN issue confirmed resolved; continue-until-needed persists.
+Both review wrappers local49406/k and LAN6535/i STOPPED/drained; no owned57012..57021
+listeners. Demo OFF during implementation. Do not edit source/tests/module README
+while tests/install/runtime workflows run; docs updates allowed. No agents/JARVIS/v1
+edits or paid calls. Preserve user untracked ocular PDF/DOCX.
 
-POP-01.01/E1 in progress: new contracts/population0.1 with specification and membership
-page/manifest roots; Search0.6 adds population/OriginalPopulation and GenerationMembership.
-Old numerical algorithms/worker modes unchanged;0.6 NOT deployed/Registry-qualified.
-No edits to v1 or user untracked ocular PDF/DOCX. No agents, JARVIS or paid calls.
-Tests:209 scoped source checks pass92.57s. Independent install session6516 EXIT0;
-227tests per installation and identical wheel closure/legacy checkpoint+RNG replay.
-Evidence docs/Audits/Evidence/POP-01/Specification_Membership.json. No workflows running.
-Source edits allowed. All Search tests except workspace-only reuse audit included.
-Test scopes use owning module/area, no duplicate ownership entries.
+PUSHED500141aa: contracts/population0.1 specification + membership roots, Search0.6
+pure OriginalPopulation/GenerationMembership.209 source checks; two fresh isolated
+installs227tests EACH and identical wheels/legacy checkpoint+RNG replay.6schemas added,
+678total,672predecessor bytes unchanged. Evidence docs/Audits/Evidence/POP-01/
+Specification_Membership.json. No Registry/Runtime deployment or scale claims.
+Trackers source-verified D1=25%, E1=6.25%, Execution1.56%, parent0.52%, Build0.78%.
 
-Specification/membership checkpoint ready for commit; git log owns exact hash. uv locks refreshed offline for dev, Search, new
-contracts; editable dev population0.1/Search0.6 installed. Production boundary guard
-passed session65037. Schema publication678:6new schemas,672predecessor bytes pinned
-at8b866781. New roots are specification, membership-page and membership-manifest.
-Pure domains enforce originals, method coverage, scopes, deterministic bounded pages;
-no Artifact access/existence/birth-content or Runtime acceptance is inferred.
+Current second checkpoint: population0.2/Search0.7 adds CandidateBirth,
+EvaluationKey and MethodObservation; pure NumericBirth/BoundEvaluation/FrozenEvaluations.
+119 scoped tests PASS13.11s, including unchanged randomness/variation kernels, public
+wire and publication checks.684schemas preserve678predecessor bytes at500141aa.
+No workflows running; source edits allowed. Current checkpoint ready to commit/push;
+consult git log for its final hash. No0.7 isolated-install or deployment claim yet.
 
-NEXT: commit/push specification/membership foundation, then remaining E1 records: candidate birth,
-evaluation identities/outcomes, fitness/selection/successor, process material lineage,
-and graph-step composition/write sets. New public Runtime commands require a concrete
-separate review if demonstrated necessary; POP-01.04 does not authorize unspecified
-commands. Do not stop at checkpoint. Keep E1 prerequisites ahead of E2.
-Canonical trackers now reflect source-verified first partial delivery.
-Progress basis: E1 four equal deliveries; D1 eight record families, first2
-(spec/membership) verified =D1 25%,E1 6.25%,Execution1.5625%,parent0.52%,Build0.78%.
-Remaining D2-D4 and other child gates0%. Do not claim whole E1 complete.
+Empty-set digests now bind generation/role/member IDs; conflicting Artifact aliases
+reject. Bad-release fixture repaired to schema-valid99.0.0. All concrete follow-ups
+from prior Restore resolved. Module READMEs updated; new tests under Search population/
+{birth,evaluations} plus public contracts/population/tests/identity. Package locks and
+editable dev installation upgraded. Existing worker operations remain unchanged.
+Current schema predecessor pin baseline500141aa with678schemas.
+
+NEXT after commit/push: E1/D1 fitness and selection records/domain; then successor and
+process material lineage plus graph-step bindings. Canonical D1=50%, E1=12.50%,
+Execution3.13%, parent1.04%, Build1.56%, Verification0%; other phases0%. D2 numerical
+policy/compatibility, D3 full semantic oracles and D4 executable composition/write sets
+remain open. Do not stop at checkpoint. No unspecified Runtime command authorized.
+Source audit: Runtime claims has no global active-invocation cap; scatter max_parallel
+counts child scopes, not total nested invokes. D4 must resolve this concrete gap.
+Producer pointers remain unverified locators, not accepted Runtime/scientific proof.
+Membership does not prove birth content/Artifact access; those remain owner gates.
 
 Demo selected .test-results/curation-demo-serving-20261013h Studio0.36, UI-02 complete
 pusheda614e594. Local13k/LAN13i now drained; fresh sessions local13l/LAN13j when needed.
