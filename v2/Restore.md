@@ -10,7 +10,11 @@ Concrete decision: docs/Build Plans/POP-01.04 Population contract decision.md.
 Owner explicitly APPROVED POP-01.04 2026-10-13 18:45:57. Current interruption: remote LAN
 access failure reported. Local/LAN listeners alive; HTTPS app.js200/exact Studio0.36
 hash verified from host; invite script rerun,5min one-use link copied to host clipboard.
-Question pending: timeout vs login/refresh vs certificate. Do not print invitation.
+Owner confirms page loads but sign-in/Refresh workspace stuck. 2026-10-13 20:08:14:
+authenticated LAN probe POST/session200, actual Studio graph-observations nodes200
+(2417bytes), logout200. Earlier diagnostic v3 graph route502 was an invalid probe
+path, NOT an application fault. Fresh invitation reissued; pending whether owner
+used full fresh ticket link or base/bookmark. Do not print invitation.
 Keep live wrappers during access check; drain both before source changes. Return to:
 POP-01.01/E1 records/domain validation and compatibility goldens, then concrete
 composition/write sets before E2. New Runtime commands are not assumed authorized.
