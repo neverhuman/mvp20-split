@@ -1,7 +1,7 @@
 # Population wire boundary
 
 Owner: POP-01.01/E1; approved [POP-01.04](../../docs/Build%20Plans/POP-01.04%20Population%20contract%20decision.md).
-Implementation checkpoint: package0.4, specification, membership, birth/evaluation,
+Implementation checkpoint: package0.5, specification, membership, birth/evaluation,
 fitness/selection records and bounded evidence pages/manifests;
 not an executable population profile.
 
@@ -53,4 +53,7 @@ MaterialState/ProcessDerivation distinguish process context and physical batches
 unknowns, up-to32 inputs/outputs and typed port roles from genetic two-parent ancestry.
 Synthetic process mapping pages/manifests preserve explicit pairing policy and source
 pins. Process behavior belongs to independent process-mapping, not Search.
-Graph-step records/composition remain subsequent E1 deliveries.
+EvaluationSlot/DeclarationManifest freeze occurrence membership without exact future
+inputs; ResolutionManifest binds its complete resolved key set. Admitted topology
+still determines correct declarations, including skipped/conditional occurrences.
+Graph-step DTOs are isolated in population_steps; execution composition remains E1/D4.

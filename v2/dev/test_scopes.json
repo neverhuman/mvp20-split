@@ -516,5 +516,11 @@
     "coverage_sources": [
       "tools/process_mapping/src/amphora_process_mapping"
     ]
+  },
+  "contracts-population-steps": {
+    "tests": "contracts/population_steps/tests",
+    "coverage_sources": [
+      "contracts/population_steps/src/amphora_contracts_population_steps"
+    ]
   }
 }

@@ -18,7 +18,11 @@ from .successor import PopulationCheckpoint, BirthManifest, ProposedSuccessor
 
 from .process import MaterialMappingManifest, MaterialState, ProcessDerivation, MaterialMappingPage
 
+from .declarations import EvaluationSlot, EvaluationSlotPage, EvaluationDeclarationManifest, EvaluationResolutionManifest
+
 _RECORDS = {
+    "population.evaluation-slot": EvaluationSlot, "population.evaluation-slot-page": EvaluationSlotPage,
+    "population.evaluation-declarations": EvaluationDeclarationManifest, "population.evaluation-resolution": EvaluationResolutionManifest,
     "population.material-mapping-manifest": MaterialMappingManifest,
     "population.material-state": MaterialState, "population.process-derivation": ProcessDerivation,
     "population.material-mapping-page": MaterialMappingPage,

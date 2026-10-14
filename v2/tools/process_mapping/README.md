@@ -1,6 +1,6 @@
 # Process mapping boundary
 
-Owner: POP-01.01/E1. Implementation: 0.1 pure synthetic process lineage/mapping;
+Owner: POP-01.01/E1. Implementation: 0.1.1 pure synthetic process lineage/mapping;
 no registered worker, deployed service, chemistry model or Runtime acceptance yet.
 Design: [Multistage process graphs](../../docs/Architecture/Campaigns/Multistage_Process_Graphs.md).
 

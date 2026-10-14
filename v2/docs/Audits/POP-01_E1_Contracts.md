@@ -1,11 +1,11 @@
 # POP-01 E1 contract and consumer map
 
-- Status: source-verified records/domain; graph-step transport and execution composition pending.
-- Reviewed: 2026-10-13 21:24:08 America/Chicago.
+- Status: source-verified records/domain/transport; execution composition pending.
+- Reviewed: 2026-10-13 21:42:55 America/Chicago.
 - Owner: [POP-01.01/E1](../Build%20Plans/POP-01.01%20Population%20Execution.md).
-- Source checkpoint: population0.4, Search0.9, independent process-mapping0.1.
-- Evidence: 288 source checks and dependency guard pass;718 generated schemas preserve
-  all704 predecessor schema bytes. Independent installation evidence recorded in plan history.
+- Source checkpoint: population0.5, population-steps0.1, Search0.10, process-mapping0.1.1.
+- Evidence: 300 source checks and dependency guard pass;740 generated schemas preserve
+  all718 predecessor schema bytes. Independent installation evidence recorded in plan history.
 - Limits: no population worker registration, Runtime transition, scientific validity,
   scale measurement or deployed UI claim. Domain verification is not execution acceptance.
 
@@ -48,11 +48,13 @@ mass balance, physical availability, real reaction, lab operation or safety clai
 follows from a valid derivation record. Physical material batch IDs are distinct
 from the process batch used to prevent candidate/generation cross-wiring.
 
-## Transport/composition gate still open
+## Transport and remaining composition gate
 
-Graph-step DTOs must be separate from these retained domain records. Do not reuse
-legacy inline SearchStepContext/128-member EvaluationRequestBatch for the new
-reference-backed profile, nor create an unbounded inline equivalent.
+The independent population_steps package supplies reference-backed seed/prepared,
+candidate-context/member-slice, select and successor transport. PreparedGeneration/
+CandidateSlice recompute contexts, index, member coverage and completion from verified
+immutable sources. Neither legacy inline SearchStepContext nor its128-member batch
+is reused or widened. Runtime still owns actual dispatch and state transitions.
 
 The concrete composition must resolve when an evaluation key can be frozen: exact
 intermediate input Artifacts do not exist before their upstream transform completes.
@@ -60,8 +62,12 @@ The campaign must freeze candidate/method membership and admitted expansion poli
 before dispatch, then bind a method occurrence to actual accepted inputs at local
 readiness. Final terminal observation coverage must match that declared membership,
 including skipped/failed paths. A post-hoc list of successful keys is insufficient.
-Current FrozenEvaluations validates a supplied resolved key set; it does not yet
-implement unresolved occurrence declarations or dynamic graph dispatch.
+DeclaredEvaluations now freezes separate candidate/method/occurrence slots and
+requires an exact one-to-one resolved key set, retaining a separate resolution
+manifest. Inputs may bind after upstream acceptance without changing slot identity.
+FrozenEvaluations validates that resolved set; Runtime still must prove its sources
+and actual method occurrences. Primary enumeration is an explicit synthetic fixture
+policy; arbitrary graph loop/branch declarations require admitted topology checks.
 
 Runtime currently serializes claims under a run lock and enforces total attempt
 budget, but GraphLimits has no campaign-wide active-invocation cap. Scatter
@@ -70,7 +76,7 @@ invokes. Limiting child count or deployed worker count is insufficient to enforc
 the approved1..8 campaign invoke budget. Transport cannot claim that bound until the
 concrete execution profile/transition design resolves it.
 
-E1 must still produce the transport, compiled graph fixture, resource calculation
+E1 must still produce the compiled graph fixture, resource calculation
 and write-set map. New public Runtime command/profile changes require the specific
 review promised in POP-01.04. Existing generation, graph and command profiles remain
 unchanged. E2 cannot begin at this source-record checkpoint.

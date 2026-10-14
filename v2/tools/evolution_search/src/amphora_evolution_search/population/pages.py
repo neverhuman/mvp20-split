@@ -5,7 +5,7 @@ import json
 from dataclasses import dataclass
 
 from amphora_contracts_population import (
-    BirthPage, EvaluationKeyPage, FitnessPage, GenerationIdentity, MethodObservationPage, MembershipPageReference,
+    EvaluationSlotPage, BirthPage, EvaluationKeyPage, FitnessPage, GenerationIdentity, MethodObservationPage, MembershipPageReference,
     SelectionPage, population_record_schema,
 )
 
@@ -19,6 +19,8 @@ def key_digest(record):
 
 
 _KINDS = {
+    "population.evaluation-slot-page": (EvaluationSlotPage, "records", "population-evaluation-slot-page-v1", 8000,
+        lambda row: hashlib.sha256(b"amphora.population/evaluation-slot-v1\0" + canonical(row)).hexdigest()),
     "population.birth-page": (BirthPage, "records", "population-birth-page-v1", 1000,
                               lambda row: (row.generation, row.ordinal, row.candidate_id)),
     "population.evaluation-key-page": (EvaluationKeyPage, "records", "population-evaluation-key-page-v1", 16000, key_digest),

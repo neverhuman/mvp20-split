@@ -41,3 +41,6 @@ from .process import (ProcessContext, MaterialAmount, MaterialState, ProcessPort
 from .process import MaterialMappingManifest
 
 __all__ += ["ProcessContext", "MaterialAmount", "MaterialState", "ProcessPort", "ProcessBinding", "MaterialUse", "AbsentProcessInput", "ProcessDerivation", "MaterialMappingPolicy", "MaterialMappingItem", "MaterialMappingPair", "MaterialMappingExclusion", "MaterialMappingPage", "MaterialMappingManifest"]
+
+from .declarations import EvaluationSlot, EvaluationSlotPage, EvaluationDeclarationManifest, EvaluationResolutionManifest
+__all__ += ["EvaluationSlot", "EvaluationSlotPage", "EvaluationDeclarationManifest", "EvaluationResolutionManifest"]

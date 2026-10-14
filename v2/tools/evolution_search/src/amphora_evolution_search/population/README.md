@@ -95,3 +95,14 @@ floor; complex per-candidate allocation still belongs to the admitted graph poli
 Runtime must authenticate predecessor acceptance, counters, producer identity and
 resource limits. These pure records grant no execution or budget authority. Process
 material lineage/mapping lives in the independent process_mapping package.
+
+DeclaredEvaluations freezes candidate/method/occurrence slots before actual intermediate
+inputs exist. Their identity does not include retry IDs or invented future Artifacts.
+Resolve requires an exact one-to-one slot-to-key mapping; final terminal coverage uses
+existing FrozenEvaluations. Primary is an explicit one-occurrence fixture policy, not
+inference from arbitrary topology. Admitted graph/owner checks still establish the
+correct declared occurrence set, including bounded loops and skipped branches.
+PreparedGeneration/CandidateSlice verify reference-backed preparation and canonical
+candidate-context slices (1..admitted slice limit); false complete/cursor/member data
+reject. Runtime alone turns those contexts into admitted method subgraphs. No new
+scheduler, eager downstream inputs, or per-slice winner selection is introduced.

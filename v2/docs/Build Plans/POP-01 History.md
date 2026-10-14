@@ -88,3 +88,19 @@ other already-scoped gates. E1=22.50%, Execution5.63%, parent1.88%, Build2.81%.
 [Map](../Audits/POP-01_E1_Contracts.md) identifies future-input occurrence declarations
 and campaign-wide lease capacity as concrete integration work. POP-01.05 proposes a
 minimal additive resource-bounded admission; not approved/implemented. No paid calls.
+
+## 2026-10-13 21:44:48 - D1 declared occurrences and graph-step transport complete
+
+Population0.5 separates frozen slots from resolved input keys; final resolution must
+match every declared method occurrence, not only successes. Future intermediate inputs
+need no fabricated Artifacts. Separate population_steps0.1 uses reference-backed
+seed/prepared/candidate/slice/select/successor DTOs. Search0.10 CandidateSlice rebuilds
+canonical contexts/cursor/completion; whole-population membership is batching-invariant.
+Process0.1.1 is a dependency-only repin; independent ownership unchanged.
+
+300 source tests/guard pass; guard first caught undeclared direct Pydantic dependency
+in the new contract package, fixed in manifest/locks.740 schemas preserve718previous
+bytes. Two fresh Search0.10 installs each pass306 copied owner/public tests, identical
+wheels and legacy checkpoint/RNG replay at2026-10-13 21:43:11. [Evidence](../Audits/Evidence/POP-01/Declarations_Transport.json).
+D1 all ten units100%; E1=25%, Execution6.25%, parent2.08%, Build3.13%. D2 numerical
+policy and compatibility next; Runtime capacity proposal05 remains unapproved.

@@ -12,3 +12,5 @@ from .retained import PopulationArtifact, RetainedEvaluations, RetainedObservati
 __all__ = ["OriginalPopulation", "GenerationMembership", "NumericBirth", "BoundEvaluation", "FrozenEvaluations", "frozen_terminal_set", "FitnessEvidence", "BoundFitness", "PopulationSelection", "PopulationDecision", "RecordPages", "PopulationArtifact", "RetainedEvaluations", "RetainedObservations", "RetainedFitness", "canonical"]
 
 from .successor import SelectedGeneration, SuccessorContinuity
+
+from .declarations import DeclaredEvaluations

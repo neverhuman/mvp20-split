@@ -1,12 +1,12 @@
 # POP-01.01 Population Execution
 
 - Status: active E1; parent [POP-01](POP-01%20Population%20Campaign%20Execution%20and%20Experience.md).
-- Last refreshed: 2026-10-13 21:30:10 (America/Chicago).
-- Implementation: 5.63%; E1=22.50%, E2/E3/E4=0%, four equal delivery gates.
-- Current: E1/D1 eight record families and producer/consumer map verified. Next: declared occurrences and graph-step transport.
+- Last refreshed: 2026-10-13 21:44:48 (America/Chicago).
+- Implementation: 6.25%; E1=25%, E2/E3/E4=0%, four equal delivery gates.
+- Current: E1/D1 complete. Current: D2 numerical allocation/termination policy and compatibility.
 - Approval: [POP-01.04](POP-01.04%20Population%20contract%20decision.md) approved.
-- Evidence:288 source checks plus11 final successor checks;718 schemas preserve704 predecessor bytes.
-  Process0.1 two isolated installs10tests each; Search0.9 two isolated295test installs and legacy replay pass. Pure checks are not runtime admission.
+- Evidence:300 source tests/guard PASS;740schemas preserve718predecessor bytes.
+  Search0.10 two isolated306test installs and legacy replay/wheels pass. Pure checks are not runtime admission.
 - Owners: public contracts, Search domain, Runtime acceptance/dispatch, Data artifacts,
   Research eligibility. E2 starts only after the whole E1 gate passes.
 - Blockers: none for remaining approved E1 records. New Runtime commands, if needed,
@@ -20,14 +20,14 @@
 Four equal deliveries refine the existing E1 gate. D1 accounting now explicitly
 includes ten equal units: eight record/domain families (specification, membership,
 birth, evaluation, fitness, selection, successor, material lineage), producer/consumer
-map, and graph-step transport. The first nine are verified; transport remains open.
+map, and graph-step transport. All ten are source-verified; D1=100%.
 This corrects the earlier record-only denominator, which omitted two already-scoped
 D1 exits; it adds no scope or acceptance credit. [Owner map](../Audits/POP-01_E1_Contracts.md).
-E1=(90+0+0+0)/4=22.50%; Execution=22.50/4=5.625%, displayed5.63%.
+E1=(100+0+0+0)/4=25%; Execution=25/4=6.25%.
 
 | Delivery | Completion | Remaining exit |
 |---|---:|---|
-| D1 records/domain invariants | 90% | Declared occurrence coverage and graph-step transport; preserve exact material readiness |
+| D1 records/domain invariants | 100% | Complete; actual owner acceptance remains E2-E4 |
 | D2 compatibility and numerical policy | 0% | Complete new-profile entry/policies, final legacy replay/schema oracles |
 | D3 semantic/negative qualification | 0% | Full coverage, selection, RNG/batch and process-mapping oracles |
 | D4 composition and write sets | 0% | Executable graph fixture, resource math, transition review; resolve any minimal Runtime extension |

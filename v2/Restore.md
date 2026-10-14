@@ -1,6 +1,6 @@
 # Restore
 
-Refreshed: 2026-10-13 21:30:10 America/Chicago. Read FIRST after compaction.
+Refreshed: 2026-10-13 21:44:48 America/Chicago. Read FIRST after compaction.
 
 ## Current task
 
@@ -13,25 +13,29 @@ edits or paid calls. Preserve user untracked ocular PDF/DOCX.
 PUSHED e7db03f3: population0.3/Search0.8 fitness/selection,267source tests,
 two isolated284tests each;704schemas preserve684predecessor. Earlier e15c8672/500141aa.
 
-CURRENT UNCOMMITTED: population0.4/Search0.9 successor continuity + independent
-process-mapping0.1. Public checkpoint/birthmanifest/successor/material/derivation/
-mappingpage/manifest roots.718schemas preserve704predecessor bytes.288combined source
-checks+guard; final logical-evaluation/physical-attempt separation11successor checks.
-Process independent .test-results/pop01-process-installations-20261013a PASS10tests
-EACH identicalwheels, Search code absent. Search0.9 first proofc PASS295each but final
-counter correction came afterward; final proofd workflow7820 EXIT0:295tests EACH, identical wheels and legacy replay.
-Evidence docs/Audits/Evidence/POP-01/Successor_Process.json. No workflow running.
-No Runtime/deployed/scientific claim. No agents or model calls.
+PUSHED25e4ce4b: population0.4/Search0.9 successor and independent process-mapping0.1.
+288source+11finalsuccessor checks; Search two295test installs/replay/wheels PASSd;
+process two10test installsPASSa.718schemas preserve704predecessor. D1 source9/10units90%.
 
-D1 refined ten existing units: eight record/domain families + producer/consumer map
-+ graph-step transport. Nine done90%, E1=22.50%, Execution5.63%, parent1.88%,
-Build2.81%, Verification0. This fixes prior record-only denominator omission.
-Source maps docs/Audits/POP-01_E1_Contracts.md. New material package README owns boundary.
-Next: finish D1 declared occurrence coverage + separate graph-step contract package.
-Exact intermediate Artifact inputs do not exist before upstream finishes; declare
-method slots before dispatch, resolve keys on local readiness, verify full terminal
-coverage afterward. Current FrozenEvaluations is a resolved-key validator, not that
-unresolved declaration mechanism. No fabricated future Artifacts or success-only set.
+CURRENT checkpoint ready to commit: population0.5/Search0.10 + population_steps0.1,
+process0.1.1 dependency repin. DeclaredEvaluations freezes method slots independently
+of future inputs; exact resolved key coverage required. PreparedGeneration/CandidateSlice
+recomputes typed candidate-context references/cursor/complete; no per-page selection.
+300source tests PASS29.53s; guard corrected explicit Pydantic dependency and PASS.
+740schemas preserve718predecessor bytes. Proofe workflow82341 EXIT0: two306test
+isolated Search installs, identical wheels and legacy replay. New harness copies
+population_steps tests. Evidence docs/Audits/Evidence/POP-01/Declarations_Transport.json.
+No workflow running; source edits allowed. Commit/push before next D2 implementation.
+D1=100%, E1=25%, Execution6.25%, parent2.08%, Build3.13%, Verification0.
+
+NEXT D2: finish primary numerical allocation/zero-budget/duplicate-only/front-stagnation
+policy and final legacy compatibility. D3 full semantic oracles then D4 compiled graph
+fixture/resource/write sets; E2 still gated. For D2, no Runtime changes authorized:
+PrimaryBirthBatch can deterministically allocate seed/successor births independent of
+batching, exact draw use, explicit duplicate/rejected dispositions and fullmethod costs.
+Separate logical evaluation counts from physical attempts. Verify zero budgets/minimum
+parents/reduced survivors/optional weak outcomes. Front comparison should preserve old
+objective-vector semantics, not compare candidate IDs. No policy code written yet.
 
 POP-01.05 Bounded graph admission decision.md is PROPOSED ONLY. Runtime claims has
 no campaign-wide active cap; scatter counts child scopes. Proposed distinct

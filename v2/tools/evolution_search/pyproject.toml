@@ -1,8 +1,8 @@
 [project]
 name = "amphora-evolution-search"
-version = "0.9.0"
+version = "0.10.0"
 requires-python = ">=3.12,<3.13"
-dependencies = ["amphora-contracts-population==0.4.0", "amphora-contracts-tools==0.1.0", "amphora-tool-protocol==0.3.0", "amphora-contracts-graph-runtime==0.13.0", "amphora-contracts-core==0.1.0", "amphora-contracts-search-steps==0.1.0", "amphora-contracts-search==0.1.0"]
+dependencies = ["amphora-contracts-population-steps==0.1.0", "amphora-contracts-population==0.5.0", "amphora-contracts-tools==0.1.0", "amphora-tool-protocol==0.3.0", "amphora-contracts-graph-runtime==0.13.0", "amphora-contracts-core==0.1.0", "amphora-contracts-search-steps==0.1.0", "amphora-contracts-search==0.1.0"]
 
 [build-system]
 requires = ["hatchling>=1.27,<2"]
@@ -12,9 +12,10 @@ build-backend = "hatchling.build"
 packages = ["src/amphora_evolution_search"]
 
 [tool.amphora]
-public-imports = ["amphora-contracts-population", "amphora-contracts-tools", "amphora-tool-protocol", "amphora-contracts-graph-runtime", "amphora-contracts-core", "amphora-contracts-search-steps", "amphora-contracts-search"]
+public-imports = ["amphora-contracts-population-steps", "amphora-contracts-population", "amphora-contracts-tools", "amphora-tool-protocol", "amphora-contracts-graph-runtime", "amphora-contracts-core", "amphora-contracts-search-steps", "amphora-contracts-search"]
 
 [tool.uv.sources]
+amphora-contracts-population-steps = { path = "../../contracts/population_steps", editable = true }
 amphora-contracts-population = { path = "../../contracts/population", editable = true }
 amphora-tool-protocol = { path = "../../sdk/tool_protocol", editable = true }
 amphora-contracts-search-steps = { path = "../../contracts/search_steps", editable = true }

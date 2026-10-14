@@ -7,6 +7,7 @@ from amphora_contracts_chemical_structure import StructureRequest, StructureResu
 from amphora_contracts_population import PopulationSpecification, MembershipManifest, MembershipPage, CandidateBirth, EvaluationKey, MethodObservation
 
 import amphora_contracts_population as population_contracts
+import amphora_contracts_population_steps as population_step_contracts
 
 import argparse
 import hashlib
@@ -67,6 +68,11 @@ MODELS = {
     "population.material-state": population_contracts.MaterialState,
     "population.process-derivation": population_contracts.ProcessDerivation,
     "population.material-mapping-page": population_contracts.MaterialMappingPage,
+    "population.evaluation-slot": population_contracts.EvaluationSlot,
+    "population.evaluation-slot-page": population_contracts.EvaluationSlotPage,
+    "population.evaluation-declarations": population_contracts.EvaluationDeclarationManifest,
+    "population.evaluation-resolution": population_contracts.EvaluationResolutionManifest,
+    **population_step_contracts.RECORDS,
     "population.fitness": population_contracts.FitnessRecord,
     "population.fitness-page": population_contracts.FitnessPage,
     "population.selection-page": population_contracts.SelectionPage,

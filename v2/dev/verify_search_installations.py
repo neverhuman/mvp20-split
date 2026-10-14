@@ -25,6 +25,9 @@ def verify(output):
     population_contracts = output / "population-contract-tests"
     shutil.copytree(ROOT / "contracts/population/tests", population_contracts,
                     ignore=shutil.ignore_patterns("__pycache__", "*.pyc"))
+    population_steps = output / "population-step-tests"
+    shutil.copytree(ROOT / "contracts/population_steps/tests", population_steps,
+                    ignore=shutil.ignore_patterns("__pycache__", "*.pyc"))
     spec = json.loads((tests / "specification/synthetic_specification.json").read_bytes())
     spec["budget"].update(population_size=128, max_evaluations=128)
     specification = output / "original-specification.json"
@@ -50,7 +53,7 @@ def verify(output):
         uv = ROOT / (".venv/Scripts/uv.exe" if os.name == "nt" else ".venv/bin/uv")
         run([uv, "pip", "install", "--python", python, "pytest>=8,<9", "jsonschema>=4,<5"])
         xml = output / (label + ".xml")
-        arguments = [str(tests), str(contracts), str(population_contracts), "--confcutdir=" + str(output), "--import-mode=importlib",
+        arguments = [str(tests), str(contracts), str(population_contracts), str(population_steps), "--confcutdir=" + str(output), "--import-mode=importlib",
                      "-q", "--tb=short", "--junitxml=" + str(xml)]
         run([python, "-I", "-c", "import pytest; raise SystemExit(pytest.main(" + repr(arguments) + "))"])
         replay = output / (label + "-replay.json")
