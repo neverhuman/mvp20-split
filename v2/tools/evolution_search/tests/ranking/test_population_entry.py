@@ -17,3 +17,11 @@ def test_2000_bound_returns_all_ranks_without_inventing_feasible_members():
     scores = tuple(CandidateScore(f"candidate-{i:04d}", (0.0,), 1.0) for i in range(2000))
     result = ObjectiveSpace(("minimize",)).select_population(scores, 1000)
     assert len(result.ranks) == 2000 and result.selected == ()
+
+
+def test_2000_eligible_candidates_rank_globally_across_reversed_completion_order():
+    scores = tuple(CandidateScore(f"candidate-{i:04d}", (float(i),), 0.0) for i in range(2000))
+    space = ObjectiveSpace(("minimize",))
+    result = space.select_population(tuple(reversed(scores)), 1000)
+    assert result.selected == tuple(f"candidate-{i:04d}" for i in range(1000))
+    assert {r.candidate_id: r.front for r in result.ranks} == {f"candidate-{i:04d}": i for i in range(2000)}

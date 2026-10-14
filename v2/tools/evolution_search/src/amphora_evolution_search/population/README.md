@@ -112,7 +112,7 @@ PrimaryBirthBatch is the explicit primary-method numerical fixture policy: reser
 one logical evaluation/first-attempt floor per configured method for a unique birth,
 record every ordinal/draw even when duplicate or rejected, and never split a method
 set to spend a remainder. Duplicate genes reference the first proposed equal vector;
-budget changes affect disposition, not birth identity/RNG draws. Optional method
+remaining-capacity changes under the same original affect disposition, not birth identity/RNG draws. Optional method
 failure does not make its admitted reservation disappear. Runtime still accounts for
 actual retries, orchestration attempts, local readiness and all resource limits.
 This helper does not infer arbitrary process expansion costs from method count.
@@ -124,3 +124,13 @@ SelectedGeneration stops on unavailable parents, generation/budget/activation li
 or configured stagnation; an initial lack of resource budget is not reported as a
 scientific infeasibility conclusion. Legacy Search generation/selection policy is
 unchanged and remains separately tested.
+
+GenerationPageClosure checks the combined supplied page set across record families:
+512 distinct pages, 64 MiB total, canonical bytes, row bounds and same-original
+generation identity. The caller must establish complete manifest reachability;
+this pure verifier cannot discover omitted pages or authorize Artifact access.
+Membership checks birth/checkpoint schema pins and conflicting Artifact aliases.
+Immutable membership/evaluation/evidence indexes cache validated identities; selection
+visits each evidence set once and bounds its complete union before ranking.
+Four-generation numerical oracles compare batches 1/8/32 and reversed completions;
+they establish semantic replay, not Runtime scheduling or scientific validity.

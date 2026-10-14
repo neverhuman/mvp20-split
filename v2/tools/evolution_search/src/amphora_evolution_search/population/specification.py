@@ -3,6 +3,7 @@
 import hashlib
 import json
 from dataclasses import dataclass
+from functools import cached_property
 
 from amphora_contracts_population import PopulationSpecification
 
@@ -54,7 +55,7 @@ class OriginalPopulation:
         items = tuple(values)
         require(len(set(items)) == len(items), code)
 
-    @property
+    @cached_property
     def digest(self):
         return hashlib.sha256(b"amphora.population/specification-v1\0" + canonical(self.record)).hexdigest()
 

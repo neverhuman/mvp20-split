@@ -2,6 +2,7 @@
 
 from dataclasses import dataclass
 import hashlib
+from functools import cached_property
 
 from amphora_contracts_core import ArtifactRef
 
@@ -43,6 +44,7 @@ class PopulationSelection:
             else:
                 require(source.identity == self.pool.identity, "selection_current_generation")
         object.__setattr__(self, "fitness", tuple(by_id[key] for key in sorted(by_id)))
+        self.observations()  # Bound the complete evidence union at construction.
 
     def decide(self):
         original = self.pool.original.record
@@ -66,8 +68,27 @@ class PopulationSelection:
         else:
             disposition, stopped = "selected", False
         members = tuple(sorted((*rows, *excluded), key=lambda row: row.candidate_id))
-        cut = observation_cut(tuple(record for item in self.fitness for record in item.evidence.observations))
+        cut = observation_cut(self.observations())
         return PopulationDecision(self.pool, requested, selected, members, disposition, stopped, cut)
+
+    def observations(self):
+        return self._observations
+
+    @cached_property
+    def _observations(self):
+        """Each immutable evidence set is visited once, not once per candidate."""
+        sources = {}
+        for item in self.fitness:
+            source = item.evidence
+            prior = sources.setdefault(source.evaluations.digest, source)
+            require(prior.cut_sha256 == source.cut_sha256, "selection_observation_conflict")
+            require(len(sources) <= 101, "selection_evidence_source_bound")
+        records = {}
+        for source in sources.values():
+            for record in source.observations:
+                require(records.setdefault(record.evaluation_sha256, record) == record, "selection_observation_conflict")
+                require(len(records) <= 16000, "selection_observation_bound")
+        return tuple(records[key] for key in sorted(records))
 
     def front_progress(self, previous_count):
         generation = self.pool.identity.generation

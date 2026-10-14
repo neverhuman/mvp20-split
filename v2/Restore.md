@@ -1,6 +1,6 @@
 # Restore
 
-Refreshed: 2026-10-13 21:59:44 America/Chicago. Read FIRST after compaction.
+Refreshed: 2026-10-13 22:25:31 America/Chicago. Read FIRST after compaction.
 
 ## Current task
 
@@ -21,25 +21,15 @@ PUSHEDdde8f290: D1 complete, population0.5/population_steps0.1/Search0.10,
 740schemas, source300, two306test installs/replay. Declared slots separate from late
 resolved input keys; reference-backed graph-step transport and CandidateSlice verified.
 
-CURRENT D2 checkpoint ready to commit: Search0.11 PrimaryBirthBatch/EvaluationCapacity
-and FitnessFront/front_progress. Source320PASS31.37s;6reuse/schema tests+guardPASS.
-740predecessor schemas unchanged. Prooff20703 EXIT0 two326test isolated builds,
-identicalwheels and legacy replay. Evidence docs/Audits/Evidence/POP-01/Numerical_Policy.json.
-No workflow running. Docs/trackers reflect D1/D2=100 E1=50%, Execution12.50%,
-parent4.17%, Build6.25%, Verification0. Commit/push then D3; no user decision yet.
-
-D3 next: combined semantic/boundary oracles, including aggregate generation closure
-(page bounds currently checked per-family; need total <=512pages/64MiB), fully
-eligible large ranking, multi-generation pure numerical batch/reordered-outcome replay.
-Concrete membership gaps to verify/fix: birth schema currently not checked by
-GenerationMembership; predecessor schema only scoped; conflicting Artifact aliases
-across members not yet rejected there. Fix with focused negative tests, preserve
-public schemas; update fake fixture predecessor refs to valid checkpoint schema.
-No changes for these D3 findings yet. Primary policy suite covers partial/zero budgets,
-duplicates, optional evidence, explicit one-parent continuation, numerical front
-comparison. Remaining-capacity changes (same original) preserve birth ID/draws;
-changing original spec intentionally changes identity. This wording in module README
-may need tightening when next touched. Arbitrary process cost remains D4 admission.
+CURRENT D3 checkpoint ready to commit (2026-10-13 22:25:31): D2 pushed2a161097.
+Search0.12 combined page/evidence bounds, membership schema/alias checks, immutable
+indexes, four-generation batch1/8/32/reverse replay and2000eligible rank oracle.
+356source checks + corrected two-test historical curation publication rerun PASS;
+guardPASS; Search isolatedg93172 EXIT0 two335tests, identical wheels/legacy replay.
+740schema pins unchanged. Evidence Semantic_Qualification.json and audit report.
+D1-D3=100, D4=0; E1=75%, Execution18.75%, parent6.25%, Build9.38%, Verification0.
+No workflow running. Commit/push then D4 compiled fixture/resource/write-set review.
+No source Runtime command implementation yet. No model calls. DemoOFF.
 
 POP-01.05 Bounded graph admission decision.md is PROPOSED ONLY. Runtime claims has
 no campaign-wide active cap; scatter counts child scopes. Proposed distinct

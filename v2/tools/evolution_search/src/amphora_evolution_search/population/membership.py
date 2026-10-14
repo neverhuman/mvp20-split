@@ -2,9 +2,12 @@
 
 import hashlib
 from dataclasses import dataclass
+from functools import cached_property
+from types import MappingProxyType
 
 from amphora_contracts_population import (
     CandidateMember, GenerationIdentity, MembershipManifest, MembershipPage, membership_page_schema,
+    candidate_birth_schema, population_record_schema,
 )
 
 from ..ranking import require
@@ -32,6 +35,8 @@ class GenerationMembership:
         require((identity.predecessor is None) == (identity.generation == 0), "membership_predecessor")
         if identity.predecessor is not None:
             require(identity.predecessor.scope == identity.scope, "membership_predecessor_scope")
+            require(identity.predecessor.schema_ref == population_record_schema("population.checkpoint")
+                    and identity.predecessor.media_type == "application/json", "membership_predecessor_schema")
         require(self.role in {"cohort", "selection_pool"}, "membership_role")
         require(type(self.members) is tuple, "membership_tuple")
         maximum = self.original.record.budget.population_size * (2 if self.role == "selection_pool" else 1)
@@ -40,11 +45,20 @@ class GenerationMembership:
         object.__setattr__(self, "members", checked)
         identifiers = tuple(member.candidate_id for member in checked)
         require(identifiers == tuple(sorted(set(identifiers))), "membership_order_or_duplicate")
+        references = {}
         for member in checked:
             require(len(canonical(member)) <= ROW_BYTES, "membership_row_bytes")
             require(member.birth.scope == member.representation.scope == identity.scope, "membership_member_scope")
+            require(member.birth.schema_ref == candidate_birth_schema() and member.birth.media_type == "application/json",
+                    "membership_birth_schema")
             require(member.representation.schema_ref == self.original.record.representation, "membership_representation")
             require((member.source == "seed") == (identity.generation == 0), "membership_source_generation")
+            for reference in (member.birth, member.representation):
+                require(references.setdefault(reference.artifact_id, reference) == reference, "membership_artifact_conflict")
+
+    @cached_property
+    def by_id(self):
+        return MappingProxyType({member.candidate_id: member for member in self.members})
 
     def pages(self):
         """Pack canonical order by both byte and member limits, independent of dispatch."""

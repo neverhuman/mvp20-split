@@ -1,11 +1,13 @@
 """Intrinsic fitness/evaluation linkage; assembly and evidence authority stay external."""
 
 from dataclasses import dataclass
+from functools import cached_property
+from types import MappingProxyType
 
 from amphora_contracts_population import FitnessRecord
 
 from ..ranking import CandidateScore, require
-from .evaluations import FrozenEvaluations
+from .evaluations import FrozenEvaluations, observation_cut
 from .specification import canonical
 
 
@@ -20,6 +22,17 @@ class FitnessEvidence:
     def bind(self, record):
         return BoundFitness(self, record)
 
+    @cached_property
+    def cut_sha256(self):
+        return observation_cut(self.observations)
+
+    @cached_property
+    def by_candidate(self):
+        rows = {}
+        for record in self.observations:
+            rows.setdefault(record.key.candidate_id, {})[record.evaluation_sha256] = record
+        return MappingProxyType({key: MappingProxyType(value) for key, value in rows.items()})
+
 
 @dataclass(frozen=True)
 class BoundFitness:
@@ -33,12 +46,11 @@ class BoundFitness:
         frozen = self.evidence.evaluations
         original = frozen.membership.original.record
         require(checked.generation == frozen.membership.identity, "fitness_generation")
-        require(checked.candidate_id in {member.candidate_id for member in frozen.membership.members}, "fitness_candidate")
+        require(checked.candidate_id in frozen.membership.by_id, "fitness_candidate")
         require(checked.assembly == original.assembly.tool and checked.policy == original.assembly.policy,
                 "fitness_assembly_policy")
         require(checked.evaluation_set_sha256 == frozen.digest, "fitness_evaluation_set")
-        observations = {item.evaluation_sha256: item for item in self.evidence.observations
-                        if item.key.candidate_id == checked.candidate_id}
+        observations = self.evidence.by_candidate.get(checked.candidate_id, {})
         required = {method.method_id for method in original.method_graph.methods if method.required}
         unavailable = [item for item in observations.values() if item.key.method_id in required
                        and item.outcome.status != "evaluated"]

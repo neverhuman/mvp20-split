@@ -3,6 +3,7 @@
 import hashlib
 import json
 from dataclasses import dataclass
+from functools import cached_property
 
 from amphora_contracts_population import EvaluationKey, MethodObservation
 
@@ -37,7 +38,7 @@ class BoundEvaluation:
         object.__setattr__(self, "record", record)
         require(len(canonical(record)) <= 8192, "evaluation_key_bytes")
         require(record.generation == self.membership.identity, "evaluation_generation")
-        candidates = {member.candidate_id: member for member in self.membership.members}
+        candidates = self.membership.by_id
         require(record.candidate_id in candidates, "evaluation_candidate")
         require(record.material == candidates[record.candidate_id].representation, "evaluation_material")
         original = self.membership.original.record
@@ -52,7 +53,7 @@ class BoundEvaluation:
         consistent_references((record.material, record.conditions, *record.inputs, original.constraints,
                                *original.context, *original.knowledge, original.assembly.policy, original.method_graph.definition))
 
-    @property
+    @cached_property
     def digest(self):
         return hashlib.sha256(b"amphora.population/evaluation-v1\0" + canonical(self.record)).hexdigest()
 
@@ -93,7 +94,7 @@ class FrozenEvaluations:
                 "evaluation_required_coverage")
         object.__setattr__(self, "keys", tuple(sorted(self.keys, key=lambda key: key.digest)))
 
-    @property
+    @cached_property
     def digest(self):
         value = {"generation": self.membership.identity.model_dump(mode="json"), "role": self.membership.role,
                  "members": [member.candidate_id for member in self.membership.members],

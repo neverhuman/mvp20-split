@@ -1,12 +1,12 @@
 # POP-01.01 Population Execution
 
 - Status: active E1; parent [POP-01](POP-01%20Population%20Campaign%20Execution%20and%20Experience.md).
-- Last refreshed: 2026-10-13 21:59:44 (America/Chicago).
-- Implementation: 12.50%; E1=50%, E2/E3/E4=0%, four equal delivery gates.
-- Current: E1/D1/D2 complete. Current: D3 combined semantic and boundary qualification.
+- Last refreshed: 2026-10-13 22:25:31 (America/Chicago).
+- Implementation: 18.75%; E1=75%, E2/E3/E4=0%, four equal delivery gates.
+- Current: E1/D1-D3 complete. Current: D4 composition, resource math and write sets.
 - Approval: [POP-01.04](POP-01.04%20Population%20contract%20decision.md) approved.
-- Evidence:320 source tests/guard PASS;740schemas preserve all740predecessor bytes.
-  Search0.11 two isolated326test installs and legacy replay/wheels pass. Pure checks are not runtime admission.
+- Evidence:356 source checks plus corrected two-test publication rerun/guard PASS;740schema pins unchanged.
+  Search0.12 two isolated335test installs and legacy replay/wheels pass. Pure checks are not runtime admission.
 - Owners: public contracts, Search domain, Runtime acceptance/dispatch, Data artifacts,
   Research eligibility. E2 starts only after the whole E1 gate passes.
 - Blockers: none for remaining approved E1 records. New Runtime commands, if needed,
@@ -23,13 +23,13 @@ birth, evaluation, fitness, selection, successor, material lineage), producer/co
 map, and graph-step transport. All ten are source-verified; D1=100%.
 This corrects the earlier record-only denominator, which omitted two already-scoped
 D1 exits; it adds no scope or acceptance credit. [Owner map](../Audits/POP-01_E1_Contracts.md).
-E1=(100+100+0+0)/4=50%; Execution=50/4=12.50%.
+E1=(100+100+100+0)/4=75%; Execution=75/4=18.75%.
 
 | Delivery | Completion | Remaining exit |
 |---|---:|---|
 | D1 records/domain invariants | 100% | Complete; actual owner acceptance remains E2-E4 |
 | D2 compatibility and numerical policy | 100% | Complete; [policy/compatibility report](../Audits/POP-01_Numerical_Compatibility.md) |
-| D3 semantic/negative qualification | 0% | Full coverage, selection, RNG/batch and process-mapping oracles |
+| D3 semantic/negative qualification | 100% | Complete; [semantic report](../Audits/POP-01_Semantic_Qualification.md) |
 | D4 composition and write sets | 0% | Executable graph fixture, resource math, transition review; resolve any minimal Runtime extension |
 
 Detailed checkpoints belong to [POP-01 History](POP-01%20History.md).

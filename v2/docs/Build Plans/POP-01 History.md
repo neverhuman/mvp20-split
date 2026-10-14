@@ -115,3 +115,13 @@ continue reduced. Primary method cost is not arbitrary process expansion math.
 remain unchanged.740schema pins unchanged. Two isolated builds326tests EACH and
 identical legacy checkpoint/RNG replay/wheels at2026-10-13 21:56:11. [Report](../Audits/POP-01_Numerical_Compatibility.md).
 D1/D2=100%, E1=50%, Execution12.50%, parent4.17%, Build6.25%; D3 next. No paid calls.
+
+## 2026-10-13 22:25:31 ? E1/D3 semantic qualification
+
+D3 complete; E1=75%, Execution18.75%, parent6.25%, Build9.38%, Verification0.
+Search0.12 validates membership pins/aliasing and combined page/evidence bounds;
+immutable indexes avoid repeated whole-cohort hashing. Four-generation batch1/8/32
+replay and2000eligible global ranks pass.356source checks plus corrected two-test
+curation publication rerun; dependency guard; two335test isolated installs and exact
+legacy replay pass.740schema pins unchanged. D4 composition/write sets next.
+[Report](../Audits/POP-01_Semantic_Qualification.md). No Runtime population claim.

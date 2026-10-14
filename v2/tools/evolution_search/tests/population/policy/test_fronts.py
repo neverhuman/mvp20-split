@@ -1,4 +1,5 @@
 import pytest
+from amphora_contracts_population import population_record_schema
 from amphora_evolution_search.population import GenerationMembership, PopulationSelection
 from amphora_evolution_search.population.fronts import FitnessFront
 from amphora_evolution_search.ranking import CandidateScore
@@ -22,7 +23,8 @@ def test_parent_only_duplicate_generation_counts_unchanged_front(assessment_fact
     initial = PopulationSelection(GenerationMembership(cohort.original, cohort.identity, "selection_pool", cohort.members),
                                   tuple(evidence.bind(factory(i)) for i in range(2)))
     assert initial.front_progress(0) == 0
-    identity = cohort.identity.model_copy(update={"generation": 1, "predecessor": cohort.members[0].birth})
+    predecessor = cohort.members[0].birth.model_copy(update={"artifact_id": "checkpoint", "schema_ref": population_record_schema("population.checkpoint")})
+    identity = cohort.identity.model_copy(update={"generation": 1, "predecessor": predecessor})
     parents = tuple(m.model_copy(update={"source": "parent"}) for m in cohort.members)
     successor = PopulationSelection(GenerationMembership(cohort.original, identity, "selection_pool", parents), initial.fitness)
     assert successor.front_progress(0) == 1

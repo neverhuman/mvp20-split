@@ -6,7 +6,7 @@ import pytest
 from amphora_contracts_core import ArtifactRef
 from amphora_contracts_population import (
     CandidateMember, GenerationIdentity, MembershipManifest, MembershipPageReference,
-    PopulationSpecification, membership_page_schema,
+    PopulationSpecification, membership_page_schema, candidate_birth_schema, population_record_schema,
 )
 from amphora_evolution_search.population import GenerationMembership, OriginalPopulation, canonical
 
@@ -29,7 +29,7 @@ def population(size=1000, *, long_scope=False):
         specification_sha256=original.digest, generation=0, predecessor=None)
     def reference(index, kind):
         return ArtifactRef(artifact_id=f"{kind}-{index}", scope=identity.scope, sha256="a" * 64,
-            media_type="application/json", schema_ref=original.record.representation, size_bytes=2)
+            media_type="application/json", schema_ref=candidate_birth_schema() if kind == "birth" else original.record.representation, size_bytes=2)
     members = tuple(CandidateMember(candidate_id=f"{i:064x}", birth=reference(i, "birth"),
         representation=reference(i, "representation"), source="seed") for i in range(size))
     return GenerationMembership(original, identity, "cohort", members)
@@ -107,13 +107,35 @@ def test_page_byte_bound_can_split_before_member_bound():
     value = population(100, long_scope=True)
     # Core ArtifactRef permits UTF-8 media labels: use a wire-only placeholder
     # to distinguish encoded bytes from character count, not a MIME registration claim.
-    def long(reference):
+    def long(reference, *, birth=False):
         return reference.model_copy(update={"artifact_id": reference.artifact_id.ljust(128, "x"),
-            "media_type": "application/" + "\u00e9" * 116})
-    members = tuple(member.model_copy(update={"birth": long(member.birth), "representation": long(member.representation)})
+            "media_type": "application/json" if birth else "application/" + chr(0x1f9ec) * 116})
+    members = tuple(member.model_copy(update={"birth": long(member.birth, birth=True), "representation": long(member.representation)})
                     for member in value.members)
     expanded = GenerationMembership(value.original, value.identity, value.role, members)
     # Byte pressure also includes long schema and scope fields, kept compatible.
     assert len(expanded.pages()[0].members) < 64
     assert all(len(canonical(page)) <= 131072 for page in expanded.pages())
     assert GenerationMembership.verified(expanded.original, *published(expanded)) == expanded
+
+
+def test_membership_rejects_wrong_birth_schema_and_conflicting_artifact_alias():
+    value = population(2)
+    first, second = value.members
+    with pytest.raises(ValueError, match="membership_birth_schema"):
+        GenerationMembership(value.original, value.identity, value.role,
+            (first.model_copy(update={"birth": first.representation}), second))
+    conflicting = second.birth.model_copy(update={"artifact_id": first.birth.artifact_id, "sha256": "f" * 64})
+    with pytest.raises(ValueError, match="membership_artifact_conflict"):
+        GenerationMembership(value.original, value.identity, value.role,
+            (first, second.model_copy(update={"birth": conflicting})))
+
+
+def test_successor_membership_predecessor_must_be_checkpoint_reference():
+    value = population(1)
+    member = value.members[0].model_copy(update={"source": "parent"})
+    identity = value.identity.model_copy(update={"generation": 1, "predecessor": member.birth})
+    with pytest.raises(ValueError, match="membership_predecessor_schema"):
+        GenerationMembership(value.original, identity, value.role, (member,))
+    reference = member.birth.model_copy(update={"artifact_id": "checkpoint", "schema_ref": population_record_schema("population.checkpoint")})
+    assert GenerationMembership(value.original, identity.model_copy(update={"predecessor": reference}), value.role, (member,))
