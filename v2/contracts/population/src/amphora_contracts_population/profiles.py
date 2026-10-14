@@ -14,7 +14,16 @@ from .fitness import FitnessRecord, FitnessPage
 from .selection import SelectionPage, PopulationSelectionReceipt
 from .pages import BirthPage, EvaluationKeyPage, MethodObservationPage, EvaluationManifest, ObservationManifest, FitnessManifest
 
+from .successor import PopulationCheckpoint, BirthManifest, ProposedSuccessor
+
+from .process import MaterialMappingManifest, MaterialState, ProcessDerivation, MaterialMappingPage
+
 _RECORDS = {
+    "population.material-mapping-manifest": MaterialMappingManifest,
+    "population.material-state": MaterialState, "population.process-derivation": ProcessDerivation,
+    "population.material-mapping-page": MaterialMappingPage,
+    "population.checkpoint": PopulationCheckpoint, "population.birth-manifest": BirthManifest,
+    "population.proposed-successor": ProposedSuccessor,
     "population.fitness": FitnessRecord, "population.fitness-page": FitnessPage,
     "population.selection-page": SelectionPage, "population.selection-receipt": PopulationSelectionReceipt,
     "population.birth-page": BirthPage, "population.evaluation-key-page": EvaluationKeyPage,
@@ -61,7 +70,7 @@ def method_observation_schema():
     return _reference(MethodObservation, "population.method-observation")
 
 
-@lru_cache(maxsize=16)
+@lru_cache(maxsize=32)
 def population_record_schema(name):
     """Closed named record roots; does not accept caller-supplied schemas/models."""
     return _reference(_RECORDS[name], name)

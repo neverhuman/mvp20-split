@@ -66,3 +66,25 @@ Search0.8 independent installations284tests EACH, identical wheels and legacy
 checkpoint/RNG replay passed at2026-10-13 21:06:53. Evidence:
 [Fitness/selection](../Audits/Evidence/POP-01/Fitness_Selection.json). D1 six/eight families=75%, E1=18.75%;
 D2-D4 stay0. Successor and process lineage next. No new model calls.
+
+## 2026-10-13 21:30:10 - Successor continuity and independent process material mapping
+
+Population0.4/Search0.9 adds checkpoint/birth manifest/proposed successor and exact
+predecessor, selected-parent birth/RNG replay, union coverage and bounded counters.
+Logical unavailable evaluations need not have physical worker attempts; counter
+bounds remain separate and actual counts require Runtime proof. The final correction
+passes11 successor tests after the combined288source tests/dependency guard.
+
+Independent process-mapping0.1 owns material states, typed multi-input/output lineage,
+pairwise/keyed/opt-in Cartesian mapping and retained page manifests. No Search/private
+service imports. Two isolated builds each pass10 copied tests with identical wheels;
+19-stage lineage is a pure contract oracle, not scheduling or chemistry qualification.
+718 schemas preserve704predecessor bytes. Search0.9 final two independent installations295tests EACH/replay/wheels pass at2026-10-13 21:27:39.
+[Evidence](../Audits/Evidence/POP-01/Successor_Process.json).
+
+D1 accounting refined to ten explicit existing units: eight record families, owner map,
+graph-step transport. Nine done=90%; earlier record-only denominator omitted the two
+other already-scoped gates. E1=22.50%, Execution5.63%, parent1.88%, Build2.81%.
+[Map](../Audits/POP-01_E1_Contracts.md) identifies future-input occurrence declarations
+and campaign-wide lease capacity as concrete integration work. POP-01.05 proposes a
+minimal additive resource-bounded admission; not approved/implemented. No paid calls.

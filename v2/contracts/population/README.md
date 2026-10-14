@@ -1,7 +1,7 @@
 # Population wire boundary
 
 Owner: POP-01.01/E1; approved [POP-01.04](../../docs/Build%20Plans/POP-01.04%20Population%20contract%20decision.md).
-Implementation checkpoint: package0.3, specification, membership, birth/evaluation,
+Implementation checkpoint: package0.4, specification, membership, birth/evaluation,
 fitness/selection records and bounded evidence pages/manifests;
 not an executable population profile.
 
@@ -46,4 +46,11 @@ inline checkpoints. Page counts alone do not prove byte bounds or integrity; Sea
 verifies canonical page bytes and complete source linkage. Fitness pages may retain
 parent evidence from an earlier generation of the same immutable specification;
 the selection owner must check parent membership/predecessor authority separately.
-Successor/process-material and graph-step records remain subsequent E1 deliveries.
+PopulationCheckpoint and ProposedSuccessor retain independently verified selection,
+exact predecessor, RNG position, reference-backed birth/offspring/pool/evaluation
+closure and budget counters. These are proposals, not accepted Runtime commands.
+MaterialState/ProcessDerivation distinguish process context and physical batches,
+unknowns, up-to32 inputs/outputs and typed port roles from genetic two-parent ancestry.
+Synthetic process mapping pages/manifests preserve explicit pairing policy and source
+pins. Process behavior belongs to independent process-mapping, not Search.
+Graph-step records/composition remain subsequent E1 deliveries.

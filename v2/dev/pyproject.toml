@@ -3,6 +3,7 @@ name = "amphora-foundation-verification"
 version = "0.1.0"
 requires-python = ">=3.12,<3.13"
 dependencies = [
+    "amphora-process-mapping==0.1.0",
     "amphora-contracts-chemical-structure==0.1.0",
     "amphora-contracts-campaign-successor-launch==0.1.0",
     "amphora-contracts-campaign-curation==0.1.1",
@@ -23,8 +24,8 @@ dependencies = [
     "amphora-synthetic-objectives-rebuilt==0.4.0",
     "amphora-contracts-search-steps==0.1.0",
     "amphora-contracts-search==0.1.0",
-    "amphora-evolution-search==0.8.0",
-    "amphora-contracts-population==0.3.0",
+    "amphora-evolution-search==0.9.0",
+    "amphora-contracts-population==0.4.0",
     "amphora-contracts-supervision==0.10.2",
     "amphora-contracts-planning==0.13.0",
     "amphora-agent-planning==0.128.0",
@@ -66,6 +67,7 @@ package = false
 link-mode = "copy"
 
 [tool.uv.sources]
+amphora-process-mapping = { path = "../tools/process_mapping", editable = true }
 amphora-contracts-population = { path = "../contracts/population", editable = true }
 amphora-contracts-chemical-structure = { path = "../contracts/chemical_structure", editable = true }
 amphora-contracts-campaign-successor-launch = { path = "../contracts/campaign_successor_launch", editable = true }

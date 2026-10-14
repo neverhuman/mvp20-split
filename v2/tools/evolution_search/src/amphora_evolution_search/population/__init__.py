@@ -10,3 +10,5 @@ from .pages import RecordPages
 from .retained import PopulationArtifact, RetainedEvaluations, RetainedObservations, RetainedFitness
 
 __all__ = ["OriginalPopulation", "GenerationMembership", "NumericBirth", "BoundEvaluation", "FrozenEvaluations", "frozen_terminal_set", "FitnessEvidence", "BoundFitness", "PopulationSelection", "PopulationDecision", "RecordPages", "PopulationArtifact", "RetainedEvaluations", "RetainedObservations", "RetainedFitness", "canonical"]
+
+from .successor import SelectedGeneration, SuccessorContinuity

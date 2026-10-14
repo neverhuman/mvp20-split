@@ -518,7 +518,7 @@ requires-dist = [
 
 [[package]]
 name = "amphora-contracts-population"
-version = "0.3.0"
+version = "0.4.0"
 source = { editable = "../contracts/population" }
 dependencies = [
     { name = "amphora-contracts-core" },
@@ -796,7 +796,7 @@ requires-dist = [
 
 [[package]]
 name = "amphora-evolution-search"
-version = "0.8.0"
+version = "0.9.0"
 source = { editable = "../tools/evolution_search" }
 dependencies = [
     { name = "amphora-contracts-core" },
@@ -867,6 +867,7 @@ dependencies = [
     { name = "amphora-numeric-affine" },
     { name = "amphora-numeric-space" },
     { name = "amphora-polymer-space" },
+    { name = "amphora-process-mapping" },
     { name = "amphora-research" },
     { name = "amphora-sequence-space" },
     { name = "amphora-sequence-statistics" },
@@ -931,6 +932,7 @@ requires-dist = [
     { name = "amphora-numeric-affine", editable = "../tools/numeric_affine" },
     { name = "amphora-numeric-space", editable = "../tools/numeric_space" },
     { name = "amphora-polymer-space", editable = "../tools/polymer_space" },
+    { name = "amphora-process-mapping", editable = "../tools/process_mapping" },
     { name = "amphora-research", editable = "../services/research" },
     { name = "amphora-sequence-space", editable = "../tools/sequence_space" },
     { name = "amphora-sequence-statistics", editable = "../tools/sequence_statistics" },
@@ -1074,6 +1076,21 @@ requires-dist = [
     { name = "amphora-contracts-core", editable = "../contracts/core" },
     { name = "amphora-contracts-tools", editable = "../contracts/tools" },
     { name = "amphora-tool-protocol", editable = "../sdk/tool_protocol" },
+]
+
+[[package]]
+name = "amphora-process-mapping"
+version = "0.1.0"
+source = { editable = "../tools/process_mapping" }
+dependencies = [
+    { name = "amphora-contracts-core" },
+    { name = "amphora-contracts-population" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "amphora-contracts-core", editable = "../contracts/core" },
+    { name = "amphora-contracts-population", editable = "../contracts/population" },
 ]
 
 [[package]]

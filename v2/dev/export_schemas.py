@@ -60,6 +60,13 @@ from amphora_contracts_tools import Completion, Invocation, ToolBinding, ToolDes
 
 ROOT = Path(__file__).absolute().parents[1]
 MODELS = {
+    "population.checkpoint": population_contracts.PopulationCheckpoint,
+    "population.birth-manifest": population_contracts.BirthManifest,
+    "population.proposed-successor": population_contracts.ProposedSuccessor,
+    "population.material-mapping-manifest": population_contracts.MaterialMappingManifest,
+    "population.material-state": population_contracts.MaterialState,
+    "population.process-derivation": population_contracts.ProcessDerivation,
+    "population.material-mapping-page": population_contracts.MaterialMappingPage,
     "population.fitness": population_contracts.FitnessRecord,
     "population.fitness-page": population_contracts.FitnessPage,
     "population.selection-page": population_contracts.SelectionPage,

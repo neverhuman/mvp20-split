@@ -1,0 +1,135 @@
+{
+  "scope": "E1 successor/process source contracts; no Runtime or scientific acceptance",
+  "source_tests": 288,
+  "final_successor_checks": 11,
+  "published_schemas": 718,
+  "unchanged_predecessor_schemas": 704,
+  "search": {
+    "verified_at": "2026-10-13 21:27:39",
+    "status": "passed",
+    "installations": [
+      {
+        "label": "initial",
+        "tests": 295,
+        "packages": {
+          "amphora-contracts-artifacts": "0.2.0",
+          "amphora-contracts-campaigns": "0.4.1",
+          "amphora-contracts-commands": "0.2.0",
+          "amphora-contracts-core": "0.1.0",
+          "amphora-contracts-graph-runtime": "0.13.0",
+          "amphora-contracts-population": "0.4.0",
+          "amphora-contracts-runtime": "0.1.0",
+          "amphora-contracts-search": "0.1.0",
+          "amphora-contracts-search-steps": "0.1.0",
+          "amphora-contracts-tools": "0.1.0",
+          "amphora-evolution-search": "0.9.0",
+          "amphora-tool-protocol": "0.3.0"
+        },
+        "wheels": {
+          "amphora_contracts_artifacts-0.2.0-py3-none-any.whl": "79ae37b497cf797edb529c6625329d211b81a0fe6c46bd2b151d18de6397b36f",
+          "amphora_contracts_campaigns-0.4.1-py3-none-any.whl": "9b4db455f8510db948a5d509ff38532746e1aab77d3172db0ae72cabea1a6962",
+          "amphora_contracts_commands-0.2.0-py3-none-any.whl": "ff4f2f2b1098baaf337288cc7344fe55b9436216badde5e580b4016bd42e256c",
+          "amphora_contracts_core-0.1.0-py3-none-any.whl": "8177015d59bbdd1ac0c52fcf095873bc73a8e875588272cbc4ad378b94420db9",
+          "amphora_contracts_graph_runtime-0.13.0-py3-none-any.whl": "a45c41317bf21e57b84dc6116b02e5034f13a20b93e0526f8b4f5f007a61bbe1",
+          "amphora_contracts_population-0.4.0-py3-none-any.whl": "75bc16fddfb1acfaa391cd5f34687871d0c0ac6be68463244290e55010b45bc3",
+          "amphora_contracts_runtime-0.1.0-py3-none-any.whl": "ad90c2af9b805305ef20edb8a868f87cd11bb766a0c197f7081cf5f72e6f3ad1",
+          "amphora_contracts_search-0.1.0-py3-none-any.whl": "62a2acbac402f7d59d476af53610ee8ca194fdeb016daf64a2484bd4feb70562",
+          "amphora_contracts_search_steps-0.1.0-py3-none-any.whl": "f94ad77e69708f0fc51a7a3e0660779a15cf972afe8c1b0dcb6cd24cc190d083",
+          "amphora_contracts_tools-0.1.0-py3-none-any.whl": "8876f6b8ac9e6fa4abcc1118d6d7dd34f05cf0e4aa5262250f7d0793336b4aee",
+          "amphora_evolution_search-0.9.0-py3-none-any.whl": "16e038c279554c078d90f9c1548dd2fd84bdc404b2e9b9235d656f38702b5876",
+          "amphora_tool_protocol-0.3.0-py3-none-any.whl": "6e8369bc467285c3051c5a6a1fdda5c52ae3bba20eaa7004a5327e3363ae7add"
+        },
+        "legacy_replay_sha256": "f4a8c39aae069629fed17c27a514a88002a39333861d41a5d63c450aa70f9382"
+      },
+      {
+        "label": "replacement",
+        "tests": 295,
+        "packages": {
+          "amphora-contracts-artifacts": "0.2.0",
+          "amphora-contracts-campaigns": "0.4.1",
+          "amphora-contracts-commands": "0.2.0",
+          "amphora-contracts-core": "0.1.0",
+          "amphora-contracts-graph-runtime": "0.13.0",
+          "amphora-contracts-population": "0.4.0",
+          "amphora-contracts-runtime": "0.1.0",
+          "amphora-contracts-search": "0.1.0",
+          "amphora-contracts-search-steps": "0.1.0",
+          "amphora-contracts-tools": "0.1.0",
+          "amphora-evolution-search": "0.9.0",
+          "amphora-tool-protocol": "0.3.0"
+        },
+        "wheels": {
+          "amphora_contracts_artifacts-0.2.0-py3-none-any.whl": "79ae37b497cf797edb529c6625329d211b81a0fe6c46bd2b151d18de6397b36f",
+          "amphora_contracts_campaigns-0.4.1-py3-none-any.whl": "9b4db455f8510db948a5d509ff38532746e1aab77d3172db0ae72cabea1a6962",
+          "amphora_contracts_commands-0.2.0-py3-none-any.whl": "ff4f2f2b1098baaf337288cc7344fe55b9436216badde5e580b4016bd42e256c",
+          "amphora_contracts_core-0.1.0-py3-none-any.whl": "8177015d59bbdd1ac0c52fcf095873bc73a8e875588272cbc4ad378b94420db9",
+          "amphora_contracts_graph_runtime-0.13.0-py3-none-any.whl": "a45c41317bf21e57b84dc6116b02e5034f13a20b93e0526f8b4f5f007a61bbe1",
+          "amphora_contracts_population-0.4.0-py3-none-any.whl": "75bc16fddfb1acfaa391cd5f34687871d0c0ac6be68463244290e55010b45bc3",
+          "amphora_contracts_runtime-0.1.0-py3-none-any.whl": "ad90c2af9b805305ef20edb8a868f87cd11bb766a0c197f7081cf5f72e6f3ad1",
+          "amphora_contracts_search-0.1.0-py3-none-any.whl": "62a2acbac402f7d59d476af53610ee8ca194fdeb016daf64a2484bd4feb70562",
+          "amphora_contracts_search_steps-0.1.0-py3-none-any.whl": "f94ad77e69708f0fc51a7a3e0660779a15cf972afe8c1b0dcb6cd24cc190d083",
+          "amphora_contracts_tools-0.1.0-py3-none-any.whl": "8876f6b8ac9e6fa4abcc1118d6d7dd34f05cf0e4aa5262250f7d0793336b4aee",
+          "amphora_evolution_search-0.9.0-py3-none-any.whl": "16e038c279554c078d90f9c1548dd2fd84bdc404b2e9b9235d656f38702b5876",
+          "amphora_tool_protocol-0.3.0-py3-none-any.whl": "6e8369bc467285c3051c5a6a1fdda5c52ae3bba20eaa7004a5327e3363ae7add"
+        },
+        "legacy_replay_sha256": "f4a8c39aae069629fed17c27a514a88002a39333861d41a5d63c450aa70f9382"
+      }
+    ],
+    "limits": [
+      "No SQL, provider calls or private service implementations",
+      "Identical source rebuilt twice; not a different-version compatibility claim",
+      "Workspace source audit excluded from copied tests; separate retained source-pin proof",
+      "Pending identities are serialized requests, not accepted Runtime invocations"
+    ]
+  },
+  "process_mapping": {
+    "verified_at": "2026-10-13 21:25:12",
+    "status": "passed",
+    "installations": [
+      {
+        "label": "initial",
+        "tests": 10,
+        "packages": {
+          "amphora-contracts-commands": "0.2.0",
+          "amphora-contracts-core": "0.1.0",
+          "amphora-contracts-population": "0.4.0",
+          "amphora-contracts-search": "0.1.0",
+          "amphora-contracts-tools": "0.1.0",
+          "amphora-process-mapping": "0.1.0"
+        },
+        "wheels": {
+          "amphora_contracts_commands-0.2.0-py3-none-any.whl": "ff4f2f2b1098baaf337288cc7344fe55b9436216badde5e580b4016bd42e256c",
+          "amphora_contracts_core-0.1.0-py3-none-any.whl": "8177015d59bbdd1ac0c52fcf095873bc73a8e875588272cbc4ad378b94420db9",
+          "amphora_contracts_population-0.4.0-py3-none-any.whl": "75bc16fddfb1acfaa391cd5f34687871d0c0ac6be68463244290e55010b45bc3",
+          "amphora_contracts_search-0.1.0-py3-none-any.whl": "62a2acbac402f7d59d476af53610ee8ca194fdeb016daf64a2484bd4feb70562",
+          "amphora_contracts_tools-0.1.0-py3-none-any.whl": "8876f6b8ac9e6fa4abcc1118d6d7dd34f05cf0e4aa5262250f7d0793336b4aee",
+          "amphora_process_mapping-0.1.0-py3-none-any.whl": "dbd2c6b4710df1019a9ae0f6a78fc319c2bfbf98fd8ee82be974c7d23d1ce222"
+        }
+      },
+      {
+        "label": "replacement",
+        "tests": 10,
+        "packages": {
+          "amphora-contracts-commands": "0.2.0",
+          "amphora-contracts-core": "0.1.0",
+          "amphora-contracts-population": "0.4.0",
+          "amphora-contracts-search": "0.1.0",
+          "amphora-contracts-tools": "0.1.0",
+          "amphora-process-mapping": "0.1.0"
+        },
+        "wheels": {
+          "amphora_contracts_commands-0.2.0-py3-none-any.whl": "ff4f2f2b1098baaf337288cc7344fe55b9436216badde5e580b4016bd42e256c",
+          "amphora_contracts_core-0.1.0-py3-none-any.whl": "8177015d59bbdd1ac0c52fcf095873bc73a8e875588272cbc4ad378b94420db9",
+          "amphora_contracts_population-0.4.0-py3-none-any.whl": "75bc16fddfb1acfaa391cd5f34687871d0c0ac6be68463244290e55010b45bc3",
+          "amphora_contracts_search-0.1.0-py3-none-any.whl": "62a2acbac402f7d59d476af53610ee8ca194fdeb016daf64a2484bd4feb70562",
+          "amphora_contracts_tools-0.1.0-py3-none-any.whl": "8876f6b8ac9e6fa4abcc1118d6d7dd34f05cf0e4aa5262250f7d0793336b4aee",
+          "amphora_process_mapping-0.1.0-py3-none-any.whl": "dbd2c6b4710df1019a9ae0f6a78fc319c2bfbf98fd8ee82be974c7d23d1ce222"
+        }
+      }
+    ],
+    "limits": [
+      "Same source rebuilt twice; not a cross-version migration or worker deployment",
+      "Pure lineage/mapping qualification, not scientific or Runtime acceptance"
+    ]
+  }
+}

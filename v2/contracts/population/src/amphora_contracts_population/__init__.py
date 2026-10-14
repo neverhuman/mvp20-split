@@ -32,3 +32,12 @@ __all__ = [
     "BirthPage", "EvaluationKeyPage", "MethodObservationPage", "EvaluationManifest", "ObservationManifest", "FitnessManifest",
     "population_record_schema",
 ]
+
+from .successor import PopulationProgress, PopulationCheckpoint, BirthManifest, ProposedSuccessor
+__all__ += ["PopulationProgress", "PopulationCheckpoint", "BirthManifest", "ProposedSuccessor"]
+
+from .process import (ProcessContext, MaterialAmount, MaterialState, ProcessPort, ProcessBinding, MaterialUse, AbsentProcessInput, ProcessDerivation, MaterialMappingPolicy, MaterialMappingItem, MaterialMappingPair, MaterialMappingExclusion, MaterialMappingPage)
+
+from .process import MaterialMappingManifest
+
+__all__ += ["ProcessContext", "MaterialAmount", "MaterialState", "ProcessPort", "ProcessBinding", "MaterialUse", "AbsentProcessInput", "ProcessDerivation", "MaterialMappingPolicy", "MaterialMappingItem", "MaterialMappingPair", "MaterialMappingExclusion", "MaterialMappingPage", "MaterialMappingManifest"]

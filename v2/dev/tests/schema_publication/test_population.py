@@ -9,7 +9,7 @@ from export_schemas import ROOT, artifacts
 
 def test_population_publication_preserves_predecessor_bytes():
     pins = json.loads((Path(__file__).parent / "fixtures/population_predecessor_schema_pins.json").read_bytes())
-    assert pins["baseline"] == "e15c8672"
+    assert pins["baseline"] == "e7db03f3"
     for name, digest in pins["schemas"].items():
         assert hashlib.sha256((ROOT / "contracts/schemas" / name).read_bytes()).hexdigest() == digest
     published = artifacts()
@@ -21,6 +21,6 @@ def test_population_publication_preserves_predecessor_bytes():
 
 def test_extended_population_roots_match_schema_identities():
     published = artifacts()
-    for name in ['population.fitness', 'population.fitness-page', 'population.selection-page', 'population.selection-receipt', 'population.birth-page', 'population.evaluation-key-page', 'population.method-observation-page', 'population.evaluation-manifest', 'population.observation-manifest', 'population.fitness-manifest']:
+    for name in ['population.checkpoint', 'population.birth-manifest', 'population.proposed-successor', 'population.material-state', 'population.process-derivation', 'population.material-mapping-page', 'population.material-mapping-manifest', 'population.fitness', 'population.fitness-page', 'population.selection-page', 'population.selection-receipt', 'population.birth-page', 'population.evaluation-key-page', 'population.method-observation-page', 'population.evaluation-manifest', 'population.observation-manifest', 'population.fitness-manifest']:
         reference = population_record_schema(name)
         assert hashlib.sha256(published[name + ".validation.json"]).hexdigest() == reference.sha256

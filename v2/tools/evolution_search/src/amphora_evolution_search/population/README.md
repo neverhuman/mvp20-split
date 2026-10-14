@@ -84,3 +84,14 @@ Tests belong to `tools/evolution_search/tests/population/{specification,membersh
 birth,evaluations,fitness,pages}`. Successor/process lineage, graph-step/admission,
 generation acceptance and full recovery/scale remain open E1/E2-E4 deliveries.
 Current adapters do not expose this module; no peer-private imports or I/O allowed.
+
+SelectedGeneration verifies exact checkpoint/selection bytes against recomputed global
+selection and selected birth Artifacts, RNG position and completed evaluation/work
+counters. SuccessorContinuity replays each birth from the retained selected parents,
+checks contiguous RNG, dispositions, full parent/offspring union, birth pages and
+frozen evaluation membership/budgets. All population slots retain a birth disposition.
+Rejected evaluation-budget births require remaining capacity below the required-method
+floor; complex per-candidate allocation still belongs to the admitted graph policy.
+Runtime must authenticate predecessor acceptance, counters, producer identity and
+resource limits. These pure records grant no execution or budget authority. Process
+material lineage/mapping lives in the independent process_mapping package.

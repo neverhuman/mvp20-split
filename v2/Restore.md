@@ -1,6 +1,6 @@
 # Restore
 
-Refreshed: 2026-10-13 21:07:20 America/Chicago. Read FIRST after compaction.
+Refreshed: 2026-10-13 21:30:10 America/Chicago. Read FIRST after compaction.
 
 ## Current task
 
@@ -10,26 +10,38 @@ listeners. Demo OFF during implementation. Do not edit source/tests/module READM
 while tests/install/runtime workflows run; docs updates allowed. No agents/JARVIS/v1
 edits or paid calls. Preserve user untracked ocular PDF/DOCX.
 
-Latest completed checkpoint: population0.3/Search0.8 fitness/selection and retained
-page closure.267source tests PASS27.72s; guard passes;704schemas preserve684previous
-bytes. Independent installs .test-results/pop01-e1-installations-20261013b PASS284tests
-EACH, identical wheels and legacy replay. Evidence docs/Audits/Evidence/POP-01/
-Fitness_Selection.json. Earlier pushed e15c8672 birth/evaluation,500141aa spec/membership.
-Current work ready to commit/push; consult git log for final hash. No workflow running.
+PUSHED e7db03f3: population0.3/Search0.8 fitness/selection,267source tests,
+two isolated284tests each;704schemas preserve684predecessor. Earlier e15c8672/500141aa.
 
-D1 six/eight families75%, E1=18.75%, Execution4.69%, parent1.56%, Build2.34%,
-Verification0. Remaining D1 successor and process material lineage, producer/consumer
-map and graph-step contracts. D2 policy/compatibility,D3 complete semantic oracles,D4
-composition/write sets still0. No deployment/accepted-generation/scientific claim.
-Roundtrip order leak fixed: FrozenEvaluations sorts keys. Old ranking256 guard remains;
-new explicit population entry permits2000. Missing required evidence excludes; low
-confidence/actualzero remain eligible. Complete manifest/hash/page verification does
-NOT prove Data access/retention, accepted producer, or accepted predecessor history.
+CURRENT UNCOMMITTED: population0.4/Search0.9 successor continuity + independent
+process-mapping0.1. Public checkpoint/birthmanifest/successor/material/derivation/
+mappingpage/manifest roots.718schemas preserve704predecessor bytes.288combined source
+checks+guard; final logical-evaluation/physical-attempt separation11successor checks.
+Process independent .test-results/pop01-process-installations-20261013a PASS10tests
+EACH identicalwheels, Search code absent. Search0.9 first proofc PASS295each but final
+counter correction came afterward; final proofd workflow7820 EXIT0:295tests EACH, identical wheels and legacy replay.
+Evidence docs/Audits/Evidence/POP-01/Successor_Process.json. No workflow running.
+No Runtime/deployed/scientific claim. No agents or model calls.
 
-NEXT: E1/D1 successor records/domain (exact selected parents, predecessor,RNG/budgets),
-then process lineage/mapping. No unspecified Runtime command authorized. Source audit:
-Runtime claims has no campaign-wide active-invocation cap; scatter max_parallel counts
-child scopes, not total nested invokes. D4 must resolve concrete gap before E2.
+D1 refined ten existing units: eight record/domain families + producer/consumer map
++ graph-step transport. Nine done90%, E1=22.50%, Execution5.63%, parent1.88%,
+Build2.81%, Verification0. This fixes prior record-only denominator omission.
+Source maps docs/Audits/POP-01_E1_Contracts.md. New material package README owns boundary.
+Next: finish D1 declared occurrence coverage + separate graph-step contract package.
+Exact intermediate Artifact inputs do not exist before upstream finishes; declare
+method slots before dispatch, resolve keys on local readiness, verify full terminal
+coverage afterward. Current FrozenEvaluations is a resolved-key validator, not that
+unresolved declaration mechanism. No fabricated future Artifacts or success-only set.
+
+POP-01.05 Bounded graph admission decision.md is PROPOSED ONLY. Runtime claims has
+no campaign-wide active cap; scatter counts child scopes. Proposed distinct
+ graph.admit_draft_bounded /v1/graph-drafts/admit-bounded, immutable maxactive1..8,
+existing reserved counter under run lock, old wire bytes unchanged. NOT approved;
+finish independent E1 work and review concrete proposal before asking. New public
+Runtime command is outside POP-01.04 blanket authorization. D2-D4 still open.
+
+Final proof/evidence/trackers updated: commit/push
+current significant work before continuing. Preserve user ocular PDF/DOCX. DemoOFF.
 
 Demo selected .test-results/curation-demo-serving-20261013h Studio0.36, UI-02 complete
 pusheda614e594. Local13k/LAN13i now drained; fresh sessions local13l/LAN13j when needed.
