@@ -63,7 +63,14 @@ class ObjectiveSpace:
         return all(pair[0] for pair in comparisons) and any(pair[1] for pair in comparisons)
 
     def select(self, scores, count):
-        require(type(scores) is tuple and 1 <= len(scores) <= 256, "population_bound")
+        return self._select(scores, count, 256)
+
+    def select_population(self, scores, count):
+        """Explicit POP-01 profile entry; original select retains its256 guard."""
+        return self._select(scores, count, 2000)
+
+    def _select(self, scores, count, maximum):
+        require(type(scores) is tuple and 1 <= len(scores) <= maximum, "population_bound")
         require(type(count) is int and 0 <= count <= len(scores), "selection_count")
         require(all(type(s) is CandidateScore for s in scores), "candidate_score")
         require(len({s.candidate_id for s in scores}) == len(scores), "duplicate_candidate")

@@ -6,6 +6,8 @@ from amphora_contracts_chemical_structure import StructureRequest, StructureResu
 
 from amphora_contracts_population import PopulationSpecification, MembershipManifest, MembershipPage, CandidateBirth, EvaluationKey, MethodObservation
 
+import amphora_contracts_population as population_contracts
+
 import argparse
 import hashlib
 import json
@@ -58,6 +60,17 @@ from amphora_contracts_tools import Completion, Invocation, ToolBinding, ToolDes
 
 ROOT = Path(__file__).absolute().parents[1]
 MODELS = {
+    "population.fitness": population_contracts.FitnessRecord,
+    "population.fitness-page": population_contracts.FitnessPage,
+    "population.selection-page": population_contracts.SelectionPage,
+    "population.selection-receipt": population_contracts.PopulationSelectionReceipt,
+    "population.birth-page": population_contracts.BirthPage,
+    "population.evaluation-key-page": population_contracts.EvaluationKeyPage,
+    "population.method-observation-page": population_contracts.MethodObservationPage,
+    "population.evaluation-manifest": population_contracts.EvaluationManifest,
+    "population.observation-manifest": population_contracts.ObservationManifest,
+    "population.fitness-manifest": population_contracts.FitnessManifest,
+
     "population.candidate-birth": CandidateBirth,
     "population.evaluation-key": EvaluationKey,
     "population.method-observation": MethodObservation,

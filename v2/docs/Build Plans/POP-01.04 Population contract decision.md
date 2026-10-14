@@ -4,7 +4,7 @@
 - Reviewed: 2026-10-13 18:26:00 America/Chicago.
 - Parent: [POP-01.01/E1](POP-01.01%20Population%20Execution.md).
 - Baseline: `a614e594`; [activation inventory](../Audits/POP-01_Activation.md).
-- Implementation: E1=12.50%; specification/membership and candidate/evaluation foundations implemented, remaining E1 deliveries open. This decision is part of E1, not a fourth weighted child.
+- Implementation: E1=18.75%; specification/membership, birth/evaluation and fitness/selection foundations implemented, remaining E1 deliveries open. This decision is part of E1, not a fourth weighted child.
 - Owner direction: additive population profile and E1 contract/domain-validation/compatibility work approved. Existing profiles remain exact.
 - Active interruption: none; owner confirmed LAN access and authorized continued implementation.
 - Next gate: tested E1 schemas/goldens and concrete execution/write-set review before

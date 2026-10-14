@@ -48,3 +48,21 @@ initially used invalid release99; corrected to schema-valid99.0.0 to test pin mi
 Existing0.6 independent-install proof remains the prior checkpoint, not a0.7 claim.
 Remaining four D1 families: fitness, selection, successor, process lineage. No paid
 calls, runtime deployment, accepted-generation or scientific-validity claim.
+
+## 2026-10-13 21:06:27 - E1 fitness, selection and retained page closure
+
+Population0.3/Search0.8 adds objective evidence, whole-union selection, explicit
+exclusions/minimum-parent stops and bounded birth/evaluation/observation/fitness/
+selection pages. Retained manifest verification reconstructs the complete evidence
+chain and rejects altered cuts, missing sources and page mismatch. Separate new
+2000-member ranking entry preserves old256 guard and mathematics. Producer pointers
+and byte hashes remain locators/integrity, not accepted Runtime or scientific proof.
+
+267 source Search/public contract/publication checks pass27.72s; dependency guard
+passes.704schemas preserve684predecessor bytes at e15c8672. Round-trip test caught
+noncanonical in-memory evaluation order; fixed by sorting normalized keys. Required
+unavailable fitness excludes candidates; low confidence and actual zero remain valid.
+Search0.8 independent installations284tests EACH, identical wheels and legacy
+checkpoint/RNG replay passed at2026-10-13 21:06:53. Evidence:
+[Fitness/selection](../Audits/Evidence/POP-01/Fitness_Selection.json). D1 six/eight families=75%, E1=18.75%;
+D2-D4 stay0. Successor and process lineage next. No new model calls.

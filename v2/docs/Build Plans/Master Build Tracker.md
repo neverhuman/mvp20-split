@@ -1,6 +1,6 @@
 # Master Build Tracker
 
-Latest checkpoint: 2026-10-13 20:42:58: POP-01 E1 birth/evaluation records verified119tests;684schemas preserve678predecessor bytes. Parent1.04%, Build1.56%, Execution3.13%, E1=12.50%; other gates0%. No paid calls.
+Latest checkpoint: 2026-10-13 21:06:27: POP-01 E1 fitness/selection records verified267tests;704schemas preserve684predecessor bytes. Parent1.56%, Build2.34%, Execution4.69%, E1=18.75%; other gates0%. No paid calls.
 
 ## Purpose and Authority
 
@@ -11,14 +11,14 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 ## Program Tracker
 
 - Status: POP-01.01/E1 active; UI-01/UI-02 closed100%, LR-01 paused25%.
-- Last refreshed: 2026-10-13 20:42:58 (America/Chicago).
+- Last refreshed: 2026-10-13 21:06:27 (America/Chicago).
 - Baseline: approved [POP-01.04](POP-01.04%20Population%20contract%20decision.md).
-- Current priority/task: POP-01 E1/D1 fitness and selection records/domain.
-- Next task: fitness and selection records/domain, then successor/process lineage and remaining E1 gates.
-- Implementation: parent1.04%, Build1.56%, Verification0%; Execution3.13%, Experience/Qualification0%.
-  Execution E1=12.50%, E2-E4=0%; Experience U1-U4=0%, Qualification Q1-Q4=0%.
-- Latest checkpoint:119 scoped birth/evaluation/kernel/publication checks;684schemas preserve678predecessor bytes.
-  Prior Search0.6 two-install proof227tests each/replay passed; current Search0.7 source verified, no deployment/performance claim.
+- Current priority/task: POP-01 E1/D1 successor and process lineage records/domain.
+- Next task: successor/process lineage, then remaining E1 gates.
+- Implementation: parent1.56%, Build2.34%, Verification0%; Execution4.69%, Experience/Qualification0%.
+  Execution E1=18.75%, E2-E4=0%; Experience U1-U4=0%, Qualification Q1-Q4=0%.
+- Latest checkpoint:267 source Search/publication checks;704schemas preserve684predecessor bytes.
+  Search0.8 two independent installations284tests each/replay/wheels pass; no deployment/performance claim.
 - Blockers: none for approved E1 records; any new Runtime command requires concrete review.
 - Acceptance: actual execution/population UI/scientific qualification remain distinct gates.
 - Active exception: none. LAN access confirmed by owner; demo wrappers drained for source work.
@@ -33,7 +33,7 @@ The initial program proves software behavior using deterministic/synthetic fixtu
 
 ## Current In-Flight Work
 
-POP-01 E1 active: parent1.04%, Build1.56%, Execution3.13%, E1=12.50%; remaining gates0%.
+POP-01 E1 active: parent1.56%, Build2.34%, Execution4.69%, E1=18.75%; remaining gates0%.
 LR-01 paused25%, Build33.33%, Acceptance0%; R1=100%, R2/R3/V1=0%.
 Completed UI-01/UI-02/LAN-01 are in the [completed index](Completed/README.md).
 
@@ -41,7 +41,7 @@ Completed UI-01/UI-02/LAN-01 are in the [completed index](Completed/README.md).
 
 | Order | Canonical plan | Status | Overall | Build | Verification/Acceptance | Prerequisite |
 |---|---|---|---:|---:|---:|---|
-| 1 | [POP-01 Population Campaign Execution and Experience](POP-01%20Population%20Campaign%20Execution%20and%20Experience.md) | Active E1=12.50%; Execution3.13%, Experience/Qualification0% | 1.04% | 1.56% | 0% | UI-01/UI-02 complete; POP-01.04 approved |
+| 1 | [POP-01 Population Campaign Execution and Experience](POP-01%20Population%20Campaign%20Execution%20and%20Experience.md) | Active E1=18.75%; Execution4.69%, Experience/Qualification0% | 1.56% | 2.34% | 0% | UI-01/UI-02 complete; POP-01.04 approved |
 | 2 | [ML-01 Inherited Scientific Model Integration](ML-01%20Inherited%20Scientific%20Model%20Integration.md) | Standalone queued; M1/M2/M3/M4/V1=0% | 0% | 0% | 0% | UI-01/V1 + UI-02/P4, then POP-01 complete; qualified population/tool handoff |
 | 3 | [LR-01 Local Worker Reliability](LR-01%20Local%20Worker%20Reliability.md) | Paused; pull R2 forward for blocking run failure | 25% | 33.33% | 0% | UI priority released or UI-01.05/R1 blocked; same-host diagnostic window |
 | 4 | [UI-R01 Feedback Read Diagnostics](UI-R01%20Feedback%20Read%20Diagnostics.md) | Queued; pull forward if it blocks UI-01 | 0% | 0% | 0% | Bounded read diagnostic and activation review |
@@ -88,8 +88,8 @@ multiple candidate generations, bounded scheduling/global selection, checkpoint
 recovery and population-oriented visualization. Only after POP-01 qualification
 activate [ML-01](ML-01%20Inherited%20Scientific%20Model%20Integration.md).
 
-POP-01 overall1.04%, Build1.56%, Verification0%; phase mirrors:
-Execution3.13% (POP-01.01 E1=12.50%, E2/E3/E4=0%), Experience0% (POP-01.02 U1/U2/U3/U4=0%),
+POP-01 overall1.56%, Build2.34%, Verification0%; phase mirrors:
+Execution4.69% (POP-01.01 E1=18.75%, E2/E3/E4=0%), Experience0% (POP-01.02 U1/U2/U3/U4=0%),
 Qualification0% (POP-01.03 Q1/Q2/Q3/Q4=0%). Twelve equal child gates counted once.
 Existing BP-08 generation/recovery implementation remains closed and reusable;
 legacy population128/retained-attempt256/262144-byte bounds are not evidence of
@@ -170,6 +170,7 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 
 | Timestamp | Checkpoint | Evidence |
 |---|---|---|
+| 2026-10-13 21:06:27 | POP-01 E1 fitness/selection; parent1.56%, Execution4.69%, E1=18.75%. |267 source checks;704schemas preserve684predecessor bytes; no Runtime/scale claim. |
 | 2026-10-13 18:26:00 | POP-01 E1 inventory/design complete; implementation0%, POP-01.04 approved; LAN access verification. | Activation corrected_ready;37legacy wire/ranking checks; UI-02 pushed a614e594; no new profile or paid calls. |
 | 2026-10-12 11:20:06 | UI-01.08/P5.2 remains unmet; child90/P5=50. | Seventh original indeterminate;0 reported tokens. Diagnostic90 checks, five replays and actual browser pass. Seven/$1.75 held; UI-01.08c proposed. |
 | 2026-10-12 09:06:13 | UI-01.08=90/P5=50; parent78/Build97.5. | Missing capability and actual browser passed; supported graph failed. Six/$1.50 holds exhausted. UI-01.08b pending. |
@@ -194,7 +195,6 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 | 2026-10-11 19:50:00 | UI-01/N2.3 complete100%; N2=93.75%; UI01=58.75%/Build73.44%. N2.4 next. | [Audit](../Audits/UI-01_N2.3_Generation_Comparison.md);362 tests, actual generations0/2 and restored LAN regression. |
 | 2026-10-11 19:26:42 | UI-01.07 closed100%; N2.2=100%, N2=93.75%; UI01=57.5%/Build71.88%. N2.3 next. | [Audit](../Audits/UI-01.07_Campaign_Provenance.md); actual compiler/draft/Research/Knowledge, original-run local/LAN1440/390, negative reads and process replacement.264 isolated owner and349 Studio tests. |
 | 2026-10-11 18:51:49 | UI-01.07 P1/P2/P3=100%, P4 active75%, child75%; parent N2.2 remains50%. | Planning0.107/Gateway0.5 API; Studio0.24 with349 tests and scripted1440/390 provenance/launch regression. Actual owners and isolated install next. |
-| 2026-10-09 10:20:00 | UI-01.06/R1=100%; UI-01.05=66.67%. N2.5=100%, N2=93.75%; parent518.75%/Build70.31%. | Actual local/LAN launch/results, same-run/container outage recovery and Knowledge traversal pass. Deployment502 installed tests/four probes, Studio337 checks. Scoped audit aligned; N2.2 resumes. |
 
 ## 2026-10-12 09:06:13 live evaluation checkpoint
 

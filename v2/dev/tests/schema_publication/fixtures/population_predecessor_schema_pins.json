@@ -1,5 +1,5 @@
 {
-  "baseline": "500141aa",
+  "baseline": "e15c8672",
   "schemas": {
     "v1/artifacts.begin-derived-upload.serialization.json": "c6626b638cb85bebdfde8ab4a3d939cafddc3cb67d0232c53c0dde348e055647",
     "v1/artifacts.begin-derived-upload.validation.json": "c4990e1f9846d23b9258c372cffa1f9d73c6bd2cf41448ae26c8ea6767774531",
@@ -323,10 +323,16 @@
     "v1/planning.research-proposal-set.validation.json": "a127c0029f5c39fe55d5f3923cb2beabf44db4f023dbba41d1f169dc1617722c",
     "v1/planning.typed-proposal.serialization.json": "cd73241bd98b4ba241d5bb19e7ff5109b94efe04179efe5d170a1da6b075f435",
     "v1/planning.typed-proposal.validation.json": "b831bb38c4ac9529dc21c1068285ca550c59bf7802ad114232562f8cc3879013",
+    "v1/population.candidate-birth.serialization.json": "ddbe2d8eb9163a2e86966615dea02dd3d640f49dc0373b1ff3290183127d9d82",
+    "v1/population.candidate-birth.validation.json": "53705baca789131eeba611474e64a487d94c23e67a91220070b1a3e934a847dc",
+    "v1/population.evaluation-key.serialization.json": "1ed403f71978ca8c90c6c1a6780360e7f4b2c6aa189be823272327e41a33d89f",
+    "v1/population.evaluation-key.validation.json": "491ed9e7cc4ecaaecc2b50df0c190640424df20d319fdfc00a8222cc873819f0",
     "v1/population.membership-manifest.serialization.json": "505bcbb879ee60fbddd7126830b3b73995edd1d02df39b16fb27868136de2f9f",
     "v1/population.membership-manifest.validation.json": "fca78b444add0834a8e556cb8175f43f97c089d8f628904d009d6475a01bad33",
     "v1/population.membership-page.serialization.json": "198fb51375a57c73a755042b2d8cbbf5cb57a3b8af2999eef93f5d5bf08ca709",
     "v1/population.membership-page.validation.json": "b49c66ce3d7b7c0e2cef722c6612257fd96356a5a53d32130f15dd5620565e2d",
+    "v1/population.method-observation.serialization.json": "889b2af03d260192e6978464e5c3b1cc50f8c6c44c1cd77b8446ec0e96db21a1",
+    "v1/population.method-observation.validation.json": "75e432627384966e12d30168bf135d95bdc58b29a333fb7ea50bc1ce44bef561",
     "v1/population.specification.serialization.json": "8b2058604d1a55e655ad9c22b6e9ba4cc55fdf0f2c22ea82e33da1ecee4418a3",
     "v1/population.specification.validation.json": "2bf6f37346039a963cf4377585311047f77b2221b03b1279fe9605adc3e9d08e",
     "v1/representations.binding-ref.serialization.json": "8d00ce40599375c03382da6a6bccdf7b3bc2c84c4dfe6941e6dd65a198fbb99c",

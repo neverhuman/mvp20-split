@@ -1,6 +1,6 @@
 # Restore
 
-Refreshed: 2026-10-13 20:43:36 America/Chicago. Read FIRST after compaction.
+Refreshed: 2026-10-13 21:07:20 America/Chicago. Read FIRST after compaction.
 
 ## Current task
 
@@ -10,36 +10,26 @@ listeners. Demo OFF during implementation. Do not edit source/tests/module READM
 while tests/install/runtime workflows run; docs updates allowed. No agents/JARVIS/v1
 edits or paid calls. Preserve user untracked ocular PDF/DOCX.
 
-PUSHED500141aa: contracts/population0.1 specification + membership roots, Search0.6
-pure OriginalPopulation/GenerationMembership.209 source checks; two fresh isolated
-installs227tests EACH and identical wheels/legacy checkpoint+RNG replay.6schemas added,
-678total,672predecessor bytes unchanged. Evidence docs/Audits/Evidence/POP-01/
-Specification_Membership.json. No Registry/Runtime deployment or scale claims.
-Trackers source-verified D1=25%, E1=6.25%, Execution1.56%, parent0.52%, Build0.78%.
+Latest completed checkpoint: population0.3/Search0.8 fitness/selection and retained
+page closure.267source tests PASS27.72s; guard passes;704schemas preserve684previous
+bytes. Independent installs .test-results/pop01-e1-installations-20261013b PASS284tests
+EACH, identical wheels and legacy replay. Evidence docs/Audits/Evidence/POP-01/
+Fitness_Selection.json. Earlier pushed e15c8672 birth/evaluation,500141aa spec/membership.
+Current work ready to commit/push; consult git log for final hash. No workflow running.
 
-Current second checkpoint: population0.2/Search0.7 adds CandidateBirth,
-EvaluationKey and MethodObservation; pure NumericBirth/BoundEvaluation/FrozenEvaluations.
-119 scoped tests PASS13.11s, including unchanged randomness/variation kernels, public
-wire and publication checks.684schemas preserve678predecessor bytes at500141aa.
-No workflows running; source edits allowed. Current checkpoint ready to commit/push;
-consult git log for its final hash. No0.7 isolated-install or deployment claim yet.
+D1 six/eight families75%, E1=18.75%, Execution4.69%, parent1.56%, Build2.34%,
+Verification0. Remaining D1 successor and process material lineage, producer/consumer
+map and graph-step contracts. D2 policy/compatibility,D3 complete semantic oracles,D4
+composition/write sets still0. No deployment/accepted-generation/scientific claim.
+Roundtrip order leak fixed: FrozenEvaluations sorts keys. Old ranking256 guard remains;
+new explicit population entry permits2000. Missing required evidence excludes; low
+confidence/actualzero remain eligible. Complete manifest/hash/page verification does
+NOT prove Data access/retention, accepted producer, or accepted predecessor history.
 
-Empty-set digests now bind generation/role/member IDs; conflicting Artifact aliases
-reject. Bad-release fixture repaired to schema-valid99.0.0. All concrete follow-ups
-from prior Restore resolved. Module READMEs updated; new tests under Search population/
-{birth,evaluations} plus public contracts/population/tests/identity. Package locks and
-editable dev installation upgraded. Existing worker operations remain unchanged.
-Current schema predecessor pin baseline500141aa with678schemas.
-
-NEXT after commit/push: E1/D1 fitness and selection records/domain; then successor and
-process material lineage plus graph-step bindings. Canonical D1=50%, E1=12.50%,
-Execution3.13%, parent1.04%, Build1.56%, Verification0%; other phases0%. D2 numerical
-policy/compatibility, D3 full semantic oracles and D4 executable composition/write sets
-remain open. Do not stop at checkpoint. No unspecified Runtime command authorized.
-Source audit: Runtime claims has no global active-invocation cap; scatter max_parallel
-counts child scopes, not total nested invokes. D4 must resolve this concrete gap.
-Producer pointers remain unverified locators, not accepted Runtime/scientific proof.
-Membership does not prove birth content/Artifact access; those remain owner gates.
+NEXT: E1/D1 successor records/domain (exact selected parents, predecessor,RNG/budgets),
+then process lineage/mapping. No unspecified Runtime command authorized. Source audit:
+Runtime claims has no campaign-wide active-invocation cap; scatter max_parallel counts
+child scopes, not total nested invokes. D4 must resolve concrete gap before E2.
 
 Demo selected .test-results/curation-demo-serving-20261013h Studio0.36, UI-02 complete
 pusheda614e594. Local13k/LAN13i now drained; fresh sessions local13l/LAN13j when needed.

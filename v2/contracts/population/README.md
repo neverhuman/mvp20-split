@@ -1,8 +1,8 @@
 # Population wire boundary
 
 Owner: POP-01.01/E1; approved [POP-01.04](../../docs/Build%20Plans/POP-01.04%20Population%20contract%20decision.md).
-Implementation checkpoint: package0.2, specification, membership-page/manifest,
-candidate-birth, evaluation-key and method-observation DTOs;
+Implementation checkpoint: package0.3, specification, membership, birth/evaluation,
+fitness/selection records and bounded evidence pages/manifests;
 not an executable population profile.
 
 This isolated package owns closed version1 `population.*` transport records. The
@@ -32,5 +32,18 @@ result; supplementary outputs require independent descriptor/provenance validati
 
 Package-owned tests live under `tests/specification` and `tests/identity`. Rebuilds must preserve strict
 closed DTO behavior, generated schema identities and negative wire cases. New
-versions must not silently relax old contracts. Fitness, selection/successor records,
-evaluation paging/graph bindings and process lineage remain subsequent E1 deliveries.
+versions must not silently relax old contracts. Graph execution remains a separate gate.
+
+FitnessRecord retains ordered objective values/units and their supporting evaluation
+identities, provenance labels and optional confidence. Unavailable fitness has an
+explicit reason and no number. Selection pages distinguish ranked and excluded
+members. PopulationSelectionReceipt binds the full pool, fitness source, observation
+cut, every rank page, survivor membership and frozen policy; it is proposed evidence,
+not a Runtime acceptance receipt. Old search receipts/limits remain unchanged.
+
+Birth/evaluation/observation/fitness manifests keep full histories out of growing
+inline checkpoints. Page counts alone do not prove byte bounds or integrity; Search
+verifies canonical page bytes and complete source linkage. Fitness pages may retain
+parent evidence from an earlier generation of the same immutable specification;
+the selection owner must check parent membership/predecessor authority separately.
+Successor/process-material and graph-step records remain subsequent E1 deliveries.

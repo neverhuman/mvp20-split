@@ -518,7 +518,7 @@ requires-dist = [
 
 [[package]]
 name = "amphora-contracts-population"
-version = "0.2.0"
+version = "0.3.0"
 source = { editable = "../contracts/population" }
 dependencies = [
     { name = "amphora-contracts-core" },
@@ -796,7 +796,7 @@ requires-dist = [
 
 [[package]]
 name = "amphora-evolution-search"
-version = "0.7.0"
+version = "0.8.0"
 source = { editable = "../tools/evolution_search" }
 dependencies = [
     { name = "amphora-contracts-core" },

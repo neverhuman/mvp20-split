@@ -51,6 +51,36 @@ digest order; failure stays explicit. It does not decide fitness, authorize a ne
 occurrence from an outcome, or accept post-close updates. Coverage/identity checks
 are not a scheduler, budget authority or scientific calibration.
 
+FitnessEvidence/BoundFitness bind complete terminal method evidence to an assembly
+release/policy and ordered objective units/dependencies. Missing required method
+fitness cannot become a score. Weak-but-present values, including zero, stay eligible;
+uncertainty labels do not independently exclude them. These checks do not reproduce
+or authorize a scientific assembly model's numerical claims.
+
+PopulationSelection requires exactly the full declared union and original pins.
+Parent fitness can come from an earlier same-run/same-spec generation with exact
+birth/representation references; selected-parent eligibility still requires the
+separate accepted predecessor. Current offspring/seed fitness binds the current
+generation. Selection calls the explicit2000-member entry of the unchanged numerical
+kernel; the original256-member entry rejects larger pools. All ranks/exclusions
+survive. Below minimum parents stops, below requested but at least minimum continues
+with fewer parents, and infeasible members remain ranked without surviving.
+
+RecordPages packs at64rows/131072bytes, checks8192-byte rows and64MiB/512-page closure,
+and verifies schema/scope/hash/count/ordering/partitioning. RetainedEvaluations and
+RetainedFitness decode supplied canonical Artifact bytes, reconstruct required key
+coverage and exact observation cuts, and rerun intrinsic fitness/selection binding.
+They perform no Data fetch, access check, retention, producer authentication or
+accepted-predecessor lookup. A hash-valid locator is never an accepted execution.
+
+PopulationDecision creates a source-bound selection receipt with exact recomputed
+rank pages. verify_receipt compares it against independently supplied source pins
+and the computed whole-pool decision. Tampered survivors/stop policy/cut/rank bytes
+reject. Observation-cut hashes bind canonical retained observations including
+producer attempts; semantic cross-run comparisons must separately omit operational
+identities rather than pretend those byte fingerprints match.
+
 Tests belong to `tools/evolution_search/tests/population/{specification,membership,
-birth,evaluations}`. Fitness, selection and successor rules are subsequent E1 deliveries.
+birth,evaluations,fitness,pages}`. Successor/process lineage, graph-step/admission,
+generation acceptance and full recovery/scale remain open E1/E2-E4 deliveries.
 Current adapters do not expose this module; no peer-private imports or I/O allowed.

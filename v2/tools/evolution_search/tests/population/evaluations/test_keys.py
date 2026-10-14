@@ -91,3 +91,12 @@ def test_input_alias_cannot_replace_a_frozen_condition(born_cohort):
     record = key.record.model_copy(update={"inputs": (*key.record.inputs, conflict)})
     with pytest.raises(ValueError, match="reference_conflict"):
         BoundEvaluation(born_cohort, record)
+
+
+def test_same_occurrence_cannot_change_inputs_inside_frozen_work(born_cohort):
+    keys = tuple(evaluation(born_cohort, method, candidate) for method in (0, 1) for candidate in (0, 1))
+    first = keys[0]
+    extra = first.record.material.model_copy(update={"artifact_id": "additional-input"})
+    changed = BoundEvaluation(born_cohort, first.record.model_copy(update={"inputs": (*first.record.inputs, extra)}))
+    with pytest.raises(ValueError, match="evaluation_occurrence_duplicate"):
+        FrozenEvaluations(born_cohort, (*keys, changed))

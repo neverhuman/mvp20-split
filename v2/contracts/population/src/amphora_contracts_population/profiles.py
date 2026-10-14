@@ -10,6 +10,17 @@ from .specification import PopulationSpecification
 from .membership import MembershipManifest, MembershipPage
 from .candidates import CandidateBirth
 from .evaluations import EvaluationKey, MethodObservation
+from .fitness import FitnessRecord, FitnessPage
+from .selection import SelectionPage, PopulationSelectionReceipt
+from .pages import BirthPage, EvaluationKeyPage, MethodObservationPage, EvaluationManifest, ObservationManifest, FitnessManifest
+
+_RECORDS = {
+    "population.fitness": FitnessRecord, "population.fitness-page": FitnessPage,
+    "population.selection-page": SelectionPage, "population.selection-receipt": PopulationSelectionReceipt,
+    "population.birth-page": BirthPage, "population.evaluation-key-page": EvaluationKeyPage,
+    "population.method-observation-page": MethodObservationPage, "population.evaluation-manifest": EvaluationManifest,
+    "population.observation-manifest": ObservationManifest, "population.fitness-manifest": FitnessManifest,
+}
 
 
 def _reference(model, name):
@@ -48,3 +59,9 @@ def evaluation_key_schema():
 @lru_cache(maxsize=1)
 def method_observation_schema():
     return _reference(MethodObservation, "population.method-observation")
+
+
+@lru_cache(maxsize=16)
+def population_record_schema(name):
+    """Closed named record roots; does not accept caller-supplied schemas/models."""
+    return _reference(_RECORDS[name], name)

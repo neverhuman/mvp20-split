@@ -17,6 +17,16 @@ def consistent_references(references):
         require(known.setdefault(reference.artifact_id, reference) == reference, "evaluation_reference_conflict")
 
 
+def observation_cut(observations):
+    """Exact retained observation content, including producer attempts, in stable order."""
+    evidence = {}
+    for record in observations:
+        digest = hashlib.sha256(canonical(record)).hexdigest()
+        require(evidence.setdefault(record.evaluation_sha256, digest) == digest, "selection_observation_conflict")
+    return hashlib.sha256(b"amphora.population/observation-cut-v1\0" +
+        json.dumps(sorted(evidence.items()), separators=(",", ":")).encode("ascii")).hexdigest()
+
+
 @dataclass(frozen=True)
 class BoundEvaluation:
     membership: GenerationMembership
@@ -75,10 +85,13 @@ class FrozenEvaluations:
         require(type(self.keys) is tuple and len(self.keys) <= ceiling, "evaluation_set_bound")
         require(all(key.membership == self.membership for key in self.keys), "evaluation_mixed_membership")
         require(len({key.digest for key in self.keys}) == len(self.keys), "evaluation_expected_duplicate")
+        slots = {(key.record.candidate_id, key.record.method_id, key.record.occurrence_id) for key in self.keys}
+        require(len(slots) == len(self.keys), "evaluation_occurrence_duplicate")
         required = {method.method_id for method in self.membership.original.record.method_graph.methods if method.required}
         covered = {(key.record.candidate_id, key.record.method_id) for key in self.keys}
         require(all((member.candidate_id, method) in covered for member in self.membership.members for method in required),
                 "evaluation_required_coverage")
+        object.__setattr__(self, "keys", tuple(sorted(self.keys, key=lambda key: key.digest)))
 
     @property
     def digest(self):
