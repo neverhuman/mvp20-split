@@ -1,6 +1,6 @@
 # Master Build Tracker
 
-Latest checkpoint: 2026-10-14 21:32:00: E2.1 capacity/recovery pushed fdb87c20. E2.2 awaits POP-01.06 public Data closure-retention decision;1000birth versus64direct-output bound reproduced. E2=25%, Execution31.25%, parent10.42%, Build15.63%, Verification0%. RG-01 follows POP-01 before ML-01.
+Latest checkpoint: 2026-10-14 21:32:00: E2.1 capacity/recovery pushed fdb87c20. E2.2 implements owner-authorized POP-01.06 Data closure retention;1000birth versus64direct-output bound reproduced. E2=25%, Execution31.25%, parent10.42%, Build15.63%, Verification0%. RG-01 follows POP-01 before ML-01.
 
 ## Purpose and Authority
 
@@ -13,14 +13,14 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 - Status: POP-01.01/E2 active; UI-01/UI-02 closed100%, LR-01 paused25%.
 - Last refreshed: 2026-10-14 21:22:00 (America/Chicago).
 - Baseline: approved [POP-01.04](POP-01.04%20Population%20contract%20decision.md).
-- Current priority/task: POP-01 E2.2 protected child-artifact retention, POP-01.06 decision.
-- Next task: review POP-01.06 additive Data closure-retention boundary, then population workers.
+- Current priority/task: POP-01 E2.2a artifact_retention contract publication and Data implementation.
+- Next task: qualify Data closure protection before Runtime binding and population workers.
 - Implementation: parent10.42%, Build15.63%, Verification0%; Execution31.25%, Experience/Qualification0%.
   Execution E1=100%, E2=25%, E3/E4=0%; Experience U1-U4=0%, Qualification Q1-Q4=0%.
 - Latest checkpoint:243 source Runtime checks,21 independent installed Runtime checks,
   actual HTTP restart and independent Deployment preflight pass.79 lifecycle/boundary/profile checks pass.
   Population step workers/composition and full population acceptance remain pending.
-- Gate: E1/E2.1 passed; POP-01.05 implemented. E2.2 requires POP-01.06 public Data boundary decision.
+- Gate: E1/E2.1 passed; POP-01.05 implemented. POP-01.06 authorized; contract/Data/Runtime qualification gates remain.
 - Acceptance: actual execution/population UI/scientific qualification remain distinct gates.
 - Active exception: none. Owner resumed continue-until-needed2026-10-14 20:42:26; detours complete and startup-credit applications deferred. POP-01.05 approved; E1 complete, E2 active. KB-01 stays queued.
   Prior Knowledge-content diagnosis complete:

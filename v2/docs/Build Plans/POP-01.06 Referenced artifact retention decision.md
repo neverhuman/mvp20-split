@@ -1,6 +1,6 @@
 # POP-01.06 Referenced artifact retention decision
 
-- Status: proposed; new public boundary awaits owner approval.
+- Status: authorized to proceed by owner response "continue until you need me" to the concrete approval request,2026-10-15 09:47:24 America/Chicago.
 - Reviewed: 2026-10-14 21:32:00 America/Chicago.
 - Owner: POP-01.01/E2.2 prerequisite. E1 and E2.1 remain complete.
 - Recommendation: Data-owned retention of a complete declared derivation closure,
@@ -66,7 +66,7 @@ do not advertise the population/generation maxima as an unrestricted product.
 Drain profiled runs before downgrading and retain all confirmed protection/history.
 No new graph primitive, numerical policy, scientific authority or second runner.
 
-## Owner decision requested
+## Owner direction
 
-Approve this additive Data retention boundary and explicit Runtime profile binding
-so the population workers can publish fully protected reference-backed generations.
+Owner directed continuation in response to this concrete boundary. Implement and
+qualify it within E2.2; authorization is not implementation or acceptance evidence.

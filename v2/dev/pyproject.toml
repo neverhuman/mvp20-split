@@ -3,6 +3,7 @@ name = "amphora-foundation-verification"
 version = "0.1.0"
 requires-python = ">=3.12,<3.13"
 dependencies = [
+    "amphora-contracts-artifact-retention==0.1.0",
     "amphora-contracts-campaign-resources==0.1.0",
     "amphora-contracts-population-steps==0.1.0",
     "amphora-process-mapping==0.1.1",
@@ -69,6 +70,7 @@ package = false
 link-mode = "copy"
 
 [tool.uv.sources]
+amphora-contracts-artifact-retention = { path = "../contracts/artifact_retention", editable = true }
 amphora-contracts-campaign-resources = { path = "../contracts/campaign_resources", editable = true }
 amphora-contracts-population-steps = { path = "../contracts/population_steps", editable = true }
 amphora-process-mapping = { path = "../tools/process_mapping", editable = true }

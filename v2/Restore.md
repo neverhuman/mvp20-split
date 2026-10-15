@@ -1,8 +1,48 @@
 # Restore
 
-Refreshed: 2026-10-14 21:32:00 America/Chicago. Read FIRST after compaction.
+Refreshed: 2026-10-15 09:47:24 America/Chicago. Read FIRST after compaction.
 
 ## Current task
+
+2026-10-15 10:05:22 REVIEW READY: PowerShell wrapper completed; local session15a
+PID27368, LAN15a PID5032. Frozen servingh / Deployment0.20.2; curation paused,
+provider_calls0, new_campaigns0. LAN https://192.168.1.70:57013; sign-in stored only
+in LAN15a/Open Amphora.url and host clipboard (five-minute token minted10:02:43).
+Keep review alive; do not edit its source/tests/module READMEs. Independent continued
+work will use sparse worktree Z:/mvp20-retention-integration, branch
+pop01-retention-integration; original review checkout stays frozen. Before merge or
+promotion drain review only after owner's review is done. Source snapshot checkpoint
+contains contract16 +publication32 +Data90source/90independent installed checks;
+all748schemas preserve744predecessor bytes. Data core implemented, full Runtime/
+replacement acceptance pending. Both owned new SQL containers removed.
+
+
+2026-10-15 10:01:35 USER INTERRUPTION: requested PowerShell session again. Latest
+frozen review wrapper launching through ignored .test-results/Start-Review-20261015.ps1
+(PowerShell PID16792), exact frozen Deployment0.20.2 and serving20261013h. Local/
+LAN outputs curation-demo-session-20261015a and curation-demo-lan-20261015a. Await
+ready before sharing sign-in. Curation paused, no automatic campaigns/model calls.
+Source/tests/module READMEs frozen while review serves; docs/read-only verification
+can continue. Preserve all currently uncommitted POP-01.06 work.
+Current implementation checkpoint: artifact_retention0.1 published748 schemas, all
+744 predecessors pinned;16 contract and32 publication tests PASS. Data0.32 migration
+artifact_0013 and closure API/member protection implemented.90 actual SQL owner/
+legacy retention/derivation/rights checks PASS; test container removed. Runtime
+integration NOT implemented yet. Next Data negative/shared/cycle qualification and
+independent installed Data acceptance, then Runtime profile pin/transport/recovery.
+No paid calls. User ocular files preserved. Source edits require drained review.
+
+
+2026-10-15 09:47:24 owner replied CONTINUE-UNTIL-NEEDED to the concrete POP-01.06
+approval question. Proceed with that reviewed boundary; do not request approval again.
+Current POP-01.01 E2.2a: publish artifact_retention DTOs/schema/command goldens with
+all744 predecessor schemas pinned, then Data-owned immutable closure + atomic root/
+member reservation and recovery; Runtime integration follows its prerequisite gate.
+Verification: contract negatives/legacy bytes, actual SQL closure/replay/reconciliation,
+independent Data/Runtime installs and restart. No second execution authority or
+worker retention grants. E2 stays25% until its full worker unit qualifies. RG-01
+remains the next plan AFTER POP-01. Previous owner-decision blocker below superseded.
+
 
 2026-10-14 21:32:00: E2.1 implementation COMMITTED/PUSHED fdb87c20; no source tests
 running. E2.2 discovered direct-output-only retention cannot establish the complete

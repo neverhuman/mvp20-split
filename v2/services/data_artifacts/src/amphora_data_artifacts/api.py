@@ -30,6 +30,7 @@ from .reads import ArtifactReads
 from .representations.api import representation_router
 from .retention.outcomes import OutcomeUnavailable
 from .retention.reservations import Reservations
+from .retention_closures.api import install as install_retention_closures
 from .retrieval.api import retrieval_router
 
 
@@ -168,6 +169,8 @@ def create_app(uploads, storage, credentials, outcomes=None, *, acquisition=None
         except TimeoutError as error:
             raise UploadError("upload_timeout") from error
         return bytes(body)
+
+    install_retention_closures(app, uploads, outcomes, credentials, command_body)
 
     @app.post("/v1/artifacts/finalize", response_model=FinalizedReceipt)
     async def finalize(request: Request):

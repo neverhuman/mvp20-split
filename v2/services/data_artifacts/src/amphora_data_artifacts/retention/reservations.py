@@ -39,7 +39,7 @@ class Reservations:
             "(:tenant,:project,:event,:operation,0,CAST(:payload AS jsonb))"), params)
         return body
 
-    def _transaction(self, principal, command, action):
+    def _transaction(self, principal, command, action, *, receipt_model=ReservationReceipt):
         def execute(conn):
             self.uploads._capacity(conn, principal)
             previous = self._existing(conn, command)
@@ -53,7 +53,7 @@ class Reservations:
         body = self.commands.transact(execute)
         if body.get("status") == "rejected":
             raise UploadError(body["reason_code"])
-        return ReservationReceipt.model_validate(body)
+        return receipt_model.model_validate(body)
 
     def _load(self, conn, principal, reservation_id, *, lock=True):
         row = conn.execute(text("SELECT r.*,c.size_bytes,c.media_type,c.schema_ref FROM artifacts.reservations r "
@@ -82,28 +82,34 @@ class Reservations:
         self.commands.register(command)
 
         def reserve(conn):
-            row = conn.execute(text("SELECT * FROM artifacts.catalog WHERE " + SCOPE + " AND artifact_id=:artifact"),
-                {**principal.bindings, "artifact": request.artifact.artifact_id}).mappings().one_or_none()
-            if row is None:
-                raise UploadError("artifact_unavailable")
-            stored = ArtifactRef(artifact_id=row["artifact_id"], scope=principal.scope, sha256=row["content_sha256"],
-                                 size_bytes=row["size_bytes"], media_type=row["media_type"], schema_ref=row["schema_ref"])
-            if stored != request.artifact:
-                raise UploadError("artifact_descriptor_conflict")
-            params = {**principal.bindings, "intent": request.intent.intent_id, "output": request.intent.output_binding,
-                "semantic": request.intent.semantic_completion_sha256, "artifact": stored.artifact_id,
-                "digest": stored.sha256, "reservation": uuid.uuid4().hex}
-            conn.execute(text("INSERT INTO artifacts.reservations "
-                "(tenant_id,project_id,reservation_id,artifact_id,content_sha256,runtime_owner,intent_id,output_binding,semantic_sha256) "
-                "VALUES (:tenant,:project,:reservation,:artifact,:digest,:actor,:intent,:output,:semantic) "
-                "ON CONFLICT (tenant_id,project_id,runtime_owner,intent_id,output_binding) DO NOTHING"), params)
-            reservation_id = conn.execute(text("SELECT reservation_id FROM artifacts.reservations WHERE " + SCOPE +
-                " AND runtime_owner=:actor AND intent_id=:intent AND output_binding=:output"), params).scalar_one()
-            reservation = self._load(conn, principal, reservation_id)
-            if reservation.binding.artifact != stored or reservation.binding.intent != request.intent:
-                raise UploadError("reservation_identity_conflict")
+            reservation, _created = self._reserve_root(conn, principal, request)
             return reservation.receipt()
         return self._transaction(principal, command, reserve)
+
+    def _reserve_root(self, conn, principal, request):
+        """Owner transaction and scope capacity lock held; return exact root plus creation flag."""
+        row = conn.execute(text("SELECT * FROM artifacts.catalog WHERE " + SCOPE + " AND artifact_id=:artifact"),
+            {**principal.bindings, "artifact": request.artifact.artifact_id}).mappings().one_or_none()
+        if row is None:
+            raise UploadError("artifact_unavailable")
+        stored = ArtifactRef(artifact_id=row["artifact_id"], scope=principal.scope, sha256=row["content_sha256"],
+                             size_bytes=row["size_bytes"], media_type=row["media_type"], schema_ref=row["schema_ref"])
+        if stored != request.artifact:
+            raise UploadError("artifact_descriptor_conflict")
+        params = {**principal.bindings, "intent": request.intent.intent_id, "output": request.intent.output_binding,
+            "semantic": request.intent.semantic_completion_sha256, "artifact": stored.artifact_id,
+            "digest": stored.sha256, "reservation": uuid.uuid4().hex}
+        created = conn.execute(text("INSERT INTO artifacts.reservations "
+            "(tenant_id,project_id,reservation_id,artifact_id,content_sha256,runtime_owner,intent_id,output_binding,semantic_sha256) "
+            "VALUES (:tenant,:project,:reservation,:artifact,:digest,:actor,:intent,:output,:semantic) "
+            "ON CONFLICT (tenant_id,project_id,runtime_owner,intent_id,output_binding) DO NOTHING "
+            "RETURNING reservation_id"), params).scalar_one_or_none()
+        reservation_id = conn.execute(text("SELECT reservation_id FROM artifacts.reservations WHERE " + SCOPE +
+            " AND runtime_owner=:actor AND intent_id=:intent AND output_binding=:output"), params).scalar_one()
+        reservation = self._load(conn, principal, reservation_id)
+        if reservation.binding.artifact != stored or reservation.binding.intent != request.intent:
+            raise UploadError("reservation_identity_conflict")
+        return reservation, created is not None
 
     def reconcile(self, principal, command):
         principal.require("retention", command.identity)

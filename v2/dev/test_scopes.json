@@ -349,6 +349,10 @@
     "tests": "contracts/campaign_resources/tests",
     "coverage_sources": ["contracts/campaign_resources/src/amphora_contracts_campaign_resources"]
   },
+  "artifact-retention": {
+    "tests": "contracts/artifact_retention/tests",
+    "coverage_sources": ["contracts/artifact_retention/src/amphora_contracts_artifact_retention"]
+  },
   "deployment-credentials": {
     "tests": "deploy/local/tests/credentials",
     "coverage_sources": [
