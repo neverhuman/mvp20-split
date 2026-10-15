@@ -73,7 +73,7 @@ requires-dist = [
 
 [[package]]
 name = "amphora-campaign-runtime"
-version = "0.69.0"
+version = "0.70.0"
 source = { editable = "../services/campaign_runtime" }
 dependencies = [
     { name = "alembic" },
@@ -86,6 +86,7 @@ dependencies = [
     { name = "amphora-contracts-draft-successor" },
     { name = "amphora-contracts-execution-proofs" },
     { name = "amphora-contracts-graph-runtime" },
+    { name = "amphora-contracts-node-inputs" },
     { name = "amphora-contracts-planning" },
     { name = "amphora-contracts-runtime" },
     { name = "amphora-contracts-supervision" },
@@ -110,6 +111,7 @@ requires-dist = [
     { name = "amphora-contracts-draft-successor", editable = "../contracts/draft_successor" },
     { name = "amphora-contracts-execution-proofs", editable = "../contracts/execution_proofs" },
     { name = "amphora-contracts-graph-runtime", editable = "../contracts/graph_runtime" },
+    { name = "amphora-contracts-node-inputs", editable = "../contracts/node_inputs" },
     { name = "amphora-contracts-planning", editable = "../contracts/planning" },
     { name = "amphora-contracts-runtime", editable = "../contracts/runtime" },
     { name = "amphora-contracts-supervision", editable = "../contracts/supervision" },
@@ -532,6 +534,23 @@ requires-dist = [
 ]
 
 [[package]]
+name = "amphora-contracts-node-inputs"
+version = "0.1.0"
+source = { editable = "../contracts/node_inputs" }
+dependencies = [
+    { name = "amphora-contracts-core" },
+    { name = "amphora-contracts-runtime" },
+    { name = "pydantic" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "amphora-contracts-core", editable = "../contracts/core" },
+    { name = "amphora-contracts-runtime", editable = "../contracts/runtime" },
+    { name = "pydantic", specifier = ">=2.12,<3" },
+]
+
+[[package]]
 name = "amphora-contracts-planning"
 version = "0.13.0"
 source = { editable = "../contracts/planning" }
@@ -914,6 +933,7 @@ dependencies = [
     { name = "amphora-contracts-fitness" },
     { name = "amphora-contracts-graph-runtime" },
     { name = "amphora-contracts-knowledge" },
+    { name = "amphora-contracts-node-inputs" },
     { name = "amphora-contracts-planning" },
     { name = "amphora-contracts-population" },
     { name = "amphora-contracts-population-steps" },
@@ -982,6 +1002,7 @@ requires-dist = [
     { name = "amphora-contracts-fitness", editable = "../contracts/fitness" },
     { name = "amphora-contracts-graph-runtime", editable = "../contracts/graph_runtime" },
     { name = "amphora-contracts-knowledge", editable = "../contracts/knowledge" },
+    { name = "amphora-contracts-node-inputs", editable = "../contracts/node_inputs" },
     { name = "amphora-contracts-planning", editable = "../contracts/planning" },
     { name = "amphora-contracts-population", editable = "../contracts/population" },
     { name = "amphora-contracts-population-steps", editable = "../contracts/population_steps" },

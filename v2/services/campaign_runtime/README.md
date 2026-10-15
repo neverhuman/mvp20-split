@@ -1,6 +1,6 @@
 # Campaign Runtime
 
-POP-01/E2.2 current implementation: Runtime0.69/runtime0029 adds opt-in immutable
+POP-01/E2.2 current implementation: Runtime0.70 adds approved read-only node input observation (node_inputs0.1), without a migration. Runtime0.69/runtime0029 adds opt-in immutable
 closure retention for graph runs. [Completion boundary](src/amphora_campaign_runtime/completion/README.md)
 owns configuration, compatibility, proof persistence and qualification limits.
 Independent installed HTTP/restart acceptance remains in progress; historical

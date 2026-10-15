@@ -347,11 +347,15 @@
   },
   "campaign-resources": {
     "tests": "contracts/campaign_resources/tests",
-    "coverage_sources": ["contracts/campaign_resources/src/amphora_contracts_campaign_resources"]
+    "coverage_sources": [
+      "contracts/campaign_resources/src/amphora_contracts_campaign_resources"
+    ]
   },
   "artifact-retention": {
     "tests": "contracts/artifact_retention/tests",
-    "coverage_sources": ["contracts/artifact_retention/src/amphora_contracts_artifact_retention"]
+    "coverage_sources": [
+      "contracts/artifact_retention/src/amphora_contracts_artifact_retention"
+    ]
   },
   "deployment-credentials": {
     "tests": "deploy/local/tests/credentials",
@@ -501,6 +505,12 @@
     "tests": "contracts/population_steps/tests",
     "coverage_sources": [
       "contracts/population_steps/src/amphora_contracts_population_steps"
+    ]
+  },
+  "contracts-node-inputs": {
+    "tests": "contracts/node_inputs/tests",
+    "coverage_sources": [
+      "contracts/node_inputs/src/amphora_contracts_node_inputs"
     ]
   }
 }

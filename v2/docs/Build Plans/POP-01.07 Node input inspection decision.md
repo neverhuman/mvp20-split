@@ -1,6 +1,6 @@
 # POP-01.07 Node input inspection decision
 
-- Status: approved by owner reply, 2026-10-15; implementation authorized within the exact boundary below.
+- Status: owner-approved; implemented and independently qualified in Runtime0.70/node_inputs0.1.
 - Reviewed: 2026-10-15 13:05:02 America/Chicago. Owner: POP-01.01/E2.2 collection prerequisite.
 - Recommendation: one generic, read-only Runtime input observation endpoint.
 
@@ -66,3 +66,5 @@ POP-01.06 states: "any further public route or changed legacy semantics returns 
 review." Owner explicitly approved the proposed boundary. Implement that exact boundary;
 normal-path numerical worker qualification continues independently. E1/E2.1 remain
 complete and E2 remains25%; no parent progress credit or extra scientific authority.
+
+Verification complete: [owner boundary evidence](../Audits/POP-01_Node_Input_Inspection.md).

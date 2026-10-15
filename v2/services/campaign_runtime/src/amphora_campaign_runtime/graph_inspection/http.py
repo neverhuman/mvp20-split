@@ -13,6 +13,9 @@ from amphora_contracts_graph_runtime import (
 from fastapi import Query, Request
 
 from .details import GraphDetails
+from .inputs import InputObservationError, NodeInputs
+from amphora_contracts_node_inputs import NodeInputObservation
+from fastapi.responses import JSONResponse
 from .events import GraphInvalidations
 from .snapshots import GraphSnapshots
 
@@ -21,6 +24,27 @@ def install_graph_inspection(app, history, credentials):
     from ..graph_navigation.http import install_graph_navigation
 
     install_graph_navigation(app, history, credentials)
+    @app.middleware("http")
+    async def input_cache_policy(request, call_next):
+        response = await call_next(request)
+        parts = request.url.path.strip("/").split("/")
+        if len(parts) == 6 and parts[:2] == ["v1", "graph-observations"] and parts[3] == "nodes" and parts[5] == "inputs":
+            response.headers["Cache-Control"] = "no-store"
+        return response
+
+    inputs = NodeInputs(history.engine)
+
+    @app.exception_handler(InputObservationError)
+    async def input_integrity_error(_request, _error):
+        return JSONResponse(status_code=503, content={"reason_code": "input_observation_integrity_unavailable"},
+                            headers={"Cache-Control": "no-store"})
+
+    @app.get("/v1/graph-observations/{run_id}/nodes/{activation_id}/inputs", response_model=NodeInputObservation)
+    async def node_inputs(run_id: Identifier, activation_id: Digest, request: Request):
+        principal = credentials.authenticate(request.headers.get("authorization"))
+        observation = await asyncio.to_thread(inputs.read, principal, run_id, activation_id)
+        return JSONResponse(content=observation.model_dump(mode="json"), headers={"Cache-Control": "no-store"})
+
     snapshots = GraphSnapshots(history.engine, history.cursors)
     details = GraphDetails(history.engine, history.cursors)
     invalidations = GraphInvalidations(history.engine, history.cursors)

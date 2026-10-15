@@ -1,6 +1,6 @@
 # POP-01 Population Campaign Execution and Experience
 
-Current E2.2 checkpoint: Search0.14 numerical primitives qualified through actual installed eight-member scatter; source302 checks. Owner approved POP-01.07 read-only input inspection, next before collection. Percentages unchanged.
+Current E2.2 checkpoint: Search0.14 numerical primitives qualified through actual installed eight-member scatter; source302 checks. POP-01.07 read-only input inspection qualified in Runtime0.70; collection next. Percentages unchanged.
 
 ## Canonical tracker
 

@@ -19,6 +19,7 @@ Configured Runtime 0.11.0 mounts these authenticated GET routes only when both g
 | `/nodes` | Snapshot, node page, next page token and initial invalidation cursor |
 | `/nodes/{activation}` | Node/containing scope, parent activation, bounded output summaries and attempt page |
 | `/nodes/{activation}/outputs/{port}` | Bounded scalar/Artifact/collection-member page; explicit missing slots |
+| `/nodes/{activation}/inputs` | Runtime0.70 original retained input summaries and optional PreparedInvocation; read AND inspect_receipts |
 | `/invalidations` | Consecutive immutable event identities/revisions, continuation and `has_more` |
 
 All reads require the authenticated principal's `read` action and tenant/project. Every request uses a read-only repeatable-read transaction against Runtime's own run, graph, activation, attempt, accepted-completion and audit tables. Artifact references are projected, never dereferenced. Dependencies are public contracts, SQLAlchemy and existing Runtime authentication/cursor/domain modules; HTTP adds FastAPI. No cross-service SQL or private imports.
@@ -38,3 +39,14 @@ Owned tests: [graph inspection tests](../../../tests/graph_inspection/README.md)
 Replacement must retain original command/history endpoints and persisted owner records, stable cursor key/mode encoding or explicit resnapshot behavior, bounded projections and unchanged authority. No migration is required for this implementation. Target-host throughput, power-loss recovery, Studio rendering and scientific correctness are outside this module's acceptance claim.
 
 B2 verified checkpoint: actual kills after activation INSERT/before commit, join commit and iteration checkpoint commit; readers preserve one cut or explicitly resnapshot, feedback/history and original receipts survive replacement.32 focused/process tests pass. V1 still owns independently installed observer replacement.
+
+POP-01.07 adds node input observation (public node_inputs0.1). It reads original
+graph_scopes.inputs and activations.specification at one read-only repeatable-read
+cut. It neither dereferences Data nor synthesizes effective inputs. Collections
+are summarized without expansion/truncation; invocation inputs retain exact refs.
+Every exposed reference is scoped; malformed owner state returns503;262144 UTF-8
+bytes is the closed response ceiling. No migration or write occurs. This immutable
+retrieval needs no snapshot token; observed_run_revision is correlation only. Null
+invocation is not failure proof. Existing successful producer semantics stay intact.
+All requests require read and inspect_receipts. Scope-hidden/unknown resources404,
+missing grants403; no-store applies through existing middleware and success response.

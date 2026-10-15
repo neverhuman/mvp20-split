@@ -18,6 +18,7 @@ dependencies = [
     "amphora-contracts-evaluation-reuse==0.1.0",
     "amphora-synthetic-digest==0.1.0", "amphora-contracts-synthetic-evaluation==0.1.0",
     "amphora-contracts-execution-proofs==0.1.0",
+    "amphora-contracts-node-inputs==0.1.0",
     "amphora-sequence-space==0.4.0",
     "amphora-polymer-space==0.4.0",
     "amphora-numeric-space==0.4.0",
@@ -42,7 +43,7 @@ dependencies = [
     "amphora-research==0.41.0",
     "amphora-contracts-tools==0.1.0",
     "amphora-contracts-campaigns==0.4.1",
-    "amphora-campaign-runtime==0.69.0",
+    "amphora-campaign-runtime==0.70.0",
     "pytest>=8,<9",
     "jsonschema[format-nongpl]>=4.23,<5",
     "httpx>=0.28,<1",
@@ -70,6 +71,7 @@ package = false
 link-mode = "copy"
 
 [tool.uv.sources]
+amphora-contracts-node-inputs = { path = "../contracts/node_inputs", editable = true }
 amphora-contracts-artifact-retention = { path = "../contracts/artifact_retention", editable = true }
 amphora-contracts-campaign-resources = { path = "../contracts/campaign_resources", editable = true }
 amphora-contracts-population-steps = { path = "../contracts/population_steps", editable = true }

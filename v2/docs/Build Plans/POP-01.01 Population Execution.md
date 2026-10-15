@@ -4,7 +4,11 @@
 - Last refreshed: 2026-10-15 12:18:22 (America/Chicago).
 - Implementation: 31.25%; E1=100%, E2=25%, E3/E4=0%, four equal delivery gates.
 - Current: E2.1 complete; E2.2a closure-retention prerequisite qualified. E2.2 population workers active.
-- Next: approved POP-01.07 input inspection, then authoritative collection/fitness and authored composition.
+- Next: authoritative collection/fitness using qualified POP-01.07, then authored composition.
+- POP-01.07 qualified: Runtime0.70/node_inputs0.1;55 actual SQL and55 combined
+  contract/publication/boundary checks, nine independent contract checks and actual
+  HTTP owner restart pass.750 schemas preserve748 predecessor bytes.
+  [Evidence](../Audits/POP-01_Node_Input_Inspection.md). E2 remains25%.
 - E2.2 method checkpoint: Search0.14 source302 checks; both independently installed
   numerical primitives pass eight-member actual scatter, exact values/context ancestry,
   confirmed retention and completed spent10. Full worker unit remains0.

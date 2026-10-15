@@ -14,7 +14,7 @@ def test_all_predecessor_schema_bytes_preserved():
         assert hashlib.sha256(current[name]).hexdigest() == digest, name
     # Historical curation increment excludes independently published successor roots.
     historical = {name for name in current if name != 'manifest.json'
-                  and not name.startswith(('chemical-structure.', 'population.', 'population-step.', 'campaign-resources.', 'artifact-retention.'))}
+                  and not name.startswith(('chemical-structure.', 'population.', 'population-step.', 'campaign-resources.', 'artifact-retention.', 'node-inputs.'))}
     assert len(historical) == len(pins['schemas']) + 22
 
 

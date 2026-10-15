@@ -22,7 +22,7 @@ from verify_retention_closure_installation import ROOT, request, write
 from population_method_fixture import MethodFixture
 
 
-def verify(output, python, ports, environment, scope, call, command, start, stop, *, with_slice=False, method_operation=None):
+def verify(output, python, ports, environment, scope, call, command, start, stop, *, with_slice=False, method_operation=None, inspect_inputs=False):
     data_port, runtime_port = ports
     descriptor_result = subprocess.run([str(python), "-I", "-m", "amphora_evolution_search", "population-describe",
         "--operation", "seed", "--image-sha256", "f" * 64], capture_output=True, timeout=120)
@@ -271,6 +271,24 @@ def verify(output, python, ports, environment, scope, call, command, start, stop
             assert final["status"] == "completed" and final["budget"]["spent"] == 2
         slice_evidence = {"members": 8, "next_index": 8, "complete": False,
             "same_run": True, "retained_artifacts": slice_closure["artifact_count"], "spent": 2}
+    if inspect_inputs:
+        from amphora_contracts_node_inputs import NodeInputObservation
+        nodes = call(runtime_port, f"/v1/graph-observations/{run}/nodes")["nodes"]
+        observations = {}
+        for node in nodes:
+            path = f"/v1/graph-observations/{run}/nodes/{node['activation_id']}/inputs"
+            raw = call(runtime_port, path)
+            observation = NodeInputObservation.model_validate_json(json.dumps(raw))
+            assert observation.scope.model_dump(mode="json") == scope
+            observations[path] = raw
+        assert any(raw["invocation"] is not None for raw in observations.values())
+        stop("runtime")
+        start("runtime", Path(environment["QUAL_RUNTIME_PYTHON"]), runtime_port, environment)
+        for path, raw in observations.items():
+            assert call(runtime_port, path) == raw
+        write(output / "node-inputs-evidence.json", {"status":"passed", "nodes":len(nodes),
+            "original_inputs_survive_runtime_restart":True, "schema":"runtime-node-inputs-v1",
+            "provider_calls":0})
     write(output / "population-seed-evidence.json", {"status": "passed", "population": 16,
         "worker_release": descriptor["tool"]["binding"]["release"], "retained_artifacts": closure["artifact_count"],
         "prepared": prepared, "worker_retention_grant": False, "provider_calls": 0,

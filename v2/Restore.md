@@ -1,6 +1,6 @@
 # Restore
 
-Refreshed: 2026-10-15 12:32:49 America/Chicago. Read after compaction with AGENTS.md.
+Refreshed: 2026-10-15 13:19:44 America/Chicago. Read after compaction with AGENTS.md.
 
 ## Current task and workspace
 
@@ -25,12 +25,20 @@ execute eight actual scatter members, exact frozen values, derivation context id
 confirmed retention and completed spent10. Evidence: docs/Audits/POP-01_Population_Method_Workers.md.
 Installed Search: .test-results/pop01-population-method-install-20261015a/environment.
 
-Next E2.2 component: owner explicitly approved POP-01.07 retained node-input inspection.
-Implement exact separate contracts/node_inputs0.1 + one Runtime GET boundary.
-Existing successful-only producer proof must remain unchanged; no SQL migration,
-new ledger, Data RPC, mutation or snapshot-token requirement. Scope grants read AND
-inspect_receipts; original scope inputs summarized, PreparedInvocation optional,
-262144 response cap. Qualify old schema pins, statuses/grants/scopes and restart.
+POP-01.07 implemented/qualified: Runtime0.70, node_inputs0.1, no migration.
+55 actual SQL,55 contract/publication/boundary,9 independent contract checks pass;
+750 schemas preserve748 predecessor bytes. Actual seed/slice HTTP reads survive
+Runtime replacement identically: .test-results/pop01-input-runtime-http-20261015b.
+Installed Runtime: .test-results/pop01-input-runtime-install-20261015a/environment.
+All temporary containers removed. Evidence: docs/Audits/POP-01_Node_Input_Inspection.md.
+
+Next E2.2: authoritative collection and explicit fitness assembly. Combine same-cut
+graph terminal status/attempt pages with qualified retained-input observations and
+existing successful-producer proofs. Null invocation is not failure proof. No guessed
+candidate/page/dispatch order. Tool-owned payload schemas only; legacy schemas remain.
+Public SDK transport rejects query strings: add safe bounded optional query support
+(or a focused public inspection client) before paginated collection; do not bypass
+transport guards/private token fields or truncate graph pages.
 Then authoritative observation/fitness integration; E2.3 full authored composition/
 expanded-ancestry feasibility and E2.4 batch/cap matrix remain ordered gates. E2 stays25%.
 No claim of full population/scientific execution or image/Registry attestation.

@@ -23,6 +23,7 @@ import amphora_contracts_campaign_successor_launch as successor_launch
 import amphora_contracts_evaluation_reuse as evaluation_reuse
 from amphora_contracts_synthetic_evaluation import SyntheticEvaluationReceipt
 from amphora_contracts_execution_proofs import AcceptedToolExecution
+from amphora_contracts_node_inputs import NodeInputObservation
 from amphora_contracts_candidate_canonicalization import CanonicalCandidate
 import amphora_contracts_fitness as fitness
 import amphora_contracts_evaluation_identity as evaluation_identity
@@ -63,6 +64,7 @@ from amphora_contracts_tools import Completion, Invocation, ToolBinding, ToolDes
 
 ROOT = Path(__file__).absolute().parents[1]
 MODELS = {
+    "node-inputs.observation": NodeInputObservation,
     "artifact-retention.reserve-derived-closure": ReserveDerivedClosure,
     "artifact-retention.derived-closure-receipt": DerivedClosureReservationReceipt,
     "campaign-resources.invocation-cap": CampaignInvocationResources,

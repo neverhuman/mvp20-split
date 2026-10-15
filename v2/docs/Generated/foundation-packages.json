@@ -221,6 +221,16 @@
     ]
   },
   {
+    "package": "amphora-contracts-node-inputs",
+    "version": "0.1.0",
+    "path": "contracts/node_inputs",
+    "module": "amphora_contracts_node_inputs",
+    "public_dependencies": [
+      "amphora-contracts-core",
+      "amphora-contracts-runtime"
+    ]
+  },
+  {
     "package": "amphora-contracts-planning",
     "version": "0.13.0",
     "path": "contracts/planning",
@@ -397,10 +407,11 @@
   },
   {
     "package": "amphora-campaign-runtime",
-    "version": "0.69.0",
+    "version": "0.70.0",
     "path": "services/campaign_runtime",
     "module": "amphora_campaign_runtime",
     "public_dependencies": [
+      "amphora-contracts-node-inputs",
       "amphora-contracts-artifact-retention",
       "amphora-contracts-campaign-resources",
       "amphora-contracts-draft-successor",
@@ -514,7 +525,7 @@
   },
   {
     "package": "amphora-evolution-search",
-    "version": "0.13.0",
+    "version": "0.14.0",
     "path": "tools/evolution_search",
     "module": "amphora_evolution_search",
     "public_dependencies": [
