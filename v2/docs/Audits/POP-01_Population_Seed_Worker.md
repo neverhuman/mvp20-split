@@ -46,13 +46,15 @@ replay before producing a truthful bounded cursor/member set. Generation0 only.
 The16-member actual probe qualifies the seed primitive, not a full population
 campaign. It retains explicitly labeled fixture context; the specification's declared
 method graph is not admitted or executed. Descriptor image identity is a fixture
-pin, not built-image/Registry attestation. Slicing has source tests but still needs
-actual configured graph materialization in the same run. Method execution, fitness
+pin, not built-image/Registry attestation. Same-run installed slicing also passes in pop01-population-slice-http-20261015b:
+  existing wire-v4 materialization feeds eight contexts, cursor8/not-complete,
+ 36-artifact confirmed closure and completed run spent2. Initial probe assumed one
+  advance pass; corrected the driver to follow the existing durable coordinator
+  passes, preserving pending command identity. No engine change or new route. Method execution, fitness
 collection, selection/successor, authored composition, expanded-ancestry admission,
 full batch/cap matrix and replacement qualification remain their ordered gates.
 No provider calls, paid training, scientific evidence or demo campaign was created.
 
 E2 stays25%, Execution31.25%, parent10.42%, Build15.63%, Verification0. Seed acceptance
 closes a bounded component inside E2.2 without claiming its whole unit. Next:
-reference-backed same-run slicing/evaluation worker integration using existing graph
-binding primitives, then E2.3 full authored dispatch/collection and E2.4 matrix.
+registered numerical method/evaluation worker integration, then E2.3 full authored dispatch/collection and E2.4 matrix.

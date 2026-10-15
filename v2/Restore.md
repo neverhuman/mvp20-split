@@ -1,400 +1,112 @@
 # Restore
 
-Refreshed: 2026-10-15 12:18:22 America/Chicago. Read FIRST after compaction.
+Refreshed: 2026-10-15 12:32:49 America/Chicago. Read after compaction with AGENTS.md.
 
-## Current task
+## Current task and workspace
 
-2026-10-15 12:18:22 SEED PRIMITIVE QUALIFIED, still partial E2.2. Source Search0.13:
-296 tests +seven separately verified original frozen hashes;15 worker/helper +4
-ownership checks, dependency guard pass. Independent Search install b excludes all
-service implementations/SQLAlchemy/FastAPI. Actual seed CLI probe c passes16 births/
-26-artifact closure, authoritative completion/confirmation and worker retention403.
-Evidence docs/Audits/POP-01_Population_Seed_Worker.md and .test-results/
-pop01-population-seed-http-20261015c/population-seed-evidence.json. All probe owners/
-containers removed. Initial missing Runtime read grant repaired in fixture; lease
-policy unchanged. Original review local15a/LAN15b still frozen/running.
-Next: same-run slicing/evaluation worker integration with existing graph bindings;
-then full E2.2 qualification, authored E2.3 composition and E2.4 matrix. Actual seed
-fixture does NOT execute declared method graph or attest built image/Registry.
-E2 stays25%, Execution31.25%, parent10.42%, Build15.63%, Verification0. Continue
-until needed; RG-01 remains immediately after POP-01. Checkpoint current changes,
-commit/push this isolated branch, then proceed. Never merge while review serves.
+Continue until needed remains authorized. Primary plan is POP-01.01/E2.2 population
+workers. E1/E2.1 remain complete. E2=25%, Execution31.25%, parent10.42%, Build15.63%,
+Verification0; unfinished worker components do not close the whole E2.2 unit.
+RG-01 LLM Research Graph Generation follows the whole POP-01 immediately, before ML-01.
+The LLM generates/refines the research graph; Knowledge enhances it. Do not switch early.
 
+Implement ONLY in Z:/mvp20-retention-integration, branch pop01-retention-integration,
+based on main afe121c0. Original Z:/mvp20-split review is frozen while serving.
+This is the recorded demonstrated-independent exception, not a priority change.
+Do not merge/promote until the owner finishes review and wrappers drain.
+Git commands need per-command safe.directory=//DesktopNAS/Code/mvp20-retention-integration.
+Use this worktree's v2/dev/.venv/Scripts/python.exe. Its ignored v2/.venv/Scripts/uv.exe
+is a copied tool executable. Do not use original editable imports for worktree tests.
 
-2026-10-15 12:03:58 population worker WIP (isolated worktree only): Search0.13
-population_workers has attempt-scoped derived publication, full generation0 seed
-birth/cohort/primary-declaration closure, verified reference-backed slicing, explicit
-seed/slice descriptors/CLI and public-SDK claimed-worker lifecycle.296 Search tests
-PASS; one sparse-v1-only hash check run separately against original seven frozen
-sources, all match. Dependency guard PASS. No live tool activated/campaign/provider
-calls. Independent Search build running session8623 -> .test-results/
-pop01-population-step-install-20261015a. Next actual installed seed/slice worker
-Data/Runtime HTTP qualification; then remaining E2.2 work/composition gates.
-E2 stays25%; no full worker-unit credit. Retention prerequisite846e194a pushed on
-pop01-retention-integration. Original review remains frozen local15a/LAN15b.
+Pushed checkpoints:846e194a closure retention;721880d3 installed seed worker.
+Latest bounded checkpoint 2026-10-15 12:32:49: installed SAME-RUN seed -> wire-v4
+materialization -> slice passes in .test-results/pop01-population-slice-http-20261015b.
+Seed16/closure26; slice8/cursor8/incomplete/closure36; actual confirmations and
+completed run spent2. Probe a assumed a single advance pass; driver now follows
+existing bounded coordinator passes, preserving pending command identity. No engine
+change/new route. All probe owners/containers removed; labeled volumes retained.
+Update docs/commit/push this checkpoint, then numerical method adapters next.
 
+Next E2.2 component: registered synthetic numerical methods consuming existing
+PopulationCandidateContext and emitting the existing public ObjectiveValue DTO as
+a separately pinned TOOL payload schema (not a new system route/contract family).
+Explicit dimensionless sum-squares and negative-sum functions; verify full frozen
+cohort/declarations, exact method tool/node/policy pins, accepted run scope and birth.
+Then authoritative observation/fitness integration; E2.3 full authored composition/
+expanded-ancestry feasibility and E2.4 batch/cap matrix remain ordered gates. E2 stays25%.
+No claim of full population/scientific execution or image/Registry attestation.
 
-2026-10-15 11:48:49 CLOSURE PREREQUISITE QUALIFIED in isolated worktree. Data0.32,
-Runtime0.69/runtime0029; actual installed HTTP lost-response/restart/confirm/cancel
-passes (.test-results/pop01-closure-http-20261015d/evidence.json). Data96 SQL;
-Runtime181 broad +6 final targeted (2 additional) checks; publication32/ownership4,
-boundary guard pass. All owned new test containers/probe processes removed.
-Evidence docs/Audits/POP-01_Closure_Retention.md. E2 stays25%, Execution31.25%,
-parent10.42%, Build15.63%, Verification0. Next E2.2 population step workers,
-then authored composition and actual batch/cap matrix. Original review local15a/
-LAN15b remains frozen/running. Do not merge into original until owner finishes
-review and wrappers drain. Continue-until-needed persists; RG-01 after POP-01.
+## Verified implementation
 
+- Data0.32/artifact_0013, artifact_retention0.1, Runtime0.69/runtime0029 implement
+  approved POP-01.06. New configured graph runs pin derived-closure-retention-v1;
+  old runs remain direct-root. Immutable companion proofs commit with root receipts.
+  Data follows declared derivation/conversion ancestry <=4096, <=128 direct parents;
+  root confirmation/reconciliation governs the group. No worker retention authority.
+- Data96 SQL checks; Runtime181 broad +6 final targeted (two additional) checks;
+  schema publication32, ownership4 and dependency guard pass.748 schemas preserve
+  all744 predecessor bytes. Actual installed Data/Runtime lost-response/restart/
+  confirmation/cancellation passes in pop01-closure-http-20261015d/evidence.json.
+  [Retention evidence](docs/Audits/POP-01_Closure_Retention.md).
+- Search0.13 population_workers uses public SDK0.3 clients/lease context. Complete
+  generation0 seed closure and verified primary-occurrence slicing; explicit synthetic
+  CandidateBirth-as-representation only. Other representations reject. Legacy numeric
+  CLI remains separate; new population-describe/schema/worker modes are opt-in.
+- Search296 tests pass. One sparse-v1-only source audit checked separately against
+  all seven original frozen hashes, all match.15 worker/helper +4 ownership checks and
+  dependency guard pass. Full baseline verifier earlier reported only the pre-existing
+  ADDED v1/LICENSE; never alter v1 or regenerate its checksum manifest.
+- Isolated Search installation b excludes Data/Runtime/Planning/SQLAlchemy/FastAPI.
+  Actual seed CLI probe c accepts16 births with26-artifact closure and authoritative
+  confirmation; worker retention GET returns403. Workers need scoped Runtime
+  claim/renew/complete/read plus Data read/upload/finalize. Initial fixture lacked
+  Runtime read; fixed without changing lease policy. All probe containers removed.
+  [Seed evidence](docs/Audits/POP-01_Population_Seed_Worker.md).
+- Canonical trackers: [execution](docs/Build%20Plans/POP-01.01%20Population%20Execution.md),
+  [parent](docs/Build%20Plans/POP-01%20Population%20Campaign%20Execution%20and%20Experience.md),
+  [MBT](docs/Build%20Plans/Master%20Build%20Tracker.md). Package inventory refreshed from
+  project_specs after scoped checks; no whole-foundation qualification claim.
 
-2026-10-15 11:33:54 CONTINUED: isolated worktree remains implementation owner; original review is now LAN15b PID20524, local15a PID27368, renewed90day TLS. Data closure suite96 passed (evidence .test-results/pop01-closure-sql-7acb4206/pytest.log), fixture final-TCP readiness race fixed, temporary container removed. Runtime explicit closure transport9 scripted peer tests pass; boundary guard passes. Profile/admission/companion storage and actual HTTP replacement qualification still pending. E2 remains25%; next immutable profile and durable receipt integration.
+Independent interpreters under this worktree's v2/.test-results:
+- pop01-closure-owners-20261015b/amphora-data-artifacts/environment/Scripts/python.exe
+- pop01-closure-owners-20261015b/amphora-campaign-runtime/environment/Scripts/python.exe
+- pop01-population-step-install-20261015b/environment/Scripts/python.exe
 
+Current probe command: dev/verify_retention_closure_installation.py --output <new>
+--data-python <Data above> --runtime-python <Runtime above>
+--population-python <Search above> --population-only --population-slice.
+Dev helper population_seed_fixture.py owns the synthetic fixture; declared method
+context is explicitly NOT executed. Do not reinterpret it as full composition.
 
-2026-10-15 10:07:12 ISOLATED IMPLEMENTATION EXCEPTION: this worktree is
-Z:/mvp20-retention-integration, branch pop01-retention-integration, based on afe121c0.
-Original Z:/mvp20-split/v2 review15a is serving frozen installed owners and must remain
-unchanged. New source/tests/module README edits occur ONLY here. This worktree's
-v2 is the active isolated development area for POP-01.01 E2.2a; no priority change.
-Do not merge/promote into the review checkout before owner finishes and wrappers
-are drained. Original v1 remains read-only; it is omitted by this sparse checkout.
-Baseline verification was performed in original repo (pre-existing ADDED v1/LICENSE).
-Current task: strengthen Data closure negatives/shared-ancestry/replacement checks,
-then Runtime immutable profile binding, receipt transport and independent integration.
-Artifact contract16/publication32 and Data90source/90installed pass in original
-checkpoint. All temp test containers removed. No paid calls or new campaigns.
-Qualified Data installation is original v2/.test-results/pop01-data-closure-install-20261015a.
-Worktree gets its own Dev environment; do not reuse editable original service imports.
+## Running review in ORIGINAL checkout
 
-
-2026-10-15 10:05:22 REVIEW READY: PowerShell wrapper completed; local session15a
-PID27368, LAN15a PID5032. Frozen servingh / Deployment0.20.2; curation paused,
-provider_calls0, new_campaigns0. LAN https://192.168.1.70:57013; sign-in stored only
-in LAN15a/Open Amphora.url and host clipboard (five-minute token minted10:02:43).
-Keep review alive; do not edit its source/tests/module READMEs. Independent continued
-work will use sparse worktree Z:/mvp20-retention-integration, branch
-pop01-retention-integration; original review checkout stays frozen. Before merge or
-promotion drain review only after owner's review is done. Source snapshot checkpoint
-contains contract16 +publication32 +Data90source/90independent installed checks;
-all748schemas preserve744predecessor bytes. Data core implemented, full Runtime/
-replacement acceptance pending. Both owned new SQL containers removed.
-
-
-2026-10-15 10:01:35 USER INTERRUPTION: requested PowerShell session again. Latest
-frozen review wrapper launching through ignored .test-results/Start-Review-20261015.ps1
-(PowerShell PID16792), exact frozen Deployment0.20.2 and serving20261013h. Local/
-LAN outputs curation-demo-session-20261015a and curation-demo-lan-20261015a. Await
-ready before sharing sign-in. Curation paused, no automatic campaigns/model calls.
-Source/tests/module READMEs frozen while review serves; docs/read-only verification
-can continue. Preserve all currently uncommitted POP-01.06 work.
-Current implementation checkpoint: artifact_retention0.1 published748 schemas, all
-744 predecessors pinned;16 contract and32 publication tests PASS. Data0.32 migration
-artifact_0013 and closure API/member protection implemented.90 actual SQL owner/
-legacy retention/derivation/rights checks PASS; test container removed. Runtime
-integration NOT implemented yet. Next Data negative/shared/cycle qualification and
-independent installed Data acceptance, then Runtime profile pin/transport/recovery.
-No paid calls. User ocular files preserved. Source edits require drained review.
-
-
-2026-10-15 09:47:24 owner replied CONTINUE-UNTIL-NEEDED to the concrete POP-01.06
-approval question. Proceed with that reviewed boundary; do not request approval again.
-Current POP-01.01 E2.2a: publish artifact_retention DTOs/schema/command goldens with
-all744 predecessor schemas pinned, then Data-owned immutable closure + atomic root/
-member reservation and recovery; Runtime integration follows its prerequisite gate.
-Verification: contract negatives/legacy bytes, actual SQL closure/replay/reconciliation,
-independent Data/Runtime installs and restart. No second execution authority or
-worker retention grants. E2 stays25% until its full worker unit qualifies. RG-01
-remains the next plan AFTER POP-01. Previous owner-decision blocker below superseded.
-
-
-2026-10-14 21:32:00: E2.1 implementation COMMITTED/PUSHED fdb87c20; no source tests
-running. E2.2 discovered direct-output-only retention cannot establish the complete
-child-artifact protection promised by POP-01.04. Pure actual-fixture proof:1000distinct
-births require individual CandidateBirth references; ordinary completion64outputs+
-checkpoint, and reserve stores exactly the supplied artifact. Derivation edges do
-not themselves create reservations. No new API implemented or reservation authority
-given to workers. Concrete POP-01.06 recommends additive Data reserve_derived_closure,
-closed4096-artifact ancestry, atomic root/member protection and existing Runtime
-proof, with explicitly pinned Runtime retention profile. Owner review required by
-POP-01.04's unspecified-command reservation and AGENTS material-boundary rule.
-E1/E2.1 remain complete; E2=25%, Execution31.25%, parent10.42%, Build15.63%, Verification0.
-All independent preceding work complete and pushed; next action owner POP-01.06
-decision before public Data implementation. RG-01 placeholder c1798191 remains the
-critical next PLAN after POP-01, before ML-01. Do not switch early. Only original demo
-DB pair runs; wrappers remain drained; all owned new test containers were removed.
-User ocular untracked files untouched. v1 verifier's pre-existing ADDED v1/LICENSE
-remains recorded; no baseline modifications or manifest regeneration performed.
-
-
-2026-10-14 21:22:00: POP-01 E2.1 generic bounded admission/recovery QUALIFIED.
-Runtime0.68/Deployment0.20.3 checkpoint verified; commit/push then immediately E2.2.
-243 actual SQL source tests,21 independent installed Runtime checks, actual HTTP
-restart and independently installed Deployment preflight pass;0.67 refused prelaunch.
-Every new test container removed; only original demo databases remain running.
-Evidence docs/Audits/POP-01_Bounded_Admission.md. E2 refined to4 equal delivery units:
-capacity complete, step workers/composition/actual population qualification pending.
-E2=25%, Execution31.25%, parent10.42%, Build15.63%, Verification0; E3/E4=0.
-Next current task E2.2: population step worker execution; inspect Search population
-README and public population_steps contracts before editing. Runtime reservation
-cap is generic; do not claim full nested/mixed-method population acceptance yet.
-Continue-until-needed persists. RG-01 placeholder committed/pushed c1798191 directly
-after POP-01/before ML-01; do not switch implementation to it early. Source/locks/
-READMEs/new Runtime+Deployment tests ready to commit; final79 checks PASS,session99176 exited0.
-New campaign_resources standalone uv.lock also belongs in this checkpoint. User
-ocular PDF/DOCX remain untracked and untouched. Demo wrappers remain drained.
-
-
-2026-10-14 21:14:16 OWNER CORRECTION/PLANNING INTERRUPTION: added critical RG-01
-LLM Research Graph Generation immediately AFTER POP-01 and BEFORE ML-01. All0%.
-LLM generates/refines research/domain graphs; Knowledge augments model context,
-not a prerequisite corpus or substitute generator. Source extraction/campaign
-curation alone does not satisfy this. AGENTS/MBT/index record the correction.
-Placeholder only; return to POP-01.01 E2. No new implementation scope activated.
-Runtime0.68 and Deployment0.20.3 source changes IN PROGRESS, not committed/qualified.
-Actual SQL14 tests pass (caps1/4/8, expiry/prepared/failure/uncertainty/cancel);
-owned containers removed. Broad definitions/lifecycle/completion/scheduling/API SQL
-probe running session2318; driver .test-results/verify_bounded_capacity_sql.py
-always removes its new owned test container, retains volume.74 Deployment/boundary
-checks pass. Need inspect broad SQL result, verify HTTP test, qualify independent
-Runtime install/restart/preflight, update locks/docs and commit. E2 still0 pending
-full bounded dispatch/collection acceptance. Demo wrappers remain drained.
-
-
-2026-10-14 21:03:53: POP-01.05 explicitly approved; E1/D4 publication COMPLETE.
-16 source+16 independent contract tests (seven public wheels),99 legacy contract
-checks,30 publication checks and dependency guard PASS.744 schemas,740 old byte pins.
-E1=100%, Execution25%, parent8.33%, Build12.5%, Verification0. E2=0 active task:
-Runtime bounded admission, immutable resource profile and global claim-cap enforcement;
-next actual SQL concurrent claims/mixed-tool expiry/prepared intents/recovery checks.
-Continue-until-needed persists. Local14c/LAN14a wrappers drained; databases retained.
-No temporary test containers yet. User ocular files untouched; v1 unchanged.
-Prior gate paragraphs below are historical and superseded by this approval/checkpoint.
-
-
-2026-10-14 20:57:38: owner explicitly APPROVED POP-01.05. Current task is E1/D4
-publication/compatibility of campaign_resources; then E2 Runtime bounded admission,
-global reservation cap and recovery guards. Continue-until-needed remains active.
-Both current local14c/LAN14a wrappers have drained (stopped.json present); source
-edits are safe. Retained demo databases remain running. No temporary test containers
-created. Prior approval blocker below is superseded; percentages await verified work.
-
-2026-10-14 20:42:26: owner resumed CONTINUE-UNTIL-NEEDED; prior stop for detours
-is superseded. Startup-credit applications deferred; no future automation requested.
-Primary return point POP-01.01 E1/D4: independent work already complete and pushed;
-exact remaining decision is POP-01.05 additive graph.admit_draft_bounded command,
-POST /v1/graph-drafts/admit-bounded, immutable campaign-invocation-cap-v1 limit1..8.
-General resume is not recorded as approval of this explicitly reserved public boundary.
-E1=93.75%, D4=75%, E2=0; do not implement the proposed public route before direction.
-Concrete review/proofs already in POP-01.05 and POP-01_Composition_Transitions.md.
-Keep existing demo serving/curation paused; drain before future implementation edits.
-KB-01 remains queued, not a substitute for the active gate. No source changes.
-
-2026-10-14 20:25:10 owner request: added queued [KB-01 Initial Scientific Knowledge Corpus](docs/Build%20Plans/KB-01%20Initial%20Scientific%20Knowledge%20Corpus.md).
-Overall/Build/Acceptance0%; K1/K2/K3/V1=0. MBT successor slot5 and plan index updated;
-existing priority/POP percentages preserved. Planning only; no corpus import or activation.
-LAN14a gateway still listening; serve_lan_review.py invite succeeded20:25:10,
-fresh5min single-use sign-in copied to clipboard/Open Amphora.url. No duplicate
-demo launcher or paid calls. Await owner direction; POP E1/D4 remains return point.
-
-OWNER DETOUR COMPLETE2026-10-14: [Early-stage compute estimates](docs/Early_Stage_Compute_Estimates.pdf).
-Owner correction: production is LINUX/containerized; Windows is development only.
-PDF replaced with FOUR-page business brief at owner's request (3-4page maximum),
-retaining~$6500/month ballpark, capacity assumptions/provider tradeoffs/90day approach.
-Four-page count, readable rendering,12clickable pricing links and text checks PASS.
-Reproduce current version using .test-results/build_compute_estimates_brief.py;
-older22page generator/audit below are historical and must not overwrite this brief.
-Business90day analysis: two future concurrent campaigns,20ML releases/week,
-v1 models read-only; USD1-10k/month includes infra/storage/training/agent APIs;
-labor/data licenses separate. Original research used32external primary references plus11
-local evidence references. Arithmetic, page/text bounds, links and rendered visual
-inspection PASS. Provision~$6.5k/month; exact base$6327,lean$2594,stress$32267.
-CPU-first Amphora models; separate v1NOMAD GPU/8000feature program explicitly scoped.
-AWS/Azure/GCP, ML vendors and physical rental analyzed; no cloud procurement, paid
-calls, model training, code/service changes or new containers. Reproduction/check
-scripts and public price snapshots under ignored .test-results/compute-estimate*;
-generator build_compute_estimates.py. POP E1/D4 position preserved; STOP and await
-owner's next direction. This estimate does not qualify two-campaign execution.
-
-2026-10-14 reboot recovery: owner requests STOP after restoration for a detour;
-do not resume POP implementation automatically. D4 checkpoint already committed AND
-pushed as 75eaa03b (zero commits ahead of upstream); older "ready to commit" text below
-is stale. POP-01.05 remains proposed, E1=93.75%, D4=75%, E2=0.
-Docker Desktop and exact retained demo PostgreSQL/Qdrant pair restarted; historical
-test containers not restarted. LAN wrapper .test-results/curation-demo-lan-20261014a
-ready. Local attempts14a/14b ended on 60-second NAS import/readiness timeouts;
-local14c READY at11:30:58; wrapper PID6544. Uses ignored restart-20261014.py with180-second startup/read-only budget
-check allowance, no source/package/execution-limit changes. Curation stays PAUSED.
-Verified11:31:26: all7owners running; Hansen/Arrhenius standby, no faults;
-planning-curation/runtime-coordinate/runtime-deliver quiescent with0turns. Frozen
-static identity and retained peer reads PASS; read-only allowance PASS,7reserved/
-30remaining slots unchanged. Local http://127.0.0.1:57013; LAN https://192.168.1.70:57013.
-Five-minute LAN invite issued11:31:26 has expired; mint fresh only when needed.
-Open Amphora.url in LAN14a; serve_lan_review.py invite uses this exact session.
-Both wrappers bounded86400seconds. STOP each output folder to drain before source work.
-Restoration complete; STOP WORK for owner's detour. Owner requires temporary
-test containers removed after verification; rule recorded in AGENTS.md. No containers
-created during this restart. Baseline verifier reports ADDED v1/LICENSE (tracked);
-no v1 modifications or manifest regeneration made. User ocular files preserved.
-
-Refreshed checkpoint 2026-10-13 22:38:12. Continue-until-needed persists. POP-01.04 approved;
-POP-01.05 is proposed ONLY. Public bounded admission command needs owner direction.
-D3 pushed9e15ca43 (D2 2a161097): Search0.12 two335test isolated installs/replay/wheels,
-356source checks +corrected publication rerun/guard;740schema pins unchanged.
-D4 committed/pushed75eaa03b: compiler-only nested generation/batch/scatter,
-parallel unequal method branches,19stage multi-input process and exact resource math.
-13fixture/resource +4ownership checks PASS22381. Five duplicate test-scope aliases
-removed; parent ownership/dev coverage preserved. No public Runtime source changes.
-D1-D3=100,D4=75; E1=93.75%, Execution23.44%, parent7.81%, Build11.72%, Verification0.
-See docs/Audits/POP-01_Composition_Transitions.md. Independent work complete;
-remaining unit is resolved POP-01.05 resource contract. E2 remains0. No test running.
-
-USER INTERRUPTION: Knowledge content missing in demo. Read-only diagnosis complete:
-actual browser shows6synthetic concepts; Hansen neighborhood3concepts/2relationships.
-Seed source dev/scientific_execution/knowledge_records.py creates6concepts/5claims.
-No inherited v1 Knowledge corpus imported. UI waits for concept click to draw graph.
-User expects starting domain content from prior versions; explanation given. Content
-seeding is separate from trained-model recovery. No import/new plan/priority change
-made yet. v1 remains read-only; no JARVIS/agents/API calls. Preserve ocular PDF/DOCX.
-
-FROZEN DEMO RESTORED: local56570/.test-results/curation-demo-session-20261013l;
-LAN89119/.test-results/curation-demo-lan-20261013j. Both ready. Studio0.36/servingh.
-Curation deliberately PAUSED (--live --pause-curation), scientific owners/standby
-running. No paid calls or new campaigns. Local browser actual Knowledge readPASS.
-Do not edit source/tests/module README while serving. Stop via each session/STOP
-and wait drained before source work. Docs/git allowed. No duplicate wrapper start.
-Fresh invite for LAN can use serve_lan_review.py invite (secret link clipboard only).
-
-After owner's detour/resume direction: next POP gate is exact POP-01.05 bounded
-admission decision, under AGENTS material scope requirement. D4 commit/push is done.
-Knowledge diagnosis remains valid; do not imply v1 corpus import exists.
-
-Demo selected .test-results/curation-demo-serving-20261013h Studio0.36, UI-02 complete
-pusheda614e594. Local13k/LAN13i drained; local13l/LAN13j now RUNNING (see current task).
-LAN access confirmed by user after fresh sign-in. Gateway restart invalidates sessions;
-base URL/Refresh workspace cannot mint one. serve_lan_review.py invite writes .url and
-copies5min single-use link to host clipboard; do not print ticket. Authenticated probe
-session200, actual v1/graph-observations/{run}/nodes200,logout200. Earlier v3route502
-was an invalid probe, not an application fault. Keep frozen demo unchanged.
-
-Final verification:473 full Studio tests + production dependency guard pass
-(sessions40440/96609 exit0). All candidate/example/managed-demo probes exited and
-closed owned probe hosts. Subsequent review wrappers have now drained for POP implementation.
-Actual candidate qualification c LOCAL+HTTPS192.168.1.70:57013 passed; scope
-chemical-handoff/33ee1dfb0ed6444faf01d745c99338b4; rune79d32593d324d7983f3969260a5e976.
-Runtime0.67, SDK0.3, Registry0.2, Research0.41, chemical0.1; installed independent
-owners+Gateway0.7. Formula C4H10O3/800x600 PNG, exact proof/input/output/candidate.
-1440/390/200%, axe, image decode, no unexpected writes. LAN uses existing CA plus
-exact public certificate SPKI allowance in test browser; no new remote firewall claim.
-Evidence docs/Audits/Evidence/UI-02-Chemical/Candidate_Inspector.json + screenshots.
-
-Selected frozen demo .test-results/curation-demo-serving-20261013h (Studio0.36),
-JS shad7a79afaf5ae186381637771b05c7a0992996c923ef8ba986640c1f1096aa265.
-Upgrade .test-results/ui02-serving-upgrade-20261013b passed LOCAL+LAN original retained
-proposal/successor/results/Knowledge/composer/reload, no model call/new campaign,
-original Planning record unchanged. Workflow61637 exit0. Originalf preserved.
-Wrappers13k/LAN13i STOPPED; new local13l/LAN13j RUNNING. Static identity checked. Existing serve --live supplies authorized key; --pause-curation permits
-read-only smoke while worker stays unstarted. Never print secrets.
-
-Separate supplied-structure example supports local57014 via verify_chemical_handoff
---hold-seconds86400 (must include --studio/--gateway-installation; no LAN flag).
-Runbook docs/Demo/Candidate_Structure_Review.md. Probe55438 EXIT0 at3-second hold:
-.test-results/ui02-candidate-example-check-20261013b. Exact run is
-fef11fbe993548bdbcaeef6722b9e42d; derive_structure -> finite molecule. Bodyless launcher
-POST creates short-lived Open supplied structure.url only; INVITE refreshes; STOP
-drains. ready/stopped JSON contain no token. Do not print .url contents. Prior a
-failed from extra JSON body; corrected without weakening Gateway. Same producer
-fixture, no model call, no molecule attached to old scalar campaign. No example live.
-
-P3 model/transport/presentation READMEs own replacement boundaries. CandidateResults
-scans2pages/100nodes direct invoke outputs; finish forwarding excluded. Numeric
-selection/fronts are separate from molecular unranked/absent properties/synthesis.
-Source must remain frozen while serving/testing; demo is now drained and POP-01.04 is approved. Continue E1 after active verification completes.
-
-## Completed P1 proof
-
-Pushed implementation146e89f2: Runtime0.67, SDK0.3 exact owner-local execution_profiles,
-existing default synthetic compiler/universe-v1 bytes unchanged. New opt-in universe-v2
-retains scope/full release/schema/semantic/context pins. Current admission compares
-configured universe and fresh Registry observation; old history restores independently.
-Registry0.2 profile was pushed0bc5f436. Chemical0.1 only supplied connected finite
-molecules/fully specified oligomers; Research0.41 explicit opt-in exact candidate.
-No public HTTP DTO/route/table changes or peer-private imports. SDK0.3 caused24 exact
-package-lock updates; no inherited scientific kernel change. Chemical environment
-lock fingerprint refreshed and LF normalized. Old SDK default constructor kwargs
-preserved after an original oracle caught an extra None argument.
-
-Source evidence:234 Runtime compiler/definitions/profile tests;105 final SDK tests;
-53 additional multi-input/Runtime cases. Schema publication and dependency guard0.
-Isolated installed tool32 and SDK-profile11 copied tests pass (session11547 exit0).
-Dev intentionally lacks Pillow/RDKit; tool tests run in isolated chemical env.
-
-Actual handoff session3199 EXIT0, all probe hosts closed:
-.test-results/ui02-chemical-handoff-20261013e/http/evidence.json.
-Fresh Runtime/Data/Research/chemical/SDK controller installs in the same e root;
-Registry reused .test-results/ui02-registry-installation-20261013a (0.2.0).
-Public register/activate/deploy/heartbeat/resolve -> draft save/validate/admit ->
-actual SDK worker -> Data output -> Research registration/replay all passed.
-Scope chemical-handoff/1d2b100fc17044f3bda2967c3f754a7b;
-run e38b5e124f4b4c96a38ccbf439adfeb3 completed, spent1.
-Supplied OCCOCCO -> C4H10O3,10649byte800x600 PNG hash verified/visually inspected.
-Wrong candidate registration rejected. Research restart preserves history; removed
-Research Data access rejects registration retry while existing identity remains.
-Cold Runtime replacement with no structural grant: original admission receipt,
-validation and completed graph read identically; new admission rejects
- draft_universe_changed. Retained draft-replacement.json proves this. No model calls.
-Committed compact evidence is docs/Audits/Evidence/UI-02-Chemical/Structural_Handoff.json;
-P1 audit docs/Audits/UI-02_Chemical_Representation.md. P1 closeout pushedef5375a4.
-Declared c-image pins prove native processes, NOT Linux images/container deployment.
-
-Scientific authority: structural_derivation only; no generation, ranking, properties,
-synthesis/biological efficacy. Planning evolutionary topology remains synthetic-only,
-separate POP/ML integration limitation. Static reviewed catalogs retain their existing
-host-allowlist semantics; actual new structural qualification uses draft admission.
-
-## Implementation navigation
-
-Runtime execution_profiles plus compiler/catalog.py, coordinator/configuration.py,
-definitions/validation.py (versioned universe), definitions/admission.py and
-eligibility client/observations. SDK execution_profiles + worker.py private host DTO.
-Tests in owning execution_profiles folders; dev/test_scopes.json entries registered.
-Actual fixture services/research/tests/candidate_registration/chemical_acceptance:
-environment.py, probe.py, draft_handoff.py. Dev verify_chemical_handoff.py reuses
---installations/--registry-installation; omit installations to rebuild fresh peers.
-No test/install workflow running. Live review wrappers require source freeze.
-
-Studio existing scientific_output page model supports Hansen/Arrhenius ONLY;
-DataProvenanceClient.jsonArtifact owns current rights/metadata/bytes hash; RequestLane
-owns cancellation/hide/rebind. ScientificHTTP route allowlist and generated scientific
-contracts must be inspected before candidate/fitness reads. Existing public Research
-candidate route /v1/candidates/read is not assumed wired to Studio/Gateway. Preserve
-transport -> page model -> props -> presentation and module boundaries.
-
-## Demo state
-
-Historical local49406 (.test-results/curation-demo-session-20261013k) and LAN6535
-(.test-results/curation-demo-lan-20261013i) are now STOPPED; ready/JS identity was verified at
-2026-10-13 18:27:28. Shared Docker PostgreSQL/Qdrant untouched. Before new source,
-test or module README edits, touch STOP in both session directories and wait for
-stopped.json/process exit. Fresh next names local13l/LAN13j; never overwrite history.
-Prior local76406/j and LAN88221/h remain drained historical sessions.
-Frozen serving .test-results/curation-demo-serving-20261013h, Studio0.36.0; priorf fallback.
+Keep review alive. Local15a PID27368; LAN15b wrapper PID20524. LAN15a drained after
+expired TLS; same-key certificates renewed90days. Frozen serving20261013h/Studio0.36,
+Deployment0.20.2 and Gateway0.7. Curation paused, no automatic campaigns/provider calls.
 Local http://127.0.0.1:57013; LAN https://192.168.1.70:57013.
-JS shad7a79afaf5ae186381637771b05c7a0992996c923ef8ba986640c1f1096aa265.
-ROOT C:/Users/alb_p/AppData/Local/Packages/PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0/LocalCache/Local/Amphora/local-v2/restore-20261007b
+Root C:/Users/alb_p/AppData/Local/Packages/PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0/LocalCache/Local/Amphora/local-v2/restore-20261007b.
 TLS same LocalCache/Local/Amphora/lan-demo-20261008.
-Serving owners unchanged: Planning .test-results/curation-planning-installation-20261013b/owner0.142;
-Deployment .test-results/curation-deployment-installation-20261013a/owner0.20.2;
-Gateway .test-results/successor-gateway-installation-20261012a/owner0.7.
-Existing demo scope internal/knowledge-demo-1b1dc25768334153b58973882627b858,
-successor563e14a17f2e4539aeece1838dce80ec, predecessor ae03d1a0d62143f4930f67819a0dc6a9.
-Four synthetic Hansen/Arrhenius invokes, no molecule or winner. Original g proposal
-ready/draft_validated; do not resubmit. Existing UI-01 proof445 checks/local/LAN/200%.
+Fresh sign-in uses original frozen Deployment interpreter:
+v2/.test-results/curation-deployment-installation-20261013a/owner/environment/Scripts/python.exe
+invoking original v2/dev/serve_lan_review.py invite --root <root above> --session
+Z:/mvp20-split/v2/.test-results/curation-demo-lan-20261015b.
+It writes a five-minute single-use Open Amphora.url and host clipboard. Never print
+its token/contents. Remote computer may need renewed amphora-demo-ca.cer trusted.
+Do not use old Start-Demo.ps1 to replace this retained review with an older snapshot.
+When owner finishes review, touch STOP in original local15a/LAN15b directories and
+wait for stopped.json/process exits BEFORE original source edits or branch promotion.
+Only original demo PostgreSQL/Qdrant should remain running between test probes.
 
-## Authority and budget
+## Authority and retained budget
 
-No agents/JARVIS access/v1 edits. Preserve user untracked ocular PDF/DOCX under
-docs/Artifacts. Exact-path staging; commit/push. Container hosting deferred.
-No new paid calls. Approved next$10: qualification16holds/$4.05 includes prior$3.30;
-demo7holds/$1.75,30slots/$7.50 unreserved. Since approval10physicalcalls/$2.50 held.
-Known estimate$0.521323500 PLUS unknown original demo-b charge. No refunds/resets.
-Secrets env/memory only; Z:/ssos/.env authorized; Deployment vault retained.
-Never print credentials/cookies/raw browser exceptions. No further approval required
-for approved execution correction or existing P2-P4 scope.
+No subagents, external JARVIS/ssos access, fleet actions or v1 modifications.
+Historical absolute paths are provenance, not new access authority. Preserve user
+untracked ocular PDF/DOCX under original v2/docs/Artifacts. Exact-path staging;
+commit/push significant verified work on the isolated branch. Production is Linux
+containers; this Windows machine is development. Full stack container hosting is not
+yet activated. Credentials remain in env/vault; never print keys/cookies/invite URLs.
+
+No new paid calls in this work. Existing approved budget ledger remains unchanged:
+approved next$10; qualification16holds/$4.05 includes prior$3.30; demo7holds/$1.75;
+30slots/$7.50 unreserved. Since approval10physicalcalls/$2.50 held. Known estimate
+$0.521323500 PLUS unknown original demo-b charge. No refunds or resets inferred.

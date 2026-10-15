@@ -39,7 +39,8 @@ The initial program proves software behavior using deterministic/synthetic fixtu
 POP-01 E2 active: parent10.42%, Build15.63%, Execution31.25%, E1=100%; remaining gates0%.
 Retention prerequisite qualified (Data0.32/Runtime0.69); E2.2 population workers active.
 Search0.13 installed seed primitive qualifies16 members/26-artifact closure; same-run
-slicing/evaluation and full worker-unit qualification remain pending.
+seed/slice binding now qualifies8 contexts/36-artifact closure and spent2; numerical
+evaluation and full worker-unit qualification remain pending.
 [Seed evidence](../Audits/POP-01_Population_Seed_Worker.md).
 [Closure evidence](../Audits/POP-01_Closure_Retention.md). Isolated implementation
 worktree preserves the active frozen review session.

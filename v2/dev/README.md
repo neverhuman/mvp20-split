@@ -484,3 +484,9 @@ retention, real claim/renew/read/publication/completion and authoritative receip
 inspection. Fixture context is explicitly not an executed method graph. Failed
 worker evidence retains safe error code and scoped run snapshot; all owners and
 fixture containers still drain/remove in the parent finally.
+
+--population-slice extends that primitive probe with an existing wire-v4 materialized
+SliceRequest and same-run slice worker. The driver follows bounded coordinator
+passes, retaining command identity while pending, before expecting queued work. It
+checks eight contexts/cursor8, confirmed36-artifact closure and completed spent2;
+this does not execute the declared scientific method graph.

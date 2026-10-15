@@ -43,7 +43,8 @@ so the SDK can verify each renewed lease. Enforcing complete configured populati
 expanded-ancestry feasibility and installed actual-owner worker acceptance remain
 E2 gates. The installed seed primitive is qualified for16 members/26 retained
 artifacts; its fixture does not execute the declared method graph. Slicing has
-source batch1/8/32 checks; its actual same-run graph binding remains pending.
+source batch1/8/32 checks and an actual installed same-run wire-v4 handoff: eight
+contexts, correct cursor, confirmed36-artifact closure and exactly two spent invokes.
 Selection/successor and scientific method/fitness execution remain later
 owned deliveries. Input references alone do not prove accepted predecessors.
 
