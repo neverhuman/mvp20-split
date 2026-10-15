@@ -14,7 +14,7 @@ from ..population.conftest import population_original
 
 class Attempt:
     def __init__(self):
-        self.invocation = SimpleNamespace(attempt_id="attempt-1", run_id="admitted-run", inputs=())
+        self.invocation = SimpleNamespace(attempt_id="attempt-1", run_id="admitted-run", inputs=(), checkpoint=None)
         self.live, self.refreshes = True, 0
 
     def check(self):

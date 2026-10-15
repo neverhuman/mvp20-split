@@ -27,7 +27,7 @@ and primary-occurrence only. No molecular encoder or arbitrary method topology i
 inferred. Scientific representations need their own registered producer.
 
 PopulationCapability and PopulationWorker provide explicit population-describe,
-population-schema and population-worker CLI modes for seed/slice. They compose
+population-schema and population-worker CLI modes for seed/slice/evaluate-squares/evaluate-negative-sum. They compose
 public RuntimeClient/ArtifactClient/ToolAttemptContext; the lifecycle is adapted
 from the v2 SDK pure worker with tool-owned reference publication. Claims, renewals,
 completion ambiguity and final acceptance retain SDK/Runtime authority. A successful
@@ -50,3 +50,16 @@ owned deliveries. Input references alone do not prove accepted predecessors.
 
 Owned verification lives in evolution_search/tests/population_workers. Test doubles
 prove fencing/identity/ancestry behavior; actual Data/Runtime acceptance is separate.
+
+Search0.14 adds PrimaryCohort reconstruction shared by slices and PrimaryMethod.
+The two explicit dimensionless numerical primitives consume CandidateContext,
+validate complete frozen membership, birth replay and exact method tool/node/schema
+pins, then publish the public ObjectiveValue DTO under tool-owned schema
+population-method.objective-value/1. Each result has exactly one direct context
+parent; invocation input carriers and frozen context remain in the ancestry.
+No chemistry evaluator, conditional policy or fitness aggregation is inferred.
+Both independently installed methods passed real eight-member scatter, exact values,
+Data derivation attribution, confirmed retention and Runtime completion/spent10.
+The sixteen-member source cohort was intentionally only half dispatched. Full
+collection, selection, successor composition and Registry/image attestation remain
+unqualified. See docs/Audits/POP-01_Population_Method_Workers.md.

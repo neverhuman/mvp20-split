@@ -48,7 +48,9 @@ def request(port, path, body=None, *, method=None):
         connection.close()
 
 
-def verify(output, data_python, runtime_python, population_python=None, *, population_only=False, population_slice=False):
+def verify(output, data_python, runtime_python, population_python=None, *, population_only=False, population_slice=False, population_method=None):
+    if population_method is not None:
+        population_slice = True
     if (population_only or population_slice) and population_python is None:
         raise ValueError("Population-only probe requires its isolated interpreter")
     output = output.absolute()
@@ -186,7 +188,7 @@ def verify(output, data_python, runtime_python, population_python=None, *, popul
             from population_seed_fixture import verify as verify_seed
             loss["enabled"] = False
             verify_seed(output, population_python, (data_port, runtime_port), environment, scope,
-                        call, command, start, stop, with_slice=population_slice)
+                        call, command, start, stop, with_slice=population_slice, method_operation=population_method)
             return
         start("data", data_python, data_port, environment)
         runtime = start("runtime", runtime_python, runtime_port, environment)
@@ -266,7 +268,7 @@ def verify(output, data_python, runtime_python, population_python=None, *, popul
         if population_python is not None:
             from population_seed_fixture import verify as verify_seed
             verify_seed(output, population_python, (data_port, runtime_port), environment, scope,
-                        call, command, start, stop, with_slice=population_slice)
+                        call, command, start, stop, with_slice=population_slice, method_operation=population_method)
         write(output / "evidence.json", {"status": "passed", "timestamp_local": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
             "scope": "Synthetic actual installed owner HTTP/restart, not population scientific execution",
             "members": 4, "lost_responses": 2, "restarted_owners": ["data", "runtime"], "committed_group": "confirmed",
@@ -295,7 +297,8 @@ if __name__ == "__main__":
     parser.add_argument("--population-python", type=Path)
     parser.add_argument("--population-only", action="store_true")
     parser.add_argument("--population-slice", action="store_true")
+    parser.add_argument("--population-method", choices=["evaluate-squares", "evaluate-negative-sum"])
     args = parser.parse_args()
     verify(args.output, args.data_python.absolute(), args.runtime_python.absolute(),
            None if args.population_python is None else args.population_python.absolute(),
-           population_only=args.population_only, population_slice=args.population_slice)
+           population_only=args.population_only, population_slice=args.population_slice, population_method=args.population_method)

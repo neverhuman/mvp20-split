@@ -11,9 +11,10 @@ from ..ranking import require
 
 
 class PopulationArtifacts:
-    def __init__(self, client, attempt, implementation):
+    def __init__(self, client, attempt, implementation, *, transformation_id="population.numeric-steps"):
         self.client, self.attempt, self.implementation = client, attempt, implementation
         self.published = {}
+        self.transformation_id = transformation_id
 
     @property
     def scope(self):
@@ -41,7 +42,7 @@ class PopulationArtifacts:
         content = ContentDescriptor(sha256=hashlib.sha256(raw).hexdigest(), size_bytes=len(raw),
             media_type="application/json", schema_ref=schema)
         declaration = DerivationDeclaration(transformation=TransformationDescriptor(
-            transformation_id="population.numeric-steps", version=self.implementation.version,
+            transformation_id=self.transformation_id, version=self.implementation.version,
             sha256=self.implementation.sha256), inputs=parents)
         identity = (content.model_dump_json(), declaration.model_dump_json())
         if label in self.published:

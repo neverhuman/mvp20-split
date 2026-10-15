@@ -21,7 +21,9 @@ def main():
         if owner == "runtime":
             from amphora_campaign_runtime.coordinator.configuration import load_graphs
             raw = json.loads(Path(config).read_bytes())
-            record["plan_sha256"] = load_graphs(raw["graphs"], Path(config).parent)[0][0].plan.sha256
+            entries = load_graphs(raw["graphs"], Path(config).parent)
+            record["plan_sha256"] = entries[0][0].plan.sha256
+            record["plans"] = {entry.plan.document.definition.campaign_id: entry.plan.sha256 for entry, _, _ in entries}
         Path(ready).write_text(json.dumps(record), encoding="utf-8")
         uvicorn.run(host.app(), host="127.0.0.1", port=int(port), access_log=False)
     finally:

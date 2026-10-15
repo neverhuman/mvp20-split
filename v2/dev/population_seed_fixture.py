@@ -19,9 +19,10 @@ from amphora_contracts_population_steps import (
 from amphora_contracts_search import ImplementationPin
 
 from verify_retention_closure_installation import ROOT, request, write
+from population_method_fixture import MethodFixture
 
 
-def verify(output, python, ports, environment, scope, call, command, start, stop, *, with_slice=False):
+def verify(output, python, ports, environment, scope, call, command, start, stop, *, with_slice=False, method_operation=None):
     data_port, runtime_port = ports
     descriptor_result = subprocess.run([str(python), "-I", "-m", "amphora_evolution_search", "population-describe",
         "--operation", "seed", "--image-sha256", "f" * 64], capture_output=True, timeout=120)
@@ -35,6 +36,7 @@ def verify(output, python, ports, environment, scope, call, command, start, stop
         assert result.returncode == 0, "Installed slice descriptor failed"
         slice_descriptor = json.loads(result.stdout)
         write(output / "population-slice-release.json", slice_descriptor)
+    method_fixture = None if method_operation is None else MethodFixture(output, python, scope, environment, ports, method_operation)
     data = json.loads((output / "data.json").read_bytes())
     models = (
         (PopulationSpecification, population_specification_schema()),
@@ -50,6 +52,8 @@ def verify(output, python, ports, environment, scope, call, command, start, stop
         models += ((PopulationSliceRequest, population_step_schema("population-step.slice-request")),
                    (PopulationMemberSlice, population_step_schema("population-step.member-slice")),
                    (PopulationCandidateContext, population_step_schema("population-step.candidate-context")))
+    if method_fixture is not None:
+        models += method_fixture.models
     for index, (model, ref) in enumerate(models):
         schema = model.model_json_schema(mode="validation")
         schema.update({"$schema": "https://json-schema.org/draft/2020-12/schema",
@@ -95,7 +99,21 @@ def verify(output, python, ports, environment, scope, call, command, start, stop
         return call(data_port, "/v1/artifacts/finalize", command("artifacts.finalize", {
             "upload_id": upload["upload_id"], "content": upload["content"]}))["artifact"]
 
-    context = publish({"scope": "synthetic-seed-primitive-only", "method_graph_executed": False}, context_schema)
+    def read(reference):
+        import http.client
+        connection = http.client.HTTPConnection("127.0.0.1", data_port, timeout=20)
+        try:
+            connection.request("GET", "/v1/artifacts/" + reference["artifact_id"] + "/content",
+                headers={"Authorization": "Bearer " + "q" * 32})
+            response = connection.getresponse()
+            raw = response.read()
+            assert response.status == 200
+            assert len(raw) == reference["size_bytes"] and hashlib.sha256(raw).hexdigest() == reference["sha256"]
+            return json.loads(raw)
+        finally:
+            connection.close()
+
+    context = publish({"scope": "synthetic-numeric-primitive-only", "method_graph_executed": method_fixture is not None}, context_schema)
     original = json.loads((ROOT / "tools/evolution_search/tests/population/specification/fixtures/specification.json").read_bytes())
     original["scope"], original["representation"] = scope, candidate_birth_schema().model_dump()
     original["implementations"] = [ImplementationPin(name="numeric-population-steps",
@@ -106,14 +124,10 @@ def verify(output, python, ports, environment, scope, call, command, start, stop
         method["conditions"] = context
     original["assembly"]["policy"] = original["constraints"] = context
     original["context"], original["knowledge"] = [], []
-    specification = publish(PopulationSpecification.model_validate_json(json.dumps(original)).model_dump(mode="json"),
-        population_specification_schema().model_dump(), [context])
-    source = publish(SeedPopulationRequest(schema_version="1", specification=specification).model_dump(mode="json"),
-        population_step_schema("population-step.seed").model_dump(), [specification])
-
     def shape(direction, release=descriptor):
-        return {"kind": "artifact", "schema_ref": release["tool"][direction][0]["schema_ref"],
-            "representation": "population-reference-v1", "unit": "1", "media_type": "application/json"}
+        port = release["tool"][direction][0]
+        return {"kind": "artifact", "schema_ref": port["schema_ref"],
+            "representation": port["representation"], "unit": port["unit"], "media_type": "application/json"}
     definition = {"schema_version": "2", "profile": "deterministic-v1", "campaign_id": "population-seed-primitive",
         "revision": 1, "scope": scope, "context": [], "body": {
             "inputs": [{"name": "parameters", "value_type": shape("inputs")}],
@@ -142,6 +156,8 @@ def verify(output, python, ports, environment, scope, call, command, start, stop
                 "source": {"kind": "output", "node_id": "slice", "port": "result"}}]}]
         body["edges"] = [{"source": left["node_id"], "target": right["node_id"], "route": "next"}
                          for left, right in zip(body["nodes"], body["nodes"][1:])]
+    if method_fixture is not None:
+        method_fixture.decorate(definition)
     write(output / "population-seed-graph.json", definition)
     lock = {"schema_version": "1", "tool": descriptor["tool"]["binding"], "checkpoint_schema": None,
         "descriptor_sha256": hashlib.sha256(json.dumps({"profile": "amphora-tool-release-v1", "descriptor": descriptor},
@@ -167,11 +183,21 @@ def verify(output, python, ports, environment, scope, call, command, start, stop
             for index, (_, schema) in enumerate(models) if schema.sha256 in {
                 slice_descriptor["tool"]["inputs"][0]["schema_ref"]["sha256"], slice_descriptor["tool"]["outputs"][0]["schema_ref"]["sha256"]})
         runtime["bindings"] = {"endpoint": f"http://127.0.0.1:{data_port}", "token_env": "QUAL_TOKEN"}
+    if method_fixture is not None:
+        method_fixture.configure(runtime, models)
     write(output / "runtime.json", runtime)
     ready = start("runtime", Path(environment["QUAL_RUNTIME_PYTHON"]), runtime_port, environment)
+    if method_fixture is not None:
+        definition_reference = publish(method_fixture.definition, method_fixture.graph_schema.model_dump(), [context])
+        method_fixture.pin(original, definition_reference, ready["plans"]["population-primary-method"])
+    specification = publish(PopulationSpecification.model_validate_json(json.dumps(original)).model_dump(mode="json"),
+        population_specification_schema().model_dump(), [context, original["method_graph"]["definition"]]
+        if method_fixture is not None else [context])
+    source = publish(SeedPopulationRequest(schema_version="1", specification=specification).model_dump(mode="json"),
+        population_step_schema("population-step.seed").model_dump(), [specification])
     admitted = call(runtime_port, "/v1/graph-runs", command("graph.admit", {"plan_sha256": ready["plan_sha256"],
         "inputs": [{"port": "parameters", "value": {"kind": "artifact", "representation": "population-reference-v1", "unit": "1", "artifact": source}}],
-        "budget": {"limit": 2 if with_slice else 1}}))
+        "budget": {"limit": 10 if method_fixture is not None else 2 if with_slice else 1}}))
     run = admitted["outcome"]["committed"]["object_id"]
     worker_config = {"actor_id": "population-worker", "scope": scope, "run_id": run, "image_sha256": "f" * 64,
         "runtime": {"endpoint": f"http://127.0.0.1:{runtime_port}", "token_env": "QUAL_WORKER_TOKEN"},
@@ -216,7 +242,7 @@ def verify(output, python, ports, environment, scope, call, command, start, stop
     else:
         write(output / "population-materialization-state.json", state)
         raise AssertionError("Slice materialization did not issue work within bounded coordinator passes")
-    slice_evidence = None
+    slice_evidence = method_evidence = None
     if with_slice:
         result = subprocess.run([str(python), "-I", "-m", "amphora_evolution_search", "population-worker", "--operation", "slice",
             "--config", str(output / "population-worker.json")], env=environment, capture_output=True, timeout=1200)
@@ -234,26 +260,21 @@ def verify(output, python, ports, environment, scope, call, command, start, stop
         call(data_port, "/v1/reservations/confirm", command("artifacts.confirm", {
             "reservation_id": slice_reservation, "intent_id": binding["intent"]["intent_id"],
             "runtime_receipt_id": receipt["operation_id"]}))
-        connection = http.client.HTTPConnection("127.0.0.1", data_port, timeout=20)
-        try:
-            connection.request("GET", "/v1/artifacts/" + slice_reference["artifact_id"] + "/content",
-                headers={"Authorization": "Bearer " + "q" * 32})
-            response = connection.getresponse()
-            raw = response.read()
-            assert response.status == 200
-        finally:
-            connection.close()
-        sliced = PopulationMemberSlice.model_validate_json(raw)
+        sliced = PopulationMemberSlice.model_validate_json(json.dumps(read(slice_reference)))
         assert sliced.generation.run_id == run and sliced.prepared.model_dump(mode="json") == prepared
         assert len(sliced.members) == 8 and sliced.start_index == 0 and sliced.next_index == 8 and not sliced.complete
-        call(runtime_port, "/v1/graph-runs/advance", command("graph.advance", {"run_id": run, "max_transitions": 10}))
-        final = call(runtime_port, "/v1/runs/" + run)
-        assert final["status"] == "completed" and final["budget"]["spent"] == 2
+        if method_fixture is not None:
+            method_evidence = method_fixture.run(run, sliced.members, output / "population-worker.json", call, command, read)
+        else:
+            call(runtime_port, "/v1/graph-runs/advance", command("graph.advance", {"run_id": run, "max_transitions": 10}))
+            final = call(runtime_port, "/v1/runs/" + run)
+            assert final["status"] == "completed" and final["budget"]["spent"] == 2
         slice_evidence = {"members": 8, "next_index": 8, "complete": False,
             "same_run": True, "retained_artifacts": slice_closure["artifact_count"], "spent": 2}
     write(output / "population-seed-evidence.json", {"status": "passed", "population": 16,
         "worker_release": descriptor["tool"]["binding"]["release"], "retained_artifacts": closure["artifact_count"],
         "prepared": prepared, "worker_retention_grant": False, "provider_calls": 0,
         "slice": slice_evidence,
-        "scope": "Actual installed seed/slice primitives only; declared method graph and full population composition not executed"})
+        "method": method_evidence,
+        "scope": "Actual installed numerical primitives; full population/fitness/selection composition not executed"})
     print("Actual installed population seed" + ("/slice" if with_slice else "") + " accepted with complete closure; worker retention denied.", flush=True)

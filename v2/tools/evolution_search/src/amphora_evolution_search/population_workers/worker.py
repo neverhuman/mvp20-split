@@ -22,6 +22,7 @@ from .artifacts import PopulationArtifacts
 from .capabilities import PopulationCapability
 from .seed import SeedPreparation
 from .slices import SeedSlices
+from .methods import PrimaryMethod
 
 
 class PopulationWorker:
@@ -39,14 +40,18 @@ class PopulationWorker:
                 or invocation.inputs[0].artifact.schema_ref != self.tool.inputs[0].schema_ref
                 or invocation.inputs[0].artifact.media_type != "application/json"):
             return {"status": "failed", "reason_code": "population_input_binding_mismatch", "retryable": False}
-        session = PopulationArtifacts(self.artifacts, attempt, self.implementation)
+        session = PopulationArtifacts(self.artifacts, attempt, self.implementation,
+                                      transformation_id=self.tool.binding.capability_id)
         source = session.read(invocation.inputs[0].artifact)
         try:
             request = source.decode(self.capability.input_model, self.tool.inputs[0].schema_ref, session.scope)
             if self.capability.operation == "seed":
                 result = SeedPreparation.load(request, session).publish(session)
-            else:
+            elif self.capability.operation == "slice":
                 result = SeedSlices.load(request.prepared, session).publish(request, session)
+            else:
+                result = PrimaryMethod.load(source, session, self.tool.binding).publish(
+                    self.capability.operation, self.tool.outputs[0].schema_ref, session)
         except ProtocolError:
             raise
         except (ValueError, TypeError, KeyError, OverflowError):

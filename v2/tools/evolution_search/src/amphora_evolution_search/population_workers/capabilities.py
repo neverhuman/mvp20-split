@@ -1,19 +1,24 @@
 """Explicit reference-backed synthetic capabilities; legacy operations unchanged."""
 
 import json
+from hashlib import sha256
 from dataclasses import dataclass
 from importlib.metadata import version
 
 from amphora_contracts_population_steps import (
-    PopulationMemberSlice, PopulationSliceRequest, PreparedPopulationGeneration,
-    SeedPopulationRequest, population_step_schema,
+    PopulationCandidateContext, PopulationMemberSlice, PopulationSliceRequest, PreparedPopulationGeneration,
+    SeedPopulationRequest,
 )
 from amphora_contracts_tools import ReleaseDescriptor
+from amphora_contracts_search import ObjectiveValue
+from amphora_contracts_core import SchemaRef
 
 
 PROFILES = {
     "seed": (SeedPopulationRequest, "population-step.seed", PreparedPopulationGeneration, "population-step.prepared"),
     "slice": (PopulationSliceRequest, "population-step.slice-request", PopulationMemberSlice, "population-step.member-slice"),
+    "evaluate-squares": (PopulationCandidateContext, "population-step.candidate-context", ObjectiveValue, "population-method.objective-value"),
+    "evaluate-negative-sum": (PopulationCandidateContext, "population-step.candidate-context", ObjectiveValue, "population-method.objective-value"),
 }
 
 
@@ -36,10 +41,12 @@ class PopulationCapability:
     def schema_ref(self, direction):
         if direction not in {"input", "output"}:
             raise ValueError("unknown_payload_direction")
-        return population_step_schema(PROFILES[self.operation][1 if direction == "input" else 3])
+        name = PROFILES[self.operation][1 if direction == "input" else 3]
+        return SchemaRef(schema_id=name, version="1", sha256=sha256(self.schema_bytes(direction)).hexdigest())
 
     def schema_bytes(self, direction):
-        self.schema_ref(direction)  # Validate direction before indexing.
+        if direction not in {"input", "output"}:
+            raise ValueError("unknown_payload_direction")
         model, name = PROFILES[self.operation][0:2] if direction == "input" else PROFILES[self.operation][2:4]
         schema = model.model_json_schema(mode="validation")
         schema.update({"$schema": "https://json-schema.org/draft/2020-12/schema", "$id": f"urn:amphora:{name}:1:validation"})
@@ -48,7 +55,9 @@ class PopulationCapability:
     def descriptor(self, image_sha256):
         def port(direction):
             return {"name": "parameters" if direction == "input" else "result",
-                    "schema_ref": self.schema_ref(direction).model_dump(), "representation": "population-reference-v1", "unit": "1"}
+                    "schema_ref": self.schema_ref(direction).model_dump(),
+                    "representation": "population-objective-value-v1" if direction == "output" and self.operation.startswith("evaluate-") else "population-reference-v1",
+                    "unit": "1"}
         return ReleaseDescriptor.model_validate_json(json.dumps({"schema_version": "1",
             "tool": {"schema_version": "1", "binding": {"capability_id": "numeric.population-" + self.operation,
                 "release": self.release, "image_sha256": image_sha256, "contract_version": "1"},

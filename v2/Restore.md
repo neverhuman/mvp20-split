@@ -19,19 +19,18 @@ Use this worktree's v2/dev/.venv/Scripts/python.exe. Its ignored v2/.venv/Script
 is a copied tool executable. Do not use original editable imports for worktree tests.
 
 Pushed checkpoints:846e194a closure retention;721880d3 installed seed worker.
-Latest bounded checkpoint 2026-10-15 12:32:49: installed SAME-RUN seed -> wire-v4
-materialization -> slice passes in .test-results/pop01-population-slice-http-20261015b.
-Seed16/closure26; slice8/cursor8/incomplete/closure36; actual confirmations and
-completed run spent2. Probe a assumed a single advance pass; driver now follows
-existing bounded coordinator passes, preserving pending command identity. No engine
-change/new route. All probe owners/containers removed; labeled volumes retained.
-Update docs/commit/push this checkpoint, then numerical method adapters next.
+Latest bounded checkpoint 2026-10-15 13:09:40 America/Chicago: Search0.14 numerical primitives qualified.
+Source302 checks pass; both installed evaluate-squares and evaluate-negative-sum
+execute eight actual scatter members, exact frozen values, derivation context identity,
+confirmed retention and completed spent10. Evidence: docs/Audits/POP-01_Population_Method_Workers.md.
+Installed Search: .test-results/pop01-population-method-install-20261015a/environment.
 
-Next E2.2 component: registered synthetic numerical methods consuming existing
-PopulationCandidateContext and emitting the existing public ObjectiveValue DTO as
-a separately pinned TOOL payload schema (not a new system route/contract family).
-Explicit dimensionless sum-squares and negative-sum functions; verify full frozen
-cohort/declarations, exact method tool/node/policy pins, accepted run scope and birth.
+Next E2.2 component: owner explicitly approved POP-01.07 retained node-input inspection.
+Implement exact separate contracts/node_inputs0.1 + one Runtime GET boundary.
+Existing successful-only producer proof must remain unchanged; no SQL migration,
+new ledger, Data RPC, mutation or snapshot-token requirement. Scope grants read AND
+inspect_receipts; original scope inputs summarized, PreparedInvocation optional,
+262144 response cap. Qualify old schema pins, statuses/grants/scopes and restart.
 Then authoritative observation/fitness integration; E2.3 full authored composition/
 expanded-ancestry feasibility and E2.4 batch/cap matrix remain ordered gates. E2 stays25%.
 No claim of full population/scientific execution or image/Registry attestation.

@@ -4,7 +4,13 @@
 - Last refreshed: 2026-10-15 12:18:22 (America/Chicago).
 - Implementation: 31.25%; E1=100%, E2=25%, E3/E4=0%, four equal delivery gates.
 - Current: E2.1 complete; E2.2a closure-retention prerequisite qualified. E2.2 population workers active.
-- Next: registered numerical method/evaluation worker integration, then authored composition.
+- Next: approved POP-01.07 input inspection, then authoritative collection/fitness and authored composition.
+- E2.2 method checkpoint: Search0.14 source302 checks; both independently installed
+  numerical primitives pass eight-member actual scatter, exact values/context ancestry,
+  confirmed retention and completed spent10. Full worker unit remains0.
+  [Method evidence](../Audits/POP-01_Population_Method_Workers.md).
+- Owner approved [POP-01.07](POP-01.07%20Node%20input%20inspection%20decision.md):
+  separate scoped read-only retained-input observation; no change to producer proof.
 - E2.2 seed checkpoint: Search0.13 source296 +seven frozen source hashes; independent
   actual seed CLI accepted16 members/26-artifact closure; worker retention denied.
   Actual same-run wire-v4 seed/slice also passes: eight contexts, cursor8,36-artifact
