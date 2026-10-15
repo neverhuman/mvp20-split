@@ -11,7 +11,8 @@ from pathlib import Path
 
 from amphora_contracts_runtime import CompleteInvocation
 from amphora_contracts_search import ImplementationPin
-from amphora_contracts_population_steps import SelectPopulationRequest, ProposePopulationSuccessorRequest
+from amphora_contracts_population_steps import SelectPopulationRequest, ProposePopulationSuccessorRequest, PopulationSliceRequest, PreparedPopulationGeneration, population_step_schema
+from amphora_contracts_population import PopulationSpecification, population_specification_schema
 from amphora_contracts_tools import Completion
 from amphora_tool_protocol import (
     ArtifactClient, CommandRejected, CommandUnresolved, ProtocolError, RuntimeClient,
@@ -28,6 +29,8 @@ from .collection import PrimaryCollection
 from .assembly import PrimaryAssembly
 from .selection import InitialSelection
 from .successor_preparation import SuccessorPreparation
+from .payloads import PreparedPrimarySuccessor
+from .method_plan import payload_schema
 
 
 class PopulationWorker:
@@ -53,7 +56,21 @@ class PopulationWorker:
             if self.capability.operation == "seed":
                 result = SeedPreparation.load(request, session).publish(session)
             elif self.capability.operation == "slice":
-                result = SeedSlices.load(request.prepared, session).publish(request, session)
+                result = SeedSlices.load(request.prepared, session, self.runtime).publish(request, session)
+            elif self.capability.operation == "prepare-successor-slice":
+                require(not request.stopped and request.successor is not None, "successor_slice_stopped")
+                detail = session.read(request.successor).decode(PreparedPrimarySuccessor,
+                    payload_schema(PreparedPrimarySuccessor, "population-worker.prepared-successor"), session.scope)
+                prepared = session.read(detail.prepared).decode(PreparedPopulationGeneration,
+                    population_step_schema("population-step.prepared"), session.scope)
+                original = session.read(prepared.specification).decode(PopulationSpecification,
+                    population_specification_schema(), session.scope)
+                require(prepared.generation == detail.generation and prepared.generation.run_id == invocation.run_id
+                    and prepared.generation.predecessor == request.checkpoint, "successor_slice_generation")
+                sliced = PopulationSliceRequest(schema_version="1", prepared=detail.prepared, start_index=0,
+                    limit=original.budget.dispatch_slice)
+                result = session.publish(sliced, self.tool.outputs[0].schema_ref,
+                    (request.successor, detail.prepared, request.checkpoint), "successor/slice-request")
             elif self.capability.operation == "prepare-successor-request":
                 require(request.generation.scope==session.scope and request.generation.run_id==invocation.run_id
                     and request.generation.generation==0,"successor_request_generation")
@@ -77,7 +94,7 @@ class PopulationWorker:
             elif self.capability.operation == "collect-primary":
                 result = PrimaryCollection.load(request, session, self.runtime).publish(request, session)
             else:
-                result = PrimaryMethod.load(source, session, self.tool.binding).publish(
+                result = PrimaryMethod.load(source, session, self.tool.binding, self.runtime).publish(
                     self.capability.operation, self.tool.outputs[0].schema_ref, session)
         except ProtocolError:
             raise

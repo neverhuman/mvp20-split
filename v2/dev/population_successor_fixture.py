@@ -13,10 +13,11 @@ from verify_retention_closure_installation import write
 
 
 class SuccessorFixture:
-    def __init__(self,output,python,scope,environment,ports, *, case="normal",tight=False):
+    def __init__(self,output,python,scope,environment,ports, *, case="normal",tight=False,consume=False):
         self.output,self.python,self.scope,self.environment=output,python,scope,environment
-        self.data_port,self.runtime_port=ports;self.case=case;self.tight=tight;self.descriptors={}
-        for operation in ("prepare-successor-request","prepare-successor"):
+        self.data_port,self.runtime_port=ports;self.case=case;self.tight=tight;self.consume=consume;self.descriptors={}
+        require_operations=("prepare-successor-request","prepare-successor", *(("prepare-successor-slice",) if consume else ()))
+        for operation in require_operations:
             result=subprocess.run([str(python),"-I","-m","amphora_evolution_search","population-describe",
                 "--operation",operation,"--image-sha256","f"*64],capture_output=True,timeout=120)
             assert result.returncode==0,"Installed successor descriptor failed"
@@ -38,6 +39,9 @@ class SuccessorFixture:
         nodes.append({"kind":"finish","node_id":"finish","outputs":[{"port":"result","source":{"kind":"output","node_id":source,"port":"result"}}]})
         body["nodes"]=nodes;body["outputs"][0]["value_type"]=shape(self.descriptors["prepare-successor"],"outputs")
         body["edges"]=[{"source":a["node_id"],"target":b["node_id"],"route":"next"} for a,b in zip(nodes,nodes[1:])]
+        if self.consume:
+            from population_successor_consumption_fixture import decorate_successor_consumption
+            decorate_successor_consumption(definition,self.descriptors["prepare-successor-slice"])
 
     def configure(self,runtime,models):
         runtime["principals"].append({**self.worker,"actions":["claim","renew","complete","read","inspect_receipts"]})
@@ -48,7 +52,7 @@ class SuccessorFixture:
             runtime["graphs"][0]["schemas"].extend({"schema_ref":ref.model_dump(),"path":"population-schema-"+str(index)+".json"}
                 for index,(_,ref) in enumerate(models) if ref.sha256 in needed-present)
 
-    def run(self,run,worker_config,call,command,read):
+    def run(self,run,worker_config,call,command,read,method_fixture=None):
         config=json.loads(worker_config.read_bytes());config.update(actor_id=self.worker["actor_id"],lease_seconds=300)
         for name in ("runtime","artifacts"):config[name]["token_env"]="QUAL_SUCCESSOR_TOKEN"
         path=self.output/"population-successor-worker.json";write(path,config)
@@ -92,15 +96,19 @@ class SuccessorFixture:
             assert births.birth_count==len(rows)==16 and cohort.member_count==proposed
             assert pool.member_count==parents+proposed and declarations.slot_count==detail.evaluations_planned==proposed
             assert rng==16*(1+3+3) and detail.method_attempt_capacity>0
-        for _ in range(16):
+        for _ in range(0 if self.consume else 16):
             call(self.runtime_port,"/v1/graph-runs/advance",command("graph.advance",{"run_id":run,"max_transitions":32}))
             state=call(self.runtime_port,"/v1/runs/"+run)
             if state["status"]=="completed":break
         spent=8 if self.case=="conditional-not-taken" else 24
-        assert state["status"]=="completed" and state["budget"]["spent"]==spent,state
+        state=call(self.runtime_port,"/v1/runs/"+run)
+        assert state["status"]==("running" if self.consume else "completed") and state["budget"]["spent"]==spent,state
         record={"status":"passed","case":self.case,"tight_budget":self.tight,"stopped":decision.stopped,"reason_code":decision.reason_code,
             "birth_slots":0 if decision.stopped else 16,"proposed":proposed,"pool_members":pool_count,"rng_counter":rng,
             "retained_artifacts":closure["artifact_count"],"run_status":state["status"],"spent":spent,
             "future_evaluation_keys_invented":False,"future_scientific_dispatch":False,"provider_calls":0}
         write(self.output/"population-successor-evidence.json",record)
+        if self.consume:
+            from population_successor_consumption_fixture import consume_successor
+            consume_successor(self,run,path,method_fixture,call,command,read)
         return record

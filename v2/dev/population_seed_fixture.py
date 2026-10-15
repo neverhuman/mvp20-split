@@ -26,7 +26,7 @@ from population_selection_fixture import SelectionFixture
 from population_successor_fixture import SuccessorFixture
 
 
-def verify(output, python, ports, environment, scope, call, command, start, stop, *, with_slice=False, method_operation=None, inspect_inputs=False, with_collection=False, collection_case="normal", with_fitness=False, with_selection=False, with_successor=False, successor_tight=False):
+def verify(output, python, ports, environment, scope, call, command, start, stop, *, with_slice=False, method_operation=None, inspect_inputs=False, with_collection=False, collection_case="normal", with_fitness=False, with_selection=False, with_successor=False, successor_tight=False, successor_consume=False):
     data_port, runtime_port = ports
     descriptor_result = subprocess.run([str(python), "-I", "-m", "amphora_evolution_search", "population-describe",
         "--operation", "seed", "--image-sha256", "f" * 64], capture_output=True, timeout=120)
@@ -44,7 +44,7 @@ def verify(output, python, ports, environment, scope, call, command, start, stop
     collection_fixture = CollectionFixture(output, python, scope, environment, ports, case=collection_case) if with_collection else None
     fitness_fixture = FitnessFixture(output, python, scope, environment, ports, case=collection_case, operation=method_operation) if with_fitness else None
     selection_fixture = SelectionFixture(output, python, scope, environment, ports, case=collection_case) if with_selection else None
-    successor_fixture = SuccessorFixture(output, python, scope, environment, ports, case=collection_case, tight=successor_tight) if with_successor else None
+    successor_fixture = SuccessorFixture(output, python, scope, environment, ports, case=collection_case, tight=successor_tight, consume=successor_consume) if with_successor else None
     slice_count = 16 if with_collection else 8
     data = json.loads((output / "data.json").read_bytes())
     models = (
@@ -199,7 +199,7 @@ def verify(output, python, ports, environment, scope, call, command, start, stop
         "output_schemas": [{"port": "result", "schema_ref": descriptor["tool"]["outputs"][0]["schema_ref"]}]}
     runtime = json.loads((output / "runtime.json").read_bytes())
     runtime["principals"][0]["actions"].append("inspect_receipts")
-    runtime["principals"].append({**worker, "actions": ["claim", "renew", "complete", "read"]})
+    runtime["principals"].append({**worker, "actions": ["claim", "renew", "complete", "read", *(("inspect_receipts",) if successor_consume else ())]})
     runtime["inspection"] = {"cursor_key_env": "QUAL_CURSOR_KEY"}
     runtime["graphs"] = [{"definition": "population-seed-graph.json", "releases": [{"descriptor": "population-seed-release.json", "lock": lock}],
         "schemas": [{"schema_ref": ref, "path": "population-schema-" + str(index) + ".json"}
@@ -316,7 +316,7 @@ def verify(output, python, ports, environment, scope, call, command, start, stop
                     if selection_fixture is not None:
                         selection_fixture.run(run, output / "population-worker.json", call, command, read, stop_after_selection=with_successor)
                         if successor_fixture is not None:
-                            successor_fixture.run(run, output / "population-worker.json", call, command, read)
+                            successor_fixture.run(run, output / "population-worker.json", call, command, read, method_fixture)
         else:
             call(runtime_port, "/v1/graph-runs/advance", command("graph.advance", {"run_id": run, "max_transitions": 10}))
             final = call(runtime_port, "/v1/runs/" + run)

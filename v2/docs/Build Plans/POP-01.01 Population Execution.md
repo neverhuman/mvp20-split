@@ -1,16 +1,20 @@
 # POP-01.01 Population Execution
 
 - Status: active E2; parent [POP-01](POP-01%20Population%20Campaign%20Execution%20and%20Experience.md).
-- Last refreshed: 2026-10-15 15:22:42 (America/Chicago).
+- Last refreshed: 2026-10-15 15:44:56 (America/Chicago).
 - Implementation: 31.25%; E1=100%, E2=25%, E3/E4=0%, four equal delivery gates.
 - Current: E2.1 complete; E2.2a closure-retention prerequisite qualified. E2.2 population workers active.
-- Next: successor-aware consumption, then authored composition.
-- Active bounded task: reconstruct accepted successor preparation for slicing and
-  methods, then complete generation1 collection/fitness/parent-union selection.
-  Prerequisite: qualified initial preparation. Bound delivery to exact parent/RNG/
-  declaration replay, accepted producer and Data origin, no generation0 regression.
-  Verify malformed/unaccepted sources reject and actual installed successor contexts
-  execute before claiming this next gate. Whole E2.2 remains0.
+- Next: generation1 collection/fitness, then parent-union global selection.
+- Active bounded task: collect generation1's complete primary outcomes and publish
+  fitness over the complete retained-parent/offspring pool. Prerequisite: qualified
+  successor consumption. Preserve historical parent fitness and observation sources;
+  missing required offspring outcomes stay unavailable. Verify exact coverage,
+  origin/acceptance, unchanged generation0 behavior and independently installed
+  actual-owner success/failure before claiming this component. Whole E2.2 stays0.
+- Search0.19 consumption qualified:367 source/365 installed,13 boundaries,750 shared
+  schemas/twenty prior tool endpoint pins preserved. Actual all16 generation1 methods
+  produce exact values after accepted preparation, confirmed146-artifact slice and
+  completedspent42. [Evidence](../Audits/POP-01_Population_Successor_Consumption.md).
 - Search0.18 preparation qualified:361 source/359 installed,80 focused workers,
   13 boundaries,750 system schemas/sixteen predecessor tool schema pins preserved.
   Actual normal/failed-parent preparation and no-parent/exhausted-budget stops pass;

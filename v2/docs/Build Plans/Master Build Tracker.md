@@ -1,6 +1,6 @@
 # Master Build Tracker
 
-Latest checkpoint: 2026-10-15 15:22:42: Search0.18 initial successor preparation qualified. Successor-aware consumption next. E2=25%, Execution31.25%, parent10.42%, Build15.63%, Verification0%. RG-01 follows the whole POP-01 before ML-01.
+Latest checkpoint: 2026-10-15 15:44:56: Search0.19 successor consumption qualified. Generation1 collection/parent-union fitness next. E2=25%, Execution31.25%, parent10.42%, Build15.63%, Verification0%. RG-01 follows the whole POP-01 before ML-01.
 
 ## Purpose and Authority
 
@@ -11,17 +11,17 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 ## Program Tracker
 
 - Status: POP-01.01/E2 active; UI-01/UI-02 closed100%, LR-01 paused25%.
-- Last refreshed: 2026-10-15 15:22:42 (America/Chicago).
+- Last refreshed: 2026-10-15 15:44:56 (America/Chicago).
 - Baseline: approved [POP-01.04](POP-01.04%20Population%20contract%20decision.md).
-- Current priority/task: POP-01.01 E2.2 successor-aware consumption.
+- Current priority/task: POP-01.01 E2.2 generation1 collection/parent-union fitness.
 - Next task: complete worker unit, then E2.3 authored composition/resource preflight and E2.4 actual-owner matrix.
 - Implementation: parent10.42%, Build15.63%, Verification0%; Execution31.25%, Experience/Qualification0%.
   Execution E1=100%, E2=25%, E3/E4=0%; Experience U1-U4=0%, Qualification Q1-Q4=0%.
-- Latest checkpoint: Search0.18 source361/installed359 and13 boundary checks pass;
-  actual normal/failed-parent preparation and no-parent/exhausted-budget stops
-  preserve continuity, all roots confirmed. Worker unit/composition/matrix still open.
+- Latest checkpoint: Search0.19 source367/installed365 and13 boundary checks pass;
+  actual16 initial and16 successor methods produce exact values, completedspent42,
+  confirmed146-artifact slice. Worker unit/composition/matrix still open.
 - Gate: E1/E2.1 and approved POP-01.06/07 prerequisites qualified; remaining E2.2
-  successor consumption, E2.3 composition and E2.4 qualification remain.
+  successor collection/fitness/selection, E2.3 composition and E2.4 qualification remain.
 - Acceptance: actual execution/population UI/scientific qualification remain distinct gates.
 - Active exception: isolated pop01-retention-integration worktree; original review remains frozen. No merge/promotion until owner finishes review and wrappers drain. Continue-until-needed persists; startup-credit applications deferred. KB-01 stays queued.
   Prior Knowledge-content diagnosis complete:
@@ -38,11 +38,11 @@ The initial program proves software behavior using deterministic/synthetic fixtu
 ## Current In-Flight Work
 
 POP-01 E2 active: parent10.42%, Build15.63%, Execution31.25%, E1=100%; remaining gates0%.
-Retention/input inspection qualified (Data0.32/Runtime0.70). Search0.18 seed, slice,
+Retention/input inspection qualified (Data0.32/Runtime0.70). Search0.19 seed, slice,
 methods, complete collection, explicit synthetic fitness and initial selection have
-independent actual-owner evidence. Initial successor preparation is qualified;
-successor-aware consumption is current; whole E2.2 remains0.
-[Latest evidence](../Audits/POP-01_Population_Successor_Preparation.md). Authored
+independent actual-owner evidence. Initial successor preparation/consumption qualified;
+generation1 collection/parent-union fitness is current; whole E2.2 remains0.
+[Latest evidence](../Audits/POP-01_Population_Successor_Consumption.md). Authored
 composition, resource feasibility and full batch/cap matrix remain ordered gates.
 Isolated worktree preserves the active frozen review session.
 LR-01 paused25%, Build33.33%, Acceptance0%; R1=100%, R2/R3/V1=0%.

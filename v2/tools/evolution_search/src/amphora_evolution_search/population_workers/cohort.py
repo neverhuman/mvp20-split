@@ -29,7 +29,7 @@ class PrimaryCohort:
         return self.declarations.membership
 
     @classmethod
-    def load(cls, specification, declaration_reference, artifacts):
+    def load(cls, specification, declaration_reference, artifacts, *, successor=None):
         original = OriginalPopulation(artifacts.read(specification).decode(PopulationSpecification,
             population_specification_schema(), artifacts.scope))
         require(artifacts.implementation in original.record.implementations, "population_worker_implementation")
@@ -42,13 +42,26 @@ class PrimaryCohort:
         membership = GenerationMembership.verified(original, cohort_artifact.content,
             tuple(artifacts.read(page.artifact).content for page in cohort_record.pages))
         require(membership.identity.run_id == artifacts.attempt.invocation.run_id
-                and membership.identity.generation == 0 and membership.role == "cohort", "population_primary_seed_run")
-        expected = PrimaryBirthBatch.seed(original)
+                and membership.role == "cohort", "population_primary_seed_run")
+        if membership.identity.generation == 0:
+            require(successor is None, "population_seed_successor_source")
+            expected = PrimaryBirthBatch.seed(original)
+            source = "seed"
+        else:
+            from .successor_source import PreparedSuccessorSource
+            require(type(successor) is PreparedSuccessorSource and successor.record.generation == membership.identity
+                    and successor.record.specification == specification
+                    and successor.record.declarations == declaration_reference
+                    and successor.record.cohort == declaration.membership,
+                    "population_primary_successor_source")
+            expected = successor.batch
+            require(expected.original == original, "population_primary_successor_original")
+            source = "offspring"
         by_id = {birth.record.candidate_id: birth.record for birth in expected.proposed}
         require(set(membership.by_id) == set(by_id), "population_slice_birth_membership")
         for member in membership.members:
             raw = canonical(by_id[member.candidate_id])
-            require(member.source == "seed" and member.representation == member.birth
+            require(member.source == source and member.representation == member.birth
                 and member.birth.sha256 == hashlib.sha256(raw).hexdigest() and member.birth.size_bytes == len(raw),
                 "population_slice_birth_binding")
         declarations = DeclaredEvaluations.verified(membership, declaration.membership, declaration_artifact,

@@ -14,5 +14,9 @@
   "prepare-selection/input": "4aeb836256d3d13056e38e1272be751e891369ec82a05605e70ed14bdebfae87",
   "prepare-selection/output": "77f4f3c7f5edc3bfe7ab1123abd3e32a34ac44c45bad09495bb5a081b5160af0",
   "select-primary/input": "77f4f3c7f5edc3bfe7ab1123abd3e32a34ac44c45bad09495bb5a081b5160af0",
-  "select-primary/output": "efe157f64d9248fe8718487a9a17c783ca9168e9ee3f5c7f590c4b0054d5d6d5"
+  "select-primary/output": "efe157f64d9248fe8718487a9a17c783ca9168e9ee3f5c7f590c4b0054d5d6d5",
+  "prepare-successor-request/input": "efe157f64d9248fe8718487a9a17c783ca9168e9ee3f5c7f590c4b0054d5d6d5",
+  "prepare-successor-request/output": "d36b47a57c48b4437da78e6755a8920585c11f6a59056256791229646b36097f",
+  "prepare-successor/input": "d36b47a57c48b4437da78e6755a8920585c11f6a59056256791229646b36097f",
+  "prepare-successor/output": "b2d1a7a53df75b79d0a3e4d4d4d98a225dd679e69a4e630bc6a9f1e172f37761"
 }

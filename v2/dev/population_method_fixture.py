@@ -102,7 +102,8 @@ class MethodFixture:
         original["assembly"]["objectives"] = [original["assembly"]["objectives"][0]]
         original["assembly"]["objectives"][0]["method_ids"] = [method["method_id"]]
 
-    def run(self, run, members, worker_config, call, command, read, *, stop_after_members=False):
+    def run(self, run, members, worker_config, call, command, read, *, stop_after_members=False,
+            spent_before=2, log_prefix="population-method", expected_generation=0):
         expected = {PopulationCandidateContext.model_validate_json(json.dumps(read(ref.model_dump(mode="json")))).member.candidate_id for ref in members}
         observed, completions = {}, []
         if self.case == "conditional-not-taken":
@@ -145,7 +146,7 @@ print(json.dumps(dict(status="completion_accepted",outcome="failed",operation_id
             else:
                 result = subprocess.run([str(self.python), "-I", "-m", "amphora_evolution_search", "population-worker",
                     "--operation", self.operation, "--config", str(worker_config)], env=self.environment, capture_output=True, timeout=1200)
-            (self.output / ("population-method-" + str(turn) + ".log")).write_bytes(result.stdout + result.stderr)
+            (self.output / (log_prefix + "-" + str(turn) + ".log")).write_bytes(result.stdout + result.stderr)
             assert result.returncode == 0, "Actual method worker failed; inspect method log"
             receipt = json.loads(result.stdout)
             assert receipt.get("outcome") in {"succeeded","failed"}, receipt
@@ -169,6 +170,7 @@ print(json.dumps(dict(status="completion_accepted",outcome="failed",operation_id
             value = ObjectiveValue.model_validate_json(json.dumps(read(output)))
             expected_value = math.fsum(g * g for g in birth.genes) if self.operation == "evaluate-squares" else -math.fsum(birth.genes)
             assert value.value == expected_value and context.generation.run_id == run
+            assert context.generation.generation == expected_generation
             assert context.member.candidate_id not in observed
             observed[context.member.candidate_id] = value.value
             reservation = completion["retention_reservation_ids"][0]
@@ -180,6 +182,6 @@ print(json.dumps(dict(status="completion_accepted",outcome="failed",operation_id
         else:
             raise AssertionError("Numerical scatter did not finish within bounded coordinator passes")
         assert set(observed) == expected and len(completions) == len(expected)
-        assert state["budget"]["spent"] == 2 + len(expected)
+        assert state["budget"]["spent"] == spent_before + len(expected)
         return {"operation": self.operation, "evaluated_members": len(observed)-failed_members, "failed_members": failed_members, "context_bound_by_derivation": True,
-            "exact_values_verified": True, "spent": 2 + len(expected), "run_status": state["status"], "method_plan": "population-primary-method"}
+            "exact_values_verified": True, "spent": spent_before + len(expected), "run_status": state["status"], "method_plan": "population-primary-method"}

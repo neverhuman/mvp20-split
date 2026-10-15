@@ -18,6 +18,7 @@ from .payloads import CollectPrimaryRequest, CollectedPrimaryGeneration, FittedP
 
 
 PROFILES = {
+    "prepare-successor-slice": (PrimarySuccessorDecision, "population-worker.successor-decision", PopulationSliceRequest, "population-step.slice-request"),
     "prepare-successor-request": (SelectedPrimaryGeneration, "population-worker.selected", ProposePopulationSuccessorRequest, "population-step.successor"),
     "prepare-successor": (ProposePopulationSuccessorRequest, "population-step.successor", PrimarySuccessorDecision, "population-worker.successor-decision"),
     "prepare-selection": (FittedPrimaryGeneration, "population-worker.fitted", SelectPopulationRequest, "population-step.select"),

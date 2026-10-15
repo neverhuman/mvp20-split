@@ -141,3 +141,23 @@ Preparation is initial checkpoint to generation1 only. Existing slice/method/
 collection/fitness/selection consumers still enforce generation0; successor-aware
 consumption and parent-union fitness remain required E2.2 work. This release does
 not establish an executing multigeneration population loop.
+
+Search0.19 successor consumption is independently qualified. PreparedSuccessorSource
+checks the admitted public plan and canonical accepted preparer/selector/assembler
+outputs through Runtime, independently checks Data origin and retained carriers,
+then replays immutable initial fitness/selection and the bounded birth allocator.
+It does not claim a fresh serial selection work cut from inside parallel methods.
+SeedSlices and PrimaryMethod can consume generation1 only through that evidence;
+the old generation0 path retains its checks and requires no added grants.
+Successor slicing/method principals need scoped Runtime read+inspect_receipts in
+addition to claim/renew/complete. The prepare-successor-slice typed adapter creates
+the initial slice request; it grants no execution/acceptance authority. Complete
+birth/cohort/declaration pages, parent-union membership and page closure must agree.
+Generation1 collection/fitness/selection and subsequent generation preparation
+remain unfinished; no generic multigeneration execution claim is made.
+
+Qualification:367 source/365 independently installed checks,13 boundaries,750 shared
+schemas and twenty predecessor endpoint schema pins preserved. Final installed run
+executes all16 initial and16 generation1 numerical methods, exact values, confirmed
+146-artifact successor slice closure and completed spent42. No paid calls. Both
+owned test containers removed. See POP-01_Population_Successor_Consumption audit.

@@ -48,7 +48,10 @@ def request(port, path, body=None, *, method=None):
         connection.close()
 
 
-def verify(output, data_python, runtime_python, population_python=None, *, population_only=False, population_slice=False, population_method=None, inspect_inputs=False, population_collect=False, collection_case="normal", population_fitness=False, population_select=False, population_propose=False, successor_tight=False):
+def verify(output, data_python, runtime_python, population_python=None, *, population_only=False, population_slice=False, population_method=None, inspect_inputs=False, population_collect=False, collection_case="normal", population_fitness=False, population_select=False, population_propose=False, successor_tight=False, successor_consume=False):
+    if successor_consume:
+        assert collection_case == "normal" and not successor_tight
+        population_propose = True
     if population_propose:
         population_select = True
     if population_select:
@@ -196,7 +199,7 @@ def verify(output, data_python, runtime_python, population_python=None, *, popul
             from population_seed_fixture import verify as verify_seed
             loss["enabled"] = False
             verify_seed(output, population_python, (data_port, runtime_port), environment, scope,
-                        call, command, start, stop, with_slice=population_slice, method_operation=population_method, inspect_inputs=inspect_inputs, with_collection=population_collect, collection_case=collection_case, with_fitness=population_fitness, with_selection=population_select, with_successor=population_propose, successor_tight=successor_tight)
+                        call, command, start, stop, with_slice=population_slice, method_operation=population_method, inspect_inputs=inspect_inputs, with_collection=population_collect, collection_case=collection_case, with_fitness=population_fitness, with_selection=population_select, with_successor=population_propose, successor_tight=successor_tight, successor_consume=successor_consume)
             return
         start("data", data_python, data_port, environment)
         runtime = start("runtime", runtime_python, runtime_port, environment)
@@ -276,7 +279,7 @@ def verify(output, data_python, runtime_python, population_python=None, *, popul
         if population_python is not None:
             from population_seed_fixture import verify as verify_seed
             verify_seed(output, population_python, (data_port, runtime_port), environment, scope,
-                        call, command, start, stop, with_slice=population_slice, method_operation=population_method, inspect_inputs=inspect_inputs, with_collection=population_collect, collection_case=collection_case, with_fitness=population_fitness, with_selection=population_select, with_successor=population_propose, successor_tight=successor_tight)
+                        call, command, start, stop, with_slice=population_slice, method_operation=population_method, inspect_inputs=inspect_inputs, with_collection=population_collect, collection_case=collection_case, with_fitness=population_fitness, with_selection=population_select, with_successor=population_propose, successor_tight=successor_tight, successor_consume=successor_consume)
         write(output / "evidence.json", {"status": "passed", "timestamp_local": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
             "scope": "Synthetic actual installed owner HTTP/restart, not population scientific execution",
             "members": 4, "lost_responses": 2, "restarted_owners": ["data", "runtime"], "committed_group": "confirmed",
@@ -308,6 +311,7 @@ if __name__ == "__main__":
     parser.add_argument("--collection-case", choices=["normal","failed-required","conditional-not-taken"], default="normal")
     parser.add_argument("--population-propose", action="store_true")
     parser.add_argument("--successor-tight", action="store_true")
+    parser.add_argument("--successor-consume", action="store_true")
     parser.add_argument("--population-select", action="store_true")
     parser.add_argument("--population-fitness", action="store_true")
     parser.add_argument("--population-collect", action="store_true")
@@ -316,4 +320,4 @@ if __name__ == "__main__":
     args = parser.parse_args()
     verify(args.output, args.data_python.absolute(), args.runtime_python.absolute(),
            None if args.population_python is None else args.population_python.absolute(),
-           population_only=args.population_only, population_slice=args.population_slice, population_method=args.population_method, inspect_inputs=args.inspect_inputs, population_collect=args.population_collect, collection_case=args.collection_case, population_fitness=args.population_fitness, population_select=args.population_select, population_propose=args.population_propose, successor_tight=args.successor_tight)
+           population_only=args.population_only, population_slice=args.population_slice, population_method=args.population_method, inspect_inputs=args.inspect_inputs, population_collect=args.population_collect, collection_case=args.collection_case, population_fitness=args.population_fitness, population_select=args.population_select, population_propose=args.population_propose, successor_tight=args.successor_tight, successor_consume=args.successor_consume)

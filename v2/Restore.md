@@ -1,122 +1,96 @@
 # Restore
 
-Refreshed: 2026-10-15 15:22:42 America/Chicago. Read after compaction with AGENTS.md.
+Refreshed: 2026-10-15 15:44:56 America/Chicago. Read with AGENTS.md.
 
 ## Current task and workspace
 
 Continue until needed remains authorized. Primary POP-01.01/E2.2 population workers.
 E1/E2.1 complete; E2=25%, Execution31.25%, parent10.42%, Build15.63%, Verification0.
-E2.2 whole unit remains0 until its complete gate; partial components carry evidence.
-RG-01 follows the WHOLE POP-01 before ML-01. The LLM generates/refines research
-graphs; Knowledge enhances generation. Do not switch early or mislabel campaign
-curation as the missing research/domain graph generator.
+Whole E2.2 stays0 until its complete gate. RG-01 follows WHOLE POP-01 before ML-01:
+the LLM generates/refines research graphs; Knowledge enhances it. No early switch.
 
 Implement ONLY Z:/mvp20-retention-integration, branch pop01-retention-integration,
-based main afe121c0. Original Z:/mvp20-split source/review remains frozen. This is
-the recorded independent-work exception, not a priority change. No merge/promotion
-until owner finishes review and both wrappers drain. Git per-command trust:
-safe.directory=//DesktopNAS/Code/mvp20-retention-integration. No global/wildcard trust.
+based main afe121c0. Original Z:/mvp20-split source/review stays frozen. No merge or
+promotion until owner finishes review and both wrappers drain. Per-command Git
+safe.directory=//DesktopNAS/Code/mvp20-retention-integration; no global/wildcard trust.
 Use v2/dev/.venv/Scripts/python.exe and ignored v2/.venv/Scripts/uv.exe here.
 
-Pushed:846e194a closure retention;721880d3 seed;9f87024b same-run slice;
-77d39f7a numerical methods;adb451be approved node-input inspection;
-21bdc2f1 qualified collection/SDK0.4; a553de62 fitness;26924710 selection.
-Search0.18 successor preparation qualified, checkpoint commit pending; next is
-successor-aware consumption. No service promotion or original-checkout edits.
+Pushed checkpoints:846e194a retention;721880d3 seed;9f87024b slice;77d39f7a methods;
+adb451be owner-approved POP-01.07;21bdc2f1 collection/SDK0.4;a553de62 fitness;
+26924710 selection;7ba86686 Search0.18 initial successor preparation.
+Component audits under docs/Audits/POP-01_Population_*.md own detailed evidence.
+Seven frozen source hashes matched original. Full v1 verifier reports pre-existing
+ADDED v1/LICENSE only; never modify v1/regenerate its manifest. Sparse v1 omitted.
 
-Latest Search0.16 fitness:345 source/343 independently installed checks;64 focused
-workers;13 boundaries/ownership;750 system schemas and ten predecessor tool payload
-schema byte pins preserved. Seven reviewed original frozen source hashes match.
-Full baseline verifier reports only pre-existing ADDED v1/LICENSE; never modify v1
-or regenerate its checksum manifest. Sparse worktree omits v1 intentionally.
+## Exact interruption: Search0.19 qualified; next generation1 collection/fitness
 
-Actual installed16-member success produces16 available fitness,93 retained Artifacts,
-completed/spent20; one required failure produces15 available/one unavailable,92/20;
-all16 conditional-not-taken produces zero available/16 unavailable,77/4. Roots confirmed,
-fitness retention read403 checked, no provider calls. All test processes/containers
-removed; labeled volumes retained. Docs/Audits/POP-01_Population_Fitness.md owns evidence.
+Qualified0.19 extends initial successor consumption for slicing/numerical methods;
+checkpoint commit/push pending.
+PreparedSuccessorSource checks admitted-plan canonical preparer/selector/assembler
+outputs and Data origin/carriers; replays immutable initial fitness/selection,
+selected parents, bounded allocator/RNG, complete births/declarations and parent pool.
+InitialSelection.evidence extracted unchanged; replay does not assert a fresh serial
+counter cut inside parallel methods. Work cuts must predate accepted completions.
+SeedSlices carries reconstructed PrimaryCohort; generation1 contexts retain exact
+prepared root. prepare-successor-slice builds typed first slice request, no grant.
+Successor slice/method actors need existing read+inspect_receipts. Gen0 unchanged.
 
-Latest bounded checkpoint 2026-10-15 14:54:01 America/Chicago: Search0.17 selection qualified.
-Source355/installed353,74 focused workers,13 boundaries;750 system schemas/twelve
-predecessor tool pins unchanged. Actual full16 success selects16 (attempts22/nodes43/
-retained99), one required failure selects15/excludes1 (22/43/98), all not-taken
-selects zero/excludes16 (6/75/83). Roots confirmed, no provider calls. All temporary
-processes/containers removed. Evidence: POP-01_Population_Selection audit.
-Independent .test-results/pop01-selection-search-install-20261015a/environment.
-Pushed26924710. Successor preparation is active; no service promotion.
+Final367 source/365 independently installed checks pass. Six new consumer negatives/
+exact-value tests pass. Dependency guard,13 boundaries,750 shared schema publication
+pass. Twenty predecessor endpoint schema hashes preserved; four added from installed
+0.18, old16 unchanged. Pin source/installed reruns pass after new copied-hash typo fix.
+No new shared DTOs/routes/limits. Dev inventory regenerated0.19.
 
-SelectionReadCut enforces a closed owner cut (serial loop ancestors only), counts
-physical attempts including own claim and actual graph nodes, never infers these
-from logical evaluations. prepare-selection handles null predecessor without graph
-scalar changes. SelectedPrimaryGeneration carries stopped bool/reason/work_cut/
-source proof. Initial generation only; actual loop/parent-union gate remains.
+Actual consumer a completed16 gen1 contexts/methods, exact values, spent42 and
+confirmed146-artifact slice closure. Its container/processes removed. Added explicit
+producer-tool, completion-cut and fitted-input guards; final isolated build b is
+.test-results/pop01-successor-consumer-search-install-20261015b/environment/Scripts/python.exe.
+Final HTTP run .test-results/pop01-successor-consumer-http-20261015b PASSED all16
+generation1 methods, exact values, completedspent42, confirmed146-artifact slice.
+Both test containers/processes removed, labeled volumes preserved. No live sessions.
+Audit POP-01_Population_Successor_Consumption and trackers/README/inventory updated.
+No provider calls. Next: commit/push0.19; immediately continue next E2.2 task below.
 
-Latest0.18:361 source/359 independently installed checks;80 focused workers;
-13 boundaries;750 shared schemas/sixteen prior tool schema pins unchanged. Pins
-expanded using installed0.17; exact ten-check source+installed reruns pass.
-Four actual installed probes pass: normal16 offspring/32pool/RNG112/128retained,
-one failed parent16/31/112/127; no parents stop86retained/spent8; Runtime exhausted
-stop102retained/spent24. Normal/failure spend24. All four temporary containers and
-processes removed; pre-existing demo containers and labeled volumes preserved.
-Evidence docs/Audits/POP-01_Population_Successor_Preparation.md and ignored
-.test-results/pop01-successor[-failure|-conditional|-tight]-http-20261015a.
-Independent Search .test-results/pop01-successor-search-install-20261015a/environment.
-No live test sessions; no provider calls. Source/profile edits are uncommitted0.18.
+Next: generation1 collection/fitness/parent-union global selection. Pass Runtime into
+collection SeedSlices.load; explicit method_scope_path can target successor_evaluate.
+Generic loop iterations later need context-generation filtering, never scatter-index
+identity. Assembly must retain parents' ORIGINAL FitnessRecords/observation sources,
+not rewrite generation/re-score them. RecordPages permits historical fitness rows;
+RetainedFitness verifies explicit evidence union. PreparedSuccessorSource constructs
+initial RetainedFitness locally; retain it and RetainedObservations from evidence
+for next publisher. Selection needs actual closed counters and parent-front progress.
+Current preparation/consumption is initialCP to gen1 only. Later generations, actual
+loops, composition and batch1/8/32 x cap1/4/8 remain gates. No premature E2.2 credit.
 
-Next bounded task: successor-aware reconstruction for slicing/methods, then
-generation1 collection/fitness/retained-parent selection. Current SeedSlices and
-PrimaryCohort remain generation0. Do not relax them without replaying accepted
-preparation and exact origins. SuccessorPreparation currently initialCP→Gen1only;
-new TOOL-owned PreparedPrimarySuccessor/PrimarySuccessorDecision preserve legacy
-ProposedSuccessor final-evaluation semantics. No future keys/inputs fabricated.
-GenerationPublication extracts seed publisher; default legacy allocator unchanged,
-optional observedcapacity can only reduce. Fresh SelectionReadCut includes own
-claim. Capacity is method floor, not whole-wave orchestration/grant. Need exact
-parent/RNG/budget continuity and genuine installed context execution before gate.
-Whole E2.2 remains0; E2.3 authored composition/resource preflight and E2.4 batch1/8/32,
-cap1/4/8 actual-owner matrix remain ordered gates. No live test sessions remain.
+## Interfaces and independent probes
 
-## Verified interfaces and evidence
+Data0.32/artifact_0013, Runtime0.70/runtime0029. Derived closure opt-in for new runs;
+legacy direct-root behavior unchanged.4096 ancestors/128 direct parents. Worker
+read/upload/finalize only, never retention authority. Actual retention lost-response/
+restart/cancel proof: pop01-closure-http-20261015d. POP-01_Closure_Retention audit.
+Owner-approved node_inputs0.1: scoped GET /v1/graph-observations/{run}/nodes/{activation}/inputs;
+read+inspect_receipts; original inputs/optional PreparedInvocation,262144 bytes,
+read-only/no migration/no Data I/O. Restart proof pop01-input-runtime-http-20261015b.
+SDK0.4 bounded encoded GET query support;113 source/installed checks; twelve exact
+dependent pins/locks updated previously without changing their implementations.
 
-- Data0.32/artifact_0013, artifact_retention0.1, Runtime0.70/runtime0029. POP-01.06
- closure-retention-v1 is opt-in for new configured runs; legacy runs stay direct-root.
- Companion proofs commit with ordinary receipts;4096 ancestors/128 direct parents.
- Installed lost-response/restart/cancellation/confirmation proof passes.
- Docs/Audits/POP-01_Closure_Retention.md; .test-results/pop01-closure-http-20261015d.
-- User explicitly approved POP-01.07. node_inputs0.1 exact GET
- /v1/graph-observations/{run}/nodes/{activation}/inputs requires read+inspect_receipts.
- Original scope-input summaries plus optional PreparedInvocation,262144-byte cap,
- no fresh snapshot token, read-only transaction, no migration/Data I/O. Existing
- successful-only producer proof unchanged.55 SQL/55 combined/9 installed contract
- checks and actual HTTP owner replacement pass. POP-01_Node_Input_Inspection audit.
-- Search0.16: generation0 seed/slice, dimensionless squares/negative-sum, complete
- primary collection and explicit synthetic fitness. Runtime+Data provenance must
- agree. Missing required/objective methods never become zero scores. Fixed named
- sum policy and explicit unconstrained-synthetic declaration; initial selection_pool
- has no retained parents. No chemistry or later-generation execution claim.
-- SDK0.4 bounded encoded GET query support:113 source+installed checks, unchanged
- no-query behavior. Twelve dependent exact pins/locks updated; their implementation
- sources untouched. No whole-foundation or serving-cutover claim.
-- Scoped audits: POP-01_Population_Seed_Worker, POP-01_Population_Method_Workers,
- POP-01_Population_Collection, POP-01_Population_Fitness under docs/Audits.
- Canonical trackers: POP-01.01 execution, POP-01 parent, Master Build Tracker.
+Probe dev/verify_retention_closure_installation.py --output <new> --data-python <Data>
+--runtime-python <Runtime> --population-python <Search> --population-only.
+Data interpreter .test-results/pop01-closure-owners-20261015b/amphora-data-artifacts/environment/Scripts/python.exe;
+Runtime .test-results/pop01-input-runtime-install-20261015a/environment/Scripts/python.exe.
+Search0.18 .test-results/pop01-successor-search-install-20261015a/environment/Scripts/python.exe.
+--population-propose [--successor-tight] [--collection-case failed-required|conditional-not-taken]
+qualifies preparation; --successor-consume implies all earlier workers, normal only.
+0.18 actual normal16offspring/32pool/RNG112/128retained; failedparent16/31/112/127;
+no-parent stop86retained/spent8; exhaustedRuntime stop102retained/spent24. Normal/
+failure spend24. Four owned test containers removed, labeled volumes preserved.
 
-Independent interpreters under v2/.test-results:
-- Data: pop01-closure-owners-20261015b/amphora-data-artifacts/environment/Scripts/python.exe.
-- Runtime: pop01-input-runtime-install-20261015a/environment/Scripts/python.exe.
-- Search0.16: pop01-fitness-search-install-20261015a/environment/Scripts/python.exe.
-Probe: dev/verify_retention_closure_installation.py --output <new> --data-python <Data>
---runtime-python <Runtime> --population-python <Search> --population-only
---population-fitness [--collection-case failed-required|conditional-not-taken].
-Actual evidence folders pop01-fitness-http-20261015a, pop01-fitness-failure-http-20261015a,
-pop01-fitness-conditional-http-20261015a. No live tool/probe sessions remain.
-
-E2.3 must measure/preflight complete envelope/ancestry/queue budgets before scientific
-dispatch. Independently valid field maxima need not fit all combinations (D4 review).
-1000 births+contexts+8000 outputs already exceed4096 retention; reject unsupported
-combinations truthfully, never silently raise bound or claim1000x8 qualified. SDK
-RunSnapshot exposes at most256 queued/leased activations; active cap8 alone does not
-bound queued work. Any needed public boundary expansion returns to owner review.
+E2.3 must preflight complete orchestration/envelope/ancestry/queue costs before
+scientific dispatch. Independently valid maxima need not fit all combinations (D4).
+1000births+contexts+8000outputs exceed4096 retention; reject unsupported combinations,
+never silently raise limits or claim1000x8 qualified. RunSnapshot at most256 queued/
+leased activations; cap8 alone does not bound queued work. Any needed public boundary
+expansion needs concrete owner review. Registry/Linux image attestation still later.
 
 ## Running review in ORIGINAL checkout
 

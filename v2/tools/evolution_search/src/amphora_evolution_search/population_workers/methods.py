@@ -23,10 +23,21 @@ class PrimaryMethod:
     objective: NumericObjective
 
     @classmethod
-    def load(cls, source, artifacts, binding):
+    def load(cls, source, artifacts, binding, runtime=None):
         record = source.decode(PopulationCandidateContext,
             population_step_schema("population-step.candidate-context"), artifacts.scope)
-        cohort = PrimaryCohort.load(record.specification, record.declarations, artifacts)
+        if record.generation.generation == 0:
+            cohort = PrimaryCohort.load(record.specification, record.declarations, artifacts)
+        else:
+            from .slices import SeedSlices
+            parents = artifacts.derivation(source.reference).declaration.inputs
+            prepared = tuple(ref for ref in parents if ref.schema_ref == population_step_schema("population-step.prepared"))
+            require(len(prepared) == 1, "population_method_successor_prepared")
+            loaded = SeedSlices.load(prepared[0], artifacts, runtime)
+            require(loaded.prepared.record.specification == record.specification
+                    and loaded.prepared.record.declarations == record.declarations,
+                    "population_method_successor_sources")
+            cohort = loaded.cohort
         require(record.generation == cohort.membership.identity, "population_method_generation")
         require(cohort.membership.by_id.get(record.member.candidate_id) == record.member, "population_method_member")
         birth = NumericBirth(cohort.original, artifacts.read(record.member.birth).decode(
