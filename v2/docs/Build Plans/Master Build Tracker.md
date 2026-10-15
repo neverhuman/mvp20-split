@@ -39,15 +39,20 @@ POP-01 E2 active: parent8.33%, Build12.5%, Execution25%, E1=100%; remaining gate
 LR-01 paused25%, Build33.33%, Acceptance0%; R1=100%, R2/R3/V1=0%.
 Completed UI-01/UI-02/LAN-01 are in the [completed index](Completed/README.md).
 
+Owner priority correction 2026-10-14 21:14:16: RG-01 follows POP-01 immediately.
+The LLM generates/refines the research graph; Knowledge enhances its context.
+RG-01 overall/Build/Verification0%, R1/R2/R3/V1=0%. POP execution position unchanged.
+
 ## Prioritized Successor Queue and Phase Mirrors
 
 | Order | Canonical plan | Status | Overall | Build | Verification/Acceptance | Prerequisite |
 |---|---|---|---:|---:|---:|---|
 | 1 | [POP-01 Population Campaign Execution and Experience](POP-01%20Population%20Campaign%20Execution%20and%20Experience.md) | Active E2; E1=100%; Execution25%, Experience/Qualification0% | 8.33% | 12.5% | 0% | UI-01/UI-02 complete; POP-01.04 approved |
-| 2 | [ML-01 Inherited Scientific Model Integration](ML-01%20Inherited%20Scientific%20Model%20Integration.md) | Standalone queued; M1/M2/M3/M4/V1=0% | 0% | 0% | 0% | UI-01/V1 + UI-02/P4, then POP-01 complete; qualified population/tool handoff |
-| 3 | [LR-01 Local Worker Reliability](LR-01%20Local%20Worker%20Reliability.md) | Paused; pull R2 forward for blocking run failure | 25% | 33.33% | 0% | UI priority released or UI-01.05/R1 blocked; same-host diagnostic window |
-| 4 | [UI-R01 Feedback Read Diagnostics](UI-R01%20Feedback%20Read%20Diagnostics.md) | Queued; pull forward if it blocks UI-01 | 0% | 0% | 0% | Bounded read diagnostic and activation review |
-| 5 | [KB-01 Initial Scientific Knowledge Corpus](KB-01%20Initial%20Scientific%20Knowledge%20Corpus.md) | Queued; K1/K2/K3/V1=0%; owner added2026-10-14 | 0% | 0% | 0% | Existing Knowledge/Data/Studio integration; bounded activation audit and K1 corpus/rights selection. ML-01 is not a technical prerequisite; queue order preserved. |
+| 2 | [RG-01 LLM Research Graph Generation](RG-01%20LLM%20Research%20Graph%20Generation.md) | Critical queued placeholder; R1/R2/R3/V1=0% | 0% | 0% | 0% | Owner correction2026-10-14: immediately after POP-01, before ML-01; Knowledge enhances LLM generation, not a corpus prerequisite. Activation audit and R1 boundary review required. |
+| 3 | [ML-01 Inherited Scientific Model Integration](ML-01%20Inherited%20Scientific%20Model%20Integration.md) | Standalone queued; M1/M2/M3/M4/V1=0% | 0% | 0% | 0% | UI-01/V1 + UI-02/P4, then POP-01 complete; qualified population/tool handoff |
+| 4 | [LR-01 Local Worker Reliability](LR-01%20Local%20Worker%20Reliability.md) | Paused; pull R2 forward for blocking run failure | 25% | 33.33% | 0% | UI priority released or UI-01.05/R1 blocked; same-host diagnostic window |
+| 5 | [UI-R01 Feedback Read Diagnostics](UI-R01%20Feedback%20Read%20Diagnostics.md) | Queued; pull forward if it blocks UI-01 | 0% | 0% | 0% | Bounded read diagnostic and activation review |
+| 6 | [KB-01 Initial Scientific Knowledge Corpus](KB-01%20Initial%20Scientific%20Knowledge%20Corpus.md) | Queued; K1/K2/K3/V1=0%; owner added2026-10-14 | 0% | 0% | 0% | Existing Knowledge/Data/Studio integration; bounded activation audit and K1 corpus/rights selection. ML-01 is not a technical prerequisite; queue order preserved. |
 
 The owning tracker controls exact task/percentages; MBT controls priority and
 mirrors current state. Complete each bounded gate before dependent implementation.

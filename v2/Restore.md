@@ -4,6 +4,22 @@ Refreshed: 2026-10-14 20:42:26 America/Chicago. Read FIRST after compaction.
 
 ## Current task
 
+2026-10-14 21:14:16 OWNER CORRECTION/PLANNING INTERRUPTION: added critical RG-01
+LLM Research Graph Generation immediately AFTER POP-01 and BEFORE ML-01. All0%.
+LLM generates/refines research/domain graphs; Knowledge augments model context,
+not a prerequisite corpus or substitute generator. Source extraction/campaign
+curation alone does not satisfy this. AGENTS/MBT/index record the correction.
+Placeholder only; return to POP-01.01 E2. No new implementation scope activated.
+Runtime0.68 and Deployment0.20.3 source changes IN PROGRESS, not committed/qualified.
+Actual SQL14 tests pass (caps1/4/8, expiry/prepared/failure/uncertainty/cancel);
+owned containers removed. Broad definitions/lifecycle/completion/scheduling/API SQL
+probe running session2318; driver .test-results/verify_bounded_capacity_sql.py
+always removes its new owned test container, retains volume.74 Deployment/boundary
+checks pass. Need inspect broad SQL result, verify HTTP test, qualify independent
+Runtime install/restart/preflight, update locks/docs and commit. E2 still0 pending
+full bounded dispatch/collection acceptance. Demo wrappers remain drained.
+
+
 2026-10-14 21:03:53: POP-01.05 explicitly approved; E1/D4 publication COMPLETE.
 16 source+16 independent contract tests (seven public wheels),99 legacy contract
 checks,30 publication checks and dependency guard PASS.744 schemas,740 old byte pins.

@@ -57,3 +57,5 @@ Read the selected plan's tracker first. Complete each phase gate before advancin
 - [UI-02.01 Chemical structure boundary decision](Completed/UI-02.01%20Chemical%20structure%20boundary%20decision.md): proposed additive artifact/tool and explicit Research registration profile; parent implementation0%, awaiting owner direction.
 
 - [UI-02.03 Structural execution profile decision](Completed/UI-02.03%20Structural%20execution%20profile%20decision.md): complete100%; actual structural draft/tool/Data/Research handoff and grant-removal history proof pass. UI-02/P2 next.
+
+- [RG-01 LLM Research Graph Generation](RG-01%20LLM%20Research%20Graph%20Generation.md): critical queued placeholder immediately after POP-01, before ML-01; overall/Build/Verification0%, R1/R2/R3/V1=0%. LLM generates/refines research graphs; Knowledge enhances context, with no populated-corpus prerequisite.
