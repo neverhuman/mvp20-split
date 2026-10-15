@@ -1,5 +1,16 @@
 [
   {
+    "package": "amphora-contracts-artifact-retention",
+    "version": "0.1.0",
+    "path": "contracts/artifact_retention",
+    "module": "amphora_contracts_artifact_retention",
+    "public_dependencies": [
+      "amphora-contracts-artifacts",
+      "amphora-contracts-core",
+      "amphora-contracts-commands"
+    ]
+  },
+  {
     "package": "amphora-contracts-artifacts",
     "version": "0.2.0",
     "path": "contracts/artifacts",
@@ -7,6 +18,59 @@
     "public_dependencies": [
       "amphora-contracts-core",
       "amphora-contracts-commands"
+    ]
+  },
+  {
+    "package": "amphora-contracts-campaign-curation",
+    "version": "0.1.1",
+    "path": "contracts/campaign_curation",
+    "module": "amphora_contracts_campaign_curation",
+    "public_dependencies": [
+      "amphora-contracts-core",
+      "amphora-contracts-commands",
+      "amphora-contracts-graph-runtime",
+      "amphora-contracts-knowledge",
+      "amphora-contracts-research",
+      "amphora-contracts-tools",
+      "amphora-contracts-planning"
+    ]
+  },
+  {
+    "package": "amphora-contracts-campaign-launch",
+    "version": "0.1.0",
+    "path": "contracts/campaign_launch",
+    "module": "amphora_contracts_campaign_launch",
+    "public_dependencies": [
+      "amphora-contracts-core",
+      "amphora-contracts-commands",
+      "amphora-contracts-graph-runtime",
+      "amphora-contracts-runtime",
+      "amphora-contracts-tools"
+    ]
+  },
+  {
+    "package": "amphora-contracts-campaign-resources",
+    "version": "0.1.0",
+    "path": "contracts/campaign_resources",
+    "module": "amphora_contracts_campaign_resources",
+    "public_dependencies": [
+      "amphora-contracts-commands",
+      "amphora-contracts-core",
+      "amphora-contracts-graph-runtime"
+    ]
+  },
+  {
+    "package": "amphora-contracts-campaign-successor-launch",
+    "version": "0.1.0",
+    "path": "contracts/campaign_successor_launch",
+    "module": "amphora_contracts_campaign_successor_launch",
+    "public_dependencies": [
+      "amphora-contracts-core",
+      "amphora-contracts-commands",
+      "amphora-contracts-graph-runtime",
+      "amphora-contracts-runtime",
+      "amphora-contracts-campaign-launch",
+      "amphora-contracts-draft-successor"
     ]
   },
   {
@@ -35,6 +99,16 @@
     "module": "amphora_contracts_candidate_spaces",
     "public_dependencies": [
       "amphora-contracts-core"
+    ]
+  },
+  {
+    "package": "amphora-contracts-chemical-structure",
+    "version": "0.1.0",
+    "path": "contracts/chemical_structure",
+    "module": "amphora_contracts_chemical_structure",
+    "public_dependencies": [
+      "amphora-contracts-core",
+      "amphora-contracts-research"
     ]
   },
   {
@@ -148,16 +222,38 @@
   },
   {
     "package": "amphora-contracts-planning",
-    "version": "0.11.0",
+    "version": "0.13.0",
     "path": "contracts/planning",
     "module": "amphora_contracts_planning",
     "public_dependencies": [
+      "amphora-contracts-tools",
       "amphora-contracts-campaigns",
       "amphora-contracts-core",
       "amphora-contracts-graph-runtime",
       "amphora-contracts-knowledge",
       "amphora-contracts-evidence",
       "amphora-contracts-research"
+    ]
+  },
+  {
+    "package": "amphora-contracts-population",
+    "version": "0.5.0",
+    "path": "contracts/population",
+    "module": "amphora_contracts_population",
+    "public_dependencies": [
+      "amphora-contracts-core",
+      "amphora-contracts-tools",
+      "amphora-contracts-search"
+    ]
+  },
+  {
+    "package": "amphora-contracts-population-steps",
+    "version": "0.1.0",
+    "path": "contracts/population_steps",
+    "module": "amphora_contracts_population_steps",
+    "public_dependencies": [
+      "amphora-contracts-population",
+      "amphora-contracts-core"
     ]
   },
   {
@@ -232,7 +328,7 @@
   },
   {
     "package": "amphora-contracts-supervision",
-    "version": "0.10.1",
+    "version": "0.10.2",
     "path": "contracts/supervision",
     "module": "amphora_contracts_supervision",
     "public_dependencies": [
@@ -277,10 +373,11 @@
   },
   {
     "package": "amphora-agent-planning",
-    "version": "0.104.0",
+    "version": "0.142.0",
     "path": "services/agent_planning",
     "module": "amphora_agent_planning",
     "public_dependencies": [
+      "amphora-contracts-campaign-curation",
       "amphora-contracts-topology-search",
       "amphora-contracts-supervision",
       "amphora-contracts-campaigns",
@@ -300,10 +397,12 @@
   },
   {
     "package": "amphora-campaign-runtime",
-    "version": "0.66.0",
+    "version": "0.69.0",
     "path": "services/campaign_runtime",
     "module": "amphora_campaign_runtime",
     "public_dependencies": [
+      "amphora-contracts-artifact-retention",
+      "amphora-contracts-campaign-resources",
       "amphora-contracts-draft-successor",
       "amphora-contracts-execution-proofs",
       "amphora-contracts-planning",
@@ -319,7 +418,7 @@
   },
   {
     "package": "amphora-capability-registry",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "path": "services/capability_registry",
     "module": "amphora_capability_registry",
     "public_dependencies": [
@@ -330,10 +429,11 @@
   },
   {
     "package": "amphora-data-artifacts",
-    "version": "0.31.0",
+    "version": "0.32.0",
     "path": "services/data_artifacts",
     "module": "amphora_data_artifacts",
     "public_dependencies": [
+      "amphora-contracts-artifact-retention",
       "amphora-contracts-representations",
       "amphora-contracts-research",
       "amphora-contracts-evidence",
@@ -360,17 +460,18 @@
   },
   {
     "package": "amphora-local-gateway",
-    "version": "0.2.0",
+    "version": "0.7.0",
     "path": "services/local_gateway",
     "module": "amphora_local_gateway",
     "public_dependencies": []
   },
   {
     "package": "amphora-research",
-    "version": "0.40.0",
+    "version": "0.41.0",
     "path": "services/research",
     "module": "amphora_research",
     "public_dependencies": [
+      "amphora-contracts-chemical-structure",
       "amphora-contracts-evaluation-reuse",
       "amphora-contracts-execution-proofs",
       "amphora-contracts-candidate-canonicalization",
@@ -389,17 +490,55 @@
     ]
   },
   {
+    "package": "amphora-arrhenius-viscosity",
+    "version": "0.1.0",
+    "path": "tools/arrhenius_viscosity",
+    "module": "amphora_arrhenius_viscosity",
+    "public_dependencies": [
+      "amphora-contracts-core",
+      "amphora-contracts-tools",
+      "amphora-tool-protocol"
+    ]
+  },
+  {
+    "package": "amphora-chemical-structure",
+    "version": "0.1.0",
+    "path": "tools/chemical_structure",
+    "module": "amphora_chemical_structure",
+    "public_dependencies": [
+      "amphora-contracts-chemical-structure",
+      "amphora-contracts-core",
+      "amphora-contracts-tools",
+      "amphora-tool-protocol"
+    ]
+  },
+  {
     "package": "amphora-evolution-search",
-    "version": "0.5.0",
+    "version": "0.13.0",
     "path": "tools/evolution_search",
     "module": "amphora_evolution_search",
     "public_dependencies": [
+      "amphora-contracts-runtime",
+      "amphora-contracts-artifacts",
+      "amphora-contracts-population-steps",
+      "amphora-contracts-population",
       "amphora-contracts-tools",
       "amphora-tool-protocol",
       "amphora-contracts-graph-runtime",
       "amphora-contracts-core",
       "amphora-contracts-search-steps",
       "amphora-contracts-search"
+    ]
+  },
+  {
+    "package": "amphora-hansen-solvency",
+    "version": "0.1.0",
+    "path": "tools/hansen_solvency",
+    "module": "amphora_hansen_solvency",
+    "public_dependencies": [
+      "amphora-contracts-core",
+      "amphora-contracts-tools",
+      "amphora-tool-protocol"
     ]
   },
   {
@@ -436,6 +575,16 @@
       "amphora-contracts-tools",
       "amphora-tool-protocol",
       "amphora-contracts-candidate-spaces",
+      "amphora-contracts-core"
+    ]
+  },
+  {
+    "package": "amphora-process-mapping",
+    "version": "0.1.1",
+    "path": "tools/process_mapping",
+    "module": "amphora_process_mapping",
+    "public_dependencies": [
+      "amphora-contracts-population",
       "amphora-contracts-core"
     ]
   },
@@ -577,7 +726,7 @@
   },
   {
     "package": "amphora-tool-protocol",
-    "version": "0.2.0",
+    "version": "0.3.0",
     "path": "sdk/tool_protocol",
     "module": "amphora_tool_protocol",
     "public_dependencies": [
@@ -590,9 +739,17 @@
   },
   {
     "package": "amphora-deployment",
-    "version": "0.15.0",
+    "version": "0.20.3",
     "path": "deploy/local",
     "module": "amphora_deployment",
-    "public_dependencies": []
+    "public_dependencies": [
+      "amphora-contracts-campaign-successor-launch",
+      "amphora-contracts-campaign-launch",
+      "amphora-contracts-commands",
+      "amphora-contracts-core",
+      "amphora-contracts-runtime",
+      "amphora-contracts-graph-runtime",
+      "amphora-contracts-tools"
+    ]
   }
 ]

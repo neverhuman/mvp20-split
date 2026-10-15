@@ -476,3 +476,11 @@ restart bounds; no scientific tool executes and no provider call occurs. Configs
 hold only credential environment references. The owned test PostgreSQL container
 and all subprocesses are removed/drained in finally; its labeled volume/evidence
 remain. This is protocol acceptance, not population-worker/scientific acceptance.
+
+The retention installation probe also accepts --population-python <isolated-Search>
+and --population-only for the bounded actual seed primitive. population_seed_fixture
+adds exact pinned public schema profiles, distinct worker credentials without
+retention, real claim/renew/read/publication/completion and authoritative receipt
+inspection. Fixture context is explicitly not an executed method graph. Failed
+worker evidence retains safe error code and scoped run snapshot; all owners and
+fixture containers still drain/remove in the parent finally.

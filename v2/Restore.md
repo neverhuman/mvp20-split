@@ -1,8 +1,38 @@
 # Restore
 
-Refreshed: 2026-10-15 11:48:49 America/Chicago. Read FIRST after compaction.
+Refreshed: 2026-10-15 12:18:22 America/Chicago. Read FIRST after compaction.
 
 ## Current task
+
+2026-10-15 12:18:22 SEED PRIMITIVE QUALIFIED, still partial E2.2. Source Search0.13:
+296 tests +seven separately verified original frozen hashes;15 worker/helper +4
+ownership checks, dependency guard pass. Independent Search install b excludes all
+service implementations/SQLAlchemy/FastAPI. Actual seed CLI probe c passes16 births/
+26-artifact closure, authoritative completion/confirmation and worker retention403.
+Evidence docs/Audits/POP-01_Population_Seed_Worker.md and .test-results/
+pop01-population-seed-http-20261015c/population-seed-evidence.json. All probe owners/
+containers removed. Initial missing Runtime read grant repaired in fixture; lease
+policy unchanged. Original review local15a/LAN15b still frozen/running.
+Next: same-run slicing/evaluation worker integration with existing graph bindings;
+then full E2.2 qualification, authored E2.3 composition and E2.4 matrix. Actual seed
+fixture does NOT execute declared method graph or attest built image/Registry.
+E2 stays25%, Execution31.25%, parent10.42%, Build15.63%, Verification0. Continue
+until needed; RG-01 remains immediately after POP-01. Checkpoint current changes,
+commit/push this isolated branch, then proceed. Never merge while review serves.
+
+
+2026-10-15 12:03:58 population worker WIP (isolated worktree only): Search0.13
+population_workers has attempt-scoped derived publication, full generation0 seed
+birth/cohort/primary-declaration closure, verified reference-backed slicing, explicit
+seed/slice descriptors/CLI and public-SDK claimed-worker lifecycle.296 Search tests
+PASS; one sparse-v1-only hash check run separately against original seven frozen
+sources, all match. Dependency guard PASS. No live tool activated/campaign/provider
+calls. Independent Search build running session8623 -> .test-results/
+pop01-population-step-install-20261015a. Next actual installed seed/slice worker
+Data/Runtime HTTP qualification; then remaining E2.2 work/composition gates.
+E2 stays25%; no full worker-unit credit. Retention prerequisite846e194a pushed on
+pop01-retention-integration. Original review remains frozen local15a/LAN15b.
+
 
 2026-10-15 11:48:49 CLOSURE PREREQUISITE QUALIFIED in isolated worktree. Data0.32,
 Runtime0.69/runtime0029; actual installed HTTP lost-response/restart/confirm/cancel

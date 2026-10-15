@@ -195,13 +195,15 @@ requires-dist = [
 
 [[package]]
 name = "amphora-evolution-search"
-version = "0.12.0"
+version = "0.13.0"
 source = { editable = "." }
 dependencies = [
+    { name = "amphora-contracts-artifacts" },
     { name = "amphora-contracts-core" },
     { name = "amphora-contracts-graph-runtime" },
     { name = "amphora-contracts-population" },
     { name = "amphora-contracts-population-steps" },
+    { name = "amphora-contracts-runtime" },
     { name = "amphora-contracts-search" },
     { name = "amphora-contracts-search-steps" },
     { name = "amphora-contracts-tools" },
@@ -210,10 +212,12 @@ dependencies = [
 
 [package.metadata]
 requires-dist = [
+    { name = "amphora-contracts-artifacts", editable = "../../contracts/artifacts" },
     { name = "amphora-contracts-core", editable = "../../contracts/core" },
     { name = "amphora-contracts-graph-runtime", specifier = "==0.13.0" },
     { name = "amphora-contracts-population", editable = "../../contracts/population" },
     { name = "amphora-contracts-population-steps", editable = "../../contracts/population_steps" },
+    { name = "amphora-contracts-runtime", editable = "../../contracts/runtime" },
     { name = "amphora-contracts-search", editable = "../../contracts/search" },
     { name = "amphora-contracts-search-steps", editable = "../../contracts/search_steps" },
     { name = "amphora-contracts-tools", editable = "../../contracts/tools" },

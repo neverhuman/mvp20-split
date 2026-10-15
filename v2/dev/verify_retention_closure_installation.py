@@ -48,7 +48,9 @@ def request(port, path, body=None, *, method=None):
         connection.close()
 
 
-def verify(output, data_python, runtime_python):
+def verify(output, data_python, runtime_python, population_python=None, *, population_only=False):
+    if population_only and population_python is None:
+        raise ValueError("Population-only probe requires its isolated interpreter")
     output = output.absolute()
     output.mkdir(parents=True, exist_ok=False)
     os.environ["AMPHORA_TEST_POSTGRES_STATE"] = str(output / "postgres-fixture.json")
@@ -102,6 +104,8 @@ def verify(output, data_python, runtime_python):
         host, port = state["endpoint"].split(":")
         environment = {k: v for k, v in os.environ.items() if not k.startswith("AMPHORA_")}
         environment["QUAL_TOKEN"] = "q" * 32
+        environment["QUAL_DATA_PYTHON"] = str(data_python)
+        environment["QUAL_RUNTIME_PYTHON"] = str(runtime_python)
         for owner, python, role, migration in (
             ("data", data_python, "artifact", "amphora_data_artifacts.persistence.migrate"),
             ("runtime", runtime_python, "runtime", "amphora_campaign_runtime.persistence.migrate")):
@@ -178,6 +182,12 @@ def verify(output, data_python, runtime_python):
             "artifacts": {"runtime_owner": actor, "reserve_endpoint": f"http://127.0.0.1:{data_port}/v1/reservations",
                 "token_env": "QUAL_TOKEN", "retention_profile": "derived-closure-retention-v1",
                 "closure_reserve_endpoint": f"http://127.0.0.1:{proxy_port}/v1/retention-closures/reserve"}})
+        if population_only:
+            from population_seed_fixture import verify as verify_seed
+            loss["enabled"] = False
+            verify_seed(output, population_python, (data_port, runtime_port), environment, scope,
+                        call, command, start, stop)
+            return
         start("data", data_python, data_port, environment)
         runtime = start("runtime", runtime_python, runtime_port, environment)
 
@@ -253,6 +263,10 @@ def verify(output, data_python, runtime_python):
         released = call(data_port, "/v1/reservations/reconcile", command("artifacts.reconcile", {"reservation_id": second_binding["reservation_id"]}))
         assert released["outcome"]["status"] == "released"
         assert call(data_port, "/v1/retention-closures/" + reservation_id)["reservation"]["outcome"]["status"] == "confirmed"
+        if population_python is not None:
+            from population_seed_fixture import verify as verify_seed
+            verify_seed(output, population_python, (data_port, runtime_port), environment, scope,
+                        call, command, start, stop)
         write(output / "evidence.json", {"status": "passed", "timestamp_local": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
             "scope": "Synthetic actual installed owner HTTP/restart, not population scientific execution",
             "members": 4, "lost_responses": 2, "restarted_owners": ["data", "runtime"], "committed_group": "confirmed",
@@ -278,5 +292,8 @@ if __name__ == "__main__":
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--data-python", type=Path, required=True)
     parser.add_argument("--runtime-python", type=Path, required=True)
+    parser.add_argument("--population-python", type=Path)
+    parser.add_argument("--population-only", action="store_true")
     args = parser.parse_args()
-    verify(args.output, args.data_python.absolute(), args.runtime_python.absolute())
+    verify(args.output, args.data_python.absolute(), args.runtime_python.absolute(),
+           None if args.population_python is None else args.population_python.absolute(), population_only=args.population_only)

@@ -27,3 +27,9 @@ or coordinating. The read-only owner CLI `resource-preflight --config ...
 settled history remains readable independently. Deployment must invoke this owner
 preflight rather than reading Runtime tables. Preflight integration and installed
 restart qualification are required before this phase can close.
+
+Runtime0.69 also checks the immutable artifact-retention pin in active/unsettled
+run tool snapshots. Current-owner preflight with an explicit target release rejects
+pre-0.69 targets while a closure-profile run is active. Host startup requires its
+configured supported Data peer. [Completion](../completion/README.md) owns the
+profile's transport, companion proof and compatibility/recovery details.
