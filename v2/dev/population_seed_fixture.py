@@ -22,9 +22,10 @@ from verify_retention_closure_installation import ROOT, request, write
 from population_method_fixture import MethodFixture
 from population_collection_fixture import CollectionFixture
 from population_fitness_fixture import FitnessFixture
+from population_selection_fixture import SelectionFixture
 
 
-def verify(output, python, ports, environment, scope, call, command, start, stop, *, with_slice=False, method_operation=None, inspect_inputs=False, with_collection=False, collection_case="normal", with_fitness=False):
+def verify(output, python, ports, environment, scope, call, command, start, stop, *, with_slice=False, method_operation=None, inspect_inputs=False, with_collection=False, collection_case="normal", with_fitness=False, with_selection=False):
     data_port, runtime_port = ports
     descriptor_result = subprocess.run([str(python), "-I", "-m", "amphora_evolution_search", "population-describe",
         "--operation", "seed", "--image-sha256", "f" * 64], capture_output=True, timeout=120)
@@ -41,6 +42,7 @@ def verify(output, python, ports, environment, scope, call, command, start, stop
     method_fixture = None if method_operation is None else MethodFixture(output, python, scope, environment, ports, method_operation, case=collection_case)
     collection_fixture = CollectionFixture(output, python, scope, environment, ports, case=collection_case) if with_collection else None
     fitness_fixture = FitnessFixture(output, python, scope, environment, ports, case=collection_case, operation=method_operation) if with_fitness else None
+    selection_fixture = SelectionFixture(output, python, scope, environment, ports, case=collection_case) if with_selection else None
     slice_count = 16 if with_collection else 8
     data = json.loads((output / "data.json").read_bytes())
     models = (
@@ -57,6 +59,8 @@ def verify(output, python, ports, environment, scope, call, command, start, stop
         models += collection_fixture.models
     if fitness_fixture is not None:
         models += fitness_fixture.models
+    if selection_fixture is not None:
+        models += selection_fixture.models
     if with_slice:
         models += ((PopulationSliceRequest, population_step_schema("population-step.slice-request")),
                    (PopulationMemberSlice, population_step_schema("population-step.member-slice")),
@@ -86,6 +90,8 @@ def verify(output, python, ports, environment, scope, call, command, start, stop
         data["principals"].append({**collection_fixture.worker,"actions":["read","upload","finalize"]})
     if fitness_fixture is not None:
         data["principals"].append({**fitness_fixture.worker,"actions":["read","upload","finalize"]})
+    if selection_fixture is not None:
+        data["principals"].append({**selection_fixture.worker,"actions":["read","upload","finalize"]})
     write(output / "data.json", data)
     stop("runtime")
     stop("data")
@@ -175,6 +181,8 @@ def verify(output, python, ports, environment, scope, call, command, start, stop
         collection_fixture.decorate(definition)
     if fitness_fixture is not None:
         fitness_fixture.decorate(definition)
+    if selection_fixture is not None:
+        selection_fixture.decorate(definition)
     write(output / "population-seed-graph.json", definition)
     lock = {"schema_version": "1", "tool": descriptor["tool"]["binding"], "checkpoint_schema": None,
         "descriptor_sha256": hashlib.sha256(json.dumps({"profile": "amphora-tool-release-v1", "descriptor": descriptor},
@@ -206,6 +214,8 @@ def verify(output, python, ports, environment, scope, call, command, start, stop
         collection_fixture.configure(runtime, models)
     if fitness_fixture is not None:
         fitness_fixture.configure(runtime, models)
+    if selection_fixture is not None:
+        selection_fixture.configure(runtime, models)
     write(output / "runtime.json", runtime)
     ready = start("runtime", Path(environment["QUAL_RUNTIME_PYTHON"]), runtime_port, environment)
     if method_fixture is not None:
@@ -221,7 +231,7 @@ def verify(output, python, ports, environment, scope, call, command, start, stop
     extra_inputs = [] if collection_fixture is None else collection_fixture.inputs(ready, publish)
     admitted = call(runtime_port, "/v1/graph-runs", command("graph.admit", {"plan_sha256": ready["plan_sha256"],
         "inputs": [{"port": "parameters", "value": {"kind": "artifact", "representation": "population-reference-v1", "unit": "1", "artifact": source}}, *extra_inputs],
-        "budget": {"limit": 20 if with_fitness else 19 if with_collection else 10 if method_fixture is not None else 2 if with_slice else 1}}))
+        "budget": {"limit": 22 if with_selection else 20 if with_fitness else 19 if with_collection else 10 if method_fixture is not None else 2 if with_slice else 1}}))
     run = admitted["outcome"]["committed"]["object_id"]
     worker_config = {"actor_id": "population-worker", "scope": scope, "run_id": run, "image_sha256": "f" * 64,
         "runtime": {"endpoint": f"http://127.0.0.1:{runtime_port}", "token_env": "QUAL_WORKER_TOKEN"},
@@ -292,7 +302,9 @@ def verify(output, python, ports, environment, scope, call, command, start, stop
             if collection_fixture is not None:
                 collection_fixture.run(run, sliced.members, output / "population-worker.json", call, command, read, stop_after_collection=with_fitness)
                 if fitness_fixture is not None:
-                    fitness_fixture.run(run, output / "population-worker.json", call, command, read)
+                    fitness_fixture.run(run, output / "population-worker.json", call, command, read, stop_after_fitness=with_selection)
+                    if selection_fixture is not None:
+                        selection_fixture.run(run, output / "population-worker.json", call, command, read)
         else:
             call(runtime_port, "/v1/graph-runs/advance", command("graph.advance", {"run_id": run, "max_transitions": 10}))
             final = call(runtime_port, "/v1/runs/" + run)

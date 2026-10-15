@@ -3,7 +3,7 @@ from typing import Annotated, Literal
 from amphora_contracts_core import ArtifactRef, Identifier, WireModel
 from amphora_contracts_population import GenerationIdentity
 from pydantic import Field
-from amphora_contracts_graph_runtime import GraphNodeDetail
+from amphora_contracts_graph_runtime import GraphNodeDetail,GraphReadCut
 from amphora_contracts_node_inputs import NodeInputObservation
 from amphora_contracts_execution_proofs import AcceptedToolExecution
 from amphora_contracts_runtime import CompletionRecord
@@ -62,3 +62,18 @@ class FittedPrimaryGeneration(WireModel):
     pool: ArtifactRef
     fitness: ArtifactRef
     resolution: ArtifactRef
+
+
+class SelectedPrimaryGeneration(WireModel):
+    schema_version: Literal["1"]
+    generation: GenerationIdentity
+    specification: ArtifactRef
+    pool: ArtifactRef
+    fitness: ArtifactRef
+    resolution: ArtifactRef
+    selection: ArtifactRef
+    checkpoint: ArtifactRef
+    source_proof: ArtifactRef
+    work_cut: GraphReadCut
+    stopped: bool
+    stop_reason: Identifier | None

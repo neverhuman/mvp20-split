@@ -7,17 +7,19 @@ from importlib.metadata import version
 
 from amphora_contracts_population_steps import (
     PopulationCandidateContext, PopulationMemberSlice, PopulationSliceRequest, PreparedPopulationGeneration,
-    SeedPopulationRequest,
+    SeedPopulationRequest, SelectPopulationRequest,
 )
 from amphora_contracts_tools import ReleaseDescriptor
 from amphora_contracts_search import ObjectiveValue
 from amphora_contracts_core import SchemaRef
 
 
-from .payloads import CollectPrimaryRequest, CollectedPrimaryGeneration, FittedPrimaryGeneration
+from .payloads import CollectPrimaryRequest, CollectedPrimaryGeneration, FittedPrimaryGeneration, SelectedPrimaryGeneration
 
 
 PROFILES = {
+    "prepare-selection": (FittedPrimaryGeneration, "population-worker.fitted", SelectPopulationRequest, "population-step.select"),
+    "select-primary": (SelectPopulationRequest, "population-step.select", SelectedPrimaryGeneration, "population-worker.selected"),
     "assemble-primary": (CollectedPrimaryGeneration, "population-worker.collected", FittedPrimaryGeneration, "population-worker.fitted"),
     "collect-primary": (CollectPrimaryRequest, "population-worker.collect-request", CollectedPrimaryGeneration, "population-worker.collected"),
     "seed": (SeedPopulationRequest, "population-step.seed", PreparedPopulationGeneration, "population-step.prepared"),

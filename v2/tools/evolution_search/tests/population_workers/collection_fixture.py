@@ -74,8 +74,13 @@ def fixture(e,status="succeeded", *, assembly_binding=None):
         policy=dict(kind="all"))],"edges":[]}
     if assembly_binding is not None:
         collector=worker.tool.binding.model_copy(update={"capability_id":"numeric.population-collect-primary"})
-        execution["body"]["nodes"].append(dict(kind="invoke",node_id="collect",tool=collector.model_dump(mode="json"),
-            inputs=[],timeout_seconds=3600,checkpoint=None))
+        for name,binding in (("collect",collector),("assemble",assembly_binding),
+                ("select",collector.model_copy(update={"capability_id":"numeric.population-select-primary"}))):
+            execution["body"]["nodes"].append(dict(kind="invoke",node_id=name,tool=binding.model_dump(mode="json"),
+                inputs=[],timeout_seconds=3600,checkpoint=None))
+        execution["body"]["nodes"].append(dict(kind="finish",node_id="finish",outputs=[]))
+        execution["body"]["edges"]=[dict(source=a["node_id"],target=b["node_id"],route="next")
+            for a,b in zip(execution["body"]["nodes"],execution["body"]["nodes"][1:])]
     execution=plan(ExecutableCampaignV4.model_validate_json(json.dumps(execution)))
     request=CollectPrimaryRequest(schema_version="1",prepared=root.reference,
         execution_plan=artifact(execution,"test.execution-plan","execution-plan"),
@@ -86,7 +91,7 @@ def fixture(e,status="succeeded", *, assembly_binding=None):
     for index,reference in enumerate(members):
         path=dict(schema_version="2",node_id="cost",occurrences=[dict(kind="scatter",node_id="evaluate",index=index,membership_sha256="b"*64)])
         address=hashlib.sha256(plan_bytes(dict(profile="amphora-activation-address-v1",plan_sha256=execution.sha256,path=path))).hexdigest()
-        current_status=status if index==0 else "succeeded"
+        current_status="skipped" if status=="all-skipped" else status if index==0 else "succeeded"
         node=dict(activation_id=address,path=path,kind="invoke",status=current_status,reason_code=None)
         node["reason_code"]="conditional_not_taken" if current_status=="skipped" else "tool_failed" if current_status=="failed" else None
         if current_status=="blocked":node["reason_code"]="graph_dependency_unavailable"

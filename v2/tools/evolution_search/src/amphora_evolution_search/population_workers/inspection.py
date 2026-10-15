@@ -76,16 +76,21 @@ class PopulationInspection:
         require(len(nodes) == snapshot.node_count, "population_observation_incomplete")
         return GraphCapture(snapshot, tuple(nodes))
 
+    def details(self, capture, node):
+        require(node in capture.nodes, "population_node_outside_capture")
+        cut=capture.snapshot.cut
+        detail=self.get(GraphNodeDetail,f"/v1/graph-observations/{cut.run_id}/nodes/{node.activation_id}",
+            {"snapshot_token":capture.snapshot.snapshot_token,"limit":100})
+        require(detail.cut==cut and detail.node==node and detail.next_cursor is None,"population_method_detail_cut")
+        return detail
+
     def method(self, capture, node):
         require(node in capture.nodes and node.kind == "invoke" and (node.status in {"succeeded", "failed", "skipped"}
                     or (node.status == "blocked" and node.reason_code == "graph_dependency_unavailable")),
                 "population_method_not_terminal")
         cut = capture.snapshot.cut
         path = f"/v1/graph-observations/{cut.run_id}/nodes/{node.activation_id}"
-        query = {"snapshot_token": capture.snapshot.snapshot_token, "limit": 100}
-        detail = self.get(GraphNodeDetail, path, query)
-        require(detail.cut == cut and detail.node == node and detail.next_cursor is None,
-                "population_method_detail_cut")
+        detail = self.details(capture,node)
         # Runtime's configured per-activation attempt bound is100, so this page must
         # contain every attempt. A continuation rejects rather than dropping history.
         inputs = self.get(NodeInputObservation, path + "/inputs")

@@ -1,6 +1,6 @@
 # Master Build Tracker
 
-Latest checkpoint: Search0.14 numerical methods qualified; POP-01.07 read-only input inspection qualified in Runtime0.70; Search0.15 primary collection qualified; Search0.16 initial synthetic fitness qualified; remaining step adapters next. E2 stays25%. Previous: 2026-10-14 21:32:00: E2.1 capacity/recovery pushed fdb87c20. E2.2 implements owner-authorized POP-01.06 Data closure retention;1000birth versus64direct-output bound reproduced. E2=25%, Execution31.25%, parent10.42%, Build15.63%, Verification0%. RG-01 follows POP-01 before ML-01.
+Latest checkpoint: 2026-10-15 14:54:01: Search0.17 initial selection qualified. Successor preparation next. E2=25%, Execution31.25%, parent10.42%, Build15.63%, Verification0%. RG-01 follows the whole POP-01 before ML-01.
 
 ## Purpose and Authority
 
@@ -11,18 +11,19 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 ## Program Tracker
 
 - Status: POP-01.01/E2 active; UI-01/UI-02 closed100%, LR-01 paused25%.
-- Last refreshed: 2026-10-14 21:22:00 (America/Chicago).
+- Last refreshed: 2026-10-15 14:54:01 (America/Chicago).
 - Baseline: approved [POP-01.04](POP-01.04%20Population%20contract%20decision.md).
-- Current priority/task: POP-01 E2.2a artifact_retention contract publication and Data implementation.
-- Next task: qualify Data closure protection before Runtime binding and population workers.
+- Current priority/task: POP-01.01 E2.2 successor preparation adapter.
+- Next task: complete worker unit, then E2.3 authored composition/resource preflight and E2.4 actual-owner matrix.
 - Implementation: parent10.42%, Build15.63%, Verification0%; Execution31.25%, Experience/Qualification0%.
   Execution E1=100%, E2=25%, E3/E4=0%; Experience U1-U4=0%, Qualification Q1-Q4=0%.
-- Latest checkpoint:243 source Runtime checks,21 independent installed Runtime checks,
-  actual HTTP restart and independent Deployment preflight pass.79 lifecycle/boundary/profile checks pass.
-  Population step workers/composition and full population acceptance remain pending.
-- Gate: E1/E2.1 passed; POP-01.05 implemented. POP-01.06 authorized; contract/Data/Runtime qualification gates remain.
+- Latest checkpoint: Search0.17 source355/installed353 and13 boundary checks pass;
+  actual16 success/required failure/not-taken retain whole-pool selection and exact
+  physical counters, all roots confirmed. Worker unit/composition/matrix still open.
+- Gate: E1/E2.1 and approved POP-01.06/07 prerequisites qualified; remaining E2.2
+  successor preparation, E2.3 composition and E2.4 qualification remain.
 - Acceptance: actual execution/population UI/scientific qualification remain distinct gates.
-- Active exception: none. Owner resumed continue-until-needed2026-10-14 20:42:26; detours complete and startup-credit applications deferred. POP-01.05 approved; E1 complete, E2 active. KB-01 stays queued.
+- Active exception: isolated pop01-retention-integration worktree; original review remains frozen. No merge/promotion until owner finishes review and wrappers drain. Continue-until-needed persists; startup-credit applications deferred. KB-01 stays queued.
   Prior Knowledge-content diagnosis complete:
   Only6synthetic concepts/5claims seeded; no inherited v1 knowledge import. Frozen UI restored.
 
@@ -37,13 +38,12 @@ The initial program proves software behavior using deterministic/synthetic fixtu
 ## Current In-Flight Work
 
 POP-01 E2 active: parent10.42%, Build15.63%, Execution31.25%, E1=100%; remaining gates0%.
-Retention prerequisite qualified (Data0.32/Runtime0.69); E2.2 population workers active.
-Search0.13 installed seed primitive qualifies16 members/26-artifact closure; same-run
-seed/slice binding now qualifies8 contexts/36-artifact closure and spent2; numerical
-evaluation and full worker-unit qualification remain pending.
-[Seed evidence](../Audits/POP-01_Population_Seed_Worker.md).
-[Closure evidence](../Audits/POP-01_Closure_Retention.md). Isolated implementation
-worktree preserves the active frozen review session.
+Retention/input inspection qualified (Data0.32/Runtime0.70). Search0.17 seed, slice,
+methods, complete collection, explicit synthetic fitness and initial selection have
+independent actual-owner evidence. Successor preparation is current; whole E2.2
+remains0. [Latest evidence](../Audits/POP-01_Population_Selection.md). Authored
+composition, resource feasibility and full batch/cap matrix remain ordered gates.
+Isolated worktree preserves the active frozen review session.
 LR-01 paused25%, Build33.33%, Acceptance0%; R1=100%, R2/R3/V1=0%.
 Completed UI-01/UI-02/LAN-01 are in the [completed index](Completed/README.md).
 

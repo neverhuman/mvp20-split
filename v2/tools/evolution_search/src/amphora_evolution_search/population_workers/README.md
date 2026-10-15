@@ -106,3 +106,20 @@ tool schemas retain exact bytes. Source345/installed343 checks plus actual16-suc
 one-required-failure and all16-not-taken runs pass; see POP-01_Population_Fitness audit.
 The256MiB/3600s descriptor remains a small-fixture engineering bound, not a measured
 claim for all independently valid population/method maxima.
+
+Search0.17 initial selection is independently qualified for the bounded fixture. select-primary consumes the existing
+public SelectPopulationRequest and verifies accepted whole-pool fitness, exact
+initial membership/evaluation/resolution, RNG replay and all ranks/exclusions.
+SelectionReadCut counts actual materialized graph nodes and physical attempts
+(including the current claim) at one owner cut. It rejects unrelated parallel work,
+allows only serial generation-loop ancestors and requires scope finishes/future
+work to depend on selection. The cut is correlation, never a budget/execution grant.
+prepare-selection is an explicit typed transport adapter for generation0's null
+predecessor; graph scalar formats remain unchanged. SelectedPrimaryGeneration keeps
+an explicit stopped boolean plus reason, checkpoint and source proof. Later
+generation/parent-union selection and successor preparation remain separate work.
+
+Selection qualification: source355/installed353, actual16 success/one required
+failure/all16-not-taken runs. Checkpoint attempts match22/22/6 and materialized
+nodes43/43/75 exactly. Source loops are checked; actual nested-loop selection remains
+a later composition gate. See POP-01_Population_Selection audit.

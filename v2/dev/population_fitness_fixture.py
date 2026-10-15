@@ -51,7 +51,7 @@ class FitnessFixture:
         original["constraints"]=publish(UnconstrainedSynthetic(schema_version="1",profile="unconstrained-synthetic-v1").model_dump(mode="json"),
             self.models[2][1].model_dump(),[context])
 
-    def run(self,run,worker_config,call,command,read):
+    def run(self,run,worker_config,call,command,read, *, stop_after_fitness=False):
         config=json.loads(worker_config.read_bytes());config.update(actor_id=self.worker["actor_id"],lease_seconds=300)
         for name in ("runtime","artifacts"):config[name]["token_env"]="QUAL_FITNESS_TOKEN"
         path=self.output/"population-fitness-worker.json";write(path,config)
@@ -94,9 +94,9 @@ class FitnessFixture:
         for _ in range(16):
             call(self.runtime_port,"/v1/graph-runs/advance",command("graph.advance",{"run_id":run,"max_transitions":32}))
             state=call(self.runtime_port,"/v1/runs/"+run)
-            if state["status"]=="completed":break
+            if state["status"]=="completed" or (stop_after_fitness and any(a["status"]=="queued" for a in state["activations"])):break
         spent=4 if self.case=="conditional-not-taken" else 20
-        assert state["status"]=="completed" and state["budget"]["spent"]==spent,state
+        assert state["status"]==("running" if stop_after_fitness else "completed") and state["budget"]["spent"]==spent,state
         record={"status":"passed","case":self.case,"members":16,"available":len(available),"unavailable":len(unavailable),
             "exact_available_values":True,"initial_selection_pool":True,"retained_artifacts":closure["artifact_count"],
             "run_status":state["status"],"spent":spent,"fitness_retention_grant":False,"provider_calls":0}

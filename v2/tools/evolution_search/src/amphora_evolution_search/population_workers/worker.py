@@ -11,6 +11,7 @@ from pathlib import Path
 
 from amphora_contracts_runtime import CompleteInvocation
 from amphora_contracts_search import ImplementationPin
+from amphora_contracts_population_steps import SelectPopulationRequest
 from amphora_contracts_tools import Completion
 from amphora_tool_protocol import (
     ArtifactClient, CommandRejected, CommandUnresolved, ProtocolError, RuntimeClient,
@@ -25,6 +26,7 @@ from .slices import SeedSlices
 from .methods import PrimaryMethod
 from .collection import PrimaryCollection
 from .assembly import PrimaryAssembly
+from .selection import InitialSelection
 
 
 class PopulationWorker:
@@ -51,6 +53,16 @@ class PopulationWorker:
                 result = SeedPreparation.load(request, session).publish(session)
             elif self.capability.operation == "slice":
                 result = SeedSlices.load(request.prepared, session).publish(request, session)
+            elif self.capability.operation == "prepare-selection":
+                require(request.generation.scope == session.scope and request.generation.run_id == invocation.run_id
+                    and request.generation.generation == 0 and request.generation.predecessor is None,
+                    "initial_selection_request_generation")
+                selection_request = SelectPopulationRequest(schema_version="1",specification=request.specification,
+                    pool=request.pool,fitness=request.fitness,resolution=request.resolution,predecessor=None)
+                result = session.publish(selection_request,self.tool.outputs[0].schema_ref,
+                    (request.specification,request.pool,request.fitness,request.resolution),"select/request")
+            elif self.capability.operation == "select-primary":
+                result = InitialSelection.load(request, session, self.runtime).publish(session)
             elif self.capability.operation == "assemble-primary":
                 result = PrimaryAssembly.load(source, session, self.runtime, self.tool.binding).publish(session)
             elif self.capability.operation == "collect-primary":

@@ -1,21 +1,27 @@
 # POP-01.01 Population Execution
 
 - Status: active E2; parent [POP-01](POP-01%20Population%20Campaign%20Execution%20and%20Experience.md).
-- Last refreshed: 2026-10-15 12:18:22 (America/Chicago).
+- Last refreshed: 2026-10-15 14:54:01 (America/Chicago).
 - Implementation: 31.25%; E1=100%, E2=25%, E3/E4=0%, four equal delivery gates.
 - Current: E2.1 complete; E2.2a closure-retention prerequisite qualified. E2.2 population workers active.
-- Next: remaining selection/successor step adapters, then authored composition.
+- Next: successor preparation adapter, then authored composition.
+- E2.2 selection checkpoint: Search0.17 source355/installed353,74 focused workers,
+  13 boundary checks,750 unchanged system schemas/twelve predecessor tool pins.
+  Actual16 success, one required failure and16 not-taken runs retain whole-pool
+  selection/exclusion and exact counters22/22/6 attempts,43/43/75 graph nodes.
+  [Evidence](../Audits/POP-01_Population_Selection.md). Successor preparation next;
+  whole E2.2 remains0 and E2=25%.
 - E2.2 fitness checkpoint: Search0.16 source345/installed343,13 boundary checks,
   unchanged750 system schemas/ten predecessor tool schema pins. Actual16 success,
   one required failure and16 not-taken outcomes pass with complete truthful fitness,
   initial selection pool and confirmed retention. [Evidence](../Audits/POP-01_Population_Fitness.md).
-  Remaining selection/successor adapters and authored composition are next; whole
+  Historical component checkpoint; successor/composition remain unfinished; whole
   E2.2 remains0 and E2=25%.
 - E2.2 collection checkpoint: Search0.15/SDK0.4;441 source,326 installed Search,
   113 installed SDK and13 boundary checks pass. Actual complete16-member success,
   required failure and conditional-not-taken collection pass with confirmed closure;
   no worker retention. [Evidence](../Audits/POP-01_Population_Collection.md).
-  Fitness assembly remains next; whole E2.2 unit0 and E2=25%.
+  Whole E2.2 unit remains0 and E2=25%.
 - POP-01.07 qualified: Runtime0.70/node_inputs0.1;55 actual SQL and55 combined
   contract/publication/boundary checks, nine independent contract checks and actual
   HTTP owner restart pass.750 schemas preserve748 predecessor bytes.
