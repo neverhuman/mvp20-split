@@ -51,7 +51,7 @@ class SelectionFixture:
             runtime["graphs"][0]["schemas"].extend({"schema_ref":ref.model_dump(),"path":"population-schema-"+str(index)+".json"}
                 for index,(_,ref) in enumerate(models) if ref.sha256 in needed-present)
 
-    def run(self,run,worker_config,call,command,read):
+    def run(self,run,worker_config,call,command,read, *, stop_after_selection=False):
         config=json.loads(worker_config.read_bytes());config.update(actor_id=self.worker["actor_id"],lease_seconds=300)
         for name in ("runtime","artifacts"):config[name]["token_env"]="QUAL_SELECTION_TOKEN"
         path=self.output/"population-selection-worker.json";write(path,config)
@@ -85,7 +85,8 @@ class SelectionFixture:
         expected={row.candidate_id for row in fitness_rows if row.outcome.status=="evaluated"}
         assert selection.member_count==len(rows)==16 and set(selection.selected)==expected
         assert {row.candidate_id for row in rows if row.status=="excluded"}=={row.candidate_id for row in fitness_rows if row.outcome.status=="unavailable"}
-        assert selected.stopped and selected.stop_reason==("no_feasible_survivors" if self.case=="conditional-not-taken" else "generation_budget")
+        assert selected.stopped==(self.case=="conditional-not-taken" or not stop_after_selection)
+        assert selected.stop_reason==("no_feasible_survivors" if self.case=="conditional-not-taken" else None if stop_after_selection else "generation_budget")
         spent=6 if self.case=="conditional-not-taken" else 22
         assert checkpoint.progress.evaluations_issued==checkpoint.progress.evaluations_terminal==16
         assert checkpoint.progress.attempts_issued==spent
@@ -94,8 +95,8 @@ class SelectionFixture:
         for _ in range(16):
             call(self.runtime_port,"/v1/graph-runs/advance",command("graph.advance",{"run_id":run,"max_transitions":32}))
             state=call(self.runtime_port,"/v1/runs/"+run)
-            if state["status"]=="completed":break
-        assert state["status"]=="completed" and state["budget"]["spent"]==spent,state
+            if state["status"]=="completed" or (stop_after_selection and any(a["status"]=="queued" for a in state["activations"])):break
+        assert state["status"]==("running" if stop_after_selection else "completed") and state["budget"]["spent"]==spent,state
         record={"status":"passed","case":self.case,"members":16,"selected":len(expected),"excluded":16-len(expected),
             "attempts_issued":checkpoint.progress.attempts_issued,"activations_created":checkpoint.progress.activations_created,
             "logical_evaluations":16,"retained_artifacts":closure["artifact_count"],"stop_reason":selected.stop_reason,

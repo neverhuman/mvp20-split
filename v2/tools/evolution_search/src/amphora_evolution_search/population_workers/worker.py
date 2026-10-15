@@ -11,7 +11,7 @@ from pathlib import Path
 
 from amphora_contracts_runtime import CompleteInvocation
 from amphora_contracts_search import ImplementationPin
-from amphora_contracts_population_steps import SelectPopulationRequest
+from amphora_contracts_population_steps import SelectPopulationRequest, ProposePopulationSuccessorRequest
 from amphora_contracts_tools import Completion
 from amphora_tool_protocol import (
     ArtifactClient, CommandRejected, CommandUnresolved, ProtocolError, RuntimeClient,
@@ -27,6 +27,7 @@ from .methods import PrimaryMethod
 from .collection import PrimaryCollection
 from .assembly import PrimaryAssembly
 from .selection import InitialSelection
+from .successor_preparation import SuccessorPreparation
 
 
 class PopulationWorker:
@@ -53,6 +54,14 @@ class PopulationWorker:
                 result = SeedPreparation.load(request, session).publish(session)
             elif self.capability.operation == "slice":
                 result = SeedSlices.load(request.prepared, session).publish(request, session)
+            elif self.capability.operation == "prepare-successor-request":
+                require(request.generation.scope==session.scope and request.generation.run_id==invocation.run_id
+                    and request.generation.generation==0,"successor_request_generation")
+                successor_request=ProposePopulationSuccessorRequest(schema_version="1",specification=request.specification,checkpoint=request.checkpoint)
+                result=session.publish(successor_request,self.tool.outputs[0].schema_ref,
+                    (request.specification,request.checkpoint),"successor/request")
+            elif self.capability.operation == "prepare-successor":
+                result=SuccessorPreparation.load(request,session,self.runtime).publish(session)
             elif self.capability.operation == "prepare-selection":
                 require(request.generation.scope == session.scope and request.generation.run_id == invocation.run_id
                     and request.generation.generation == 0 and request.generation.predecessor is None,

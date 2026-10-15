@@ -49,12 +49,15 @@ class PrimaryBirthBatch:
         return cls._allocate(original, 0, capacity, (), CounterRandom(original.record.seed))
 
     @classmethod
-    def successor(cls, selected):
+    def successor(cls, selected, capacity=None):
         require(selected.stop_reason is None, "allocation_stopped_source")
         original = selected.decision.pool.original
         budget, progress = original.record.budget, selected.record.progress
-        capacity = EvaluationCapacity(budget.max_evaluations - progress.evaluations_issued,
-                                      budget.max_attempts - progress.attempts_issued)
+        remaining = EvaluationCapacity(budget.max_evaluations - progress.evaluations_issued,
+                                       budget.max_attempts - progress.attempts_issued)
+        capacity = remaining if capacity is None else capacity
+        require(type(capacity) is EvaluationCapacity and capacity.evaluations <= remaining.evaluations
+                and capacity.attempts <= remaining.attempts, "allocation_observed_capacity")
         parents = tuple(ParentVector(b.record.candidate_id, b.record.genes) for b in selected.parents)
         return cls._allocate(original, selected.record.generation.generation + 1, capacity, parents,
                              CounterRandom.from_record(selected.record.rng, expected_seed=original.record.seed))

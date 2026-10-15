@@ -1,11 +1,11 @@
 # POP-01 Population Campaign Execution and Experience
 
-Current E2.2 checkpoint: Search0.17 initial selection qualified (source355/installed353; actual success/failure/not-taken). Successor preparation next; percentages unchanged.
+Current E2.2 checkpoint: Search0.18 initial successor preparation qualified (361 source/359 installed; four actual-owner variants). Successor-aware consumption next; percentages unchanged.
 
 ## Canonical tracker
 
 - Status: active POP-01.01/E2 bounded dispatch; before ML-01.
-- Last refreshed: 2026-10-15 14:54:01 (America/Chicago).
+- Last refreshed: 2026-10-15 15:22:42 (America/Chicago).
 - Scope revision: POP-01.04 and POP-01.05 approved; E1 complete, E2 active.
 - Overall implementation: 10.42%; Execution31.25%, Experience0%, Qualification0%.
   Three equally weighted children, each with four equal delivery gates. Parent
@@ -14,7 +14,7 @@ Current E2.2 checkpoint: Search0.17 initial selection qualified (source355/insta
 - Owner: cross-owner population workflow; responsibilities assigned below.
 - Prerequisite: UI-01/V1 and UI-02/P4 prove actual Knowledge, inventory-grounded
   LLM graph curation/missing-capability requests, browser Run and candidate detail.
-- Current task: E2.2 successor preparation; seed/slice/method/collection/fitness/initial selection components qualified.
+- Current task: E2.2 successor-aware consumption; initial preparation and earlier generation0 components qualified.
   Full worker unit and authored composition/matrix remain incomplete. E1/E2.1 remain complete.
 - Design readiness: POP-01.04 contracts/selection policy approved. New public Runtime
   extensions, if needed, still require concrete E1 review before implementation.
@@ -27,7 +27,7 @@ Current E2.2 checkpoint: Search0.17 initial selection qualified (source355/insta
   no blanket human approval gate between generations.
 - Activation audit: [corrected_ready for E1 design](../Audits/POP-01_Activation.md),
   2026-10-13 18:26:00; source inventory and37legacy checks pass. New contracts approved 2026-10-13 18:45:57; design earns no implementation credit. v1/completed plans stay closed.
-- Active exception: none; owner confirmed LAN access, wrappers drained before edits. UI-01/V1 and UI-02/P4 prerequisites complete.
+- Active exception: isolated pop01-retention-integration worktree; original review source remains frozen while local15a/LAN15b serve. No merge/promotion until owner finishes review and wrappers drain. UI-01/V1 and UI-02/P4 prerequisites complete.
 
 ## Sequence and immediate children
 

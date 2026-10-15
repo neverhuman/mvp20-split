@@ -1,10 +1,14 @@
 # Numeric evolutionary search boundary
 
-POP-01/E2.2 source release0.17 adds opt-in [reference-backed population workers](src/amphora_evolution_search/population_workers/README.md)
-for synthetic generation0 seed/slice and dimensionless square/negative-sum methods plus authoritative primary collection and explicit synthetic fitness assembly/initial selection, with explicit complete derivation ancestry.
-296 Search tests pass; the seven-file frozen reuse audit passes separately in the
-original read-only baseline because this worktree omits v1. Independent installed
-worker/API qualification is in progress. Legacy numeric CLI modes remain separate;
+POP-01/E2.2 source release0.18 adds opt-in [reference-backed population workers](src/amphora_evolution_search/population_workers/README.md)
+for synthetic generation0 seed/slice, dimensionless numerical methods, authoritative
+collection, explicit fitness/initial selection and declared generation1 preparation.
+Preparation preserves accepted parents/RNG and current budget limits without
+inventing future inputs or dispatching scientific work. Successor-aware consumers
+and the complete authored loop remain unfinished E2.2/E2.3 gates.
+361 source/359 independently installed checks pass; the seven-file frozen reuse
+audit was verified separately against the original read-only baseline because this
+worktree omits v1. Legacy numeric CLI modes remain separate;
 the serving demo remains on its frozen installation.
 
 - Source release0.12.0 adds the opt-in [population domain](src/amphora_evolution_search/population/README.md)

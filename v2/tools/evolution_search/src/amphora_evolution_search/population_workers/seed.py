@@ -42,56 +42,5 @@ class SeedPreparation:
         return cls(original, source, batch, identity)
 
     def publish(self, artifacts):
-        spec = self.source.reference
-        births = tuple(artifacts.publish(birth.record, candidate_birth_schema(), (spec,),
-            "seed/birth/" + str(birth.record.ordinal)) for birth in self.batch.births)
-        by_id = {birth.record.candidate_id: artifact.reference
-                 for birth, artifact in zip(self.batch.births, births, strict=True)}
-        members = tuple(sorted((CandidateMember(candidate_id=b.record.candidate_id,
-            birth=by_id[b.record.candidate_id], representation=by_id[b.record.candidate_id], source="seed")
-            for b in self.batch.proposed), key=lambda member: member.candidate_id))
-        cohort = GenerationMembership(self.original, self.identity, "cohort", members)
-        pages = []
-        birth_pages = []
-        for page in RecordPages(self.identity, "population.birth-page", tuple(b.record for b in self.batch.births)).pack():
-            parents = tuple(by_id[b.candidate_id] for b in page.records)
-            artifact = artifacts.publish(page, population_record_schema("population.birth-page"),
-                (spec, *parents), "seed/birth-page/" + str(page.ordinal))
-            pages.append(artifact)
-            birth_pages.append(MembershipPageReference(ordinal=page.ordinal, members=len(page.records), artifact=artifact.reference))
-        birth_root = artifacts.publish(BirthManifest(schema_version="1", profile="population-birth-manifest-v1",
-            generation=self.identity, birth_count=len(births), pages=tuple(birth_pages)),
-            population_record_schema("population.birth-manifest"), (spec, *(p.artifact for p in birth_pages)), "seed/births")
-        cohort_pages = []
-        for page in cohort.pages():
-            artifact = artifacts.publish(page, membership_page_schema(),
-                (spec, *(m.birth for m in page.members)), "seed/cohort-page/" + str(page.ordinal))
-            pages.append(artifact)
-            cohort_pages.append(MembershipPageReference(ordinal=page.ordinal, members=len(page.members), artifact=artifact.reference))
-        cohort_root = artifacts.publish(MembershipManifest(schema_version="1", profile="population-membership-manifest-v1",
-            generation=self.identity, role="cohort", member_count=len(members), pages=tuple(cohort_pages)),
-            membership_manifest_schema(), (spec, *(p.artifact for p in cohort_pages)), "seed/cohort")
-        declarations = DeclaredEvaluations.primary(cohort)
-        slot_pages = []
-        for page in RecordPages(self.identity, "population.evaluation-slot-page", declarations.slots).pack():
-            artifact = artifacts.publish(page, population_record_schema("population.evaluation-slot-page"),
-                (spec, cohort_root.reference), "seed/slot-page/" + str(page.ordinal))
-            pages.append(artifact)
-            slot_pages.append(MembershipPageReference(ordinal=page.ordinal, members=len(page.records), artifact=artifact.reference))
-        declaration_root = artifacts.publish(EvaluationDeclarationManifest(schema_version="1",
-            profile="population-evaluation-declaration-manifest-v1", generation=self.identity,
-            membership=cohort_root.reference, slot_set_sha256=declarations.digest,
-            slot_count=len(declarations.slots), pages=tuple(slot_pages)),
-            population_record_schema("population.evaluation-declarations"),
-            (spec, cohort_root.reference, *(p.artifact for p in slot_pages)), "seed/declarations")
-        record = self.original.record
-        GenerationPageClosure.verify(self.identity, tuple(pages))
-        pins = (record.method_graph.definition, record.assembly.policy, record.constraints,
-                *record.context, *record.knowledge, *(m.conditions for m in record.method_graph.methods))
-        root = artifacts.publish(PreparedPopulationGeneration(schema_version="1", generation=self.identity,
-            specification=spec, births=birth_root.reference, cohort=cohort_root.reference,
-            declarations=declaration_root.reference), population_step_schema("population-step.prepared"),
-            (spec, birth_root.reference, cohort_root.reference, declaration_root.reference, *pins), "seed/prepared")
-        PreparedGeneration.verify(root, declarations, spec, cohort_root.reference,
-                                  birth_root.reference, declaration_root.reference)
-        return root
+        from .generation_publication import GenerationPublication
+        return GenerationPublication(self.original,self.source,self.batch,self.identity).publish(artifacts).prepared.artifact

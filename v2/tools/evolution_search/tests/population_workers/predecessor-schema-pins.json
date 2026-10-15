@@ -10,5 +10,9 @@
   "collect-primary/input": "5ce73be1f4f537382c726e28d2b32a15ec97b8ebbb55af0466d88de36a9118bd",
   "collect-primary/output": "346d76f57bbe634cf1c71995e1b1918d7984fef7f12fd5eab2900b778e6f0f73",
   "assemble-primary/input": "346d76f57bbe634cf1c71995e1b1918d7984fef7f12fd5eab2900b778e6f0f73",
-  "assemble-primary/output": "4aeb836256d3d13056e38e1272be751e891369ec82a05605e70ed14bdebfae87"
+  "assemble-primary/output": "4aeb836256d3d13056e38e1272be751e891369ec82a05605e70ed14bdebfae87",
+  "prepare-selection/input": "4aeb836256d3d13056e38e1272be751e891369ec82a05605e70ed14bdebfae87",
+  "prepare-selection/output": "77f4f3c7f5edc3bfe7ab1123abd3e32a34ac44c45bad09495bb5a081b5160af0",
+  "select-primary/input": "77f4f3c7f5edc3bfe7ab1123abd3e32a34ac44c45bad09495bb5a081b5160af0",
+  "select-primary/output": "efe157f64d9248fe8718487a9a17c783ca9168e9ee3f5c7f590c4b0054d5d6d5"
 }

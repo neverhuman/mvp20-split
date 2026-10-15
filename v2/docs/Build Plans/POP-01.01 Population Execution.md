@@ -1,10 +1,20 @@
 # POP-01.01 Population Execution
 
 - Status: active E2; parent [POP-01](POP-01%20Population%20Campaign%20Execution%20and%20Experience.md).
-- Last refreshed: 2026-10-15 14:54:01 (America/Chicago).
+- Last refreshed: 2026-10-15 15:22:42 (America/Chicago).
 - Implementation: 31.25%; E1=100%, E2=25%, E3/E4=0%, four equal delivery gates.
 - Current: E2.1 complete; E2.2a closure-retention prerequisite qualified. E2.2 population workers active.
-- Next: successor preparation adapter, then authored composition.
+- Next: successor-aware consumption, then authored composition.
+- Active bounded task: reconstruct accepted successor preparation for slicing and
+  methods, then complete generation1 collection/fitness/parent-union selection.
+  Prerequisite: qualified initial preparation. Bound delivery to exact parent/RNG/
+  declaration replay, accepted producer and Data origin, no generation0 regression.
+  Verify malformed/unaccepted sources reject and actual installed successor contexts
+  execute before claiming this next gate. Whole E2.2 remains0.
+- Search0.18 preparation qualified:361 source/359 installed,80 focused workers,
+  13 boundaries,750 system schemas/sixteen predecessor tool schema pins preserved.
+  Actual normal/failed-parent preparation and no-parent/exhausted-budget stops pass;
+  no future keys or scientific dispatch. [Evidence](../Audits/POP-01_Population_Successor_Preparation.md).
 - E2.2 selection checkpoint: Search0.17 source355/installed353,74 focused workers,
   13 boundary checks,750 unchanged system schemas/twelve predecessor tool pins.
   Actual16 success, one required failure and16 not-taken runs retain whole-pool

@@ -75,7 +75,9 @@ def fixture(e,status="succeeded", *, assembly_binding=None):
     if assembly_binding is not None:
         collector=worker.tool.binding.model_copy(update={"capability_id":"numeric.population-collect-primary"})
         for name,binding in (("collect",collector),("assemble",assembly_binding),
-                ("select",collector.model_copy(update={"capability_id":"numeric.population-select-primary"}))):
+                ("select",collector.model_copy(update={"capability_id":"numeric.population-select-primary"})),
+                ("successor_request",collector.model_copy(update={"capability_id":"numeric.population-prepare-successor-request"})),
+                ("prepare_successor",collector.model_copy(update={"capability_id":"numeric.population-prepare-successor"}))):
             execution["body"]["nodes"].append(dict(kind="invoke",node_id=name,tool=binding.model_dump(mode="json"),
                 inputs=[],timeout_seconds=3600,checkpoint=None))
         execution["body"]["nodes"].append(dict(kind="finish",node_id="finish",outputs=[]))

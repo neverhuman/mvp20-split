@@ -34,14 +34,14 @@ def selection_fixture(e,status="succeeded"):
         address=hashlib.sha256(plan_bytes(dict(profile="amphora-activation-address-v1",plan_sha256=plan.sha256,path=path))).hexdigest()
         return dict(activation_id=address,path=path,kind=kind,status=status,reason_code=None)
     root=[node("evaluate","scatter","succeeded"),node("collect","invoke","succeeded"),node("assemble","invoke","succeeded"),
-        node("select","invoke","issued"),node("finish","finish","waiting")]
+        node("select","invoke","issued"),node("successor_request","invoke","waiting"),node("prepare_successor","invoke","waiting"),node("finish","finish","waiting")]
     detail_map={}
     for method in c.collection.methods:
         entry=method.owner.detail.node.model_dump(mode="json");root.append(entry)
         detail_map[entry["activation_id"]]={**method.owner.detail.model_dump(mode="json"),"cut":cut}
-    for entry in root[:5]:
+    for entry in root[:7]:
         attempts=[]
-        if entry["kind"]=="invoke":
+        if entry["kind"]=="invoke" and entry["status"]!="waiting":
             name=entry["path"]["node_id"]
             attempts=[dict(attempt_id=name+"-attempt",invocation_id=entry["activation_id"],worker_id="worker",fence=1,
                 status="leased" if name=="select" else "succeeded",settled=name!="select",
@@ -69,4 +69,4 @@ def selection_fixture(e,status="succeeded"):
         run_id=cut["run_id"],inputs=(SimpleNamespace(port="parameters",artifact=carrier),),checkpoint=None)
     session=PopulationArtifacts(e.client,e.attempt,c.session.implementation,transformation_id=tool.capability_id)
     return SimpleNamespace(request=request,session=session,runtime=runtime,fitted=fitted,page=page,proof=proof,
-        prepared=c.prepared,expected_attempts=sum(len(detail_map[entry["activation_id"]]["attempts"]) for entry in root if entry["kind"]=="invoke"))
+        prepared=c.prepared,assembly_fixture=c,root=root,detail_map=detail_map,inputs=inputs,plan=plan,expected_attempts=sum(len(detail_map[entry["activation_id"]]["attempts"]) for entry in root if entry["kind"]=="invoke"))

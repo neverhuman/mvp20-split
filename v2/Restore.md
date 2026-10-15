@@ -1,6 +1,6 @@
 # Restore
 
-Refreshed: 2026-10-15 14:22:59 America/Chicago. Read after compaction with AGENTS.md.
+Refreshed: 2026-10-15 15:22:42 America/Chicago. Read after compaction with AGENTS.md.
 
 ## Current task and workspace
 
@@ -20,7 +20,9 @@ Use v2/dev/.venv/Scripts/python.exe and ignored v2/.venv/Scripts/uv.exe here.
 
 Pushed:846e194a closure retention;721880d3 seed;9f87024b same-run slice;
 77d39f7a numerical methods;adb451be approved node-input inspection;
-21bdc2f1 qualified collection/SDK0.4. Pushed a553de62 qualifies0.16 fitness. Selection adapter is now active.
+21bdc2f1 qualified collection/SDK0.4; a553de62 fitness;26924710 selection.
+Search0.18 successor preparation qualified, checkpoint commit pending; next is
+successor-aware consumption. No service promotion or original-checkout edits.
 
 Latest Search0.16 fitness:345 source/343 independently installed checks;64 focused
 workers;13 boundaries/ownership;750 system schemas and ten predecessor tool payload
@@ -41,7 +43,7 @@ retained99), one required failure selects15/excludes1 (22/43/98), all not-taken
 selects zero/excludes16 (6/75/83). Roots confirmed, no provider calls. All temporary
 processes/containers removed. Evidence: POP-01_Population_Selection audit.
 Independent .test-results/pop01-selection-search-install-20261015a/environment.
-Exact-path commit/push this checkpoint then successor preparation next.
+Pushed26924710. Successor preparation is active; no service promotion.
 
 SelectionReadCut enforces a closed owner cut (serial loop ancestors only), counts
 physical attempts including own claim and actual graph nodes, never infers these
@@ -49,11 +51,28 @@ from logical evaluations. prepare-selection handles null predecessor without gra
 scalar changes. SelectedPrimaryGeneration carries stopped bool/reason/work_cut/
 source proof. Initial generation only; actual loop/parent-union gate remains.
 
-Next: successor preparation from accepted selected checkpoint, exact RNG/parent
-continuity, actual remaining attempt capacity, fresh offspring/declaration/pool
-artifacts and explicit stopped outcome. Review existing public ProposedSuccessor
-versus declared-before-input semantics before choosing new TOOL-owned transport;
-never reinterpret legacy final-evaluation fields or invent future context refs.
+Latest0.18:361 source/359 independently installed checks;80 focused workers;
+13 boundaries;750 shared schemas/sixteen prior tool schema pins unchanged. Pins
+expanded using installed0.17; exact ten-check source+installed reruns pass.
+Four actual installed probes pass: normal16 offspring/32pool/RNG112/128retained,
+one failed parent16/31/112/127; no parents stop86retained/spent8; Runtime exhausted
+stop102retained/spent24. Normal/failure spend24. All four temporary containers and
+processes removed; pre-existing demo containers and labeled volumes preserved.
+Evidence docs/Audits/POP-01_Population_Successor_Preparation.md and ignored
+.test-results/pop01-successor[-failure|-conditional|-tight]-http-20261015a.
+Independent Search .test-results/pop01-successor-search-install-20261015a/environment.
+No live test sessions; no provider calls. Source/profile edits are uncommitted0.18.
+
+Next bounded task: successor-aware reconstruction for slicing/methods, then
+generation1 collection/fitness/retained-parent selection. Current SeedSlices and
+PrimaryCohort remain generation0. Do not relax them without replaying accepted
+preparation and exact origins. SuccessorPreparation currently initialCP→Gen1only;
+new TOOL-owned PreparedPrimarySuccessor/PrimarySuccessorDecision preserve legacy
+ProposedSuccessor final-evaluation semantics. No future keys/inputs fabricated.
+GenerationPublication extracts seed publisher; default legacy allocator unchanged,
+optional observedcapacity can only reduce. Fresh SelectionReadCut includes own
+claim. Capacity is method floor, not whole-wave orchestration/grant. Need exact
+parent/RNG/budget continuity and genuine installed context execution before gate.
 Whole E2.2 remains0; E2.3 authored composition/resource preflight and E2.4 batch1/8/32,
 cap1/4/8 actual-owner matrix remain ordered gates. No live test sessions remain.
 

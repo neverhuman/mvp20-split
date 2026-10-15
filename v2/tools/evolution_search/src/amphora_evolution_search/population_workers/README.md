@@ -123,3 +123,21 @@ Selection qualification: source355/installed353, actual16 success/one required
 failure/all16-not-taken runs. Checkpoint attempts match22/22/6 and materialized
 nodes43/43/75 exactly. Source loops are checked; actual nested-loop selection remains
 a later composition gate. See POP-01_Population_Selection audit.
+
+Search0.18 adds prepare-successor-request and prepare-successor for the accepted
+initial checkpoint. SuccessorPreparation verifies canonical Runtime selection and
+Data origin, replays the full selection and RNG, and reads a fresh closed work cut.
+Observed remaining Runtime and original attempt budgets can only reduce the legacy
+allocator's capacity. GenerationPublication publishes every birth disposition,
+offspring membership, primary declarations and a pool of retained parents plus new
+offspring. Explicit stopped results publish no next generation.
+
+PreparedPrimarySuccessor and PrimarySuccessorDecision are tool-owned preparation
+envelopes. Existing public ProposedSuccessor still means finalized evaluation
+continuity; no future EvaluationKeys or inputs are invented here. Capacity is a
+logical method floor, not a reservation or full-wave dispatch grant. E2.3 must
+preflight all orchestration, envelopes, queue and ancestry costs before dispatch.
+Preparation is initial checkpoint to generation1 only. Existing slice/method/
+collection/fitness/selection consumers still enforce generation0; successor-aware
+consumption and parent-union fitness remain required E2.2 work. This release does
+not establish an executing multigeneration population loop.

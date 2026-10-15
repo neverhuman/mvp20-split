@@ -2,10 +2,11 @@
 from typing import Annotated, Literal
 from amphora_contracts_core import ArtifactRef, Identifier, WireModel
 from amphora_contracts_population import GenerationIdentity
-from pydantic import Field
+from pydantic import Field,model_validator
 from amphora_contracts_graph_runtime import GraphNodeDetail,GraphReadCut
 from amphora_contracts_node_inputs import NodeInputObservation
 from amphora_contracts_execution_proofs import AcceptedToolExecution
+from amphora_contracts_search import RngState
 from amphora_contracts_runtime import CompletionRecord
 from amphora_contracts_artifacts import DerivationReceipt
 
@@ -77,3 +78,35 @@ class SelectedPrimaryGeneration(WireModel):
     work_cut: GraphReadCut
     stopped: bool
     stop_reason: Identifier | None
+
+
+class PreparedPrimarySuccessor(WireModel):
+    schema_version: Literal["1"]
+    generation: GenerationIdentity
+    prepared: ArtifactRef
+    pool: ArtifactRef
+    source_selected: ArtifactRef
+    rng: RngState
+    evaluations_planned: Annotated[int, Field(ge=0,le=8000)]
+    logical_evaluation_capacity: Annotated[int, Field(ge=0,le=808000)]
+    method_attempt_capacity: Annotated[int, Field(ge=0,le=9007199254740991)]
+    disposition: Literal["evaluate","duplicate_only","evaluation_budget","attempt_budget"]
+
+
+class PrimarySuccessorDecision(WireModel):
+    schema_version: Literal["1"]
+    checkpoint: ArtifactRef
+    source_selected: ArtifactRef
+    stopped: bool
+    reason_code: Identifier | None
+    successor: ArtifactRef | None
+    work_cut: GraphReadCut
+
+    @model_validator(mode="after")
+    def consistent_decision(self):
+        if self.stopped != (self.successor is None) or self.stopped != (self.reason_code is not None):
+            raise ValueError("successor_decision_mismatch")
+        refs=(self.checkpoint,self.source_selected,*(() if self.successor is None else (self.successor,)))
+        if any(ref.scope!=self.work_cut.scope for ref in refs):
+            raise ValueError("successor_decision_scope")
+        return self

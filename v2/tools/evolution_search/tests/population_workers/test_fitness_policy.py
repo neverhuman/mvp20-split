@@ -71,7 +71,7 @@ def test_old_tool_payload_schema_bytes_remain_pinned():
     import hashlib
     from pathlib import Path
     pins=json.loads(Path(__file__).with_name("predecessor-schema-pins.json").read_bytes())
-    assert len(pins)==12
+    assert len(pins)==16
     for key,digest in pins.items():
         operation,direction=key.split("/")
         assert hashlib.sha256(PopulationCapability(operation).schema_bytes(direction)).hexdigest()==digest

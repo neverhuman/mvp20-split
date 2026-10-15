@@ -1,6 +1,7 @@
 """Initial whole-pool selection with accepted source and closed observed work counters."""
 from dataclasses import dataclass
 from amphora_contracts_artifacts import DerivationReceipt
+from amphora_contracts_campaigns import ExecutionPlanV4
 
 from amphora_contracts_population import (
     EvaluationManifest,EvaluationResolutionManifest,FitnessManifest,MembershipManifest,MembershipPageReference,
@@ -34,6 +35,7 @@ class InitialSelection:
     selection: RetainedFitness
     counter: SelectionReadCut
     source_pages: tuple[PopulationArtifact,...]
+    plan: ExecutionPlanV4
 
     @classmethod
     def load(cls,request,artifacts,runtime):
@@ -110,7 +112,7 @@ class InitialSelection:
         selection=RetainedFitness.verify(pool,request.pool,fitness,tuple(page.content for page in fitness_pages),(evidence,))
         pages=(*prepared_pages(prepared,artifacts),*pool_pages,*key_pages,*observation_pages,*fitness_pages)
         GenerationPageClosure.verify(record.generation,pages)
-        return cls(request,original,fitted,owner,lineage,retained,selection,counter,pages)
+        return cls(request,original,fitted,owner,lineage,retained,selection,counter,pages,plan)
 
     def publish(self,artifacts):
         owner=self.owner
