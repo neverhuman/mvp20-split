@@ -1,8 +1,19 @@
 # Restore
 
-Refreshed: 2026-10-14 12:14:01 America/Chicago. Read FIRST after compaction.
+Refreshed: 2026-10-14 20:42:26 America/Chicago. Read FIRST after compaction.
 
 ## Current task
+
+2026-10-14 20:42:26: owner resumed CONTINUE-UNTIL-NEEDED; prior stop for detours
+is superseded. Startup-credit applications deferred; no future automation requested.
+Primary return point POP-01.01 E1/D4: independent work already complete and pushed;
+exact remaining decision is POP-01.05 additive graph.admit_draft_bounded command,
+POST /v1/graph-drafts/admit-bounded, immutable campaign-invocation-cap-v1 limit1..8.
+General resume is not recorded as approval of this explicitly reserved public boundary.
+E1=93.75%, D4=75%, E2=0; do not implement the proposed public route before direction.
+Concrete review/proofs already in POP-01.05 and POP-01_Composition_Transitions.md.
+Keep existing demo serving/curation paused; drain before future implementation edits.
+KB-01 remains queued, not a substitute for the active gate. No source changes.
 
 2026-10-14 20:25:10 owner request: added queued [KB-01 Initial Scientific Knowledge Corpus](docs/Build%20Plans/KB-01%20Initial%20Scientific%20Knowledge%20Corpus.md).
 Overall/Build/Acceptance0%; K1/K2/K3/V1=0. MBT successor slot5 and plan index updated;
