@@ -43,7 +43,25 @@ class OwnerProcess:
                 "lifecycle_installation_changed")
         for wheel in installation.wheels:
             WheelIdentity.verified(root, wheel.filename, wheel.sha256)
+        if owner == "runtime":
+            cls._resource_preflight(python, configuration, environment)
         return cls._launch(owner, SERVING_HOSTS[owner].serve_command(python, configuration, port), environment, events)
+
+    @staticmethod
+    def _resource_preflight(python, configuration, environment):
+        """Read-only public owner CLI; unsupported older binaries fail before launch."""
+        require(type(environment) is dict and all(type(k) is str and k.startswith("AMPHORA_") and
+                type(v) is str and "\x00" not in v for k, v in environment.items()), "lifecycle_environment")
+        values = {key:value for key,value in os.environ.items() if key.upper() in BASE_ENVIRONMENT}
+        values.update(environment)
+        try:
+            result = subprocess.run([str(python), "-I", "-m", "amphora_campaign_runtime",
+                                     "resource-preflight", "--config", str(configuration)],
+                                    env=values, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
+                                    timeout=45, creationflags=subprocess.CREATE_NO_WINDOW)
+            require(result.returncode == 0, "runtime_resource_preflight_failed")
+        except (OSError, subprocess.TimeoutExpired):
+            raise ProfileError("runtime_resource_preflight_failed") from None
 
     @classmethod
     def _launch(cls, owner, command, environment, events):

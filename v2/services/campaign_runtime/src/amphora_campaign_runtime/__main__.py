@@ -11,12 +11,14 @@ from .completion.recovery import StaleIntents
 from .coordinator.polling import GraphPoller
 from .hosting import Host
 from .lifecycle.settlement import BudgetSettlement
+from .resource_profiles.preflight import require_supported_resources
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("action", choices=["serve", "check", "settle", "reconcile-intents", "deliver", "coordinate"])
+    parser.add_argument("action", choices=["serve", "check", "resource-preflight", "settle", "reconcile-intents", "deliver", "coordinate"])
     parser.add_argument("--config", required=True)
+    parser.add_argument("--target-release")
     parser.add_argument("--port", type=int, default=8080)
     parser.add_argument("--actor")
     parser.add_argument("--tenant")
@@ -39,6 +41,10 @@ def main():
             uvicorn.run(host.app(), host="127.0.0.1", port=args.port, access_log=False)
         elif args.action == "check":
             print("Runtime configuration and service role ready")
+        elif args.action == "resource-preflight":
+            with host.admission.commands.engine.connect() as conn:
+                require_supported_resources(conn, args.target_release)
+            print("Runtime active resource profiles supported")
         else:
             matches = [p for p in host.principals if (p.actor_id, p.scope.tenant_id, p.scope.project_id)
                        == (args.actor, args.tenant, args.project)]

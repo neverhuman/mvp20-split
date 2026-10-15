@@ -7,6 +7,9 @@
   numerical ranking inside Runtime or new chemistry authority.
 - Approval basis: POP-01.04 approves population records but explicitly reserves new
   public Runtime commands/profiles for concrete review.
+- Implementation checkpoint: Runtime0.68/Deployment0.20.3 generic capacity and
+  recovery qualified under E2.1; [evidence](../Audits/POP-01_Bounded_Admission.md).
+  Full population dispatch/collection qualification remains E2.2-E2.4.
 
 ## Reproduced contract gap
 

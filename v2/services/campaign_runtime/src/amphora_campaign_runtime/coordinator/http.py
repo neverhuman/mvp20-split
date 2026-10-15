@@ -2,6 +2,7 @@
 
 import asyncio
 from amphora_contracts_draft_successor import parse_draft_successor
+from amphora_contracts_campaign_resources import parse_resource_bounded_draft
 
 from amphora_contracts_graph_runtime import (
     CarrySources,
@@ -33,6 +34,12 @@ def install_graphs(app, admission, advancer, credentials, artifacts=None):
         install_admission(app, admission, credentials)
 
     if admission.drafts is not None:
+        @app.post("/v1/graph-drafts/admit-bounded", response_model=CommandReceipt)
+        async def admit_bounded_draft(request: Request):
+            principal = credentials.authenticate(request.headers.get("authorization"))
+            command = parse_resource_bounded_draft(await request.body())
+            return await asyncio.to_thread(admission.admit_bounded_draft, principal, command)
+
         @app.post("/v1/graph-runs/draft-successors", response_model=CommandReceipt)
         async def admit_draft_successor(request: Request):
             principal = credentials.authenticate(request.headers.get("authorization"))

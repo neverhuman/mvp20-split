@@ -1,5 +1,11 @@
 # Runtime Lifecycle Domain Boundary
 
+Runtime0.68 / POP-01.05: bounded admissions explicitly select campaign-wide attempt
+capacity. Claims replay receipts before checking capacity, globally reconcile eligible
+expired leases across tool types under the run lock, and preserve prepared/uncertain
+reservations. Legacy runs keep their original behavior. See
+[resource profiles](../resource_profiles/README.md); worker wire formats are unchanged.
+
 BP-02.04/I1 implements pure immutable transition decisions. RunState owns run eligibility/revision cancellation; WorkerAuthority owns configured worker identity and durable revocation projection; RunBudget owns available/reserved/spent conservation; AttemptLease owns identity/fence/time checks, renewal and once-only settlement; ActivationState owns issuance and bounded pure retry/uncertainty decisions. These are private behavior objects, not public DTO replacements or live database authority.
 
 | Transition | Preconditions | Result |

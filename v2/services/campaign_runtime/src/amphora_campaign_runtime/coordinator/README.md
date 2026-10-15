@@ -1,5 +1,13 @@
 # Durable graph coordinator
 
+Runtime0.68 / POP-01.05 adds `admit_bounded_draft` and the separate
+`POST /v1/graph-drafts/admit-bounded` route. The required campaign_resources DTO
+retains its immutable invocation cap in input_snapshot, preserving all existing
+admission models and families. Draft validation, Registry eligibility, expansion
+limits and one-active-run admission use the same owner transaction. Advance rejects
+unsupported selected resource profiles. See [resource profiles](../resource_profiles/README.md)
+for claim and recovery behavior.
+
 BP-07.04/B2.01c.ii: Runtime0.40 extends GraphAdmission.admit_supervised with an explicit PolicyCatalog. The numeric-v2 command pins the exact reviewed policy before frontier creation/initial issuance in the admission transaction. Original receipts replay before catalog lookup. GraphPass reloads that immutable pin and keeps selected ready Invoke/materialization nodes unissued; unrelated scheduling is unchanged. Admission now creates initial ready checkpoints after the complete frontier exists; GraphPass creates later concrete checkpoints once and retains their original bytes/deadlines on subsequent holds. Independent tools proceed; scatter/loop occurrences remain distinct. No Planning request, winner or scalar effect is granted. No HTTP activation is introduced. Module-owned acceptance is in tests/supervision_policy; legacy scheduling/draft/successor suites cover predecessor behavior.
 
 Accepted checkpoint `2026-09-29 17:57:39`: BP-04.04 closed/audited. Five real solver images and independent tool/SDK/owner installs passed initial-population -> successor generations 1/2, concurrent scoring and Runtime replacement; 17 invocations, all 44 reservations confirmed. Source/lineage/receipt/artifact history preserved. Scientific validity and target-host execution remain excluded. Earlier B1-B3 statements below describe their historical verification tiers; no gate in this child remains open.

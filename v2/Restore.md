@@ -4,6 +4,24 @@ Refreshed: 2026-10-14 20:42:26 America/Chicago. Read FIRST after compaction.
 
 ## Current task
 
+2026-10-14 21:22:00: POP-01 E2.1 generic bounded admission/recovery QUALIFIED.
+Runtime0.68/Deployment0.20.3 checkpoint verified; commit/push then immediately E2.2.
+243 actual SQL source tests,21 independent installed Runtime checks, actual HTTP
+restart and independently installed Deployment preflight pass;0.67 refused prelaunch.
+Every new test container removed; only original demo databases remain running.
+Evidence docs/Audits/POP-01_Bounded_Admission.md. E2 refined to4 equal delivery units:
+capacity complete, step workers/composition/actual population qualification pending.
+E2=25%, Execution31.25%, parent10.42%, Build15.63%, Verification0; E3/E4=0.
+Next current task E2.2: population step worker execution; inspect Search population
+README and public population_steps contracts before editing. Runtime reservation
+cap is generic; do not claim full nested/mixed-method population acceptance yet.
+Continue-until-needed persists. RG-01 placeholder committed/pushed c1798191 directly
+after POP-01/before ML-01; do not switch implementation to it early. Source/locks/
+READMEs/new Runtime+Deployment tests ready to commit; final79 checks PASS,session99176 exited0.
+New campaign_resources standalone uv.lock also belongs in this checkpoint. User
+ocular PDF/DOCX remain untracked and untouched. Demo wrappers remain drained.
+
+
 2026-10-14 21:14:16 OWNER CORRECTION/PLANNING INTERRUPTION: added critical RG-01
 LLM Research Graph Generation immediately AFTER POP-01 and BEFORE ML-01. All0%.
 LLM generates/refines research/domain graphs; Knowledge augments model context,

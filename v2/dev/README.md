@@ -1,5 +1,11 @@
 # Foundation Verification Tooling
 
+Isolated PostgreSQL probes may set `AMPHORA_TEST_POSTGRES_STATE` to a fresh ignored
+state file. This keeps temporary fixture identity separate from retained recovery
+state. The probe owns cleanup: verify its container label and remove its container
+in a finally block after testing; preserve retained data volumes. The ordinary
+default remains `.test-results/postgres-fixture.json`.
+
 UI-01.08: campaign-curation and campaign-successor-launch have independent
 contract test scopes. Planning curation admission and original provenance use
 `run_tests.py --module agent-planning --area curation_intake` , `curation_jobs` or `campaign_origin`.

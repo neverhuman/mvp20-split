@@ -1,6 +1,6 @@
 # Master Build Tracker
 
-Latest checkpoint: 2026-10-14 21:03:53: POP-01 E1/D4 compiler/resource/write-set review complete;13 fixture checks +4 ownership checks pass. E1=100%, Execution25%, parent8.33%, Build12.5%; POP-01.05 approved;16 source+16 independent contract tests,99 legacy and30 publication tests pass;740 predecessor schema bytes unchanged.
+Latest checkpoint: 2026-10-14 21:22:00: POP-01 E2.1 generic capacity/recovery qualified:243 source and21 independent Runtime checks; actual HTTP restart and installed Deployment preflight pass. E2=25%, Execution31.25%, parent10.42%, Build15.63%, Verification0%. Current E2.2 population step workers. RG-01 is the next plan.
 
 ## Purpose and Authority
 
@@ -11,14 +11,15 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 ## Program Tracker
 
 - Status: POP-01.01/E2 active; UI-01/UI-02 closed100%, LR-01 paused25%.
-- Last refreshed: 2026-10-14 21:03:53 (America/Chicago).
+- Last refreshed: 2026-10-14 21:22:00 (America/Chicago).
 - Baseline: approved [POP-01.04](POP-01.04%20Population%20contract%20decision.md).
-- Current priority/task: POP-01 E2 bounded admission and run-wide reservation enforcement.
-- Next task: actual PostgreSQL concurrency, mixed-tool expiry and recovery qualification.
-- Implementation: parent8.33%, Build12.5%, Verification0%; Execution25%, Experience/Qualification0%.
-  Execution E1=100%, E2-E4=0%; Experience U1-U4=0%, Qualification Q1-Q4=0%.
-- Latest checkpoint:13 composition/resource +4 ownership checks pass; D3 Search0.12
-  two335test isolated installs/legacy replay pass; no population deployment claim.
+- Current priority/task: POP-01 E2.2 population step worker execution.
+- Next task: population step tool ownership and independently installed execution.
+- Implementation: parent10.42%, Build15.63%, Verification0%; Execution31.25%, Experience/Qualification0%.
+  Execution E1=100%, E2=25%, E3/E4=0%; Experience U1-U4=0%, Qualification Q1-Q4=0%.
+- Latest checkpoint:243 source Runtime checks,21 independent installed Runtime checks,
+  actual HTTP restart and independent Deployment preflight pass.79 lifecycle/boundary/profile checks pass.
+  Population step workers/composition and full population acceptance remain pending.
 - Gate: E1 passed; POP-01.05 approved. E2 requires actual-owner bounded execution evidence.
 - Acceptance: actual execution/population UI/scientific qualification remain distinct gates.
 - Active exception: none. Owner resumed continue-until-needed2026-10-14 20:42:26; detours complete and startup-credit applications deferred. POP-01.05 approved; E1 complete, E2 active. KB-01 stays queued.
@@ -35,7 +36,7 @@ The initial program proves software behavior using deterministic/synthetic fixtu
 
 ## Current In-Flight Work
 
-POP-01 E2 active: parent8.33%, Build12.5%, Execution25%, E1=100%; remaining gates0%.
+POP-01 E2 active: parent10.42%, Build15.63%, Execution31.25%, E1=100%; remaining gates0%.
 LR-01 paused25%, Build33.33%, Acceptance0%; R1=100%, R2/R3/V1=0%.
 Completed UI-01/UI-02/LAN-01 are in the [completed index](Completed/README.md).
 
@@ -47,7 +48,7 @@ RG-01 overall/Build/Verification0%, R1/R2/R3/V1=0%. POP execution position uncha
 
 | Order | Canonical plan | Status | Overall | Build | Verification/Acceptance | Prerequisite |
 |---|---|---|---:|---:|---:|---|
-| 1 | [POP-01 Population Campaign Execution and Experience](POP-01%20Population%20Campaign%20Execution%20and%20Experience.md) | Active E2; E1=100%; Execution25%, Experience/Qualification0% | 8.33% | 12.5% | 0% | UI-01/UI-02 complete; POP-01.04 approved |
+| 1 | [POP-01 Population Campaign Execution and Experience](POP-01%20Population%20Campaign%20Execution%20and%20Experience.md) | Active E2; E1=100%; Execution31.25%, Experience/Qualification0% | 10.42% | 15.63% | 0% | UI-01/UI-02 complete; POP-01.04 approved |
 | 2 | [RG-01 LLM Research Graph Generation](RG-01%20LLM%20Research%20Graph%20Generation.md) | Critical queued placeholder; R1/R2/R3/V1=0% | 0% | 0% | 0% | Owner correction2026-10-14: immediately after POP-01, before ML-01; Knowledge enhances LLM generation, not a corpus prerequisite. Activation audit and R1 boundary review required. |
 | 3 | [ML-01 Inherited Scientific Model Integration](ML-01%20Inherited%20Scientific%20Model%20Integration.md) | Standalone queued; M1/M2/M3/M4/V1=0% | 0% | 0% | 0% | UI-01/V1 + UI-02/P4, then POP-01 complete; qualified population/tool handoff |
 | 4 | [LR-01 Local Worker Reliability](LR-01%20Local%20Worker%20Reliability.md) | Paused; pull R2 forward for blocking run failure | 25% | 33.33% | 0% | UI priority released or UI-01.05/R1 blocked; same-host diagnostic window |
@@ -93,11 +94,12 @@ Owner direction2026-10-08 20:19:11: complete Knowledge/LLM campaign interaction 
 UI-02 first, preserving next-week demonstration material. Then give
 [POP-01](POP-01%20Population%20Campaign%20Execution%20and%20Experience.md) precedence:
 multiple candidate generations, bounded scheduling/global selection, checkpoint
-recovery and population-oriented visualization. Only after POP-01 qualification
-activate [ML-01](ML-01%20Inherited%20Scientific%20Model%20Integration.md).
+recovery and population-oriented visualization. Updated owner direction2026-10-14:
+after POP-01 qualification activate [RG-01](RG-01%20LLM%20Research%20Graph%20Generation.md),
+then [ML-01](ML-01%20Inherited%20Scientific%20Model%20Integration.md).
 
-POP-01 overall8.33%, Build12.5%, Verification0%; phase mirrors:
-Execution25% (POP-01.01 E1=100%, E2/E3/E4=0%), Experience0% (POP-01.02 U1/U2/U3/U4=0%),
+POP-01 overall10.42%, Build15.63%, Verification0%; phase mirrors:
+Execution31.25% (POP-01.01 E1=100%, E2=25%, E3/E4=0%), Experience0% (POP-01.02 U1/U2/U3/U4=0%),
 Qualification0% (POP-01.03 Q1/Q2/Q3/Q4=0%). Twelve equal child gates counted once.
 Existing BP-08 generation/recovery implementation remains closed and reusable;
 legacy population128/retained-attempt256/262144-byte bounds are not evidence of
@@ -180,7 +182,7 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 
 | Timestamp | Checkpoint | Evidence |
 |---|---|---|
-| 2026-10-14 21:03:53 | POP-01 D4=75%; E1=100%, parent8.33%; resource decision pending. |13 compiler/resource checks +4 ownership checks; bounded graph command proposed, no Runtime changes. |
+| 2026-10-14 21:22:00 | POP-01 D4=75%; E1=100%, parent10.42%; resource decision pending. |13 compiler/resource checks +4 ownership checks; bounded graph command proposed, no Runtime changes. |
 | 2026-10-13 22:25:31 | POP-01 D3 semantic qualification complete; E1=75%, parent6.25%. | Four-generation batch/reorder oracle;2000eligible ranks; two335test installs/replay; D4 next. |
 | 2026-10-13 21:59:44 | POP-01 D2 numerical policy/compatibility complete; E1=50%, parent4.17%. |320source +6reuse/publication; two326test Search0.11 installs/replay;740unchanged schema pins. |
 | 2026-10-13 21:44:48 | POP-01 E1/D1 complete100%; E1=25%, Execution6.25%, parent2.08%. |300source tests/guard;740schemas preserve718predecessor; two306test Search installs/replay; D2 next. |

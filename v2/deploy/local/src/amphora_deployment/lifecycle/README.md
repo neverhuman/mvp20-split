@@ -1,5 +1,15 @@
 # Local process lifecycle
 
+POP-01.05: verified Runtime installation startup now calls its read-only
+`resource-preflight --config ...` CLI before launching any serving process. This
+uses the owner's service credentials and public executable; Deployment reads no
+Runtime tables. Unknown profiles, unavailable checks and old binaries lacking this
+CLI fail closed. Consequently pre-0.68 Runtime installations must be replaced by a
+qualified installation even for legacy history; old admission contracts remain
+supported by the qualified Runtime. An explicit downgrade assessment can use a
+qualified Runtime's `resource-preflight --target-release ...`; bounded active or
+unsettled runs prohibit older targets. Drain or roll forward before downgrade.
+
 Deployment0.18.3/UI-01.06 provides optional --launch-manifest composition under this same
 lifetime writer lease. LaunchInstallation restores original admitted run bindings
 before pending-container validation; operator templates alone cannot omit them.

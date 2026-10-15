@@ -32,6 +32,7 @@ from .inspection.cursors import CursorCodec
 from .inspection.history import RuntimeHistory
 from .lifecycle.access import RuntimeCredentials, RuntimePrincipal
 from .lifecycle.admission import FixtureAdmission, FixtureCatalog
+from .resource_profiles.preflight import require_supported_resources
 
 
 @dataclass(slots=True)
@@ -138,6 +139,7 @@ class Host:
                 conn.execute(text("SELECT deadline FROM runtime.attempts LIMIT 0"))
                 conn.execute(text("SELECT operation_id FROM runtime.policy_outbox LIMIT 0"))
                 conn.execute(text("SELECT tool_snapshot FROM runtime.runs LIMIT 0"))
+                require_supported_resources(conn)
                 conn.execute(text("SELECT report_id FROM runtime.attempt_reports LIMIT 0"))
                 conn.execute(text("SELECT delivery_token FROM runtime.outbox LIMIT 0"))
                 if authoring:

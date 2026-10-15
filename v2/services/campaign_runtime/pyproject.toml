@@ -1,8 +1,9 @@
 [project]
 name = "amphora-campaign-runtime"
-version = "0.67.0"
+version = "0.68.0"
 requires-python = ">=3.12,<3.13"
 dependencies = [
+    "amphora-contracts-campaign-resources==0.1.0",
     "amphora-contracts-draft-successor==0.1.0",
     "amphora-contracts-execution-proofs==0.1.0",
     "amphora-contracts-planning==0.13.0",
@@ -34,6 +35,7 @@ build-backend = "hatchling.build"
 packages = ["src/amphora_campaign_runtime"]
 
 [tool.uv.sources]
+amphora-contracts-campaign-resources = { path = "../../contracts/campaign_resources", editable = true }
 amphora-contracts-draft-successor = { path = "../../contracts/draft_successor", editable = true }
 amphora-contracts-execution-proofs = { path = "../../contracts/execution_proofs", editable = true }
 amphora-contracts-planning = { path = "../../contracts/planning", editable = true }
@@ -47,4 +49,4 @@ amphora-contracts-artifacts = { path = "../../contracts/artifacts", editable = t
 amphora-contracts-graph-runtime = { path = "../../contracts/graph_runtime", editable = true }
 
 [tool.amphora]
-public-imports = ["amphora-contracts-draft-successor", "amphora-contracts-execution-proofs", "amphora-contracts-planning", "amphora-contracts-supervision", "amphora-contracts-graph-runtime", "amphora-contracts-artifacts", "amphora-contracts-runtime", "amphora-contracts-commands", "amphora-contracts-core", "amphora-contracts-tools", "amphora-contracts-campaigns"]
+public-imports = ["amphora-contracts-campaign-resources", "amphora-contracts-draft-successor", "amphora-contracts-execution-proofs", "amphora-contracts-planning", "amphora-contracts-supervision", "amphora-contracts-graph-runtime", "amphora-contracts-artifacts", "amphora-contracts-runtime", "amphora-contracts-commands", "amphora-contracts-core", "amphora-contracts-tools", "amphora-contracts-campaigns"]

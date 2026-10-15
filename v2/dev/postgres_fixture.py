@@ -2,6 +2,7 @@
 
 import argparse
 import json
+import os
 import secrets
 import subprocess
 import time
@@ -9,7 +10,7 @@ import uuid
 from pathlib import Path
 
 ROOT = Path(__file__).absolute().parents[1]
-STATE = ROOT / ".test-results/postgres-fixture.json"
+STATE = Path(os.environ.get("AMPHORA_TEST_POSTGRES_STATE", ROOT / ".test-results/postgres-fixture.json"))
 IMAGE = "postgres@sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f"
 LABEL = "amphora.fixture"
 DATABASE = "amphora_bp02_test"

@@ -1,10 +1,10 @@
 # POP-01.01 Population Execution
 
 - Status: active E2; parent [POP-01](POP-01%20Population%20Campaign%20Execution%20and%20Experience.md).
-- Last refreshed: 2026-10-14 21:03:53 (America/Chicago).
-- Implementation: 25%; E1=100%, E2/E3/E4=0%, four equal delivery gates.
-- Current: E1 complete; E2 bounded admission and run-wide claim-cap implementation.
-- Next: actual PostgreSQL concurrency, mixed-tool expiry and recovery qualification.
+- Last refreshed: 2026-10-14 21:22:00 (America/Chicago).
+- Implementation: 31.25%; E1=100%, E2=25%, E3/E4=0%, four equal delivery gates.
+- Current: E2.1 bounded admission/capacity/recovery complete; E2.2 population step worker execution.
+- Next: bind population step records to independently installed tools, then authored bounded collection.
 - Approval: [POP-01.04](POP-01.04%20Population%20contract%20decision.md) approved.
 - Evidence:356 source checks plus corrected two-test publication rerun/guard PASS;740schema pins unchanged.
   Search0.12 two isolated335test installs and legacy replay/wheels pass. Pure checks are not runtime admission.
@@ -12,8 +12,9 @@
   Research eligibility. E2 starts only after the whole E1 gate passes.
 - Gate: E1 passed:16 source and16 independently installed contract tests,99 legacy
   contract tests,30 publication tests and boundary guard.744 schemas;740 old bytes pinned.
-  E2 remains0 pending implementation and actual-owner acceptance.
-- Active exception: none; owner confirmed LAN access. Review wrappers drained before edits.
+  E2=25%: first bounded unit qualified; full population acceptance remains pending.
+- Active exception: none. RG-01 placeholder planning interruption complete; owner places it after POP-01.
+  Review wrappers remain drained before edits.
 - Exit: independent versioned population execution/recovery through public graph APIs;
   selection cannot depend on dispatch order. Actual acceptance remains E2-E4.
 
@@ -80,6 +81,16 @@ Exit: schema/negative/golden tests, compatibility report, transition/write-set
 specification and reviewed contract decision; no generated-schema edits by hand.
 
 ## E2: bounded evaluation dispatch and deterministic collection
+
+E2 delivery accounting refines this existing phase into four equal units, without
+adding scope or resetting E1: E2.1 generic resource admission/claim/recovery25%;
+E2.2 population step workers25%; E2.3 authored dispatch/collection composition25%;
+E2.4 actual public-owner batch1/8/32 and cap1/4/8 qualification25%.
+E2.1 is100%, E2.2-E2.4=0%; E2=25%. [Capacity milestone evidence](../Audits/POP-01_Bounded_Admission.md):
+243 source checks,21 independent installed Runtime checks, actual HTTP restart and
+independent Deployment preflight against qualified0.68 and unqualified0.67 pass.
+No full population or performance claim follows from the generic capacity milestone.
+
 
 E1 must also freeze multi-stage process semantics: multi-input/output ports, typed
 material/intermediate revisions, required versus optional dependencies, explicit

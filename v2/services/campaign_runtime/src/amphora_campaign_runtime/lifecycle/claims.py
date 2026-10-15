@@ -14,6 +14,7 @@ from amphora_contracts_runtime import (
 from sqlalchemy import text
 
 from ..persistence.commands import WHERE, CommandStore, TerminalDisposition, _bindings
+from ..resource_profiles import InvocationCapacity
 from .model import ActivationState, AttemptLease, RunBudget, RunState, TransitionError, WorkerAuthority
 from .projections import ClaimedWork
 from .receipts import RuntimeReply
@@ -90,17 +91,20 @@ class RuntimeLeases:
                     return existing
                 state = RunState(run["status"], run["revision"])
                 state.require_running()
+                capacity = InvocationCapacity.from_snapshot(run["input_snapshot"])
                 authority = self._worker(conn, params, request.worker_id)
                 authority.require(request.worker_id)
             except TransitionError as error:
                 return self._finish(conn, command, reply.reject(str(error)))
             budget = RunBudget(run["budget_limit"], run["reserved"], run["spent"])
             max_attempts = run["input_snapshot"]["budget"]["max_attempts_per_activation"]
+            expired = []
+            if capacity.maximum is not None:
+                budget, expired = self._capacity_maintenance(conn, params, run, state, budget, max_attempts)
             rows = conn.execute(text("SELECT * FROM runtime.activations WHERE " + RUN +
                 " AND status IN ('queued','leased') AND specification->'tool'=CAST(:tool AS jsonb) "
                 "ORDER BY dispatch_order,activation_id FOR UPDATE"), {**params, "tool": request.tool.model_dump_json()}).mappings().all()
             now = conn.execute(text("SELECT clock_timestamp()")).scalar_one()
-            expired = []
             chosen = None
             for row in rows:
                 activation = ActivationState(row["status"], row["current_fence"], row["attempt_count"], max_attempts)
@@ -117,6 +121,8 @@ class RuntimeLeases:
                     if conn.execute(text("SELECT EXISTS(SELECT 1 FROM runtime.completion_intents WHERE " + RUN +
                         " AND attempt_id=:attempt AND status='prepared')"),
                         {**params, "attempt": lease.attempt_id}).scalar_one():
+                        if capacity.maximum is not None:
+                            continue
                         raise TransitionError("prepared_intent_requires_reconciliation")
                     activation, lease, budget = activation.terminal(lease, budget, "expired", now=now, run=state)
                     conn.execute(text("UPDATE runtime.attempts SET status='expired',settled=true WHERE " + RUN +
@@ -125,7 +131,7 @@ class RuntimeLeases:
                         " AND activation_id=:activation"), {**binding, "status": activation.status})
                     expired.append(lease.attempt_id)
                 deadline = row["deadline"] or now + timedelta(seconds=row["specification"]["timeout_seconds"])
-                if activation.status == "queued" and budget.available and now < deadline:
+                if activation.status == "queued" and budget.available and capacity.available(budget) and now < deadline:
                     chosen = (row, activation, deadline)
                     break
             if chosen is None:
@@ -156,6 +162,34 @@ class RuntimeLeases:
             receipt = ClaimedWork(prepared, lease, principal.scope, request.run_id).to_response(reply, revision)
             return self._finish(conn, command, receipt)
         return self.commands.transact(transaction)
+
+    def _capacity_maintenance(self, conn, params, run, state, budget, max_attempts):
+        """Run lock held: expire all tool types; prepared and uncertain work keeps its slot."""
+        rows = conn.execute(text("SELECT * FROM runtime.activations WHERE " + RUN +
+            " AND status='leased' ORDER BY activation_id FOR UPDATE"), params).mappings().all()
+        expired = []
+        for row in rows:
+            binding = {**params, "activation": row["activation_id"], "fence": row["current_fence"]}
+            attempt = conn.execute(text("SELECT * FROM runtime.attempts WHERE " + RUN +
+                " AND activation_id=:activation AND fence=:fence FOR UPDATE"), binding).mappings().one()
+            now = conn.execute(text("SELECT clock_timestamp()")).scalar_one()
+            lease = lease_from(attempt)
+            if now < lease.expires_at:
+                continue
+            if conn.execute(text("SELECT EXISTS(SELECT 1 FROM runtime.completion_intents WHERE " + RUN +
+                " AND attempt_id=:attempt AND status='prepared')"),
+                {**params, "attempt": lease.attempt_id}).scalar_one():
+                continue
+            activation = ActivationState(row["status"], row["current_fence"], row["attempt_count"],
+                                         max_attempts, row["specification"].get("side_effects", "pure"))
+            activation, lease, budget = activation.terminal(lease, budget, "expired", now=now, run=state)
+            conn.execute(text("UPDATE runtime.attempts SET status=:status,settled=:settled WHERE " + RUN +
+                " AND attempt_id=:attempt"), {**params, "attempt": lease.attempt_id,
+                    "status": lease.status, "settled": lease.settled})
+            conn.execute(text("UPDATE runtime.activations SET status=:status WHERE " + RUN +
+                " AND activation_id=:activation"), {**binding, "status": activation.status})
+            expired.append(lease.attempt_id)
+        return budget, expired
 
     def renew(self, principal, command):
         principal.require("renew", command.identity)
