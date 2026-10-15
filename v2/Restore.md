@@ -32,13 +32,31 @@ Runtime replacement identically: .test-results/pop01-input-runtime-http-20261015
 Installed Runtime: .test-results/pop01-input-runtime-install-20261015a/environment.
 All temporary containers removed. Evidence: docs/Audits/POP-01_Node_Input_Inspection.md.
 
-Next E2.2: authoritative collection and explicit fitness assembly. Combine same-cut
-graph terminal status/attempt pages with qualified retained-input observations and
-existing successful-producer proofs. Null invocation is not failure proof. No guessed
-candidate/page/dispatch order. Tool-owned payload schemas only; legacy schemas remain.
-Public SDK transport rejects query strings: add safe bounded optional query support
-(or a focused public inspection client) before paginated collection; do not bypass
-transport guards/private token fields or truncate graph pages.
+Latest E2.2 checkpoint (2026-10-15 13:53:55 America/Chicago): Search0.15 primary collection qualified.
+441 source (Search328+SDK113),326 installed Search,113 installed SDK,13 boundary
+checks pass. Seven frozen source hashes match; full baseline verifier has only
+pre-existing ADDED v1/LICENSE. Never alter it or regenerate manifests.
+Actual16 success (collection-http15b,85 Artifacts/spent19), one required failure
+(failure-http15b,84/spent19), all16 conditional-not-taken (conditional-http15b,69/spent3)
+pass in .test-results/pop01-collection-*. All roots confirmed, collector retention403,
+no provider calls; all temporary processes/containers removed. Evidence:
+docs/Audits/POP-01_Population_Collection.md. SDK0.4 query support independently
+qualified; twelve dependent exact pins/locks updated, implementation sources untouched.
+
+Final Search installation .test-results/pop01-collection-search-install-20261015c
+adds missing direct Pydantic declaration only; every module byte equals qualified b
+(module-compatibility.json). Current commit/push this checkpoint, then immediately
+start explicit fitness assembly. Whole E2.2 still0; E2 stays25%.
+
+Next: synthetic explicit assembly policy/tool, authenticated accepted collected root,
+verified complete evaluation/resolution/observations; objective sum only when all
+its frozen mapped methods are evaluated. Explicit unconstrained synthetic policy
+justifies constraint_violation0; missing objective/required method yields unavailable,
+never a zero score. Keep new payloads tool-owned; no new owner route needed.
+
+E2.3 expanded-ancestry gate remains essential:1000 births+contexts+8 methods cannot
+fit approved4096-artifact closure ceiling. Do not relax it or claim full1000x8
+execution; record measured dependency decision at that gate after worker qualification.
 Then authoritative observation/fitness integration; E2.3 full authored composition/
 expanded-ancestry feasibility and E2.4 batch/cap matrix remain ordered gates. E2 stays25%.
 No claim of full population/scientific execution or image/Registry attestation.

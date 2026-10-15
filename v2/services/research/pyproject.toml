@@ -2,7 +2,7 @@
 name = "amphora-research"
 version = "0.41.0"
 requires-python = ">=3.12,<3.13"
-dependencies = ["amphora-contracts-chemical-structure==0.1.0", "amphora-contracts-evaluation-reuse==0.1.0", "amphora-contracts-execution-proofs==0.1.0", "amphora-contracts-candidate-canonicalization==0.1.0", "amphora-contracts-synthetic-evaluation==0.1.0", "amphora-contracts-tools==0.1.0", "amphora-contracts-fitness==0.1.0", "amphora-contracts-evaluation-identity==0.1.0", "amphora-contracts-candidate-spaces==0.1.0", "amphora-contracts-research-views==0.1.0", "amphora-contracts-graph-runtime==0.13.0", "amphora-tool-protocol==0.3.0", "amphora-contracts-knowledge==0.8.0", "uvicorn>=0.34,<1", "fastapi>=0.115,<1", "pydantic>=2.12,<3", "sqlalchemy>=2,<3", "psycopg[binary]>=3,<4", "alembic>=1.16,<2", "amphora-contracts-artifacts==0.2.0", "amphora-contracts-core==0.1.0", "amphora-contracts-research==0.14.0"]
+dependencies = ["amphora-contracts-chemical-structure==0.1.0", "amphora-contracts-evaluation-reuse==0.1.0", "amphora-contracts-execution-proofs==0.1.0", "amphora-contracts-candidate-canonicalization==0.1.0", "amphora-contracts-synthetic-evaluation==0.1.0", "amphora-contracts-tools==0.1.0", "amphora-contracts-fitness==0.1.0", "amphora-contracts-evaluation-identity==0.1.0", "amphora-contracts-candidate-spaces==0.1.0", "amphora-contracts-research-views==0.1.0", "amphora-contracts-graph-runtime==0.13.0", "amphora-tool-protocol==0.4.0", "amphora-contracts-knowledge==0.8.0", "uvicorn>=0.34,<1", "fastapi>=0.115,<1", "pydantic>=2.12,<3", "sqlalchemy>=2,<3", "psycopg[binary]>=3,<4", "alembic>=1.16,<2", "amphora-contracts-artifacts==0.2.0", "amphora-contracts-core==0.1.0", "amphora-contracts-research==0.14.0"]
 
 [project.scripts]
 amphora-research = "amphora_research.__main__:main"

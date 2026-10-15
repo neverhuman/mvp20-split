@@ -63,3 +63,27 @@ Data derivation attribution, confirmed retention and Runtime completion/spent10.
 The sixteen-member source cohort was intentionally only half dispatched. Full
 collection, selection, successor composition and Registry/image attestation remain
 unqualified. See docs/Audits/POP-01_Population_Method_Workers.md.
+
+Search0.15 collection is independently qualified for the bounded primary fixture. collect-primary consumes tool-owned
+CollectPrimaryRequest, verifies complete generation0 preparation and supplied public
+wire-v4 plan digests against Runtime's observed admitted digest, and requires the
+frozen standalone method body to match its authored embedding. Initial primary
+methods have one candidate input and no nested scatter/iterate inside that body.
+Candidate identity comes from exact retained/prepared context refs, not indices.
+Accepted successful execution and exact Data transformation/direct-context lineage
+must agree. Failed, skipped and dependency-blocked leaves retain explicit outcomes;
+missing coverage rejects. No score is created here.
+
+Cut-bound graph reads finish before Artifact I/O/lease renewals; lease checks fence
+every call. Incomplete/mixed pages reject. Collector needs scoped inspect_receipts
+in addition to standard worker actions; other numerical workers do not. Serialized
+owner evidence retains credential-free public records. Keys, observations and exact
+resolution use existing population contracts. Manifest parent grouping preserves
+all ancestry under128 direct parents; combined source/key/observation pages retain
+512-page/64MiB limits. Approval of4096-artifact retention remains unchanged; largest
+composition feasibility is an E2.3 gate, not an established scale claim.
+
+Qualification: Search328 source/326 installed checks; final installed actual-owner
+16-candidate success, one required failure, and16 conditional-not-taken outcomes
+retain exact coverage and confirmed closure. See POP-01_Population_Collection audit.
+Fitness assembly and full authored composition remain separate unfinished gates.

@@ -2,7 +2,7 @@
 name = "amphora-synthetic-objectives"
 version = "0.3.0"
 requires-python = ">=3.12,<3.13"
-dependencies = ["amphora-multi-input-worker==0.1.0", "amphora-contracts-core==0.1.0", "amphora-contracts-tools==0.1.0", "amphora-contracts-search==0.1.0", "amphora-tool-protocol==0.3.0"]
+dependencies = ["amphora-multi-input-worker==0.1.0", "amphora-contracts-core==0.1.0", "amphora-contracts-tools==0.1.0", "amphora-contracts-search==0.1.0", "amphora-tool-protocol==0.4.0"]
 
 [project.scripts]
 amphora-synthetic-objectives = "amphora_synthetic_objectives.__main__:main"

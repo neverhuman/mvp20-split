@@ -23,6 +23,7 @@ from .capabilities import PopulationCapability
 from .seed import SeedPreparation
 from .slices import SeedSlices
 from .methods import PrimaryMethod
+from .collection import PrimaryCollection
 
 
 class PopulationWorker:
@@ -49,6 +50,8 @@ class PopulationWorker:
                 result = SeedPreparation.load(request, session).publish(session)
             elif self.capability.operation == "slice":
                 result = SeedSlices.load(request.prepared, session).publish(request, session)
+            elif self.capability.operation == "collect-primary":
+                result = PrimaryCollection.load(request, session, self.runtime).publish(request, session)
             else:
                 result = PrimaryMethod.load(source, session, self.tool.binding).publish(
                     self.capability.operation, self.tool.outputs[0].schema_ref, session)
@@ -70,7 +73,7 @@ class PopulationWorker:
             outcome = self.execute(attempt)
         except ProtocolError as error:
             attempt.refresh()  # Lost authority cannot report a failure.
-            retryable = isinstance(error, (TransportLost, CommandUnresolved)) or str(error) in {"stream_unavailable", "run_unavailable"}
+            retryable = isinstance(error, (TransportLost, CommandUnresolved)) or str(error) in {"stream_unavailable", "run_unavailable", "population_observation_changed", "population_observation_unavailable"}
             reason = "population_transport_failure" if retryable else "population_protocol_violation"
             if isinstance(error, CommandRejected):
                 reason, retryable = error.reason_code, error.reason_code == "capacity_exhausted"

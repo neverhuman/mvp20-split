@@ -43,6 +43,14 @@ class Client:
         self.uploads[command_id] = upload, declaration
         return SimpleNamespace(upload=upload)
 
+    def derivation(self, reference):
+        from amphora_contracts_artifacts import DerivationReceipt
+        from amphora_contracts_commands import CommandIdentity
+        declaration=self.uploads[reference.artifact_id][1]
+        return DerivationReceipt(origin=CommandIdentity(scope=self.identity.scope,actor_id="worker",
+            command_family="artifacts.begin_derived_upload",command_id=reference.artifact_id),
+            request_sha256="0"*64,upload_id=reference.artifact_id,artifact=reference,declaration=declaration)
+
     def stream(self, upload, raw, *, guard):
         guard()
         self.calls.append(("stream", upload.upload_id))

@@ -2,7 +2,7 @@
 name = "amphora-chemical-structure"
 version = "0.1.0"
 requires-python = ">=3.12,<3.13"
-dependencies = ["rdkit==2025.9.6", "amphora-contracts-chemical-structure==0.1.0", "pydantic>=2.11,<3", "amphora-contracts-core", "amphora-contracts-tools", "amphora-tool-protocol==0.3.0"]
+dependencies = ["rdkit==2025.9.6", "amphora-contracts-chemical-structure==0.1.0", "pydantic>=2.11,<3", "amphora-contracts-core", "amphora-contracts-tools", "amphora-tool-protocol==0.4.0"]
 
 [project.scripts]
 amphora-chemical-structure = "amphora_chemical_structure.__main__:main"

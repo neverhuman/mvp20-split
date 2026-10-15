@@ -63,6 +63,23 @@ dependencies = [
 requires-dist = [{ name = "pydantic", specifier = ">=2.12,<3" }]
 
 [[package]]
+name = "amphora-contracts-execution-proofs"
+version = "0.1.0"
+source = { editable = "../../contracts/execution_proofs" }
+dependencies = [
+    { name = "amphora-contracts-core" },
+    { name = "amphora-contracts-runtime" },
+    { name = "pydantic" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "amphora-contracts-core", editable = "../../contracts/core" },
+    { name = "amphora-contracts-runtime", editable = "../../contracts/runtime" },
+    { name = "pydantic", specifier = ">=2.12,<3" },
+]
+
+[[package]]
 name = "amphora-contracts-graph-runtime"
 version = "0.13.0"
 source = { editable = "../../contracts/graph_runtime" }
@@ -82,6 +99,23 @@ requires-dist = [
     { name = "amphora-contracts-core", editable = "../../contracts/core" },
     { name = "amphora-contracts-runtime", editable = "../../contracts/runtime" },
     { name = "amphora-contracts-tools", editable = "../../contracts/tools" },
+    { name = "pydantic", specifier = ">=2.12,<3" },
+]
+
+[[package]]
+name = "amphora-contracts-node-inputs"
+version = "0.1.0"
+source = { editable = "../../contracts/node_inputs" }
+dependencies = [
+    { name = "amphora-contracts-core" },
+    { name = "amphora-contracts-runtime" },
+    { name = "pydantic" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "amphora-contracts-core", editable = "../../contracts/core" },
+    { name = "amphora-contracts-runtime", editable = "../../contracts/runtime" },
     { name = "pydantic", specifier = ">=2.12,<3" },
 ]
 
@@ -195,12 +229,15 @@ requires-dist = [
 
 [[package]]
 name = "amphora-evolution-search"
-version = "0.14.0"
+version = "0.15.0"
 source = { editable = "." }
 dependencies = [
     { name = "amphora-contracts-artifacts" },
+    { name = "amphora-contracts-campaigns" },
     { name = "amphora-contracts-core" },
+    { name = "amphora-contracts-execution-proofs" },
     { name = "amphora-contracts-graph-runtime" },
+    { name = "amphora-contracts-node-inputs" },
     { name = "amphora-contracts-population" },
     { name = "amphora-contracts-population-steps" },
     { name = "amphora-contracts-runtime" },
@@ -208,13 +245,17 @@ dependencies = [
     { name = "amphora-contracts-search-steps" },
     { name = "amphora-contracts-tools" },
     { name = "amphora-tool-protocol" },
+    { name = "pydantic" },
 ]
 
 [package.metadata]
 requires-dist = [
     { name = "amphora-contracts-artifacts", editable = "../../contracts/artifacts" },
+    { name = "amphora-contracts-campaigns", editable = "../../contracts/campaigns" },
     { name = "amphora-contracts-core", editable = "../../contracts/core" },
+    { name = "amphora-contracts-execution-proofs", editable = "../../contracts/execution_proofs" },
     { name = "amphora-contracts-graph-runtime", specifier = "==0.13.0" },
+    { name = "amphora-contracts-node-inputs", editable = "../../contracts/node_inputs" },
     { name = "amphora-contracts-population", editable = "../../contracts/population" },
     { name = "amphora-contracts-population-steps", editable = "../../contracts/population_steps" },
     { name = "amphora-contracts-runtime", editable = "../../contracts/runtime" },
@@ -222,11 +263,12 @@ requires-dist = [
     { name = "amphora-contracts-search-steps", editable = "../../contracts/search_steps" },
     { name = "amphora-contracts-tools", editable = "../../contracts/tools" },
     { name = "amphora-tool-protocol", editable = "../../sdk/tool_protocol" },
+    { name = "pydantic", specifier = ">=2.12,<3" },
 ]
 
 [[package]]
 name = "amphora-tool-protocol"
-version = "0.3.0"
+version = "0.4.0"
 source = { editable = "../../sdk/tool_protocol" }
 dependencies = [
     { name = "amphora-contracts-artifacts" },

@@ -525,10 +525,13 @@
   },
   {
     "package": "amphora-evolution-search",
-    "version": "0.14.0",
+    "version": "0.15.0",
     "path": "tools/evolution_search",
     "module": "amphora_evolution_search",
     "public_dependencies": [
+      "amphora-contracts-campaigns",
+      "amphora-contracts-node-inputs",
+      "amphora-contracts-execution-proofs",
       "amphora-contracts-runtime",
       "amphora-contracts-artifacts",
       "amphora-contracts-population-steps",
@@ -737,7 +740,7 @@
   },
   {
     "package": "amphora-tool-protocol",
-    "version": "0.3.0",
+    "version": "0.4.0",
     "path": "sdk/tool_protocol",
     "module": "amphora_tool_protocol",
     "public_dependencies": [

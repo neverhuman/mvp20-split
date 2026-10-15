@@ -90,3 +90,25 @@ def test_invalid_request_path_and_limit_are_local_errors():
     for limit in (-1, 16777217, True):
         with pytest.raises(ProtocolError, match="invalid_response_limit"):
             transport.request("GET", "/v1/x", limit=limit)
+
+
+def test_bounded_query_encodes_cursor_as_data_and_preserves_plain_paths(peer):
+    from urllib.parse import parse_qs, urlsplit
+    endpoint,calls=peer
+    transport=HttpTransport(endpoint,"a"*32)
+    cursor="abc+/=&next=secret#x"
+    assert transport.request("GET","/v1/data",query={"cursor":cursor,"limit":8,"frontier_only":False}).status==200
+    parsed=urlsplit(calls[-1][0])
+    assert parsed.path=="/v1/data" and parse_qs(parsed.query)=={"cursor":[cursor],"limit":["8"],"frontier_only":["false"]}
+    transport.request("GET","/v1/data")
+    assert calls[-1][0]=="/v1/data"
+
+
+@pytest.mark.parametrize("method,query",[("POST",{"cursor":"a"}),("GET",{}),("GET",{"a":[]}),
+    ("GET",{"cursor":"a"*4097}),("GET",{"a&x":"value"}),("GET",{"a":"bad\nvalue"}),
+    ("GET",{str(i):"x" for i in range(13)}),("GET",{str(i):"x"*4096 for i in range(5)})])
+def test_invalid_queries_reject_locally_without_sending_credentials(peer,method,query):
+    endpoint,calls=peer
+    with pytest.raises(ProtocolError,match="invalid_service_query"):
+        HttpTransport(endpoint,"a"*32).request(method,"/v1/data",query=query)
+    assert calls==[]

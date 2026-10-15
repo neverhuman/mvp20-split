@@ -4,7 +4,12 @@
 - Last refreshed: 2026-10-15 12:18:22 (America/Chicago).
 - Implementation: 31.25%; E1=100%, E2=25%, E3/E4=0%, four equal delivery gates.
 - Current: E2.1 complete; E2.2a closure-retention prerequisite qualified. E2.2 population workers active.
-- Next: authoritative collection/fitness using qualified POP-01.07, then authored composition.
+- Next: explicit fitness assembly, then remaining population workers/authored composition.
+- E2.2 collection checkpoint: Search0.15/SDK0.4;441 source,326 installed Search,
+  113 installed SDK and13 boundary checks pass. Actual complete16-member success,
+  required failure and conditional-not-taken collection pass with confirmed closure;
+  no worker retention. [Evidence](../Audits/POP-01_Population_Collection.md).
+  Fitness assembly remains next; whole E2.2 unit0 and E2=25%.
 - POP-01.07 qualified: Runtime0.70/node_inputs0.1;55 actual SQL and55 combined
   contract/publication/boundary checks, nine independent contract checks and actual
   HTTP owner restart pass.750 schemas preserve748 predecessor bytes.

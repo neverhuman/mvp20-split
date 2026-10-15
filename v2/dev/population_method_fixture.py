@@ -28,10 +28,11 @@ def release_lock(descriptor):
 
 
 class MethodFixture:
-    def __init__(self, output, python, scope, environment, ports, operation):
+    def __init__(self, output, python, scope, environment, ports, operation, *, case="normal"):
         self.output, self.python, self.scope, self.environment = output, python, scope, environment
         self.data_port, self.runtime_port = ports
         self.operation = operation
+        self.case = case
         result = subprocess.run([str(python), "-I", "-m", "amphora_evolution_search", "population-describe",
             "--operation", operation, "--image-sha256", "f" * 64], capture_output=True, timeout=120)
         assert result.returncode == 0, "Installed method descriptor failed"
@@ -53,12 +54,23 @@ class MethodFixture:
                     {"kind": "finish", "node_id": "finish", "outputs": [{"port": "result",
                         "source": {"kind": "output", "node_id": "cost", "port": "result"}}]}],
                 "edges": [{"source": "cost", "target": "finish", "route": "next"}]}}
+        if case == "conditional-not-taken":
+            body=self.definition["body"]
+            objective_shape=body["outputs"][0]["value_type"]
+            body["outputs"][0]["value_type"]=body["inputs"][0]["value_type"]
+            cost=body["nodes"][0]
+            body["nodes"]=[{"kind":"branch","node_id":"choose","predicate":{"kind":"constant","value":False}},cost,
+                {"kind":"join","node_id":"merge","members":[{"member_id":"method","source":{"kind":"output","node_id":"cost","port":"result"},"required":False}],
+                    "policy":{"kind":"all","skipped":"exclude"},"output":{"name":"result","value_type":{"kind":"collection","item":objective_shape,"max_items":1,"missing_slots":True}}},
+                {"kind":"finish","node_id":"finish","outputs":[{"port":"result","source":{"kind":"input","name":"candidate"}}]}]
+            body["edges"]=[{"source":"choose","target":"cost","route":"true"},{"source":"choose","target":"merge","route":"false"},
+                {"source":"cost","target":"merge","route":"next"},{"source":"merge","target":"finish","route":"next"}]
         (output / "population-method-graph.json").write_text(json.dumps(self.definition), encoding="utf-8")
 
     def decorate(self, definition):
         body = definition["body"]
         contexts = {"kind": "collection", "item": shape(self.descriptor, "inputs"), "max_items": 32, "missing_slots": False}
-        results = {"kind": "collection", "item": shape(self.descriptor, "outputs"), "max_items": 32, "missing_slots": False}
+        results = {"kind": "collection", "item": self.definition["body"]["outputs"][0]["value_type"], "max_items": 32, "missing_slots": False}
         project = {"kind": "artifact_project", "node_id": "candidate_contexts", "source": {"kind": "output", "node_id": "slice", "port": "result"},
             "path": ["members"], "mode": "references", "output": {"name": "result", "value_type": contexts},
             "limits": {"max_items": 32, "max_artifacts": 33, "max_bytes": 262144, "timeout_seconds": 120}}
@@ -90,13 +102,19 @@ class MethodFixture:
         original["assembly"]["objectives"] = [original["assembly"]["objectives"][0]]
         original["assembly"]["objectives"][0]["method_ids"] = [method["method_id"]]
 
-    def run(self, run, members, worker_config, call, command, read):
+    def run(self, run, members, worker_config, call, command, read, *, stop_after_members=False):
         expected = {PopulationCandidateContext.model_validate_json(json.dumps(read(ref.model_dump(mode="json")))).member.candidate_id for ref in members}
         observed, completions = {}, []
+        if self.case == "conditional-not-taken":
+            return {"operation":self.operation,"evaluated_members":0,"skipped_members":len(expected),"spent":2,
+                "run_status":"running","method_plan":"population-primary-method"}
+        failed_members=0
         advance = command("graph.advance", {"run_id": run, "max_transitions": 10})
         for turn in range(64):
             advanced = call(self.runtime_port, "/v1/graph-runs/advance", advance)
             state = call(self.runtime_port, "/v1/runs/" + run)
+            if stop_after_members and set(observed) == expected:
+                break
             if state["status"] == "completed":
                 break
             assert state["status"] == "running", state
@@ -105,13 +123,40 @@ class MethodFixture:
                 advance = command("graph.advance", {"run_id": run, "max_transitions": 10})
             if not any(activation["status"] == "queued" for activation in state["activations"]):
                 continue
-            result = subprocess.run([str(self.python), "-I", "-m", "amphora_evolution_search", "population-worker",
-                "--operation", self.operation, "--config", str(worker_config)], env=self.environment, capture_output=True, timeout=1200)
+            if self.case == "failed-required" and not observed:
+                script = """import json,sys,uuid
+from pathlib import Path
+from amphora_tool_protocol import WorkerConfig,WorkerIdentity,RuntimeClient,ToolAttemptContext
+from amphora_contracts_tools import ToolBinding,Completion
+from amphora_contracts_runtime import CompleteInvocation
+config=WorkerConfig.model_validate_json(Path(sys.argv[1]).read_bytes())
+binding=ToolBinding.model_validate(json.loads(Path(sys.argv[2]).read_bytes())["tool"]["binding"])
+client=RuntimeClient(config.runtime.transport(),WorkerIdentity(config.actor_id,config.scope))
+claimed=client.claim(config.run_id,binding,"failure-claim-"+uuid.uuid4().hex,lease_seconds=60)
+assert claimed.outcome.status=="claimed"
+attempt=ToolAttemptContext(client,claimed.outcome,60);attempt.refresh();inv=attempt.invocation
+completion=Completion.model_validate_json(json.dumps(dict(schema_version="1",invocation_id=inv.invocation_id,
+ attempt_id=inv.attempt_id,fence=inv.fence,outcome=dict(status="failed",reason_code="fixture_required_failure",retryable=False))))
+receipt=client.complete(CompleteInvocation(run_id=config.run_id,completion=completion),"failure-complete-"+inv.attempt_id,guard=attempt.check)
+print(json.dumps(dict(status="completion_accepted",outcome="failed",operation_id=receipt.outcome.binding.operation_id)))
+"""
+                result=subprocess.run([str(self.python),"-I","-c",script,str(worker_config),str(self.output/"population-method-release.json")],
+                    env=self.environment,capture_output=True,timeout=120)
+            else:
+                result = subprocess.run([str(self.python), "-I", "-m", "amphora_evolution_search", "population-worker",
+                    "--operation", self.operation, "--config", str(worker_config)], env=self.environment, capture_output=True, timeout=1200)
             (self.output / ("population-method-" + str(turn) + ".log")).write_bytes(result.stdout + result.stderr)
             assert result.returncode == 0, "Actual method worker failed; inspect method log"
             receipt = json.loads(result.stdout)
-            assert receipt.get("outcome") == "succeeded", receipt
+            assert receipt.get("outcome") in {"succeeded","failed"}, receipt
             completion = call(self.runtime_port, f"/v1/runs/{run}/completions/" + receipt["operation_id"])
+            if receipt["outcome"]=="failed":
+                assert self.case=="failed-required" and completion["result"]["outcome"]["status"]=="failed"
+                inputs=call(self.runtime_port,f"/v1/graph-observations/{run}/nodes/{completion['activation_id']}/inputs")
+                context=PopulationCandidateContext.model_validate_json(json.dumps(read(inputs["invocation"]["inputs"][0]["artifact"])))
+                assert context.member.candidate_id not in observed
+                observed[context.member.candidate_id]=None;failed_members+=1;completions.append(receipt["operation_id"])
+                continue
             assert completion["canonical_result"]
             output = completion["result"]["outcome"]["outputs"][0]["artifact"]
             derivation = call(self.data_port, "/v1/artifacts/" + output["artifact_id"] + "/derivation")
@@ -134,7 +179,7 @@ class MethodFixture:
             completions.append(receipt["operation_id"])
         else:
             raise AssertionError("Numerical scatter did not finish within bounded coordinator passes")
-        assert set(observed) == expected and len(completions) == 8
-        assert state["budget"]["spent"] == 10
-        return {"operation": self.operation, "evaluated_members": len(observed), "context_bound_by_derivation": True,
-            "exact_values_verified": True, "spent": 10, "run_status": state["status"], "method_plan": "population-primary-method"}
+        assert set(observed) == expected and len(completions) == len(expected)
+        assert state["budget"]["spent"] == 2 + len(expected)
+        return {"operation": self.operation, "evaluated_members": len(observed)-failed_members, "failed_members": failed_members, "context_bound_by_derivation": True,
+            "exact_values_verified": True, "spent": 2 + len(expected), "run_status": state["status"], "method_plan": "population-primary-method"}

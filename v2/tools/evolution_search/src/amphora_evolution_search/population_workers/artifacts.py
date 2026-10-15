@@ -28,6 +28,13 @@ class PopulationArtifacts:
         self.attempt.check()
         return PopulationArtifact(reference, content)
 
+    def derivation(self, reference):
+        require(reference.scope == self.scope, "population_derivation_scope")
+        self.attempt.refresh()
+        result = self.client.derivation(reference)
+        self.attempt.check()
+        return result
+
     def publish(self, record, schema, parents, label):
         raw = canonical(record)
         require(len(raw) <= 262144, "population_output_bytes")

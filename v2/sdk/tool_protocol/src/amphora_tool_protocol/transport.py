@@ -4,7 +4,7 @@ import math
 from dataclasses import dataclass
 from http.client import HTTPException
 from urllib.error import HTTPError, URLError
-from urllib.parse import urlsplit
+from urllib.parse import urlencode, urlsplit
 from urllib.request import HTTPRedirectHandler, ProxyHandler, Request, build_opener
 
 
@@ -51,11 +51,31 @@ class HttpTransport:
         self.timeout = timeout
         self._opener = build_opener(ProxyHandler({}), NoRedirects())
 
-    def request(self, method, path, body=None, *, limit=262144, media_type="application/json"):
+    def request(self, method, path, body=None, *, limit=262144, media_type="application/json", query=None):
         if not path.startswith("/v1/") or any(c in path for c in ("?", "#", "\\", "\r", "\n")):
             raise ProtocolError("invalid_service_path")
         if type(limit) is not int or not 0 <= limit <= 16 * 1024 * 1024:
             raise ProtocolError("invalid_response_limit")
+        if query is not None:
+            if method != "GET" or not isinstance(query, dict) or not 1 <= len(query) <= 12:
+                raise ProtocolError("invalid_service_query")
+            pairs = []
+            for key, value in sorted(query.items(), key=lambda item: str(item[0])):
+                if (not isinstance(key, str) or not 1 <= len(key) <= 64
+                        or not all(c.isascii() and (c.isalnum() or c == "_") for c in key)
+                        or type(value) not in {str, int, bool}):
+                    raise ProtocolError("invalid_service_query")
+                encoded = str(value).lower() if type(value) is bool else str(value)
+                if not 1 <= len(encoded) <= 4096 or any(ord(c) < 32 or ord(c) == 127 for c in encoded):
+                    raise ProtocolError("invalid_service_query")
+                pairs.append((key, encoded))
+            try:
+                suffix = urlencode(pairs, encoding="utf-8", errors="strict")
+            except UnicodeError as error:
+                raise ProtocolError("invalid_service_query") from error
+            if len(suffix) > 16384:
+                raise ProtocolError("invalid_service_query")
+            path += "?" + suffix
         headers = {"Authorization": "Bearer " + self._token, "Content-Type": media_type}
         request = Request(self.endpoint + path, method=method, data=body, headers=headers)
         try:
