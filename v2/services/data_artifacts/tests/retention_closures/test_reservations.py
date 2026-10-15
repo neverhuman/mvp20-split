@@ -1,11 +1,12 @@
 import json
 import uuid
+from dataclasses import replace
 from types import SimpleNamespace
 
 import pytest
 from amphora_contracts_artifacts import RuntimeOutcome, parse_command
 from amphora_contracts_artifact_retention import parse_derived_closure_command
-from amphora_contracts_core import ArtifactRef
+from amphora_contracts_core import ArtifactRef, Scope
 from amphora_data_artifacts.access import Credentials
 from amphora_data_artifacts.api import create_app
 from amphora_data_artifacts.publication.model import Principal, UploadError
@@ -153,3 +154,59 @@ def test_scoped_http_reserve_and_current_readback(closure_env):
         assert client.get(path, headers=headers).json() == body
         assert client.get(path).status_code == 401
         assert client.post("/v1/retention-closures/reserve", content=request.canonical_bytes, headers=headers).json() == body
+
+
+def test_releasing_one_group_preserves_shared_ancestor_reservation(closure_env):
+    e = closure_env
+    root = e.service.reserve(e.principal, command(e))
+    payload = json.loads(command(e).canonical_bytes)["payload"]
+    payload["artifact"] = e.members[0].model_dump(mode="json")
+    payload["intent"]["intent_id"] = "independent-leaf-intent"
+    leaf = e.service.reserve(e.principal, command(e, payload=payload))
+    assert leaf.artifact_count == 1
+    e.peer.status = "aborted"
+    e.service.reconcile(e.principal, command(e, "artifacts.reconcile", payload={
+        "reservation_id": root.reservation.outcome.binding.reservation_id}))
+    assert protected(e) == {e.members[0].artifact_id}
+    e.service.reconcile(e.principal, command(e, "artifacts.reconcile", payload={
+        "reservation_id": leaf.reservation.outcome.binding.reservation_id}))
+    assert protected(e) == set()
+
+
+def test_historical_malformed_cycle_cannot_acquire_partial_protection(closure_env):
+    e = closure_env
+    with e.engine.begin() as conn:
+        conn.execute(text("INSERT INTO artifacts.derivation_inputs "
+            "(tenant_id,project_id,artifact_id,input_artifact_id,ordinal) VALUES "
+            "(:tenant,:project,:left,:root,1)"),
+            {**e.principal.bindings, "left": e.members[1].artifact_id, "root": e.root.artifact_id})
+    with pytest.raises(UploadError, match="retention_lineage_cycle"):
+        e.service.reserve(e.principal, command(e))
+    assert count(e, "reservations") == 0 and count(e, "retention_closure_members") == 0
+
+
+@pytest.mark.parametrize("mutation,reason", [("digest", "artifact_descriptor_conflict"),
+    ("missing", "artifact_unavailable"), ("owner", "access_denied")])
+def test_exact_root_and_runtime_owner_are_required(closure_env, mutation, reason):
+    e = closure_env
+    payload = json.loads(command(e).canonical_bytes)["payload"]
+    if mutation == "digest":
+        payload["artifact"]["sha256"] = "e" * 64
+    elif mutation == "missing":
+        payload["artifact"]["artifact_id"] = "missing"
+    else:
+        payload["intent"]["runtime_owner"] = "other-owner"
+    with pytest.raises(UploadError, match=reason):
+        e.service.reserve(e.principal, command(e, payload=payload))
+    assert count(e, "reservations") == 0 and count(e, "retention_closures") == 0
+
+
+def test_readback_cannot_reveal_foreign_scope_or_owner(closure_env):
+    e = closure_env
+    receipt = e.service.reserve(e.principal, command(e))
+    root_id = receipt.reservation.outcome.binding.reservation_id
+    strangers = (replace(e.principal, actor_id="other-owner"),
+                 replace(e.principal, scope=Scope(tenant_id="foreign", project_id="foreign")))
+    for stranger in strangers:
+        with pytest.raises(UploadError, match="reservation_unavailable"):
+            e.service.get(stranger, root_id)

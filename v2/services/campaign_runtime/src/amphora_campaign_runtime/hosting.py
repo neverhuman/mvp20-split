@@ -15,6 +15,8 @@ from .artifact_bindings.coordinator import BindingCoordinator
 from .artifact_bindings.publication import ArtifactPublisher
 from .completion.artifacts import ArtifactReservations
 from .completion.coordinator import CompletionCoordinator
+from .completion.closures import ClosureReservations, PROFILE
+from .completion.profiles import RetentionProfile
 from .coordinator.admission import GraphAdmission
 from .coordinator.advance import GraphAdvancer
 from .coordinator.configuration import load_graphs
@@ -102,11 +104,18 @@ class Host:
             projections = ArtifactProjections(peer["endpoint"], os.environ[peer["token_env"]],
                                                maximum_bytes=peer.get("maximum_bytes", 262144))
         artifacts = None
+        closures = None
         if "artifacts" in raw:
             peer = raw["artifacts"]
-            if set(peer) != {"runtime_owner", "reserve_endpoint", "token_env"}:
+            base = {"runtime_owner", "reserve_endpoint", "token_env"}
+            if set(peer) not in (base, base | {"retention_profile", "closure_reserve_endpoint"}):
                 raise ValueError("Invalid artifact peer configuration")
             artifacts = ArtifactReservations(peer["runtime_owner"], peer["reserve_endpoint"], os.environ[peer["token_env"]])
+            if "retention_profile" in peer:
+                if peer["retention_profile"] != PROFILE or graph_catalog is None:
+                    raise ValueError("Closure retention requires an explicit supported graph profile")
+                closures = ClosureReservations(peer["runtime_owner"], peer["closure_reserve_endpoint"], os.environ[peer["token_env"]])
+                closures.require_available()
         if graph_catalog is not None and graph_catalog.needs_completion and artifacts is None:
             raise ValueError("Graph tools require a configured artifact completion peer")
         publisher = None
@@ -140,6 +149,11 @@ class Host:
                 conn.execute(text("SELECT operation_id FROM runtime.policy_outbox LIMIT 0"))
                 conn.execute(text("SELECT tool_snapshot FROM runtime.runs LIMIT 0"))
                 require_supported_resources(conn)
+                active = conn.execute(text("SELECT tool_snapshot FROM runtime.runs WHERE status='running' OR reserved>0")).scalars()
+                for snapshot in active:
+                    if RetentionProfile.from_snapshot(snapshot).name is not None and closures is None:
+                        raise ValueError("Active closure retention profile requires configured Artifact support")
+                conn.execute(text("SELECT receipt FROM runtime.intent_retention_closures LIMIT 0"))
                 conn.execute(text("SELECT report_id FROM runtime.attempt_reports LIMIT 0"))
                 conn.execute(text("SELECT delivery_token FROM runtime.outbox LIMIT 0"))
                 if authoring:
@@ -153,7 +167,8 @@ class Host:
                     conn.execute(text("SELECT opened_at FROM runtime.graph_scopes LIMIT 0"))
                     conn.execute(text("SELECT intent_id FROM runtime.binding_intents LIMIT 0"))
                     conn.execute(text("SELECT transfer_sha256 FROM runtime.graph_successors LIMIT 0"))
-            completion = None if artifacts is None else CompletionCoordinator(engine, artifacts)
+            completion = (None if artifacts is None else CompletionCoordinator(engine, artifacts)
+                          if closures is None else CompletionCoordinator(engine, artifacts, closures=closures))
             if publisher is not None:
                 with engine.connect() as conn:
                     conn.execute(text("SELECT validation_id FROM runtime.definition_admissions LIMIT 0"))
@@ -171,7 +186,8 @@ class Host:
                        DeliveryWorker(DeliveryStore(engine, policy), targets),
                        None if cursors is None else RuntimeHistory(engine, cursors),
                        None if graph_catalog is None else (GraphAdmission(engine, graph_catalog, bindings_enabled=bindings is not None, drafts=drafts,
-                                                                         policies=policies, recipes=recipes),
+                                                                         policies=policies, recipes=recipes,
+                                                                         **({} if closures is None else {"retention": closures})),
                                                            GraphAdvancer(engine, projections, bindings)), authoring, universes, supervision)
         except BaseException:
             engine.dispose()

@@ -3,11 +3,12 @@
 - Status: active E2; parent [POP-01](POP-01%20Population%20Campaign%20Execution%20and%20Experience.md).
 - Last refreshed: 2026-10-15 09:47:24 (America/Chicago).
 - Implementation: 31.25%; E1=100%, E2=25%, E3/E4=0%, four equal delivery gates.
-- Current: E2.1 complete; E2.2a approved POP-01.06 contract/Data closure implementation.
-- Next: Data negative/replacement qualification and Runtime profile binding, then population workers.
-- E2.2a checkpoint: artifact_retention0.1 contract16/publication32 pass;748schemas
-  preserve744predecessor bytes. Data0.32 core migration/API90source +90independent
-  owner checks pass. Full closure/Runtime/replacement acceptance remains pending.
+- Current: E2.1 complete; E2.2a closure-retention prerequisite qualified. E2.2 population workers active.
+- Next: population step workers with complete declared ancestry, then authored composition.
+- E2.2a qualified: Data96 SQL, Runtime181 broad +6 final focused checks, schema32,
+  ownership4 and dependency guard pass. Independent Data0.32/Runtime0.69 HTTP
+  lost-response/restart/confirmation/cancellation proof passes. All new containers
+  removed. [Evidence](../Audits/POP-01_Closure_Retention.md). E2 stays25%.
 - Approval: [POP-01.04](POP-01.04%20Population%20contract%20decision.md) approved.
 - Evidence:356 source checks plus corrected two-test publication rerun/guard PASS;740schema pins unchanged.
   Search0.12 two isolated335test installs and legacy replay/wheels pass. Pure checks are not runtime admission.
@@ -16,10 +17,11 @@
 - Gate: E1 passed:16 source and16 independently installed contract tests,99 legacy
   contract tests,30 publication tests and boundary guard.744 schemas;740 old bytes pinned.
   E2=25%: first bounded unit qualified; POP-01.06 authorized2026-10-15; E2.2 implementation/qualification active.
-  Existing completion protects direct roots only, not referenced children.1000birth
+  Predecessor completion protected direct roots only.1000birth
   fixture versus64outputs+checkpoint reproduced; [decision](POP-01.06%20Referenced%20artifact%20retention%20decision.md).
-- Active exception: none. RG-01 placeholder planning interruption complete; owner places it after POP-01.
-  Review wrappers remain drained before edits.
+- Active exception: isolated pop01-retention-integration worktree implementation; original
+  review checkout remains frozen while local15a/LAN15b serve. Do not merge before
+  owner finishes review and wrappers drain. RG-01 remains after POP-01.
 - Exit: independent versioned population execution/recovery through public graph APIs;
   selection cannot depend on dispatch order. Actual acceptance remains E2-E4.
 

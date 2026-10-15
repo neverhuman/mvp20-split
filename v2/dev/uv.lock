@@ -73,10 +73,11 @@ requires-dist = [
 
 [[package]]
 name = "amphora-campaign-runtime"
-version = "0.68.0"
+version = "0.69.0"
 source = { editable = "../services/campaign_runtime" }
 dependencies = [
     { name = "alembic" },
+    { name = "amphora-contracts-artifact-retention" },
     { name = "amphora-contracts-artifacts" },
     { name = "amphora-contracts-campaign-resources" },
     { name = "amphora-contracts-campaigns" },
@@ -100,6 +101,7 @@ dependencies = [
 [package.metadata]
 requires-dist = [
     { name = "alembic", specifier = ">=1.16,<2" },
+    { name = "amphora-contracts-artifact-retention", editable = "../contracts/artifact_retention" },
     { name = "amphora-contracts-artifacts", editable = "../contracts/artifacts" },
     { name = "amphora-contracts-campaign-resources", editable = "../contracts/campaign_resources" },
     { name = "amphora-contracts-campaigns", editable = "../contracts/campaigns" },

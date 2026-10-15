@@ -71,6 +71,7 @@ class PreparedIntent:
     intent_id: str
     proposal: CompletionProposal
     runtime_owner: str
+    retention_profile: str | None = None
 
     def reservations(self):
         return tuple(ReserveArtifact(artifact=artifact, intent=CompletionIntentBinding(

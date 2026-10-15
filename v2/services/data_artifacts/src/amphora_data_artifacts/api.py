@@ -106,6 +106,8 @@ def create_app(uploads, storage, credentials, outcomes=None, *, acquisition=None
         with uploads.commands.engine.connect() as conn:
             conn.execute(text("SELECT created_at FROM artifacts.uploads LIMIT 0"))
             conn.execute(text("SELECT created_at FROM artifacts.derived_uploads LIMIT 0"))
+            conn.execute(text("SELECT reservation_id FROM artifacts.retention_closures LIMIT 0"))
+            conn.execute(text("SELECT reservation_id FROM artifacts.retention_closure_members LIMIT 0"))
         return {"ready": True}
 
     @app.get("/health")

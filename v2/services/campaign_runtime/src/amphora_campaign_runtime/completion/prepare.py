@@ -13,6 +13,7 @@ from ..lifecycle.receipts import RuntimeReply
 from ..persistence.commands import _bindings
 from .model import CompletionProposal, PreparedIntent
 from .retention import queue_terminal
+from .profiles import RetentionProfile
 
 
 class IntentPreparation:
@@ -40,6 +41,8 @@ class IntentPreparation:
                 existing = self.leases._existing(conn, command)
                 if existing is not None:
                     return existing
+                pinned = PreparedIntent(record.operation_id, proposal, self.runtime_owner,
+                    RetentionProfile.from_snapshot(run["tool_snapshot"]).name)
                 authority = self.leases._worker(conn, params, principal.actor_id)
                 row = conn.execute(text("SELECT a.*,v.current_fence,v.invocation_id,v.checkpoint_revision,v.specification "
                     "FROM runtime.attempts a JOIN runtime.activations v USING (tenant_id,project_id,run_id,activation_id) "
@@ -64,7 +67,7 @@ class IntentPreparation:
                     if (intent["semantic_sha256"] != proposal.digest or
                         intent["output_bindings"] != prepared.stored_bindings()):
                         raise TransitionError("intent_binding_conflict")
-                    return prepared
+                    return pinned
             except TransitionError as error:
                 if intent is not None and intent["status"] == "prepared":
                     proof = AbortDecision(record.operation_id, str(error)).record()
@@ -84,5 +87,5 @@ class IntentPreparation:
             self.leases._changed(conn, params, run, RunBudget(run["budget_limit"], run["reserved"], run["spent"]),
                 uuid.uuid5(uuid.UUID(record.operation_id), "prepare").hex,
                 {"kind": "intent_prepared", "intent_id": prepared.intent_id, "semantic_sha256": proposal.digest})
-            return prepared
+            return pinned
         return self.commands.transact(transaction)

@@ -18,10 +18,11 @@ wheels = [
 
 [[package]]
 name = "amphora-campaign-runtime"
-version = "0.68.0"
+version = "0.69.0"
 source = { editable = "." }
 dependencies = [
     { name = "alembic" },
+    { name = "amphora-contracts-artifact-retention" },
     { name = "amphora-contracts-artifacts" },
     { name = "amphora-contracts-campaign-resources" },
     { name = "amphora-contracts-campaigns" },
@@ -45,6 +46,7 @@ dependencies = [
 [package.metadata]
 requires-dist = [
     { name = "alembic", specifier = ">=1.16,<2" },
+    { name = "amphora-contracts-artifact-retention", editable = "../../contracts/artifact_retention" },
     { name = "amphora-contracts-artifacts", editable = "../../contracts/artifacts" },
     { name = "amphora-contracts-campaign-resources", editable = "../../contracts/campaign_resources" },
     { name = "amphora-contracts-campaigns", editable = "../../contracts/campaigns" },
@@ -63,6 +65,25 @@ requires-dist = [
     { name = "pydantic", specifier = ">=2.12,<3" },
     { name = "sqlalchemy", specifier = ">=2,<3" },
     { name = "uvicorn", specifier = ">=0.34,<1" },
+]
+
+[[package]]
+name = "amphora-contracts-artifact-retention"
+version = "0.1.0"
+source = { editable = "../../contracts/artifact_retention" }
+dependencies = [
+    { name = "amphora-contracts-artifacts" },
+    { name = "amphora-contracts-commands" },
+    { name = "amphora-contracts-core" },
+    { name = "pydantic" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "amphora-contracts-artifacts", editable = "../../contracts/artifacts" },
+    { name = "amphora-contracts-commands", editable = "../../contracts/commands" },
+    { name = "amphora-contracts-core", editable = "../../contracts/core" },
+    { name = "pydantic", specifier = ">=2.12,<3" },
 ]
 
 [[package]]

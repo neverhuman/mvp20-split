@@ -14,6 +14,7 @@ from ..lifecycle.receipts import RuntimeReply
 from ..lifecycle.settlement import BudgetSettlement
 from ..persistence.commands import _bindings
 from ..resource_profiles import InvocationCapacity
+from ..completion.profiles import RetentionProfile
 from ..waits.execution import WaitExecution, stop_waits
 from .advancement import GraphPass
 from .frontier import ScopeAddress
@@ -52,6 +53,7 @@ class GraphAdvancer:
                 ensure(run["execution_mode"] == "graph", "graph_run_unavailable")
                 ensure(run["status"] == "running", "run_not_running")
                 InvocationCapacity.from_snapshot(run["input_snapshot"])
+                RetentionProfile.from_snapshot(run["tool_snapshot"])
             except TransitionError as error:
                 return self.leases._finish(conn, command, reply.reject(str(error)))
             graph = GraphStorage.graph(conn, params)

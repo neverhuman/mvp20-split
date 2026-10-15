@@ -45,3 +45,30 @@ Tests cover cancel-versus-commit linearization, revoked preparations, exact comm
 ## Graph-mode integration (BP-04.02)
 
 Runtime 0.3.0 preserves fixture completion semantics and adds an explicit graph-mode integration seam. Graph completions resolve immutable tool metadata by exact binding, so later materialized invocations do not require mutating a run's tool snapshot. A missing graph pin is rejected. Accepted attempts still atomically write result/report/checkpoint, receipt, budget and retention delivery intent, but cannot infer whole-graph completion from currently issued invocations. The coordinator owns graph Finish/frontier terminality; uncertain effects remain blocked immediately. The scheduling suite verifies a real database completion commit leaves a graph running for its downstream Finish, with a scripted reservation peer; actual graph/Artifact process acceptance remains BP-04.02/V1.
+
+POP-01/E2.2 Runtime0.69 adds explicit graph-only host selection through paired
+`artifacts.retention_profile="derived-closure-retention-v1"` and
+`artifacts.closure_reserve_endpoint`. The new public artifact_retention contract
+is the only additional production dependency. The client requires the exact new
+route, validates bounded membership receipts, and performs read-only authenticated
+route plus migration-readiness checks before host startup and each fresh admission.
+Terminal command replay precedes remote preflight. Unavailable support rejects
+admission before execution state is created; no ordinary-reservation fallback exists.
+
+Admission retains the profile in immutable run.tool_snapshot metadata. Missing pins
+mean legacy direct-root behavior forever; null/unknown pins reject. Completion
+preparation reads the stored pin under the existing run lock. Root receipts keep
+existing intent_reservations format. Forward runtime0029 stores a SELECT/INSERT-only
+intent_retention_closures companion under the same intent/output foreign key;
+both receipts commit atomically. Partial/restarted acquisition resumes from saved
+proof. Completion acceptance requires the selected profile's complete proof and exact
+root binding. Late receipts after cancellation remain durable reconciliation evidence.
+The existing root confirmation/reconciliation outbox and Runtime proof remain sole
+execution authority; no worker DTO, command, counter or public Runtime route changes.
+
+Startup refuses active profiled runs without configured closure support; owner
+preflight refuses downgrades below0.69 while profiled runs are active/reserved.
+Drain before downgrade. Current qualification is in progress: scripted transport,
+actual SQL and independent installed HTTP/restart evidence must remain distinct.
+Population producers must still declare referenced children through Data ancestry;
+Runtime does not inspect scientific artifact contents or infer missing declarations.

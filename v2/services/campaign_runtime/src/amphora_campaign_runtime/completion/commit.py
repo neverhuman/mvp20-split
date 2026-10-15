@@ -17,6 +17,8 @@ from .artifacts import ReservationUnavailable, validate_receipt
 from .decision import CompletionDecision
 from .model import CompletionProposal, PreparedIntent
 from .retention import queue_terminal
+from .profiles import RetentionProfile
+from . import closure_proofs
 
 
 class CompletionCommitter:
@@ -86,6 +88,17 @@ class CompletionCommitter:
                         raise TransitionError("reservation_binding_mismatch") from error
                 if set(found) != set(expected):
                     return reply.pending()
+                profile = RetentionProfile.from_snapshot(run["tool_snapshot"])
+                if profile.name is not None:
+                    for key, reservation in expected.items():
+                        proof = closure_proofs.load(conn, {**params, "output": key})
+                        if proof is None:
+                            return reply.pending()
+                        try:
+                            closure_proofs.validate(reservation,
+                                ReservationReceipt.model_validate_json(json.dumps(found[key])), proof)
+                        except ReservationUnavailable as error:
+                            raise TransitionError("reservation_binding_mismatch") from error
                 # Re-read after all lock acquisition and receipt validation, immediately before the decision.
                 now = conn.execute(text("SELECT clock_timestamp()")).scalar_one()
                 lease_from(row).authorize(RunState(run["status"], run["revision"]), worker,

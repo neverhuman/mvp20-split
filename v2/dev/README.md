@@ -5,6 +5,8 @@ state file. This keeps temporary fixture identity separate from retained recover
 state. The probe owns cleanup: verify its container label and remove its container
 in a finally block after testing; preserve retained data volumes. The ordinary
 default remains `.test-results/postgres-fixture.json`.
+Readiness probes TCP inside the container so initdb's temporary socket-only server
+cannot be mistaken for the final PostgreSQL service before database/role creation.
 
 UI-01.08: campaign-curation and campaign-successor-launch have independent
 contract test scopes. Planning curation admission and original provenance use
@@ -462,3 +464,15 @@ scientific capability. Evidence curation-installation-20261012a:205pass,0paid ca
 UI-01/V1: `verify_studio.py --expected-public <qualified-public-directory>` discovers every generated public manifest and validation profile, verifies exact schema pins, stages no private owner code, installs locked Node dependencies in an independent temporary directory, runs regeneration/type/owned checks and builds the local static bundle. It retains bundle bytes/hashes and optionally requires exact equality to the served baseline. Temporary staging is cleaned inside its validated temp root; actual owner/browser acceptance remains separate. Focused staging tests live under tests/studio_installation.
 
 UI-02: `verify_chemical_structure.py --output <new-directory>` builds an isolated chemical-tool wheel closure, excludes peer implementations, runs copied goldens and compares exact public schemas/fresh-process results. It does not publish a candidate or qualify actual Runtime execution. Tool profile/environment resources use LF byte pins across Windows checkouts.
+
+POP-01/E2.2: `verify_retention_closure_installation.py --output <new-directory>
+--data-python <isolated-Data-python> --runtime-python <isolated-Runtime-python>`
+qualifies independently built wheels over authenticated loopback HTTP. Its owner
+process helper imports one implementation per process. A separate local proxy loses
+a successful Data reservation response; real Runtime prepared/committed/aborted
+proof drives retry, owner restart, group confirmation and cancellation release.
+The fixture uses a separately hash-pinned synthetic descriptor with300-second
+restart bounds; no scientific tool executes and no provider call occurs. Configs
+hold only credential environment references. The owned test PostgreSQL container
+and all subprocesses are removed/drained in finally; its labeled volume/evidence
+remain. This is protocol acceptance, not population-worker/scientific acceptance.

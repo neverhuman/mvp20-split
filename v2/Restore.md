@@ -1,8 +1,39 @@
 # Restore
 
-Refreshed: 2026-10-15 09:47:24 America/Chicago. Read FIRST after compaction.
+Refreshed: 2026-10-15 11:48:49 America/Chicago. Read FIRST after compaction.
 
 ## Current task
+
+2026-10-15 11:48:49 CLOSURE PREREQUISITE QUALIFIED in isolated worktree. Data0.32,
+Runtime0.69/runtime0029; actual installed HTTP lost-response/restart/confirm/cancel
+passes (.test-results/pop01-closure-http-20261015d/evidence.json). Data96 SQL;
+Runtime181 broad +6 final targeted (2 additional) checks; publication32/ownership4,
+boundary guard pass. All owned new test containers/probe processes removed.
+Evidence docs/Audits/POP-01_Closure_Retention.md. E2 stays25%, Execution31.25%,
+parent10.42%, Build15.63%, Verification0. Next E2.2 population step workers,
+then authored composition and actual batch/cap matrix. Original review local15a/
+LAN15b remains frozen/running. Do not merge into original until owner finishes
+review and wrappers drain. Continue-until-needed persists; RG-01 after POP-01.
+
+
+2026-10-15 11:33:54 CONTINUED: isolated worktree remains implementation owner; original review is now LAN15b PID20524, local15a PID27368, renewed90day TLS. Data closure suite96 passed (evidence .test-results/pop01-closure-sql-7acb4206/pytest.log), fixture final-TCP readiness race fixed, temporary container removed. Runtime explicit closure transport9 scripted peer tests pass; boundary guard passes. Profile/admission/companion storage and actual HTTP replacement qualification still pending. E2 remains25%; next immutable profile and durable receipt integration.
+
+
+2026-10-15 10:07:12 ISOLATED IMPLEMENTATION EXCEPTION: this worktree is
+Z:/mvp20-retention-integration, branch pop01-retention-integration, based on afe121c0.
+Original Z:/mvp20-split/v2 review15a is serving frozen installed owners and must remain
+unchanged. New source/tests/module README edits occur ONLY here. This worktree's
+v2 is the active isolated development area for POP-01.01 E2.2a; no priority change.
+Do not merge/promote into the review checkout before owner finishes and wrappers
+are drained. Original v1 remains read-only; it is omitted by this sparse checkout.
+Baseline verification was performed in original repo (pre-existing ADDED v1/LICENSE).
+Current task: strengthen Data closure negatives/shared-ancestry/replacement checks,
+then Runtime immutable profile binding, receipt transport and independent integration.
+Artifact contract16/publication32 and Data90source/90installed pass in original
+checkpoint. All temp test containers removed. No paid calls or new campaigns.
+Qualified Data installation is original v2/.test-results/pop01-data-closure-install-20261015a.
+Worktree gets its own Dev environment; do not reuse editable original service imports.
+
 
 2026-10-15 10:05:22 REVIEW READY: PowerShell wrapper completed; local session15a
 PID27368, LAN15a PID5032. Frozen servingh / Deployment0.20.2; curation paused,

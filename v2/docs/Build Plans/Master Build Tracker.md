@@ -37,6 +37,9 @@ The initial program proves software behavior using deterministic/synthetic fixtu
 ## Current In-Flight Work
 
 POP-01 E2 active: parent10.42%, Build15.63%, Execution31.25%, E1=100%; remaining gates0%.
+Retention prerequisite qualified (Data0.32/Runtime0.69); E2.2 population workers next.
+[Closure evidence](../Audits/POP-01_Closure_Retention.md). Isolated implementation
+worktree preserves the active frozen review session.
 LR-01 paused25%, Build33.33%, Acceptance0%; R1=100%, R2/R3/V1=0%.
 Completed UI-01/UI-02/LAN-01 are in the [completed index](Completed/README.md).
 

@@ -15,6 +15,7 @@ from sqlalchemy import text
 
 from ..persistence.commands import WHERE, CommandStore, TerminalDisposition, _bindings
 from ..resource_profiles import InvocationCapacity
+from ..completion.profiles import RetentionProfile
 from .model import ActivationState, AttemptLease, RunBudget, RunState, TransitionError, WorkerAuthority
 from .projections import ClaimedWork
 from .receipts import RuntimeReply
@@ -92,6 +93,7 @@ class RuntimeLeases:
                 state = RunState(run["status"], run["revision"])
                 state.require_running()
                 capacity = InvocationCapacity.from_snapshot(run["input_snapshot"])
+                RetentionProfile.from_snapshot(run["tool_snapshot"])
                 authority = self._worker(conn, params, request.worker_id)
                 authority.require(request.worker_id)
             except TransitionError as error:

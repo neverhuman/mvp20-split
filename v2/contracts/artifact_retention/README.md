@@ -1,7 +1,7 @@
 # Artifact retention contract
 
 Version0.1.0 owns the additive POP-01.06 derived-closure reservation boundary.
-Architecture: [Artifact publication](../../../docs/Architecture/System/Artifact_Publication_Protocol.md).
+Architecture: [Artifact publication](../../docs/Architecture/System/Artifact_Publication_Protocol.md).
 
 `ReserveDerivedClosure` requires profile `derived-closure-retention-v1`, a scoped
 root ArtifactRef and the existing CompletionIntentBinding. Its closed command family

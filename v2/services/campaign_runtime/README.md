@@ -1,5 +1,11 @@
 # Campaign Runtime
 
+POP-01/E2.2 current implementation: Runtime0.69/runtime0029 adds opt-in immutable
+closure retention for graph runs. [Completion boundary](src/amphora_campaign_runtime/completion/README.md)
+owns configuration, compatibility, proof persistence and qualification limits.
+Independent installed HTTP/restart acceptance remains in progress; historical
+checkpoint versions below are evidence for their named scope.
+
 - Current: Runtime0.66.0/runtime0028, reviewed `2026-10-07 14:20:46`. SQ-01/C2c adds an explicit pinned follow-up recipe and retained-only criterion proposals. Existing request/response/winner authority and original recipe bytes remain unchanged.175 affected-boundary tests pass100.48s;11 new checks include actual SQL and fixed predecessor replay. No new public schema, migration, execution command or scientific authority.
 - Rebuild boundaries: [recipe preparation](src/amphora_campaign_runtime/supervision_preparation/README.md), [capture consistency](src/amphora_campaign_runtime/supervision_responses/README.md), [winner retention](src/amphora_campaign_runtime/supervision_winners/README.md). Planning owns exact Research membership. Runtime retains future intent without applying fields or admitting a successor.
 - BP-08/09 local synthetic admission, inspection and deployment gates are closed. SQ-01 Studio presentation and actual-owner follow-up journey remain pending; frozen demo installations are unchanged.

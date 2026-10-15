@@ -81,7 +81,9 @@ def planning_owner(state):
 def ready(state):
     deadline = time.monotonic() + 45
     while time.monotonic() < deadline:
-        if docker("exec", state["container"], "pg_isready", "-U", "postgres", check=False).returncode == 0:
+        # initdb's temporary socket-only server is not the final database service.
+        if docker("exec", state["container"], "pg_isready", "-h", "127.0.0.1", "-p", "5432",
+                  "-U", "postgres", check=False).returncode == 0:
             return
         time.sleep(0.25)
     raise RuntimeError("PostgreSQL fixture did not become ready")

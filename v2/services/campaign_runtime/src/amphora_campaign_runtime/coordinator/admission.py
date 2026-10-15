@@ -19,6 +19,9 @@ from ..lifecycle.pins import PinnedTools
 from ..lifecycle.receipts import RuntimeReply
 from ..persistence.commands import WHERE, CommandStore, TerminalDisposition, _bindings
 from ..supervision_policy.storage import PolicyPins
+from ..completion.profiles import RetentionProfile
+from ..completion.closures import PROFILE
+from ..completion.artifacts import ReservationUnavailable
 from .bindings import InvocationIntent, ValueEnvironment
 from .frontier import FrontierPlanner, ScopeAddress
 from .materialization import InvocationMaterializer
@@ -27,12 +30,13 @@ from .values import BoundValues, ensure
 
 
 class GraphAdmission:
-    def __init__(self, engine, catalog, *, bindings_enabled=False, drafts=None, policies=None, recipes=None):
+    def __init__(self, engine, catalog, *, bindings_enabled=False, drafts=None, policies=None, recipes=None, retention=None):
         self.commands, self.catalog = CommandStore(engine), catalog
         self.bindings_enabled = bindings_enabled
         self.drafts = drafts
         self.policies = policies
         self.recipes = recipes
+        self.retention = retention
 
     def admit(self, principal, command):
         return self._admit(principal, command, successor=False)
@@ -67,6 +71,16 @@ class GraphAdmission:
         reply = RuntimeReply(command, registered.operation_id)
         params = _bindings(command)
         prepared, preparation_error = None, None
+        if self.retention is not None:
+            # History replay is independent of today's availability and configuration.
+            with self.commands.engine.connect() as conn:
+                existing = conn.execute(text("SELECT status,receipt FROM runtime.commands WHERE " + WHERE), params).mappings().one()
+            if existing["status"] != "pending":
+                return CommandReceipt.model_validate(existing["receipt"])
+            try:
+                self.retention.require_available()
+            except ReservationUnavailable:
+                preparation_error = "artifact_closure_unavailable"
         if draft:
             # Original terminal replay must not depend on today's head/configuration.
             with self.commands.engine.connect() as conn:
@@ -85,6 +99,8 @@ class GraphAdmission:
             if existing["status"] != "pending":
                 return CommandReceipt.model_validate(existing["receipt"])
             try:
+                if preparation_error:
+                    raise TransitionError(preparation_error)
                 if draft:
                     if preparation_error:
                         raise TransitionError(preparation_error)
@@ -118,7 +134,8 @@ class GraphAdmission:
             deadline = conn.execute(text("SELECT clock_timestamp()")).scalar_one() + timedelta(seconds=request.limits.deadline_seconds)
             binding = {**params, "run": run_id, "campaign": entry.plan.document.definition.campaign_id,
                 "digest": entry.plan.sha256, "snapshot": request.model_dump_json(), "limit": request.budget.limit,
-                "tools": json.dumps(PinnedTools(entry.descriptors).graph_snapshot()), "inputs": json.dumps(values.record()),
+                "tools": json.dumps(RetentionProfile(PROFILE if self.retention is not None else None).pin(
+                    PinnedTools(entry.descriptors).graph_snapshot())), "inputs": json.dumps(values.record()),
                 "maximum": request.limits.max_activations, "deadline": deadline}
             conn.execute(text("INSERT INTO runtime.runs (tenant_id,project_id,run_id,fixture_id,plan_sha256,input_snapshot,"
                 "status,budget_limit,tool_snapshot,execution_mode) VALUES (:tenant,:project,:run,:campaign,:digest,"

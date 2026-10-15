@@ -29,7 +29,8 @@ def discover(conn, principal, root):
         {**principal.bindings, "members": list(members)}).mappings().all()
     if len(rows) != len(members):
         raise UploadError("artifact_unavailable")
-    return ProtectedClosure(root, tuple(_reference(row, principal.scope) for row in rows))
+    references = tuple(sorted((_reference(row, principal.scope) for row in rows), key=lambda r: r.artifact_id))
+    return ProtectedClosure(root, references)
 
 
 def load(conn, principal, reservation):
