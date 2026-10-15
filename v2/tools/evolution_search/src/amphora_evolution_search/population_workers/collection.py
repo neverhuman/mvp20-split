@@ -23,6 +23,7 @@ from .inspection import ObservedMethod, PopulationInspection
 from .method_plan import PrimaryMethodPlan, payload_schema
 from .payloads import CollectedPrimaryGeneration, PopulationReferenceGroup, PrimaryOwnerEvidence
 from .slices import SeedSlices
+from .collection_scope import CollectionScope
 
 
 def publish_root(record,schema,parents,label,artifacts):
@@ -87,11 +88,12 @@ class PrimaryCollection:
         reads=PopulationInspection(runtime,artifacts.attempt)
         capture=reads.capture(prepared.record.generation.run_id,original.record.budget.max_activations)
         require(capture.snapshot.cut.plan_sha256==plan.execution.sha256,"population_collection_admitted_plan")
+        scope=CollectionScope.load(capture,plan,artifacts.attempt.invocation)
         # All cut-bound HTTP reads precede Artifact reads/publications (which renew
         # this worker's lease and therefore may advance Runtime's run revision).
         observed=[]
         for node in capture.nodes:
-            method=plan.binding(node)
+            method=scope.binding(node)
             if method is not None:
                 observed.append((method,reads.method(capture,node)))
         collected=[]

@@ -16,7 +16,7 @@ from .conftest import Attempt
 from .test_inspection import Scripted
 
 
-def counter_case(*,parallel=False,loop=False,finish_barrier=True,missing_own_attempt=False):
+def counter_case(*,parallel=False,loop=False,finish_barrier=True,missing_own_attempt=False,loop_index=0):
     scope=Scope(tenant_id="counter",project_id="fixture")
     tool=PopulationCapability("select-primary").descriptor("f"*64).tool.binding
     invokes=[dict(kind="invoke",node_id=name,tool=tool.model_dump(mode="json"),inputs=[],timeout_seconds=60,checkpoint=None)
@@ -30,7 +30,7 @@ def counter_case(*,parallel=False,loop=False,finish_barrier=True,missing_own_att
         definition["body"]=dict(inputs=[],outputs=[],nodes=[dict(kind="iterate",node_id="generation",state=[dict(name="i",value_type=dict(kind="scalar",scalar="integer",unit="1"),
             initial=dict(kind="integer",value=0,unit="1"),feedback_port="i")],captures=[],body=body,until=dict(kind="constant",value=False),max_iterations=2,on_limit="finish"),
             dict(kind="finish",node_id="root-finish",outputs=[])],edges=[dict(source="generation",target="root-finish",route="next")])
-        occurrences=[dict(kind="loop",node_id="generation",index=0)]
+        occurrences=[dict(kind="loop",node_id="generation",index=loop_index)]
     document=dict(profile="amphora-execution-plan-v3",definition=definition,
         lock=dict(schema_version="4",compiler_profile="amphora-deterministic-compiler-v3",definition_sha256="0"*64,tools=[],schemas=[],context=[]),
         scopes=[dict(path=[],order=["select"],nodes=[dict(node_id="select",inputs=[],outputs=[])])])

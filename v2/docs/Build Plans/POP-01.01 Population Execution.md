@@ -1,16 +1,21 @@
 # POP-01.01 Population Execution
 
 - Status: active E2; parent [POP-01](POP-01%20Population%20Campaign%20Execution%20and%20Experience.md).
-- Last refreshed: 2026-10-15 16:55:20 (America/Chicago).
+- Last refreshed: 2026-10-15 17:42:00 (America/Chicago).
 - Implementation: 31.25%; E1=100%, E2=25%, E3/E4=0%, four equal delivery gates.
 - Current: E2.1 complete; E2.2a closure-retention prerequisite qualified. E2.2 population workers active.
-- Next: loop-occurrence collection affinity, then whole worker/composition gates.
-- Active bounded task: bind method collection to the current collector's exact
-  ancestor occurrence frames from the public captured activation. Prerequisite:
-  qualified later continuity. Prior iterations sharing method scope names must be
-  excluded; candidate identity still comes from retained inputs, never indices.
-  Verify exact current caller binding/address, truthful complete coverage, static
-  generation0/1 regressions and an actual repeated-loop owner fixture. Whole E2.2 stays0.
+- Next: combined named-method/unequal-branch worker qualification, then composition.
+- Active bounded task: qualify squares and negative-sum in one frozen candidate
+  graph with unequal dependency paths; verify complete two-method collection,
+  exact summed fitness and required branch-skipped outcomes without fabricated scores.
+  Existing pure policy and separate-method actual probes are prerequisites.
+  Deliver a bounded installed public-owner fixture; whole E2.2 remains0 until its
+  full exit is satisfied. E2.3 preflight and E2.4 batch/cap matrix follow.
+- Search0.23 loop affinity qualified:386 source/384 installed,13 boundaries,
+  750 schemas/24 prior endpoint pins. Actual repeated loop normal/failure ends with
+  pools27/28, selected16, exclusions0/1, logical43/44, physical67/68, nodes124/126,
+  RNG208 and generation stop; confirmed282/283 artifacts. Containers removed.
+  [Evidence](../Audits/POP-01_Population_Loop_Affinity.md).
 - Search0.22 continuity qualified:375 source/373 installed,13 boundaries,750 shared
   schemas/24 old endpoint pins. Actual gen2 new11/pool27/selected16, logical43,
   physical67/nodes121/RNG208/front2, confirmed282 artifacts and generation stop;

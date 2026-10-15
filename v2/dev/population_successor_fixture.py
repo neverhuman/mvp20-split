@@ -13,13 +13,14 @@ from verify_retention_closure_installation import write
 
 
 class SuccessorFixture:
-    def __init__(self,output,python,scope,environment,ports, *, case="normal",tight=False,consume=False,fitness=False,failure=False,selection=False,later=False,generations=1):
+    def __init__(self,output,python,scope,environment,ports, *, case="normal",tight=False,consume=False,fitness=False,failure=False,selection=False,later=False,generations=1,loop=False):
         self.output,self.python,self.scope,self.environment=output,python,scope,environment
         self.data_port,self.runtime_port=ports;self.case=case;self.tight=tight;self.consume=consume;self.descriptors={}
         self.fitness=fitness
         self.failure=failure
         self.selection=selection
         self.later=later;self.generations=generations
+        self.loop=loop
         require_operations=("prepare-successor-request","prepare-successor", *(("prepare-successor-slice",) if consume else ()),
             *(("prepare-successor-collection",) if fitness else ()))
         for operation in require_operations:
@@ -56,7 +57,10 @@ class SuccessorFixture:
                 if self.selection:
                     from population_successor_selection_fixture import decorate_successor_selection
                     decorate_successor_selection(definition)
-                    if self.later:
+                    if self.loop:
+                        from population_loop_fixture import decorate_population_loop
+                        decorate_population_loop(definition)
+                    elif self.later:
                         from population_later_successor_fixture import decorate_later_successor
                         decorate_later_successor(definition,self.generations==2)
 

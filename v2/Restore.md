@@ -1,6 +1,6 @@
 # Restore
 
-Refreshed: 2026-10-15 16:55:20 America/Chicago. Read with AGENTS.md.
+Refreshed: 2026-10-15 17:42:00 America/Chicago. Read with AGENTS.md.
 
 ## Task and workspace
 
@@ -20,11 +20,52 @@ adb451be approved POP-01.07;21bdc2f1 collection/SDK0.4;a553de62 fitness;
 26924710 selection;7ba86686 initial successor preparation;a101c80c consumption;
 aae6a99d Search0.20 successor collection/parent-preserving fitness.
 9f9dad64 Search0.21 global generation1 selection is pushed. No original promotion.
+accaedba Search0.22 later continuity is pushed. No service promotion.
 Audits docs/Audits/POP-01_Population_*.md own detailed evidence. Seven frozen source
 hashes matched original. Full v1 verifier reports pre-existing ADDED v1/LICENSE only;
 never modify v1/regenerate manifest. Sparse v1 intentionally omitted.
 
-## Exact interruption: qualified Search0.22; checkpoint commit/push then loop affinity
+## Current checkpoint: qualified Search0.23; next combined-method fixture
+
+Search0.23 loop occurrence affinity PASS. CollectionScope verifies current issued
+collector activation, authored binding/address and exact full ancestor occurrence
+prefix. Candidate identity remains retained input refs. No shared DTO/route/grant
+or authority changes. Standalone frozen method graph still matches its embedding.
+
+386 source/384 independently installed tests PASS;11 scope tests cover wrong caller,
+tool, path, plan, occurrence index/name/membership and either nested-loop ancestor.
+Guard/13 boundaries,750 shared schemas and24 predecessor endpoint pins unchanged.
+Independent .test-results/pop01-loop-affinity-search-install-20261015a complete.
+Inventory0.23 projection refreshed. No Data/Runtime/Planning implementations or
+SQLAlchemy/FastAPI in independent Search environment.
+
+ACTUAL c loop probes PASS; drivers exited0, containers/child services removed:
+- .test-results/pop01-loop-affinity-http-20261015c: gen2 new11/pool27/selected16,
+  excluded0, logical43/physical67/nodes124/RNG208/front2, confirmed282 artifacts.
+- .test-results/pop01-loop-affinity-failure-http-20261015c: one required failure in
+  EACH successor iteration; gen2 new12/pool28/selected16/excluded1, logical44/
+  physical68/nodes126/RNG208/front2, confirmed283 artifacts.
+Both preserve16 original parent records, three observation sources and complete
+with generation_budget stop. Real Runtime iterate reuses identical body names,
+selected-state feedback and until result.state.stopped; on_limit remains blocked.
+Initial a probes failed503 because dev fixture bindings lacked existing projections
+client: fixed fixture projections=dict(bindings), no production Runtime change.
+The daemon killed b drivers; exact orphan services/containers removed before c.
+All volumes retained and original review demo preserved. ZERO provider calls.
+Audit docs/Audits/POP-01_Population_Loop_Affinity.md owns detailed evidence.
+
+NEXT bounded E2.2 gate: combined named-method/unequal-branch actual qualification.
+Use squares plus negative-sum in one frozen per-candidate graph; two declared keys
+per candidate, exact two-method sum and complete method-specific public provenance.
+Include required branch-skipped outcome -> unavailable with NO numeric score.
+Existing pure two-method policy tests and separately qualified actual methods are
+prerequisites, not sufficient end-to-end proof. Root single-generation fixture is
+sufficient for this bounded gate; no new Runtime API anticipated. Do not award
+whole E2.2 until complete worker exit. E2.3 full authored resource preflight and
+E2.4 batch1/8/32 x active1/4/8 matrix remain later gates. Repeated historical reads
+have measurable overhead: include validation I/O in E2.3, no weakened provenance.
+
+## Last qualified: Search0.22
 
 0.22 generic history code implemented: SuccessorPreparation accepts later checkpoints
 and publishes oldgeneration+1. PreparedSuccessorSource requires original/run/scope/spec
@@ -57,7 +98,7 @@ Both use Data/Runtime interpreters below and Search0.22 a. Full Gen2 budget96;
 Original limits12000attempts/100000nodes unchanged. Stop profile default64. All
 temporary containers removed finally, volumes preserved. No provider calls.
 POP-01_Population_Later_Continuity audit, README, trackers and inventory updated.
-NEXT: commit/push0.22, then immediately loop-occurrence collection affinity below.
+Pushed accaedba; loop affinity task above active.
 
 NEXT active worker task after checkpoint: generic loop collection currently
 matches scope NODE NAMES but not loop occurrence frames, so it sees prior iterations

@@ -1,6 +1,9 @@
 # Amphora v2
 
-The active workspace for the graph-native research engine. BP-01 implements independent contract packages and a validation-only runtime API; durable campaign execution has not yet been built.
+The active workspace for the graph-native research engine. Runtime owns durable
+campaign execution; independently packaged tools provide scientific and search
+capabilities through public contracts. Current implementation and remaining gates
+are tracked in the [Master Build Tracker](docs/Build%20Plans/Master%20Build%20Tracker.md).
 
 - [Foundation setup and verification](dev/README.md)
 - [Contract packages](contracts/README.md) and [runtime foundation](services/campaign_runtime/README.md)

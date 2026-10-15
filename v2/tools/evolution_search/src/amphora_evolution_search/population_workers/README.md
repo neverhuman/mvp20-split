@@ -9,12 +9,12 @@ scheduler, execution ledger or retention authority belongs here.
 
 ## Current scope
 
-Qualified through Search0.22: generation0 seed/slice, squares/negative-sum methods,
+Qualified through Search0.23: generation0 seed/slice, squares/negative-sum methods,
 complete primary collection, explicit synthetic fitness, initial whole-pool selection,
 initial successor preparation, generation1 slicing/methods/collection and complete
 retained-parent/offspring fitness and global generation1 selection.
-Source375/installed373 checks pass. Whole E2.2 stays0.
-Generic loop affinity/actual iteration, authored resource preflight and the
+Source386/installed384 checks pass. Whole E2.2 stays0.
+Combined method/branch qualification, authored resource preflight and the
 batch1/8/32 x cap1/4/8 matrix remain required gates. This is not a scientific or
 production-scale qualification.
 
@@ -23,13 +23,24 @@ must match original/run/scope/spec, move exactly one generation backward per lin
 and remain within the existing100-generation bound. Request adapters and slices
 accept later generations only through the same accepted preparation/evidence checks.
 The probes cover full generation2 and a stopped generation1 checkpoint;
-generic loop occurrence affinity and complete composition remain unfinished.
+complete composition remains unfinished.
+
+Search0.23 occurrence affinity is qualified. CollectionScope verifies
+the caller's exact captured activation and admitted binding/address, then restricts
+method nodes to its complete ancestor occurrence prefix before ordinary attribution.
+Repeated loop node names therefore cannot mix iterations; candidate identity still
+comes from retained input refs. Current probes use a real two-iteration Runtime
+loop with identical body names, selected-state feedback and an explicit stopped
+predicate.386 source/384 installed checks pass. Actual normal/failure loops end
+with pools27/28, selected16/exclusions0/1, logical43/44/physical67/68, nodes124/126,
+RNG208/front2 and generation_budget stop; confirmed282/283 artifacts. Both owned
+temporary containers and services removed. No application-provider calls.
 
 The explicit synthetic representation is CandidateBirth itself; no molecular
 encoder is inferred. Primary methods have one candidate input, no internal scatter/
 iterate and exact one-to-one frozen invoke bindings. The supplied public wire-v4
 standalone method body must equal its admitted embedding. Outer method scope paths
-are explicit; generic repeated loop-iteration attribution remains unfinished.
+are explicit; repeated loop occurrences bind through the collector's full ancestry.
 
 ## Interfaces and behavior
 
@@ -138,6 +149,7 @@ POP-01_Population_Fitness, POP-01_Population_Selection,
 POP-01_Population_Successor_Preparation, POP-01_Population_Successor_Consumption and
 POP-01_Population_Successor_Fitness and POP-01_Population_Successor_Selection.
 POP-01_Population_Later_Continuity owns the generation2/stop proof.
+POP-01_Population_Loop_Affinity owns actual repeated-loop normal/failure proof.
 POP-01_Node_Input_Inspection and
 POP-01_Closure_Retention own the qualified service prerequisites. A full plan
 closeout, generic loop/recovery proof and production Linux image attestation remain

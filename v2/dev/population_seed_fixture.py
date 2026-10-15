@@ -26,7 +26,7 @@ from population_selection_fixture import SelectionFixture
 from population_successor_fixture import SuccessorFixture
 
 
-def verify(output, python, ports, environment, scope, call, command, start, stop, *, with_slice=False, method_operation=None, inspect_inputs=False, with_collection=False, collection_case="normal", with_fitness=False, with_selection=False, with_successor=False, successor_tight=False, successor_consume=False, successor_fitness=False, successor_failure=False, successor_select=False, successor_next=False, successor_generation2=False):
+def verify(output, python, ports, environment, scope, call, command, start, stop, *, with_slice=False, method_operation=None, inspect_inputs=False, with_collection=False, collection_case="normal", with_fitness=False, with_selection=False, with_successor=False, successor_tight=False, successor_consume=False, successor_fitness=False, successor_failure=False, successor_select=False, successor_next=False, successor_generation2=False, population_loop=False):
     data_port, runtime_port = ports
     descriptor_result = subprocess.run([str(python), "-I", "-m", "amphora_evolution_search", "population-describe",
         "--operation", "seed", "--image-sha256", "f" * 64], capture_output=True, timeout=120)
@@ -44,7 +44,7 @@ def verify(output, python, ports, environment, scope, call, command, start, stop
     collection_fixture = CollectionFixture(output, python, scope, environment, ports, case=collection_case) if with_collection else None
     fitness_fixture = FitnessFixture(output, python, scope, environment, ports, case=collection_case, operation=method_operation) if with_fitness else None
     selection_fixture = SelectionFixture(output, python, scope, environment, ports, case=collection_case) if with_selection else None
-    successor_fixture = SuccessorFixture(output, python, scope, environment, ports, case=collection_case, tight=successor_tight, consume=successor_consume, fitness=successor_fitness, failure=successor_failure, selection=successor_select, later=successor_next, generations=2 if successor_generation2 else 1) if with_successor else None
+    successor_fixture = SuccessorFixture(output, python, scope, environment, ports, case=collection_case, tight=successor_tight, consume=successor_consume, fitness=successor_fitness, failure=successor_failure, selection=successor_select, later=successor_next, generations=2 if successor_generation2 else 1, loop=population_loop) if with_successor else None
     slice_count = 16 if with_collection else 8
     data = json.loads((output / "data.json").read_bytes())
     models = (
@@ -216,6 +216,8 @@ def verify(output, python, ports, environment, scope, call, command, start, stop
             for index, (_, schema) in enumerate(models) if schema.sha256 in {
                 slice_descriptor["tool"]["inputs"][0]["schema_ref"]["sha256"], slice_descriptor["tool"]["outputs"][0]["schema_ref"]["sha256"]})
         runtime["bindings"] = {"endpoint": f"http://127.0.0.1:{data_port}", "token_env": "QUAL_TOKEN"}
+        if population_loop:
+            runtime["projections"] = dict(runtime["bindings"])
     if method_fixture is not None:
         method_fixture.configure(runtime, models)
     if collection_fixture is not None:
@@ -241,8 +243,9 @@ def verify(output, python, ports, environment, scope, call, command, start, stop
     extra_inputs = [] if collection_fixture is None else collection_fixture.inputs(ready, publish)
     if successor_fitness:
         extra_inputs.append({"port":"successor_method_scope_path","value":{"kind":"collection",
-            "items":[{"kind":"string","value":"successor_evaluate"}]}})
-    if successor_generation2:
+            "items":[*([{"kind":"string","value":"generations"}] if population_loop else []),
+                {"kind":"string","value":"successor_evaluate"}]}})
+    if successor_generation2 and not population_loop:
         extra_inputs.append({"port":"second_method_scope_path","value":{"kind":"collection",
             "items":[{"kind":"string","value":"second_successor_evaluate"}]}})
     admitted = call(runtime_port, "/v1/graph-runs", command("graph.admit", {"plan_sha256": ready["plan_sha256"],

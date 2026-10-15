@@ -72,17 +72,19 @@ def fixture(e,status="succeeded", *, assembly_binding=None):
         collection=dict(kind="input",name="members"),item_input="candidate",captures=[],max_members=32,max_parallel=4,
         body=body,result_port="result",output=dict(name="result",value_type=dict(kind="collection",item=result_shape,max_items=32,missing_slots=False)),
         policy=dict(kind="all"))],"edges":[]}
+    collector=worker.tool.binding.model_copy(update={"capability_id":"numeric.population-collect-primary"})
+    execution["body"]["nodes"].append(dict(kind="invoke",node_id="collect",tool=collector.model_dump(mode="json"),
+        inputs=[],timeout_seconds=3600,checkpoint=None))
     if assembly_binding is not None:
-        collector=worker.tool.binding.model_copy(update={"capability_id":"numeric.population-collect-primary"})
-        for name,binding in (("collect",collector),("assemble",assembly_binding),
+        for name,binding in (("assemble",assembly_binding),
                 ("select",collector.model_copy(update={"capability_id":"numeric.population-select-primary"})),
                 ("successor_request",collector.model_copy(update={"capability_id":"numeric.population-prepare-successor-request"})),
                 ("prepare_successor",collector.model_copy(update={"capability_id":"numeric.population-prepare-successor"}))):
             execution["body"]["nodes"].append(dict(kind="invoke",node_id=name,tool=binding.model_dump(mode="json"),
                 inputs=[],timeout_seconds=3600,checkpoint=None))
-        execution["body"]["nodes"].append(dict(kind="finish",node_id="finish",outputs=[]))
-        execution["body"]["edges"]=[dict(source=a["node_id"],target=b["node_id"],route="next")
-            for a,b in zip(execution["body"]["nodes"],execution["body"]["nodes"][1:])]
+    execution["body"]["nodes"].append(dict(kind="finish",node_id="finish",outputs=[]))
+    execution["body"]["edges"]=[dict(source=a["node_id"],target=b["node_id"],route="next")
+        for a,b in zip(execution["body"]["nodes"],execution["body"]["nodes"][1:])]
     execution=plan(ExecutableCampaignV4.model_validate_json(json.dumps(execution)))
     request=CollectPrimaryRequest(schema_version="1",prepared=root.reference,
         execution_plan=artifact(execution,"test.execution-plan","execution-plan"),
@@ -121,11 +123,15 @@ def fixture(e,status="succeeded", *, assembly_binding=None):
                 result=dict(schema_version="1",invocation_id=address,attempt_id=attempt["attempt_id"],fence=1,outcome=outcome))
             responses.append(dict(wire_version="1",authority="accepted_execution",worker_id="worker",invocation=invocation,completion=completion)
                 if current_status=="succeeded" else completion)
+    own_path=dict(schema_version="2",node_id="collect",occurrences=[])
+    own_id=hashlib.sha256(plan_bytes(dict(profile="amphora-activation-address-v1",plan_sha256=execution.sha256,path=own_path))).hexdigest()
+    own=dict(activation_id=own_id,path=own_path,kind="invoke",status="issued",reason_code=None)
     snapshot=dict(cut=cut,status="running",budget=dict(limit=100,reserved=1,spent=6),query=dict(scope_key=None,frontier_only=False),
-        node_count=len(nodes),snapshot_token="snapshot",event_cursor="events")
-    page=dict(snapshot=snapshot,nodes=nodes,next_cursor=None)
+        node_count=len(nodes)+1,snapshot_token="snapshot",event_cursor="events")
+    page=dict(snapshot=snapshot,nodes=[*nodes,own],next_cursor=None)
     transport=Scripted([page,*responses]);runtime=SimpleNamespace(identity=e.client.identity,transport=transport)
     e.attempt.invocation.attempt_id="collector";e.attempt.invocation.inputs=()
+    e.attempt.invocation.activation_id=own_id;e.attempt.invocation.node_id="collect";e.attempt.invocation.tool=collector
     session=PopulationArtifacts(e.client,e.attempt,worker.implementation)
     return SimpleNamespace(request=request,session=session,runtime=runtime,page=page,responses=responses,prepared=prepared.prepared,
         nodes=nodes,transport=transport,original=original)

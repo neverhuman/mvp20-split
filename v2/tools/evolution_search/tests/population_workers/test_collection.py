@@ -35,7 +35,7 @@ def test_whole_primary_collection_keeps_terminal_outcomes_and_retained_evidence(
 
 def test_omitted_candidate_never_becomes_silent_empty_or_zero_fitness(worker_artifacts):
     c=fixture(worker_artifacts)
-    c.page["nodes"].pop();c.page["snapshot"]["node_count"]-=1
+    c.page["nodes"].remove(c.nodes[-1]);c.page["snapshot"]["node_count"]-=1
     # Remove the corresponding final three replies as the server would.
     c.transport.replies=c.transport.replies[:-3]
     with pytest.raises(ValueError,match="coverage"):PrimaryCollection.load(c.request,c.session,c.runtime)
