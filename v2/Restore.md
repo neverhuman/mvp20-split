@@ -1,6 +1,6 @@
 # Restore
 
-Refreshed: 2026-10-15 17:49:22 America/Chicago. Read with AGENTS.md.
+Refreshed: 2026-10-15 18:07:55 America/Chicago. Read with AGENTS.md.
 
 ## Task and workspace
 
@@ -26,113 +26,59 @@ Audits docs/Audits/POP-01_Population_*.md own detailed evidence. Seven frozen so
 hashes matched original. Full v1 verifier reports pre-existing ADDED v1/LICENSE only;
 never modify v1/regenerate manifest. Sparse v1 intentionally omitted.
 
-## Current checkpoint: paired numerical methods PASS; typed workers next
+## Current checkpoint: process-mapping0.2 mapping worker qualified
 
-Dev-only PairedMethodFixture qualifies squares plus negative-sum in one frozen
-candidate graph with unequal paths/join. Scientific methods BOTH required; join
-skipped-output tolerance does not make objective optional. No production/API change.
+Uncommitted qualified mapping component (commit/push next, then continue).
+Process-mapping0.2 uses public SDK0.4; no Search/Data/Runtime/Planning implementation
+imports. New CLI describe/schema/worker and tool-owned bounded MaterialCollection/
+MapMaterialsRequest. Existing shared process records/bytes unchanged. Exact
+scope/run/candidate/generation/process-batch, state/metadata bytes and complete
+ancestry verified before upload. Direct-parent cap128, collection32 each side,
+reads262144 each/64MiB total; incompatible maxima reject, never truncate. Stateless
+attempt-fenced child publication; no retention grants or execution authority.
 
-Actual installed probes PASS, drivers exited0/containers and child services removed:
-- .test-results/pop01-paired-http-20261015a:16 candidates/32 evaluated outcomes,
-  16 exact summed fitness records, confirmed119 collection/125 final artifacts,
-  completedspent36.
-- .test-results/pop01-paired-skipped-http-20261015a:16 evaluated+16 inapplicable,
-  all16 fitness unavailable without numeric scores, confirmed103/109 artifacts,
-  completedspent20. --collection-case conditional-not-taken.
-Same independent Search0.23/Data0.32/Runtime0.70 interpreters. py_compile/production
-guard/13 boundaries PASS. No provider calls. Audit POP-01_Population_Paired_Methods.
-Existing helpers accept method count/operations, defaults preserve old cases.
+32 source and32 independently installed checks PASS; guard/13 boundaries and750
+shared schemas pass. Final independent package:
+.test-results/pop01-process-mapping-install-20261015b/environment/Scripts/python.exe.
+No peer implementations/SQLAlchemy/FastAPI. Own Pydantic2.14.1/dev2.13.5 hashes match.
+Manifest/dev pins and locks0.2; generated package projection refreshed.
 
-NEXT E2.2: registered synthetic material/mapping workers. Exit assessment found
-process-mapping0.1.1 README explicitly excludes registered workers and Runtime
-acceptance; E2 multistage composition needs accepted typed transforms/mappings,
-not numerical control joins. Read tools/process_mapping/README.md and its pure
-validation/process domain, then public SDK/another focused tool worker. Implement
-bounded synthetic transforms/mapping through public contracts/SDK with exact
-candidate/generation/process-batch identity, retained ancestry and explicit unknowns.
-No chemical feasibility/conservation inference. Independent package and actual
-public-owner acceptance required. Do not import Search/Data/Runtime implementations.
-Whole E2.2 remains0; E2.3 authored composition/preflight and E2.4 matrix follow.
+Actual public-owner PASS (all drivers0 and owned containers/child services removed):
+- pop01-process-cartesian-http-20261015c:4 pairs/10 confirmed artifacts/completedspent2.
+- pop01-process-cross-context-http-20261015c:terminal invalid_process_mapping,
+  blockedspent2/no result root.
+- pop01-process-pairwise-http-20261015a:2 pairs/10 artifacts/completedspent2.
+- pop01-process-keyed-http-20261015a:1 pair+1 retained exclusion/9 artifacts/spent2.
+All under .test-results. Initial failed a/b helpers lacked existing bindings/
+inspection config; fixed test setup. Their owned fixtures also removed. Final
+worker grants unchanged. process_material_bootstrap.py is TEST-ONLY admitted
+source using actual run ID/public SDK, not a production scientific source.
+Audit docs/Audits/POP-01_Material_Mapping_Worker.md owns detailed evidence.
 
-## Last qualified checkpoint: Search0.23 loop affinity
+NEXT E2.2: synthetic material transforms plus accepted derivation assembly.
+ProcessDerivation.producer must use ACTUAL accepted completion proof. A transform
+cannot invent its future completion ID while publishing. Use a tool-owned transform
+proposal/result (typed material refs, no asserted acceptance), followed by a separate
+assembler reading existing public successful-producer/accepted completion proof.
+No new Runtime route anticipated; read/inspect_receipts is existing scoped authority.
+Preserve exact context, role/cardinality pins, new state revisions, conditions,
+explicit unknown amount/composition/phase and full ancestry. Synthetic copy policy
+must not imply chemistry, conservation, physical stock or feasibility. Verify
+independent installation and actual owner acceptance before E2.3 composition.
+Whole E2.2 stays0; full authored preflight and batch/cap matrix remain later.
 
-Search0.23 loop occurrence affinity PASS. CollectionScope verifies current issued
-collector activation, authored binding/address and exact full ancestor occurrence
-prefix. Candidate identity remains retained input refs. No shared DTO/route/grant
-or authority changes. Standalone frozen method graph still matches its embedding.
+## Prior qualified Search checkpoints
 
-386 source/384 independently installed tests PASS;11 scope tests cover wrong caller,
-tool, path, plan, occurrence index/name/membership and either nested-loop ancestor.
-Guard/13 boundaries,750 shared schemas and24 predecessor endpoint pins unchanged.
-Independent .test-results/pop01-loop-affinity-search-install-20261015a complete.
-Inventory0.23 projection refreshed. No Data/Runtime/Planning implementations or
-SQLAlchemy/FastAPI in independent Search environment.
-
-ACTUAL c loop probes PASS; drivers exited0, containers/child services removed:
-- .test-results/pop01-loop-affinity-http-20261015c: gen2 new11/pool27/selected16,
-  excluded0, logical43/physical67/nodes124/RNG208/front2, confirmed282 artifacts.
-- .test-results/pop01-loop-affinity-failure-http-20261015c: one required failure in
-  EACH successor iteration; gen2 new12/pool28/selected16/excluded1, logical44/
-  physical68/nodes126/RNG208/front2, confirmed283 artifacts.
-Both preserve16 original parent records, three observation sources and complete
-with generation_budget stop. Real Runtime iterate reuses identical body names,
-selected-state feedback and until result.state.stopped; on_limit remains blocked.
-Initial a probes failed503 because dev fixture bindings lacked existing projections
-client: fixed fixture projections=dict(bindings), no production Runtime change.
-The daemon killed b drivers; exact orphan services/containers removed before c.
-All volumes retained and original review demo preserved. ZERO provider calls.
-Audit docs/Audits/POP-01_Population_Loop_Affinity.md owns detailed evidence.
-
-Paired-method follow-up is now qualified above. E2.3 full authored resource
-preflight and E2.4 batch1/8/32 x active1/4/8 matrix remain later gates. Repeated
-historical reads have measurable overhead: include validation I/O in E2.3,
-without weakening provenance.
-
-## Last qualified: Search0.22
-
-0.22 generic history code implemented: SuccessorPreparation accepts later checkpoints
-and publishes oldgeneration+1. PreparedSuccessorSource requires original/run/scope/spec
-match, CP generation exactly current-1, current<=original generation budget and correct
-CP predecessor before recursive SelectionEvidence.load(...runtime). History therefore
-strictly decreases to0, bounded by existing public100 limit. SeedSlices/request adapters
-no longer hardcode gen1. No shared schemas/routes/limits changed. New generation-jump
-test rejects before any Runtime call. Full source375 PASS (session15483 complete).
-
-Final independent .test-results/pop01-later-successor-search-install-20261015a complete.
-Installed373 PASS; guard/13 boundaries and750 shared schema publication PASS.24 old
-endpoint pins unchanged; no new tool operation/DTO. Inventory0.22 projection refreshed.
-Dev fixture helpers refactored around FixtureWave with measured offspring count,
-not an assumed16, so duplicate/rejected births do not invent evaluations.
-
-Actual probes PASSED:
-- .test-results/pop01-generation2-http-20261015a --successor-generation2
-  static THREE waves: gen2 new11/pool27/selected16, RNG208, logical43/physical67,
-  nodes121 (real pagination), original parent records/three observation sources,
-  unchanged-front2 and generation_budget stop. Confirmed282-artifact root.
-- PASSED .test-results/pop01-later-stop-http-20261015a --successor-next
-  budget remains1; after real Gen1 selection run prepare again -> explicit stopped
-  generation_budget, no new births, finalspent49/201retained, roots confirmed and
-  container/processes removed. CP1 counters remain at its earlier
-  selection cut47; Runtime finalspent49 includes stop inspection, not a rewritten CP.
-Both owned containers/processes removed, labeled volumes preserved. No live sessions.
-Stop publication test now also checks no unlinked birth uploads; six source and
-installed focused reruns pass (session42499 complete).
-Both use Data/Runtime interpreters below and Search0.22 a. Full Gen2 budget96;
-Original limits12000attempts/100000nodes unchanged. Stop profile default64. All
-temporary containers removed finally, volumes preserved. No provider calls.
-POP-01_Population_Later_Continuity audit, README, trackers and inventory updated.
-Pushed accaedba; loop affinity task above active.
-
-NEXT active worker task after checkpoint: generic loop collection currently
-matches scope NODE NAMES but not loop occurrence frames, so it sees prior iterations
-and rejects context membership. Fix by locating current collector's exact activation
-in captured public node view, verifying authored binding/address, then filtering method
-nodes to that collector's full ancestor-occurrence prefix (kind/node/index). Candidate
-association still comes from retained context, never scatter index. Root static paths
-stay unchanged. Existing source collection_fixture omits current collector node;
-update it honestly, avoiding duplicate root controllers in selection_fixture. Qualify
-actual nested loop before whole E2.2 credit. E2.3 authored resource preflight/matrix
-remain ordered gates; do not start them early or claim generic loops from static waves.
+Pushed 1ede68f3 Search0.23 loop affinity:386 source/384 installed, actual repeated
+loop normal/failure pools27/28/selected16, logical43/44/physical67/68/nodes124/126,
+RNG208/front2, confirmed282/283 artifacts, generation-budget stop. Both fixtures
+removed. Audit POP-01_Population_Loop_Affinity owns exact evidence.
+Pushed ef946e2d dev paired-method qualification:32 outcomes over16 candidates,
+normal16 exact sums/125 final artifacts/spent36; required skipped second branch
+16 unavailable without scores/109 artifacts/spent20. Containers removed.
+Audit POP-01_Population_Paired_Methods owns worker-exit assessment.
+Other POP-01_Population_* audits preserve seed/slice, complete collection/fitness,
+selection/successor/later continuity evidence. No provider calls in any work.
 
 ## Interfaces and probes
 

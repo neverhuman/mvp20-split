@@ -6,7 +6,7 @@ dependencies = [
     "amphora-contracts-artifact-retention==0.1.0",
     "amphora-contracts-campaign-resources==0.1.0",
     "amphora-contracts-population-steps==0.1.0",
-    "amphora-process-mapping==0.1.1",
+    "amphora-process-mapping==0.2.0",
     "amphora-contracts-chemical-structure==0.1.0",
     "amphora-contracts-campaign-successor-launch==0.1.0",
     "amphora-contracts-campaign-curation==0.1.1",

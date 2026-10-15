@@ -1,6 +1,6 @@
 # Master Build Tracker
 
-Latest checkpoint: 2026-10-15 17:49:00: Paired numerical-method collection/fitness qualified. Registered synthetic material/mapping workers next. E2=25%, Execution31.25%, parent10.42%, Build15.63%, Verification0%. RG-01 follows the whole POP-01 before ML-01.
+Latest checkpoint: 2026-10-15 18:07:55: Process-mapping0.2 worker qualified in four actual owner cases. Synthetic material transforms next. E2=25%, Execution31.25%, parent10.42%, Build15.63%, Verification0%. RG-01 follows the whole POP-01 before ML-01.
 
 ## Purpose and Authority
 
@@ -11,9 +11,9 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 ## Program Tracker
 
 - Status: POP-01.01/E2 active; UI-01/UI-02 closed100%, LR-01 paused25%.
-- Last refreshed: 2026-10-15 17:49:00 (America/Chicago).
+- Last refreshed: 2026-10-15 18:07:55 (America/Chicago).
 - Baseline: approved [POP-01.04](POP-01.04%20Population%20contract%20decision.md).
-- Current priority/task: POP-01.01 E2.2 registered synthetic material/mapping workers.
+- Current priority/task: POP-01.01 E2.2 registered synthetic material transforms and accepted derivation assembly.
 - Next task: complete worker unit, then E2.3 authored composition/resource preflight and E2.4 actual-owner matrix.
 - Implementation: parent10.42%, Build15.63%, Verification0%; Execution31.25%, Experience/Qualification0%.
   Execution E1=100%, E2=25%, E3/E4=0%; Experience U1-U4=0%, Qualification Q1-Q4=0%.
@@ -21,9 +21,11 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
   actual loop normal/failure pool27/28/selected16, logical43/44, physical67/68,
   nodes124/126/RNG208/front2, confirmed282/283 artifacts; truthful exclusions0/1.
   Paired16-candidate/32-method collection/fitness also passes: normal16 exact sums,
-  skipped required branch16 unavailable; completedspent36/20. Worker unit still open.
+  skipped required branch16 unavailable; completedspent36/20. Process-mapping0.2
+  source32/installed32, actual pairwise/keyed/Cartesian/cross-context PASS; fixtures
+  removed. Synthetic transforms still needed; worker unit stays open.
 - Gate: E1/E2.1 and approved POP-01.06/07 prerequisites qualified; remaining E2.2
-  synthetic material/mapping workers, E2.3 composition and E2.4 matrix remain.
+  synthetic material transforms, E2.3 composition and E2.4 matrix remain.
 - Acceptance: actual execution/population UI/scientific qualification remain distinct gates.
 - Active exception: isolated pop01-retention-integration worktree; original review remains frozen. No merge/promotion until owner finishes review and wrappers drain. Continue-until-needed persists; startup-credit applications deferred. KB-01 stays queued.
   Prior Knowledge-content diagnosis complete:
@@ -44,8 +46,8 @@ Retention/input inspection qualified (Data0.32/Runtime0.70). Search0.23 seed, sl
 methods, complete collection, explicit synthetic fitness and initial selection have
 independent actual-owner evidence. Successor preparation/consumption/collection and
 parent-preserving fitness/global selection/later continuity/actual loop qualified;
-paired methods qualified; material/mapping workers current; whole E2.2 remains0.
-[Latest evidence](../Audits/POP-01_Population_Paired_Methods.md). Authored
+paired methods qualified; mapping worker qualified; material transforms current; whole E2.2 remains0.
+[Latest evidence](../Audits/POP-01_Material_Mapping_Worker.md). Authored
 composition, resource feasibility and full batch/cap matrix remain ordered gates.
 Isolated worktree preserves the active frozen review session.
 LR-01 paused25%, Build33.33%, Acceptance0%; R1=100%, R2/R3/V1=0%.

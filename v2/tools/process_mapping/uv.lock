@@ -3,6 +3,23 @@ revision = 3
 requires-python = "==3.12.*"
 
 [[package]]
+name = "amphora-contracts-artifacts"
+version = "0.2.0"
+source = { editable = "../../contracts/artifacts" }
+dependencies = [
+    { name = "amphora-contracts-commands" },
+    { name = "amphora-contracts-core" },
+    { name = "pydantic" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "amphora-contracts-commands", editable = "../../contracts/commands" },
+    { name = "amphora-contracts-core", editable = "../../contracts/core" },
+    { name = "pydantic", specifier = ">=2.12,<3" },
+]
+
+[[package]]
 name = "amphora-contracts-commands"
 version = "0.2.0"
 source = { editable = "../../contracts/commands" }
@@ -48,6 +65,25 @@ requires-dist = [
 ]
 
 [[package]]
+name = "amphora-contracts-runtime"
+version = "0.1.0"
+source = { editable = "../../contracts/runtime" }
+dependencies = [
+    { name = "amphora-contracts-commands" },
+    { name = "amphora-contracts-core" },
+    { name = "amphora-contracts-tools" },
+    { name = "pydantic" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "amphora-contracts-commands", editable = "../../contracts/commands" },
+    { name = "amphora-contracts-core", editable = "../../contracts/core" },
+    { name = "amphora-contracts-tools", editable = "../../contracts/tools" },
+    { name = "pydantic", specifier = ">=2.12,<3" },
+]
+
+[[package]]
 name = "amphora-contracts-search"
 version = "0.1.0"
 source = { editable = "../../contracts/search" }
@@ -83,17 +119,50 @@ requires-dist = [
 
 [[package]]
 name = "amphora-process-mapping"
-version = "0.1.1"
+version = "0.2.0"
 source = { editable = "." }
 dependencies = [
+    { name = "amphora-contracts-artifacts" },
     { name = "amphora-contracts-core" },
     { name = "amphora-contracts-population" },
+    { name = "amphora-contracts-runtime" },
+    { name = "amphora-contracts-tools" },
+    { name = "amphora-tool-protocol" },
+    { name = "pydantic" },
 ]
 
 [package.metadata]
 requires-dist = [
+    { name = "amphora-contracts-artifacts", editable = "../../contracts/artifacts" },
     { name = "amphora-contracts-core", editable = "../../contracts/core" },
     { name = "amphora-contracts-population", editable = "../../contracts/population" },
+    { name = "amphora-contracts-runtime", editable = "../../contracts/runtime" },
+    { name = "amphora-contracts-tools", editable = "../../contracts/tools" },
+    { name = "amphora-tool-protocol", editable = "../../sdk/tool_protocol" },
+    { name = "pydantic", specifier = ">=2.12,<3" },
+]
+
+[[package]]
+name = "amphora-tool-protocol"
+version = "0.4.0"
+source = { editable = "../../sdk/tool_protocol" }
+dependencies = [
+    { name = "amphora-contracts-artifacts" },
+    { name = "amphora-contracts-commands" },
+    { name = "amphora-contracts-core" },
+    { name = "amphora-contracts-runtime" },
+    { name = "amphora-contracts-tools" },
+    { name = "pydantic" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "amphora-contracts-artifacts", editable = "../../contracts/artifacts" },
+    { name = "amphora-contracts-commands", editable = "../../contracts/commands" },
+    { name = "amphora-contracts-core", editable = "../../contracts/core" },
+    { name = "amphora-contracts-runtime", editable = "../../contracts/runtime" },
+    { name = "amphora-contracts-tools", editable = "../../contracts/tools" },
+    { name = "pydantic", specifier = ">=2.11,<3" },
 ]
 
 [[package]]

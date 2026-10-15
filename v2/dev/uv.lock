@@ -1182,17 +1182,27 @@ requires-dist = [
 
 [[package]]
 name = "amphora-process-mapping"
-version = "0.1.1"
+version = "0.2.0"
 source = { editable = "../tools/process_mapping" }
 dependencies = [
+    { name = "amphora-contracts-artifacts" },
     { name = "amphora-contracts-core" },
     { name = "amphora-contracts-population" },
+    { name = "amphora-contracts-runtime" },
+    { name = "amphora-contracts-tools" },
+    { name = "amphora-tool-protocol" },
+    { name = "pydantic" },
 ]
 
 [package.metadata]
 requires-dist = [
+    { name = "amphora-contracts-artifacts", editable = "../contracts/artifacts" },
     { name = "amphora-contracts-core", editable = "../contracts/core" },
     { name = "amphora-contracts-population", editable = "../contracts/population" },
+    { name = "amphora-contracts-runtime", editable = "../contracts/runtime" },
+    { name = "amphora-contracts-tools", editable = "../contracts/tools" },
+    { name = "amphora-tool-protocol", editable = "../sdk/tool_protocol" },
+    { name = "pydantic", specifier = ">=2.12,<3" },
 ]
 
 [[package]]

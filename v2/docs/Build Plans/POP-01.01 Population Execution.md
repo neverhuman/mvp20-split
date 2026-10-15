@@ -1,18 +1,23 @@
 # POP-01.01 Population Execution
 
 - Status: active E2; parent [POP-01](POP-01%20Population%20Campaign%20Execution%20and%20Experience.md).
-- Last refreshed: 2026-10-15 17:49:00 (America/Chicago).
+- Last refreshed: 2026-10-15 18:06:18 (America/Chicago).
 - Implementation: 31.25%; E1=100%, E2=25%, E3/E4=0%, four equal delivery gates.
 - Current: E2.1 complete; E2.2a closure-retention prerequisite qualified. E2.2 population workers active.
-- Next: registered synthetic material/mapping workers, then authored composition.
-- Active bounded task: adapt existing process-mapping0.1.1 typed validation into
-  bounded registered synthetic workers through public SDK/contracts. Its current
-  README explicitly excludes workers/Runtime acceptance. Required multistage
-  composition needs accepted transform/mapping artifacts, not numerical joins.
-  Preserve exact candidate/generation/process-batch identity, bounded publications,
-  retained ancestry and explicit unknowns; no reaction-feasibility inference.
-  Verify independent installation/owner acceptance before E2.3 composition.
+- Next: registered synthetic material transforms, then authored composition.
+- Active bounded task: add a bounded synthetic material transform and accepted
+  derivation assembly through public SDK/contracts. ProcessDerivation producer
+  pointers must use actual accepted completion proofs, never invented future IDs.
+  Preserve exact candidate/generation/process-batch identity, role/cardinality pins,
+  new state revisions, explicit unknowns and complete ancestry. No reaction,
+  conservation or physical material-production inference. Independent package
+  and actual public-owner acceptance required before E2.3 composition.
   Whole E2.2 remains0; later composition/preflight and batch/cap matrix stay open.
+- Process-mapping0.2 qualified:32 source/32 installed,13 boundaries/750 schemas.
+  Actual pairwise2/Cartesian4 pairs each confirm10 artifacts; keyed1 pair+1 exclusion
+  confirms9, all completedspent2. Cross-candidate input fails terminally and blocks
+  graph without a result root. All owned fixtures removed; no provider calls.
+  [Evidence](../Audits/POP-01_Material_Mapping_Worker.md).
 - Paired numerical-method qualification PASS:16 candidates/32 outcomes. Normal
   has32 evaluated/16 exact summed fitness, final125 artifacts/spent36; required
   branch-skipped has16 evaluated+16 inapplicable/all16 unavailable fitness without

@@ -1,11 +1,11 @@
 # POP-01 Population Campaign Execution and Experience
 
-Current E2.2 checkpoint: Search0.23 loop affinity qualified (386 source/384 installed; actual repeated loop normal/failure, pools27/28, selected16, truthful exclusion0/1). Paired-method collection/fitness also qualified; registered synthetic material/mapping workers next. Percentages unchanged.
+Current E2.2 checkpoint: Search0.23 loop affinity qualified (386 source/384 installed; actual repeated loop normal/failure, pools27/28, selected16, truthful exclusion0/1). Paired-method collection/fitness also qualified; process-mapping0.2 mapping worker qualified; synthetic transforms next. Percentages unchanged.
 
 ## Canonical tracker
 
 - Status: active POP-01.01/E2 bounded dispatch; before ML-01.
-- Last refreshed: 2026-10-15 17:49:00 (America/Chicago).
+- Last refreshed: 2026-10-15 18:07:55 (America/Chicago).
 - Scope revision: POP-01.04 and POP-01.05 approved; E1 complete, E2 active.
 - Overall implementation: 10.42%; Execution31.25%, Experience0%, Qualification0%.
   Three equally weighted children, each with four equal delivery gates. Parent
@@ -14,7 +14,7 @@ Current E2.2 checkpoint: Search0.23 loop affinity qualified (386 source/384 inst
 - Owner: cross-owner population workflow; responsibilities assigned below.
 - Prerequisite: UI-01/V1 and UI-02/P4 prove actual Knowledge, inventory-grounded
   LLM graph curation/missing-capability requests, browser Run and candidate detail.
-- Current task: E2.2 registered synthetic material/mapping workers; paired methods, loop affinity and preceding components qualified.
+- Current task: E2.2 synthetic material transforms/accepted derivation assembly; mapping, paired methods and loop affinity qualified.
   Full worker unit and authored composition/matrix remain incomplete. E1/E2.1 remain complete.
 - Design readiness: POP-01.04 contracts/selection policy approved. New public Runtime
   extensions, if needed, still require concrete E1 review before implementation.
