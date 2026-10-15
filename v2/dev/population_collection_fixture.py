@@ -16,10 +16,11 @@ from verify_retention_closure_installation import write
 
 
 class CollectionFixture:
-    def __init__(self,output,python,scope,environment,ports, *, case="normal"):
+    def __init__(self,output,python,scope,environment,ports, *, case="normal",method_count=1):
         self.output,self.python,self.scope,self.environment=output,python,scope,environment
         self.data_port,self.runtime_port=ports
         self.case=case
+        self.method_count=method_count
         result=subprocess.run([str(python),"-I","-m","amphora_evolution_search","population-describe",
             "--operation","collect-primary","--image-sha256","f"*64],capture_output=True,timeout=120)
         assert result.returncode==0,"Installed collector descriptor failed"
@@ -103,12 +104,15 @@ class CollectionFixture:
         observations=ObservationManifest.model_validate_json(json.dumps(read(collected.observations.model_dump(mode="json"))))
         rows=[row for page in observations.pages for row in MethodObservationPage.model_validate_json(json.dumps(read(page.artifact.model_dump(mode="json")))).records]
         expected={PopulationCandidateContext.model_validate_json(json.dumps(read(ref.model_dump(mode="json")))).member.candidate_id for ref in members}
-        assert evaluations.evaluation_count==observations.terminal_count==len(expected)==16
+        assert len(expected)==16
+        count=16*self.method_count
+        assert evaluations.evaluation_count==observations.terminal_count==count
         assert {row.key.candidate_id for row in rows}==expected
+        assert len({(row.key.candidate_id,row.key.method_id) for row in rows})==count
         statuses={status:sum(row.outcome.status==status for row in rows) for status in ("evaluated","failed","inapplicable")}
-        expected_statuses={"normal":dict(evaluated=16,failed=0,inapplicable=0),
-            "failed-required":dict(evaluated=15,failed=1,inapplicable=0),
-            "conditional-not-taken":dict(evaluated=0,failed=0,inapplicable=16)}
+        expected_statuses={"normal":dict(evaluated=count,failed=0,inapplicable=0),
+            "failed-required":dict(evaluated=count-1,failed=1,inapplicable=0),
+            "conditional-not-taken":dict(evaluated=count-16,failed=0,inapplicable=16)}
         assert statuses==expected_statuses[self.case],statuses
         for row in rows:
             if row.outcome.status!="evaluated":continue
@@ -129,9 +133,9 @@ class CollectionFixture:
             call(self.runtime_port,"/v1/graph-runs/advance",command("graph.advance",{"run_id":run,"max_transitions":32}))
             state=call(self.runtime_port,"/v1/runs/"+run)
             if state["status"]=="completed" or (stop_after_collection and any(a["status"]=="queued" for a in state["activations"])):break
-        spent=3 if self.case=="conditional-not-taken" else 19
+        spent=3+count-(16 if self.case=="conditional-not-taken" else 0)
         assert state["status"]==("running" if stop_after_collection else "completed") and state["budget"]["spent"]==spent,state
-        record={"status":"passed","members":16,"evaluation_keys":16,"terminal_observations":16,
+        record={"status":"passed","members":16,"evaluation_keys":count,"terminal_observations":count,
             "candidate_bound_by_runtime_and_data":True,"retained_artifacts":closure["artifact_count"],
             "run_status":state["status"],"spent":spent,"case":self.case,"outcomes":statuses,"collector_retention_grant":False,"provider_calls":0}
         write(self.output/"population-collection-evidence.json",record)

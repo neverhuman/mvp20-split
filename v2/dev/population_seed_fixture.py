@@ -26,7 +26,7 @@ from population_selection_fixture import SelectionFixture
 from population_successor_fixture import SuccessorFixture
 
 
-def verify(output, python, ports, environment, scope, call, command, start, stop, *, with_slice=False, method_operation=None, inspect_inputs=False, with_collection=False, collection_case="normal", with_fitness=False, with_selection=False, with_successor=False, successor_tight=False, successor_consume=False, successor_fitness=False, successor_failure=False, successor_select=False, successor_next=False, successor_generation2=False, population_loop=False):
+def verify(output, python, ports, environment, scope, call, command, start, stop, *, with_slice=False, method_operation=None, inspect_inputs=False, with_collection=False, collection_case="normal", with_fitness=False, with_selection=False, with_successor=False, successor_tight=False, successor_consume=False, successor_fitness=False, successor_failure=False, successor_select=False, successor_next=False, successor_generation2=False, population_loop=False, population_paired=False):
     data_port, runtime_port = ports
     descriptor_result = subprocess.run([str(python), "-I", "-m", "amphora_evolution_search", "population-describe",
         "--operation", "seed", "--image-sha256", "f" * 64], capture_output=True, timeout=120)
@@ -41,8 +41,13 @@ def verify(output, python, ports, environment, scope, call, command, start, stop
         slice_descriptor = json.loads(result.stdout)
         write(output / "population-slice-release.json", slice_descriptor)
     method_fixture = None if method_operation is None else MethodFixture(output, python, scope, environment, ports, method_operation, case=collection_case)
-    collection_fixture = CollectionFixture(output, python, scope, environment, ports, case=collection_case) if with_collection else None
-    fitness_fixture = FitnessFixture(output, python, scope, environment, ports, case=collection_case, operation=method_operation) if with_fitness else None
+    if population_paired:
+        from population_paired_fixture import PairedMethodFixture
+        method_fixture=PairedMethodFixture(output,python,scope,environment,ports,case=collection_case)
+    collection_fixture = CollectionFixture(output, python, scope, environment, ports, case=collection_case,
+        method_count=2 if population_paired else 1) if with_collection else None
+    fitness_fixture = FitnessFixture(output, python, scope, environment, ports, case=collection_case, operation=method_operation,
+        operations=method_fixture.operations if population_paired else None) if with_fitness else None
     selection_fixture = SelectionFixture(output, python, scope, environment, ports, case=collection_case) if with_selection else None
     successor_fixture = SuccessorFixture(output, python, scope, environment, ports, case=collection_case, tight=successor_tight, consume=successor_consume, fitness=successor_fitness, failure=successor_failure, selection=successor_select, later=successor_next, generations=2 if successor_generation2 else 1, loop=population_loop) if with_successor else None
     slice_count = 16 if with_collection else 8
@@ -250,7 +255,7 @@ def verify(output, python, ports, environment, scope, call, command, start, stop
             "items":[{"kind":"string","value":"second_successor_evaluate"}]}})
     admitted = call(runtime_port, "/v1/graph-runs", command("graph.admit", {"plan_sha256": ready["plan_sha256"],
         "inputs": [{"port": "parameters", "value": {"kind": "artifact", "representation": "population-reference-v1", "unit": "1", "artifact": source}}, *extra_inputs],
-        "budget": {"limit": (24 if successor_tight else 96 if successor_generation2 else 64) if with_successor else 22 if with_selection else 20 if with_fitness else 19 if with_collection else 10 if method_fixture is not None else 2 if with_slice else 1}}))
+        "budget": {"limit": 36 if population_paired else (24 if successor_tight else 96 if successor_generation2 else 64) if with_successor else 22 if with_selection else 20 if with_fitness else 19 if with_collection else 10 if method_fixture is not None else 2 if with_slice else 1}}))
     run = admitted["outcome"]["committed"]["object_id"]
     worker_config = {"actor_id": "population-worker", "scope": scope, "run_id": run, "image_sha256": "f" * 64,
         "runtime": {"endpoint": f"http://127.0.0.1:{runtime_port}", "token_env": "QUAL_WORKER_TOKEN"},

@@ -14,7 +14,7 @@ complete primary collection, explicit synthetic fitness, initial whole-pool sele
 initial successor preparation, generation1 slicing/methods/collection and complete
 retained-parent/offspring fitness and global generation1 selection.
 Source386/installed384 checks pass. Whole E2.2 stays0.
-Combined method/branch qualification, authored resource preflight and the
+Registered typed material/mapping workers, authored resource preflight and the
 batch1/8/32 x cap1/4/8 matrix remain required gates. This is not a scientific or
 production-scale qualification.
 
@@ -150,6 +150,12 @@ POP-01_Population_Successor_Preparation, POP-01_Population_Successor_Consumption
 POP-01_Population_Successor_Fitness and POP-01_Population_Successor_Selection.
 POP-01_Population_Later_Continuity owns the generation2/stop proof.
 POP-01_Population_Loop_Affinity owns actual repeated-loop normal/failure proof.
+POP-01_Population_Paired_Methods qualifies two named methods on unequal paths:
+32 declared outcomes,16 exact summed fitness records (normal), or16 evaluated plus
+16 inapplicable outcomes/all16 unavailable fitness without scores (required skip).
+Confirmed final125/109 artifacts; completedspent36/20; both owned fixtures removed.
+This does not qualify typed material transforms; process-mapping workers remain
+a separate E2.2 prerequisite for multistage composition.
 POP-01_Node_Input_Inspection and
 POP-01_Closure_Retention own the qualified service prerequisites. A full plan
 closeout, generic loop/recovery proof and production Linux image attestation remain

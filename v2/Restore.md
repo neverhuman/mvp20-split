@@ -1,6 +1,6 @@
 # Restore
 
-Refreshed: 2026-10-15 17:42:00 America/Chicago. Read with AGENTS.md.
+Refreshed: 2026-10-15 17:49:22 America/Chicago. Read with AGENTS.md.
 
 ## Task and workspace
 
@@ -21,11 +21,40 @@ adb451be approved POP-01.07;21bdc2f1 collection/SDK0.4;a553de62 fitness;
 aae6a99d Search0.20 successor collection/parent-preserving fitness.
 9f9dad64 Search0.21 global generation1 selection is pushed. No original promotion.
 accaedba Search0.22 later continuity is pushed. No service promotion.
+1ede68f3 Search0.23 actual-loop affinity is pushed. No service promotion.
 Audits docs/Audits/POP-01_Population_*.md own detailed evidence. Seven frozen source
 hashes matched original. Full v1 verifier reports pre-existing ADDED v1/LICENSE only;
 never modify v1/regenerate manifest. Sparse v1 intentionally omitted.
 
-## Current checkpoint: qualified Search0.23; next combined-method fixture
+## Current checkpoint: paired numerical methods PASS; typed workers next
+
+Dev-only PairedMethodFixture qualifies squares plus negative-sum in one frozen
+candidate graph with unequal paths/join. Scientific methods BOTH required; join
+skipped-output tolerance does not make objective optional. No production/API change.
+
+Actual installed probes PASS, drivers exited0/containers and child services removed:
+- .test-results/pop01-paired-http-20261015a:16 candidates/32 evaluated outcomes,
+  16 exact summed fitness records, confirmed119 collection/125 final artifacts,
+  completedspent36.
+- .test-results/pop01-paired-skipped-http-20261015a:16 evaluated+16 inapplicable,
+  all16 fitness unavailable without numeric scores, confirmed103/109 artifacts,
+  completedspent20. --collection-case conditional-not-taken.
+Same independent Search0.23/Data0.32/Runtime0.70 interpreters. py_compile/production
+guard/13 boundaries PASS. No provider calls. Audit POP-01_Population_Paired_Methods.
+Existing helpers accept method count/operations, defaults preserve old cases.
+
+NEXT E2.2: registered synthetic material/mapping workers. Exit assessment found
+process-mapping0.1.1 README explicitly excludes registered workers and Runtime
+acceptance; E2 multistage composition needs accepted typed transforms/mappings,
+not numerical control joins. Read tools/process_mapping/README.md and its pure
+validation/process domain, then public SDK/another focused tool worker. Implement
+bounded synthetic transforms/mapping through public contracts/SDK with exact
+candidate/generation/process-batch identity, retained ancestry and explicit unknowns.
+No chemical feasibility/conservation inference. Independent package and actual
+public-owner acceptance required. Do not import Search/Data/Runtime implementations.
+Whole E2.2 remains0; E2.3 authored composition/preflight and E2.4 matrix follow.
+
+## Last qualified checkpoint: Search0.23 loop affinity
 
 Search0.23 loop occurrence affinity PASS. CollectionScope verifies current issued
 collector activation, authored binding/address and exact full ancestor occurrence
@@ -54,16 +83,10 @@ The daemon killed b drivers; exact orphan services/containers removed before c.
 All volumes retained and original review demo preserved. ZERO provider calls.
 Audit docs/Audits/POP-01_Population_Loop_Affinity.md owns detailed evidence.
 
-NEXT bounded E2.2 gate: combined named-method/unequal-branch actual qualification.
-Use squares plus negative-sum in one frozen per-candidate graph; two declared keys
-per candidate, exact two-method sum and complete method-specific public provenance.
-Include required branch-skipped outcome -> unavailable with NO numeric score.
-Existing pure two-method policy tests and separately qualified actual methods are
-prerequisites, not sufficient end-to-end proof. Root single-generation fixture is
-sufficient for this bounded gate; no new Runtime API anticipated. Do not award
-whole E2.2 until complete worker exit. E2.3 full authored resource preflight and
-E2.4 batch1/8/32 x active1/4/8 matrix remain later gates. Repeated historical reads
-have measurable overhead: include validation I/O in E2.3, no weakened provenance.
+Paired-method follow-up is now qualified above. E2.3 full authored resource
+preflight and E2.4 batch1/8/32 x active1/4/8 matrix remain later gates. Repeated
+historical reads have measurable overhead: include validation I/O in E2.3,
+without weakening provenance.
 
 ## Last qualified: Search0.22
 

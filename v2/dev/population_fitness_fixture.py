@@ -12,9 +12,10 @@ from verify_retention_closure_installation import write
 
 
 class FitnessFixture:
-    def __init__(self,output,python,scope,environment,ports, *, case="normal", operation="evaluate-squares"):
+    def __init__(self,output,python,scope,environment,ports, *, case="normal", operation="evaluate-squares",operations=None):
         self.output,self.python,self.scope,self.environment=output,python,scope,environment
         self.data_port,self.runtime_port=ports;self.case=case;self.operation=operation
+        self.operations=(operation,) if operations is None else operations
         result=subprocess.run([str(python),"-I","-m","amphora_evolution_search","population-describe",
             "--operation","assemble-primary","--image-sha256","f"*64],capture_output=True,timeout=120)
         assert result.returncode==0,"Installed assembly descriptor failed"
@@ -76,7 +77,8 @@ class FitnessFixture:
         by_id={member.candidate_id:member for member in members}
         for record in available:
             birth=CandidateBirth.model_validate_json(json.dumps(read(by_id[record.candidate_id].birth.model_dump(mode="json"))))
-            expected_value=math.fsum(gene*gene for gene in birth.genes) if self.operation=="evaluate-squares" else -math.fsum(birth.genes)
+            expected_value=math.fsum(math.fsum(gene*gene for gene in birth.genes) if operation=="evaluate-squares"
+                else -math.fsum(birth.genes) for operation in self.operations)
             assert record.outcome.objectives[0].value.value==expected_value
             assert record.outcome.objectives[0].quality=="synthetic" and record.outcome.constraint_violation==0.0
         for record in unavailable:
@@ -95,7 +97,7 @@ class FitnessFixture:
             call(self.runtime_port,"/v1/graph-runs/advance",command("graph.advance",{"run_id":run,"max_transitions":32}))
             state=call(self.runtime_port,"/v1/runs/"+run)
             if state["status"]=="completed" or (stop_after_fitness and any(a["status"]=="queued" for a in state["activations"])):break
-        spent=4 if self.case=="conditional-not-taken" else 20
+        spent=4+16*(len(self.operations)-(1 if self.case=="conditional-not-taken" else 0))
         assert state["status"]==("running" if stop_after_fitness else "completed") and state["budget"]["spent"]==spent,state
         record={"status":"passed","case":self.case,"members":16,"available":len(available),"unavailable":len(unavailable),
             "exact_available_values":True,"initial_selection_pool":True,"retained_artifacts":closure["artifact_count"],
