@@ -20,7 +20,7 @@ from amphora_evolution_search.population_workers.worker import PopulationWorker
 from .test_inspection import Scripted
 
 
-def fixture(e,status="succeeded"):
+def fixture(e,status="succeeded", *, assembly_binding=None):
     worker=PopulationWorker(SimpleNamespace(identity=e.client.identity),e.client,PopulationCapability("evaluate-squares"),"f"*64)
     definition=json.loads(Path(__file__).with_name("primary-method-definition.json").read_bytes())
     definition["scope"]=e.original.record.scope.model_dump(mode="json")
@@ -47,8 +47,16 @@ def fixture(e,status="succeeded"):
     graph=e.original.record.method_graph.model_copy(update={"methods":(method,),"definition":artifact(definition,"test.method-definition","method-definition"),
         "plan_sha256":method_plan.sha256})
     objective=e.original.record.assembly.objectives[0].model_copy(update={"method_ids":(method.method_id,)})
+    assembly=e.original.record.assembly.model_copy(update={"objectives":(objective,)})
+    constraints=e.original.record.constraints
+    if assembly_binding is not None:
+        from amphora_evolution_search.population_workers.payloads import PrimarySumPolicy,UnconstrainedSynthetic
+        assembly=assembly.model_copy(update={"tool":assembly_binding,"policy":artifact(
+            PrimarySumPolicy(schema_version="1",profile="primary-dimensionless-sum-v1"),"population-worker.fitness-policy","fitness-policy")})
+        constraints=artifact(UnconstrainedSynthetic(schema_version="1",profile="unconstrained-synthetic-v1"),
+            "population-worker.synthetic-constraints","fitness-constraints")
     original=OriginalPopulation(e.original.record.model_copy(update={"method_graph":graph,"implementations":(worker.implementation,),
-        "assembly":e.original.record.assembly.model_copy(update={"objectives":(objective,)}),
+        "assembly":assembly,"constraints":constraints,
         "budget":e.original.record.budget.model_copy(update={"population_size":4,"dispatch_slice":4})}))
     raw=canonical(original.record);spec=e.source.model_copy(update={"sha256":hashlib.sha256(raw).hexdigest(),"size_bytes":len(raw)})
     e.client.contents[spec.artifact_id]=raw
@@ -64,6 +72,10 @@ def fixture(e,status="succeeded"):
         collection=dict(kind="input",name="members"),item_input="candidate",captures=[],max_members=32,max_parallel=4,
         body=body,result_port="result",output=dict(name="result",value_type=dict(kind="collection",item=result_shape,max_items=32,missing_slots=False)),
         policy=dict(kind="all"))],"edges":[]}
+    if assembly_binding is not None:
+        collector=worker.tool.binding.model_copy(update={"capability_id":"numeric.population-collect-primary"})
+        execution["body"]["nodes"].append(dict(kind="invoke",node_id="collect",tool=collector.model_dump(mode="json"),
+            inputs=[],timeout_seconds=3600,checkpoint=None))
     execution=plan(ExecutableCampaignV4.model_validate_json(json.dumps(execution)))
     request=CollectPrimaryRequest(schema_version="1",prepared=root.reference,
         execution_plan=artifact(execution,"test.execution-plan","execution-plan"),

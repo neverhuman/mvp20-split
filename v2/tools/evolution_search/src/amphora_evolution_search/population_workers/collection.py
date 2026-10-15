@@ -42,6 +42,18 @@ def publish_root(record,schema,parents,label,artifacts):
     return artifacts.publish(record,schema,refs,label)
 
 
+def prepared_pages(prepared,artifacts):
+    source_pages=[]
+    for reference,model,schema in (
+        (prepared.record.births,BirthManifest,population_record_schema("population.birth-manifest")),
+        (prepared.record.cohort,MembershipManifest,membership_manifest_schema()),
+        (prepared.record.declarations,EvaluationDeclarationManifest,population_record_schema("population.evaluation-declarations"))):
+        manifest=artifacts.read(reference).decode(model,schema,artifacts.scope)
+        source_pages.extend(artifacts.read(page.artifact) for page in manifest.pages)
+    GenerationPageClosure.verify(prepared.record.generation,tuple(source_pages))
+    return tuple(source_pages)
+
+
 @dataclass(frozen=True)
 class CollectedMethod:
     key: BoundEvaluation
@@ -71,14 +83,7 @@ class PrimaryCollection:
         prepared=SeedSlices.load(request.prepared,artifacts).prepared
         original=prepared.declarations.membership.original
         plan=PrimaryMethodPlan.load(request,original,artifacts)
-        source_pages=[]
-        for reference,model,schema in (
-            (prepared.record.births,BirthManifest,population_record_schema("population.birth-manifest")),
-            (prepared.record.cohort,MembershipManifest,membership_manifest_schema()),
-            (prepared.record.declarations,EvaluationDeclarationManifest,population_record_schema("population.evaluation-declarations"))):
-            manifest=artifacts.read(reference).decode(model,schema,artifacts.scope)
-            source_pages.extend(artifacts.read(page.artifact) for page in manifest.pages)
-        GenerationPageClosure.verify(prepared.record.generation,tuple(source_pages))
+        source_pages=prepared_pages(prepared,artifacts)
         reads=PopulationInspection(runtime,artifacts.attempt)
         capture=reads.capture(prepared.record.generation.run_id,original.record.budget.max_activations)
         require(capture.snapshot.cut.plan_sha256==plan.execution.sha256,"population_collection_admitted_plan")

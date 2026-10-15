@@ -24,6 +24,7 @@ from .seed import SeedPreparation
 from .slices import SeedSlices
 from .methods import PrimaryMethod
 from .collection import PrimaryCollection
+from .assembly import PrimaryAssembly
 
 
 class PopulationWorker:
@@ -50,6 +51,8 @@ class PopulationWorker:
                 result = SeedPreparation.load(request, session).publish(session)
             elif self.capability.operation == "slice":
                 result = SeedSlices.load(request.prepared, session).publish(request, session)
+            elif self.capability.operation == "assemble-primary":
+                result = PrimaryAssembly.load(source, session, self.runtime, self.tool.binding).publish(session)
             elif self.capability.operation == "collect-primary":
                 result = PrimaryCollection.load(request, session, self.runtime).publish(request, session)
             else:

@@ -78,7 +78,7 @@ class CollectionFixture:
             "artifact":publish(record,schema)}} for name,record in (("execution_plan",execution),("method_plan",method))),
             {"port":"method_scope_path","value":{"kind":"collection","items":[{"kind":"string","value":"evaluate"}]}}]
 
-    def run(self,run,members,worker_config,call,command,read):
+    def run(self,run,members,worker_config,call,command,read, *, stop_after_collection=False):
         advance=command("graph.advance",{"run_id":run,"max_transitions":32})
         for _ in range(32):
             receipt=call(self.runtime_port,"/v1/graph-runs/advance",advance)
@@ -128,9 +128,9 @@ class CollectionFixture:
         for _ in range(16):
             call(self.runtime_port,"/v1/graph-runs/advance",command("graph.advance",{"run_id":run,"max_transitions":32}))
             state=call(self.runtime_port,"/v1/runs/"+run)
-            if state["status"]=="completed":break
+            if state["status"]=="completed" or (stop_after_collection and any(a["status"]=="queued" for a in state["activations"])):break
         spent=3 if self.case=="conditional-not-taken" else 19
-        assert state["status"]=="completed" and state["budget"]["spent"]==spent,state
+        assert state["status"]==("running" if stop_after_collection else "completed") and state["budget"]["spent"]==spent,state
         record={"status":"passed","members":16,"evaluation_keys":16,"terminal_observations":16,
             "candidate_bound_by_runtime_and_data":True,"retained_artifacts":closure["artifact_count"],
             "run_status":state["status"],"spent":spent,"case":self.case,"outcomes":statuses,"collector_retention_grant":False,"provider_calls":0}

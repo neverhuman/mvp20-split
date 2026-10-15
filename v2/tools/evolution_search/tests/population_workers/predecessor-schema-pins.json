@@ -1,0 +1,12 @@
+{
+  "seed/input": "608621afcb216f2c401b54af9234b602f2d77d665303fa3fac96a999ecf46112",
+  "seed/output": "414937604c992212c422d91fabcd9c6f21ff62f9eacf990cc6ff5e6b321ac12d",
+  "slice/input": "14a987ff480332109c64b7d5dd74e0a35c117eb8239602e41026827ae9e544f2",
+  "slice/output": "a324577cd40be6b0579d2bde77d57d4e27abdb9ffa8b659bee2a2417ab8158da",
+  "evaluate-squares/input": "791f9fb561f779ad258dc8004566039f62c61d67a19fab392e20ddb8a7184fb3",
+  "evaluate-squares/output": "8b3b786045c0e9719fde6dadebec31569688d2edad76bf70ea19109478201d86",
+  "evaluate-negative-sum/input": "791f9fb561f779ad258dc8004566039f62c61d67a19fab392e20ddb8a7184fb3",
+  "evaluate-negative-sum/output": "8b3b786045c0e9719fde6dadebec31569688d2edad76bf70ea19109478201d86",
+  "collect-primary/input": "5ce73be1f4f537382c726e28d2b32a15ec97b8ebbb55af0466d88de36a9118bd",
+  "collect-primary/output": "346d76f57bbe634cf1c71995e1b1918d7984fef7f12fd5eab2900b778e6f0f73"
+}

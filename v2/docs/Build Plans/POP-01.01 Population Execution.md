@@ -4,7 +4,13 @@
 - Last refreshed: 2026-10-15 12:18:22 (America/Chicago).
 - Implementation: 31.25%; E1=100%, E2=25%, E3/E4=0%, four equal delivery gates.
 - Current: E2.1 complete; E2.2a closure-retention prerequisite qualified. E2.2 population workers active.
-- Next: explicit fitness assembly, then remaining population workers/authored composition.
+- Next: remaining selection/successor step adapters, then authored composition.
+- E2.2 fitness checkpoint: Search0.16 source345/installed343,13 boundary checks,
+  unchanged750 system schemas/ten predecessor tool schema pins. Actual16 success,
+  one required failure and16 not-taken outcomes pass with complete truthful fitness,
+  initial selection pool and confirmed retention. [Evidence](../Audits/POP-01_Population_Fitness.md).
+  Remaining selection/successor adapters and authored composition are next; whole
+  E2.2 remains0 and E2=25%.
 - E2.2 collection checkpoint: Search0.15/SDK0.4;441 source,326 installed Search,
   113 installed SDK and13 boundary checks pass. Actual complete16-member success,
   required failure and conditional-not-taken collection pass with confirmed closure;

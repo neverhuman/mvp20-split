@@ -1,107 +1,89 @@
 # Restore
 
-Refreshed: 2026-10-15 13:19:44 America/Chicago. Read after compaction with AGENTS.md.
+Refreshed: 2026-10-15 14:22:59 America/Chicago. Read after compaction with AGENTS.md.
 
 ## Current task and workspace
 
-Continue until needed remains authorized. Primary plan is POP-01.01/E2.2 population
-workers. E1/E2.1 remain complete. E2=25%, Execution31.25%, parent10.42%, Build15.63%,
-Verification0; unfinished worker components do not close the whole E2.2 unit.
-RG-01 LLM Research Graph Generation follows the whole POP-01 immediately, before ML-01.
-The LLM generates/refines the research graph; Knowledge enhances it. Do not switch early.
+Continue until needed remains authorized. Primary POP-01.01/E2.2 population workers.
+E1/E2.1 complete; E2=25%, Execution31.25%, parent10.42%, Build15.63%, Verification0.
+E2.2 whole unit remains0 until its complete gate; partial components carry evidence.
+RG-01 follows the WHOLE POP-01 before ML-01. The LLM generates/refines research
+graphs; Knowledge enhances generation. Do not switch early or mislabel campaign
+curation as the missing research/domain graph generator.
 
-Implement ONLY in Z:/mvp20-retention-integration, branch pop01-retention-integration,
-based on main afe121c0. Original Z:/mvp20-split review is frozen while serving.
-This is the recorded demonstrated-independent exception, not a priority change.
-Do not merge/promote until the owner finishes review and wrappers drain.
-Git commands need per-command safe.directory=//DesktopNAS/Code/mvp20-retention-integration.
-Use this worktree's v2/dev/.venv/Scripts/python.exe. Its ignored v2/.venv/Scripts/uv.exe
-is a copied tool executable. Do not use original editable imports for worktree tests.
+Implement ONLY Z:/mvp20-retention-integration, branch pop01-retention-integration,
+based main afe121c0. Original Z:/mvp20-split source/review remains frozen. This is
+the recorded independent-work exception, not a priority change. No merge/promotion
+until owner finishes review and both wrappers drain. Git per-command trust:
+safe.directory=//DesktopNAS/Code/mvp20-retention-integration. No global/wildcard trust.
+Use v2/dev/.venv/Scripts/python.exe and ignored v2/.venv/Scripts/uv.exe here.
 
-Pushed checkpoints:846e194a closure retention;721880d3 installed seed worker.
-Latest bounded checkpoint 2026-10-15 13:09:40 America/Chicago: Search0.14 numerical primitives qualified.
-Source302 checks pass; both installed evaluate-squares and evaluate-negative-sum
-execute eight actual scatter members, exact frozen values, derivation context identity,
-confirmed retention and completed spent10. Evidence: docs/Audits/POP-01_Population_Method_Workers.md.
-Installed Search: .test-results/pop01-population-method-install-20261015a/environment.
+Pushed:846e194a closure retention;721880d3 seed;9f87024b same-run slice;
+77d39f7a numerical methods;adb451be approved node-input inspection;
+21bdc2f1 qualified collection/SDK0.4. Current0.16 fitness checkpoint is verified;
+finish exact-path commit/push, then continue remaining step adapters immediately.
 
-POP-01.07 implemented/qualified: Runtime0.70, node_inputs0.1, no migration.
-55 actual SQL,55 contract/publication/boundary,9 independent contract checks pass;
-750 schemas preserve748 predecessor bytes. Actual seed/slice HTTP reads survive
-Runtime replacement identically: .test-results/pop01-input-runtime-http-20261015b.
-Installed Runtime: .test-results/pop01-input-runtime-install-20261015a/environment.
-All temporary containers removed. Evidence: docs/Audits/POP-01_Node_Input_Inspection.md.
+Latest Search0.16 fitness:345 source/343 independently installed checks;64 focused
+workers;13 boundaries/ownership;750 system schemas and ten predecessor tool payload
+schema byte pins preserved. Seven reviewed original frozen source hashes match.
+Full baseline verifier reports only pre-existing ADDED v1/LICENSE; never modify v1
+or regenerate its checksum manifest. Sparse worktree omits v1 intentionally.
 
-Latest E2.2 checkpoint (2026-10-15 13:53:55 America/Chicago): Search0.15 primary collection qualified.
-441 source (Search328+SDK113),326 installed Search,113 installed SDK,13 boundary
-checks pass. Seven frozen source hashes match; full baseline verifier has only
-pre-existing ADDED v1/LICENSE. Never alter it or regenerate manifests.
-Actual16 success (collection-http15b,85 Artifacts/spent19), one required failure
-(failure-http15b,84/spent19), all16 conditional-not-taken (conditional-http15b,69/spent3)
-pass in .test-results/pop01-collection-*. All roots confirmed, collector retention403,
-no provider calls; all temporary processes/containers removed. Evidence:
-docs/Audits/POP-01_Population_Collection.md. SDK0.4 query support independently
-qualified; twelve dependent exact pins/locks updated, implementation sources untouched.
+Actual installed16-member success produces16 available fitness,93 retained Artifacts,
+completed/spent20; one required failure produces15 available/one unavailable,92/20;
+all16 conditional-not-taken produces zero available/16 unavailable,77/4. Roots confirmed,
+fitness retention read403 checked, no provider calls. All test processes/containers
+removed; labeled volumes retained. Docs/Audits/POP-01_Population_Fitness.md owns evidence.
 
-Final Search installation .test-results/pop01-collection-search-install-20261015c
-adds missing direct Pydantic declaration only; every module byte equals qualified b
-(module-compatibility.json). Current commit/push this checkpoint, then immediately
-start explicit fitness assembly. Whole E2.2 still0; E2 stays25%.
+Next bounded task: remaining selection/successor step adapters. Re-read canonical
+POP-01.01 and POP-01_Composition_Transitions to preserve E2/E3 scope. Existing published
+SelectPopulationRequest/ProposePopulationSuccessorRequest and pure selected-generation
+policy own invariants; use public Runtime/Data APIs, accepted predecessor evidence,
+complete frozen union and truthful counters. No second execution ledger or guessed
+dispatch identities. E2.3 authored composition/resource preflight and E2.4 batch1/8/32,
+cap1/4/8 actual-owner matrix remain ordered gates.
 
-Next: synthetic explicit assembly policy/tool, authenticated accepted collected root,
-verified complete evaluation/resolution/observations; objective sum only when all
-its frozen mapped methods are evaluated. Explicit unconstrained synthetic policy
-justifies constraint_violation0; missing objective/required method yields unavailable,
-never a zero score. Keep new payloads tool-owned; no new owner route needed.
+## Verified interfaces and evidence
 
-E2.3 expanded-ancestry gate remains essential:1000 births+contexts+8 methods cannot
-fit approved4096-artifact closure ceiling. Do not relax it or claim full1000x8
-execution; record measured dependency decision at that gate after worker qualification.
-Then authoritative observation/fitness integration; E2.3 full authored composition/
-expanded-ancestry feasibility and E2.4 batch/cap matrix remain ordered gates. E2 stays25%.
-No claim of full population/scientific execution or image/Registry attestation.
+- Data0.32/artifact_0013, artifact_retention0.1, Runtime0.70/runtime0029. POP-01.06
+ closure-retention-v1 is opt-in for new configured runs; legacy runs stay direct-root.
+ Companion proofs commit with ordinary receipts;4096 ancestors/128 direct parents.
+ Installed lost-response/restart/cancellation/confirmation proof passes.
+ Docs/Audits/POP-01_Closure_Retention.md; .test-results/pop01-closure-http-20261015d.
+- User explicitly approved POP-01.07. node_inputs0.1 exact GET
+ /v1/graph-observations/{run}/nodes/{activation}/inputs requires read+inspect_receipts.
+ Original scope-input summaries plus optional PreparedInvocation,262144-byte cap,
+ no fresh snapshot token, read-only transaction, no migration/Data I/O. Existing
+ successful-only producer proof unchanged.55 SQL/55 combined/9 installed contract
+ checks and actual HTTP owner replacement pass. POP-01_Node_Input_Inspection audit.
+- Search0.16: generation0 seed/slice, dimensionless squares/negative-sum, complete
+ primary collection and explicit synthetic fitness. Runtime+Data provenance must
+ agree. Missing required/objective methods never become zero scores. Fixed named
+ sum policy and explicit unconstrained-synthetic declaration; initial selection_pool
+ has no retained parents. No chemistry or later-generation execution claim.
+- SDK0.4 bounded encoded GET query support:113 source+installed checks, unchanged
+ no-query behavior. Twelve dependent exact pins/locks updated; their implementation
+ sources untouched. No whole-foundation or serving-cutover claim.
+- Scoped audits: POP-01_Population_Seed_Worker, POP-01_Population_Method_Workers,
+ POP-01_Population_Collection, POP-01_Population_Fitness under docs/Audits.
+ Canonical trackers: POP-01.01 execution, POP-01 parent, Master Build Tracker.
 
-## Verified implementation
+Independent interpreters under v2/.test-results:
+- Data: pop01-closure-owners-20261015b/amphora-data-artifacts/environment/Scripts/python.exe.
+- Runtime: pop01-input-runtime-install-20261015a/environment/Scripts/python.exe.
+- Search0.16: pop01-fitness-search-install-20261015a/environment/Scripts/python.exe.
+Probe: dev/verify_retention_closure_installation.py --output <new> --data-python <Data>
+--runtime-python <Runtime> --population-python <Search> --population-only
+--population-fitness [--collection-case failed-required|conditional-not-taken].
+Actual evidence folders pop01-fitness-http-20261015a, pop01-fitness-failure-http-20261015a,
+pop01-fitness-conditional-http-20261015a. No live tool/probe sessions remain.
 
-- Data0.32/artifact_0013, artifact_retention0.1, Runtime0.69/runtime0029 implement
-  approved POP-01.06. New configured graph runs pin derived-closure-retention-v1;
-  old runs remain direct-root. Immutable companion proofs commit with root receipts.
-  Data follows declared derivation/conversion ancestry <=4096, <=128 direct parents;
-  root confirmation/reconciliation governs the group. No worker retention authority.
-- Data96 SQL checks; Runtime181 broad +6 final targeted (two additional) checks;
-  schema publication32, ownership4 and dependency guard pass.748 schemas preserve
-  all744 predecessor bytes. Actual installed Data/Runtime lost-response/restart/
-  confirmation/cancellation passes in pop01-closure-http-20261015d/evidence.json.
-  [Retention evidence](docs/Audits/POP-01_Closure_Retention.md).
-- Search0.13 population_workers uses public SDK0.3 clients/lease context. Complete
-  generation0 seed closure and verified primary-occurrence slicing; explicit synthetic
-  CandidateBirth-as-representation only. Other representations reject. Legacy numeric
-  CLI remains separate; new population-describe/schema/worker modes are opt-in.
-- Search296 tests pass. One sparse-v1-only source audit checked separately against
-  all seven original frozen hashes, all match.15 worker/helper +4 ownership checks and
-  dependency guard pass. Full baseline verifier earlier reported only the pre-existing
-  ADDED v1/LICENSE; never alter v1 or regenerate its checksum manifest.
-- Isolated Search installation b excludes Data/Runtime/Planning/SQLAlchemy/FastAPI.
-  Actual seed CLI probe c accepts16 births with26-artifact closure and authoritative
-  confirmation; worker retention GET returns403. Workers need scoped Runtime
-  claim/renew/complete/read plus Data read/upload/finalize. Initial fixture lacked
-  Runtime read; fixed without changing lease policy. All probe containers removed.
-  [Seed evidence](docs/Audits/POP-01_Population_Seed_Worker.md).
-- Canonical trackers: [execution](docs/Build%20Plans/POP-01.01%20Population%20Execution.md),
-  [parent](docs/Build%20Plans/POP-01%20Population%20Campaign%20Execution%20and%20Experience.md),
-  [MBT](docs/Build%20Plans/Master%20Build%20Tracker.md). Package inventory refreshed from
-  project_specs after scoped checks; no whole-foundation qualification claim.
-
-Independent interpreters under this worktree's v2/.test-results:
-- pop01-closure-owners-20261015b/amphora-data-artifacts/environment/Scripts/python.exe
-- pop01-closure-owners-20261015b/amphora-campaign-runtime/environment/Scripts/python.exe
-- pop01-population-step-install-20261015b/environment/Scripts/python.exe
-
-Current probe command: dev/verify_retention_closure_installation.py --output <new>
---data-python <Data above> --runtime-python <Runtime above>
---population-python <Search above> --population-only --population-slice.
-Dev helper population_seed_fixture.py owns the synthetic fixture; declared method
-context is explicitly NOT executed. Do not reinterpret it as full composition.
+E2.3 must measure/preflight complete envelope/ancestry/queue budgets before scientific
+dispatch. Independently valid field maxima need not fit all combinations (D4 review).
+1000 births+contexts+8000 outputs already exceed4096 retention; reject unsupported
+combinations truthfully, never silently raise bound or claim1000x8 qualified. SDK
+RunSnapshot exposes at most256 queued/leased activations; active cap8 alone does not
+bound queued work. Any needed public boundary expansion returns to owner review.
 
 ## Running review in ORIGINAL checkout
 

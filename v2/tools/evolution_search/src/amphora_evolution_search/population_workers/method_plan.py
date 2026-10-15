@@ -80,3 +80,21 @@ class PrimaryMethodPlan:
             "path":node.path.model_dump(mode="json")})).hexdigest()
         require(address==node.activation_id,"population_primary_activation_address")
         return matches[0]
+
+
+def authored_invocation(plan,node):
+    """Resolve an owner activation path in its digest-bound public plan."""
+    body=plan.document.definition.body
+    for occurrence in node.path.occurrences:
+        matches=tuple(item for item in body.nodes if item.node_id==occurrence.node_id)
+        require(len(matches)==1,"population_source_occurrence")
+        item=matches[0]
+        require(item.kind==("scatter" if occurrence.kind=="scatter" else "iterate"),"population_source_occurrence_kind")
+        require(occurrence.index<(item.max_members if item.kind=="scatter" else item.max_iterations),"population_source_occurrence_bound")
+        body=item.body
+    matches=tuple(item for item in body.nodes if item.node_id==node.path.node_id)
+    require(len(matches)==1 and matches[0].kind==node.kind,"population_source_authored_node")
+    address=hashlib.sha256(plan_bytes({"profile":"amphora-activation-address-v1","plan_sha256":plan.sha256,
+        "path":node.path.model_dump(mode="json")})).hexdigest()
+    require(address==node.activation_id,"population_source_activation_address")
+    return matches[0]

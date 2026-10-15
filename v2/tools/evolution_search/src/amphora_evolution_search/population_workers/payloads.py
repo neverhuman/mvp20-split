@@ -42,3 +42,23 @@ class PrimaryOwnerEvidence(WireModel):
 class PopulationReferenceGroup(WireModel):
     schema_version: Literal["1"]
     references: Annotated[tuple[ArtifactRef, ...], Field(min_length=1,max_length=120)]
+
+
+class PrimarySumPolicy(WireModel):
+    schema_version: Literal["1"]
+    profile: Literal["primary-dimensionless-sum-v1"]
+
+
+class UnconstrainedSynthetic(WireModel):
+    schema_version: Literal["1"]
+    profile: Literal["unconstrained-synthetic-v1"]
+
+
+class FittedPrimaryGeneration(WireModel):
+    schema_version: Literal["1"]
+    generation: GenerationIdentity
+    collected: ArtifactRef
+    specification: ArtifactRef
+    pool: ArtifactRef
+    fitness: ArtifactRef
+    resolution: ArtifactRef

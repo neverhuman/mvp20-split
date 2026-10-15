@@ -87,3 +87,22 @@ Qualification: Search328 source/326 installed checks; final installed actual-own
 16-candidate success, one required failure, and16 conditional-not-taken outcomes
 retain exact coverage and confirmed closure. See POP-01_Population_Collection audit.
 Fitness assembly and full authored composition remain separate unfinished gates.
+
+Search0.16 assemble-primary is independently qualified for the initial synthetic pool. A separately pinned
+primary-dimensionless-sum-v1 policy and unconstrained-synthetic-v1 declaration permit
+only registered numerical fixture values. Authenticate the accepted collected root
+through Runtime producer proof and Data origin, verify complete frozen evidence, then
+produce explicit available/unavailable fitness and a generation0 selection pool.
+Missing required/objective methods never create zero scores. Other constraints,
+scientific units, parent/offspring unions and arbitrary scientific quality need their
+own registered policy/phase; no universal sum or feasibility assumption is introduced.
+
+PrimaryFitness owns the explicit sum/unavailable policy; PrimaryAssembly verifies
+retained evidence and publishes initial-pool fitness; AcceptedCollectionSource
+checks Runtime canonical acceptance and Data origin rather than trusting an upload.
+Collector/assembly require Runtime0.70+ with graph history and scoped inspect_receipts;
+seed/slice only require the previously documented0.69 closure profile. Ten existing
+tool schemas retain exact bytes. Source345/installed343 checks plus actual16-success,
+one-required-failure and all16-not-taken runs pass; see POP-01_Population_Fitness audit.
+The256MiB/3600s descriptor remains a small-fixture engineering bound, not a measured
+claim for all independently valid population/method maxima.

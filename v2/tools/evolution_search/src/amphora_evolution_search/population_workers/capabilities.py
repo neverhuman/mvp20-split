@@ -14,10 +14,11 @@ from amphora_contracts_search import ObjectiveValue
 from amphora_contracts_core import SchemaRef
 
 
-from .payloads import CollectPrimaryRequest, CollectedPrimaryGeneration
+from .payloads import CollectPrimaryRequest, CollectedPrimaryGeneration, FittedPrimaryGeneration
 
 
 PROFILES = {
+    "assemble-primary": (CollectedPrimaryGeneration, "population-worker.collected", FittedPrimaryGeneration, "population-worker.fitted"),
     "collect-primary": (CollectPrimaryRequest, "population-worker.collect-request", CollectedPrimaryGeneration, "population-worker.collected"),
     "seed": (SeedPopulationRequest, "population-step.seed", PreparedPopulationGeneration, "population-step.prepared"),
     "slice": (PopulationSliceRequest, "population-step.slice-request", PopulationMemberSlice, "population-step.member-slice"),
