@@ -4,6 +4,24 @@ Refreshed: 2026-10-14 20:42:26 America/Chicago. Read FIRST after compaction.
 
 ## Current task
 
+2026-10-14 21:03:53: POP-01.05 explicitly approved; E1/D4 publication COMPLETE.
+16 source+16 independent contract tests (seven public wheels),99 legacy contract
+checks,30 publication checks and dependency guard PASS.744 schemas,740 old byte pins.
+E1=100%, Execution25%, parent8.33%, Build12.5%, Verification0. E2=0 active task:
+Runtime bounded admission, immutable resource profile and global claim-cap enforcement;
+next actual SQL concurrent claims/mixed-tool expiry/prepared intents/recovery checks.
+Continue-until-needed persists. Local14c/LAN14a wrappers drained; databases retained.
+No temporary test containers yet. User ocular files untouched; v1 unchanged.
+Prior gate paragraphs below are historical and superseded by this approval/checkpoint.
+
+
+2026-10-14 20:57:38: owner explicitly APPROVED POP-01.05. Current task is E1/D4
+publication/compatibility of campaign_resources; then E2 Runtime bounded admission,
+global reservation cap and recovery guards. Continue-until-needed remains active.
+Both current local14c/LAN14a wrappers have drained (stopped.json present); source
+edits are safe. Retained demo databases remain running. No temporary test containers
+created. Prior approval blocker below is superseded; percentages await verified work.
+
 2026-10-14 20:42:26: owner resumed CONTINUE-UNTIL-NEEDED; prior stop for detours
 is superseded. Startup-credit applications deferred; no future automation requested.
 Primary return point POP-01.01 E1/D4: independent work already complete and pushed;

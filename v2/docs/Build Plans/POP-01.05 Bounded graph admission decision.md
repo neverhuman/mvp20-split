@@ -1,6 +1,6 @@
 # POP-01.05 Bounded graph admission decision
 
-- Status: proposed; no public Runtime implementation authorized by this record.
+- Status: approved by owner, 2026-10-14 20:57:38 America/Chicago; implementation authorized within the boundary below.
 - Reviewed: 2026-10-13 22:34:04 America/Chicago.
 - Owner: [POP-01.01/E1](POP-01.01%20Population%20Execution.md), within its original D1/D4 scope.
 - Scope: additive admission profile and run-wide claim capacity; no second runner,
@@ -122,7 +122,11 @@ processes. These are synthetic compiler adapters, not implemented scientific wor
 The campaign-wide cap gap remains; no new graph primitive is proposed. D4
 composition/resource/write-set units are complete; this decision is the remaining gate.
 
-## Requested owner direction
+## Owner decision
+
+Owner replied "Approve" to this concrete boundary. Publish and qualify the additive
+contract in E1/D4, then implement Runtime admission and reservation enforcement in
+E2. Approval is not implementation or acceptance evidence.
 
 Approve the additive `graph.admit_draft_bounded` contract/route and immutable resource
 profile, with legacy bytes preserved and Runtime as the only reservation authority.

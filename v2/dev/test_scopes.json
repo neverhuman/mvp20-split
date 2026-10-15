@@ -345,6 +345,10 @@
       "contracts/draft_successor/src/amphora_contracts_draft_successor"
     ]
   },
+  "campaign-resources": {
+    "tests": "contracts/campaign_resources/tests",
+    "coverage_sources": ["contracts/campaign_resources/src/amphora_contracts_campaign_resources"]
+  },
   "deployment-credentials": {
     "tests": "deploy/local/tests/credentials",
     "coverage_sources": [
