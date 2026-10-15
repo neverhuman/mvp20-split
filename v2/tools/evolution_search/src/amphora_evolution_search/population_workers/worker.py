@@ -11,7 +11,7 @@ from pathlib import Path
 
 from amphora_contracts_runtime import CompleteInvocation
 from amphora_contracts_search import ImplementationPin
-from amphora_contracts_population_steps import SelectPopulationRequest, ProposePopulationSuccessorRequest, PopulationSliceRequest, PreparedPopulationGeneration, population_step_schema
+from amphora_contracts_population_steps import SelectPopulationRequest, ProposePopulationSuccessorRequest, PopulationSliceRequest, PopulationMemberSlice, PreparedPopulationGeneration, population_step_schema
 from amphora_contracts_population import PopulationSpecification, population_specification_schema
 from amphora_contracts_tools import Completion
 from amphora_tool_protocol import (
@@ -29,7 +29,7 @@ from .collection import PrimaryCollection
 from .assembly import PrimaryAssembly
 from .selection import InitialSelection
 from .successor_preparation import SuccessorPreparation
-from .payloads import PreparedPrimarySuccessor
+from .payloads import PreparedPrimarySuccessor, CollectPrimaryRequest
 from .method_plan import payload_schema
 
 
@@ -57,6 +57,16 @@ class PopulationWorker:
                 result = SeedPreparation.load(request, session).publish(session)
             elif self.capability.operation == "slice":
                 result = SeedSlices.load(request.prepared, session, self.runtime).publish(request, session)
+            elif self.capability.operation == "prepare-successor-collection":
+                sliced = session.read(request.sliced).decode(PopulationMemberSlice,
+                    population_step_schema("population-step.member-slice"), session.scope)
+                require(sliced.generation.run_id == invocation.run_id and sliced.generation.generation == 1,
+                    "successor_collection_request_generation")
+                collected = CollectPrimaryRequest(schema_version="1", prepared=sliced.prepared,
+                    execution_plan=request.execution_plan, method_plan=request.method_plan,
+                    method_scope_path=request.method_scope_path)
+                result = session.publish(collected, self.tool.outputs[0].schema_ref,
+                    (request.sliced, sliced.prepared, request.execution_plan, request.method_plan), "successor/collection-request")
             elif self.capability.operation == "prepare-successor-slice":
                 require(not request.stopped and request.successor is not None, "successor_slice_stopped")
                 detail = session.read(request.successor).decode(PreparedPrimarySuccessor,

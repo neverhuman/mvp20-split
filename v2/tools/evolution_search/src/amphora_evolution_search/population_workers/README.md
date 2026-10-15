@@ -161,3 +161,19 @@ schemas and twenty predecessor endpoint schema pins preserved. Final installed r
 executes all16 initial and16 generation1 numerical methods, exact values, confirmed
 146-artifact successor slice closure and completed spent42. No paid calls. Both
 owned test containers removed. See POP-01_Population_Successor_Consumption audit.
+
+Search0.20 is independently qualified: collection reconstructs accepted generation1
+preparation, and assembly retains original selected-parent fitness/evidence beside
+offspring results. The complete union uses PopulationSelection coverage checks and
+names historical/current observation manifests explicitly. The new tool-owned
+prepare-successor-collection typed adapter consumes CollectSuccessorSliceRequest
+and produces existing CollectPrimaryRequest; Runtime projection semantics remain
+unchanged. Generation1 global selection and later-generation preparation remain
+unfinished. No whole-worker or generic loop qualification is claimed.
+
+Qualification:371 source/369 installed checks,13 boundaries,750 shared schemas and
+22 predecessor endpoint schema pins preserved. Actual normal and required-offspring
+failure runs publish32-record pools with16 unchanged parent records and two explicit
+observation sources;32 available versus31 available/one unavailable. Confirmed roots
+retain192/191 artifacts, completedspent45. Temporary containers/processes removed,
+no provider calls. See POP-01_Population_Successor_Fitness audit.

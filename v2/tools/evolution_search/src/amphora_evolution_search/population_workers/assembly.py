@@ -1,5 +1,10 @@
 """Accepted primary collection to explicit initial-pool fitness; no selection or dispatch."""
+from __future__ import annotations
 from dataclasses import dataclass
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from .successor_source import PreparedSuccessorSource
 
 from amphora_contracts_population import (
     EvaluationManifest,EvaluationResolutionManifest,FitnessManifest,MembershipManifest,MembershipPageReference,
@@ -9,6 +14,7 @@ from amphora_contracts_search import ObjectiveValue
 from ..population.closure import GenerationPageClosure
 from ..population.membership import CLOSURE_BYTES,GenerationMembership
 from ..population.pages import RecordPages
+from ..population.selection import PopulationSelection
 from ..population.retained import PopulationArtifact,RetainedEvaluations
 from ..population.dispatch import PreparedGeneration
 from ..population.specification import canonical
@@ -29,11 +35,13 @@ class PrimaryAssembly:
     accepted: AcceptedCollectionSource
     fitness: PrimaryFitness
     source_pages: tuple[PopulationArtifact, ...]
+    successor: PreparedSuccessorSource | None = None
 
     @classmethod
     def load(cls,source,artifacts,runtime,binding):
         record=source.decode(CollectedPrimaryGeneration,payload_schema(CollectedPrimaryGeneration,"population-worker.collected"),artifacts.scope)
-        prepared=SeedSlices.load(record.prepared,artifacts).prepared
+        reconstructed=SeedSlices.load(record.prepared,artifacts,runtime)
+        prepared=reconstructed.prepared
         require(record.generation==prepared.record.generation and record.specification==prepared.record.specification
             and record.cohort==prepared.record.cohort and record.declarations==prepared.record.declarations,
             "primary_fitness_collected_binding")
@@ -55,7 +63,8 @@ class PrimaryAssembly:
         observation_manifest=observations.decode(ObservationManifest,population_record_schema("population.observation-manifest"),artifacts.scope)
         observation_pages=tuple(artifacts.read(page.artifact) for page in observation_manifest.pages)
         evidence=retained.observations(observations,tuple(page.content for page in observation_pages)).evidence
-        pages=(*prepared_pages(prepared,artifacts),*key_pages,*observation_pages)
+        previous=() if reconstructed.successor is None else reconstructed.successor.source_pages
+        pages=(*previous,*prepared_pages(prepared,artifacts),*key_pages,*observation_pages)
         GenerationPageClosure.verify(record.generation,pages)
         values=[]
         for row in evidence.observations:
@@ -65,13 +74,28 @@ class PrimaryAssembly:
                 payload_schema(ObjectiveValue,"population-method.objective-value"),artifacts.scope)
             values.append((row.evaluation_sha256,value))
         fitness=PrimaryFitness(evidence,tuple(values),binding,policy,constraints)
-        return cls(source,record,prepared,accepted,fitness,pages)
+        return cls(source,record,prepared,accepted,fitness,pages,reconstructed.successor)
+
+    def selection_pool(self):
+        cohort=self.prepared.declarations.membership
+        records=self.fitness.records()
+        parents=()
+        if self.successor is not None:
+            selected=set(self.successor.selected.decision.selected)
+            parents=tuple(member.model_copy(update={"source":"parent"})
+                for member in self.successor.selected.decision.pool.members if member.candidate_id in selected)
+            records=(*records,*(item for item in self.successor.fitness.selection.fitness
+                if item.record.candidate_id in selected))
+        members=tuple(sorted((*parents,*cohort.members),key=lambda m:m.candidate_id))
+        pool=GenerationMembership(cohort.original,cohort.identity,"selection_pool",members)
+        return PopulationSelection(pool,tuple(records))
 
     def publish(self,artifacts):
         identity=self.record.generation
         cohort=self.prepared.declarations.membership
-        pool=GenerationMembership(cohort.original,identity,"selection_pool",cohort.members)
-        records=self.fitness.records()
+        selection=self.selection_pool()
+        pool=selection.pool
+        records=selection.fitness
         membership_pages=pool.pages()
         fitness_pages=RecordPages(identity,"population.fitness-page",tuple(item.record for item in records)).pack()
         require(len(self.source_pages)+len(membership_pages)+len(fitness_pages)<=512,"generation_closure_pages")
@@ -96,9 +120,11 @@ class PrimaryAssembly:
             (self.record.cohort,*(page.artifact for page in pool_refs)),"fitness/pool",artifacts)
         fitness_refs=pages(fitness_pages,population_record_schema("population.fitness-page"),"fitness/page")
         GenerationPageClosure.verify(identity,(*self.source_pages,*published))
+        observations=(*(() if self.successor is None else tuple(source.artifact.reference for source in self.successor.observations)),
+            self.record.observations)
         manifest=publish_root(FitnessManifest(schema_version="1",profile="population-fitness-manifest-v1",generation=identity,
-            pool=pool_root.reference,observations=(self.record.observations,),member_count=len(records),pages=fitness_refs),
-            population_record_schema("population.fitness-manifest"),(self.record.observations,pool_root.reference,proof.reference,
+            pool=pool_root.reference,observations=observations,member_count=len(records),pages=fitness_refs),
+            population_record_schema("population.fitness-manifest"),(*observations,pool_root.reference,proof.reference,
                 *(page.artifact for page in fitness_refs)),"fitness/manifest",artifacts)
         result=FittedPrimaryGeneration(schema_version="1",generation=identity,collected=self.source.reference,
             specification=self.record.specification,pool=pool_root.reference,fitness=manifest.reference,resolution=self.record.resolution)

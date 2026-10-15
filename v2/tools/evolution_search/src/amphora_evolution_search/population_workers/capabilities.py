@@ -14,10 +14,11 @@ from amphora_contracts_search import ObjectiveValue
 from amphora_contracts_core import SchemaRef
 
 
-from .payloads import CollectPrimaryRequest, CollectedPrimaryGeneration, FittedPrimaryGeneration, SelectedPrimaryGeneration, PrimarySuccessorDecision
+from .payloads import CollectPrimaryRequest, CollectSuccessorSliceRequest, CollectedPrimaryGeneration, FittedPrimaryGeneration, SelectedPrimaryGeneration, PrimarySuccessorDecision
 
 
 PROFILES = {
+    "prepare-successor-collection": (CollectSuccessorSliceRequest, "population-worker.successor-collect-request", CollectPrimaryRequest, "population-worker.collect-request"),
     "prepare-successor-slice": (PrimarySuccessorDecision, "population-worker.successor-decision", PopulationSliceRequest, "population-step.slice-request"),
     "prepare-successor-request": (SelectedPrimaryGeneration, "population-worker.selected", ProposePopulationSuccessorRequest, "population-step.successor"),
     "prepare-successor": (ProposePopulationSuccessorRequest, "population-step.successor", PrimarySuccessorDecision, "population-worker.successor-decision"),

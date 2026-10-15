@@ -1,6 +1,6 @@
 # Restore
 
-Refreshed: 2026-10-15 15:44:56 America/Chicago. Read with AGENTS.md.
+Refreshed: 2026-10-15 16:03:06 America/Chicago. Read with AGENTS.md.
 
 ## Current task and workspace
 
@@ -18,14 +18,64 @@ Use v2/dev/.venv/Scripts/python.exe and ignored v2/.venv/Scripts/uv.exe here.
 Pushed checkpoints:846e194a retention;721880d3 seed;9f87024b slice;77d39f7a methods;
 adb451be owner-approved POP-01.07;21bdc2f1 collection/SDK0.4;a553de62 fitness;
 26924710 selection;7ba86686 Search0.18 initial successor preparation.
+a101c80c Search0.19 successor consumption is pushed. No original promotion.
 Component audits under docs/Audits/POP-01_Population_*.md own detailed evidence.
 Seven frozen source hashes matched original. Full v1 verifier reports pre-existing
 ADDED v1/LICENSE only; never modify v1/regenerate its manifest. Sparse v1 omitted.
 
-## Exact interruption: Search0.19 qualified; next generation1 collection/fitness
+## Exact interruption: Search0.20 qualified; generation1 global selection next
+
+Qualified0.20 checkpoint commit/push pending. PrimaryCollection passes Runtime to successor-aware
+reconstruction. PrimaryAssembly loads the accepted successor source and unions
+current offspring fitness with selected parents' ORIGINAL BoundFitness records and
+evidence. PopulationSelection verifies full coverage; manifests name both historical
+and current observation roots. InitialSelection.evidence now returns four values
+(retained evaluations, retained fitness, pages, RetainedObservations); callers updated.
+PreparedSuccessorSource retains that fitness/observation set; SeedSlices retains
+the accepted successor object. Generation0 regressions passed before final adapter.
+
+New TOOL-owned CollectSuccessorSliceRequest and prepare-successor-collection adapter
+convert accepted MemberSlice refs plus plan/scope inputs into existing CollectRequest.
+The graph cannot project a single ArtifactRef: compiler rejects ArtifactShape output
+for artifact_project. Normal/failure HTTP a both failed that composition before
+admission and cleaned containers. Fixed with typed adapter; no Runtime boundary
+change. Four new source tests pass (original parents preserved, missing parent row
+rejects, adapter gen1 succeeds/gen0 rejects). Final0.20 source371/installed369 PASS;
+final build b complete, guard/13 boundaries pass,750 system schemas unchanged.
+Twenty-two predecessor tool endpoint pins pass source/installed ten-check reruns;
+last two appended exactly from installed0.19, older twenty preserved. Inventory0.20
+refreshed. No source/test/installer sessions remain.
+
+Final build target .test-results/pop01-successor-fitness-search-install-20261015b.
+Actual HTTP b probes PASSED: normal at
+pop01-successor-fitness-http-20261015b; failed successor at
+pop01-successor-fitness-failure-http-20261015b. Both use Data/Runtime below and final
+Search b. Driver flags --population-only --successor-fitness / --successor-failure
+imply all prerequisite workers and normal initial generation. Both complete, all
+owned test containers/processes removed, labeled volumes preserved. No live sessions.
+Failure injects one required Gen1 failure only. Expected45 spent,32 pool records,
+16 unchanged gen0 parents+16 gen1 offspring, two observation sources; success32
+available/192retained, failure31available/1unavailable/191retained (no fake zero).
+Both completedspent45 and roots confirmed. Current helpers all final;
+do not edit dynamically imported fixture helpers while probes run. Finally cleanup.
+Audit POP-01_Population_Successor_Fitness.md and README/trackers/inventory updated.
+NEXT: commit/push this0.20 checkpoint; continue global Gen1 selection immediately.
+No application provider calls; wholeE2.2 remains0.
+
+Next selection design: request.predecessor must equal current prepared's accepted
+initial checkpoint. Reconstruct/verify the full union and both observation sources;
+retain parent fitness generation0. Cumulative logical evaluations=prior16+current16,
+physical attempts/nodes from fresh SelectionReadCut including own claim; RNG from
+accepted successor.batch. Domain PopulationSelection.front_progress compares parent
+front versus new global selection. prepare-selection adapter must propagate gen1
+predecessor rather than null. Prefer grouping evidence return fields into a focused
+SelectionEvidence object if adding more state, not an ever-wider tuple. No new
+implementation until0.20 actual gate (now passed). Generic generations/loops still later.
+
+## Last qualified: Search0.19
 
 Qualified0.19 extends initial successor consumption for slicing/numerical methods;
-checkpoint commit/push pending.
+pushed a101c80c.
 PreparedSuccessorSource checks admitted-plan canonical preparer/selector/assembler
 outputs and Data origin/carriers; replays immutable initial fitness/selection,
 selected parents, bounded allocator/RNG, complete births/declarations and parent pool.
@@ -49,7 +99,7 @@ Final HTTP run .test-results/pop01-successor-consumer-http-20261015b PASSED all1
 generation1 methods, exact values, completedspent42, confirmed146-artifact slice.
 Both test containers/processes removed, labeled volumes preserved. No live sessions.
 Audit POP-01_Population_Successor_Consumption and trackers/README/inventory updated.
-No provider calls. Next: commit/push0.19; immediately continue next E2.2 task below.
+No provider calls.0.19 is pushed;0.20 task above is now active.
 
 Next: generation1 collection/fitness/parent-union global selection. Pass Runtime into
 collection SeedSlices.load; explicit method_scope_path can target successor_evaluate.

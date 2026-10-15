@@ -16,7 +16,7 @@ from ..population.closure import GenerationPageClosure
 from ..population.membership import GenerationMembership
 from ..population.pages import RecordPages
 from ..population.planning import EvaluationCapacity, PrimaryBirthBatch
-from ..population.retained import PopulationArtifact
+from ..population.retained import PopulationArtifact, RetainedFitness, RetainedObservations
 from ..population.specification import OriginalPopulation
 from ..population.successor import SelectedGeneration
 from ..ranking import require
@@ -60,6 +60,8 @@ class PreparedSuccessorSource:
     selected: SelectedGeneration
     batch: PrimaryBirthBatch
     source_pages: tuple[PopulationArtifact, ...]
+    fitness: RetainedFitness
+    observations: tuple[RetainedObservations, ...]
 
     def verify_pool(self, source, artifacts):
         from .collection import prepared_pages
@@ -169,7 +171,7 @@ class PreparedSuccessorSource:
                 and all(ref in fitted_lineage.declaration.inputs for ref in
                     (fitted_record.collected, selection_request.pool, selection_request.fitness, selection_request.resolution)),
                 "successor_source_fitness_input")
-        evaluations, fitness, pages = InitialSelection.evidence(selection_request, original,
+        evaluations, fitness, pages, observations = InitialSelection.evidence(selection_request, original,
             fitted_record, collection_request, artifacts)
         decision = fitness.selection.decide()
         receipt = artifacts.read(cp.selection)
@@ -221,4 +223,4 @@ class PreparedSuccessorSource:
         require(detail.rng == batch.rng.to_record() and detail.disposition == batch.disposition
                 and detail.evaluations_planned == batch.evaluations_reserved, "successor_source_allocator_replay")
         GenerationPageClosure.verify(identity, (*pages, *selection_pages))
-        return cls(prepared, record, detail, selected, batch, (*pages, *selection_pages))
+        return cls(prepared, record, detail, selected, batch, (*pages, *selection_pages), fitness, (observations,))

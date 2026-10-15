@@ -80,7 +80,7 @@ class PrimaryCollection:
 
     @classmethod
     def load(cls,request,artifacts,runtime):
-        prepared=SeedSlices.load(request.prepared,artifacts).prepared
+        prepared=SeedSlices.load(request.prepared,artifacts,runtime).prepared
         original=prepared.declarations.membership.original
         plan=PrimaryMethodPlan.load(request,original,artifacts)
         source_pages=prepared_pages(prepared,artifacts)

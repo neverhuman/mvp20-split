@@ -7,16 +7,19 @@ from amphora_contracts_core import SchemaRef
 from amphora_contracts_population import (BirthManifest,BirthPage,MembershipManifest,MembershipPage,EvaluationDeclarationManifest,population_record_schema)
 from amphora_contracts_population_steps import ProposePopulationSuccessorRequest,PreparedPopulationGeneration,population_step_schema
 from amphora_evolution_search.population_workers.method_plan import payload_schema
-from amphora_evolution_search.population_workers.payloads import PrimarySuccessorDecision,PreparedPrimarySuccessor
+from amphora_evolution_search.population_workers.payloads import PrimarySuccessorDecision,PreparedPrimarySuccessor,CollectSuccessorSliceRequest
 from population_method_fixture import release_lock,shape
 from verify_retention_closure_installation import write
 
 
 class SuccessorFixture:
-    def __init__(self,output,python,scope,environment,ports, *, case="normal",tight=False,consume=False):
+    def __init__(self,output,python,scope,environment,ports, *, case="normal",tight=False,consume=False,fitness=False,failure=False):
         self.output,self.python,self.scope,self.environment=output,python,scope,environment
         self.data_port,self.runtime_port=ports;self.case=case;self.tight=tight;self.consume=consume;self.descriptors={}
-        require_operations=("prepare-successor-request","prepare-successor", *(("prepare-successor-slice",) if consume else ()))
+        self.fitness=fitness
+        self.failure=failure
+        require_operations=("prepare-successor-request","prepare-successor", *(("prepare-successor-slice",) if consume else ()),
+            *(("prepare-successor-collection",) if fitness else ()))
         for operation in require_operations:
             result=subprocess.run([str(python),"-I","-m","amphora_evolution_search","population-describe",
                 "--operation",operation,"--image-sha256","f"*64],capture_output=True,timeout=120)
@@ -26,6 +29,9 @@ class SuccessorFixture:
         self.models=((ProposePopulationSuccessorRequest,population_step_schema("population-step.successor")),
             (PrimarySuccessorDecision,SchemaRef.model_validate(self.descriptors["prepare-successor"]["tool"]["outputs"][0]["schema_ref"])),
             (PreparedPrimarySuccessor,payload_schema(PreparedPrimarySuccessor,"population-worker.prepared-successor")))
+        if fitness:
+            self.models += ((CollectSuccessorSliceRequest,SchemaRef.model_validate(
+                self.descriptors["prepare-successor-collection"]["tool"]["inputs"][0]["schema_ref"])),)
         self.worker={"actor_id":"population-successor","scope":scope,"token_env":"QUAL_SUCCESSOR_TOKEN"}
         environment["QUAL_SUCCESSOR_TOKEN"]="u"*32
 
@@ -42,6 +48,9 @@ class SuccessorFixture:
         if self.consume:
             from population_successor_consumption_fixture import decorate_successor_consumption
             decorate_successor_consumption(definition,self.descriptors["prepare-successor-slice"])
+            if self.fitness:
+                from population_successor_fitness_fixture import decorate_successor_fitness
+                decorate_successor_fitness(definition,self.descriptors["prepare-successor-collection"])
 
     def configure(self,runtime,models):
         runtime["principals"].append({**self.worker,"actions":["claim","renew","complete","read","inspect_receipts"]})
@@ -110,5 +119,5 @@ class SuccessorFixture:
         write(self.output/"population-successor-evidence.json",record)
         if self.consume:
             from population_successor_consumption_fixture import consume_successor
-            consume_successor(self,run,path,method_fixture,call,command,read)
+            consume_successor(self,run,path,method_fixture,call,command,read,detail)
         return record

@@ -30,7 +30,7 @@ def decorate_successor_consumption(definition, descriptor):
     body["edges"] = [{"source": a["node_id"], "target": b["node_id"], "route": "next"} for a,b in zip(nodes,nodes[1:])]
 
 
-def consume_successor(fixture, run, worker_config, method_fixture, call, command, read):
+def consume_successor(fixture, run, worker_config, method_fixture, call, command, read, detail):
     completions = []
     for operation in ("prepare-successor-slice", "slice"):
         for _ in range(32):
@@ -56,10 +56,19 @@ def consume_successor(fixture, run, worker_config, method_fixture, call, command
         completions.append(receipt["operation_id"])
     sliced = PopulationMemberSlice.model_validate_json(json.dumps(read(completion["result"]["outcome"]["outputs"][0]["artifact"])))
     assert sliced.generation.generation == 1 and sliced.complete and len(sliced.members) == 16
-    evidence = method_fixture.run(run, sliced.members, worker_config, call, command, read,
-        spent_before=26, log_prefix="population-successor-method", expected_generation=1)
-    assert evidence["evaluated_members"] == 16 and evidence["spent"] == 42
+    previous_case=method_fixture.case
+    try:
+        if fixture.failure: method_fixture.case="failed-required"
+        evidence = method_fixture.run(run, sliced.members, worker_config, call, command, read,
+            spent_before=26, log_prefix="population-successor-method", expected_generation=1,
+            stop_after_members=fixture.fitness)
+    finally:
+        method_fixture.case=previous_case
+    assert evidence["evaluated_members"] == (15 if fixture.failure else 16) and evidence["spent"] == 42
     write(fixture.output/"population-successor-consumption-evidence.json", dict(status="passed",
-        generation=1, contexts=16, evaluated_members=16, exact_values_verified=True,
+        generation=1, contexts=16, evaluated_members=evidence["evaluated_members"], exact_values_verified=True,
         accepted_preparation_required=True, retained_slice_artifacts=closure["artifact_count"],
         run_status=evidence["run_status"], spent=evidence["spent"], provider_calls=0))
+    if fixture.fitness:
+        from population_successor_fitness_fixture import run_successor_fitness
+        run_successor_fitness(fixture, run, worker_config, detail, call, command, read)

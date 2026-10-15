@@ -1,16 +1,21 @@
 # POP-01.01 Population Execution
 
 - Status: active E2; parent [POP-01](POP-01%20Population%20Campaign%20Execution%20and%20Experience.md).
-- Last refreshed: 2026-10-15 15:44:56 (America/Chicago).
+- Last refreshed: 2026-10-15 16:03:06 (America/Chicago).
 - Implementation: 31.25%; E1=100%, E2=25%, E3/E4=0%, four equal delivery gates.
 - Current: E2.1 complete; E2.2a closure-retention prerequisite qualified. E2.2 population workers active.
-- Next: generation1 collection/fitness, then parent-union global selection.
-- Active bounded task: collect generation1's complete primary outcomes and publish
-  fitness over the complete retained-parent/offspring pool. Prerequisite: qualified
-  successor consumption. Preserve historical parent fitness and observation sources;
-  missing required offspring outcomes stay unavailable. Verify exact coverage,
-  origin/acceptance, unchanged generation0 behavior and independently installed
-  actual-owner success/failure before claiming this component. Whole E2.2 stays0.
+- Next: generation1 global selection, then later-generation continuity.
+- Active bounded task: verify accepted generation1 whole-pool fitness and globally
+  rank parents/offspring. Prerequisite: qualified successor collection/fitness.
+  Publish cumulative logical evaluations, fresh actual attempts/nodes, successor
+  RNG and parent-front progress under the existing checkpoint profile. Verify exact
+  predecessor, historical evidence, failure exclusion and installed actual owners;
+  preserve generation0 behavior. Whole E2.2 stays0.
+- Search0.20 collection/fitness qualified:371 source/369 installed,13 boundaries,
+  750 shared schemas/22 prior endpoint pins. Actual normal/required-offspring failure
+  publish32 rows (16 unchanged parents),32 versus31 available, two observation roots,
+  confirmed192/191 artifacts and completedspent45.
+  [Evidence](../Audits/POP-01_Population_Successor_Fitness.md).
 - Search0.19 consumption qualified:367 source/365 installed,13 boundaries,750 shared
   schemas/twenty prior tool endpoint pins preserved. Actual all16 generation1 methods
   produce exact values after accepted preparation, confirmed146-artifact slice and

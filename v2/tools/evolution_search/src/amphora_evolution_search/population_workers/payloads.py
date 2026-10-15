@@ -19,6 +19,14 @@ class CollectPrimaryRequest(WireModel):
     method_scope_path: Annotated[tuple[Identifier, ...], Field(max_length=16)]
 
 
+class CollectSuccessorSliceRequest(WireModel):
+    schema_version: Literal["1"]
+    sliced: ArtifactRef
+    execution_plan: ArtifactRef
+    method_plan: ArtifactRef
+    method_scope_path: Annotated[tuple[Identifier, ...], Field(max_length=16)]
+
+
 class CollectedPrimaryGeneration(WireModel):
     schema_version: Literal["1"]
     generation: GenerationIdentity

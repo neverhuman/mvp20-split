@@ -229,7 +229,7 @@ requires-dist = [
 
 [[package]]
 name = "amphora-evolution-search"
-version = "0.19.0"
+version = "0.20.0"
 source = { editable = "." }
 dependencies = [
     { name = "amphora-contracts-artifacts" },

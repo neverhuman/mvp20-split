@@ -1,6 +1,11 @@
 """Reconstruct the complete seed membership before publishing a bounded slice."""
+from __future__ import annotations
 
 from dataclasses import dataclass
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from .successor_source import PreparedSuccessorSource
 
 from amphora_contracts_population import (
     BirthManifest, population_record_schema,
@@ -17,6 +22,7 @@ from .cohort import PrimaryCohort
 class SeedSlices:
     prepared: PreparedGeneration
     cohort: PrimaryCohort
+    successor: PreparedSuccessorSource | None = None
 
     @classmethod
     def load(cls, reference, artifacts, runtime=None):
@@ -40,7 +46,7 @@ class SeedSlices:
         if successor is not None:
             successor.verify_pool(source, artifacts)
         return cls(PreparedGeneration.verify(root, source.declarations, record.specification, record.cohort,
-                                             record.births, record.declarations), source)
+                                             record.births, record.declarations), source, successor)
 
     def publish(self, request, artifacts):
         require(request.prepared == self.prepared.artifact.reference, "population_slice_source")

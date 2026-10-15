@@ -80,7 +80,7 @@ class InitialSelection:
             "initial_selection_fitness_input")
         require(all(ref in lineage.declaration.inputs for ref in (record.collected,request.pool,request.fitness,request.resolution)),
             "initial_selection_fitness_ancestry")
-        retained,selection,pages=cls.evidence(request,original,record,collection_request,artifacts)
+        retained,selection,pages,_=cls.evidence(request,original,record,collection_request,artifacts)
         return cls(request,original,fitted,owner,lineage,retained,selection,counter,pages,plan)
 
     @staticmethod
@@ -117,7 +117,7 @@ class InitialSelection:
         selection=RetainedFitness.verify(pool,request.pool,fitness,tuple(page.content for page in fitness_pages),(evidence,))
         pages=(*prepared_pages(prepared,artifacts),*pool_pages,*key_pages,*observation_pages,*fitness_pages)
         GenerationPageClosure.verify(record.generation,pages)
-        return retained,selection,pages
+        return retained,selection,pages,evidence
 
     def publish(self,artifacts):
         owner=self.owner

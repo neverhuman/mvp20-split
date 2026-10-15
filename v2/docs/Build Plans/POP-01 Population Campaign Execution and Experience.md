@@ -1,11 +1,11 @@
 # POP-01 Population Campaign Execution and Experience
 
-Current E2.2 checkpoint: Search0.19 successor consumption qualified (367 source/365 installed; actual16 initial+16 successor methods, exact values/spent42). Generation1 collection/parent-union fitness next; percentages unchanged.
+Current E2.2 checkpoint: Search0.20 successor collection/fitness qualified (371 source/369 installed; actual32-row pools, unchanged parents, required failure explicit, spent45). Generation1 global selection next; percentages unchanged.
 
 ## Canonical tracker
 
 - Status: active POP-01.01/E2 bounded dispatch; before ML-01.
-- Last refreshed: 2026-10-15 15:44:56 (America/Chicago).
+- Last refreshed: 2026-10-15 16:03:06 (America/Chicago).
 - Scope revision: POP-01.04 and POP-01.05 approved; E1 complete, E2 active.
 - Overall implementation: 10.42%; Execution31.25%, Experience0%, Qualification0%.
   Three equally weighted children, each with four equal delivery gates. Parent
@@ -14,7 +14,7 @@ Current E2.2 checkpoint: Search0.19 successor consumption qualified (367 source/
 - Owner: cross-owner population workflow; responsibilities assigned below.
 - Prerequisite: UI-01/V1 and UI-02/P4 prove actual Knowledge, inventory-grounded
   LLM graph curation/missing-capability requests, browser Run and candidate detail.
-- Current task: E2.2 generation1 collection/parent-union fitness; successor preparation/consumption and earlier generation0 components qualified.
+- Current task: E2.2 generation1 global selection; successor collection/parent-preserving fitness and preceding components qualified.
   Full worker unit and authored composition/matrix remain incomplete. E1/E2.1 remain complete.
 - Design readiness: POP-01.04 contracts/selection policy approved. New public Runtime
   extensions, if needed, still require concrete E1 review before implementation.
