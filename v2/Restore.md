@@ -1,8 +1,27 @@
 # Restore
 
-Refreshed: 2026-10-14 20:42:26 America/Chicago. Read FIRST after compaction.
+Refreshed: 2026-10-14 21:32:00 America/Chicago. Read FIRST after compaction.
 
 ## Current task
+
+2026-10-14 21:32:00: E2.1 implementation COMMITTED/PUSHED fdb87c20; no source tests
+running. E2.2 discovered direct-output-only retention cannot establish the complete
+child-artifact protection promised by POP-01.04. Pure actual-fixture proof:1000distinct
+births require individual CandidateBirth references; ordinary completion64outputs+
+checkpoint, and reserve stores exactly the supplied artifact. Derivation edges do
+not themselves create reservations. No new API implemented or reservation authority
+given to workers. Concrete POP-01.06 recommends additive Data reserve_derived_closure,
+closed4096-artifact ancestry, atomic root/member protection and existing Runtime
+proof, with explicitly pinned Runtime retention profile. Owner review required by
+POP-01.04's unspecified-command reservation and AGENTS material-boundary rule.
+E1/E2.1 remain complete; E2=25%, Execution31.25%, parent10.42%, Build15.63%, Verification0.
+All independent preceding work complete and pushed; next action owner POP-01.06
+decision before public Data implementation. RG-01 placeholder c1798191 remains the
+critical next PLAN after POP-01, before ML-01. Do not switch early. Only original demo
+DB pair runs; wrappers remain drained; all owned new test containers were removed.
+User ocular untracked files untouched. v1 verifier's pre-existing ADDED v1/LICENSE
+remains recorded; no baseline modifications or manifest regeneration performed.
+
 
 2026-10-14 21:22:00: POP-01 E2.1 generic bounded admission/recovery QUALIFIED.
 Runtime0.68/Deployment0.20.3 checkpoint verified; commit/push then immediately E2.2.

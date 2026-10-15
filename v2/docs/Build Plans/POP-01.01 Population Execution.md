@@ -1,10 +1,10 @@
 # POP-01.01 Population Execution
 
 - Status: active E2; parent [POP-01](POP-01%20Population%20Campaign%20Execution%20and%20Experience.md).
-- Last refreshed: 2026-10-14 21:22:00 (America/Chicago).
+- Last refreshed: 2026-10-14 21:32:00 (America/Chicago).
 - Implementation: 31.25%; E1=100%, E2=25%, E3/E4=0%, four equal delivery gates.
-- Current: E2.1 bounded admission/capacity/recovery complete; E2.2 population step worker execution.
-- Next: bind population step records to independently installed tools, then authored bounded collection.
+- Current: E2.1 complete; E2.2 prerequisite: protected child-artifact retention decision POP-01.06.
+- Next: owner review of the concrete additive Data closure-retention boundary, then population workers.
 - Approval: [POP-01.04](POP-01.04%20Population%20contract%20decision.md) approved.
 - Evidence:356 source checks plus corrected two-test publication rerun/guard PASS;740schema pins unchanged.
   Search0.12 two isolated335test installs and legacy replay/wheels pass. Pure checks are not runtime admission.
@@ -12,7 +12,9 @@
   Research eligibility. E2 starts only after the whole E1 gate passes.
 - Gate: E1 passed:16 source and16 independently installed contract tests,99 legacy
   contract tests,30 publication tests and boundary guard.744 schemas;740 old bytes pinned.
-  E2=25%: first bounded unit qualified; full population acceptance remains pending.
+  E2=25%: first bounded unit qualified; E2.2 depends on POP-01.06 public-boundary review.
+  Existing completion protects direct roots only, not referenced children.1000birth
+  fixture versus64outputs+checkpoint reproduced; [decision](POP-01.06%20Referenced%20artifact%20retention%20decision.md).
 - Active exception: none. RG-01 placeholder planning interruption complete; owner places it after POP-01.
   Review wrappers remain drained before edits.
 - Exit: independent versioned population execution/recovery through public graph APIs;

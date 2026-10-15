@@ -12,12 +12,12 @@
 - Owner: cross-owner population workflow; responsibilities assigned below.
 - Prerequisite: UI-01/V1 and UI-02/P4 prove actual Knowledge, inventory-grounded
   LLM graph curation/missing-capability requests, browser Run and candidate detail.
-- Current task: E2.2 population step worker execution; E1 verified complete.
+- Current task: E2.2 protected child-artifact retention decision POP-01.06; E1/E2.1 complete.
 - Design readiness: POP-01.04 contracts/selection policy approved. New public Runtime
   extensions, if needed, still require concrete E1 review before implementation.
 - Demonstrated behavior: BP-08 numeric evolution/recovery exists; the current
   two-candidate scientific demo does not demonstrate population-scale integration.
-- Current gate: E2 actual bounded admission/dispatch qualification. Later read-model ownership
+- Current gate: POP-01.06 public Data retention boundary review. Later read-model ownership
   and actual version compatibility remain separate gates. No scientific dataset needed
   for deterministic engineering qualification. Actual polymer operators are separate.
 - Acceptance: actual owner/process/browser proof, including restart and scale;

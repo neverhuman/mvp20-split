@@ -6,7 +6,7 @@
 
 - [Campaign provenance decision](UI-01.07%20Campaign%20provenance%20decision.md): approved/qualified100%; bounded Planning-owned exact-draft origin read and lookup. Qualified launch UI-01.06 stays complete.
 
-- [POP-01 Population Campaign Execution and Experience](POP-01%20Population%20Campaign%20Execution%20and%20Experience.md): active E2=25%; E1=100%, Execution31.25%, parent10.42%, Build15.63%, Verification0%. Generic bounded Runtime admission/recovery qualified; population step worker execution next. RG-01 follows this plan before ML-01.
+- [POP-01 Population Campaign Execution and Experience](POP-01%20Population%20Campaign%20Execution%20and%20Experience.md): active E2=25%; E1=100%, Execution31.25%, parent10.42%, Build15.63%, Verification0%. Generic bounded Runtime admission/recovery qualified; POP-01.06 retention decision before population workers. RG-01 follows this plan before ML-01.
 
 - [ML-01 Inherited Scientific Model Integration](ML-01%20Inherited%20Scientific%20Model%20Integration.md): standalone queued0%; queue follows RG-01; technical handoff requires UI-01/UI-02 end-to-end flow and POP-01 population qualification.
 
@@ -59,3 +59,5 @@ Read the selected plan's tracker first. Complete each phase gate before advancin
 - [UI-02.03 Structural execution profile decision](Completed/UI-02.03%20Structural%20execution%20profile%20decision.md): complete100%; actual structural draft/tool/Data/Research handoff and grant-removal history proof pass. UI-02/P2 next.
 
 - [RG-01 LLM Research Graph Generation](RG-01%20LLM%20Research%20Graph%20Generation.md): critical queued placeholder immediately after POP-01, before ML-01; overall/Build/Verification0%, R1/R2/R3/V1=0%. LLM generates/refines research graphs; Knowledge enhances context, with no populated-corpus prerequisite.
+
+- [POP-01.06 Referenced artifact retention decision](POP-01.06%20Referenced%20artifact%20retention%20decision.md): proposed E2.2 prerequisite; Data-owned protection of declared manifest ancestry, preserving worker completion bytes. Owner review pending; no implementation credit.
