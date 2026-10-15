@@ -1,4 +1,4 @@
-"""Accepted initial checkpoint to declared successor work; no invented future input keys."""
+"""Accepted checkpoint to declared successor work; no invented future input keys."""
 from dataclasses import dataclass
 from amphora_contracts_artifacts import DerivationReceipt
 from ..population.retained import PopulationArtifact
@@ -41,8 +41,8 @@ class SuccessorPreparation:
     def load(cls,request,artifacts,runtime):
         checkpoint=artifacts.read(request.checkpoint)
         record=checkpoint.decode(PopulationCheckpoint,population_record_schema("population.checkpoint"),artifacts.scope)
-        require(record.generation.generation==0 and record.generation.run_id==artifacts.attempt.invocation.run_id,
-            "successor_preparation_initial_only")
+        require(record.generation.run_id==artifacts.attempt.invocation.run_id,
+            "successor_preparation_run")
         lineage=artifacts.derivation(request.checkpoint)
         schema=population_step_schema("population-step.select")
         carriers=tuple(ref for ref in lineage.declaration.inputs if ref.schema_ref==schema)
@@ -118,7 +118,7 @@ class SuccessorPreparation:
             original=self.initial.original
             batch=PrimaryBirthBatch.successor(self.selected,self.capacity)
             identity=GenerationIdentity(scope=artifacts.scope,run_id=self.selected.record.generation.run_id,
-                specification_sha256=original.digest,generation=1,predecessor=checkpoint)
+                specification_sha256=original.digest,generation=self.selected.record.generation.generation+1,predecessor=checkpoint)
             selected_members=self.selected.decision.pool.by_id
             parent_refs=tuple((candidate,selected_members[candidate].birth) for candidate in self.selected.decision.selected)
             published=GenerationPublication(original,artifacts.read(self.initial.request.specification),batch,identity,

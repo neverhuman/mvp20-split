@@ -46,7 +46,7 @@ def decorate_successor_fitness(definition, descriptor):
     body["edges"] = [dict(source=a["node_id"], target=b["node_id"], route="next") for a,b in zip(nodes,nodes[1:])]
 
 
-def run_successor_fitness(fixture, run, worker_config, detail, call, command, read):
+def run_successor_fitness(fixture, run, worker_config, detail, call, command, read, wave):
     failure = getattr(fixture, "failure", False)
     selected = SelectedPrimaryGeneration.model_validate_json(json.dumps(read(detail.source_selected.model_dump(mode="json"))))
     def fitness_rows(reference):
@@ -63,7 +63,7 @@ def run_successor_fitness(fixture, run, worker_config, detail, call, command, re
         else: raise AssertionError("Successor fitness step never became ready")
         result = subprocess.run([str(fixture.python), "-I", "-m", "amphora_evolution_search", "population-worker",
             "--operation", operation, "--config", str(worker_config)], env=fixture.environment, capture_output=True, timeout=1200)
-        (fixture.output/("population-successor-"+operation+".log")).write_bytes(result.stdout+result.stderr)
+        (fixture.output/(wave.prefix+"-"+operation+".log")).write_bytes(result.stdout+result.stderr)
         assert result.returncode == 0, "Actual successor collection/fitness failed; inspect log"
         receipt = json.loads(result.stdout); assert receipt.get("outcome") == "succeeded", receipt
         completion = call(fixture.runtime_port, f"/v1/runs/{run}/completions/"+receipt["operation_id"])
@@ -79,16 +79,17 @@ def run_successor_fitness(fixture, run, worker_config, detail, call, command, re
         json.dumps(read(page.artifact.model_dump(mode="json")))).members]
     parents = [member for member in members if member.source == "parent"]
     offspring = [member for member in members if member.source == "offspring"]
-    assert len(parents) == len(offspring) == 16 and len(rows) == pool.member_count == manifest.member_count == 32
-    assert len(manifest.observations) == 2 and fitted.generation.generation == 1
+    assert len(parents) == 16 and len(offspring) == wave.members
+    assert len(rows) == pool.member_count == manifest.member_count == 16+wave.members
+    assert len(manifest.observations) == wave.generation+1 and fitted.generation.generation == wave.generation
     unavailable = [row for row in rows.values() if row.outcome.status == "unavailable"]
-    assert len(unavailable) == (1 if failure else 0)
-    assert all(row.generation.generation == 1 and row.outcome.reason_code == "required_method_unavailable"
+    assert len(unavailable) == (1 if failure and wave.members else 0)
+    assert all(row.generation.generation == wave.generation and row.outcome.reason_code == "required_method_unavailable"
         for row in unavailable)
     for parent in parents: assert rows[parent.candidate_id] == old[parent.candidate_id]
     for member in members:
         row = rows[member.candidate_id]
-        assert row.generation.generation == (0 if member.source == "parent" else 1)
+        assert (row.generation.generation < wave.generation if member.source == "parent" else row.generation.generation == wave.generation)
         if row.outcome.status != "evaluated": continue
         birth = CandidateBirth.model_validate_json(json.dumps(read(member.birth.model_dump(mode="json"))))
         assert row.outcome.objectives[0].value.value == math.fsum(g*g for g in birth.genes)
@@ -96,12 +97,12 @@ def run_successor_fitness(fixture, run, worker_config, detail, call, command, re
         call(fixture.runtime_port, "/v1/graph-runs/advance", command("graph.advance", dict(run_id=run, max_transitions=32)))
         state = call(fixture.runtime_port, "/v1/runs/"+run)
         if state["status"] == "completed" or (fixture.selection and any(a["status"] == "queued" for a in state["activations"])): break
-    assert state["status"] == ("running" if fixture.selection else "completed") and state["budget"]["spent"] == 45, state
-    write(fixture.output/"population-successor-fitness-evidence.json", dict(status="passed", generation=1,
-        parents=16, offspring=16, fitness_records=32, original_parent_records_preserved=True,
+    assert state["status"] == ("running" if fixture.selection else "completed") and state["budget"]["spent"] == wave.fitness_spent, state
+    write(fixture.output/(wave.prefix+"-fitness-evidence.json"), dict(status="passed", generation=wave.generation,
+        parents=16, offspring=wave.members, fitness_records=16+wave.members, original_parent_records_preserved=True,
         available=sum(row.outcome.status == "evaluated" for row in rows.values()), unavailable=len(unavailable),
-        successor_required_failure=failure, observation_sources=2,
-        retained_artifacts=closure["artifact_count"], run_status=state["status"], spent=45, provider_calls=0))
+        successor_required_failure=failure, observation_sources=len(manifest.observations),
+        retained_artifacts=closure["artifact_count"], run_status=state["status"], spent=wave.fitness_spent, provider_calls=0))
     if fixture.selection:
         from population_successor_selection_fixture import run_successor_selection
-        run_successor_selection(fixture, run, worker_config, fitted, call, command, read)
+        run_successor_selection(fixture, run, worker_config, fitted, call, command, read, wave)

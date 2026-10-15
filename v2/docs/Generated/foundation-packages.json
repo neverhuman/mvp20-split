@@ -525,7 +525,7 @@
   },
   {
     "package": "amphora-evolution-search",
-    "version": "0.21.0",
+    "version": "0.22.0",
     "path": "tools/evolution_search",
     "module": "amphora_evolution_search",
     "public_dependencies": [

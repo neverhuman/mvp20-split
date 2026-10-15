@@ -1,16 +1,21 @@
 # POP-01.01 Population Execution
 
 - Status: active E2; parent [POP-01](POP-01%20Population%20Campaign%20Execution%20and%20Experience.md).
-- Last refreshed: 2026-10-15 16:20:37 (America/Chicago).
+- Last refreshed: 2026-10-15 16:55:20 (America/Chicago).
 - Implementation: 31.25%; E1=100%, E2=25%, E3/E4=0%, four equal delivery gates.
 - Current: E2.1 complete; E2.2a closure-retention prerequisite qualified. E2.2 population workers active.
-- Next: later-generation continuity, then full worker/composition qualification.
-- Active bounded task: extend accepted checkpoint/preparation reconstruction beyond
-  initialCP->gen1. Prerequisite: qualified global generation1 selection. Require
-  exact prior generation/run/spec/predecessor, bounded strictly decreasing historical
-  reconstruction, retained parent fitness/evidence, RNG/cumulative progress and no
-  births after an accepted stop. Verify multiple real generations and stop/rejection
-  paths through independently installed owners. Whole E2.2 stays0.
+- Next: loop-occurrence collection affinity, then whole worker/composition gates.
+- Active bounded task: bind method collection to the current collector's exact
+  ancestor occurrence frames from the public captured activation. Prerequisite:
+  qualified later continuity. Prior iterations sharing method scope names must be
+  excluded; candidate identity still comes from retained inputs, never indices.
+  Verify exact current caller binding/address, truthful complete coverage, static
+  generation0/1 regressions and an actual repeated-loop owner fixture. Whole E2.2 stays0.
+- Search0.22 continuity qualified:375 source/373 installed,13 boundaries,750 shared
+  schemas/24 old endpoint pins. Actual gen2 new11/pool27/selected16, logical43,
+  physical67/nodes121/RNG208/front2, confirmed282 artifacts and generation stop;
+  stopped gen1 creates no births, confirmed201 artifacts/finalspent49.
+  [Evidence](../Audits/POP-01_Population_Later_Continuity.md).
 - Search0.21 global selection qualified:374 source/372 installed,13 boundaries,
   750 shared schemas/24 old endpoint pins. Actual normal/failed-offspring pools32,
   selected16/excluded0or1; logical32, physical47/nodes87, RNG112, front1, budget stop,

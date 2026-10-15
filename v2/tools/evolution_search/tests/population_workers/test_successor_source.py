@@ -15,8 +15,8 @@ from .successor_fixture import successor_fixture
 from .test_inspection import Scripted
 
 
-def consumer_fixture(e):
-    c = successor_fixture(e)
+def consumer_fixture(e, *, generations=1):
+    c = successor_fixture(e, generations=generations)
     replies = copy.deepcopy(c.runtime.transport.replies)
     result = SuccessorPreparation.load(c.request, c.session, c.runtime).publish(c.session)
     decision = PrimarySuccessorDecision.model_validate_json(result.content)
@@ -129,3 +129,18 @@ def test_producer_tool_must_match_the_admitted_plan(worker_artifacts):
     proof["invocation"]["tool"]["release"] = "9.9.9"
     with pytest.raises(ValueError, match="producer_tool"):
         SeedSlices.load(fixture.prepared, fixture.c.session, fixture.runtime())
+
+
+def test_prepared_generation_cannot_skip_its_predecessor_before_history_recursion(worker_artifacts):
+    from amphora_contracts_population_steps import PreparedPopulationGeneration
+    e = worker_artifacts
+    fixture = consumer_fixture(e, generations=2)
+    record = fixture.c.session.read(fixture.prepared).decode(PreparedPopulationGeneration,
+        population_step_schema("population-step.prepared"), e.client.identity.scope)
+    jumped = record.model_copy(update={"generation": record.generation.model_copy(update={"generation": 2})})
+    root = fixture.c.session.publish(jumped, population_step_schema("population-step.prepared"),
+        (fixture.prepared,), "test/jumped-generation")
+    runtime = fixture.runtime()
+    with pytest.raises(ValueError, match="predecessor_generation"):
+        SeedSlices.load(root.reference, fixture.c.session, runtime)
+    assert runtime.transport.calls == []

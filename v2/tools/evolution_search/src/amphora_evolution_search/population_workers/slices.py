@@ -28,7 +28,8 @@ class SeedSlices:
     def load(cls, reference, artifacts, runtime=None):
         root = artifacts.read(reference)
         record = root.decode(PreparedPopulationGeneration, population_step_schema("population-step.prepared"), artifacts.scope)
-        require(record.generation.run_id == artifacts.attempt.invocation.run_id and record.generation.generation in {0, 1},
+        require(record.generation.run_id == artifacts.attempt.invocation.run_id
+                and (record.generation.generation == 0) == (record.generation.predecessor is None),
                 "population_slice_seed_run")
         successor = None
         if record.generation.generation:

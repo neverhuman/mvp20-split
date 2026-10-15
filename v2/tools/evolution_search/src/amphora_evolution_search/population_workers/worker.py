@@ -60,7 +60,7 @@ class PopulationWorker:
             elif self.capability.operation == "prepare-successor-collection":
                 sliced = session.read(request.sliced).decode(PopulationMemberSlice,
                     population_step_schema("population-step.member-slice"), session.scope)
-                require(sliced.generation.run_id == invocation.run_id and sliced.generation.generation == 1,
+                require(sliced.generation.run_id == invocation.run_id and sliced.generation.generation >= 1,
                     "successor_collection_request_generation")
                 collected = CollectPrimaryRequest(schema_version="1", prepared=sliced.prepared,
                     execution_plan=request.execution_plan, method_plan=request.method_plan,
@@ -82,8 +82,8 @@ class PopulationWorker:
                 result = session.publish(sliced, self.tool.outputs[0].schema_ref,
                     (request.successor, detail.prepared, request.checkpoint), "successor/slice-request")
             elif self.capability.operation == "prepare-successor-request":
-                require(request.generation.scope==session.scope and request.generation.run_id==invocation.run_id
-                    and request.generation.generation==0,"successor_request_generation")
+                require(request.generation.scope==session.scope and request.generation.run_id==invocation.run_id,
+                    "successor_request_generation")
                 successor_request=ProposePopulationSuccessorRequest(schema_version="1",specification=request.specification,checkpoint=request.checkpoint)
                 result=session.publish(successor_request,self.tool.outputs[0].schema_ref,
                     (request.specification,request.checkpoint),"successor/request")
@@ -91,7 +91,6 @@ class PopulationWorker:
                 result=SuccessorPreparation.load(request,session,self.runtime).publish(session)
             elif self.capability.operation == "prepare-selection":
                 require(request.generation.scope == session.scope and request.generation.run_id == invocation.run_id
-                    and request.generation.generation in {0,1}
                     and (request.generation.generation==0)==(request.generation.predecessor is None),
                     "initial_selection_request_generation")
                 selection_request = SelectPopulationRequest(schema_version="1",specification=request.specification,

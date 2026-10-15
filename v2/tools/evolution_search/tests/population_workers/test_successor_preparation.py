@@ -30,10 +30,16 @@ def test_prepared_generation_has_exact_rng_declared_slots_and_parent_union(worke
 @pytest.mark.parametrize("options,reason",[({"generations":0},"generation_budget"),({"status":"all-skipped"},"no_feasible_survivors"),
     ({"available":0},"attempt_budget")])
 def test_stop_produces_no_fabricated_next_births(worker_artifacts,options,reason):
+    from amphora_contracts_population import candidate_birth_schema
     c=successor_fixture(worker_artifacts,**options)
     preparation=SuccessorPreparation.load(c.request,c.session,c.runtime)
+    births_before={key for key,(upload,_) in worker_artifacts.client.uploads.items()
+        if upload.content.schema_ref==candidate_birth_schema()}
     result=PrimarySuccessorDecision.model_validate_json(preparation.publish(c.session).content)
     assert result.stopped and result.reason_code==reason and result.successor is None
+    births_after={key for key,(upload,_) in worker_artifacts.client.uploads.items()
+        if upload.content.schema_ref==candidate_birth_schema()}
+    assert births_after==births_before
 
 
 def test_checkpoint_must_be_the_accepted_selected_output(worker_artifacts):

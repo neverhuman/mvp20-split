@@ -28,7 +28,7 @@ def decorate_successor_selection(definition):
     body["edges"] = [dict(source=a["node_id"], target=b["node_id"], route="next") for a,b in zip(nodes,nodes[1:])]
 
 
-def run_successor_selection(fixture, run, worker_config, fitted, call, command, read):
+def run_successor_selection(fixture, run, worker_config, fitted, call, command, read, wave):
     for operation in ("prepare-selection", "select-primary"):
         for _ in range(32):
             call(fixture.runtime_port, "/v1/graph-runs/advance", command("graph.advance", dict(run_id=run, max_transitions=32)))
@@ -37,7 +37,7 @@ def run_successor_selection(fixture, run, worker_config, fitted, call, command, 
         else: raise AssertionError("Successor selection did not become ready")
         result = subprocess.run([str(fixture.python), "-I", "-m", "amphora_evolution_search", "population-worker",
             "--operation", operation, "--config", str(worker_config)], env=fixture.environment, capture_output=True, timeout=1200)
-        (fixture.output/("population-successor-"+operation+".log")).write_bytes(result.stdout+result.stderr)
+        (fixture.output/(wave.prefix+"-"+operation+".log")).write_bytes(result.stdout+result.stderr)
         assert result.returncode == 0, "Actual successor selection failed; inspect log"
         receipt = json.loads(result.stdout); assert receipt.get("outcome") == "succeeded", receipt
         completion = call(fixture.runtime_port, f"/v1/runs/{run}/completions/"+receipt["operation_id"])
@@ -58,24 +58,32 @@ def run_successor_selection(fixture, run, worker_config, fitted, call, command, 
     fitness = [row for page in manifest.pages for row in FitnessPage.model_validate_json(json.dumps(read(page.artifact.model_dump(mode="json")))).records]
     scores = {row.candidate_id: row.outcome.objectives[0].value.value for row in fitness if row.outcome.status == "evaluated"}
     unavailable = {row.candidate_id for row in fitness if row.outcome.status == "unavailable"}
-    assert len(ranks) == len(fitness) == 32 and len(selection.selected) == 16
+    assert len(ranks) == len(fitness) == 16+wave.members and len(selection.selected) == 16
     assert {row.candidate_id for row in ranks if row.status == "excluded"} == unavailable
     assert not set(selection.selected) & unavailable
-    assert max(scores[key] for key in selection.selected) <= min(value for key,value in scores.items() if key not in selection.selected)
+    unselected=[value for key,value in scores.items() if key not in selection.selected]
+    assert not unselected or max(scores[key] for key in selection.selected) <= min(unselected)
     assert checkpoint.generation == fitted.generation and checkpoint.generation.predecessor == request.predecessor
-    assert checkpoint.progress.evaluations_issued == checkpoint.progress.evaluations_terminal == 32
-    assert checkpoint.progress.attempts_issued == 47 and checkpoint.rng.counter == 112
-    assert checkpoint.progress.unchanged_front_generations in {0,1}
+    previous=PopulationCheckpoint.model_validate_json(json.dumps(read(request.predecessor.model_dump(mode="json"))))
+    logical=previous.progress.evaluations_issued+wave.members
+    assert checkpoint.progress.evaluations_issued == checkpoint.progress.evaluations_terminal == logical
+    assert checkpoint.progress.attempts_issued == wave.selection_spent and checkpoint.rng.counter == 16*(1+6*wave.generation)
+    assert 0 <= checkpoint.progress.unchanged_front_generations <= wave.generation
     snapshot = call(fixture.runtime_port, f"/v1/graph-observations/{run}/nodes")
     assert checkpoint.progress.activations_created == snapshot["snapshot"]["node_count"]
-    assert selected.stopped and selected.stop_reason == "generation_budget"
+    stopped=wave.generation==fixture.generations
+    assert selected.stopped==stopped and selected.stop_reason == ("generation_budget" if stopped else None)
+    continuing=fixture.later and wave.generation==1
     for _ in range(16):
         call(fixture.runtime_port, "/v1/graph-runs/advance", command("graph.advance", dict(run_id=run, max_transitions=32)))
         state = call(fixture.runtime_port, "/v1/runs/"+run)
-        if state["status"] == "completed": break
-    assert state["status"] == "completed" and state["budget"]["spent"] == 47, state
-    write(fixture.output/"population-successor-selection-evidence.json", dict(status="passed", generation=1,
-        pool_members=32, selected=16, excluded=len(unavailable), global_cost_order_verified=True,
-        logical_evaluations=32, attempts_issued=47, activations_created=checkpoint.progress.activations_created,
+        if state["status"] == "completed" or (continuing and any(a["status"]=="queued" for a in state["activations"])): break
+    assert state["status"] == ("running" if continuing else "completed") and state["budget"]["spent"] == wave.selection_spent, state
+    write(fixture.output/(wave.prefix+"-selection-evidence.json"), dict(status="passed", generation=wave.generation,
+        pool_members=16+wave.members, selected=16, excluded=len(unavailable), global_cost_order_verified=True,
+        logical_evaluations=logical, attempts_issued=wave.selection_spent, activations_created=checkpoint.progress.activations_created,
         rng_counter=checkpoint.rng.counter, unchanged_front_generations=checkpoint.progress.unchanged_front_generations,
-        stop_reason=selected.stop_reason, retained_artifacts=closure["artifact_count"], run_status="completed", spent=47, provider_calls=0))
+        stop_reason=selected.stop_reason, retained_artifacts=closure["artifact_count"], run_status=state["status"], spent=wave.selection_spent, provider_calls=0))
+    if continuing:
+        from population_later_successor_fixture import run_later_successor
+        run_later_successor(fixture,run,worker_config,selected,call,command,read)

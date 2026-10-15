@@ -9,14 +9,21 @@ scheduler, execution ledger or retention authority belongs here.
 
 ## Current scope
 
-Qualified through Search0.21: generation0 seed/slice, squares/negative-sum methods,
+Qualified through Search0.22: generation0 seed/slice, squares/negative-sum methods,
 complete primary collection, explicit synthetic fitness, initial whole-pool selection,
 initial successor preparation, generation1 slicing/methods/collection and complete
 retained-parent/offspring fitness and global generation1 selection.
-Source374/installed372 checks pass. Whole E2.2 stays0.
-Generic later generations, actual iteration, authored resource preflight and the
+Source375/installed373 checks pass. Whole E2.2 stays0.
+Generic loop affinity/actual iteration, authored resource preflight and the
 batch1/8/32 x cap1/4/8 matrix remain required gates. This is not a scientific or
 production-scale qualification.
+
+Search0.22 later-generation continuity is independently qualified. History
+must match original/run/scope/spec, move exactly one generation backward per link
+and remain within the existing100-generation bound. Request adapters and slices
+accept later generations only through the same accepted preparation/evidence checks.
+The probes cover full generation2 and a stopped generation1 checkpoint;
+generic loop occurrence affinity and complete composition remain unfinished.
 
 The explicit synthetic representation is CandidateBirth itself; no molecular
 encoder is inferred. Primary methods have one candidate input, no internal scatter/
@@ -116,6 +123,10 @@ tool pins. Actual success/required-offspring failure select16 globally from32 wi
 exclusions0/1,32 logical evaluations,47 physical attempts,87 nodes, RNG112, unchanged
 front1 and generation_budget stop. Confirmed198/197 artifacts, completedspent47.
 Both owned containers/processes removed, no provider calls.
+Qualified0.22:375 source/373 installed, same service/schema/pin guards. Actual gen2
+has11 new members/27 pool/16 selected, logical43/physical67/nodes121/RNG208/front2,
+confirmed282 artifacts and completed generation_budget stop. A stopped gen1 checkpoint
+creates no births, confirmed201 artifacts/finalspent49. Both owned containers removed.
 Independent packages exclude Data/Runtime/Planning implementations,
 SQLAlchemy and FastAPI. Original v1 is read-only; seven reuse hashes were separately
 checked against it. Replacement must preserve old wire bytes, exact pins, numerical
@@ -126,6 +137,7 @@ POP-01_Population_Method_Workers, POP-01_Population_Collection,
 POP-01_Population_Fitness, POP-01_Population_Selection,
 POP-01_Population_Successor_Preparation, POP-01_Population_Successor_Consumption and
 POP-01_Population_Successor_Fitness and POP-01_Population_Successor_Selection.
+POP-01_Population_Later_Continuity owns the generation2/stop proof.
 POP-01_Node_Input_Inspection and
 POP-01_Closure_Retention own the qualified service prerequisites. A full plan
 closeout, generic loop/recovery proof and production Linux image attestation remain

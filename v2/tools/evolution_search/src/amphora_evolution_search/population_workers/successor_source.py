@@ -1,4 +1,4 @@
-"""Reconstruct accepted initial successor preparation before consuming its work."""
+"""Reconstruct accepted successor preparation through strictly decreasing history."""
 from dataclasses import dataclass
 
 from amphora_contracts_population import (
@@ -88,7 +88,7 @@ class PreparedSuccessorSource:
         record = prepared.decode(PreparedPopulationGeneration,
             population_step_schema("population-step.prepared"), artifacts.scope)
         identity = record.generation
-        require(runtime is not None and identity.generation == 1
+        require(runtime is not None and 1 <= identity.generation <= 100
                 and identity.run_id == artifacts.attempt.invocation.run_id
                 and identity.predecessor is not None, "successor_source_generation")
         original = OriginalPopulation(artifacts.read(record.specification).decode(
@@ -96,9 +96,15 @@ class PreparedSuccessorSource:
         require(artifacts.implementation in original.record.implementations, "successor_source_implementation")
         checkpoint = artifacts.read(identity.predecessor)
         cp = checkpoint.decode(PopulationCheckpoint, population_record_schema("population.checkpoint"), artifacts.scope)
+        require(cp.generation.scope == identity.scope and cp.generation.run_id == identity.run_id
+                and cp.generation.specification_sha256 == identity.specification_sha256 == original.digest
+                and cp.generation.generation + 1 == identity.generation <= original.record.budget.successor_generations
+                and (cp.generation.generation == 0) == (cp.generation.predecessor is None),
+                "successor_source_predecessor_generation")
         selection_request = unique_carrier(identity.predecessor, SelectPopulationRequest,
             population_step_schema("population-step.select"), artifacts)
-        require(selection_request.specification == record.specification and selection_request.predecessor is None,
+        require(selection_request.specification == record.specification
+                and selection_request.predecessor == cp.generation.predecessor,
                 "successor_source_original")
         collection_request = unique_carrier(selection_request.resolution, CollectPrimaryRequest,
             payload_schema(CollectPrimaryRequest, "population-worker.collect-request"), artifacts)
@@ -151,7 +157,7 @@ class PreparedSuccessorSource:
         require(artifacts.read(selector_inputs[0].artifact).decode(SelectPopulationRequest,
             population_step_schema("population-step.select"), artifacts.scope) == selection_request,
             "successor_source_selection_request")
-        # Authenticate and replay immutable initial fitness without asserting a new
+        # Authenticate and replay immutable predecessor fitness without asserting a new
         # serial-selection counter cut while parallel successor work is running.
         source_proof = artifacts.read(envelope.source_proof).decode(PrimaryOwnerEvidence,
             payload_schema(PrimaryOwnerEvidence, "population-worker.owner-evidence"), artifacts.scope)
@@ -169,7 +175,7 @@ class PreparedSuccessorSource:
                 and all(ref in fitted_lineage.declaration.inputs for ref in
                     (fitted_record.collected, selection_request.pool, selection_request.fitness, selection_request.resolution)),
                 "successor_source_fitness_input")
-        evidence = SelectionEvidence.load(selection_request, original, fitted_record, collection_request, artifacts)
+        evidence = SelectionEvidence.load(selection_request, original, fitted_record, collection_request, artifacts, runtime)
         fitness, pages, observations = evidence.fitness, evidence.pages, evidence.observations
         decision = fitness.selection.decide()
         receipt = artifacts.read(cp.selection)

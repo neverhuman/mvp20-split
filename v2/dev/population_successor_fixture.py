@@ -13,12 +13,13 @@ from verify_retention_closure_installation import write
 
 
 class SuccessorFixture:
-    def __init__(self,output,python,scope,environment,ports, *, case="normal",tight=False,consume=False,fitness=False,failure=False,selection=False):
+    def __init__(self,output,python,scope,environment,ports, *, case="normal",tight=False,consume=False,fitness=False,failure=False,selection=False,later=False,generations=1):
         self.output,self.python,self.scope,self.environment=output,python,scope,environment
         self.data_port,self.runtime_port=ports;self.case=case;self.tight=tight;self.consume=consume;self.descriptors={}
         self.fitness=fitness
         self.failure=failure
         self.selection=selection
+        self.later=later;self.generations=generations
         require_operations=("prepare-successor-request","prepare-successor", *(("prepare-successor-slice",) if consume else ()),
             *(("prepare-successor-collection",) if fitness else ()))
         for operation in require_operations:
@@ -55,6 +56,9 @@ class SuccessorFixture:
                 if self.selection:
                     from population_successor_selection_fixture import decorate_successor_selection
                     decorate_successor_selection(definition)
+                    if self.later:
+                        from population_later_successor_fixture import decorate_later_successor
+                        decorate_later_successor(definition,self.generations==2)
 
     def configure(self,runtime,models):
         runtime["principals"].append({**self.worker,"actions":["claim","renew","complete","read","inspect_receipts"]})
@@ -66,6 +70,7 @@ class SuccessorFixture:
                 for index,(_,ref) in enumerate(models) if ref.sha256 in needed-present)
 
     def run(self,run,worker_config,call,command,read,method_fixture=None):
+        self.method_fixture=method_fixture
         config=json.loads(worker_config.read_bytes());config.update(actor_id=self.worker["actor_id"],lease_seconds=300)
         for name in ("runtime","artifacts"):config[name]["token_env"]="QUAL_SUCCESSOR_TOKEN"
         path=self.output/"population-successor-worker.json";write(path,config)
