@@ -26,7 +26,7 @@ from population_selection_fixture import SelectionFixture
 from population_successor_fixture import SuccessorFixture
 
 
-def verify(output, python, ports, environment, scope, call, command, start, stop, *, with_slice=False, method_operation=None, inspect_inputs=False, with_collection=False, collection_case="normal", with_fitness=False, with_selection=False, with_successor=False, successor_tight=False, successor_consume=False, successor_fitness=False, successor_failure=False):
+def verify(output, python, ports, environment, scope, call, command, start, stop, *, with_slice=False, method_operation=None, inspect_inputs=False, with_collection=False, collection_case="normal", with_fitness=False, with_selection=False, with_successor=False, successor_tight=False, successor_consume=False, successor_fitness=False, successor_failure=False, successor_select=False):
     data_port, runtime_port = ports
     descriptor_result = subprocess.run([str(python), "-I", "-m", "amphora_evolution_search", "population-describe",
         "--operation", "seed", "--image-sha256", "f" * 64], capture_output=True, timeout=120)
@@ -44,7 +44,7 @@ def verify(output, python, ports, environment, scope, call, command, start, stop
     collection_fixture = CollectionFixture(output, python, scope, environment, ports, case=collection_case) if with_collection else None
     fitness_fixture = FitnessFixture(output, python, scope, environment, ports, case=collection_case, operation=method_operation) if with_fitness else None
     selection_fixture = SelectionFixture(output, python, scope, environment, ports, case=collection_case) if with_selection else None
-    successor_fixture = SuccessorFixture(output, python, scope, environment, ports, case=collection_case, tight=successor_tight, consume=successor_consume, fitness=successor_fitness, failure=successor_failure) if with_successor else None
+    successor_fixture = SuccessorFixture(output, python, scope, environment, ports, case=collection_case, tight=successor_tight, consume=successor_consume, fitness=successor_fitness, failure=successor_failure, selection=successor_select) if with_successor else None
     slice_count = 16 if with_collection else 8
     data = json.loads((output / "data.json").read_bytes())
     models = (

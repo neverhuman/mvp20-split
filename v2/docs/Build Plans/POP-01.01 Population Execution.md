@@ -1,16 +1,21 @@
 # POP-01.01 Population Execution
 
 - Status: active E2; parent [POP-01](POP-01%20Population%20Campaign%20Execution%20and%20Experience.md).
-- Last refreshed: 2026-10-15 16:03:06 (America/Chicago).
+- Last refreshed: 2026-10-15 16:20:37 (America/Chicago).
 - Implementation: 31.25%; E1=100%, E2=25%, E3/E4=0%, four equal delivery gates.
 - Current: E2.1 complete; E2.2a closure-retention prerequisite qualified. E2.2 population workers active.
-- Next: generation1 global selection, then later-generation continuity.
-- Active bounded task: verify accepted generation1 whole-pool fitness and globally
-  rank parents/offspring. Prerequisite: qualified successor collection/fitness.
-  Publish cumulative logical evaluations, fresh actual attempts/nodes, successor
-  RNG and parent-front progress under the existing checkpoint profile. Verify exact
-  predecessor, historical evidence, failure exclusion and installed actual owners;
-  preserve generation0 behavior. Whole E2.2 stays0.
+- Next: later-generation continuity, then full worker/composition qualification.
+- Active bounded task: extend accepted checkpoint/preparation reconstruction beyond
+  initialCP->gen1. Prerequisite: qualified global generation1 selection. Require
+  exact prior generation/run/spec/predecessor, bounded strictly decreasing historical
+  reconstruction, retained parent fitness/evidence, RNG/cumulative progress and no
+  births after an accepted stop. Verify multiple real generations and stop/rejection
+  paths through independently installed owners. Whole E2.2 stays0.
+- Search0.21 global selection qualified:374 source/372 installed,13 boundaries,
+  750 shared schemas/24 old endpoint pins. Actual normal/failed-offspring pools32,
+  selected16/excluded0or1; logical32, physical47/nodes87, RNG112, front1, budget stop,
+  confirmed198/197 artifacts and completedspent47.
+  [Evidence](../Audits/POP-01_Population_Successor_Selection.md).
 - Search0.20 collection/fitness qualified:371 source/369 installed,13 boundaries,
   750 shared schemas/22 prior endpoint pins. Actual normal/required-offspring failure
   publish32 rows (16 unchanged parents),32 versus31 available, two observation roots,

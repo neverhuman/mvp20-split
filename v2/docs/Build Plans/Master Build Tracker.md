@@ -1,6 +1,6 @@
 # Master Build Tracker
 
-Latest checkpoint: 2026-10-15 16:03:06: Search0.20 successor collection/parent-union fitness qualified. Generation1 global selection next. E2=25%, Execution31.25%, parent10.42%, Build15.63%, Verification0%. RG-01 follows the whole POP-01 before ML-01.
+Latest checkpoint: 2026-10-15 16:20:37: Search0.21 global generation1 selection qualified. Later-generation continuity next. E2=25%, Execution31.25%, parent10.42%, Build15.63%, Verification0%. RG-01 follows the whole POP-01 before ML-01.
 
 ## Purpose and Authority
 
@@ -11,18 +11,18 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 ## Program Tracker
 
 - Status: POP-01.01/E2 active; UI-01/UI-02 closed100%, LR-01 paused25%.
-- Last refreshed: 2026-10-15 16:03:06 (America/Chicago).
+- Last refreshed: 2026-10-15 16:20:37 (America/Chicago).
 - Baseline: approved [POP-01.04](POP-01.04%20Population%20contract%20decision.md).
-- Current priority/task: POP-01.01 E2.2 generation1 global selection.
+- Current priority/task: POP-01.01 E2.2 later-generation continuity.
 - Next task: complete worker unit, then E2.3 authored composition/resource preflight and E2.4 actual-owner matrix.
 - Implementation: parent10.42%, Build15.63%, Verification0%; Execution31.25%, Experience/Qualification0%.
   Execution E1=100%, E2=25%, E3/E4=0%; Experience U1-U4=0%, Qualification Q1-Q4=0%.
-- Latest checkpoint: Search0.20 source371/installed369 and13 boundaries pass;
-  actual32-row parent/offspring pools preserve16 parent records,32 versus31 available
-  after one required offspring failure, confirmed192/191 artifacts/completedspent45.
+- Latest checkpoint: Search0.21 source374/installed372 and13 boundaries pass;
+  actual global selection16/32, exclusions0/1; logical32, physical47/nodes87, RNG112,
+  front1 and generation stop, confirmed198/197 artifacts/completedspent47.
   Worker unit/composition/matrix still open.
 - Gate: E1/E2.1 and approved POP-01.06/07 prerequisites qualified; remaining E2.2
-  successor global selection/continuity, E2.3 composition and E2.4 qualification remain.
+  later-generation continuity, E2.3 composition and E2.4 qualification remain.
 - Acceptance: actual execution/population UI/scientific qualification remain distinct gates.
 - Active exception: isolated pop01-retention-integration worktree; original review remains frozen. No merge/promotion until owner finishes review and wrappers drain. Continue-until-needed persists; startup-credit applications deferred. KB-01 stays queued.
   Prior Knowledge-content diagnosis complete:
@@ -39,11 +39,11 @@ The initial program proves software behavior using deterministic/synthetic fixtu
 ## Current In-Flight Work
 
 POP-01 E2 active: parent10.42%, Build15.63%, Execution31.25%, E1=100%; remaining gates0%.
-Retention/input inspection qualified (Data0.32/Runtime0.70). Search0.20 seed, slice,
+Retention/input inspection qualified (Data0.32/Runtime0.70). Search0.21 seed, slice,
 methods, complete collection, explicit synthetic fitness and initial selection have
 independent actual-owner evidence. Successor preparation/consumption/collection and
-parent-preserving fitness qualified; generation1 global selection current; whole E2.2 remains0.
-[Latest evidence](../Audits/POP-01_Population_Successor_Fitness.md). Authored
+parent-preserving fitness/global selection qualified; later-generation continuity current;
+whole E2.2 remains0. [Latest evidence](../Audits/POP-01_Population_Successor_Selection.md). Authored
 composition, resource feasibility and full batch/cap matrix remain ordered gates.
 Isolated worktree preserves the active frozen review session.
 LR-01 paused25%, Build33.33%, Acceptance0%; R1=100%, R2/R3/V1=0%.

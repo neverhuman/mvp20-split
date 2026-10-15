@@ -91,12 +91,14 @@ class PopulationWorker:
                 result=SuccessorPreparation.load(request,session,self.runtime).publish(session)
             elif self.capability.operation == "prepare-selection":
                 require(request.generation.scope == session.scope and request.generation.run_id == invocation.run_id
-                    and request.generation.generation == 0 and request.generation.predecessor is None,
+                    and request.generation.generation in {0,1}
+                    and (request.generation.generation==0)==(request.generation.predecessor is None),
                     "initial_selection_request_generation")
                 selection_request = SelectPopulationRequest(schema_version="1",specification=request.specification,
-                    pool=request.pool,fitness=request.fitness,resolution=request.resolution,predecessor=None)
+                    pool=request.pool,fitness=request.fitness,resolution=request.resolution,predecessor=request.generation.predecessor)
                 result = session.publish(selection_request,self.tool.outputs[0].schema_ref,
-                    (request.specification,request.pool,request.fitness,request.resolution),"select/request")
+                    (request.specification,request.pool,request.fitness,request.resolution,
+                        *(() if request.generation.predecessor is None else (request.generation.predecessor,))),"select/request")
             elif self.capability.operation == "select-primary":
                 result = InitialSelection.load(request, session, self.runtime).publish(session)
             elif self.capability.operation == "assemble-primary":

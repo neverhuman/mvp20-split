@@ -13,11 +13,12 @@ from verify_retention_closure_installation import write
 
 
 class SuccessorFixture:
-    def __init__(self,output,python,scope,environment,ports, *, case="normal",tight=False,consume=False,fitness=False,failure=False):
+    def __init__(self,output,python,scope,environment,ports, *, case="normal",tight=False,consume=False,fitness=False,failure=False,selection=False):
         self.output,self.python,self.scope,self.environment=output,python,scope,environment
         self.data_port,self.runtime_port=ports;self.case=case;self.tight=tight;self.consume=consume;self.descriptors={}
         self.fitness=fitness
         self.failure=failure
+        self.selection=selection
         require_operations=("prepare-successor-request","prepare-successor", *(("prepare-successor-slice",) if consume else ()),
             *(("prepare-successor-collection",) if fitness else ()))
         for operation in require_operations:
@@ -51,6 +52,9 @@ class SuccessorFixture:
             if self.fitness:
                 from population_successor_fitness_fixture import decorate_successor_fitness
                 decorate_successor_fitness(definition,self.descriptors["prepare-successor-collection"])
+                if self.selection:
+                    from population_successor_selection_fixture import decorate_successor_selection
+                    decorate_successor_selection(definition)
 
     def configure(self,runtime,models):
         runtime["principals"].append({**self.worker,"actions":["claim","renew","complete","read","inspect_receipts"]})

@@ -95,10 +95,13 @@ def run_successor_fitness(fixture, run, worker_config, detail, call, command, re
     for _ in range(16):
         call(fixture.runtime_port, "/v1/graph-runs/advance", command("graph.advance", dict(run_id=run, max_transitions=32)))
         state = call(fixture.runtime_port, "/v1/runs/"+run)
-        if state["status"] == "completed": break
-    assert state["status"] == "completed" and state["budget"]["spent"] == 45, state
+        if state["status"] == "completed" or (fixture.selection and any(a["status"] == "queued" for a in state["activations"])): break
+    assert state["status"] == ("running" if fixture.selection else "completed") and state["budget"]["spent"] == 45, state
     write(fixture.output/"population-successor-fitness-evidence.json", dict(status="passed", generation=1,
         parents=16, offspring=16, fitness_records=32, original_parent_records_preserved=True,
         available=sum(row.outcome.status == "evaluated" for row in rows.values()), unavailable=len(unavailable),
         successor_required_failure=failure, observation_sources=2,
-        retained_artifacts=closure["artifact_count"], run_status="completed", spent=45, provider_calls=0))
+        retained_artifacts=closure["artifact_count"], run_status=state["status"], spent=45, provider_calls=0))
+    if fixture.selection:
+        from population_successor_selection_fixture import run_successor_selection
+        run_successor_selection(fixture, run, worker_config, fitted, call, command, read)

@@ -20,5 +20,7 @@
   "prepare-successor/input": "d36b47a57c48b4437da78e6755a8920585c11f6a59056256791229646b36097f",
   "prepare-successor/output": "b2d1a7a53df75b79d0a3e4d4d4d98a225dd679e69a4e630bc6a9f1e172f37761",
   "prepare-successor-slice/input": "b2d1a7a53df75b79d0a3e4d4d4d98a225dd679e69a4e630bc6a9f1e172f37761",
-  "prepare-successor-slice/output": "14a987ff480332109c64b7d5dd74e0a35c117eb8239602e41026827ae9e544f2"
+  "prepare-successor-slice/output": "14a987ff480332109c64b7d5dd74e0a35c117eb8239602e41026827ae9e544f2",
+  "prepare-successor-collection/input": "7526b428b41130e49e09aa9da6f969f795280b37decd4b23aea95f88bdf90b0c",
+  "prepare-successor-collection/output": "5ce73be1f4f537382c726e28d2b32a15ec97b8ebbb55af0466d88de36a9118bd"
 }

@@ -26,6 +26,7 @@ from .payloads import (
     CollectPrimaryRequest, FittedPrimaryGeneration, PreparedPrimarySuccessor,
     PrimaryOwnerEvidence, PrimarySuccessorDecision, SelectedPrimaryGeneration,
 )
+from .selection_evidence import SelectionEvidence
 
 
 def accepted_output(owner, artifacts):
@@ -83,9 +84,6 @@ class PreparedSuccessorSource:
 
     @classmethod
     def load(cls, reference, artifacts, runtime):
-        # Imported at use time: initial evidence reconstruction itself uses seed slices.
-        from .selection import InitialSelection
-
         prepared = artifacts.read(reference)
         record = prepared.decode(PreparedPopulationGeneration,
             population_step_schema("population-step.prepared"), artifacts.scope)
@@ -171,8 +169,8 @@ class PreparedSuccessorSource:
                 and all(ref in fitted_lineage.declaration.inputs for ref in
                     (fitted_record.collected, selection_request.pool, selection_request.fitness, selection_request.resolution)),
                 "successor_source_fitness_input")
-        evaluations, fitness, pages, observations = InitialSelection.evidence(selection_request, original,
-            fitted_record, collection_request, artifacts)
+        evidence = SelectionEvidence.load(selection_request, original, fitted_record, collection_request, artifacts)
+        fitness, pages, observations = evidence.fitness, evidence.pages, evidence.observations
         decision = fitness.selection.decide()
         receipt = artifacts.read(cp.selection)
         parent_artifacts = tuple(artifacts.read(decision.pool.by_id[key].birth) for key in decision.selected)
@@ -223,4 +221,4 @@ class PreparedSuccessorSource:
         require(detail.rng == batch.rng.to_record() and detail.disposition == batch.disposition
                 and detail.evaluations_planned == batch.evaluations_reserved, "successor_source_allocator_replay")
         GenerationPageClosure.verify(identity, (*pages, *selection_pages))
-        return cls(prepared, record, detail, selected, batch, (*pages, *selection_pages), fitness, (observations,))
+        return cls(prepared, record, detail, selected, batch, (*pages, *selection_pages), fitness, observations)
