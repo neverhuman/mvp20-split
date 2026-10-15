@@ -4,6 +4,13 @@ Refreshed: 2026-10-14 12:14:01 America/Chicago. Read FIRST after compaction.
 
 ## Current task
 
+2026-10-14 20:25:10 owner request: added queued [KB-01 Initial Scientific Knowledge Corpus](docs/Build%20Plans/KB-01%20Initial%20Scientific%20Knowledge%20Corpus.md).
+Overall/Build/Acceptance0%; K1/K2/K3/V1=0. MBT successor slot5 and plan index updated;
+existing priority/POP percentages preserved. Planning only; no corpus import or activation.
+LAN14a gateway still listening; serve_lan_review.py invite succeeded20:25:10,
+fresh5min single-use sign-in copied to clipboard/Open Amphora.url. No duplicate
+demo launcher or paid calls. Await owner direction; POP E1/D4 remains return point.
+
 OWNER DETOUR COMPLETE2026-10-14: [Early-stage compute estimates](docs/Early_Stage_Compute_Estimates.pdf).
 Owner correction: production is LINUX/containerized; Windows is development only.
 PDF replaced with FOUR-page business brief at owner's request (3-4page maximum),

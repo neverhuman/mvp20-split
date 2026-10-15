@@ -10,6 +10,8 @@
 
 - [ML-01 Inherited Scientific Model Integration](ML-01%20Inherited%20Scientific%20Model%20Integration.md): standalone queued0%; starts after UI-01/UI-02 end-to-end flow and POP-01 population qualification.
 
+- [KB-01 Initial Scientific Knowledge Corpus](KB-01%20Initial%20Scientific%20Knowledge%20Corpus.md): queued0%, K1/K2/K3/V1=0%; small source-backed polymer/property/model graph, public-owner publication and usable browser exploration. Separate from ML training/recovery; appended to the successor queue without reprioritizing POP-01/ML-01.
+
 - [UI-02 Candidate Structure and Recommendation Views](Completed/UI-02%20Candidate%20Structure%20and%20Recommendation%20Views.md): complete100%; supplied finite-molecule formula/2D/provenance, explicit unranked/missing science, actual local/LAN proof. Broader representations and3D remain separate.
 
 [Master Build Tracker](Master%20Build%20Tracker.md) selects the primary plan and mirrors its canonical overall/per-phase completion. Owning plans define task position, tests and phase gates.
