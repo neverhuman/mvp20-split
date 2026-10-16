@@ -1,6 +1,6 @@
 # POP-01 plan navigation
 
-Child plans, decisions and history for this plan family. Parent trackers remain in the central plan list.
+Parent trackers remain in the central plan list. Child documents and history are grouped below.
 
 - [POP-01 History](POP-01%20History.md)
 - [POP-01.01 Population Execution](POP-01.01%20Population%20Execution.md)

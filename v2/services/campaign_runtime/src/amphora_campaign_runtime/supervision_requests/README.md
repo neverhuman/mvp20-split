@@ -7,7 +7,7 @@ Runtime0.31 adds CheckpointExport and CheckpointRequestBinding for footprint/req
 
 - Owner: Runtime BP-07.04/B1.02a; Runtime0.22;62 scoped/wire/predecessor/publication cases pass;54 statements/4 branches100%. Independent combined exchange proof passed B1.02c:265 initial/105 replacement cases,162 unchanged predecessor Runtime files; no SQL or accepted-effect claim.
 - Architecture: [Graph Runner](../../../../../docs/Architecture/System/Graph_Runner.md).
-- Public transport: contracts/supervision; [exchange design](../../../../../docs/Build%20Plans/BP-07/BP-07.04%20Supervisor%20exchange%20contracts.md).
+- Public transport: contracts/supervision; [exchange design](../../../../../docs/Build%20Plans/BP-07/Completed/BP-07.04%20Supervisor%20exchange%20contracts.md).
 
 ScopeExport produces a public SupervisionSnapshot from an owned DecisionFootprint, including exact original cut and selected view/state/output fingerprints. It delegates footprint/relevant hashes to supervision_scope rather than introducing another algorithm. Received hashes do not prove stored Runtime state.
 

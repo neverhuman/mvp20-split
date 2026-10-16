@@ -31,5 +31,5 @@ compiler selection. Original proposal remains visible; integrity/configuration
 errors propagate, and existing selected operations always recover before review.
 
 Last reviewed:2026-10-12 00:50:48 America/Chicago. Architecture: [Planning](../../../../../docs/Architecture/Agents/Planning.md).
-Delivery: [UI-01.08](../../../../../docs/Build%20Plans/UI-01/UI-01.08%20Campaign%20curation%20boundary%20decision.md).
+Delivery: [UI-01.08](../../../../../docs/Build%20Plans/UI-01/Completed/UI-01.08%20Campaign%20curation%20boundary%20decision.md).
 Independent replacement: curation-installation-20261012a,205 scoped checks, public-only wheel closure.

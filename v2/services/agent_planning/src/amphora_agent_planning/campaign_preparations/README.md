@@ -4,7 +4,7 @@ UI-01.08/P2.2 reconstructs prompt-only Artifact bodies from the exact request-se
 reviewed instruction profile. Curation fit.v3 and its distinct prompt are additive;
 old campaign/supervision prompt and manifest bytes remain unchanged.
 
-Owner: Agent Planning. Architecture: [Planning](../../../../../docs/Architecture/Agents/Planning.md). The pure record, immutable journal and issuance/replacement integration are verified under the [journal design](../../../../../docs/Build%20Plans/BP-07/BP-07.03%20Campaign%20preparation%20journal.md).
+Owner: Agent Planning. Architecture: [Planning](../../../../../docs/Architecture/Agents/Planning.md). The pure record, immutable journal and issuance/replacement integration are verified under the [journal design](../../../../../docs/Build%20Plans/BP-07/Completed/BP-07.03%20Campaign%20preparation%20journal.md).
 
 `CampaignPreparation.bind(plan, packet)` reruns deterministic packet reconstruction and rejects changed fit/inclusion before creating a byte-owned record. `PacketEvidence` owns exact packet profile, original request, reviewed instructions and measured fixture budget. `PreparationInputs` owns ordered candidate identity, required/inclusion policy, omission and observation correspondence. Private Pydantic records serialize those objects; they do not authorize processing or own orchestration.
 

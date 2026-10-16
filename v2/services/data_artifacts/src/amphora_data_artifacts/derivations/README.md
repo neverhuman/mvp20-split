@@ -1,7 +1,7 @@
 # Derived publication boundary
 
 - Status: DER-01/D2 persistence/HTTP implemented; 266 owner regressions pass; D3-D4 accepted; DER-01 closed.
-- Owner: Data/Artifacts; [plan](../../../../../docs/Build%20Plans/BP-06/BP-06.03%20Derived%20publication%20prerequisite.md).
+- Owner: Data/Artifacts; [plan](../../../../../docs/Build%20Plans/BP-06/Completed/BP-06.03%20Derived%20publication%20prerequisite.md).
 - Architecture: [artifact publication](../../../../../docs/Architecture/System/Artifact_Publication_Protocol.md).
 
 `DeclaredTransformation` authenticates upload/read privileges, revalidates immutable command bytes against their identity, rejects repeated input artifact IDs, and binds a final receipt to the exact output descriptor and scope. The public command parser rejects foreign input scopes. Input order is part of command identity: this boundary never silently sorts a retry. A transformation descriptor pins a producer's method/configuration digest; Data does not verify its scientific claim or execute it. No inline executable code or rights override is accepted.

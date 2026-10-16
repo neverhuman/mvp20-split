@@ -1,6 +1,6 @@
 # Campaign eligibility observations
 
-Owner: Planning BP-07.03/B2.02c.i, Planning0.59 verified with29 focused tests,12 boundary checks and418 isolated cases. [Design](../../../../../docs/Build%20Plans/BP-07/BP-07.03%20Compiler%20handoff.md). Pure values select reviewed releases and interpret expiring Registry observations; no HTTP, SQL, reservation or execution happens here.
+Owner: Planning BP-07.03/B2.02c.i, Planning0.59 verified with29 focused tests,12 boundary checks and418 isolated cases. [Design](../../../../../docs/Build%20Plans/BP-07/Completed/BP-07.03%20Compiler%20handoff.md). Pure values select reviewed releases and interpret expiring Registry observations; no HTTP, SQL, reservation or execution happens here.
 
 EligibilityConfiguration binds the configured Registry owner/actor, expected Registry policy digest and maximum age1..60 seconds (default5). This policy digest is distinct from the original objective policy Artifact. Configuration contains no credential and does not authenticate its caller. Later durable preparation must pin it before dispatch. EligibilityBatch reconstructs CampaignDecisionReview and BudgetPolicy, permits future drafts only, deduplicates up to64 exact selected locks and derives public ResolveRelease requests from descriptor ports and original declaration context. Unrelated discovered releases are excluded.
 

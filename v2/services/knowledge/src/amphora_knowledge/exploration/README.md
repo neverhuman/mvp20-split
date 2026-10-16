@@ -1,6 +1,6 @@
 # Knowledge exploration
 
-Design: [bounded exploration](../../../../../docs/Build%20Plans/BP-06/BP-06.06%20Knowledge%20exploration%20design.md). BP-06.06/B1.02 implements pure projections and authenticated owner/API reads.
+Design: [bounded exploration](../../../../../docs/Build%20Plans/BP-06/Completed/BP-06.06%20Knowledge%20exploration%20design.md). BP-06.06/B1.02 implements pure projections and authenticated owner/API reads.
 
 `GraphExploration` consumes one exact `DomainGraphSnapshot` and produces public Knowledge0.8 search, neighborhood, detail and capability DTOs. It owns no database, network calls, mutable cache, source bytes or authorization. The caller must obtain the snapshot through the Knowledge ledger's scope/read grant and immutable revision checks. A valid DTO or continuation position is never an access grant.
 

@@ -109,7 +109,7 @@ aggregate execution and lineage navigation. Keep that larger tranche separate;
 ML-01 now follows POP-01 qualification.
 
 Reuse existing bounded output reads where sufficient. Coordinate broader discovery
-with [UI-01.01 result discovery](../UI-01/UI-01.01%20Campaign%20result%20discovery%20decision.md);
+with [UI-01.01 result discovery](../UI-01/Completed/UI-01.01%20Campaign%20result%20discovery%20decision.md);
 that proposal is not approval for a new Runtime API and is not a molecule renderer.
 Do not duplicate scientific ranking in Studio or add chemical interpretation to Runtime.
 Candidate generation/optimization remains a scientific-tool responsibility; this

@@ -1,6 +1,6 @@
 # Reviewed supervision policy
 
-Runtime-private pure eligibility boundary for BP-07.04 B2.01c.i. Design: [admitted checkpoint policy](../../../../../docs/Build%20Plans/BP-07/BP-07.04%20Admitted%20checkpoint%20policy.md).
+Runtime-private pure eligibility boundary for BP-07.04 B2.01c.i. Design: [admitted checkpoint policy](../../../../../docs/Build%20Plans/BP-07/Completed/BP-07.04%20Admitted%20checkpoint%20policy.md).
 
 `ReviewedPolicy.bind(plan, record)` validates an exact compiled plan digest and scope, authored target kinds, inline scalar field types and units, bounded limits and unambiguous observation selectors. `from_bytes` requires normalized canonical bytes. The immutable object retains a validated plan and policy bytes; `sha256` identifies those bytes. `rule_for` and `read_paths` resolve authored selectors against concrete activation paths, including ancestor reads in nested execution.
 

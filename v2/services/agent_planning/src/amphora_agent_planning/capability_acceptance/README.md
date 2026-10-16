@@ -36,7 +36,7 @@ availability; later compiler/Runtime authority remains independent.
 Tests: tests/capability_acceptance. Replacement must preserve the frozen report
 schema and reject unrelated claims/evidence without network or authority fallback.
 Architecture: [Planning](../../../../../docs/Architecture/Agents/Planning.md).
-Delivery: [UI-01.08](../../../../../docs/Build%20Plans/UI-01/UI-01.08%20Campaign%20curation%20boundary%20decision.md).
+Delivery: [UI-01.08](../../../../../docs/Build%20Plans/UI-01/Completed/UI-01.08%20Campaign%20curation%20boundary%20decision.md).
 
 AcceptanceReview.review_report rechecks report/descriptor semantics for retained
 fulfillment evidence. It does not establish current Data processing by itself;

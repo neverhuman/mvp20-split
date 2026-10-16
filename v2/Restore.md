@@ -2,9 +2,12 @@
 
 Refreshed: 2026-10-15 22:26:03 America/Chicago. Read with AGENTS.md.
 
-Plan navigation cleanup: POP-01 children/history now under docs/Build Plans/POP-01/;
-UI-01/UI-02 children under their family folders, with completed children in Completed/.
-Parent trackers remain central. Execution tracker now explains named phases and accounting.
+Plan navigation cleanup applied to BOTH original and integration checkouts on 2026-10-16.
+POP-01 children/history are under docs/Build Plans/POP-01/. All closed UI-01/UI-02
+children and remaining BP supporting records/history are in family/Completed/.
+Family README indexes and inbound/outbound links repaired; no missing local targets
+in moved/edited documents. Parent trackers remain central. Original code/services
+remain frozen; its pre-existing Restore changes and user artifacts were preserved.
 No implementation percentages changed.
 
 Owner tangent completed 2026-10-16: four-slide VC evidence deck in

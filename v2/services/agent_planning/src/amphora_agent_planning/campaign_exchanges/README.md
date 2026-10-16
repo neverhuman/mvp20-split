@@ -1,6 +1,6 @@
 # Campaign compiler exchanges
 
-Owner: Planning BP-07.03/B2.02b; Planning0.58 verified with41 loopback tests,12 boundary checks and389 isolated cases. [Design](../../../../../docs/Build%20Plans/BP-07/BP-07.03%20Compiler%20handoff.md). Focused HTTP primitives own framing/resource limits, not orchestration or execution authority.
+Owner: Planning BP-07.03/B2.02b; Planning0.58 verified with41 loopback tests,12 boundary checks and389 isolated cases. [Design](../../../../../docs/Build%20Plans/BP-07/Completed/BP-07.03%20Compiler%20handoff.md). Focused HTTP primitives own framing/resource limits, not orchestration or execution authority.
 
 RuntimeAuthoringClient accepts only canonical AuthoringRequest values for its configured owner/actor. It exposes save/validate, original receipt read and exact accepted readback. Paths derive from validated public identities, never model URLs. Runtime responses pass AuthoringOutcome binding before returning. No activation/admission route exists. RegistryEligibilityClient accepts only public registry.resolve commands and the configured owner/actor. It returns a typed RegistryReceipt; later policy must bind scope/lock/descriptor/status/expiry. Registry does not echo command identity/hash, so the client makes no such claim.
 

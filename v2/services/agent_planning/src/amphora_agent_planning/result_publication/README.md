@@ -2,7 +2,7 @@
 
 - Status: payloads and durable storage verified; BP-07.02/B2.03b.ii.b SDK workflow verified; concrete input preparation/diagnostic production and actual Data integration verified under b.ii.c; sibling owner_handoff supplies verified owner reconciliation.
 - Package: Planning0.27 preparation/producer verified; public Planning0.7 unchanged. Applied planning0010 adds result selection/preparation/events/control. The current retained database also includes planning0011: never run Planning<=0.28 migrators. Earlier migration bytes are unchanged.
-- Design: [owner handoff](../../../../../docs/Build%20Plans/BP-07/BP-07.02%20Owner%20handoff%20and%20accepted%20replay.md).
+- Design: [owner handoff](../../../../../docs/Build%20Plans/BP-07/Completed/BP-07.02%20Owner%20handoff%20and%20accepted%20replay.md).
 
 ## Responsibility and authority
 

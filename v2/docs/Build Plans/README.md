@@ -1,10 +1,10 @@
 # Build Plans
 
-- [UI-01.08d Output ceiling decision](UI-01/UI-01.08d%20Output%20ceiling%20decision.md): bounded experiment complete100%; live supported acceptance failed. Ten/$2.55 holds retained, zero remaining; provider investigation brief under Audits.
+- [UI-01.08d Output ceiling decision](UI-01/Completed/UI-01.08d%20Output%20ceiling%20decision.md): bounded experiment complete100%; live supported acceptance failed. Ten/$2.55 holds retained, zero remaining; provider investigation brief under Audits.
 
-- [UI-01.08a Live curation correction](UI-01/UI-01.08a%20Live%20curation%20qualification%20correction.md): approved input-profile and same-scope budget extension after two retained failed live outputs; historical allowance consumed; current parent/gates are in UI-01.08.
+- [UI-01.08a Live curation correction](UI-01/Completed/UI-01.08a%20Live%20curation%20qualification%20correction.md): approved input-profile and same-scope budget extension after two retained failed live outputs; historical allowance consumed; current parent/gates are in UI-01.08.
 
-- [Campaign provenance decision](UI-01/UI-01.07%20Campaign%20provenance%20decision.md): approved/qualified100%; bounded Planning-owned exact-draft origin read and lookup. Qualified launch UI-01.06 stays complete.
+- [Campaign provenance decision](UI-01/Completed/UI-01.07%20Campaign%20provenance%20decision.md): approved/qualified100%; bounded Planning-owned exact-draft origin read and lookup. Qualified launch UI-01.06 stays complete.
 
 - [POP-01 Population Campaign Execution and Experience](POP-01%20Population%20Campaign%20Execution%20and%20Experience.md): active E2=50%; E1/E2.1/E2.2 complete, Execution37.5%, parent12.5%, Build18.75%, Verification0%. E2.3 resource/composition active; POP-01.08 read-only source-footprint qualified. RG-01 follows this plan before ML-01.
 
@@ -39,18 +39,18 @@ Read the selected plan's tracker first. Complete each phase gate before advancin
 
 - [UI-01 Research Workspace Overhaul](Completed/UI-01%20Research%20Workspace%20Overhaul.md): complete100%; archived with integrated actual-owner/browser and independent-consumer acceptance.
 
-- [SME Evaluation Review MVP](UI-01/UI-01.02%20SME%20Evaluation%20Review%20MVP.md): bounded local review delivered; actual Planning/scientific integration remains separate.
+- [SME Evaluation Review MVP](UI-01/Completed/UI-01.02%20SME%20Evaluation%20Review%20MVP.md): bounded local review delivered; actual Planning/scientific integration remains separate.
 
-- [Connected Demo Flow](UI-01/UI-01.04%20Connected%20Demo%20Flow.md): bounded retained-plan/execution/results/review walkthrough complete; real browser run engagement is qualified in UI-01.06.
+- [Connected Demo Flow](UI-01/Completed/UI-01.04%20Connected%20Demo%20Flow.md): bounded retained-plan/execution/results/review walkthrough complete; real browser run engagement is qualified in UI-01.06.
 
 - [LAN-01 Local Network Demo Access](Completed/LAN-01%20Local%20Network%20Demo%20Access.md): complete100%, owner accepted and archived; deployed demo preserved.
 
 - [UI-01.05 Knowledge, Run and LLM Integration](UI-01/Completed/UI-01.05%20Knowledge%20Run%20and%20LLM%20Integration.md): 100%; K1/R1/I1=100%. Bounded integration complete; parent UI-01/V1 acceptance active.
-- [UI-01.06 Campaign launch decision](UI-01/UI-01.06%20Campaign%20launch%20decision.md): owner approved2026-10-09; qualified100%, all implementation phases complete. Runtime keeps admission/execution authority.
+- [UI-01.06 Campaign launch decision](UI-01/Completed/UI-01.06%20Campaign%20launch%20decision.md): owner approved2026-10-09; qualified100%, all implementation phases complete. Runtime keeps admission/execution authority.
 
-- [UI-01.08 Campaign curation boundary decision](UI-01/UI-01.08%20Campaign%20curation%20boundary%20decision.md): approved; current phase/completion in owning canonical tracker; new Planning curation/capability-request and separate Deployment successor-launch contracts for N3/I1.
+- [UI-01.08 Campaign curation boundary decision](UI-01/Completed/UI-01.08%20Campaign%20curation%20boundary%20decision.md): approved; current phase/completion in owning canonical tracker; new Planning curation/capability-request and separate Deployment successor-launch contracts for N3/I1.
 
-- [UI-01.08i Validation feedback qualification](UI-01/UI-01.08i%20Validation%20feedback%20qualification.md): complete100%; supported modelgraph/successor and actualbrowser qualified; remaining additional$9.25 unreserved.
+- [UI-01.08i Validation feedback qualification](UI-01/Completed/UI-01.08i%20Validation%20feedback%20qualification.md): complete100%; supported modelgraph/successor and actualbrowser qualified; remaining additional$9.25 unreserved.
 
 - [UI-01.08j Managed curation demo delivery](UI-01/Completed/UI-01.08j%20Managed%20curation%20demo%20delivery.md): complete100%; M1-M4 qualified/audited; parent V1 remains.
 

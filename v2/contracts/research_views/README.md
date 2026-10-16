@@ -1,6 +1,6 @@
 # Research view contracts
 
-Package amphora-contracts-research-views0.1.0 owns additive bounded scientific inspection DTOs. Dependencies are public Core0.1 and Research0.14 plus Pydantic. It has no owner I/O, persistence or scientific policy. [Design](../../docs/Build%20Plans/BP-06/BP-06.06%20Research%20views%20design.md) and Research's exploration README own semantics.
+Package amphora-contracts-research-views0.1.0 owns additive bounded scientific inspection DTOs. Dependencies are public Core0.1 and Research0.14 plus Pydantic. It has no owner I/O, persistence or scientific policy. [Design](../../docs/Build%20Plans/BP-06/Completed/BP-06.06%20Research%20views%20design.md) and Research's exploration README own semantics.
 
 Seven public roots describe specimen/property/series requests and pages plus the exact experiment capability catalog. Public scalar measurements, sample identities, reported bindings, expected context and quality are reused unchanged. Series descriptors do not discard points: the separate window API exposes the original sequence. Collections, strict integers, extra fields and authority labels are bounded; shape validation cannot prove scope equality, exact membership, a retained record, complete selected-set existence or scientific truth.
 

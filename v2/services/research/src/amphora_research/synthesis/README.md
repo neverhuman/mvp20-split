@@ -1,7 +1,7 @@
 # Research synthesis feasibility
 
 - Status: Research0.31.0/contracts0.14.0: immutable decision/dependency storage, authenticated synthetic producer ingestion, separately granted public APIs and Artifact publication verified. Scientific and physical validity remain unproven.
-- Owner: Research. Design: [physical design](../../../../../docs/Build%20Plans/BP-06/BP-06.04%20Physical%20design.md); requirements: [synthesis feasibility](../../../../../docs/Architecture/Requirements/Product_Requirements.md#synthesis-feasibility-and-route-planning).
+- Owner: Research. Design: [physical design](../../../../../docs/Build%20Plans/BP-06/Completed/BP-06.04%20Physical%20design.md); requirements: [synthesis feasibility](../../../../../docs/Architecture/Requirements/Product_Requirements.md#synthesis-feasibility-and-route-planning).
 
 evidence.py preserves an exact candidate/domain/purpose/conditions context, requested scale and purity specification, immutable route Artifact, method/tool/model versions, source records, ordered step dependencies, step evidence/gaps, bounded search and next checks. Route-step records carry domain-specific intermediates, starting materials and process detail; this module does not interpret their chemistry or biology. Missing scale/purity stays unknown. Units retain original tokens. All sources match the candidate scope; steps must follow their dependencies and cannot form cycles. Collections are bounded, identities unique and sources attributable.
 

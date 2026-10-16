@@ -432,7 +432,7 @@ Archived MBT checkpoint:
 
 ## Trace oracle verification 2026-10-04 15:56:11
 
-B3.01 verified 2026-10-04 15:56:11:136 scoped cases53.24s cover EXT-TRACE-01/02/03 and QEV-08, including actual owned SQL failed/repaired history and replay. Existing meaningful tests reused; no duplicate tests or production changes. Same0.30 independent39-stage and combined-owner evidence is explicitly reused. No live semantic/scientific or new coverage claim. B3=33.33%;child58.33%,Build77.78%,parent31.67%;closed2/4 and6/20. Current B3.02. [Oracle map](../BP-07/BP-07.02%20Trace%20oracles.md), [evidence](../../Audits/Evidence/BP-07-Extraction/Trace_Oracles.json).
+B3.01 verified 2026-10-04 15:56:11:136 scoped cases53.24s cover EXT-TRACE-01/02/03 and QEV-08, including actual owned SQL failed/repaired history and replay. Existing meaningful tests reused; no duplicate tests or production changes. Same0.30 independent39-stage and combined-owner evidence is explicitly reused. No live semantic/scientific or new coverage claim. B3=33.33%;child58.33%,Build77.78%,parent31.67%;closed2/4 and6/20. Current B3.02. [Oracle map](../BP-07/Completed/BP-07.02%20Trace%20oracles.md), [evidence](../../Audits/Evidence/BP-07-Extraction/Trace_Oracles.json).
 
 Archived MBT checkpoint:
 
@@ -441,7 +441,7 @@ Archived MBT checkpoint:
 
 ## Synthetic corpus verification 2026-10-04 16:15:15
 
-B3.02 verified 2026-10-04 16:15:15:54 explicitly reviewed synthetic responses/18 unchanged corpus cases, with faithful/incorrect/abstaining variants retained.86 focused tests10.90s; both isolated0.30 installs pass88 tests with identical category/split reports. Native input/output/quotation/trace boundaries remain interpretation-only. Boundary helper100%, review helper95.68% coverage; no production/schema/migration changes, remote acceptance or live semantic quality claim. B3=66.67%;child66.67%,Build88.89%,parent33.33%;closed2/4 and6/20. Current B3.03. [Design](../BP-07/BP-07.02%20Corpus%20verification.md), [evidence](../../Audits/Evidence/BP-07-Extraction/Semantic_Corpus.json).
+B3.02 verified 2026-10-04 16:15:15:54 explicitly reviewed synthetic responses/18 unchanged corpus cases, with faithful/incorrect/abstaining variants retained.86 focused tests10.90s; both isolated0.30 installs pass88 tests with identical category/split reports. Native input/output/quotation/trace boundaries remain interpretation-only. Boundary helper100%, review helper95.68% coverage; no production/schema/migration changes, remote acceptance or live semantic quality claim. B3=66.67%;child66.67%,Build88.89%,parent33.33%;closed2/4 and6/20. Current B3.03. [Design](../BP-07/Completed/BP-07.02%20Corpus%20verification.md), [evidence](../../Audits/Evidence/BP-07-Extraction/Semantic_Corpus.json).
 
 Archived MBT checkpoint:
 
@@ -833,7 +833,7 @@ Actual three-owner proof passed11 stages,6 installed service processes and2 post
 
 ## 2026-10-05 16:40:12 ? B2 target-contract discrepancy
 
-B1 committed/pushed270eb7a1. B2.01 source review confirmed Invoke inputs are Artifact-only while the physical design calls for scalar Invoke adjustments. Prepared a [versioned materialization checkpoint recommendation](../BP-07/BP-07.04%20Scalar%20checkpoint%20decision.md); owner direction pending. No production change or implementation credit; child25%,Build33.33%,Acceptance0%,parent65%,13/20. Completed B1 remains100%.
+B1 committed/pushed270eb7a1. B2.01 source review confirmed Invoke inputs are Artifact-only while the physical design calls for scalar Invoke adjustments. Prepared a [versioned materialization checkpoint recommendation](../BP-07/Completed/BP-07.04%20Scalar%20checkpoint%20decision.md); owner direction pending. No production change or implementation credit; child25%,Build33.33%,Acceptance0%,parent65%,13/20. Completed B1 remains100%.
 
 
 ## 2026-10-05 19:24:23 ? Approved checkpoint correction / B2.01a

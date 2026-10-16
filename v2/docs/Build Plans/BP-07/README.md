@@ -1,0 +1,52 @@
+# BP-07 plan navigation
+
+Parent trackers remain in the central plan list. Child documents and history are grouped below.
+
+
+## Completed child plans and supporting records
+
+Archived design/checkpoint wording records its historical state. The closed canonical tracker owns final completion.
+
+- [BP-07.01 Model and engagement contracts](Completed/BP-07.01%20Model%20and%20engagement%20contracts.md)
+- [BP-07.01 Physical design](Completed/BP-07.01%20Physical%20design.md)
+- [BP-07.02 Corpus verification](Completed/BP-07.02%20Corpus%20verification.md)
+- [BP-07.02 Graph proposal validation](Completed/BP-07.02%20Graph%20proposal%20validation.md)
+- [BP-07.02 Owner handoff and accepted replay](Completed/BP-07.02%20Owner%20handoff%20and%20accepted%20replay.md)
+- [BP-07.02 Owner submission](Completed/BP-07.02%20Owner%20submission.md)
+- [BP-07.02 Physical design](Completed/BP-07.02%20Physical%20design.md)
+- [BP-07.02 Process failure oracles](Completed/BP-07.02%20Process%20failure%20oracles.md)
+- [BP-07.02 Reliable text decomposition](Completed/BP-07.02%20Reliable%20text%20decomposition.md)
+- [BP-07.02 Repair workflow](Completed/BP-07.02%20Repair%20workflow.md)
+- [BP-07.02 Research proposals and repair admission](Completed/BP-07.02%20Research%20proposals%20and%20repair%20admission.md)
+- [BP-07.02 Result publication](Completed/BP-07.02%20Result%20publication.md)
+- [BP-07.02 Task output compatibility](Completed/BP-07.02%20Task%20output%20compatibility.md)
+- [BP-07.02 Trace oracles](Completed/BP-07.02%20Trace%20oracles.md)
+- [BP-07.03 Campaign output profile](Completed/BP-07.03%20Campaign%20output%20profile.md)
+- [BP-07.03 Campaign preparation journal](Completed/BP-07.03%20Campaign%20preparation%20journal.md)
+- [BP-07.03 Campaign proposals and context](Completed/BP-07.03%20Campaign%20proposals%20and%20context.md)
+- [BP-07.03 Catalog acceptance protocol](Completed/BP-07.03%20Catalog%20acceptance%20protocol.md)
+- [BP-07.03 Compiler handoff](Completed/BP-07.03%20Compiler%20handoff.md)
+- [BP-07.03 Decision declaration](Completed/BP-07.03%20Decision%20declaration.md)
+- [BP-07.03 Declaration publication decision](Completed/BP-07.03%20Declaration%20publication%20decision.md)
+- [BP-07.03 Physical design](Completed/BP-07.03%20Physical%20design.md)
+- [BP-07.03 Proposal policy design](Completed/BP-07.03%20Proposal%20policy%20design.md)
+- [BP-07.04 Admitted checkpoint policy](Completed/BP-07.04%20Admitted%20checkpoint%20policy.md)
+- [BP-07.04 Autonomous loop](Completed/BP-07.04%20Autonomous%20loop.md)
+- [BP-07.04 Capture publication](Completed/BP-07.04%20Capture%20publication.md)
+- [BP-07.04 Checkpoint acceptance](Completed/BP-07.04%20Checkpoint%20acceptance.md)
+- [BP-07.04 Durable supervisor and races](Completed/BP-07.04%20Durable%20supervisor%20and%20races.md)
+- [BP-07.04 Execution reports](Completed/BP-07.04%20Execution%20reports.md)
+- [BP-07.04 Failure proof](Completed/BP-07.04%20Failure%20proof.md)
+- [BP-07.04 History](Completed/BP-07.04%20History.md)
+- [BP-07.04 Physical design](Completed/BP-07.04%20Physical%20design.md)
+- [BP-07.04 Public transports](Completed/BP-07.04%20Public%20transports.md)
+- [BP-07.04 Scalar checkpoint decision](Completed/BP-07.04%20Scalar%20checkpoint%20decision.md)
+- [BP-07.04 Supervisor exchange contracts](Completed/BP-07.04%20Supervisor%20exchange%20contracts.md)
+- [BP-07.04 Supervisor journal](Completed/BP-07.04%20Supervisor%20journal.md)
+- [BP-07.04 Winner and effects](Completed/BP-07.04%20Winner%20and%20effects.md)
+- [BP-07.05 History](Completed/BP-07.05%20History.md)
+- [BP-07.05 Inspection boundary](Completed/BP-07.05%20Inspection%20boundary.md)
+- [BP-07.05 Live configuration](Completed/BP-07.05%20Live%20configuration.md)
+- [BP-07.05 Live evaluation and closeout](Completed/BP-07.05%20Live%20evaluation%20and%20closeout.md)
+- [BP-07.05 Physical design](Completed/BP-07.05%20Physical%20design.md)
+- [README](Completed/README.md)

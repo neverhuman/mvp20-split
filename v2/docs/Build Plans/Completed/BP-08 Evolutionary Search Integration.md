@@ -66,7 +66,7 @@ Child decisions and the [cross-plan handoff register](../Planning_Readiness.md) 
 
 ## Accounting and Closeout
 
-On `2026-09-25 13:35:12`, the original two-task-per-phase estimate was decomposed into 20 verified deliveries across 5 children. Implementation stays 0%; no previous implementation credit is lost or added. [Planning history](../BP-08%20Planning%20History.md) preserves the original scope and denominator. Pure design review earns no implementation credit.
+On `2026-09-25 13:35:12`, the original two-task-per-phase estimate was decomposed into 20 verified deliveries across 5 children. Implementation stays 0%; no previous implementation credit is lost or added. [Planning history](../BP-08/Completed/BP-08%20Planning%20History.md) preserves the original scope and denominator. Pure design review earns no implementation credit.
 
 Child closeout archives that child with its audit and repairs links; the parent remains active until all child gates and the integrated parent outcome pass. The last child's acceptance checks the parent handoff without repeating unchanged earlier audits. Keep implementation, human acceptance, operational readiness and scientific validation separate. Update child -> parent -> MBT -> Restore at each delivery/scope change.
 

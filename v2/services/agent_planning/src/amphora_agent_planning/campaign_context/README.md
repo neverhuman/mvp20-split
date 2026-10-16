@@ -10,7 +10,7 @@ remain usable. Actual target serialization/provider execution integration is C2b
 
 - Status: BP-07.03/B1.01a verified; B1.01b selected-record projection verified. Planning0.32/public Planning0.8.
 - Owner: Planning immutable selection and request binding. Research owns records/assessment; Runtime owns campaign validation/execution.
-- Design: [campaign context](../../../../../docs/Build%20Plans/BP-07/BP-07.03%20Physical%20design.md).
+- Design: [campaign context](../../../../../docs/Build%20Plans/BP-07/Completed/BP-07.03%20Physical%20design.md).
 
 ResearchSelection.from_bytes/bind stores canonical bytes and the revalidated original RequestSnapshot. It accepts only campaign_proposal/supervision purposes, exact engagement/request hash, scoped unique question/need references and unique assessment identities. Distinct explicit revisions of one question remain distinct; authored selection ordering is retained. An assessment selects the complete original EvidenceAssessmentRequest plus expected status hash, not an invented mutable assessment revision.
 

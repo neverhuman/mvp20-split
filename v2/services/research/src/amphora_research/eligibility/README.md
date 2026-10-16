@@ -1,7 +1,7 @@
 # Research action eligibility
 
 - Status: Research0.31.0/contracts0.14.0: immutable decision/dependency storage, authenticated synthetic producer ingestion, separately granted public APIs and Artifact publication verified. Scientific and physical validity remain unproven.
-- Owner: Research. Design: [physical design](../../../../../docs/Build%20Plans/BP-06/BP-06.04%20Physical%20design.md).
+- Owner: Research. Design: [physical design](../../../../../docs/Build%20Plans/BP-06/Completed/BP-06.04%20Physical%20design.md).
 
 evidence.py separates DecisionSubject (exact candidate and optional state/sample) from DecisionContext (domain, purpose, conditions), EvidenceOrigin (immutable source, method, kind, claimed authority and optional observation revision) and CriterionClaim (attributed disposition/quality flags). All owned references have coherent scope. Missing subject metadata is explicit and cannot match a more specific context. A source claim is not authenticated merely because it constructs successfully. Measurement, model and synthesis evidence are distinct kinds.
 

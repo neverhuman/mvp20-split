@@ -1,6 +1,6 @@
 # Research exploration
 
-Design: [scientific views](../../../../../docs/Build%20Plans/BP-06/BP-06.06%20Research%20views%20design.md). BP-06.06/B1.03 implements pure projections and owner/HTTP reads in Research0.33 with public research-views0.1.
+Design: [scientific views](../../../../../docs/Build%20Plans/BP-06/Completed/BP-06.06%20Research%20views%20design.md). BP-06.06/B1.03 implements pure projections and owner/HTTP reads in Research0.33 with public research-views0.1.
 
 `ExperimentProjection` owns the exact experiment's specimen inventory and declared expectation lookup. `ObservationProjection` owns reported measurement preview and lossless series windows. Both revalidate immutable wire records, enforce1MiB input limits and reconstruct existing Research domain validators. They do no I/O, persistence, authentication, normalization, matching acceptance or scientific evaluation. Transport DTOs come from the separate public research_views contract package; all existing Research contracts remain unchanged.
 

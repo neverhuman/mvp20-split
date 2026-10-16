@@ -1,7 +1,7 @@
 # Knowledge reasoning publication
 
 - Status: BP-06.03/B1 values, durable journal and atomic terminal receipts implemented; production SDK/optional HTTP workflow implemented; installed replacement and publication-specific process-death recovery verified.
-- Owner: Knowledge0.13.0; public Knowledge contracts0.6.0; [implementation design](../../../../../docs/Build%20Plans/BP-06/BP-06.03%20Publication%20and%20receipt%20design.md).
+- Owner: Knowledge0.13.0; public Knowledge contracts0.6.0; [implementation design](../../../../../docs/Build%20Plans/BP-06/Completed/BP-06.03%20Publication%20and%20receipt%20design.md).
 - Architecture: [Knowledge](../../../../../docs/Architecture/Knowledge/Knowledge_Architecture.md).
 
 PublicationRequestDocument authenticates publish_reasoning and binds the original scoped actor to an exact stored evaluated reasoning result. Requests cannot supply payloads, provenance, actor, purpose or receipt authority. PublicationStore restores its own immutable reasoning history without manufacturing read_graph/reason_graph grants. knowledge_0004 pins source-result digest, publisher actor, issuer and schema digest; different request/actor conflicts, changed publisher/result/schema bindings fail. Credentials are never retained.

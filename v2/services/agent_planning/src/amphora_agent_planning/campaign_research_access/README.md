@@ -2,7 +2,7 @@
 
 - Status: BP-07.03/B1.02a.i verified; Planning0.33/public Planning0.8.
 - Owner: Planning reads/reconciliation only; Research owns declarations, assessment and scientific context.
-- Design: [campaign context owner clients](../../../../../docs/Build%20Plans/BP-07/BP-07.03%20Physical%20design.md).
+- Design: [campaign context owner clients](../../../../../docs/Build%20Plans/BP-07/Completed/BP-07.03%20Physical%20design.md).
 
 CampaignResearchTransport uses the compiled question, evidence-need and assessment read routes with existing public Research DTOs. Assessment reads send the complete original request; no id-only/latest lookup is substituted. Endpoint configuration permits authenticated127.0.0.1 HTTP with an explicit port. Models cannot supply endpoints, routes, credentials or handlers. There are no writes, automatic retries, redirects, SQL, source-content calls or assessment creation.
 

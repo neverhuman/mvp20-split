@@ -1,7 +1,7 @@
 # Planning owner handoff
 
 - Status: BP-07.02/B2.03b.iii.a request/receipt values and bounded transport verified; owned storage verified in Planning0.29; coordinator and actual Research recovery verified in Planning0.30; combined actual-owner and abrupt-exit recovery verified; BP-07.02 closeout accepted.
-- Design: [owner submission](../../../../../docs/Build%20Plans/BP-07/BP-07.02%20Owner%20submission.md).
+- Design: [owner submission](../../../../../docs/Build%20Plans/BP-07/Completed/BP-07.02%20Owner%20submission.md).
 - Owner: Planning intent/provenance and reconciliation only. Research owns declarations/sufficiency; Knowledge owns structural graph acceptance; Data owns processing rights.
 
 HandoffSelection owns canonical actor/trace/interpretation/kind/local slot/configuration bytes. Stable effect IDs exclude payload and configuration, requiring immutable conflicts in HandoffJournal. Read-only restoration requires exact actor/scope and canonical bytes without a write grant. Selection is not proof of owned storage origin.
