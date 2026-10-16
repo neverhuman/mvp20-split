@@ -6,7 +6,7 @@
 
 - [Campaign provenance decision](UI-01.07%20Campaign%20provenance%20decision.md): approved/qualified100%; bounded Planning-owned exact-draft origin read and lookup. Qualified launch UI-01.06 stays complete.
 
-- [POP-01 Population Campaign Execution and Experience](POP-01%20Population%20Campaign%20Execution%20and%20Experience.md): active E2=25%; E1=100%, Execution31.25%, parent10.42%, Build15.63%, Verification0%. Generic bounded Runtime admission/recovery qualified; POP-01.06 retention qualified; E2.2 population workers active. RG-01 follows this plan before ML-01.
+- [POP-01 Population Campaign Execution and Experience](POP-01%20Population%20Campaign%20Execution%20and%20Experience.md): active E2=50%; E1/E2.1/E2.2 complete, Execution37.5%, parent12.5%, Build18.75%, Verification0%. E2.3 resource/composition active; POP-01.08 read-only source-footprint approval pending. RG-01 follows this plan before ML-01.
 
 - [ML-01 Inherited Scientific Model Integration](ML-01%20Inherited%20Scientific%20Model%20Integration.md): standalone queued0%; queue follows RG-01; technical handoff requires UI-01/UI-02 end-to-end flow and POP-01 population qualification.
 
@@ -60,4 +60,7 @@ Read the selected plan's tracker first. Complete each phase gate before advancin
 
 - [RG-01 LLM Research Graph Generation](RG-01%20LLM%20Research%20Graph%20Generation.md): critical queued placeholder immediately after POP-01, before ML-01; overall/Build/Verification0%, R1/R2/R3/V1=0%. LLM generates/refines research graphs; Knowledge enhances context, with no populated-corpus prerequisite.
 
-- [POP-01.06 Referenced artifact retention decision](POP-01.06%20Referenced%20artifact%20retention%20decision.md): authorized and qualified E2.2 prerequisite; Data-owned closure protection and immutable Runtime profile, preserving worker completion bytes. Full worker-unit credit remains pending.
+- [POP-01.06 Referenced artifact retention decision](POP-01.06%20Referenced%20artifact%20retention%20decision.md): authorized and qualified E2.2 prerequisite; Data-owned closure protection and immutable Runtime profile, preserving worker completion bytes. E2.2 worker unit is complete; E2.3 composition/preflight remains incomplete.
+
+- [POP-01.07 Node input inspection decision](POP-01.07%20Node%20input%20inspection%20decision.md): owner-approved and qualified Runtime read-only inspection; existing producer semantics preserved.
+- [POP-01.08 Artifact ancestry footprint decision](POP-01.08%20Artifact%20ancestry%20footprint%20decision.md): proposed totals-only Data read for E2.3 external-source preflight; owner approval pending, no implementation.

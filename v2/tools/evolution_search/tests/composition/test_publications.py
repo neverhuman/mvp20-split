@@ -5,7 +5,7 @@ from importlib.metadata import version
 import pytest
 from amphora_contracts_population import PopulationSpecification
 from amphora_contracts_tools import ToolBinding
-from amphora_evolution_search.composition.publications import NumericPublicationProfile,reference_groups
+from amphora_evolution_search.composition.publications import NumericPublicationProfile,reference_groups,REVIEWED_RELEASE
 from amphora_evolution_search.composition.work import ScopeWork,BindingBudgets
 
 
@@ -18,6 +18,12 @@ def profile():
 def binding(operation):
     return ToolBinding(capability_id="numeric.population-"+operation,
         release=version("amphora-evolution-search"),image_sha256="f"*64,contract_version="1")
+
+
+def test_future_package_release_requires_explicit_cost_profile_review():
+    assert REVIEWED_RELEASE==version("amphora-evolution-search")
+    with pytest.raises(ValueError,match="release_pin"):
+        profile().per_call(binding("seed").model_copy(update={"release":"0.25.0"}))
 
 
 def test_reference_groups_match_multilevel_source_algorithm():

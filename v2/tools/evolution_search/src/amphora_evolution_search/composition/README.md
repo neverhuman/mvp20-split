@@ -23,10 +23,9 @@ validation I/O accounting remain to be integrated. Runtime's compiler/owner gate
 remain authoritative. No service implementation, network, filesystem or private
 state access belongs in this module. Source-owned tests live under tests/composition.
 
-Fifteen focused checks cover nested expansion, serial loop width, batch-dependent
-orchestration, queue saturation, retries, empty scatters, binding budgets, branch
-conservatism, overflow/depth and compiled-plan identity. Full source401 passes;
-independent verification is recorded in the POP-01_Composition_Preflight audit.
+Focused suites cover expanded work, identity, ancestry, page/header envelopes,
+publication costs, finite batching and seed validation I/O. Exact current
+qualification is recorded in the POP-01_Composition_Preflight audit.
 
 PublicationLedger now assesses an explicit prospective publication DAG. Publication
 records include every admitted input carrier and declared parent. External source
@@ -72,3 +71,25 @@ overhead, validation I/O, complete ancestry and actual future row suitability re
 outside this component. Per-call publication counts above4096 reject. This component
 may conservatively reject large configurations pending tighter row profiles.
 The1000-birth production publication fixture stays below its assessed seed bound.
+
+PrimaryBatchLoop authors finite cursor feedback around the unchanged flat primary
+method body. The enclosing composer must generate the initial request at index0
+with the same prepared reference and batch limit, and check operational settings
+against frozen spec maxima. Subsequent requests use the actual slice next_index;
+the actual complete flag ends iteration, otherwise exhaustion blocks. An explicit
+prepared capture avoids unsupported scalar ArtifactRef projection. Public slice
+DTOs retain max32, so projection/scatter shapes keep32 even for batch1/8. Structural
+upper method counts therefore differ across operational batches; they do NOT prove
+actual membership/RNG equivalence. Runtime owns compilation/admission/claims.
+The repeated scatter uses all-terminal partial collection so unavailable methods
+remain visible to later authoritative population collection. No failure is scored0.
+
+SeedValidationIoProfile currently supports only generation0 seed/slice/numeric
+method kernels and rejects successors/unknown operations. It accounts for full
+cohort page revalidation, two Data GETs per Artifact read, SDK0.4 command recovery
+(up to3 POSTs and2 receipt GETs), renewal plus snapshot reads, publication streams
+and worker claim/failure/completion overhead. Body-byte bounds use the SDK's
+response limit including its one-byte oversize probe; headers/framing are excluded.
+This is an upper envelope, not measured traffic or latency. Runtime graph bindings,
+operator retention confirmation, polling, owner SQL/CPU and successor/collection/
+fitness validation I/O remain separate. The reviewed SDK release is explicit.

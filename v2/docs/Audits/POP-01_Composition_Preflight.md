@@ -1,7 +1,7 @@
 # POP-01 authored composition preflight
 
-Status: E2.3 active, structural component independently qualified; full preflight incomplete.
-Reviewed: 2026-10-15 19:33:46 America/Chicago. Search0.24.
+Status: E2.3 components qualified; full preflight incomplete. POP-01.08 approval pending.
+Reviewed: 2026-10-15 20:16:12 America/Chicago. Search0.24.
 Prerequisites: E1/E2.1/E2.2 qualified; [worker exit](POP-01_E2_2_Worker_Exit.md).
 
 ## Bounded first delivery
@@ -144,3 +144,59 @@ composition and the actual batch1/8/32 x active1/4/8 matrix remain separate gate
 
 E2.3=0 until its full exit; E2=50%, Execution37.5%, parent12.5%, Build18.75%,
 Verification0. Completed worker credit remains complete.
+
+## Authored batch loop and seed validation I/O
+
+PrimaryBatchLoop preserves the unchanged flat primary method body. Initial
+request/captured prepared reference and batch limit must agree; the enclosing
+composer must create index0 and enforce frozen spec maxima. Actual slice next_index
+feeds the next request; actual complete ends the finite loop, otherwise the limit
+blocks. Partial all-terminal scatter preserves later unavailable-method collection.
+No synthetic initial slice or new Runtime endpoint is used.
+
+Independent Search export -> independent Runtime compilation accepts batch1/8/32:
+`.test-results/pop01-batch-compile-io-installed-20261015a`. Compiler probes a/b
+correctly rejected narrowed collection max_items and scalar ArtifactRef projection.
+Final shapes retain the public max32 and capture prepared explicitly. Structural
+method-call upper bounds therefore vary by batch; they do not prove actual
+membership/RNG equivalence. No compiler or shared-contract weakening occurred.
+
+Actual HTTP proof `.test-results/pop01-authored-batch-http-20261015b`:16 candidates,
+two disjoint eight-member batches, real cursor feedback, exactly19 accepted
+attempts, all objective values verified. Both Data and Runtime restart between
+batches. Seed/slice/method roots confirmed; worker retention GET remains403.
+Before dispatch, installed Search checked owner-supplied plan/document/definition
+identity,146 expanded activations, queue upper6, attempts upper201 vs budget256,
+and publication upper127 successful/375 including all retries and bindings.
+Source ancestry is controlled fixture evidence, not general production inspection.
+Probe a used the old single-slice driver branch and failed on the second slice;
+its owned container/processes were cleaned. Final b uses the explicit batch driver.
+All owned a/b containers are removed; volumes/original demo remain. No provider calls.
+This is an E2.3 component, not the E2.4 batch/cap matrix.
+
+SeedValidationIoProfile covers generation0 seed/slice/numeric methods only. It
+charges full-cohort page revalidation, two Data GETs per artifact read, SDK0.4
+command recovery (3 POSTs/2 receipt GETs), renewal+run snapshot reads, publication
+streams and claim/failure/completion overhead. Unknown operations/successors reject.
+Worker body-byte totals exclude HTTP headers/framing; graph binding I/O, polling,
+owner SQL/CPU and operator confirmation are separate. These are upper envelopes,
+not measured traffic/throughput. Search cost review is fixed0.24.0 and SDK0.4.0;
+future releases require explicit profile review instead of floating to new metadata.
+
+Final qualification:467 source PASS (one frozen check excluded as before),465
+installed PASS,81 focused composition PASS; guard/13 boundary checks PASS. Final
+independent package `.test-results/pop01-composition-io-search-install-20261015a`
+contains no Data/Runtime/Planning/Process Mapping implementations/SQLAlchemy/FastAPI.
+Earlier batch a passed458 before the explicit fixed-release test; b passed459
+before seed-I/O code. Final io a supersedes both. Existing endpoint pins pass.
+`.test-results/pop01-batch-preflight-io-20261015a` is a POST-RUN application of the
+new I/O envelope to the retained b plan, not measured traffic or pre-dispatch proof.
+
+Next concrete boundary: [POP-01.08](../Build%20Plans/POP-01.08%20Artifact%20ancestry%20footprint%20decision.md).
+Read-only existing APIs cannot establish full conversion/derivation source closure
+without retention authority; Data totals-only inspection is proposed, not implemented.
+Owner approval was requested under POP-01.06's further-public-route review rule.
+After approval, implement/qualify that exact Data boundary and bind source footprints
+to resource assessment; then finish full worker/history/binding I/O, immutable
+spec/admission identity and repeated typed-material/population composition.
+E2.3/E2.4 remain0; completed credit and RG-01 ordering remain unchanged.

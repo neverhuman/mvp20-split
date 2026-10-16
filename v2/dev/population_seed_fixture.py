@@ -26,7 +26,7 @@ from population_selection_fixture import SelectionFixture
 from population_successor_fixture import SuccessorFixture
 
 
-def verify(output, python, ports, environment, scope, call, command, start, stop, *, with_slice=False, method_operation=None, inspect_inputs=False, with_collection=False, collection_case="normal", with_fitness=False, with_selection=False, with_successor=False, successor_tight=False, successor_consume=False, successor_fitness=False, successor_failure=False, successor_select=False, successor_next=False, successor_generation2=False, population_loop=False, population_paired=False):
+def verify(output, python, ports, environment, scope, call, command, start, stop, *, with_slice=False, method_operation=None, inspect_inputs=False, with_collection=False, collection_case="normal", with_fitness=False, with_selection=False, with_successor=False, successor_tight=False, successor_consume=False, successor_fitness=False, successor_failure=False, successor_select=False, successor_next=False, successor_generation2=False, population_loop=False, population_paired=False, population_batch=False):
     data_port, runtime_port = ports
     descriptor_result = subprocess.run([str(python), "-I", "-m", "amphora_evolution_search", "population-describe",
         "--operation", "seed", "--image-sha256", "f" * 64], capture_output=True, timeout=120)
@@ -44,6 +44,10 @@ def verify(output, python, ports, environment, scope, call, command, start, stop
     if population_paired:
         from population_paired_fixture import PairedMethodFixture
         method_fixture=PairedMethodFixture(output,python,scope,environment,ports,case=collection_case)
+    batch_fixture=None
+    if population_batch:
+        from population_batch_fixture import BatchFixture
+        batch_fixture=BatchFixture(method_fixture)
     collection_fixture = CollectionFixture(output, python, scope, environment, ports, case=collection_case,
         method_count=2 if population_paired else 1) if with_collection else None
     fitness_fixture = FitnessFixture(output, python, scope, environment, ports, case=collection_case, operation=method_operation,
@@ -148,7 +152,7 @@ def verify(output, python, ports, environment, scope, call, command, start, stop
     original["scope"], original["representation"] = scope, candidate_birth_schema().model_dump()
     original["implementations"] = [ImplementationPin(name="numeric-population-steps",
         version=descriptor["tool"]["binding"]["release"], sha256="f" * 64).model_dump()]
-    original["budget"].update(population_size=16, dispatch_slice=slice_count, successor_generations=(2 if successor_generation2 else 1) if with_successor else 0)
+    original["budget"].update(population_size=16, dispatch_slice=32 if population_batch else slice_count, successor_generations=(2 if successor_generation2 else 1) if with_successor else 0)
     original["method_graph"]["definition"] = context
     for method in original["method_graph"]["methods"]:
         method["conditions"] = context
@@ -188,6 +192,8 @@ def verify(output, python, ports, environment, scope, call, command, start, stop
                          for left, right in zip(body["nodes"], body["nodes"][1:])]
     if method_fixture is not None:
         method_fixture.decorate(definition)
+    if batch_fixture is not None:
+        batch_fixture.decorate(definition)
     if collection_fixture is not None:
         collection_fixture.decorate(definition)
     if fitness_fixture is not None:
@@ -238,6 +244,8 @@ def verify(output, python, ports, environment, scope, call, command, start, stop
     if method_fixture is not None:
         definition_reference = publish(ready["plan_records"]["population-primary-method"]["document"]["definition"], method_fixture.graph_schema.model_dump(), [context])
         method_fixture.pin(original, definition_reference, ready["plans"]["population-primary-method"])
+    if batch_fixture is not None:
+        batch_fixture.preflight(ready,definition,original)
     if fitness_fixture is not None:
         fitness_fixture.pin(original, publish, context)
     specification = publish(PopulationSpecification.model_validate_json(json.dumps(original)).model_dump(mode="json"),
@@ -255,7 +263,7 @@ def verify(output, python, ports, environment, scope, call, command, start, stop
             "items":[{"kind":"string","value":"second_successor_evaluate"}]}})
     admitted = call(runtime_port, "/v1/graph-runs", command("graph.admit", {"plan_sha256": ready["plan_sha256"],
         "inputs": [{"port": "parameters", "value": {"kind": "artifact", "representation": "population-reference-v1", "unit": "1", "artifact": source}}, *extra_inputs],
-        "budget": {"limit": 36 if population_paired else (24 if successor_tight else 96 if successor_generation2 else 64) if with_successor else 22 if with_selection else 20 if with_fitness else 19 if with_collection else 10 if method_fixture is not None else 2 if with_slice else 1}}))
+        "budget": {"limit": 256 if population_batch else 36 if population_paired else (24 if successor_tight else 96 if successor_generation2 else 64) if with_successor else 22 if with_selection else 20 if with_fitness else 19 if with_collection else 10 if method_fixture is not None else 2 if with_slice else 1}}))
     run = admitted["outcome"]["committed"]["object_id"]
     worker_config = {"actor_id": "population-worker", "scope": scope, "run_id": run, "image_sha256": "f" * 64,
         "runtime": {"endpoint": f"http://127.0.0.1:{runtime_port}", "token_env": "QUAL_WORKER_TOKEN"},
@@ -287,6 +295,10 @@ def verify(output, python, ports, environment, scope, call, command, start, stop
         response.read()
     finally:
         connection.close()
+    if batch_fixture is not None:
+        batch_fixture.run(run,prepared,output/"population-worker.json",call,command,read,start,stop,environment)
+        return
+
     advance = command("graph.advance", {"run_id": run, "max_transitions": 10})
     for _ in range(16):
         advanced = call(runtime_port, "/v1/graph-runs/advance", advance)

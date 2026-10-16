@@ -490,3 +490,13 @@ SliceRequest and same-run slice worker. The driver follows bounded coordinator
 passes, retaining command identity while pending, before expecting queued work. It
 checks eight contexts/cursor8, confirmed36-artifact closure and completed spent2;
 this does not execute the declared scientific method graph.
+
+POP-01/E2.3: verify_population_batch_compile.py exchanges public release/schema/graph
+packets between independent Search export/author/assess and Runtime compile modes.
+No services, admission or model calls occur in this packet check. The bounded
+--population-batch option of verify_retention_closure_installation.py uses the
+installed Search author, checks graph identity/publication bounds, then runs two
+eight-member batches across both owner restarts. It excludes other population/
+process variants and is a component proof, not the E2.4 batch/cap matrix. Owned
+fixture container cleanup remains in finally. population_batch_fixture.py owns
+the public-API driver; no private peer state or retained demo access is used.

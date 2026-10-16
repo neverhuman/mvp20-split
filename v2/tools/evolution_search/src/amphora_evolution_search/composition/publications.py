@@ -1,6 +1,5 @@
 """Reviewed numeric-worker publication count upper bounds, not full admission."""
 from dataclasses import dataclass
-from importlib.metadata import version
 
 from amphora_contracts_population import (BirthPage,MembershipPage,EvaluationSlotPage,
     EvaluationKeyPage,MethodObservationPage,FitnessPage,SelectionPage)
@@ -10,6 +9,9 @@ from ..population.specification import OriginalPopulation
 from ..ranking import require
 from .pages import PageEnvelope
 from .work import add,multiply,ScopeWork
+
+
+REVIEWED_RELEASE="0.24.0"
 
 
 def reference_groups(parents):
@@ -38,7 +40,7 @@ class NumericPublicationProfile:
     def __init__(self,specification,image_sha256):
         self.original=OriginalPopulation(specification)
         self.image_sha256=ToolBinding(capability_id="numeric.population-seed",
-            release=version("amphora-evolution-search"),image_sha256=image_sha256,
+            release=REVIEWED_RELEASE,image_sha256=image_sha256,
             contract_version="1").image_sha256
         n=self.original.record.budget.population_size
         methods=len(self.original.record.method_graph.methods)
@@ -69,7 +71,7 @@ class NumericPublicationProfile:
         require(binding.capability_id.startswith(prefix),"composition_unknown_publication_profile")
         operation=binding.capability_id[len(prefix):]
         require(operation in self._counts,"composition_unknown_publication_profile")
-        require(binding.release==version("amphora-evolution-search")
+        require(binding.release==REVIEWED_RELEASE
             and binding.image_sha256==self.image_sha256 and binding.contract_version=="1",
             "composition_publication_release_pin")
         count=self._counts[operation]

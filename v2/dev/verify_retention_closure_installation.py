@@ -48,7 +48,15 @@ def request(port, path, body=None, *, method=None):
         connection.close()
 
 
-def verify(output, data_python, runtime_python, population_python=None, *, population_only=False, population_slice=False, population_method=None, inspect_inputs=False, population_collect=False, collection_case="normal", population_fitness=False, population_select=False, population_propose=False, successor_tight=False, successor_consume=False, successor_fitness=False, successor_failure=False, successor_select=False, successor_next=False, successor_generation2=False, population_loop=False, population_paired=False, process_python=None, process_case="pairwise", process_transform=False, process_transform_case="normal"):
+def verify(output, data_python, runtime_python, population_python=None, *, population_only=False, population_slice=False, population_method=None, inspect_inputs=False, population_collect=False, collection_case="normal", population_fitness=False, population_select=False, population_propose=False, successor_tight=False, successor_consume=False, successor_fitness=False, successor_failure=False, successor_select=False, successor_next=False, successor_generation2=False, population_loop=False, population_paired=False, population_batch=False, process_python=None, process_case="pairwise", process_transform=False, process_transform_case="normal"):
+    if population_batch:
+        assert population_method in {None,"evaluate-squares"}
+        assert collection_case=="normal" and not any((population_collect,population_fitness,
+            population_select,population_propose,population_loop,population_paired,inspect_inputs,
+            successor_tight,successor_consume,successor_fitness,successor_failure,successor_select,
+            successor_next,successor_generation2,process_python,process_transform))
+        population_only=True
+        population_method="evaluate-squares"
     if process_transform:
         assert process_python is not None
     if process_python is not None:
@@ -233,7 +241,7 @@ def verify(output, data_python, runtime_python, population_python=None, *, popul
             from population_seed_fixture import verify as verify_seed
             loss["enabled"] = False
             verify_seed(output, population_python, (data_port, runtime_port), environment, scope,
-                        call, command, start, stop, with_slice=population_slice, method_operation=population_method, inspect_inputs=inspect_inputs, with_collection=population_collect, collection_case=collection_case, with_fitness=population_fitness, with_selection=population_select, with_successor=population_propose, successor_tight=successor_tight, successor_consume=successor_consume, successor_fitness=successor_fitness, successor_failure=successor_failure, successor_select=successor_select, successor_next=successor_next, successor_generation2=successor_generation2, population_loop=population_loop, population_paired=population_paired)
+                        call, command, start, stop, with_slice=population_slice, method_operation=population_method, inspect_inputs=inspect_inputs, with_collection=population_collect, collection_case=collection_case, with_fitness=population_fitness, with_selection=population_select, with_successor=population_propose, successor_tight=successor_tight, successor_consume=successor_consume, successor_fitness=successor_fitness, successor_failure=successor_failure, successor_select=successor_select, successor_next=successor_next, successor_generation2=successor_generation2, population_loop=population_loop, population_paired=population_paired, population_batch=population_batch)
             return
         start("data", data_python, data_port, environment)
         runtime = start("runtime", runtime_python, runtime_port, environment)
@@ -357,6 +365,7 @@ if __name__ == "__main__":
     parser.add_argument("--successor-generation2", action="store_true")
     parser.add_argument("--population-loop", action="store_true")
     parser.add_argument("--population-paired", action="store_true")
+    parser.add_argument("--population-batch", action="store_true")
     parser.add_argument("--population-select", action="store_true")
     parser.add_argument("--population-fitness", action="store_true")
     parser.add_argument("--population-collect", action="store_true")
@@ -365,4 +374,4 @@ if __name__ == "__main__":
     args = parser.parse_args()
     verify(args.output, args.data_python.absolute(), args.runtime_python.absolute(),
            None if args.population_python is None else args.population_python.absolute(),
-           population_only=args.population_only, population_slice=args.population_slice, population_method=args.population_method, inspect_inputs=args.inspect_inputs, population_collect=args.population_collect, collection_case=args.collection_case, population_fitness=args.population_fitness, population_select=args.population_select, population_propose=args.population_propose, successor_tight=args.successor_tight, successor_consume=args.successor_consume, successor_fitness=args.successor_fitness, successor_failure=args.successor_failure, successor_select=args.successor_select, successor_next=args.successor_next, successor_generation2=args.successor_generation2, population_loop=args.population_loop, population_paired=args.population_paired, process_python=None if args.process_python is None else args.process_python.absolute(), process_case=args.process_case, process_transform=args.process_transform, process_transform_case=args.process_transform_case)
+           population_only=args.population_only, population_slice=args.population_slice, population_method=args.population_method, inspect_inputs=args.inspect_inputs, population_collect=args.population_collect, collection_case=args.collection_case, population_fitness=args.population_fitness, population_select=args.population_select, population_propose=args.population_propose, successor_tight=args.successor_tight, successor_consume=args.successor_consume, successor_fitness=args.successor_fitness, successor_failure=args.successor_failure, successor_select=args.successor_select, successor_next=args.successor_next, successor_generation2=args.successor_generation2, population_loop=args.population_loop, population_paired=args.population_paired, population_batch=args.population_batch, process_python=None if args.process_python is None else args.process_python.absolute(), process_case=args.process_case, process_transform=args.process_transform, process_transform_case=args.process_transform_case)

@@ -1,6 +1,6 @@
 # Restore
 
-Refreshed: 2026-10-15 19:35:16 America/Chicago. Read with AGENTS.md.
+Refreshed: 2026-10-15 20:16:52 America/Chicago. Read with AGENTS.md.
 
 ## Task and workspace
 
@@ -26,86 +26,75 @@ Audits docs/Audits/POP-01_Population_*.md own detailed evidence. Seven frozen so
 hashes matched original. Full v1 verifier reports pre-existing ADDED v1/LICENSE only;
 never modify v1/regenerate manifest. Sparse v1 intentionally omitted.
 
-## Current checkpoint: E2.3 structural bounds qualified; next publication/IO ledger
+## Current checkpoint: batch/seed-I/O component qualified; POP-01.08 decision pending
 
-Pushed da76b71e Process0.3/completeE2.2 worker exit. E2=50%, Execution37.5%,
-parent12.5%, Build18.75%, Verification0. E2.3 remains0 until FULL composition gate.
+Pushed da76b71e worker exit, f8863cad structural bounds,73dc9991 ancestry ledger,
+7d65a401 pages and fadac2e2 numeric publications/header bounds. Latest current-HEAD
+delivery adds the qualified batch helper/seed-I/O profile and POP-01.08 proposal;
+verify branch status/log before resume. No original-demo promotion.
 
-Pushed f8863cad Search0.24 first bounded preflight component independently verified:
-composition.GraphWorkBounds (new source-adjacent README/tests/composition).
-Counts all authored activations/scopes/invokes and binding budgets, with scatter
-max_members for work vs active-child max_parallel for queue. Serial loop iterations
-multiply work but not queue width. Includes all branch work (no optimistic pruning),
-empty-scatter binding identity, checked safe integers/depth16 and retry budgets.
-Active attempt cap cannot disguise >256 queue. Definition and compiled document/
-definition hashes verified against caller's expected plan hash. This is NOT owner
-admission, semantic graph validity or full artifact/resource preflight.
+E2.3/E2.4 still0 until their FULL exits. E1/E2.1/E2.2 complete; E2=50%,
+Execution37.5%, parent12.5%, Build18.75%, Verification0. Do not reset worker credit.
 
-401 source PASS (1 frozen-baseline check excluded as before);399 independently
-installed PASS,15 focused composition checks. Guard/13 boundaries and750 shared
-schema publication PASS;24 endpoint pins unchanged. Final independent build:
-.test-results/pop01-composition-work-search-install-20261015b/environment/Scripts/python.exe;
-no Data/Runtime/Planning/Process Mapping implementations, SQLAlchemy/FastAPI.
-Earlier a build passed396 before3 identity tests; finalb contains all current code.
-No new worker behavior/DTO/API/scientific algorithm, containers or provider calls.
-Manifest/dev exact pins and locks0.24; generated package projection refreshed.
-Audit docs/Audits/POP-01_Composition_Preflight.md current; module/root READMEs updated.
+NEXT REQUIRES OWNER DECISION: docs/Build Plans/POP-01.08 Artifact ancestry
+footprint decision.md. Async approval requested this turn, no answer yet.
+POP-01.06 requires review of further public routes. No new endpoint/DTO implemented.
+Existing read APIs expose derivation only, not full conversion ancestry; retention
+closure inspection requires retention authority. Proposed GET /v1/artifacts/{id}/
+ancestry-footprint uses existing read grant and returns root/count/content bytes/
+existing closure-membership digest only. Read-only transaction, no grants/writes/
+payload I/O/migration. Read exact proposal before implementation. On approval,
+record it, implement/qualify that exact Data boundary, then integrate source
+footprints and finish full history/binding-I/O/spec/admission resource assessment.
+Repeated typed-material/population composition and E2.4 matrix remain later.
 
-NEXT: CONTINUE E2.3 publication/retained-history/validation-I/O preflight.
-Pushed73dc9991: composition/ancestry.py PublicationLedger and11 tests.
-Explicit complete prospective DAG, external parents never inferred, direct128 and
-4096 identities INCLUDING result; shared ancestry deduplicated. Focused26 pass
-(structure15+ancestry11), source412/installed410 and13 boundaries pass.
-Independent build pop01-composition-ancestry-search-install-20261015b.
-Build a failed UNC/mapped-drive UV lock interpretation; b consistently maps Z:,
-no lock change. Source suite needs --import-mode=importlib.
-Pushed7d65a401 pages.py PageEnvelope/PageFootprint and10 tests: focused36,
-source422 PASS. Installed build pop01-composition-pages-search-install-20261015a
-suite420 PASS. Caller-established row/header upper bytes, comma accounting,
-byte/row page split and combined family/history512-page/64MiB budgets.
-Current uncommitted header/cost integration: json_bounds.py closed bounded schema
-byte estimator + PageEnvelope.population seven public DTO profiles. Focused56PASS.
-Header component qualified source442/installed440 in
-pop01-composition-header-search-install-20261015a; no peers.
-New publications.py NumericPublicationProfile +10 tests; production1000birth seed
-fixture asserts its real publication count fits the bound. Focused68incl2seedPASS.
-Final source452 / installed450 PASS,13 boundaries/guard PASS; commit/push next.
-Independent final root pop01-composition-cost-search-install-20261015a.
-Counts every numeric operation incl adapters/120groups/retries, checks exact
-release/image/contract including zero-callbindings. Worker maxbytes plus graph
-declared binding bytes; no graph materialization262144 assumption. CPU,owner I/O,
-external source evidence/fullclosure/future row suitability still incomplete.
-No fabricated refs or external I/O in assessor; unbounded shapes reject.
-Continue reviewed worker cost-profile integration. Primitives alone do not complete E2.3. No API/DTO/worker behavior changes, no containers/provider calls.
-Use production source to derive reviewed per-operation publication/row/page/root/
-parent/envelope costs; don't guess worker overhead from method count. Candidate
-membership/RNG must stay separate from operational batch choices within declared
-maxima. Source inspection confirms collection already publishes ONE evidence
-Artifact PER METHOD (PrimaryOwnerEvidence), not an unbounded whole-graph blob.
-Do not add unnecessary paging or widen caps based on that mistaken assumption.
+Search0.24 final component:467 source PASS (one frozen-workspace exclusion),465
+installed PASS,81 focused composition,guard/13 boundaries PASS. Endpoint pins exact.
+Final independent .test-results/pop01-composition-io-search-install-20261015a/
+environment/Scripts/python.exe; no Data/Runtime/Planning/Process Mapping impls,
+SQLAlchemy/FastAPI. Source pytest needs --import-mode=importlib. All sessions done.
+Earlier batch install a458/b459 preceded seed-I/O code and are not final.
 
-GraphWorkBounds currently bounds graph structure only. Spec/release pins, complete
-worker publication/ancestor closure and external source ancestry, row/page/root
-bytes and actual validation reads remain; unknown profiles must reject before
-scientific dispatch. Existing resource DTO is campaign-invocation-cap-v1 /
-max_active_attempts1..8 through graph.admit_draft_bounded (public campaign_resources).
-It is active capacity, NOT a queue bound. Runtime remains sole compiler/admitter/
-claim authority. Pure authoring assessment can precede admission with exact immutable
-request identity; don't invent a new read API/review blocker without checking that.
+composition contains GraphWorkBounds,PublicationLedger,PageEnvelope/PageFootprint,
+bounded closed JSON-schema header assessor,NumericPublicationProfile,
+PrimaryBatchLoop and SeedValidationIoProfile. Cost review FIXED Search0.24.0/SDK0.4.0,
+not automatic installed-version adoption. Unknown profiles/bindings reject even
+with zero expansions. Source-adjacent README and POP-01_Composition_Preflight audit
+own complete limits. Header/row maxima do not prove arbitrary future DTO suitability.
+Prepared-root maximum82 parents is within128 (earlier exceed128 note was incorrect).
 
-Production references already read: population_workers/generation_publication.py,
-slices.py, collection.py, assembly.py and population/planning.py. Generation publisher
-emits ALL births including dispositions, birth/cohort/slot pages+roots+prepared;
-slice emits contexts+slice root; collector emits per-method evidence, key/observation
-pages/manifests/resolution/root; fitness emits proof/pool/fitness pages+roots/result.
-publish_root groups direct references in120s. Prepared root DIRECT pins include
-method definition/policy/constraints/context/knowledge/method conditions, so valid
-declared maxima total at most82 direct parents including the successor
-ancestry/carrier (3+32context+32knowledge+8conditions+4roots+2ancestry+1carrier).
-Earlier note claiming these maxima exceed128 was incorrect. Complete external
-ancestry and accumulated history still need assessment.
-Continue targeted source reads before implementing the next cost profile. E2.3
-full authored material/population composition and E2.4 batch/cap matrix still later.
+Actual .test-results/pop01-authored-batch-http-20261015b passed16 candidates in two
+8-member batches, disjoint contexts/exact objectives/actual cursor feedback,
+Data AND Runtime restarted between batches, completedspent19. Installed Search
+pre-dispatch checked public owner plan identity and146 activations/queue6/attempt
+upper201 vs budget256/publication upper127successful/375allattempts. External
+ancestry is controlled-fixture only. Probe a used old single-slice driver and failed
+on second slice; both owned a/b containers/processes removed, volumes preserved.
+Only original demo containers run. No provider calls or original service changes.
+
+Independent Search export->Runtime compile batch1/8/32 passes in
+.test-results/pop01-batch-compile-io-installed-20261015a. Initial a/b rejected
+narrowing public max32 collections and scalar ArtifactRef projection; fixed by
+keeping32 in projection/scatter and explicit prepared capture. Structural method
+upper counts differ across batches, not actual equivalence proof. Initial request
+must be authored at0 with matching prepared/batch and frozen spec maxima.
+
+Seed-I/O profile supports gen0 seed/slice/numeric methods only; rejects successors/
+unknowns. Accounts full-page revalidation,2Data GET/read, SDK3POST+2GET command
+recovery, renew+snapshot, publications and claim/failure/complete. Excludes graph
+binding I/O/polling/owner SQL/operator confirms. No latency/throughput claim.
+.test-results/pop01-batch-preflight-io-20261015a is POST-RUN envelope evaluation of
+b's retained plan, NOT measured traffic or prior-dispatch I/O proof. Original
+pre-dispatch evidence in b is preserved. dev/verify_population_batch_compile.py
+exports/authors/assesses public packets or compiles in separate installed owners;
+--population-batch in verify_retention_closure_installation.py owns HTTP proof.
+
+Other retained boundaries: protected closure4096 INCLUDING root, direct128,
+publish_root grouping120, artifact262144,row8192,page64rows/131072bytes,
+aggregate512pages/64MiB. Do not raise caps or infer leaves from derivation404.
+Collection already emits one evidence Artifact per method. Operational batch/active
+settings stay within fixed scientific spec maxima; never change spec to claim RNG
+invariance. Public campaign-invocation-cap-v1 bounds active attempts1..8, NOT queue.
 
 ## Qualified Process0.3 summary
 
