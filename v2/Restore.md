@@ -1,6 +1,6 @@
 # Restore
 
-Refreshed: 2026-10-15 19:01:00 America/Chicago. Read with AGENTS.md.
+Refreshed: 2026-10-15 19:35:16 America/Chicago. Read with AGENTS.md.
 
 ## Task and workspace
 
@@ -26,64 +26,72 @@ Audits docs/Audits/POP-01_Population_*.md own detailed evidence. Seven frozen so
 hashes matched original. Full v1 verifier reports pre-existing ADDED v1/LICENSE only;
 never modify v1/regenerate manifest. Sparse v1 intentionally omitted.
 
-## Current checkpoint: E2.2 worker exit complete;0.3 qualified, commit/push next
+## Current checkpoint: E2.3 structural bounds qualified; next publication/IO ledger
 
-Process-mapping0.3 adds transform-materials and derive-process operations; default
-map-materials/qualified four mapping payload hashes stay exact. Shared DTOs unchanged.
-Tool-owned transform result has known attempt locator only, NO future completion ID.
-Assembler obtains signed snapshot header(limit1), known node detail and canonical
-producer (3 GETs, no graph enumeration). NO renewal between signed snapshot/detail;
-next immutable producer read may refresh normally. Exact source request/attempt/
-fence/scope/Data origin/actor/publication IDs/parents and full state replay verified.
-Then ProcessDerivation uses ACTUAL transform completion, with collection/batch root.
-Current lease only; accepted historical source needs no old lease. No owner API added.
-Synthetic states preserve first representation but leave physical quantities/
-composition/phase/batch unknown, with unknown conservation/feasibility explicit.
+Pushed da76b71e Process0.3/completeE2.2 worker exit. E2=50%, Execution37.5%,
+parent12.5%, Build18.75%, Verification0. E2.3 remains0 until FULL composition gate.
 
-58 source/58 independently installed checks PASS. Guard/13 boundaries and750 shared
-schemas PASS;24 Search endpoint+4 Process mapping schema pins unchanged. Final
-independent .test-results/pop01-process-transform-install-20261015c complete (no
-Search/Data/Runtime/Planning implementations, SQLAlchemy/FastAPI). Package/dev exact
-pins and locks0.3; generated package projection refreshed. All final code in c.
+Uncommitted Search0.24 first bounded preflight component independently verified:
+composition.GraphWorkBounds (new source-adjacent README/tests/composition).
+Counts all authored activations/scopes/invokes and binding budgets, with scatter
+max_members for work vs active-child max_parallel for queue. Serial loop iterations
+multiply work but not queue width. Includes all branch work (no optimistic pruning),
+empty-scatter binding identity, checked safe integers/depth16 and retry budgets.
+Active attempt cap cannot disguise >256 queue. Definition and compiled document/
+definition hashes verified against caller's expected plan hash. This is NOT owner
+admission, semantic graph validity or full artifact/resource preflight.
 
-ACTUAL final c probes PASS, all drivers0/owned containers and child services removed:
-- pop01-process-transform-restart-http-20261015c:3 inputs->2 states, both owners
-  restarted before derivation, actual source producer recovered, known synthetic
-  input physical properties NOT copied,12 confirmed artifacts/completedspent3;
-  assembler retention GET403.
-- pop01-process-transform-missing-http-20261015c: required role missing, terminal
-  derivation_required_port, blockedspent2/no derivation output.
-- pop01-process-transform-cross-http-20261015c: cross-candidate source rejected,
-  material_context_or_bytes, blockedspent2/no output.
-- pop01-process-mapping-regression-http-20261015c: keyed1 pair+1 exclusion,
-  9 confirmed artifacts/completedspent2.
-All under .test-results; no running test sessions. Earlier normal a hit fixture
-readiness (fixed bounded pending loop); normal b exposed missing required snapshot
-lookup (fixed client+regression test). Failed fixtures also fully removed. Earlier
-builds a/b retained diagnostics. Final rejection codes are safe owner constants;
-legacy mapping generic failure behavior preserved.
-Audit POP-01_Material_Transform_Workers and POP-01_E2_2_Worker_Exit own evidence,
-drift/accounting. Source worker/fixture scripts process_transform_bootstrap.py and
-process_transform_fixture.py are TEST-ONLY controller/source; real tool worker is
-independently installed. Driver --process-python <finalc> --process-transform
-[--process-transform-case missing-required|cross-context], fresh output name.
+401 source PASS (1 frozen-baseline check excluded as before);399 independently
+installed PASS,15 focused composition checks. Guard/13 boundaries and750 shared
+schema publication PASS;24 endpoint pins unchanged. Final independent build:
+.test-results/pop01-composition-work-search-install-20261015b/environment/Scripts/python.exe;
+no Data/Runtime/Planning/Process Mapping implementations, SQLAlchemy/FastAPI.
+Earlier a build passed396 before3 identity tests; finalb contains all current code.
+No new worker behavior/DTO/API/scientific algorithm, containers or provider calls.
+Manifest/dev exact pins and locks0.24; generated package projection refreshed.
+Audit docs/Audits/POP-01_Composition_Preflight.md current; module/root READMEs updated.
 
-NEXT: commit/push this verified0.3/worker-exit checkpoint (exact paths), then proceed
-E2.3 full-wave primary numerical composition/resource preflight. Read owning
-execution plan and module boundary, inspect existing primary publication/slice/
-capacity costs and PUBLIC resource-admission contracts before implementation.
-Cover full orchestration/retries/queue/envelopes/ancestry/validation I/O, not method
-floor alone. Keep frozen membership/RNG independent from actual batch1/8/32 and cap
-1/4/8; these are operational choices within declared maxima, not new scientific
-specification. Preserve admitted-plan/spec identity and reject unsupported shapes
-before scientific dispatch. Existing read/admission APIs preferred; no invented
-new review blocker. Fully authored multistage/population composition then E2.4
-actual matrix remain. No reset of complete worker unit for later adapter refinements.
+NEXT: update current canonical checkpoint/Restore, commit/push this verified bounded
+component, then CONTINUE E2.3 publication/retained-history/validation-I/O preflight.
+Use production source to derive reviewed per-operation publication/row/page/root/
+parent/envelope costs; don't guess worker overhead from method count. Candidate
+membership/RNG must stay separate from operational batch choices within declared
+maxima. Source inspection confirms collection already publishes ONE evidence
+Artifact PER METHOD (PrimaryOwnerEvidence), not an unbounded whole-graph blob.
+Do not add unnecessary paging or widen caps based on that mistaken assumption.
 
-Pushed9410969b Process0.2 mapping had32 source/32 installed and actual pairwise2,
-keyed1+1 exclusion, Cartesian4, cross-context rejection. Details in its audit;
-0.3 regressions retain its schema/behavior. Original review remains frozen.
-ZERO provider calls in all current work. Continue until needed remains authorized.
+GraphWorkBounds currently bounds graph structure only. Spec/release pins, complete
+worker publication/ancestor closure and external source ancestry, row/page/root
+bytes and actual validation reads remain; unknown profiles must reject before
+scientific dispatch. Existing resource DTO is campaign-invocation-cap-v1 /
+max_active_attempts1..8 through graph.admit_draft_bounded (public campaign_resources).
+It is active capacity, NOT a queue bound. Runtime remains sole compiler/admitter/
+claim authority. Pure authoring assessment can precede admission with exact immutable
+request identity; don't invent a new read API/review blocker without checking that.
+
+Production references already read: population_workers/generation_publication.py,
+slices.py, collection.py, assembly.py and population/planning.py. Generation publisher
+emits ALL births including dispositions, birth/cohort/slot pages+roots+prepared;
+slice emits contexts+slice root; collector emits per-method evidence, key/observation
+pages/manifests/resolution/root; fitness emits proof/pool/fitness pages+roots/result.
+publish_root groups direct references in120s. Prepared root DIRECT pins include
+method definition/policy/constraints/context/knowledge/method conditions, so valid
+independent maxima can exceed128; preflight must reject before publication.
+Continue targeted source reads before implementing the next cost profile. E2.3
+full authored material/population composition and E2.4 batch/cap matrix still later.
+
+## Qualified Process0.3 summary
+
+Final independent pop01-process-transform-install-20261015c:58 source/58 installed.
+Actual final c restart3 inputs->2 states, BOTH owners restarted before derivation,
+ACTUAL source producer pointer/12 artifacts/completedspent3/retention GET403.
+Missing required role and cross-context terminally block spent2/no output. Keyed
+mapping0.3 regression1 pair+1 exclusion/9 artifacts/spent2. All drivers0/owned
+containers+child services removed, volumes and original review preserved. Source
+lookup uses THREE bounded GETs (snapshot limit1, signed known node, producer), with
+no own renewal between snapshot/detail. No old source lease required. Audits
+POP-01_Material_Transform_Workers and POP-01_E2_2_Worker_Exit own full evidence.
+ZERO provider calls. Continue until needed remains authorized.
 
 ## Prior qualified Search checkpoints
 

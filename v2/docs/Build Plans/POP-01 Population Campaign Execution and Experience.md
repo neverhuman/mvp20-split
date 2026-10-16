@@ -1,11 +1,11 @@
 # POP-01 Population Campaign Execution and Experience
 
-Current E2 checkpoint: E2.1/E2.2 complete; E2.3 authored composition/resource preflight active. Process0.3 actual transform/restart/accepted derivation and rejection cases qualified. E2=50%, Execution37.5%, parent12.5%, Build18.75%, Verification0.
+Current E2 checkpoint: E2.1/E2.2 complete; E2.3 authored composition/resource preflight active. Process0.3 actual transform/restart/accepted derivation and rejection cases qualified. E2=50%, Execution37.5%, parent12.5%, Build18.75%, Verification0. Search0.24 structural bounds/identity independently verified; full publication/IO ledger remains.
 
 ## Canonical tracker
 
 - Status: active POP-01.01/E2 bounded dispatch; before ML-01.
-- Last refreshed: 2026-10-15 18:57:17 (America/Chicago).
+- Last refreshed: 2026-10-15 19:35:41 (America/Chicago).
 - Scope revision: POP-01.04 and POP-01.05 approved; E1 complete, E2 active.
 - Overall implementation: 12.5%; Execution37.5%, Experience0%, Qualification0%.
   Three equally weighted children, each with four equal delivery gates. Parent

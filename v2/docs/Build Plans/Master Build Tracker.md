@@ -1,6 +1,6 @@
 # Master Build Tracker
 
-Latest checkpoint: 2026-10-15 18:57:17: E2.2 worker unit complete; E2.3 authored composition/resource preflight active. E2=50%, Execution37.5%, parent12.5%, Build18.75%, Verification0%. RG-01 follows whole POP-01 before ML-01.
+Latest checkpoint: 2026-10-15 19:35:41: Search0.24 structural preflight independently qualified (401 source/399 installed); publication/ancestry/validation-I/O ledger next. E2.3 stays0; E2=50%, Execution37.5%, parent12.5%, Build18.75%, Verification0%. RG-01 follows whole POP-01.
 
 ## Purpose and Authority
 
@@ -11,13 +11,15 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 ## Program Tracker
 
 - Status: POP-01.01/E2 active; UI-01/UI-02 closed100%, LR-01 paused25%.
-- Last refreshed: 2026-10-15 18:57:17 (America/Chicago).
+- Last refreshed: 2026-10-15 19:35:41 (America/Chicago).
 - Baseline: approved [POP-01.04](POP-01.04%20Population%20contract%20decision.md).
 - Current priority/task: POP-01.01 E2.3 full-wave authored composition/resource preflight.
 - Next task: complete authored material/population composition, then E2.4 actual-owner matrix.
 - Implementation: parent12.5%, Build18.75%, Verification0%; Execution37.5%, Experience/Qualification0%.
   Execution E1=100%, E2=50%, E3/E4=0%; Experience U1-U4=0%, Qualification Q1-Q4=0%.
-- Latest checkpoint: E2.2 complete. Search386 source/384 installed; Process58 source/
+- Latest checkpoint: Search0.24 structural preflight source401/installed399 and15
+  focused checks pass; complete publication/ancestry/validation I/O remains.
+  E2.2 complete: Search0.23 source386/installed384; Process58 source/
   58 installed;13 boundaries/750 schemas; qualified wire pins preserved. Actual
   transform3->2, both owners restarted, accepted producer/12 retained artifacts/
   completedspent3; required-role/context rejection blocks2. Mapping regression passes.

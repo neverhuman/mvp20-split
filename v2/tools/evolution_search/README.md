@@ -1,14 +1,18 @@
 # Numeric evolutionary search boundary
 
-POP-01/E2.2 source release0.22 adds opt-in [reference-backed population workers](src/amphora_evolution_search/population_workers/README.md)
+POP-01 source release0.24 includes opt-in [reference-backed population workers](src/amphora_evolution_search/population_workers/README.md)
 for synthetic generation0 seed/slice, dimensionless numerical methods, authoritative
 collection, explicit fitness/initial selection, generation1 preparation and accepted
 successor slicing/numerical methods/collection, parent-preserving whole-pool fitness
-and later-generation selection/continuity with cumulative progress.
+and later-generation selection/continuity with cumulative progress and exact
+repeated-loop occurrence affinity.
 Preparation preserves accepted parents/RNG and current budget limits without
-inventing future inputs. Generic loop scope affinity and the complete authored loop
-remain unfinished E2.2/E2.3 gates.
-375 source/373 independently installed checks pass; the seven-file frozen reuse
+inventing future inputs. The E2.2 worker unit is complete; E2.3 full authored
+composition/resource preflight and the E2.4 matrix remain unfinished.
+[Composition preflight](src/amphora_evolution_search/composition/README.md) now has
+pure structural work/queue/retry and plan-identity bounds; this is a partial resource
+assessment, not admission authority or full publication/I/O feasibility.
+401 source checks pass; independent evidence is in the owning audit. The seven-file frozen reuse
 audit was verified separately against the original read-only baseline because this
 worktree omits v1. Legacy numeric CLI modes remain separate;
 the serving demo remains on its frozen installation.
@@ -20,7 +24,7 @@ the serving demo remains on its frozen installation.
   No0.12 Runtime/Registry deployment is claimed;
   the installed0.5 baseline and frozen demo remain independently pinned.
 
-- Owner: BP-08.02; package 0.5.0. Current-release image, Registry, independent installation and actual-owner replacement/recovery checks passed 2026-10-06 12:46:43 (America/Chicago).
+- Historical frozen baseline owner: BP-08.02; package 0.5.0. Its image, Registry, independent installation and actual-owner replacement/recovery checks passed 2026-10-06 12:46:43 (America/Chicago).
 - Scope: finite continuous numerical search primitives; independent Python implementation, not a verified v1 port.
 - Design: [Search](../../docs/Architecture/Campaigns/Search.md); [activation](../../docs/Audits/BP-08.01_Activation.md).
 

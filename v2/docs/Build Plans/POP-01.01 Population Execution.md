@@ -1,7 +1,7 @@
 # POP-01.01 Population Execution
 
 - Status: active E2; parent [POP-01](POP-01%20Population%20Campaign%20Execution%20and%20Experience.md).
-- Last refreshed: 2026-10-15 18:57:17 (America/Chicago).
+- Last refreshed: 2026-10-15 19:35:41 (America/Chicago).
 - Implementation: 37.5%; E1=100%, E2=50%, E3/E4=0%, four equal delivery gates.
 - Current: E2.1/E2.2 complete; E2.3 authored composition/resource preflight active.
 - Next: full-wave primary numerical composition preflight, then complete authored
@@ -11,6 +11,11 @@
   artifact/envelope/ancestry and validation I/O costs. Preserve membership/RNG when
   operational batch/active limits change. Observed method capacity is no reservation.
   Use existing public APIs/DTOs; unsupported combinations reject before dispatch.
+- E2.3 bounded structural component qualified: Search0.24 source401/installed399,
+  15 focused bounds/identity checks,13 boundaries/750 schemas/24 endpoint pins.
+  Full expanded work includes all tools/retries and queue width; compiled plan/
+  definition identity checked. Publication/ancestry/envelopes/validation I/O remain;
+  no full-unit credit. [Evidence](../Audits/POP-01_Composition_Preflight.md).
 - E2.2 worker unit complete: Search0.23 source386/installed384; Process0.3 source58/
   installed58,13 boundaries/750 schemas,24 Search+4 Process schema pins preserved.
   Actual transform3 inputs->2 outputs, both owners restarted, true producer pointer,
