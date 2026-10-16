@@ -59,12 +59,24 @@ Explicit complete prospective DAG, external parents never inferred, direct128 an
 Independent build pop01-composition-ancestry-search-install-20261015b.
 Build a failed UNC/mapped-drive UV lock interpretation; b consistently maps Z:,
 no lock change. Source suite needs --import-mode=importlib.
-Qualified pages.py PageEnvelope/PageFootprint and10 tests: focused36,
+Pushed7d65a401 pages.py PageEnvelope/PageFootprint and10 tests: focused36,
 source422 PASS. Installed build pop01-composition-pages-search-install-20261015a
 suite420 PASS. Caller-established row/header upper bytes, comma accounting,
 byte/row page split and combined family/history512-page/64MiB budgets.
-Commit/push after audit/tracker update, then continue reviewed
-worker cost-profile integration. Primitives alone do not complete E2.3. No API/DTO/worker behavior changes, no containers/provider calls.
+Current uncommitted header/cost integration: json_bounds.py closed bounded schema
+byte estimator + PageEnvelope.population seven public DTO profiles. Focused56PASS.
+Header component qualified source442/installed440 in
+pop01-composition-header-search-install-20261015a; no peers.
+New publications.py NumericPublicationProfile +10 tests; production1000birth seed
+fixture asserts its real publication count fits the bound. Focused68incl2seedPASS.
+Final source452 / installed450 PASS,13 boundaries/guard PASS; commit/push next.
+Independent final root pop01-composition-cost-search-install-20261015a.
+Counts every numeric operation incl adapters/120groups/retries, checks exact
+release/image/contract including zero-callbindings. Worker maxbytes plus graph
+declared binding bytes; no graph materialization262144 assumption. CPU,owner I/O,
+external source evidence/fullclosure/future row suitability still incomplete.
+No fabricated refs or external I/O in assessor; unbounded shapes reject.
+Continue reviewed worker cost-profile integration. Primitives alone do not complete E2.3. No API/DTO/worker behavior changes, no containers/provider calls.
 Use production source to derive reviewed per-operation publication/row/page/root/
 parent/envelope costs; don't guess worker overhead from method count. Candidate
 membership/RNG must stay separate from operational batch choices within declared

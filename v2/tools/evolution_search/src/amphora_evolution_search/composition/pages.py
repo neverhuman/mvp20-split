@@ -3,6 +3,7 @@ from dataclasses import dataclass
 
 from ..ranking import require
 from .work import add,multiply
+from .json_bounds import bounded_json_bytes
 
 
 @dataclass(frozen=True)
@@ -31,6 +32,20 @@ class PageEnvelope:
         size=add(multiply(rows,self.row_bytes),multiply(count,self.header_bytes))
         size=add(size,rows-count)
         return PageFootprint(count,size)
+
+    @classmethod
+    def population(cls,model,*,row_bytes=8192):
+        """Derive a complete header upper bound from a reviewed public page DTO."""
+        from amphora_contracts_population import (BirthPage,MembershipPage,EvaluationSlotPage,
+            EvaluationKeyPage,MethodObservationPage,FitnessPage,SelectionPage)
+        fields={BirthPage:"records",MembershipPage:"members",EvaluationSlotPage:"records",
+            EvaluationKeyPage:"records",MethodObservationPage:"records",FitnessPage:"records",
+            SelectionPage:"members"}
+        require(model in fields,"composition_population_page_profile")
+        schema=model.model_json_schema()
+        # Bounds the actual empty-array envelope; no synthetic ArtifactRef or DTO.
+        schema["properties"][fields[model]]={"const":[]}
+        return cls(row_bytes,bounded_json_bytes(schema))
 
 
 @dataclass(frozen=True)

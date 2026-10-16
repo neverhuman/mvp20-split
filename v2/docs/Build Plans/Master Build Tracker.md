@@ -1,6 +1,6 @@
 # Master Build Tracker
 
-Latest checkpoint: 2026-10-15 19:43:00: Search0.24 ancestry and byte-aware page primitives qualified (422 source/420 installed); worker cost profiles and validation-I/O integration next. E2.3 stays0; E2=50%, Execution37.5%, parent12.5%, Build18.75%, Verification0%. RG-01 follows whole POP-01.
+Latest checkpoint: 2026-10-15 19:43:00: Search0.24 numeric publication/header profiles qualified (452 source/450 installed); complete ancestry, validation I/O and authored loop next. E2.3 stays0; E2=50%, Execution37.5%, parent12.5%, Build18.75%, Verification0%. RG-01 follows whole POP-01.
 
 ## Purpose and Authority
 

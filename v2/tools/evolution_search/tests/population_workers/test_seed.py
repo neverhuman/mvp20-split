@@ -26,6 +26,12 @@ def test_thousand_birth_seed_retains_every_published_child(worker_artifacts):
     assert set(e.client.parents) <= seen
     assert len(seen) <= 4096
     assert all(len(parents) <= 128 for parents in e.client.parents.values())
+    from amphora_evolution_search.composition.publications import NumericPublicationProfile
+    from amphora_evolution_search.population_workers.capabilities import PopulationCapability
+    image="f"*64
+    costs=NumericPublicationProfile(e.original.record,image)
+    binding=PopulationCapability("seed").descriptor(image).tool.binding
+    assert len(e.client.parents)<=costs.per_call(binding)
     assert seed.publish(e.session) == root
 
 

@@ -48,3 +48,27 @@ These supplied maxima still require per-profile evidence; this primitive does no
 prove an arbitrary future DTO fits its row envelope. Ten focused tests exercise
 byte-first splitting, row-first splitting, exact byte fit, empties, combined closure
 and invalid/overflow counts.
+
+PageEnvelope.population derives full header maxima for seven reviewed public
+population page DTOs. The bounded JSON-schema subset includes closed objects,
+finite arrays, bounded strings/integers, literals and local acyclic references;
+unbounded numbers/maps/strings and unsupported shapes reject. It charges all
+optional/default fields and worst JSON string escaping. No prospective ArtifactRef
+is fabricated. Row maxima still require the reviewed operation's enforcement or
+a stronger per-row proof. The size assessor does not validate payloads or establish
+owner admission. Tests include large valid public metadata and escaping.
+
+NumericPublicationProfile maps every named numeric population operation to a
+source-reviewed publication upper count using the frozen population/method maxima
+and schema-derived headers with enforced8192-byte row caps. Counts include all
+birth dispositions, contexts, method outputs/evidence, manifests, proofs, checkpoints,
+request adapters, successor preparation and120-reference grouping intermediaries.
+Unknown capabilities and mismatched release/image/contract pins reject, including
+zero-expanded bindings. The graph's materializations are counted once; every worker
+call receives its full retry allowance. Content storage upper bytes use worker
+262144-byte caps plus graph-declared binding bytes (including conservative read
+budgets), not an assumed cap for graph materialization. CPU, provider/storage
+overhead, validation I/O, complete ancestry and actual future row suitability remain
+outside this component. Per-call publication counts above4096 reject. This component
+may conservatively reject large configurations pending tighter row profiles.
+The1000-birth production publication fixture stays below its assessed seed bound.

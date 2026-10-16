@@ -11,6 +11,10 @@
   artifact/envelope/ancestry and validation I/O costs. Preserve membership/RNG when
   operational batch/active limits change. Observed method capacity is no reservation.
   Use existing public APIs/DTOs; unsupported combinations reject before dispatch.
+- E2.3 numeric publication/header profile qualified: source452/installed450,
+  66 focused composition checks, real1000-birth count bound and13 boundaries.
+  Exact operation/release/image pins, grouping/retries/binding bytes included.
+  Complete ancestry, validation I/O and authored loop still open.
 - E2.3 byte-aware page primitive qualified: source422/installed420,36 focused
   checks. Row/header upper bytes remain caller-established; profile integration
   and validation I/O remain open. No E2.3 full-unit credit.

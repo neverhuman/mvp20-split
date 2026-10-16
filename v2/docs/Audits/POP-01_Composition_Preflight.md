@@ -75,6 +75,34 @@ policy,constraints +32context +32knowledge +8methodconditions +4generation roots
 +2successor ancestry +1admitted carrier. Deduplication can only reduce this count.
 This does not bound the complete ancestry of those sources or later history.
 
+## Reviewed numeric publication profile
+
+Schema-derived headers now cover seven public population page families. The closed
+bounded schema assessor counts all fields/defaults, escaping and local acyclic
+references; unbounded/unsupported shapes reject. No synthetic reference is made.
+Header-only checkpoint source442/installed440 passed. Final combined checkpoint:
+source452 (same one exclusion), independent450,66 focused composition checks and
+2 seed checks pass. Production guard/13 boundaries pass; endpoint pins are included
+in full suites. Final independent root:
+`.test-results/pop01-composition-cost-search-install-20261015a`.
+
+NumericPublicationProfile accounts for every reviewed numeric population operation,
+using frozen N/method maxima and byte-aware pages. It includes all birth
+dispositions, method/context/evidence outputs, manifests, source proofs, checkpoints,
+request adapters, successor publications and120-reference groups. Every graph
+worker call receives the full retry allowance; builtin materialization counts once.
+Worker content upper bytes use262144 per artifact plus graph-declared binding bytes.
+Exact current release/image/contract pins are required, including zero-call bindings;
+unknown profiles reject. More than4096 upper publications per attempt reject.
+The actual1000-birth worker fixture stays under its predicted seed count.
+
+The row cap is an enforced worker ceiling, not proof that future arbitrary payloads
+fit: large configurations can conservatively reject until tighter profiles exist.
+Receipt/database/provider overhead, CPU, validation I/O and complete external/
+prospective ancestry are still outside this component. A positive publication
+count does not establish admission or execution authority. The full gate stays open.
+No production worker behavior/DTO/API changes, test containers or provider calls.
+
 ## Reviewed publication cardinalities for the next profile
 
 Let B be ALL generated births (including duplicate/rejected dispositions), C the
