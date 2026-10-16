@@ -7,6 +7,11 @@ UI-01/UI-02 children under their family folders, with completed children in Comp
 Parent trackers remain central. Execution tracker now explains named phases and accounting.
 No implementation percentages changed.
 
+Owner tangent completed 2026-10-16: four-slide VC evidence deck in
+docs/Images/V1_Evidence/ (PPTX/PDF/PNGs, source notes and hashes), also copied to
+original v2/docs/Images/V1_Evidence for access. Read-only v1 receipts; no training,
+provider calls or services changed. POP-01 implementation checkpoint unchanged.
+
 ## Task and workspace
 
 Continue until needed remains authorized. Primary POP-01.01/E2.3 authored composition/resource preflight.

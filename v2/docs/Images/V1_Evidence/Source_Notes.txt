@@ -1,0 +1,39 @@
+V1 EVIDENCE SLIDES — SOURCE AND SPEAKER NOTES
+Prepared 2026-10-16. Presentation styling follows ComparisonSlide.png (white, charcoal, coral highlight).
+All charts/tables replot retained v1 results. No new training, experiment, signature verification or lab validation was performed.
+
+SLIDE 1 / DENSITY
+MAE 0.1327425203 -> 0.0566447055 g/cm3, a calculated 57.327% reduction.
+RadonPy labels are molecular-dynamics simulations, not measured production samples.
+Random within-corpus split: 646 train / 215 calibration / 216 test. R2 is not Pearson r.
+The source dataset name PI1070 does not determine the retained 1,077-row evaluation count.
+
+SLIDE 2 / THERMAL
+Uses the fresh, internally matched C8 comparison: 80.2999166 -> 48.7735715 K MAE, a calculated 39.261% reduction.
+265 train / 88 calibration / 89 test = 442 valid experimental OpenPoly records.
+The physics baseline was transferred from a simulated Polyuniverse fit without OpenPoly refitting.
+This is not a universal win over all physics models or state of the art.
+Do not mix this row with the separate 51.2375 K scaffold-LOSO result or its different test protocol.
+The final external-validity audit refutes novel-chemistry transfer; these slides preserve a within-corpus claim only.
+The Polyuniverse absolute-temperature unit issue is not used as a positive performance claim here.
+
+SLIDE 3 / SOLUBILITY
+Full-corpus model RMSE 0.8770255643 vs solvent-mean 1.1686915142 (24.96% reduction).
+95% cluster-bootstrap interval 0.8416341721–0.9154344725.
+Hardened subset: 94,015 groups / 1,372 solutes; RMSE 0.8741657377 vs 1.1667252776.
+517 contradictory state-point groups (1,193 raw rows) excluded from both train/test material.
+This is small-molecule solubility supporting formulation research, not polymer dissolution or drug-release validation.
+
+SLIDE 4 / EVIDENCE PROCESS
+Density stack same-run RMSE 0.0723218955 vs RF 0.0861986512, but stack MAE 0.0569032315 vs RF 0.0566934387.
+This demonstrates why choosing only a flattering metric is insufficient. No blanket claim that physics+ML always wins.
+Audit-only development signatures are not external review or scientific validation. No signing-trust claim is made.
+Dielectric positive figures from the old pack were omitted because C8 retracts the contaminated-population claim.
+Creative license is limited to titles, layout and investment framing. No invented data, scatter points, confidence intervals or competitor results.
+
+SOURCE MAP (repository-relative; SHA256 pins are in source_manifest.json)
+D1: v1/amphora-molecule-property/reference/mvp20/data/radonpy_pi1070_density_ml_and_van_krevelen_physics_receipt.v1.json
+D2: v1/amphora-molecule-property/reference/mvp20/data/stacked_ml_and_van_krevelen_physics_density_radonpy_receipt.v1.json
+T1: v1/amphora-molecule-property/benchmarks/phys-ml-stack-comparison-c8-v3-final/receipt_body.canonical.json
+S1: v1/amphora-solvency-score/evidence/audit/hansen-hardened-validation-v1/bigsoldb-admissibility-hardened-lso-receipt.v1.dsse.json
+A1: v1/amphora-molecule-property/benchmarks/tg-density-external-validity-c7-v3-final/receipt_body.canonical.json

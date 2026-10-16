@@ -1,0 +1,22 @@
+[
+  {
+    "path": "v1/amphora-molecule-property/reference/mvp20/data/radonpy_pi1070_density_ml_and_van_krevelen_physics_receipt.v1.json",
+    "sha256": "a868617a8f3cc0927f204b16493f79e902371f68e30f625228cca5a0127a22dc"
+  },
+  {
+    "path": "v1/amphora-molecule-property/benchmarks/phys-ml-stack-comparison-c8-v3-final/receipt_body.canonical.json",
+    "sha256": "0946c91c25150e4cef47f2df97ad739338c8a7ef23124b4b1bd36ee3c7545dd6"
+  },
+  {
+    "path": "v1/amphora-molecule-property/benchmarks/tg-density-external-validity-c7-v3-final/receipt_body.canonical.json",
+    "sha256": "3200eb7ac7c5631012ccc4785d8c8934eaf66d00660f138579c8ff798ebfb0b5"
+  },
+  {
+    "path": "v1/amphora-solvency-score/evidence/audit/hansen-hardened-validation-v1/bigsoldb-admissibility-hardened-lso-receipt.v1.dsse.json",
+    "sha256": "78b4cbe728941aa2a212303f7cf15c41aa5d7edd22b0d26e3c0af02bf95c7bee"
+  },
+  {
+    "path": "v1/amphora-molecule-property/reference/mvp20/data/stacked_ml_and_van_krevelen_physics_density_radonpy_receipt.v1.json",
+    "sha256": "ae031d1e913bb93165618e30aa2c1a4be132a45a3f793190a529ce8745f8a841"
+  }
+]
