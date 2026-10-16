@@ -1,5 +1,7 @@
 """Public lifecycle doubles; actual HTTP qualification is a separate gate."""
 import hashlib
+import json
+from pathlib import Path
 from datetime import UTC,datetime,timedelta
 from types import SimpleNamespace
 
@@ -18,6 +20,7 @@ class Runtime:
         self.identity.actor_id="mapping-worker"
         self.invocation=invocation;self.completed=[]
         self.until=(datetime.now(UTC)+timedelta(seconds=300)).isoformat()
+        self.revision=5
         self.no_work=False;self.uncertain=False
     def claim(self,run,binding,key,lease_seconds):
         assert binding==self.invocation.tool
@@ -25,12 +28,12 @@ class Runtime:
             invocation=self.invocation,lease_expires_at=self.until))
     def renew(self,attempt,key,lease_seconds,guard):
         guard()
-        return SimpleNamespace(outcome=SimpleNamespace(committed=SimpleNamespace(revision=5)))
+        return SimpleNamespace(outcome=SimpleNamespace(committed=SimpleNamespace(revision=self.revision)))
     def run(self,run):
         attempt=SimpleNamespace(attempt_id=self.invocation.attempt_id,fence=1,worker_id=self.identity.actor_id,
             status="leased",lease_expires_at=self.until,deadline=self.until)
-        return SimpleNamespace(status="running",revision=5,activations=[SimpleNamespace(
-            invocation_id="invoke",status="leased",fence=1,latest_attempt=attempt)])
+        return SimpleNamespace(status="running",revision=self.revision,activations=[SimpleNamespace(
+            invocation_id=self.invocation.invocation_id,status="leased",fence=1,latest_attempt=attempt)])
     def complete(self,request,key,guard):
         guard();self.completed.append(request.completion)
         if self.uncertain:raise ProtocolError("completion_unknown")
@@ -51,6 +54,13 @@ def test_schema_bytes_and_descriptor_pins_match(record):
     assert descriptor.authority_ceiling=="synthetic_only" and descriptor.egress.mode=="deny"
     assert descriptor.tool.inputs[0].schema_ref==schema_ref(*SCHEMAS["request"])
     assert descriptor.tool.outputs[0].schema_ref==schema_ref(*SCHEMAS["manifest"])
+
+
+def test_qualified_mapping_schema_bytes_stay_exact():
+    pins=json.loads(Path(__file__).with_name("predecessor-schema-pins.json").read_bytes())
+    assert set(pins)=={"request","collection","page","manifest"}
+    for record,digest in pins.items():
+        assert hashlib.sha256(MappingCapability().schema_bytes(record)).hexdigest()==digest
 
 
 def test_claim_publish_and_same_attempt_completion(material_factory):

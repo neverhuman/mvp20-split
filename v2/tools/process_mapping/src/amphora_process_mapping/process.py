@@ -40,8 +40,17 @@ class MaterialDerivation:
 
     @classmethod
     def verify(cls, artifact, context, binding, input_materials, output_materials):
-        binding = ProcessBinding.model_validate_json(binding.model_dump_json())
         record = artifact.decode(ProcessDerivation, population_record_schema("population.process-derivation"), context.generation.scope)
+        result=cls.from_record(record,context,binding,input_materials,output_materials)
+        consistent_references((artifact.reference,record.conditions,
+            *(item.artifact.reference for item in (*result.inputs,*result.outputs))))
+        return result
+
+    @classmethod
+    def from_record(cls,record,context,binding,input_materials,output_materials):
+        """Validate record semantics; Runtime acceptance is checked by its consumer."""
+        binding = ProcessBinding.model_validate_json(binding.model_dump_json())
+        record = ProcessDerivation.model_validate_json(record.model_dump_json())
         require(len(canonical(record)) <= 8192 and record.context == context, "derivation_context_or_bytes")
         require(record.tool == binding.tool and record.producer.run_id == context.generation.run_id, "derivation_producer_binding")
         require(record.conditions.scope == context.generation.scope, "derivation_conditions_scope")
@@ -57,7 +66,7 @@ class MaterialDerivation:
             revisions = [m.record.revision for m in inputs if m.record.state_id == output.record.state_id]
             require(not revisions or output.record.revision > max(revisions), "derivation_revision_regression")
             require(output.record.conditions == record.conditions, "derivation_output_conditions")
-        consistent_references((artifact.reference, record.conditions, *(m.artifact.reference for m in (*inputs, *outputs))))
+        consistent_references((record.conditions, *(m.artifact.reference for m in (*inputs, *outputs))))
         return cls(record, inputs, outputs)
 
     @staticmethod

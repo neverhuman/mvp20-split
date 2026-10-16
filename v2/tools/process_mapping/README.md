@@ -1,7 +1,8 @@
 # Process mapping boundary
 
-Owner: POP-01.01/E2.2. Version0.2.0 mapping worker is independently qualified with
-actual public-owner acceptance. No deployed service or chemistry model is claimed.
+Owner: POP-01.01/E2.2 delivery, E2.3 integration. Version0.3.0 mapping, synthetic
+transforms and accepted derivation assembly have independent actual public-owner
+acceptance. No deployed service or chemistry model is claimed.
 Design: [Multistage process graphs](../../docs/Architecture/Campaigns/Multistage_Process_Graphs.md).
 
 This independently built package owns MaterialState/ProcessDerivation validation
@@ -59,7 +60,8 @@ accepted history remains with Runtime/Data. Completion ambiguity is propagated w
 contradictory failure reporting; only a reconfirmed live attempt may report retryable
 transport failure. Structural execution profiles and attempt checkpoints are rejected.
 CPU/Linux/x86_64 descriptor resources are fixture bounds, not image/host attestation.
-Synthetic material-transform workers and multistage composition remain unfinished.
+Synthetic material-transform workers are qualified below; complete authored
+multistage composition remains unfinished.
 
 Verification:32 source and32 independently installed domain/publication/lifecycle
 checks pass, including complete
@@ -71,6 +73,48 @@ material rejects terminally and blocks its graph without a result root. All owne
 test containers and child services removed; no provider calls. Existing pure19-stage
 lineage coverage remains distinct from those actual worker proofs.
 [Worker audit](../../docs/Audits/POP-01_Material_Mapping_Worker.md) owns exact evidence.
+
+## Synthetic transforms and accepted derivation
+
+Version0.3 adds --operation transform-materials or derive-process to describe/worker;
+the default remains map-materials. Four qualified mapping schema bytes stay exact.
+TransformMaterialsRequest pins ProcessBinding roles/cardinalities, exact input states,
+explicit optional absence, conditions and copy-first-representation-v1. The synthetic
+tool publishes new logical intermediate states with the first input representation,
+unknown composition/amount/phase/physical batch, and explicit unknown conservation/
+reaction feasibility. State identity includes the graph activation, remaining stable
+across retries but distinct across occurrences. The existing8192-byte derivation row
+has a conservative size check before any child publication; field maxima do not
+guarantee every combination fits.
+
+ProposedProcessTransform contains only known activation/invocation/attempt/fence
+locators, not an invented completion ID or acceptance claim. The separate assembler
+reads a bounded snapshot header, its known node detail and successful producer,
+verifies the
+actual canonical settled attempt/output/request, and checks Data origin/actor,
+attempt-derived publication IDs, exact ancestry and deterministic output replay.
+It then publishes ProcessDerivation with the ACTUAL transform completion pointer,
+a MaterialCollection for later mapping/scatter, and a DerivedMaterialBatch root.
+The derivation publisher's Data identity stays distinct from its source transform
+producer. Historical source acceptance does not require the old worker lease.
+The snapshot/detail pair uses one signed cut without an intervening lease renewal;
+the next immutable producer read may refresh the current attempt normally.
+
+The assembler needs Runtime read+inspect_receipts in addition to ordinary worker
+actions; no new route or retention grant is introduced. Only the current assembler
+attempt is renewed. Data publications retain admitted carriers and complete source
+ancestry through explicit parent trees. Same-release/image transforms are the initial
+accepted-source profile; exact older releases keep their retained workers/history.
+Shared population DTOs and existing mapping payload hashes remain unchanged.
+
+58 source/58 independently installed checks pass. Actual3-input/2-output transform
+and derivation survive BOTH owner restarts, use the actual accepted producer pointer,
+confirm12 artifacts and complete spent3. Missing required role/cross-context input
+terminally block spent2. Current-package keyed mapping regression confirms9 artifacts
+and completes spent2. The assembler's retention GET returns403; no retention grant.
+All owned temporary containers/child services removed. [Transform evidence](../../docs/Audits/POP-01_Material_Transform_Workers.md)
+and [complete worker exit](../../docs/Audits/POP-01_E2_2_Worker_Exit.md) own the scoped
+qualification. Authored composition/resource preflight and batch/cap matrix remain.
 
 Tests: `tests/lineage` and `tests/mapping`, registered as `process-mapping` scope.
 Replacement must preserve exact public schemas, canonical bytes, rejection reasons,

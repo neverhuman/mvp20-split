@@ -1,18 +1,23 @@
 # POP-01.01 Population Execution
 
 - Status: active E2; parent [POP-01](POP-01%20Population%20Campaign%20Execution%20and%20Experience.md).
-- Last refreshed: 2026-10-15 18:06:18 (America/Chicago).
-- Implementation: 31.25%; E1=100%, E2=25%, E3/E4=0%, four equal delivery gates.
-- Current: E2.1 complete; E2.2a closure-retention prerequisite qualified. E2.2 population workers active.
-- Next: registered synthetic material transforms, then authored composition.
-- Active bounded task: add a bounded synthetic material transform and accepted
-  derivation assembly through public SDK/contracts. ProcessDerivation producer
-  pointers must use actual accepted completion proofs, never invented future IDs.
-  Preserve exact candidate/generation/process-batch identity, role/cardinality pins,
-  new state revisions, explicit unknowns and complete ancestry. No reaction,
-  conservation or physical material-production inference. Independent package
-  and actual public-owner acceptance required before E2.3 composition.
-  Whole E2.2 remains0; later composition/preflight and batch/cap matrix stay open.
+- Last refreshed: 2026-10-15 18:57:17 (America/Chicago).
+- Implementation: 37.5%; E1=100%, E2=50%, E3/E4=0%, four equal delivery gates.
+- Current: E2.1/E2.2 complete; E2.3 authored composition/resource preflight active.
+- Next: full-wave primary numerical composition preflight, then complete authored
+  material/population composition and E2.4 batch/cap matrix.
+- Active bounded task: validate full admitted-plan/spec identity and resource bounds
+  before scientific dispatch. Include all orchestration/retries, queued work,
+  artifact/envelope/ancestry and validation I/O costs. Preserve membership/RNG when
+  operational batch/active limits change. Observed method capacity is no reservation.
+  Use existing public APIs/DTOs; unsupported combinations reject before dispatch.
+- E2.2 worker unit complete: Search0.23 source386/installed384; Process0.3 source58/
+  installed58,13 boundaries/750 schemas,24 Search+4 Process schema pins preserved.
+  Actual transform3 inputs->2 outputs, both owners restarted, true producer pointer,
+  confirmed12 artifacts/completedspent3. Required-role/cross-context failures block
+  spent2; keyed mapping regression1 pair+1 exclusion/9 artifacts/spent2. All fixtures
+  removed, no provider calls. [Worker exit/accounting](../Audits/POP-01_E2_2_Worker_Exit.md)
+  and [transform evidence](../Audits/POP-01_Material_Transform_Workers.md).
 - Process-mapping0.2 qualified:32 source/32 installed,13 boundaries/750 schemas.
   Actual pairwise2/Cartesian4 pairs each confirm10 artifacts; keyed1 pair+1 exclusion
   confirms9, all completedspent2. Cross-candidate input fails terminally and blocks
@@ -171,7 +176,7 @@ E2 delivery accounting refines this existing phase into four equal units, withou
 adding scope or resetting E1: E2.1 generic resource admission/claim/recovery25%;
 E2.2 population step workers25%; E2.3 authored dispatch/collection composition25%;
 E2.4 actual public-owner batch1/8/32 and cap1/4/8 qualification25%.
-E2.1 is100%, E2.2-E2.4=0%; E2=25%. [Capacity milestone evidence](../Audits/POP-01_Bounded_Admission.md):
+E2.1/E2.2 are100%, E2.3/E2.4=0%; E2=50%. [Worker exit](../Audits/POP-01_E2_2_Worker_Exit.md). [Capacity milestone evidence](../Audits/POP-01_Bounded_Admission.md):
 243 source checks,21 independent installed Runtime checks, actual HTTP restart and
 independent Deployment preflight against qualified0.68 and unqualified0.67 pass.
 No full population or performance claim follows from the generic capacity milestone.

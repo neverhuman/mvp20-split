@@ -1,12 +1,12 @@
 # Restore
 
-Refreshed: 2026-10-15 18:07:55 America/Chicago. Read with AGENTS.md.
+Refreshed: 2026-10-15 19:01:00 America/Chicago. Read with AGENTS.md.
 
 ## Task and workspace
 
-Continue until needed remains authorized. Primary POP-01.01/E2.2 population workers.
-E1/E2.1 complete; E2=25%, Execution31.25%, parent10.42%, Build15.63%, Verification0.
-Whole E2.2 stays0 until its complete gate. RG-01 follows WHOLE POP-01 before ML-01:
+Continue until needed remains authorized. Primary POP-01.01/E2.3 authored composition/resource preflight.
+E1/E2.1/E2.2 complete; E2=50%, Execution37.5%, parent12.5%, Build18.75%, Verification0.
+E2.3/E2.4 remain0; do not claim composition/matrix from worker proofs. RG-01 follows WHOLE POP-01 before ML-01:
 the LLM generates/refines research graphs; Knowledge enhances it. No early switch.
 
 Implement ONLY Z:/mvp20-retention-integration, branch pop01-retention-integration,
@@ -26,46 +26,64 @@ Audits docs/Audits/POP-01_Population_*.md own detailed evidence. Seven frozen so
 hashes matched original. Full v1 verifier reports pre-existing ADDED v1/LICENSE only;
 never modify v1/regenerate manifest. Sparse v1 intentionally omitted.
 
-## Current checkpoint: process-mapping0.2 mapping worker qualified
+## Current checkpoint: E2.2 worker exit complete;0.3 qualified, commit/push next
 
-Uncommitted qualified mapping component (commit/push next, then continue).
-Process-mapping0.2 uses public SDK0.4; no Search/Data/Runtime/Planning implementation
-imports. New CLI describe/schema/worker and tool-owned bounded MaterialCollection/
-MapMaterialsRequest. Existing shared process records/bytes unchanged. Exact
-scope/run/candidate/generation/process-batch, state/metadata bytes and complete
-ancestry verified before upload. Direct-parent cap128, collection32 each side,
-reads262144 each/64MiB total; incompatible maxima reject, never truncate. Stateless
-attempt-fenced child publication; no retention grants or execution authority.
+Process-mapping0.3 adds transform-materials and derive-process operations; default
+map-materials/qualified four mapping payload hashes stay exact. Shared DTOs unchanged.
+Tool-owned transform result has known attempt locator only, NO future completion ID.
+Assembler obtains signed snapshot header(limit1), known node detail and canonical
+producer (3 GETs, no graph enumeration). NO renewal between signed snapshot/detail;
+next immutable producer read may refresh normally. Exact source request/attempt/
+fence/scope/Data origin/actor/publication IDs/parents and full state replay verified.
+Then ProcessDerivation uses ACTUAL transform completion, with collection/batch root.
+Current lease only; accepted historical source needs no old lease. No owner API added.
+Synthetic states preserve first representation but leave physical quantities/
+composition/phase/batch unknown, with unknown conservation/feasibility explicit.
 
-32 source and32 independently installed checks PASS; guard/13 boundaries and750
-shared schemas pass. Final independent package:
-.test-results/pop01-process-mapping-install-20261015b/environment/Scripts/python.exe.
-No peer implementations/SQLAlchemy/FastAPI. Own Pydantic2.14.1/dev2.13.5 hashes match.
-Manifest/dev pins and locks0.2; generated package projection refreshed.
+58 source/58 independently installed checks PASS. Guard/13 boundaries and750 shared
+schemas PASS;24 Search endpoint+4 Process mapping schema pins unchanged. Final
+independent .test-results/pop01-process-transform-install-20261015c complete (no
+Search/Data/Runtime/Planning implementations, SQLAlchemy/FastAPI). Package/dev exact
+pins and locks0.3; generated package projection refreshed. All final code in c.
 
-Actual public-owner PASS (all drivers0 and owned containers/child services removed):
-- pop01-process-cartesian-http-20261015c:4 pairs/10 confirmed artifacts/completedspent2.
-- pop01-process-cross-context-http-20261015c:terminal invalid_process_mapping,
-  blockedspent2/no result root.
-- pop01-process-pairwise-http-20261015a:2 pairs/10 artifacts/completedspent2.
-- pop01-process-keyed-http-20261015a:1 pair+1 retained exclusion/9 artifacts/spent2.
-All under .test-results. Initial failed a/b helpers lacked existing bindings/
-inspection config; fixed test setup. Their owned fixtures also removed. Final
-worker grants unchanged. process_material_bootstrap.py is TEST-ONLY admitted
-source using actual run ID/public SDK, not a production scientific source.
-Audit docs/Audits/POP-01_Material_Mapping_Worker.md owns detailed evidence.
+ACTUAL final c probes PASS, all drivers0/owned containers and child services removed:
+- pop01-process-transform-restart-http-20261015c:3 inputs->2 states, both owners
+  restarted before derivation, actual source producer recovered, known synthetic
+  input physical properties NOT copied,12 confirmed artifacts/completedspent3;
+  assembler retention GET403.
+- pop01-process-transform-missing-http-20261015c: required role missing, terminal
+  derivation_required_port, blockedspent2/no derivation output.
+- pop01-process-transform-cross-http-20261015c: cross-candidate source rejected,
+  material_context_or_bytes, blockedspent2/no output.
+- pop01-process-mapping-regression-http-20261015c: keyed1 pair+1 exclusion,
+  9 confirmed artifacts/completedspent2.
+All under .test-results; no running test sessions. Earlier normal a hit fixture
+readiness (fixed bounded pending loop); normal b exposed missing required snapshot
+lookup (fixed client+regression test). Failed fixtures also fully removed. Earlier
+builds a/b retained diagnostics. Final rejection codes are safe owner constants;
+legacy mapping generic failure behavior preserved.
+Audit POP-01_Material_Transform_Workers and POP-01_E2_2_Worker_Exit own evidence,
+drift/accounting. Source worker/fixture scripts process_transform_bootstrap.py and
+process_transform_fixture.py are TEST-ONLY controller/source; real tool worker is
+independently installed. Driver --process-python <finalc> --process-transform
+[--process-transform-case missing-required|cross-context], fresh output name.
 
-NEXT E2.2: synthetic material transforms plus accepted derivation assembly.
-ProcessDerivation.producer must use ACTUAL accepted completion proof. A transform
-cannot invent its future completion ID while publishing. Use a tool-owned transform
-proposal/result (typed material refs, no asserted acceptance), followed by a separate
-assembler reading existing public successful-producer/accepted completion proof.
-No new Runtime route anticipated; read/inspect_receipts is existing scoped authority.
-Preserve exact context, role/cardinality pins, new state revisions, conditions,
-explicit unknown amount/composition/phase and full ancestry. Synthetic copy policy
-must not imply chemistry, conservation, physical stock or feasibility. Verify
-independent installation and actual owner acceptance before E2.3 composition.
-Whole E2.2 stays0; full authored preflight and batch/cap matrix remain later.
+NEXT: commit/push this verified0.3/worker-exit checkpoint (exact paths), then proceed
+E2.3 full-wave primary numerical composition/resource preflight. Read owning
+execution plan and module boundary, inspect existing primary publication/slice/
+capacity costs and PUBLIC resource-admission contracts before implementation.
+Cover full orchestration/retries/queue/envelopes/ancestry/validation I/O, not method
+floor alone. Keep frozen membership/RNG independent from actual batch1/8/32 and cap
+1/4/8; these are operational choices within declared maxima, not new scientific
+specification. Preserve admitted-plan/spec identity and reject unsupported shapes
+before scientific dispatch. Existing read/admission APIs preferred; no invented
+new review blocker. Fully authored multistage/population composition then E2.4
+actual matrix remain. No reset of complete worker unit for later adapter refinements.
+
+Pushed9410969b Process0.2 mapping had32 source/32 installed and actual pairwise2,
+keyed1+1 exclusion, Cartesian4, cross-context rejection. Details in its audit;
+0.3 regressions retain its schema/behavior. Original review remains frozen.
+ZERO provider calls in all current work. Continue until needed remains authorized.
 
 ## Prior qualified Search checkpoints
 

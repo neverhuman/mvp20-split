@@ -5,13 +5,21 @@ from importlib.metadata import version
 from amphora_contracts_population import MaterialMappingManifest,MaterialMappingPage,population_record_schema
 from amphora_contracts_tools import ReleaseDescriptor
 
-from .payloads import MaterialCollection,MapMaterialsRequest,payload_schema,schema_ref
+from .payloads import (MaterialCollection,MapMaterialsRequest,TransformMaterialsRequest,ProposedProcessTransform,
+    DeriveProcessRequest,DerivedMaterialBatch,payload_schema,schema_ref)
 
 
 SCHEMAS={"request":(MapMaterialsRequest,"process-worker.map-materials"),
     "collection":(MaterialCollection,"process-worker.material-collection"),
     "page":(MaterialMappingPage,"population.material-mapping-page"),
-    "manifest":(MaterialMappingManifest,"population.material-mapping-manifest")}
+    "manifest":(MaterialMappingManifest,"population.material-mapping-manifest"),
+    "transform-request":(TransformMaterialsRequest,"process-worker.transform-request"),
+    "transform-result":(ProposedProcessTransform,"process-worker.transform-result"),
+    "derive-request":(DeriveProcessRequest,"process-worker.derive-request"),
+    "derived-batch":(DerivedMaterialBatch,"process-worker.derived-batch")}
+
+PROFILES={"map-materials":("request","manifest"),"transform-materials":("transform-request","transform-result"),
+    "derive-process":("derive-request","derived-batch")}
 
 
 class MappingCapability:
@@ -38,3 +46,28 @@ class MappingCapability:
             anti_examples=["No reaction, conservation, feasibility or lab-control inference."])))
 
     def schema_bytes(self,record):return payload_schema(*SCHEMAS[record])
+
+
+class ProcessCapability(MappingCapability):
+    def __init__(self,operation="map-materials"):
+        if operation not in PROFILES:raise ValueError("unsupported_process_operation")
+        self.operation=operation
+
+    @property
+    def input_model(self):return SCHEMAS[PROFILES[self.operation][0]][0]
+
+    def descriptor(self,image_sha256):
+        descriptor=super().descriptor(image_sha256)
+        if self.operation=="map-materials":return descriptor
+        value=descriptor.model_dump(mode="json")
+        tool=value["tool"]
+        tool["binding"]["capability_id"]="process.synthetic-"+self.operation
+        tool["purpose"]=("Publish synthetic states with unknown physical properties; no accepted producer claim."
+            if self.operation=="transform-materials" else "Assemble material lineage from verified accepted transform execution.")
+        tool["applicability"]=["synthetic-process-material-v1"]
+        representations=(("synthetic-process-transform-request-v1","synthetic-process-transform-result-v1")
+            if self.operation=="transform-materials" else ("synthetic-process-derive-request-v1","synthetic-process-derived-batch-v1"))
+        for direction,key,representation in zip(("inputs","outputs"),PROFILES[self.operation],representations,strict=True):
+            tool[direction][0].update(schema_ref=schema_ref(*SCHEMAS[key]).model_dump(),representation=representation)
+        value["examples"]=["One scoped synthetic state/lineage step with complete retained ancestry."]
+        return ReleaseDescriptor.model_validate_json(json.dumps(value))

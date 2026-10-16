@@ -1,6 +1,6 @@
 # Master Build Tracker
 
-Latest checkpoint: 2026-10-15 18:07:55: Process-mapping0.2 worker qualified in four actual owner cases. Synthetic material transforms next. E2=25%, Execution31.25%, parent10.42%, Build15.63%, Verification0%. RG-01 follows the whole POP-01 before ML-01.
+Latest checkpoint: 2026-10-15 18:57:17: E2.2 worker unit complete; E2.3 authored composition/resource preflight active. E2=50%, Execution37.5%, parent12.5%, Build18.75%, Verification0%. RG-01 follows whole POP-01 before ML-01.
 
 ## Purpose and Authority
 
@@ -11,21 +11,19 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 ## Program Tracker
 
 - Status: POP-01.01/E2 active; UI-01/UI-02 closed100%, LR-01 paused25%.
-- Last refreshed: 2026-10-15 18:07:55 (America/Chicago).
+- Last refreshed: 2026-10-15 18:57:17 (America/Chicago).
 - Baseline: approved [POP-01.04](POP-01.04%20Population%20contract%20decision.md).
-- Current priority/task: POP-01.01 E2.2 registered synthetic material transforms and accepted derivation assembly.
-- Next task: complete worker unit, then E2.3 authored composition/resource preflight and E2.4 actual-owner matrix.
-- Implementation: parent10.42%, Build15.63%, Verification0%; Execution31.25%, Experience/Qualification0%.
-  Execution E1=100%, E2=25%, E3/E4=0%; Experience U1-U4=0%, Qualification Q1-Q4=0%.
-- Latest checkpoint: Search0.23 source386/installed384 and13 boundaries pass;
-  actual loop normal/failure pool27/28/selected16, logical43/44, physical67/68,
-  nodes124/126/RNG208/front2, confirmed282/283 artifacts; truthful exclusions0/1.
-  Paired16-candidate/32-method collection/fitness also passes: normal16 exact sums,
-  skipped required branch16 unavailable; completedspent36/20. Process-mapping0.2
-  source32/installed32, actual pairwise/keyed/Cartesian/cross-context PASS; fixtures
-  removed. Synthetic transforms still needed; worker unit stays open.
-- Gate: E1/E2.1 and approved POP-01.06/07 prerequisites qualified; remaining E2.2
-  synthetic material transforms, E2.3 composition and E2.4 matrix remain.
+- Current priority/task: POP-01.01 E2.3 full-wave authored composition/resource preflight.
+- Next task: complete authored material/population composition, then E2.4 actual-owner matrix.
+- Implementation: parent12.5%, Build18.75%, Verification0%; Execution37.5%, Experience/Qualification0%.
+  Execution E1=100%, E2=50%, E3/E4=0%; Experience U1-U4=0%, Qualification Q1-Q4=0%.
+- Latest checkpoint: E2.2 complete. Search386 source/384 installed; Process58 source/
+  58 installed;13 boundaries/750 schemas; qualified wire pins preserved. Actual
+  transform3->2, both owners restarted, accepted producer/12 retained artifacts/
+  completedspent3; required-role/context rejection blocks2. Mapping regression passes.
+  All owned fixtures removed, original review preserved. [Worker exit](../Audits/POP-01_E2_2_Worker_Exit.md).
+- Gate: E1/E2.1/E2.2 and approved POP-01.06/07 prerequisites qualified. E2.3 full
+  composition/resource preflight and E2.4 matrix remain; no early scale/UI/science credit.
 - Acceptance: actual execution/population UI/scientific qualification remain distinct gates.
 - Active exception: isolated pop01-retention-integration worktree; original review remains frozen. No merge/promotion until owner finishes review and wrappers drain. Continue-until-needed persists; startup-credit applications deferred. KB-01 stays queued.
   Prior Knowledge-content diagnosis complete:
@@ -41,27 +39,18 @@ The initial program proves software behavior using deterministic/synthetic fixtu
 
 ## Current In-Flight Work
 
-POP-01 E2 active: parent10.42%, Build15.63%, Execution31.25%, E1=100%; remaining gates0%.
-Retention/input inspection qualified (Data0.32/Runtime0.70). Search0.23 seed, slice,
-methods, complete collection, explicit synthetic fitness and initial selection have
-independent actual-owner evidence. Successor preparation/consumption/collection and
-parent-preserving fitness/global selection/later continuity/actual loop qualified;
-paired methods qualified; mapping worker qualified; material transforms current; whole E2.2 remains0.
-[Latest evidence](../Audits/POP-01_Material_Mapping_Worker.md). Authored
-composition, resource feasibility and full batch/cap matrix remain ordered gates.
-Isolated worktree preserves the active frozen review session.
-LR-01 paused25%, Build33.33%, Acceptance0%; R1=100%, R2/R3/V1=0%.
-Completed UI-01/UI-02/LAN-01 are in the [completed index](Completed/README.md).
-
-Owner priority correction 2026-10-14 21:14:16: RG-01 follows POP-01 immediately.
-The LLM generates/refines the research graph; Knowledge enhances its context.
-RG-01 overall/Build/Verification0%, R1/R2/R3/V1=0%. POP execution position unchanged.
+POP-01 E2 active: parent12.5%, Build18.75%, Execution37.5%, E1=100%, E2=50%.
+E2.1/E2.2 complete. Qualified workers cover numerical seed/evaluation/collection,
+fitness/global selection/successors/real loop identity and synthetic material mapping/
+transform/accepted derivation. [Exit and evidence](../Audits/POP-01_E2_2_Worker_Exit.md).
+E2.3 full-wave authored composition/resource preflight is current; the E2.4 actual
+batch/cap matrix remains later. Isolated worktree preserves the frozen review.
 
 ## Prioritized Successor Queue and Phase Mirrors
 
 | Order | Canonical plan | Status | Overall | Build | Verification/Acceptance | Prerequisite |
 |---|---|---|---:|---:|---:|---|
-| 1 | [POP-01 Population Campaign Execution and Experience](POP-01%20Population%20Campaign%20Execution%20and%20Experience.md) | Active E2; E1=100%; Execution31.25%, Experience/Qualification0% | 10.42% | 15.63% | 0% | UI-01/UI-02 complete; POP-01.04 approved |
+| 1 | [POP-01 Population Campaign Execution and Experience](POP-01%20Population%20Campaign%20Execution%20and%20Experience.md) | Active E2; E1=100%; Execution37.5%, Experience/Qualification0% | 12.5% | 18.75% | 0% | UI-01/UI-02 complete; POP-01.04 approved |
 | 2 | [RG-01 LLM Research Graph Generation](RG-01%20LLM%20Research%20Graph%20Generation.md) | Critical queued placeholder; R1/R2/R3/V1=0% | 0% | 0% | 0% | Owner correction2026-10-14: immediately after POP-01, before ML-01; Knowledge enhances LLM generation, not a corpus prerequisite. Activation audit and R1 boundary review required. |
 | 3 | [ML-01 Inherited Scientific Model Integration](ML-01%20Inherited%20Scientific%20Model%20Integration.md) | Standalone queued; M1/M2/M3/M4/V1=0% | 0% | 0% | 0% | UI-01/V1 + UI-02/P4, then POP-01 complete; qualified population/tool handoff |
 | 4 | [LR-01 Local Worker Reliability](LR-01%20Local%20Worker%20Reliability.md) | Paused; pull R2 forward for blocking run failure | 25% | 33.33% | 0% | UI priority released or UI-01.05/R1 blocked; same-host diagnostic window |
@@ -111,8 +100,8 @@ recovery and population-oriented visualization. Updated owner direction2026-10-1
 after POP-01 qualification activate [RG-01](RG-01%20LLM%20Research%20Graph%20Generation.md),
 then [ML-01](ML-01%20Inherited%20Scientific%20Model%20Integration.md).
 
-POP-01 overall10.42%, Build15.63%, Verification0%; phase mirrors:
-Execution31.25% (POP-01.01 E1=100%, E2=25%, E3/E4=0%), Experience0% (POP-01.02 U1/U2/U3/U4=0%),
+POP-01 overall12.5%, Build18.75%, Verification0%; phase mirrors:
+Execution37.5% (POP-01.01 E1=100%, E2=50%, E3/E4=0%), Experience0% (POP-01.02 U1/U2/U3/U4=0%),
 Qualification0% (POP-01.03 Q1/Q2/Q3/Q4=0%). Twelve equal child gates counted once.
 Existing BP-08 generation/recovery implementation remains closed and reusable;
 legacy population128/retained-attempt256/262144-byte bounds are not evidence of

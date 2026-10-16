@@ -13,8 +13,8 @@ Qualified through Search0.23: generation0 seed/slice, squares/negative-sum metho
 complete primary collection, explicit synthetic fitness, initial whole-pool selection,
 initial successor preparation, generation1 slicing/methods/collection and complete
 retained-parent/offspring fitness and global generation1 selection.
-Source386/installed384 checks pass. Whole E2.2 stays0.
-Registered typed material/mapping workers, authored resource preflight and the
+Source386/installed384 checks pass. E2.2 worker unit is complete; see the
+cross-component POP-01_E2_2_Worker_Exit audit. Authored resource preflight and the
 batch1/8/32 x cap1/4/8 matrix remain required gates. This is not a scientific or
 production-scale qualification.
 
@@ -154,8 +154,9 @@ POP-01_Population_Paired_Methods qualifies two named methods on unequal paths:
 32 declared outcomes,16 exact summed fitness records (normal), or16 evaluated plus
 16 inapplicable outcomes/all16 unavailable fitness without scores (required skip).
 Confirmed final125/109 artifacts; completedspent36/20; both owned fixtures removed.
-This does not qualify typed material transforms; process-mapping workers remain
-a separate E2.2 prerequisite for multistage composition.
+Process0.3 separately qualifies typed mapping/transform/accepted derivation workers
+with owner restart and actual source pointers. Authored multistage composition
+remains the E2.3 gate; numerical joins do not substitute for those typed transforms.
 POP-01_Node_Input_Inspection and
 POP-01_Closure_Retention own the qualified service prerequisites. A full plan
 closeout, generic loop/recovery proof and production Linux image attestation remain

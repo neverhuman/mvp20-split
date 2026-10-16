@@ -1,5 +1,6 @@
 """Complete ancestry and source validation, independent of Runtime implementation."""
 from types import SimpleNamespace
+from importlib.metadata import version
 
 import pytest
 from amphora_contracts_population import MaterialMappingItem,MaterialMappingPolicy,population_record_schema
@@ -11,19 +12,23 @@ from amphora_process_mapping.publication import MappingPublication
 
 
 class Attempt:
-    def __init__(self,invocation):self.invocation=invocation;self.active=True
+    def __init__(self,invocation):self.invocation=invocation;self.active=True;self.refreshes=0
     def check(self):
         if not self.active:raise RuntimeError("lease_lost")
-    def refresh(self):self.check()
+    def refresh(self):self.refreshes+=1;self.check()
 
 
 class Client:
     def __init__(self,scope):
-        self.identity=SimpleNamespace(scope=scope)
+        self.identity=SimpleNamespace(scope=scope,actor_id="fixture-worker")
         self.contents={};self.uploads={};self.declarations={}
+        self.origins={};self.references={}
     def read(self,ref):return self.contents[ref.artifact_id]
     def begin_derived(self,content,declaration,key,guard):
         guard();self.uploads[key]=(content,declaration)
+        from amphora_contracts_commands import CommandIdentity
+        self.origins[key]=CommandIdentity(command_family="artifacts.begin_derived_upload",command_id=key,
+            actor_id=self.identity.actor_id,scope=self.identity.scope)
         return SimpleNamespace(upload=key)
     def stream(self,upload,raw,guard):
         guard();self.contents[upload]=raw
@@ -32,7 +37,12 @@ class Client:
         from amphora_contracts_core import ArtifactRef
         ref=ArtifactRef(artifact_id=upload,scope=self.identity.scope,**content.model_dump())
         self.declarations[upload]=declaration
+        self.references[upload]=ref
         return SimpleNamespace(artifact=ref)
+    def derivation(self,ref):
+        from amphora_contracts_artifacts import DerivationReceipt
+        return DerivationReceipt(schema_version="1",origin=self.origins[ref.artifact_id],request_sha256="a"*64,
+            upload_id=ref.artifact_id,artifact=self.references[ref.artifact_id],declaration=self.declarations[ref.artifact_id])
 
 
 def case(factory,count=2,mode="pairwise",right_count=None):
@@ -59,10 +69,10 @@ def case(factory,count=2,mode="pairwise",right_count=None):
         for ref in (record.representation,record.conditions):client.contents[ref.artifact_id]=b"{}"
     invocation=SimpleNamespace(inputs=(SimpleNamespace(port="parameters",artifact=carrier.reference),),run_id=context.generation.run_id,
         checkpoint=None,invocation_id="invoke",activation_id="invoke",fence=1,
-        attempt_id="attempt",tool=ToolBinding(capability_id="process.synthetic-map-materials",release="0.2.0",
+        attempt_id="attempt",tool=ToolBinding(capability_id="process.synthetic-map-materials",release=version("amphora-process-mapping"),
             image_sha256="f"*64,contract_version="1"))
     attempt=Attempt(invocation)
-    return request,ProcessArtifacts(client,attempt,"0.2.0","f"*64),client
+    return request,ProcessArtifacts(client,attempt,version("amphora-process-mapping"),"f"*64),client
 
 
 @pytest.mark.parametrize("mode,expected",[("pairwise",2),("keyed",2),("cartesian",4)])

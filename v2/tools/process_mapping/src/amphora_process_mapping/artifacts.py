@@ -40,6 +40,13 @@ class ProcessArtifacts:
         require(1<=len(references)<=128,"process_parent_bound")
         return tuple(references[key] for key in sorted(references))
 
+    def derivation(self,reference):
+        require(reference.scope==self.scope,"process_derivation_scope")
+        self.attempt.refresh()
+        result=self.client.derivation(reference)
+        self.attempt.check()
+        return result
+
     def publish(self,record,schema,parents,label):
         raw=canonical(record)
         require(len(raw)<=262144,"process_output_bound")

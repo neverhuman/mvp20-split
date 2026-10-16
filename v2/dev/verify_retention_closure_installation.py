@@ -48,7 +48,9 @@ def request(port, path, body=None, *, method=None):
         connection.close()
 
 
-def verify(output, data_python, runtime_python, population_python=None, *, population_only=False, population_slice=False, population_method=None, inspect_inputs=False, population_collect=False, collection_case="normal", population_fitness=False, population_select=False, population_propose=False, successor_tight=False, successor_consume=False, successor_fitness=False, successor_failure=False, successor_select=False, successor_next=False, successor_generation2=False, population_loop=False, population_paired=False, process_python=None, process_case="pairwise"):
+def verify(output, data_python, runtime_python, population_python=None, *, population_only=False, population_slice=False, population_method=None, inspect_inputs=False, population_collect=False, collection_case="normal", population_fitness=False, population_select=False, population_propose=False, successor_tight=False, successor_consume=False, successor_fitness=False, successor_failure=False, successor_select=False, successor_next=False, successor_generation2=False, population_loop=False, population_paired=False, process_python=None, process_case="pairwise", process_transform=False, process_transform_case="normal"):
+    if process_transform:
+        assert process_python is not None
     if process_python is not None:
         assert population_python is None and population_method is None
         assert not any((population_only,population_slice,population_collect,population_fitness,
@@ -217,10 +219,15 @@ def verify(output, data_python, runtime_python, population_python=None, *, popul
                 "closure_reserve_endpoint": f"http://127.0.0.1:{proxy_port}/v1/retention-closures/reserve"}})
         if process_python is not None:
             assert population_python is None and not population_only
-            from process_mapping_fixture import verify as verify_mapping
             loss["enabled"] = False
-            verify_mapping(output, process_python, (data_port, runtime_port), environment, scope,
-                call, command, start, stop, case=process_case)
+            if process_transform:
+                from process_transform_fixture import verify as verify_process
+                variant = process_transform_case
+            else:
+                from process_mapping_fixture import verify as verify_process
+                variant = process_case
+            verify_process(output, process_python, (data_port, runtime_port), environment, scope,
+                call, command, start, stop, case=variant)
             return
         if population_only:
             from population_seed_fixture import verify as verify_seed
@@ -334,6 +341,8 @@ if __name__ == "__main__":
     parser.add_argument("--runtime-python", type=Path, required=True)
     parser.add_argument("--population-python", type=Path)
     parser.add_argument("--process-python", type=Path)
+    parser.add_argument("--process-transform", action="store_true")
+    parser.add_argument("--process-transform-case", choices=["normal","missing-required","cross-context"], default="normal")
     parser.add_argument("--process-case", choices=["pairwise","keyed","cartesian","cross-context"], default="pairwise")
     parser.add_argument("--population-only", action="store_true")
     parser.add_argument("--population-slice", action="store_true")
@@ -356,4 +365,4 @@ if __name__ == "__main__":
     args = parser.parse_args()
     verify(args.output, args.data_python.absolute(), args.runtime_python.absolute(),
            None if args.population_python is None else args.population_python.absolute(),
-           population_only=args.population_only, population_slice=args.population_slice, population_method=args.population_method, inspect_inputs=args.inspect_inputs, population_collect=args.population_collect, collection_case=args.collection_case, population_fitness=args.population_fitness, population_select=args.population_select, population_propose=args.population_propose, successor_tight=args.successor_tight, successor_consume=args.successor_consume, successor_fitness=args.successor_fitness, successor_failure=args.successor_failure, successor_select=args.successor_select, successor_next=args.successor_next, successor_generation2=args.successor_generation2, population_loop=args.population_loop, population_paired=args.population_paired, process_python=None if args.process_python is None else args.process_python.absolute(), process_case=args.process_case)
+           population_only=args.population_only, population_slice=args.population_slice, population_method=args.population_method, inspect_inputs=args.inspect_inputs, population_collect=args.population_collect, collection_case=args.collection_case, population_fitness=args.population_fitness, population_select=args.population_select, population_propose=args.population_propose, successor_tight=args.successor_tight, successor_consume=args.successor_consume, successor_fitness=args.successor_fitness, successor_failure=args.successor_failure, successor_select=args.successor_select, successor_next=args.successor_next, successor_generation2=args.successor_generation2, population_loop=args.population_loop, population_paired=args.population_paired, process_python=None if args.process_python is None else args.process_python.absolute(), process_case=args.process_case, process_transform=args.process_transform, process_transform_case=args.process_transform_case)

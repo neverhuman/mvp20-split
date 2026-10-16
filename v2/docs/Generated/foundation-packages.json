@@ -594,7 +594,7 @@
   },
   {
     "package": "amphora-process-mapping",
-    "version": "0.2.0",
+    "version": "0.3.0",
     "path": "tools/process_mapping",
     "module": "amphora_process_mapping",
     "public_dependencies": [
@@ -603,6 +603,8 @@
       "amphora-contracts-artifacts",
       "amphora-contracts-runtime",
       "amphora-contracts-tools",
+      "amphora-contracts-graph-runtime",
+      "amphora-contracts-execution-proofs",
       "amphora-tool-protocol"
     ]
   },

@@ -7,9 +7,15 @@ from dataclasses import dataclass
 from amphora_contracts_core import ArtifactRef
 
 
+class ProcessInputError(ValueError):
+    """Owner-authored safe rejection code; no payload or transport diagnostics."""
+    @property
+    def code(self):return self.args[0]
+
+
 def require(condition, code):
     if not condition:
-        raise ValueError(code)
+        raise ProcessInputError(code)
 
 
 def canonical(record):
