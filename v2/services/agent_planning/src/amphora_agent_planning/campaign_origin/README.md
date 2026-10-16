@@ -5,7 +5,7 @@ action fields while retaining original curation output hash/schema/context.
 A curation proposal is not a repaired legacy provider capture.
 
 - Owner: Planning; UI-01.07/P1-P4 complete; qualified2026-10-11 19:26:42.
-- Design: [bounded campaign provenance](../../../../../docs/Build%20Plans/UI-01.07%20Campaign%20provenance%20decision.md).
+- Design: [bounded campaign provenance](../../../../../docs/Build%20Plans/UI-01/Completed/UI-01.07%20Campaign%20provenance%20decision.md).
 - Tests: `tests/campaign_origin`; public shape tests belong to contracts/planning.
 
 `OriginProjection` reconstructs a bounded historical compiler projection from

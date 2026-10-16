@@ -1,7 +1,7 @@
 # Observation use and quality
 
 - Status: BP-06.04/B2.02 pure policy verified in Research0.26.0; no new public/persistent acceptance authority.
-- Owner: Research observations. [Policy design](../../../../../../docs/Build%20Plans/BP-06/BP-06.04%20Normalization%20and%20correction%20design.md).
+- Owner: Research observations. [Policy design](../../../../../../docs/Build%20Plans/BP-06/Completed/BP-06.04%20Normalization%20and%20correction%20design.md).
 
 policy.py owns explicit requirements for one named action: available measurements, passed controls, a bound material-state record and excluded flags. It optionally pins a complete directed normalization catalog. Full configuration determines a policy digest. review.py retains the original observation, original exact match, effective match, normalization and separate blockers/gaps/focus. Usable means usable under that action's declared policy; it does not establish scientific truth. Failed/unknown controls and reported flags remain visible even when exploratory use is allowed. Hard failures affect this action only.
 

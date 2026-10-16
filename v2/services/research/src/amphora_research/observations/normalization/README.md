@@ -1,7 +1,7 @@
 # Explicit measurement normalization
 
 - Status: BP-06.04/B2.01 verified in Research0.25.0; no public DTO/storage/API or scientific acceptance claim.
-- Owner: Research observations. [Policy design](../../../../../../docs/Build%20Plans/BP-06/BP-06.04%20Normalization%20and%20correction%20design.md).
+- Owner: Research observations. [Policy design](../../../../../../docs/Build%20Plans/BP-06/Completed/BP-06.04%20Normalization%20and%20correction%20design.md).
 
 catalog.py owns bounded directed positive-decimal scale rules and ConversionCatalog. Complete ordered catalog content, id and version determine its method digest. Units are opaque: only reviewed rules declare dimensions and directions. Identity normalization requires a unit present in the catalog. No inverse, path, unit-name inference, affine calibration or production catalog is installed. Conflicting dimensions and duplicate directions fail configuration. Integer coefficient/exponent multiplication is independent of ambient Decimal arithmetic precision. Results outside existing exact-decimal bounds are unresolved, never rounded or truncated.
 

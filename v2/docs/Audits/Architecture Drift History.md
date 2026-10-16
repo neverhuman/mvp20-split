@@ -169,7 +169,7 @@ Historical dashboard snapshot follows. Partial BP-06.05/06 statuses are supersed
 
 [BP-01 closeout](BP-01_Foundation_Closeout.md) assessed the implemented contract packages, validation API and isolation/build tooling. No blocking drift remains within that bounded scope. Durable transactions, complete tool/graph schemas, authentication, Rust/UI conformance and scientific acceptance remain owned successor gates. The nonblocking Starlette/httpx test-client deprecation is assigned to dev-tool maintenance. Historical v1 limitations remain in the reuse baseline and frozen evidence.
 
-Use [Development Process](../Development_Process.md) and the [audit template](../Templates/Plan%20Audit%20Template.md). Record scope, revision, claim, observed behavior, evidence, blocking classification, owner and disposition. Keep unresolved/recently closed items here; aligned/no-follow-up records belong in [history](Architecture%20Drift%20History.md).
+Use [SDLC framework](../sdlc/README.md) and the [audit template](../sdlc/templates/Plan%20Audit%20Template.md). Record scope, revision, claim, observed behavior, evidence, blocking classification, owner and disposition. Keep unresolved/recently closed items here; aligned/no-follow-up records belong in [history](Architecture%20Drift%20History.md).
 
 [BP-01A closeout](BP-01A_Test_and_Graph_Baseline_Closeout.md) aligns module-owned verification and the source-derived v1 graph baseline. The scaffold is structurally valid only; BP-04 owns actual orchestration parity, BP-08 scientific search. No blocking drift in the completed scope.
 
@@ -326,7 +326,7 @@ archival. [Scoped audit](LAN-01_Demo_Access.md). Follow-up: none in bounded scop
 Two former findings (managed demo delivery; unqualified curation/successor serving) closed by [scoped audit](UI-01.08_Managed_Curation_Delivery.md). Actual original-g validation and four-tool successor passed; exact local/LAN assets and browser reviewed. Parent V1 remains separate. Historical findings retained below.
 
 | Managed curation demo delivery remains | Deployment/UI-01.08/P5.4 | Supported model graph, carried successor and actual browser qualified08i100%. Recipe/installed lifecycle and existing-demo local/LAN cutover remain08j0%. No further qualification calls. [Live evidence/audit](Evidence/UI-01.08-Feedback/README.md). |
-| Integrated campaign curation/successor flow not yet qualified or served | UI-01/N3/I1, [UI-01.08](../Build%20Plans/UI-01.08%20Campaign%20curation%20boundary%20decision.md) | P1/P2/P3/P4.1-P4.3 complete; Studio0.34 scripted production workspace passes. P4.4 actual owners exposed missing Deployment curation policy configuration (0.19.1 repair) and wrong compiler reader composition (Planning0.127.1 repair). Scoped regressions pass; isolated original seed complete and exact retained proposal saved. Repeated fixed-schema generation also impeded compilation; Planning0.127.2/Contract0.1.1 preserve schema bytes with frozen identity memoization (98 focused checks; cold reconstruction32.5s->6.6s). Actual compiler/successor/carry and two-process receipt/failure recovery now pass (P4.4a/b100%). P4.4c actual browser1440/390 recovery also passes; P4 complete. P5 live qualification and cutover are not yet claimed. |
+| Integrated campaign curation/successor flow not yet qualified or served | UI-01/N3/I1, [UI-01.08](../Build%20Plans/UI-01/Completed/UI-01.08%20Campaign%20curation%20boundary%20decision.md) | P1/P2/P3/P4.1-P4.3 complete; Studio0.34 scripted production workspace passes. P4.4 actual owners exposed missing Deployment curation policy configuration (0.19.1 repair) and wrong compiler reader composition (Planning0.127.1 repair). Scoped regressions pass; isolated original seed complete and exact retained proposal saved. Repeated fixed-schema generation also impeded compilation; Planning0.127.2/Contract0.1.1 preserve schema bytes with frozen identity memoization (98 focused checks; cold reconstruction32.5s->6.6s). Actual compiler/successor/carry and two-process receipt/failure recovery now pass (P4.4a/b100%). P4.4c actual browser1440/390 recovery also passes; P4 complete. P5 live qualification and cutover are not yet claimed. |
 
 ## 2026-10-13 10:33:46: UI-01 integrated workspace aligned
 
@@ -345,3 +345,7 @@ qualified through Studio0.36 local/LAN; explicit unranked/absent science state.4
 Studio checks, dependency guard and retained original-demo regression pass.
 [Audit](UI-02_Candidate_Inspector.md). Follow-Up: none for bounded UI-02; POP-01/ML-01
 own broader already-planned populations/scientific evidence.
+
+## SDLC framework separation ? 2026-10-16
+
+Owner-requested [process separation](SDLC_Framework_Separation.md) is aligned within the reviewed documentation scope. Procedures/templates now live under [SDLC](../sdlc/README.md); architectural ownership/protocols, module contracts, implementation percentages and release gates remain intact. Applied to both checkouts without runtime changes.

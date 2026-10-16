@@ -1,6 +1,6 @@
 # Scientific owner reads
 
-BP-06.06/B1.04a: [design](../../../../docs/Build%20Plans/BP-06/BP-06.06%20Studio%20scientific%20transport%20design.md). KnowledgeClient and ResearchClient consume their separately generated public scientific contracts. Runtime transport/catalog remains unchanged. No server gateway is deployed by these clients.
+BP-06.06/B1.04a: [design](../../../../docs/Build%20Plans/BP-06/Completed/BP-06.06%20Studio%20scientific%20transport%20design.md). KnowledgeClient and ResearchClient consume their separately generated public scientific contracts. Runtime transport/catalog remains unchanged. No server gateway is deployed by these clients.
 
 `ScientificHTTP` uses the explicit routes.ts allowlist: eight scientific projection POSTs, eight Research detail POSTs and canonical identifier-based Data provenance GETs. It posts <=256KiB JSON with same-origin session credentials and refuses redirects. It owns a deadline, caller cancellation and1MiB streamed UTF-8/schema validation. bytes.ts additionally reads exact-size content up to4MiB for the provenance client. Errors are sanitized ScientificReadFailure states; backend bodies/credentials are never shown. Clients carry no owner tokens, persistent cache, external source fetch, scientific rules or campaign mutations.
 

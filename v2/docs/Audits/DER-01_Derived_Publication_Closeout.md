@@ -2,7 +2,7 @@
 
 - Status: aligned; DER-01 closed4/4 (100%).
 - Last reviewed: `2026-10-02 12:04:52` (America/Chicago).
-- Scope: [DER-01](../Build%20Plans/BP-06/BP-06.03%20Derived%20publication%20prerequisite.md), inside BP-06.03/B1. No parent delivery credit.
+- Scope: [DER-01](../Build%20Plans/BP-06/Completed/BP-06.03%20Derived%20publication%20prerequisite.md), inside BP-06.03/B1. No parent delivery credit.
 - Current gate: none within DER-01;712 installed tests pass with zero failures/errors/skips.
 - Next: BP-06.03/B1 Knowledge consumed-input projection and durable publication/receipt orchestration.
 

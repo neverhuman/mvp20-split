@@ -30,9 +30,9 @@
 
 | Child / parent phase | Completion | Prerequisite | Delivery |
 |---|---:|---|---|
-| [POP-01.01 Population Execution](POP-01.01%20Population%20Execution.md) / Execution | 31.25%; E1=100%, E2=25%, E3/E4=0% | Entry gate above | Explicit population/evaluation identities, bounded dispatch, global selection and durable recovery |
-| [POP-01.02 Population Experience](POP-01.02%20Population%20Experience.md) / Experience | 0%; U1-U4=0% | POP-01.01 complete | Bounded authoritative projections, stable method graph, generation navigation and population comparison |
-| [POP-01.03 Qualification](POP-01.03%20Population%20Qualification.md) / Qualification | 0%; Q1-Q4=0% | POP-01.02 complete | Fresh UI-started evolutionary campaigns, restart/failure/scale proof and ML-01 handoff |
+| [POP-01.01 Population Execution](POP-01/POP-01.01%20Population%20Execution.md) / Execution | 31.25%; E1=100%, E2=25%, E3/E4=0% | Entry gate above | Explicit population/evaluation identities, bounded dispatch, global selection and durable recovery |
+| [POP-01.02 Population Experience](POP-01/POP-01.02%20Population%20Experience.md) / Experience | 0%; U1-U4=0% | POP-01.01 complete | Bounded authoritative projections, stable method graph, generation navigation and population comparison |
+| [POP-01.03 Qualification](POP-01/POP-01.03%20Population%20Qualification.md) / Qualification | 0%; Q1-Q4=0% | POP-01.02 complete | Fresh UI-started evolutionary campaigns, restart/failure/scale proof and ML-01 handoff |
 
 Do not replace the near-term demo work with this plan. After its entry gate, POP-01
 takes precedence over inherited-model migration. ML-01 starts only after POP-01

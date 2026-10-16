@@ -1,7 +1,7 @@
 # Independent evaluation protocol and scoring
 
 - Owner: Agent Planning; BP-07.05/B1.01. Planning0.90 introduces private evaluation file profile1. Runner is implemented in evaluation_execution; owner inspection and live evidence remain later subunits.
-- Design: [evaluation physical design](../../../../../docs/Build%20Plans/BP-07/BP-07.05%20Physical%20design.md).
+- Design: [evaluation physical design](../../../../../docs/Build%20Plans/BP-07/Completed/BP-07.05%20Physical%20design.md).
 
 `EvaluationProtocol.load` validates bounded original manifest/corpus bytes, exact corpus digest, unique cases/assertions/data, exact category coverage and JSON-pointer/expected-value labels. Frozen public model/limits/Artifact records are reused; these private file DTOs do not change public service schemas. Canonical manifest identity pins mode, adapter revision, model, prompt digest, exact corpus bytes, allowed data, repetitions, resource limits and thresholds. `model_inputs()` exposes only case/input digests, never expected labels. Loading configuration does not authorize processing the pinned data or live egress.
 

@@ -2,7 +2,7 @@
 
 - Owner: Runtime BP-07.04/B1.02b, Runtime0.23;129 combined cases cover139 response statements/30 branches100%;42 public wire and78 boundary/legacy cases pass.
 - Architecture: [Graph Runner](../../../../../docs/Architecture/System/Graph_Runner.md).
-- Public boundary: contracts/supervision; [exchange design](../../../../../docs/Build%20Plans/BP-07/BP-07.04%20Supervisor%20exchange%20contracts.md).
+- Public boundary: contracts/supervision; [exchange design](../../../../../docs/Build%20Plans/BP-07/Completed/BP-07.04%20Supervisor%20exchange%20contracts.md).
 
 SupervisionResponseBinding revalidates the original request against its owned footprint, then binds response ID/reference/full request hash and the original Planning engagement/request/physical attempt. Attempt ordinal must fit the original limit. Reported usage must contain all counts; unknown usage remains unknown. It does not establish actual stored accounting or available spending authority.
 

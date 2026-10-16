@@ -54,7 +54,7 @@ Keep scenario evidence with absolute timestamps, implementation revision, fixtur
 
 ## UI Reference Refinement
 
-`2026-09-24 12:10:07`: Use the [interaction reference map](../../Architecture/Experience/Interaction_References.md) for population/fitness inspection: linked tables and multi-objective plots with eligibility, units, evaluator version and generation context. Implementation and all phase percentages remain 0%; this refines existing tasks.
+`2026-09-24 12:10:07`: Use the [interaction reference map](../../sdlc/ui/Interaction_References.md) for population/fitness inspection: linked tables and multi-objective plots with eligibility, units, evaluator version and generation context. Implementation and all phase percentages remain 0%; this refines existing tasks.
 
 ## Reference Refinement
 
@@ -66,7 +66,7 @@ Child decisions and the [cross-plan handoff register](../Planning_Readiness.md) 
 
 ## Accounting and Closeout
 
-On `2026-09-25 13:35:12`, the original two-task-per-phase estimate was decomposed into 20 verified deliveries across 5 children. Implementation stays 0%; no previous implementation credit is lost or added. [Planning history](../BP-08%20Planning%20History.md) preserves the original scope and denominator. Pure design review earns no implementation credit.
+On `2026-09-25 13:35:12`, the original two-task-per-phase estimate was decomposed into 20 verified deliveries across 5 children. Implementation stays 0%; no previous implementation credit is lost or added. [Planning history](../BP-08/Completed/BP-08%20Planning%20History.md) preserves the original scope and denominator. Pure design review earns no implementation credit.
 
 Child closeout archives that child with its audit and repairs links; the parent remains active until all child gates and the integrated parent outcome pass. The last child's acceptance checks the parent handoff without repeating unchanged earlier audits. Keep implementation, human acceptance, operational readiness and scientific validation separate. Update child -> parent -> MBT -> Restore at each delivery/scope change.
 

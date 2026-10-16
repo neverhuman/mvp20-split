@@ -4,7 +4,7 @@ Latest checkpoint: 2026-10-14 21:32:00: E2.1 capacity/recovery pushed fdb87c20. 
 
 ## Purpose and Authority
 
-Program-level source of truth for Amphora v2 build priority, dependency order, current position and delivery gates. Each activated plan owns its detailed canonical phase/task tracker and evidence; MBT mirrors that status without duplicating task history. [Development Process](../Development_Process.md) governs execution.
+Program-level source of truth for Amphora v2 build priority, dependency order, current position and delivery gates. Each activated plan owns its detailed canonical phase/task tracker and evidence; MBT mirrors that status without duplicating task history. [SDLC framework](../sdlc/README.md) governs execution.
 
 Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-09-23 11:04:44`. JARVIS deployment policies, permissions, priorities and completion claims are not imported.
 
@@ -12,7 +12,7 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 
 - Status: POP-01.01/E2 active; UI-01/UI-02 closed100%, LR-01 paused25%.
 - Last refreshed: 2026-10-14 21:22:00 (America/Chicago).
-- Baseline: approved [POP-01.04](POP-01.04%20Population%20contract%20decision.md).
+- Baseline: approved [POP-01.04](POP-01/POP-01.04%20Population%20contract%20decision.md).
 - Current priority/task: POP-01 E2.2a artifact_retention contract publication and Data implementation.
 - Next task: qualify Data closure protection before Runtime binding and population workers.
 - Implementation: parent10.42%, Build15.63%, Verification0%; Execution31.25%, Experience/Qualification0%.
@@ -161,7 +161,7 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 ## Update and Execution Rules
 
 1. Select the highest-priority eligible plan, then the owning tracker's earliest unmet phase/task. Default to one active implementation plan, phase and task.
-2. Before activation, author and audit the owning plan using the [template](../Templates/Build%20Plan%20Template.md). Record prerequisites, numeric phase progress, accounting basis, verification, exit gates and exact resume point. A queue row alone cannot activate work.
+2. Before activation, author and audit the owning plan using the [template](../sdlc/templates/Build%20Plan%20Template.md). Record prerequisites, numeric phase progress, accounting basis, verification, exit gates and exact resume point. A queue row alone cannot activate work.
 3. Update owning task/phase evidence first, then synchronize MBT priority/state and Restore. Track implementation completion separately from human acceptance and operational confidence; do not invent a weighted overall percentage before child scopes exist.
 4. Complete each phase's required gates before dependent work. Human acceptance gates apply only when explicitly defined for SDLC delivery; they must not be confused with the autonomous product's campaign behavior.
 5. Record scope additions, dependency changes and interruptions explicitly. Revise progress when remaining work changes; no hidden workstream or gate weakening.

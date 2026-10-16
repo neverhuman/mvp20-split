@@ -39,7 +39,7 @@ infrastructure adapters implement those ports
 scientific plugins implement versioned capability contracts
 ```
 
-Domain logic cannot import the web framework or provider SDK as its primary behavior model. DTOs validate/serialize the boundary; domain objects enforce invariants. Infrastructure returns explicit failure/uncertainty states rather than exceptions that secretly alter scientific disposition. Query projections may denormalize for performance but cannot become command authority.
+The [backend implementation principles](../../sdlc/backend/Backend_Principles.md) own DTO/domain mapping and adapter coding discipline. The dependency direction above remains the system design.
 
 ## Proposed v2 Source Layout
 
@@ -74,7 +74,7 @@ This is a proposed source structure, not directories already populated with code
 
 ## Extension and Release Contract
 
-Modules are intentionally replaceable. Their source-adjacent READMEs own the implemented boundary and must link the schemas, callers/consumers, state/recovery contracts and acceptance fixtures needed for an independent rebuild. Internals are disposable; authoritative evidence and compatibility obligations are not. Replacement activation occurs between campaigns in the initial profile, with old-state handling and rollback/forward-repair recorded. Intended design remains in architecture; the module README states what consumers can actually rely on.
+The [module boundary process](../../sdlc/documentation/Module_Boundaries.md) owns README/rebuild specifications; [build and release](../../sdlc/delivery/Build_and_Release.md) owns replacement/cutover procedure. Public version negotiation and pinned campaign compatibility remain architectural constraints.
 
 A scientific tool package supplies descriptor, exact implementation/dependency identity, schemas, applicability, state/effect policy and evaluation fixtures. Registration validates compatibility and authority; deployment supplies environment/grants. Campaign bindings pin versions. Code-generating agents may propose packages but cannot register or activate unreviewed code automatically.
 

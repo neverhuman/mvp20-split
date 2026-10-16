@@ -1,6 +1,6 @@
 # Campaign authoring handoff
 
-Owner: Planning campaign compiler client, BP-07.03/B2.02a. Design: [compiler handoff](../../../../../docs/Build%20Plans/BP-07/BP-07.03%20Compiler%20handoff.md). Planning0.57 values verified:30 focused/348 independently installed cases and12 boundary checks. No dispatch or durable-success claim.
+Owner: Planning campaign compiler client, BP-07.03/B2.02a. Design: [compiler handoff](../../../../../docs/Build%20Plans/BP-07/Completed/BP-07.03%20Compiler%20handoff.md). Planning0.57 values verified:30 focused/348 independently installed cases and12 boundary checks. No dispatch or durable-success claim.
 
 AuthoringPlan reconstructs the combined decision review and reviewed budget, permits only a future draft and binds a configured Runtime owner/actor. Its stable draft and command slot hashes the original provider attempt and owner configuration, excluding generated output. A changed payload therefore retains its command identity for the Runtime owner to reject as a conflict. The later Planning journal must also enforce immutable slot/configuration binding. IDs are namespaced and scoped; they are not credentials.
 

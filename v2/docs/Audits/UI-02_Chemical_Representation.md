@@ -29,7 +29,7 @@ missing accepted release. Corrected rerun b retains actual registered/rejected
 receipts in [Registry evidence](Evidence/UI-02-Chemical/Registry_Activation.json).
 Actual graph/tool/Data/Research portion did not run; no P1.4 credit.
 The earlier activation inventory missed Registry's synthetic-only restriction.
-[UI-02.02](../Build%20Plans/Completed/UI-02.02%20Structural%20tool%20registry%20profile%20decision.md)
+[UI-02.02](../Build%20Plans/UI-02/Completed/UI-02.02%20Structural%20tool%20registry%20profile%20decision.md)
 specifies activation plus selection correction; no bypass or descriptor relabelling.
 Declared fixture image pins must never be described as built Linux images or a
 container deployment. Product hosting/containerization remains deferred per owner.
@@ -38,7 +38,7 @@ container deployment. Product hosting/containerization remains deferred per owne
 checks and actual register/activate/deploy/heartbeat/resolve. [Lifecycle receipts](Evidence/UI-02-Chemical/Registry_Lifecycle.json) and [execution blockers](Evidence/UI-02-Chemical/Execution_Profile_Blockers.json)
 retain the exact evidence. Runtime compiler and SDK worker reject synthetic-only
 profile; draft eligibility context and retained universe need a versioned correction.
-[UI-02.03](../Build%20Plans/Completed/UI-02.03%20Structural%20execution%20profile%20decision.md)
+[UI-02.03](../Build%20Plans/UI-02/Completed/UI-02.03%20Structural%20execution%20profile%20decision.md)
 is proposed. No graph admission/worker claim or P1.4 credit. Initial inventory missed
 these downstream restrictions; no guards bypassed. Planning evolutionary topology
 remains separately synthetic-only, outside this supplied-structure handoff.

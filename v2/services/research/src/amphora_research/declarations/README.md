@@ -2,7 +2,7 @@
 
 - Status: BP-07.02/B2.03a.ii verified 2026-10-04 10:04:40;382 installed owner/contract cases and2 actual HTTP interruption stages passed.
 - Package: Research0.34; public Research DTOs0.14 unchanged; forward migration research_0013.
-- Design: [owner handoff](../../../../../docs/Build%20Plans/BP-07/BP-07.02%20Owner%20handoff%20and%20accepted%20replay.md).
+- Design: [owner handoff](../../../../../docs/Build%20Plans/BP-07/Completed/BP-07.02%20Owner%20handoff%20and%20accepted%20replay.md).
 
 ## Boundary
 

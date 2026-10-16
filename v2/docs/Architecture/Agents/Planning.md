@@ -72,7 +72,7 @@ peer database access is permitted. Scope/read grant is independent of write righ
 Studio verifies Runtime and Research reads separately before displaying provenance;
 source and Knowledge inspection retain their own authorization. Missing association
 never identifies the author. Compilation and context do not establish scientific
-validity or current execution eligibility. [UI-01.07](../../Build%20Plans/UI-01.07%20Campaign%20provenance%20decision.md)
+validity or current execution eligibility. [UI-01.07](../../Build%20Plans/UI-01/Completed/UI-01.07%20Campaign%20provenance%20decision.md)
 and the [owned module](../../../services/agent_planning/src/amphora_agent_planning/campaign_origin/README.md)
 record the concrete versioned API and qualification. This contract does not expose
 raw prompts, provider captures or hidden reasoning.

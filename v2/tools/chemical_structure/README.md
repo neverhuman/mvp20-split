@@ -2,7 +2,7 @@
 
 UI-02/P1.2 verified:32 independent copied tests, fresh-process determinism, exact schema bytes and dependency isolation. Independent package0.1.0; no Research/Runtime service imports,
 SQL, external chemistry calls, model calls or persistent state. Design:
-[approved chemical boundary](../../docs/Build%20Plans/Completed/UI-02.01%20Chemical%20structure%20boundary%20decision.md).
+[approved chemical boundary](../../docs/Build%20Plans/UI-02/Completed/UI-02.01%20Chemical%20structure%20boundary%20decision.md).
 
 Public CLI: compute (bounded JSON stdin), schema --kind input/output, describe
 --image-sha256 <measured image digest>, worker --config <public SDK configuration>.

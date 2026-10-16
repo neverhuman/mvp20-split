@@ -1,6 +1,6 @@
 # Knowledge feedback verification boundary
 
-Owner: BP-06.06 integration verification. This is verification tooling, not a deployed service, scientific evaluator or joined owner database. [Physical design](../../../docs/Build%20Plans/BP-06/BP-06.06%20Physical%20design.md) owns the staged integration scope.
+Owner: BP-06.06 integration verification. This is verification tooling, not a deployed service, scientific evaluator or joined owner database. [Physical design](../../../docs/Build%20Plans/BP-06/Completed/BP-06.06%20Physical%20design.md) owns the staged integration scope.
 
 Implemented: a credential-free, versioned declared-fixture manifest with exact question/need/method, source byte span/trace, graph/assertion, specimen/material/experiment/observation, profile/generation, campaign cut/receipt and named-view pins. The [actual baseline](live/README.md) separately proves public acquisition, graph acceptance/publication, scientific views, Qdrant generation, Runtime receipt consumption/replacement and compiled Studio readback. Parsing a manifest alone does not establish that a record exists, a receipt is accepted, a view is available or science is correct.
 
@@ -20,4 +20,4 @@ Run `dev/.venv/Scripts/python.exe dev/run_tests.py --module knowledge-feedback-i
 | Runtime | Old/new pinned waits, retention, replay after replacement, correction barrier | Only Runtime accepts execution; active pins do not change |
 | Studio | Actual compiled models and browser traversal in source and independent builds | Read-only acceptance host, no deployed gateway or identity picker |
 
-[Verification index](../../../docs/Build%20Plans/BP-06/BP-06.06%20Verification%20index.md) separates pure, installed owner, model and browser tiers. The actual driver records returned identities and verifies them through their owners. Maintain per-owner credentials/processes, visible synthetic limitations and independent expected outcomes. No private peer SQL/imports or fabricated successful response is permitted. Independent replacement preserves this format/canonical fingerprint and all local invariants; intentional format changes use a new version.
+[Verification index](../../../docs/Build%20Plans/BP-06/Completed/BP-06.06%20Verification%20index.md) separates pure, installed owner, model and browser tiers. The actual driver records returned identities and verifies them through their owners. Maintain per-owner credentials/processes, visible synthetic limitations and independent expected outcomes. No private peer SQL/imports or fabricated successful response is permitted. Independent replacement preserves this format/canonical fingerprint and all local invariants; intentional format changes use a new version.

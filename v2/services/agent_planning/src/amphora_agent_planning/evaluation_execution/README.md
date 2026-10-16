@@ -1,6 +1,6 @@
 # Measured evaluation execution
 
-Owner: Planning, BP-07.05/B1.02c/d. Composes frozen suite journal, existing PlanningRunner.execute, original attempt/settlement/late journals and independent scorer. No new physical-call ledger, source authority or Runtime acceptance. [Design](../../../../../docs/Build%20Plans/BP-07/BP-07.05%20Physical%20design.md).
+Owner: Planning, BP-07.05/B1.02c/d. Composes frozen suite journal, existing PlanningRunner.execute, original attempt/settlement/late journals and independent scorer. No new physical-call ledger, source authority or Runtime acceptance. [Design](../../../../../docs/Build%20Plans/BP-07/Completed/BP-07.05%20Physical%20design.md).
 
 step authorizes existing record_requests/record_attempts/read_attempts, verifies frozen adapter revision and fixture or exact FrozenOpenAIEvaluation binding, settles recorded results and advances at most one original repetition. Each has one ordinal1 issuance; restarts use the original once-only ticket/recovery path. Concurrent pending work returns without waiting for another worker's provider. Completed history replays without calls. Full conservative suite demand was checked before registration; no unused allowance is reused for extra measured attempts.
 

@@ -2,7 +2,7 @@
 
 - Status: D2 source and independent replacement verified.
 - Reviewed: 2026-10-13 21:59:44 America/Chicago.
-- Owner: [POP-01.01/E1 D2](../Build%20Plans/POP-01.01%20Population%20Execution.md).
+- Owner: [POP-01.01/E1 D2](../Build%20Plans/POP-01/POP-01.01%20Population%20Execution.md).
 - Implementation: Search0.11; population0.5/population-steps0.1 schemas unchanged.
 - Source evidence:320 source Search/process/publication tests;740 predecessor schema
   pins. No population Runtime admission/deployment or scientific performance claim.

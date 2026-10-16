@@ -28,13 +28,9 @@ PostgreSQL
 
 ## Backend Principles
 
-- Thin routers, fat services.
-- Physics and ML modules are pure and stateless.
-- Pure services do not import the database.
-- Domain logic lives in services, not route handlers.
-- API is versioned at `/api/v1`.
-- Computed properties are recomputed from source records before being trusted.
-- Formulation lineage is mandatory.
+Current coding discipline is in [SDLC backend principles](../../sdlc/backend/Backend_Principles.md) and [API principles](../../sdlc/api/API_Principles.md). The historical coatings-MVP stack below is reference design, not the current process. Scientific tools follow their declared state/effect contracts; no universal stateless-tool rule applies.
+
+The historical MVP design required computed properties to be recomputed from source records before trust, and formulation lineage to remain explicit. Its `/api/v1` proposal is retained in the API surface below; it does not replace current owner-specific v2 routes.
 
 ## Initial File Structure
 

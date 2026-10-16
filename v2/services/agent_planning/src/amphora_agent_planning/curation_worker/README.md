@@ -68,7 +68,7 @@ CLI errors are redacted; unexpected integrity failures remain fatal and inspecta
 through retained history. No paid calls or real credentials in this qualification.
 
 Last reviewed:2026-10-12 00:50:48 America/Chicago. Architecture: [Planning](../../../../../docs/Architecture/Agents/Planning.md).
-Delivery: [UI-01.08](../../../../../docs/Build%20Plans/UI-01.08%20Campaign%20curation%20boundary%20decision.md).
+Delivery: [UI-01.08](../../../../../docs/Build%20Plans/UI-01/Completed/UI-01.08%20Campaign%20curation%20boundary%20decision.md).
 Independent replacement: curation-installation-20261012a,205 scoped checks, public-only wheel closure.
 
 UI-01.08/P3.2c: CurationHost also composes capability_fulfillment via public Registry

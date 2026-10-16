@@ -1,5 +1,7 @@
 # Amphora v2
 
+Development procedures: [SDLC framework](docs/sdlc/README.md). Load the relevant topic rather than treating architecture as a coding checklist.
+
 The active workspace for the graph-native research engine. BP-01 implements independent contract packages and a validation-only runtime API; durable campaign execution has not yet been built.
 
 - [Foundation setup and verification](dev/README.md)

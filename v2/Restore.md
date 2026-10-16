@@ -2,7 +2,16 @@
 
 Refreshed: 2026-10-15 09:47:24 America/Chicago. Read FIRST after compaction.
 
+Owner-requested process separation 2026-10-16 14:17:15 America/Chicago: reusable rules now
+live in docs/sdlc/README.md and focused subfolders. AGENTS links task-specific
+processes; architecture retains system contracts. Documentation-only updates applied
+to both checkouts; original services/source remain frozen. Resume the previously
+authorized POP-01 task after this interruption. Progress and approval gates unchanged.
+
 ## Current task
+
+2026-10-15 10:13:49 SESSION REFRESH: original LAN15a drained after seven-day CA/server certificate expiry. Same-key local review certificates renewed90days; new LAN15b wrapper PID20524 verified by authenticated invite issuance. Local15a PID27368 unchanged. Fresh five-minute invitation in LAN15b/Open Amphora.url and clipboard. Remote computer may need renewed LAN15b/amphora-demo-ca.cer imported into its trusted roots. No scientific services or curation restarted; source freeze remains.
+
 
 2026-10-15 10:05:22 REVIEW READY: PowerShell wrapper completed; local session15a
 PID27368, LAN15a PID5032. Frozen servingh / Deployment0.20.2; curation paused,

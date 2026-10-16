@@ -1,7 +1,7 @@
 # Research assessment publication
 
 - Status: B1.09 implementation; actual Data publication and acknowledgement-loss recovery verified. B1.10 optional public assessment routes now compose this module.
-- Owner: Research0.12.1; [design](../../../../../docs/Build%20Plans/BP-06/BP-06.03%20Research%20assessment%20design.md#b109-publication-implementation-boundary).
+- Owner: Research0.12.1; [design](../../../../../docs/Build%20Plans/BP-06/Completed/BP-06.03%20Research%20assessment%20design.md#b109-publication-implementation-boundary).
 - Authority: fixed research.synthetic_sufficiency purpose, never scientific establishment or Runtime execution acceptance.
 
 AssessmentArtifact restores a completed immutable assessment and its full input set. It publishes canonical EvidenceAssessment bytes with the self-contained research.evidence-assessment.payload schema (Draft2020-12, sorted compact UTF-8 plus newline). Its transformation digest binds the configured profile reference including its full-document digest. The profile/request never installs a Data validator; operators explicitly configure that output schema. The output byte ceiling is8MiB; inputs retain the128 limit. No public Research schema bytes change.

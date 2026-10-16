@@ -1,6 +1,6 @@
 # Supervisor inspection
 
-Owner: Runtime, BP-07.05/B1.03. [Design](../../../../../docs/Build%20Plans/BP-07/BP-07.05%20Inspection%20boundary.md). No cross-owner state or calls. This module owns coherent metadata projections, not execution acceptance, scientific quality or raw content access.
+Owner: Runtime, BP-07.05/B1.03. [Design](../../../../../docs/Build%20Plans/BP-07/Completed/BP-07.05%20Inspection%20boundary.md). No cross-owner state or calls. This module owns coherent metadata projections, not execution acceptance, scientific quality or raw content access.
 
 SupervisorInspection has four read-only methods: checkpoints, requests, context and responses. Scope/read permission comes from the configured principal. Each executes one read-only repeatable-read transaction, reconstructs records through existing owned domain objects and maps focused projection objects to public supervision0.10 DTOs. Context pages expose only included/omitted Artifact metadata. Response pages distinguish original provider observation from selected_by_winner; missing reports remain unobserved, never a claim that no call ran. Existing WinnerStore owns authoritative decisions; no reads resolve a checkpoint or issue work.
 

@@ -1,7 +1,7 @@
 # Research scientific input orchestration
 
 - Status: BP-06.04/B1.08b implemented in Research0.23.0/contracts0.11.0; 792 source/792 isolated installed tests pass. Optional hosted routes verified in Research0.24.0:827 source/827 installed and119 compatibility/dev tests; independently installed HTTP and replacement verified under d.
-- Owner: Research. Design: [Scientific API boundary](../../../../../docs/Build%20Plans/BP-06/BP-06.04%20Scientific%20API%20design.md).
+- Owner: Research. Design: [Scientific API boundary](../../../../../docs/Build%20Plans/BP-06/Completed/BP-06.04%20Scientific%20API%20design.md).
 
 ## Configuration and source boundary
 

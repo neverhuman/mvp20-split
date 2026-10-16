@@ -1,6 +1,6 @@
 # Campaign input refresh
 
-Owner: Planning BP-07.03/B2.02c.ii; Planning0.60 verified with17 focused tests,12 boundary checks and435 isolated cases. [Design](../../../../../docs/Build%20Plans/BP-07/BP-07.03%20Compiler%20handoff.md). No command dispatch, SQL or admission authority.
+Owner: Planning BP-07.03/B2.02c.ii; Planning0.60 verified with17 focused tests,12 boundary checks and435 isolated cases. [Design](../../../../../docs/Build%20Plans/BP-07/Completed/BP-07.03%20Compiler%20handoff.md). No command dispatch, SQL or admission authority.
 
 RefreshPlan reconstructs combined decision policy and budget. Processing inputs comprise all available Artifact slices consumed by the original packet, at most132 unique identities; omitted and originally unavailable bodies are excluded. Semantic dependencies remain the narrower reviewed read-set. RefreshCollector performs fresh CampaignArtifactReader reads in at-most128-reference batches sharing one20s/512-call/32MiB Data budget. Complete identity coverage and exact body hash/size are checked. Permission observations are not renewable leases or transitive grants for arbitrary owner sources.
 

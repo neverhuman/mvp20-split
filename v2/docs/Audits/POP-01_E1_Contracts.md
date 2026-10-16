@@ -2,7 +2,7 @@
 
 - Status: source-verified records/domain/transport; execution composition pending.
 - Reviewed: 2026-10-13 21:42:55 America/Chicago.
-- Owner: [POP-01.01/E1](../Build%20Plans/POP-01.01%20Population%20Execution.md).
+- Owner: [POP-01.01/E1](../Build%20Plans/POP-01/POP-01.01%20Population%20Execution.md).
 - Source checkpoint: population0.5, population-steps0.1, Search0.10, process-mapping0.1.1.
 - Evidence: 300 source checks and dependency guard pass;740 generated schemas preserve
   all718 predecessor schema bytes. Independent installation evidence recorded in plan history.

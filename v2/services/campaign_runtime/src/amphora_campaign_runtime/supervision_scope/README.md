@@ -2,7 +2,7 @@
 
 - Owner: Campaign Runtime, BP-07.04/B1.01. Runtime0.21 pure boundary;26 scoped tests cover119 statements/16 branches,100%; 111 independently installed scope/contract cases pass;162 predecessor production/migration files unchanged.
 - Architecture: [Graph Runner](../../../../../docs/Architecture/System/Graph_Runner.md).
-- Design: [Supervisor physical design](../../../../../docs/Build%20Plans/BP-07/BP-07.04%20Physical%20design.md).
+- Design: [Supervisor physical design](../../../../../docs/Build%20Plans/BP-07/Completed/BP-07.04%20Physical%20design.md).
 
 NodeObservation owns an exact concrete ActivationPath/view and canonical state/output bytes, with a1MiB combined limit. It recomputes the existing plan-derived activation identity; it does not prove that the node exists in a retained plan. Its fingerprint includes status, reason, state and outputs. Captured dictionaries cannot mutate the retained observation. Non-JSON/coerced keys, nonfinite numbers and noncanonical byte readback reject.
 

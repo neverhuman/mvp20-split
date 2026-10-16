@@ -1,7 +1,7 @@
 # Research scientific Artifact publication
 
 - Status: Research0.31.0: private journal/workflow, hosted scientific APIs, actual Data publication, fresh replacement and nine process-kill barriers verified. This module publishes Artifacts only.
-- Owner: Research. Design: [durable science boundary](../../../../../docs/Build%20Plans/BP-06/BP-06.04%20Durable%20science%20design.md).
+- Owner: Research. Design: [durable science boundary](../../../../../docs/Build%20Plans/BP-06/Completed/BP-06.04%20Durable%20science%20design.md).
 
 This module publishes already committed lab intake, eligibility and synthesis results as immutable Data Artifacts with exact derivation provenance. It does not issue DomainReceipts, claim scientific acceptance, reserve Runtime outputs or change campaign pins. Existing publication/ retains its fixed synthetic sufficiency receipt policy and all prior command/history bytes. This module follows the reviewed finite upload protocol using the public tool-protocol SDK; its independent state and namespace prevent receipt-policy substitution.
 

@@ -284,7 +284,7 @@ Research0.29.0/contracts0.13.0/research_0012;808 source/808 installed and119 com
 
 Rotated MBT checkpoints:
 
-| 2026-10-02 21:09:13 | Owner chose future-campaign-only corrections; B2.01 active; progress unchanged | [Implementation](../BP-06/BP-06.03%20Receipt%20correction%20implementation.md); active pins preserved |
+| 2026-10-02 21:09:13 | Owner chose future-campaign-only corrections; B2.01 active; progress unchanged | [Implementation](../BP-06/Completed/BP-06.03%20Receipt%20correction%20implementation.md); active pins preserved |
 
 ## BP-06.04/B2.03b durable interpretation complete - 2026-10-03 05:01:56
 
@@ -292,7 +292,7 @@ Research0.28.0/contracts0.12.0; research_0011 adds six append-only intent/result
 
 Rotated MBT checkpoints:
 
-| 2026-10-02 20:50:17 | B2 awaits receipt invalidation policy choice; B1 complete; child25%, parent37.50% unchanged | [Decision](../BP-06/BP-06.03%20Receipt%20invalidation%20decision.md);2 boundary probes pass |
+| 2026-10-02 20:50:17 | B2 awaits receipt invalidation policy choice; B1 complete; child25%, parent37.50% unchanged | [Decision](../BP-06/Completed/BP-06.03%20Receipt%20invalidation%20decision.md);2 boundary probes pass |
 
 ## BP-06.04/B2.03a interpretation contracts complete - 2026-10-03 04:47:00
 
@@ -434,7 +434,7 @@ User continuation authorizes the bounded Data-owned extension. D1 contracts/desi
 
 ## DER-01 prerequisite decision - 2026-10-02 09:54:48
 
-After50faa37, a focused actual-PostgreSQL probe showed that an unassociated equal-byte upload retains its legacy read policy after the registered source is revoked. This confirms a missing arbitrary-transform publication seam, not a failure of existing retained-conversion lineage. [DER-01](../BP-06/BP-06.03%20Derived%20publication%20prerequisite.md) proposes a Data-owned versioned protocol, atomic catalog/lineage finalization and rights fencing before Knowledge artifact/receipt delivery. Protocol implementation awaits owner direction under AGENTS material-scope rules. One focused test passed; no production Data behavior changed. Parent8/24 and child0/4 unchanged.
+After50faa37, a focused actual-PostgreSQL probe showed that an unassociated equal-byte upload retains its legacy read policy after the registered source is revoked. This confirms a missing arbitrary-transform publication seam, not a failure of existing retained-conversion lineage. [DER-01](../BP-06/Completed/BP-06.03%20Derived%20publication%20prerequisite.md) proposes a Data-owned versioned protocol, atomic catalog/lineage finalization and rights fencing before Knowledge artifact/receipt delivery. Protocol implementation awaits owner direction under AGENTS material-scope rules. One focused test passed; no production Data behavior changed. Parent8/24 and child0/4 unchanged.
 
 
 ## BP-06.03 B1 Knowledge boundary - 2026-10-02 09:39:22
@@ -668,7 +668,7 @@ Keep scenario evidence with absolute timestamps, implementation revision, fixtur
 
 ## UI Reference Refinement
 
-`2026-09-24 12:10:07`: Use the [interaction reference map](../../Architecture/Experience/Interaction_References.md) for P6 evidence/knowledge traversal: search-first bounded exploration and source details, without requiring manual predicate authoring. Implementation and all phase percentages remain 0%; this refines existing tasks.
+`2026-09-24 12:10:07`: Use the [interaction reference map](../../sdlc/ui/Interaction_References.md) for P6 evidence/knowledge traversal: search-first bounded exploration and source details, without requiring manual predicate authoring. Implementation and all phase percentages remain 0%; this refines existing tasks.
 
 ## Decisions and Handoff
 
@@ -760,7 +760,7 @@ Actual separately hosted Research and Knowledge correction transitions, exact/la
 
 Rotated MBT checkpoint:
 
-| 2026-10-02 09:54:48 | DER-01 proposed prerequisite; BP-06.03/B1 awaits owner direction, percentages unchanged | [Decision](../BP-06/BP-06.03%20Derived%20publication%20prerequisite.md);1 PostgreSQL probe |
+| 2026-10-02 09:54:48 | DER-01 proposed prerequisite; BP-06.03/B1 awaits owner direction, percentages unchanged | [Decision](../BP-06/Completed/BP-06.03%20Derived%20publication%20prerequisite.md);1 PostgreSQL probe |
 
 ## 2026-10-02 22:08:29 - B3.01 live Runtime domain receipts
 

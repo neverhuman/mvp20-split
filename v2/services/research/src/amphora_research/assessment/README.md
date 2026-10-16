@@ -1,7 +1,7 @@
 # Research assessment policy
 
 - Status: BP-06.03/B1.07 producer resolution implemented; exact owner/peer binding and actual Data/Knowledge proof verified. B1.08 immutable assessment storage is verified; B1.09 publication is implemented in the adjacent publication module; B1.10 optional HTTP composition is implemented in the transport module. No public caller can submit trusted observation fields.
-- Design: [Research assessment boundary](../../../../../docs/Build%20Plans/BP-06/BP-06.03%20Research%20assessment%20design.md).
+- Design: [Research assessment boundary](../../../../../docs/Build%20Plans/BP-06/Completed/BP-06.03%20Research%20assessment%20design.md).
 - Authority: synthetic decision policy only; no scientific establishment or Runtime receipt.
 
 `AssessmentPolicy` binds an exact Research question, policy id/version/purpose and1..128 needs. Every question criterion must have a declared need. It validates the existing question/need invariants and fingerprints canonical UTF-8 JSON, including full immutable declarations, categories and issuer sets. This private fingerprint has its own format tag; it is not a persisted command encoding. Requirements have deterministic declared order; category/issuer sets are sorted before hashing.

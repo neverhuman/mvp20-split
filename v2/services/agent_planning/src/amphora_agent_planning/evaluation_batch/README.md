@@ -1,6 +1,6 @@
 # Executable evaluation batch binding
 
-Owner: Planning, BP-07.05/B1.02a. Pure boundary between independent evaluation labels and the existing physical-call runner. [Design](../../../../../docs/Build%20Plans/BP-07/BP-07.05%20Physical%20design.md).
+Owner: Planning, BP-07.05/B1.02a. Pure boundary between independent evaluation labels and the existing physical-call runner. [Design](../../../../../docs/Build%20Plans/BP-07/Completed/BP-07.05%20Physical%20design.md).
 
 `EvaluationBatch.prepare` requires trusted record_requests scope and exact case-to-request/policy maps. Original canonical RequestSnapshot hashes must match corpus input identities. Model/prompt, allowed Artifact set, accounting unit and request ceilings must match the frozen manifest. Context rights still require their owning service's authorization; a listed Artifact is not a processing grant.
 

@@ -1,6 +1,6 @@
 # Campaign handoff preparation
 
-Owner: Planning BP-07.03/B2.02c.iii; verified in Planning0.61. [Design](../../../../../docs/Build%20Plans/BP-07/BP-07.03%20Compiler%20handoff.md). This module owns read-only origin/accounting checks and prerequisite composition. It has no command dispatcher or new persistent state.
+Owner: Planning BP-07.03/B2.02c.iii; verified in Planning0.61. [Design](../../../../../docs/Build%20Plans/BP-07/Completed/BP-07.03%20Compiler%20handoff.md). This module owns read-only origin/accounting checks and prerequisite composition. It has no command dispatcher or new persistent state.
 
 CampaignOriginReader loads preparation, attempt, reservation and settlement through existing Planning journals. Every interface enforces the original actor/scope. StoredCampaignOrigin reconstructs combined policy and compares exact packet/manifest, attempt, capture/observation, demand and conservative charge. Missing, unbudgeted, unsettled or mismatched history cannot prepare a handoff. Reads preserve original timestamps, charges and overage; no reserve, refund or settlement write occurs. Separate short reads are sufficient for these immutable records and never hold SQL across peer I/O. Pure construction verifies consistency only; the reader establishes the available owned-storage provenance.
 

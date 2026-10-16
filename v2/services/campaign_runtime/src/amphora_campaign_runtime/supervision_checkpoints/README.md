@@ -1,6 +1,6 @@
 # Concrete supervision checkpoints
 
-Runtime owns immutable checkpoint identity and original selected observations for one concrete graph activation. Design: [admitted checkpoint policy](../../../../../docs/Build%20Plans/BP-07/BP-07.04%20Admitted%20checkpoint%20policy.md), B2.01c.iii.
+Runtime owns immutable checkpoint identity and original selected observations for one concrete graph activation. Design: [admitted checkpoint policy](../../../../../docs/Build%20Plans/BP-07/Completed/BP-07.04%20Admitted%20checkpoint%20policy.md), B2.01c.iii.
 
 `CheckpointSeed.capture(policy, footprint)` verifies the exact admitted policy, authored rule, target fields and read selection. The record preserves observation state/output bytes using the existing journal observation codec; reconstruction rederives snapshot digests and rejects noncanonical bytes. Identity includes scope, run, plan, policy, rule and concrete activation, so global progress or a refreshed observation cannot invent a new decision slot for that occurrence.
 

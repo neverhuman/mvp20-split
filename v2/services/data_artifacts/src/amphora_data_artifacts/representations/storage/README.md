@@ -1,6 +1,6 @@
 # Private representation storage
 
-Owning milestone: BP-06.05/B1.03. [Design](../../../../../../docs/Build%20Plans/BP-06/BP-06.05%20Physical%20design.md). B1.03 verified with113 scoped source and391 full installed tests; the canonical plan owns remaining milestones.
+Owning milestone: BP-06.05/B1.03. [Design](../../../../../../docs/Build%20Plans/BP-06/Completed/BP-06.05%20Physical%20design.md). B1.03 verified with113 scoped source and391 full installed tests; the canonical plan owns remaining milestones.
 
 `ProfileRegistry` owns immutable scoped registration and digest-qualified reads. `WorkLeases` owns single-flight work registration, DB-clock claim/renew/release. `EncodingResults` owns immutable completion, exact winning-claim replay and private reconstruction. `records` centralizes bounded row decoding and scope/profile/input checks; `claims` groups internal outcome/lease values. All imports stay inside Data or declared public dependencies.
 
