@@ -38,3 +38,13 @@ do not mutate the ledger. Retained root unions report unique content bytes only;
 receipt, database and provider overhead are not estimated. Grouping does not shrink
 closure. This primitive has no owner I/O and does not establish source evidence or
 produce worker cost profiles; those integrations remain the next E2.3 delivery.
+
+PageEnvelope bounds byte-aware packing from caller-established maximum canonical
+row and empty-page header bytes (including the largest ordinal). It charges commas,
+uses both64 rows and131072 bytes per page, rejects oversized rows/single-row pages,
+and produces a PageFootprint. Combining footprints enforces the aggregate512-page/
+64MiB closure across families and retained history. Empty row sets create no pages.
+These supplied maxima still require per-profile evidence; this primitive does not
+prove an arbitrary future DTO fits its row envelope. Ten focused tests exercise
+byte-first splitting, row-first splitting, exact byte fit, empties, combined closure
+and invalid/overflow counts.

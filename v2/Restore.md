@@ -52,13 +52,19 @@ Manifest/dev exact pins and locks0.24; generated package projection refreshed.
 Audit docs/Audits/POP-01_Composition_Preflight.md current; module/root READMEs updated.
 
 NEXT: CONTINUE E2.3 publication/retained-history/validation-I/O preflight.
-Current qualified addition: composition/ancestry.py PublicationLedger and11 tests.
+Pushed73dc9991: composition/ancestry.py PublicationLedger and11 tests.
 Explicit complete prospective DAG, external parents never inferred, direct128 and
 4096 identities INCLUDING result; shared ancestry deduplicated. Focused26 pass
 (structure15+ancestry11), source412/installed410 and13 boundaries pass.
 Independent build pop01-composition-ancestry-search-install-20261015b.
 Build a failed UNC/mapped-drive UV lock interpretation; b consistently maps Z:,
-no lock change. Source suite needs --import-mode=importlib. Commit/push next. No API/DTO/worker behavior changes, no containers/provider calls.
+no lock change. Source suite needs --import-mode=importlib.
+Qualified pages.py PageEnvelope/PageFootprint and10 tests: focused36,
+source422 PASS. Installed build pop01-composition-pages-search-install-20261015a
+suite420 PASS. Caller-established row/header upper bytes, comma accounting,
+byte/row page split and combined family/history512-page/64MiB budgets.
+Commit/push after audit/tracker update, then continue reviewed
+worker cost-profile integration. Primitives alone do not complete E2.3. No API/DTO/worker behavior changes, no containers/provider calls.
 Use production source to derive reviewed per-operation publication/row/page/root/
 parent/envelope costs; don't guess worker overhead from method count. Candidate
 membership/RNG must stay separate from operational batch choices within declared
@@ -82,7 +88,10 @@ slice emits contexts+slice root; collector emits per-method evidence, key/observ
 pages/manifests/resolution/root; fitness emits proof/pool/fitness pages+roots/result.
 publish_root groups direct references in120s. Prepared root DIRECT pins include
 method definition/policy/constraints/context/knowledge/method conditions, so valid
-independent maxima can exceed128; preflight must reject before publication.
+declared maxima total at most82 direct parents including the successor
+ancestry/carrier (3+32context+32knowledge+8conditions+4roots+2ancestry+1carrier).
+Earlier note claiming these maxima exceed128 was incorrect. Complete external
+ancestry and accumulated history still need assessment.
 Continue targeted source reads before implementing the next cost profile. E2.3
 full authored material/population composition and E2.4 batch/cap matrix still later.
 

@@ -58,6 +58,23 @@ Independent build `.test-results/pop01-composition-ancestry-search-install-20261
 passes410 tests with all forbidden peer implementations absent. It uses mapped-drive paths consistently: build a hit UV's UNC
 versus mapped-drive lock interpretation; no lock change was needed.
 
+## Byte-aware page primitive
+
+PageEnvelope/PageFootprint add byte-aware upper packing and combined-family/history
+closure budgets. The caller must establish canonical row/header maxima (including
+ordinal digits); this does not prove arbitrary future DTO bytes fit those bounds.
+Commas, empty row sets,64-row/131072-byte pages,8192-byte rows and aggregate
+512-page/64MiB limits are checked. Ten new focused tests pass; source422 passes.
+Independent `.test-results/pop01-composition-pages-search-install-20261015a`
+passes420 tests with all forbidden peer implementations absent. Combined focused
+suite36 passes. No wire/worker behavior changes, containers or provider calls.
+
+Prepared-root pin inspection corrects an earlier Restore assumption: the declared
+maxima remain within128. Upper direct parents are82 for a successor: definition,
+policy,constraints +32context +32knowledge +8methodconditions +4generation roots
++2successor ancestry +1admitted carrier. Deduplication can only reduce this count.
+This does not bound the complete ancestry of those sources or later history.
+
 ## Reviewed publication cardinalities for the next profile
 
 Let B be ALL generated births (including duplicate/rejected dispositions), C the

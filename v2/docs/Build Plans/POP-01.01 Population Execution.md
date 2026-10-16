@@ -11,9 +11,12 @@
   artifact/envelope/ancestry and validation I/O costs. Preserve membership/RNG when
   operational batch/active limits change. Observed method capacity is no reservation.
   Use existing public APIs/DTOs; unsupported combinations reject before dispatch.
+- E2.3 byte-aware page primitive qualified: source422/installed420,36 focused
+  checks. Row/header upper bytes remain caller-established; profile integration
+  and validation I/O remain open. No E2.3 full-unit credit.
 - E2.3 retained-publication primitive qualified: source412/installed410,26 focused
   checks and13 boundaries. Explicit source DAG, carrier/parent accounting and
- 4096 identities including root; worker cost-profile/IO integration remains open.
+  4096 identities including root; worker cost-profile/IO integration remains open.
 - E2.3 bounded structural component qualified: Search0.24 source401/installed399,
   15 focused bounds/identity checks,13 boundaries/750 schemas/24 endpoint pins.
   Full expanded work includes all tools/retries and queue width; compiled plan/
