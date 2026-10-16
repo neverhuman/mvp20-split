@@ -1,6 +1,6 @@
 # Master Build Tracker
 
-Latest checkpoint: 2026-10-15 19:35:41: Search0.24 structural preflight independently qualified (401 source/399 installed); publication/ancestry/validation-I/O ledger next. E2.3 stays0; E2=50%, Execution37.5%, parent12.5%, Build18.75%, Verification0%. RG-01 follows whole POP-01.
+Latest checkpoint: 2026-10-15 19:43:00: Search0.24 retained-publication primitive qualified (412 source/410 installed); worker cost profiles and validation-I/O integration next. E2.3 stays0; E2=50%, Execution37.5%, parent12.5%, Build18.75%, Verification0%. RG-01 follows whole POP-01.
 
 ## Purpose and Authority
 

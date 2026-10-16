@@ -27,3 +27,14 @@ Fifteen focused checks cover nested expansion, serial loop width, batch-dependen
 orchestration, queue saturation, retries, empty scatters, binding budgets, branch
 conservatism, overflow/depth and compiled-plan identity. Full source401 passes;
 independent verification is recorded in the POP-01_Composition_Preflight audit.
+
+PublicationLedger now assesses an explicit prospective publication DAG. Publication
+records include every admitted input carrier and declared parent. External source
+closure must be established by the caller; absent parents fail instead of being
+assumed leaves. Insertions are topological, so forward edges/cycles reject. Direct
+parents stay within128; the result plus its distinct ancestors stay within4096.
+Shared ancestors count once, and conflicting identities reject. Failed additions
+do not mutate the ledger. Retained root unions report unique content bytes only;
+receipt, database and provider overhead are not estimated. Grouping does not shrink
+closure. This primitive has no owner I/O and does not establish source evidence or
+produce worker cost profiles; those integrations remain the next E2.3 delivery.

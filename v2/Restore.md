@@ -31,7 +31,7 @@ never modify v1/regenerate manifest. Sparse v1 intentionally omitted.
 Pushed da76b71e Process0.3/completeE2.2 worker exit. E2=50%, Execution37.5%,
 parent12.5%, Build18.75%, Verification0. E2.3 remains0 until FULL composition gate.
 
-Uncommitted Search0.24 first bounded preflight component independently verified:
+Pushed f8863cad Search0.24 first bounded preflight component independently verified:
 composition.GraphWorkBounds (new source-adjacent README/tests/composition).
 Counts all authored activations/scopes/invokes and binding budgets, with scatter
 max_members for work vs active-child max_parallel for queue. Serial loop iterations
@@ -51,8 +51,14 @@ No new worker behavior/DTO/API/scientific algorithm, containers or provider call
 Manifest/dev exact pins and locks0.24; generated package projection refreshed.
 Audit docs/Audits/POP-01_Composition_Preflight.md current; module/root READMEs updated.
 
-NEXT: update current canonical checkpoint/Restore, commit/push this verified bounded
-component, then CONTINUE E2.3 publication/retained-history/validation-I/O preflight.
+NEXT: CONTINUE E2.3 publication/retained-history/validation-I/O preflight.
+Current qualified addition: composition/ancestry.py PublicationLedger and11 tests.
+Explicit complete prospective DAG, external parents never inferred, direct128 and
+4096 identities INCLUDING result; shared ancestry deduplicated. Focused26 pass
+(structure15+ancestry11), source412/installed410 and13 boundaries pass.
+Independent build pop01-composition-ancestry-search-install-20261015b.
+Build a failed UNC/mapped-drive UV lock interpretation; b consistently maps Z:,
+no lock change. Source suite needs --import-mode=importlib. Commit/push next. No API/DTO/worker behavior changes, no containers/provider calls.
 Use production source to derive reviewed per-operation publication/row/page/root/
 parent/envelope costs; don't guess worker overhead from method count. Candidate
 membership/RNG must stay separate from operational batch choices within declared
