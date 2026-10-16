@@ -46,11 +46,7 @@ The detailed receipt/reservation schemas and consistency protocol are prerequisi
 
 ## Enforcement and Replacement Gates
 
-- Each service/tool builds and tests from its own dependency manifest and declared workspace packages. Unrelated scientific dependencies must not enter its image.
-- Automated import/dependency checks reject private cross-owner imports and cycles. Integration checks reject unauthorized table access and verify public contract fixtures.
-- Contract changes identify consumers, support windows and migrations. Pin dependencies; do not require every service to update because a shared convenience library changed.
-- A replacement passes boundary fixtures, observable behavior, negative cases and relevant state/recovery tests without relying on old internals. Compare scientific results under declared tolerance and method identity; transport conformance alone is insufficient.
-- Finish/drain the active campaign before human-initiated replacements. Preserve old versions, checkpoints and evidence as required for replay; explicitly migrate or reject incompatible state. Rollback means selecting an eligible prior version, not overwriting historical outputs.
+The [SDLC build and release gates](../../sdlc/delivery/Build_and_Release.md#isolation-and-replacement-gates) own independent-build, compatibility, replacement and cutover procedure. The ownership and private-state constraints above remain architectural requirements.
 
 ## Deployment Direction
 

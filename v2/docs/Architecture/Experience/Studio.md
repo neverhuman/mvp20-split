@@ -63,7 +63,7 @@ Human Graph Studio requirements define editing, traversal and intervention. [Can
 
 ## Interaction Reference Patterns
 
-[Research Studio Interaction References](Interaction_References.md) maps the user-supplied ComfyUI, LangGraph/LangSmith Studio, Node-RED, Dagster, Bloom, W&B and MLflow references into Design, Monitor, Explore and Compare modes. The map names prototype tasks and delivery owners while preserving immutable active campaigns, source-first knowledge authoring and evidence-aware comparison.
+[Research Studio Interaction References](../../sdlc/ui/Interaction_References.md) maps the user-supplied ComfyUI, LangGraph/LangSmith Studio, Node-RED, Dagster, Bloom, W&B and MLflow references into Design, Monitor, Explore and Compare modes. The map names prototype tasks and delivery owners while preserving immutable active campaigns, source-first knowledge authoring and evidence-aware comparison.
 
 
 ## Implemented Inspection Boundary

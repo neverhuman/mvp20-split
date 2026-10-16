@@ -1,5 +1,7 @@
 # Amphora v2
 
+Development procedures: [SDLC framework](docs/sdlc/README.md). Load the relevant topic rather than treating architecture as a coding checklist.
+
 The active workspace for the graph-native research engine. Runtime owns durable
 campaign execution; independently packaged tools provide scientific and search
 capabilities through public contracts. Current implementation and remaining gates

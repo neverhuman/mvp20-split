@@ -48,11 +48,7 @@ Untrusted request / worker result / external observation / LLM proposal
 
 Authentication and basic scope checks occur before expensive processing; authorization and mutable preconditions are rechecked at commit. Pydantic validation is not authority to execute code, accept evidence or modify a graph. Validators must be deterministic and bounded; database queries, model calls and remote scientific checks belong in explicit application/domain stages.
 
-Use strict validation at internal command and invocation boundaries, reject unexpected fields in closed command contracts and define any extensible metadata explicitly. Normalize source-specific data in acquisition adapters, preserving raw input, conversion identity and provenance. Never silently repair scientific units or representations merely to pass validation. [Pydantic strict mode](https://docs.pydantic.dev/latest/concepts/strict_mode/) reduces coercion but differs between Python and JSON inputs, so both boundary paths need fixtures.
-
-Structural validity checks required fields, tags, ranges and formats. Semantic validity checks units, representation compatibility, port meaning, graph dependencies and scientific applicability. Transactional acceptance checks live authority, expected revision, budget and attempt fencing. A structurally valid molecule is not necessarily synthesizable; a well-shaped knowledge assertion is not accepted evidence.
-
-Return stable reason codes, safe field paths and the validation stage. Do not expose raw private payloads through validation errors or logs. Bound input size, graph depth, collection length and error output before accepting a contract as safe to process.
+The [API development principles](../../sdlc/api/API_Principles.md#validation-and-safe-failures) own validator construction, strict-input fixtures and safe failure reporting. Bounded structural validation, domain semantics and transactional authority remain distinct stages of this architectural pipeline.
 
 ## Rust and Other Capability Adapters
 

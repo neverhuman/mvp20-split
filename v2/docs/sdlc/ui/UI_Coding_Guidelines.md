@@ -2,8 +2,8 @@
 
 - Status: active instructions for v2 UI design and implementation; no UI implementation claimed
 - Last reviewed: `2026-09-22 20:46:34` (America/Chicago)
-- Owner: experience layer; used with [Development Process](Development_Process.md)
-- Design authority: [Human Research Workspace](Architecture/Experience/Experience_Architecture.md)
+- Owner: experience layer; used with [Development Process](../README.md)
+- Design authority: [Human Research Workspace](../../Architecture/Experience/Experience_Architecture.md)
 
 ## Provenance and Scope
 
@@ -68,4 +68,4 @@ Update the owning module contract and plan evidence when behavior changes. This 
 
 ## Interaction References
 
-Before Studio prototyping, read [Research Studio Interaction References](Architecture/Experience/Interaction_References.md). Use its task-specific patterns and connected mode boundaries as prototype inputs; libraries, databases and product integrations remain separate choices.
+Before Studio prototyping, read [Research Studio Interaction References](Interaction_References.md). Use its task-specific patterns and connected mode boundaries as prototype inputs; libraries, databases and product integrations remain separate choices.

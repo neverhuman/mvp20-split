@@ -2,7 +2,7 @@
 
 - Design status: reference patterns for prototype evaluation; no frontend/framework/product dependency selected.
 - Reviewed: `2026-09-24 12:10:07` (America/Chicago).
-- Parent: [Graph Studio](Studio.md).
+- Parent: [Graph Studio](../../Architecture/Experience/Studio.md).
 - Provenance: user-supplied Claude reference list, checked against primary documentation. Adaptations below are Amphora design recommendations, not claims that these products implement Amphora semantics.
 
 ## Reference Map

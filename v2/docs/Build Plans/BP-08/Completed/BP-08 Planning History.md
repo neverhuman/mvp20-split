@@ -110,7 +110,7 @@ Keep scenario evidence with absolute timestamps, implementation revision, fixtur
 
 ## UI Reference Refinement
 
-`2026-09-24 12:10:07`: Use the [interaction reference map](../../../Architecture/Experience/Interaction_References.md) for population/fitness inspection: linked tables and multi-objective plots with eligibility, units, evaluator version and generation context. Implementation and all phase percentages remain 0%; this refines existing tasks.
+`2026-09-24 12:10:07`: Use the [interaction reference map](../../../sdlc/ui/Interaction_References.md) for population/fitness inspection: linked tables and multi-objective plots with eligibility, units, evaluator version and generation context. Implementation and all phase percentages remain 0%; this refines existing tasks.
 
 ## Decisions and Handoff
 

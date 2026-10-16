@@ -171,7 +171,7 @@ Historical dashboard snapshot follows. Partial BP-06.05/06 statuses are supersed
 
 [BP-01 closeout](BP-01_Foundation_Closeout.md) assessed the implemented contract packages, validation API and isolation/build tooling. No blocking drift remains within that bounded scope. Durable transactions, complete tool/graph schemas, authentication, Rust/UI conformance and scientific acceptance remain owned successor gates. The nonblocking Starlette/httpx test-client deprecation is assigned to dev-tool maintenance. Historical v1 limitations remain in the reuse baseline and frozen evidence.
 
-Use [Development Process](../Development_Process.md) and the [audit template](../Templates/Plan%20Audit%20Template.md). Record scope, revision, claim, observed behavior, evidence, blocking classification, owner and disposition. Keep unresolved/recently closed items here; aligned/no-follow-up records belong in [history](Architecture%20Drift%20History.md).
+Use [SDLC framework](../sdlc/README.md) and the [audit template](../sdlc/templates/Plan%20Audit%20Template.md). Record scope, revision, claim, observed behavior, evidence, blocking classification, owner and disposition. Keep unresolved/recently closed items here; aligned/no-follow-up records belong in [history](Architecture%20Drift%20History.md).
 
 [BP-01A closeout](BP-01A_Test_and_Graph_Baseline_Closeout.md) aligns module-owned verification and the source-derived v1 graph baseline. The scaffold is structurally valid only; BP-04 owns actual orchestration parity, BP-08 scientific search. No blocking drift in the completed scope.
 
@@ -347,3 +347,7 @@ qualified through Studio0.36 local/LAN; explicit unranked/absent science state.4
 Studio checks, dependency guard and retained original-demo regression pass.
 [Audit](UI-02_Candidate_Inspector.md). Follow-Up: none for bounded UI-02; POP-01/ML-01
 own broader already-planned populations/scientific evidence.
+
+## SDLC framework separation ? 2026-10-16
+
+Owner-requested [process separation](SDLC_Framework_Separation.md) is aligned within the reviewed documentation scope. Procedures/templates now live under [SDLC](../sdlc/README.md); architectural ownership/protocols, module contracts, implementation percentages and release gates remain intact. Applied to both checkouts without runtime changes.

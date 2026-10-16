@@ -61,8 +61,8 @@ interactive workspace; technical inventories and receipts belong in drill-down.
 
 Authority: [Studio architecture](../../Architecture/Experience/Studio.md),
 [human graph requirements](../../Architecture/Requirements/Product_Requirements.md#human-graph-studio),
-[UI guidelines](../../UI_Coding_Guidelines.md),
-[interaction references](../../Architecture/Experience/Interaction_References.md) and
+[UI guidelines](../../sdlc/ui/UI_Coding_Guidelines.md),
+[interaction references](../../sdlc/ui/Interaction_References.md) and
 [Studio module boundary](../../../studio/README.md).
 
 Keep transport, page models, graph layout and rendering functionally isolated.

@@ -1,5 +1,7 @@
 # Architecture Document Guide
 
+Development procedures: [SDLC framework](../sdlc/README.md). Load the relevant topic rather than treating architecture as a coding checklist.
+
 - Last reviewed: `2026-09-23 09:51:08` (America/Chicago)
 - Status: decomposed v2 design; runtime implementation pending
 
@@ -11,7 +13,7 @@ This README is navigation only. Named domain `*_Architecture.md` documents descr
 
 The master's System Architecture child is the construction view: physical/logical topology, graph execution machine, storage/transaction boundaries, protocols and worked execution. The eight functional domain children remain responsibility views; they do not define independently deployed services.
 
-[Product Requirements](Requirements/Product_Requirements.md) remains the requirement authority. [Requirements Coverage](Requirements_Coverage.md) maps requirement sections to owners for maintenance and audit; it is not the normal context-loading path. [Development Process](../Development_Process.md) governs plans and closeout audits.
+[Product Requirements](Requirements/Product_Requirements.md) remains the requirement authority. [Requirements Coverage](Requirements_Coverage.md) maps requirement sections to owners for maintenance and audit; it is not the normal context-loading path. [SDLC framework](../sdlc/README.md) governs plans and closeout audits.
 
 ## Supporting and Historical References
 
@@ -19,7 +21,7 @@ High-level specifications and the earlier flat design/history documents now live
 
 The documents below retain earlier detailed design, source review or historical implementation context. They are supporting references, not competing master architecture documents. Current ownership follows the decomposed hierarchy. Resolve substantive conflicts against Product Requirements and record design changes explicitly rather than assuming a reference is implemented.
 
-- [Development Process](../Development_Process.md) - architecture/module decomposition, canonical plan trackers, phase gates, verification and closeout drift audits.
+- [SDLC framework](../sdlc/README.md) - architecture/module decomposition, canonical plan trackers, phase gates, verification and closeout drift audits.
 - [Master Build Tracker](../Build%20Plans/Master%20Build%20Tracker.md) - local program priority and links to canonical execution plans; no v2 implementation plan is active yet.
 - [Domain Graph Authoring and Replay](Requirements/Domain_Graph_Authoring_and_Replay.md) - human text decomposition, initial extraction prompt, reviewed graph changes, descriptive and typed history, concurrent edits and atomic rebuild publication.
 - [Scientific Tools and Graph Execution](Requirements/Scientific_Tools_and_Graph_Execution.md) - reusable tool versions, graph-node bindings, invocation/state/feedback contracts, hundreds-of-tools discovery, and domain-specific execution-layer migration.

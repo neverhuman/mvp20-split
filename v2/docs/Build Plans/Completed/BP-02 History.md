@@ -173,11 +173,11 @@ The preliminary 34-child-delivery denominator included pure design gates S1 and 
 | 2026-09-22 20:30:31 | Proposed runtime topology, graph machine, persistent-state protocol, interfaces and complete research loop delivered; single-server baseline confirmed | [Completed system plan](System%20Architecture%20Plan.md), [audit](../../Audits/System_Architecture_Closeout.md) |
 | 2026-09-22 19:04:40 | Twenty deeper contracts, eight coordination summaries, three flow diagrams and architecture-depth template complete | [Completed detail plan](Architecture%20Detail%20Plan.md), [audit](../../Audits/Architecture_Detail_Closeout.md) |
 | 2026-09-22 16:45:29 | Architecture documentation plan complete: 8 domains, 20 focused contracts, 102 requirement-section owners; no runtime code | [Completed plan](Architecture%20Decomposition%20Plan.md), [closeout audit](../../Audits/Architecture_Decomposition_Closeout.md) |
-| 2026-09-22 13:47:22 | Local SDLC rules, tracker hierarchy, templates and drift surfaces established; no runtime implementation claimed | [Process](../../Development_Process.md), [process alignment record](../../Audits/Architecture%20Drift%20History.md) |
+| 2026-09-22 13:47:22 | Local SDLC rules, tracker hierarchy, templates and drift surfaces established; no runtime implementation claimed | [Process](../../sdlc/README.md), [process alignment record](../../Audits/Architecture%20Drift%20History.md) |
 
 | 2026-09-22 20:57:10 | Careful readiness review: bounded implementation can start after scope/assumption closure; nine findings and six owner questions recorded | [Readiness review](../../Audits/Architecture_Readiness_Review.md) |
 
-| 2026-09-22 21:03:27 | Initial internal/demo autonomous profile and replaceable-module boundaries recorded; owner questions answered, no runtime activated | [Delivery profile](../../Architecture/Requirements/Product_Requirements.md#initial-delivery-profile), [module template](../../Templates/Module%20README%20Template.md) |
+| 2026-09-22 21:03:27 | Initial internal/demo autonomous profile and replaceable-module boundaries recorded; owner questions answered, no runtime activated | [Delivery profile](../../Architecture/Requirements/Product_Requirements.md#initial-delivery-profile), [module template](../../sdlc/templates/Module%20README%20Template.md) |
 
 | 2026-09-23 09:41:20 | Strict service isolation and proposed independently replicated tool workloads; source layout/state boundaries refined, no deployment | [Isolation](../../Architecture/System/Service_Isolation.md), [tool services](../../Architecture/Capabilities/Tool_Services.md) |
 
@@ -185,7 +185,7 @@ The preliminary 34-child-delivery denominator included pure design gates S1 and 
 
 | 2026-09-23 09:51:08 | High-level specs/supporting references relocated into Architecture/Requirements; links and PDF preservation checked | [Requirements guide](../../Architecture/Requirements/README.md) |
 
-| 2026-09-23 11:04:44 | Expanded MBT into initial program dashboard with nine queued planning areas, dependency gates, four milestones and exact next planning task; implementation unactivated | This tracker; [plan template](../../Templates/Build%20Plan%20Template.md) |
+| 2026-09-23 11:04:44 | Expanded MBT into initial program dashboard with nine queued planning areas, dependency gates, four milestones and exact next planning task; implementation unactivated | This tracker; [plan template](../../sdlc/templates/Build%20Plan%20Template.md) |
 
 | 2026-09-23 19:55:48 | BP-01 complete: 39 tests, four independent wheel installs, strict schema/API boundary and replacement docs; archived after scoped audit | [Plan](BP-01%20Contract%20and%20Service%20Foundations.md), [audit](../../Audits/BP-01_Foundation_Closeout.md) |
 
@@ -195,7 +195,7 @@ The preliminary 34-child-delivery denominator included pure design gates S1 and 
 
 | 2026-09-24 12:06:07 | BP-03 through BP-09 first drafts published at 0%; BP-02 authorized and T1 complete, P1 50% / overall 8.33%; next T2 | Canonical plan links above; [protocol decisions](../../Architecture/System/Runtime_Command_Protocol.md) |
 
-| 2026-09-24 12:10:07 | User UI references mapped to Studio modes and BP-05/06/08 prototype tasks; percentages unchanged, BP-02 remains P1/T2 | [Reference map](../../Architecture/Experience/Interaction_References.md) |
+| 2026-09-24 12:10:07 | User UI references mapped to Studio modes and BP-05/06/08 prototype tasks; percentages unchanged, BP-02 remains P1/T2 | [Reference map](../../sdlc/ui/Interaction_References.md) |
 
 | 2026-09-25 08:49:41 | BP-02 decomposed; contracts and isolated persistence children closed; parent 31.25% (10/32), next .03/A1 | [Persistence audit](../../Audits/BP-02.02_Persistence_Closeout.md); 119 tests, eight independent builds |
 

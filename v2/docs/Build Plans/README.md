@@ -27,7 +27,7 @@ BP-01 through BP-09 are [completed](Completed/README.md). SQ-01/UI-01/UI-02 are 
 - [BP-08 Evolutionary Search Integration](Completed/BP-08%20Evolutionary%20Search%20Integration.md).
 - [BP-09 Single-Server Integrated Demo and Replacement Proof](Completed/BP-09%20Single-Server%20Integrated%20Demo%20and%20Replacement%20Proof.md).
 
-Read the selected plan's tracker first. Complete each phase gate before advancing. Use module-owned tests and replacement READMEs; keep integration/E2E separate. [Development Process](../Development_Process.md) governs activation audits, percentages, closeout audits and archival. Older Architecture/Requirements proposals are reference inputs, not competing execution trackers.
+Read the selected plan's tracker first. Complete each phase gate before advancing. Use module-owned tests and replacement READMEs; keep integration/E2E separate. [SDLC framework](../sdlc/README.md) governs activation audits, percentages, closeout audits and archival. Older Architecture/Requirements proposals are reference inputs, not competing execution trackers.
 
 [Planning Readiness and Cross-Plan Handoffs](Planning_Readiness.md) summarizes child maturity, producer/consumer contracts, evidence tiers and the exact later gates needing owner decisions. Open the parent first, then its immediate child; history preserves prior scope and is not an execution tracker.
 

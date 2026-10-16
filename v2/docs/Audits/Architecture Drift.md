@@ -8,6 +8,8 @@
 
 Latest scoped review: [POP-01.08 ancestry footprint](POP-01_Artifact_Ancestry_Footprint.md) aligned; full POP-01/E2.3 remains active.
 
+Process-only review: [SDLC framework separation](SDLC_Framework_Separation.md) aligned; no runtime or implementation-credit change.
+
 ## Active Findings
 
 | Finding | Owner / trigger | Disposition |
@@ -22,7 +24,7 @@ Latest scoped review: [POP-01.08 ancestry footprint](POP-01_Artifact_Ancestry_Fo
 
 [BP-06 parent audit](BP-06_Knowledge_Evidence_Closeout.md) reconciles six accepted children. Protocol fixtures, receipt/correction integration, independent reconstruction and scoped views are implemented; old partial notes remain in [drift history](Architecture%20Drift%20History.md). Live-model quality, scientific efficacy and deployed operations retain separate gates.
 
-Use [Development Process](../Development_Process.md) and the [audit template](../Templates/Plan%20Audit%20Template.md). Each discrepancy names evidence, boundary, blocking classification, owner and disposition. Aligned records with no follow-up belong in history.
+Use [SDLC framework](../sdlc/README.md) and the [audit template](../sdlc/templates/Plan%20Audit%20Template.md). Each discrepancy names evidence, boundary, blocking classification, owner and disposition. Aligned records with no follow-up belong in history.
 
 
 UI-02/P1 structural profile gaps are closed; [P1 audit](UI-02_Chemical_Representation.md). UI-02/P2-P4 are complete and aligned; [inspector audit](UI-02_Candidate_Inspector.md). Population/lineage and qualified molecular evaluation remain POP-01/ML-01; no new unresolved inspector drift.

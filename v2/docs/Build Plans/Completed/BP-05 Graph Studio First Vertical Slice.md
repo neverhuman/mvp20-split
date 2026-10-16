@@ -52,7 +52,7 @@ Keep scenario evidence with absolute timestamps, implementation revision, fixtur
 
 ## UI Reference Refinement
 
-`2026-09-24 12:10:07`: Use the [interaction reference map](../../Architecture/Experience/Interaction_References.md) in P1/T1-T2 prototypes and P4 usability checks. Design/Monitor separation and persistent selection refine existing scope; Explore and fitness Compare depend on BP-06/BP-08. Implementation and all phase percentages remain 0%; this refines existing tasks.
+`2026-09-24 12:10:07`: Use the [interaction reference map](../../sdlc/ui/Interaction_References.md) in P1/T1-T2 prototypes and P4 usability checks. Design/Monitor separation and persistent selection refine existing scope; Explore and fitness Compare depend on BP-06/BP-08. Implementation and all phase percentages remain 0%; this refines existing tasks.
 
 ## Reference Refinement
 

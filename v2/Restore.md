@@ -15,6 +15,12 @@ docs/Images/V1_Evidence/ (PPTX/PDF/PNGs, source notes and hashes), also copied t
 original v2/docs/Images/V1_Evidence for access. Read-only v1 receipts; no training,
 provider calls or services changed. POP-01 implementation checkpoint unchanged.
 
+Owner-requested process separation 2026-10-16 14:17:15 America/Chicago: reusable rules now
+live in docs/sdlc/README.md and focused subfolders. AGENTS links task-specific
+processes; architecture retains system contracts. Documentation-only updates applied
+to both checkouts; original services/source remain frozen. Resume the previously
+authorized POP-01 task after this interruption. Progress and approval gates unchanged.
+
 ## Task and workspace
 
 Continue until needed remains authorized. Primary POP-01.01/E2.3 authored composition/resource preflight.
