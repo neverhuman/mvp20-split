@@ -1,21 +1,24 @@
 # POP-01.01 Population Execution
 
 - Status: active E2; parent [POP-01](POP-01%20Population%20Campaign%20Execution%20and%20Experience.md).
-- Last refreshed: 2026-10-15 20:16:12 (America/Chicago).
+- Last refreshed: 2026-10-15 22:26:03 (America/Chicago).
 - Implementation: 37.5%; E1=100%, E2=50%, E3/E4=0%, four equal delivery gates.
 - Current: E2.1/E2.2 complete; E2.3 authored composition/resource preflight active.
-- Next: owner decision on [POP-01.08](POP-01.08%20Artifact%20ancestry%20footprint%20decision.md), then external-source preflight; complete authored
-  material/population composition and E2.4 batch/cap matrix.
+- Next: complete full numerical spec/admission/history/binding-I/O preflight, then
+  authored material/population composition and E2.4 batch/cap matrix.
 - Active bounded task: validate full admitted-plan/spec identity and resource bounds
   before scientific dispatch. Include all orchestration/retries, queued work,
   artifact/envelope/ancestry and validation I/O costs. Preserve membership/RNG when
   operational batch/active limits change. Observed method capacity is no reservation.
   Use existing public APIs/DTOs; unsupported combinations reject before dispatch.
+- E2.3 external-source footprint component qualified: Data610 source/88 installed
+  SQL; Search481 source/479 installed,95 focused;46 boundary/schema checks.
+  Read-only actual26-member closure/ordinary leaf/Data restart/retention403 and
+  live SourceFootprints assessment/refresh pass. [Evidence](../Audits/POP-01_Artifact_Ancestry_Footprint.md).
 - E2.3 authored two-batch/seed-I/O component qualified: source467/installed465,
   81 focused checks/13 boundaries.16 real candidates, two batches, both owners
   restarted,19 accepted attempts; owned containers removed. Pure batch1/8/32
-  compilation passes. General external ancestry requires proposed POP-01.08;
-  approval pending, no endpoint implemented. Full gate remains incomplete.
+  compilation passes. General external ancestry is now qualified by POP-01.08. Full gate remains incomplete.
 - E2.3 numeric publication/header profile qualified: source452/installed450,
   66 focused composition checks, real1000-birth count bound and13 boundaries.
   Exact operation/release/image pins, grouping/retries/binding bytes included.

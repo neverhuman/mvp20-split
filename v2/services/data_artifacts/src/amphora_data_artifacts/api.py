@@ -20,6 +20,7 @@ from fastapi.responses import JSONResponse, Response
 from sqlalchemy import text
 from sqlalchemy.exc import DBAPIError
 
+from .ancestry_footprints.api import install as install_ancestry_footprints
 from .acquisition.api import acquisition_router
 from .derivations.publication import DerivedPublications
 from .persistence.commands import CommandConflict
@@ -36,6 +37,7 @@ from .retrieval.api import retrieval_router
 
 def create_app(uploads, storage, credentials, outcomes=None, *, acquisition=None, representations=None, retrieval=None):
     app = FastAPI(title="Amphora artifact publication", version="0.1.0")
+    install_ancestry_footprints(app,uploads.commands.engine,credentials)
     finalizer = Finalizer(uploads, storage)
     reads = ArtifactReads(uploads.commands.engine, storage, uploads.limits.max_bytes)
     reservations = Reservations(uploads, outcomes)

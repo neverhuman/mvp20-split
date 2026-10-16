@@ -1,7 +1,7 @@
 # POP-01.08 Artifact ancestry footprint decision
 
-- Status: proposed; no contract, endpoint or authority change implemented.
-- Reviewed: 2026-10-15 20:03:00 America/Chicago.
+- Status: owner-approved; implemented and independently qualified in Data0.33/artifact_ancestry0.1, with Search0.24 consumer.
+- Reviewed: 2026-10-15 22:24:23 America/Chicago.
 - Owner: Data; POP-01.01/E2.3 external-source resource preflight prerequisite.
 - Recommendation: one scoped read-only metadata GET, returning totals only.
 
@@ -26,7 +26,7 @@ source_rights/ancestry.py bounded traversal; retention_closures/storage.py disco
 and reservations.py retention-only reads. This proposal reuses that owner-local
 discovery rather than copying owner SQL into Search or granting worker retention.
 
-## Exact proposed boundary
+## Approved exact boundary
 
 GET `/v1/artifacts/{artifact_id}/ancestry-footprint`.
 Existing tenant/project-scoped `read` grant. No new action, command or query inputs.
@@ -69,8 +69,10 @@ Qualify through independently installed Data and a read-only public client, then
 bind the observed counts/digests into Search's prospective resource assessment.
 
 POP-01.06 requires that "any further public route or changed legacy semantics
-returns to review." Approval is required BEFORE implementing this new boundary.
+returns to review." Owner explicitly approved this exact boundary on 2026-10-15; implementation is authorized.
 E1/E2.1/E2.2 stay complete; no E2.3 unit credit or change to execution authority.
 Authored batch-loop compilation and validation-I/O accounting can continue
-independently while this decision is pending. This does not approve original-demo
-promotion, service restarts or provider calls.
+independently after this qualified prerequisite. This does not approve original-demo
+promotion or service restarts, fleet activity or provider calls.
+
+Qualification and scoped drift review: [ancestry footprint audit](../Audits/POP-01_Artifact_Ancestry_Footprint.md).

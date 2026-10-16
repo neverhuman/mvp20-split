@@ -512,5 +512,11 @@
     "coverage_sources": [
       "contracts/node_inputs/src/amphora_contracts_node_inputs"
     ]
+  },
+  "contracts-artifact-ancestry": {
+    "tests": "contracts/artifact_ancestry/tests",
+    "coverage_sources": [
+      "contracts/artifact_ancestry/src/amphora_contracts_artifact_ancestry"
+    ]
   }
 }

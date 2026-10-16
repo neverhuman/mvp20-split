@@ -93,3 +93,15 @@ response limit including its one-byte oversize probe; headers/framing are exclud
 This is an upper envelope, not measured traffic or latency. Runtime graph bindings,
 operator retention confirmation, polling, owner SQL/CPU and successor/collection/
 fitness validation I/O remain separate. The reviewed SDK release is explicit.
+
+SourceFootprints consumes the public Data ancestry observation through the public
+SDK transport using a scoped read grant. At most128 source roots; aliases deduplicate
+before I/O and conflicting identities reject. Exact metadata and root-byte coverage
+are checked. Every non200 rejects;404 never means leaf. Observed source ancestry plus
+future successful publications must fit4096 identities including the root; source
+content plus all-attempt publication budgets bounds campaign content. Cross-root
+sharing may be charged repeatedly as an upper bound. An explicit refresh rejects
+changed observations; these reads are not leases or owner admission. Runtime/Data
+remain authoritative. Full history/binding I/O and material composition remain open.
+Qualified via actual isolated Search->Data read-only HTTP before/after Data restart;
+see POP-01_Artifact_Ancestry_Footprint audit.

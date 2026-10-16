@@ -1,10 +1,12 @@
 # Architecture Drift
 
 - Status: BP-01 through BP-09 closed/audited; named successor findings remain.
-- Last refreshed: `2026-10-13 18:16:04` (America/Chicago).
+- Last refreshed: `2026-10-15 22:25:00` (America/Chicago).
 - Scope: unresolved v2 design/implementation alignment and scoped successor boundaries.
 - Active focus: selected-host integration and named scientific/UI successor limits.
 - Next gate: POP-01 activation/compatibility. UI-01/UI-02 are closed; LR-01/UI-R01 retain named reliability work.
+
+Latest scoped review: [POP-01.08 ancestry footprint](POP-01_Artifact_Ancestry_Footprint.md) aligned; full POP-01/E2.3 remains active.
 
 ## Active Findings
 

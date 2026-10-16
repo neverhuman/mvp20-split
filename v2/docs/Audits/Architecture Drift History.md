@@ -1,5 +1,7 @@
 # Architecture Drift History
 
+- `2026-10-15 22:25:00`: POP-01.08 approved/qualified, aligned; [ancestry footprint audit](POP-01_Artifact_Ancestry_Footprint.md). Data-owned read-only totals, public-contract/isolated Search clients and restart proof preserve authority/legacy schemas. No unresolved scoped drift; full E2.3 preflight/composition remains active.
+
 - `2026-10-11 19:26:42`: UI-01.07 complete100%, aligned; [campaign provenance audit](UI-01.07_Campaign_Provenance.md). Scoped Planning origin API/index, independent Studio Runtime/Research checks, actual local/LAN scientific draft/launch/Knowledge, original-digest process replacement and negative reads pass. No unresolved child drift; N2.3/N2.4/N3 remain parent scope.
 
 - `2026-10-09 10:20:00`: UI-01.06 bounded launch complete100%, aligned; [integration audit](UI-01.06_Launch_Integration.md). Deployment0.18.3/502 independent tests/four recovery probes; Studio0.23.2/337 tests; actual local/LAN Run/results and Knowledge traversal; same request/run/container interruption recovery with five succeeded nodes and zero restored-browser launch POSTs. Capacity, authored observation reads, coherent snapshot retry and startup adoption ordering corrected. Failed trials preserved. No unresolved launch-scope drift; parent Planning/Research provenance and broader UI/scientific gates remain active.

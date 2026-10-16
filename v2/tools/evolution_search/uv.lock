@@ -3,6 +3,21 @@ revision = 3
 requires-python = "==3.12.*"
 
 [[package]]
+name = "amphora-contracts-artifact-ancestry"
+version = "0.1.0"
+source = { editable = "../../contracts/artifact_ancestry" }
+dependencies = [
+    { name = "amphora-contracts-core" },
+    { name = "pydantic" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "amphora-contracts-core", editable = "../../contracts/core" },
+    { name = "pydantic", specifier = ">=2.12,<3" },
+]
+
+[[package]]
 name = "amphora-contracts-artifacts"
 version = "0.2.0"
 source = { editable = "../../contracts/artifacts" }
@@ -232,6 +247,7 @@ name = "amphora-evolution-search"
 version = "0.24.0"
 source = { editable = "." }
 dependencies = [
+    { name = "amphora-contracts-artifact-ancestry" },
     { name = "amphora-contracts-artifacts" },
     { name = "amphora-contracts-campaigns" },
     { name = "amphora-contracts-core" },
@@ -250,6 +266,7 @@ dependencies = [
 
 [package.metadata]
 requires-dist = [
+    { name = "amphora-contracts-artifact-ancestry", editable = "../../contracts/artifact_ancestry" },
     { name = "amphora-contracts-artifacts", editable = "../../contracts/artifacts" },
     { name = "amphora-contracts-campaigns", editable = "../../contracts/campaigns" },
     { name = "amphora-contracts-core", editable = "../../contracts/core" },

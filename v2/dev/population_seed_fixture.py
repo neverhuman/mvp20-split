@@ -26,7 +26,7 @@ from population_selection_fixture import SelectionFixture
 from population_successor_fixture import SuccessorFixture
 
 
-def verify(output, python, ports, environment, scope, call, command, start, stop, *, with_slice=False, method_operation=None, inspect_inputs=False, with_collection=False, collection_case="normal", with_fitness=False, with_selection=False, with_successor=False, successor_tight=False, successor_consume=False, successor_fitness=False, successor_failure=False, successor_select=False, successor_next=False, successor_generation2=False, population_loop=False, population_paired=False, population_batch=False):
+def verify(output, python, ports, environment, scope, call, command, start, stop, *, with_slice=False, method_operation=None, inspect_inputs=False, inspect_ancestry=False, with_collection=False, collection_case="normal", with_fitness=False, with_selection=False, with_successor=False, successor_tight=False, successor_consume=False, successor_fitness=False, successor_failure=False, successor_select=False, successor_next=False, successor_generation2=False, population_loop=False, population_paired=False, population_batch=False):
     data_port, runtime_port = ports
     descriptor_result = subprocess.run([str(python), "-I", "-m", "amphora_evolution_search", "population-describe",
         "--operation", "seed", "--image-sha256", "f" * 64], capture_output=True, timeout=120)
@@ -99,6 +99,9 @@ def verify(output, python, ports, environment, scope, call, command, start, stop
     environment["QUAL_WORKER_TOKEN"] = "w" * 32
     environment["QUAL_CURSOR_KEY"] = "c" * 64
     data["principals"].append({**worker, "actions": ["read", "upload", "finalize"]})
+    if inspect_ancestry:
+        environment["QUAL_ANCESTRY_TOKEN"]="v"*32
+        data["principals"].append({"actor_id":"ancestry-reader","scope":scope,"token_env":"QUAL_ANCESTRY_TOKEN","actions":["read"]})
     if collection_fixture is not None:
         data["principals"].append({**collection_fixture.worker,"actions":["read","upload","finalize"]})
     if fitness_fixture is not None:
@@ -295,6 +298,9 @@ def verify(output, python, ports, environment, scope, call, command, start, stop
         response.read()
     finally:
         connection.close()
+    if inspect_ancestry:
+        from artifact_ancestry_fixture import verify as verify_ancestry
+        verify_ancestry(output,data_port,environment,prepared,context,reservation,closure,start,stop)
     if batch_fixture is not None:
         batch_fixture.run(run,prepared,output/"population-worker.json",call,command,read,start,stop,environment)
         return

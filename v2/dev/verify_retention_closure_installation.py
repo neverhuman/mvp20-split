@@ -48,7 +48,11 @@ def request(port, path, body=None, *, method=None):
         connection.close()
 
 
-def verify(output, data_python, runtime_python, population_python=None, *, population_only=False, population_slice=False, population_method=None, inspect_inputs=False, population_collect=False, collection_case="normal", population_fitness=False, population_select=False, population_propose=False, successor_tight=False, successor_consume=False, successor_fitness=False, successor_failure=False, successor_select=False, successor_next=False, successor_generation2=False, population_loop=False, population_paired=False, population_batch=False, process_python=None, process_case="pairwise", process_transform=False, process_transform_case="normal"):
+def verify(output, data_python, runtime_python, population_python=None, *, population_only=False, population_slice=False, population_method=None, inspect_inputs=False, inspect_ancestry=False, ancestry_python=None, ancestry_search=False, population_collect=False, collection_case="normal", population_fitness=False, population_select=False, population_propose=False, successor_tight=False, successor_consume=False, successor_fitness=False, successor_failure=False, successor_select=False, successor_next=False, successor_generation2=False, population_loop=False, population_paired=False, population_batch=False, process_python=None, process_case="pairwise", process_transform=False, process_transform_case="normal"):
+    if ancestry_search:
+        assert inspect_ancestry
+    if inspect_ancestry:
+        assert population_only and ancestry_python is not None and process_python is None
     if population_batch:
         assert population_method in {None,"evaluate-squares"}
         assert collection_case=="normal" and not any((population_collect,population_fitness,
@@ -62,7 +66,7 @@ def verify(output, data_python, runtime_python, population_python=None, *, popul
     if process_python is not None:
         assert population_python is None and population_method is None
         assert not any((population_only,population_slice,population_collect,population_fitness,
-            population_select,population_propose,population_loop,population_paired))
+            population_select,population_propose,population_loop,population_paired,inspect_ancestry))
     if population_paired:
         assert not any((population_propose,population_select,successor_consume,successor_generation2,population_loop))
         assert collection_case in {"normal","conditional-not-taken"}
@@ -148,6 +152,10 @@ def verify(output, data_python, runtime_python, population_python=None, *, popul
         environment = {k: v for k, v in os.environ.items() if not k.startswith("AMPHORA_")}
         environment["QUAL_TOKEN"] = "q" * 32
         environment["QUAL_DATA_PYTHON"] = str(data_python)
+        if ancestry_python is not None:
+            environment["QUAL_ANCESTRY_PYTHON"] = str(ancestry_python)
+        if ancestry_search:
+            environment["QUAL_ANCESTRY_SEARCH"]="1"
         environment["QUAL_RUNTIME_PYTHON"] = str(runtime_python)
         for owner, python, role, migration in (
             ("data", data_python, "artifact", "amphora_data_artifacts.persistence.migrate"),
@@ -241,7 +249,7 @@ def verify(output, data_python, runtime_python, population_python=None, *, popul
             from population_seed_fixture import verify as verify_seed
             loss["enabled"] = False
             verify_seed(output, population_python, (data_port, runtime_port), environment, scope,
-                        call, command, start, stop, with_slice=population_slice, method_operation=population_method, inspect_inputs=inspect_inputs, with_collection=population_collect, collection_case=collection_case, with_fitness=population_fitness, with_selection=population_select, with_successor=population_propose, successor_tight=successor_tight, successor_consume=successor_consume, successor_fitness=successor_fitness, successor_failure=successor_failure, successor_select=successor_select, successor_next=successor_next, successor_generation2=successor_generation2, population_loop=population_loop, population_paired=population_paired, population_batch=population_batch)
+                        call, command, start, stop, with_slice=population_slice, method_operation=population_method, inspect_inputs=inspect_inputs, inspect_ancestry=inspect_ancestry, with_collection=population_collect, collection_case=collection_case, with_fitness=population_fitness, with_selection=population_select, with_successor=population_propose, successor_tight=successor_tight, successor_consume=successor_consume, successor_fitness=successor_fitness, successor_failure=successor_failure, successor_select=successor_select, successor_next=successor_next, successor_generation2=successor_generation2, population_loop=population_loop, population_paired=population_paired, population_batch=population_batch)
             return
         start("data", data_python, data_port, environment)
         runtime = start("runtime", runtime_python, runtime_port, environment)
@@ -370,8 +378,11 @@ if __name__ == "__main__":
     parser.add_argument("--population-fitness", action="store_true")
     parser.add_argument("--population-collect", action="store_true")
     parser.add_argument("--inspect-inputs", action="store_true")
+    parser.add_argument("--inspect-ancestry", action="store_true")
+    parser.add_argument("--ancestry-python", type=Path)
+    parser.add_argument("--ancestry-search", action="store_true")
     parser.add_argument("--population-method", choices=["evaluate-squares", "evaluate-negative-sum"])
     args = parser.parse_args()
     verify(args.output, args.data_python.absolute(), args.runtime_python.absolute(),
            None if args.population_python is None else args.population_python.absolute(),
-           population_only=args.population_only, population_slice=args.population_slice, population_method=args.population_method, inspect_inputs=args.inspect_inputs, population_collect=args.population_collect, collection_case=args.collection_case, population_fitness=args.population_fitness, population_select=args.population_select, population_propose=args.population_propose, successor_tight=args.successor_tight, successor_consume=args.successor_consume, successor_fitness=args.successor_fitness, successor_failure=args.successor_failure, successor_select=args.successor_select, successor_next=args.successor_next, successor_generation2=args.successor_generation2, population_loop=args.population_loop, population_paired=args.population_paired, population_batch=args.population_batch, process_python=None if args.process_python is None else args.process_python.absolute(), process_case=args.process_case, process_transform=args.process_transform, process_transform_case=args.process_transform_case)
+           population_only=args.population_only, population_slice=args.population_slice, population_method=args.population_method, inspect_inputs=args.inspect_inputs, inspect_ancestry=args.inspect_ancestry, ancestry_python=None if args.ancestry_python is None else args.ancestry_python.absolute(), ancestry_search=args.ancestry_search, population_collect=args.population_collect, collection_case=args.collection_case, population_fitness=args.population_fitness, population_select=args.population_select, population_propose=args.population_propose, successor_tight=args.successor_tight, successor_consume=args.successor_consume, successor_fitness=args.successor_fitness, successor_failure=args.successor_failure, successor_select=args.successor_select, successor_next=args.successor_next, successor_generation2=args.successor_generation2, population_loop=args.population_loop, population_paired=args.population_paired, population_batch=args.population_batch, process_python=None if args.process_python is None else args.process_python.absolute(), process_case=args.process_case, process_transform=args.process_transform, process_transform_case=args.process_transform_case)

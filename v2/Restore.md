@@ -1,6 +1,6 @@
 # Restore
 
-Refreshed: 2026-10-15 20:16:52 America/Chicago. Read with AGENTS.md.
+Refreshed: 2026-10-15 22:26:03 America/Chicago. Read with AGENTS.md.
 
 ## Task and workspace
 
@@ -26,29 +26,57 @@ Audits docs/Audits/POP-01_Population_*.md own detailed evidence. Seven frozen so
 hashes matched original. Full v1 verifier reports pre-existing ADDED v1/LICENSE only;
 never modify v1/regenerate manifest. Sparse v1 intentionally omitted.
 
-## Current checkpoint: batch/seed-I/O component qualified; POP-01.08 decision pending
+## Current checkpoint: POP-01.08 qualified; continue full E2.3 preflight
 
-Pushed da76b71e worker exit, f8863cad structural bounds,73dc9991 ancestry ledger,
-7d65a401 pages and fadac2e2 numeric publications/header bounds. Latest current-HEAD
-delivery adds the qualified batch helper/seed-I/O profile and POP-01.08 proposal;
-verify branch status/log before resume. No original-demo promotion.
+Owner approved POP-01.08. Current HEAD delivery implements Data0.33 /
+artifact_ancestry0.1 GET ancestry-footprint and Search0.24 SourceFootprints.
+Boundary audit docs/Audits/POP-01_Artifact_Ancestry_Footprint.md owns evidence.
+No further approval needed. NEXT: complete full numerical spec/admission/history/
+binding-I/O preflight, then repeated typed-material/population composition.
+E2.3/E2.4 still0; E2=50%, Execution37.5%, parent12.5%, Build18.75%, Verification0.
+E1/E2.1/E2.2 remain complete. Continue until needed persists across this checkpoint.
 
-E2.3/E2.4 still0 until their FULL exits. E1/E2.1/E2.2 complete; E2=50%,
-Execution37.5%, parent12.5%, Build18.75%, Verification0. Do not reset worker credit.
+Data final source SQL d610 PASS/32 optionalQdrant skipped; installed SQL c88 PASS.
+Final Data .test-results/pop01-ancestry-data-install-20261015b; client-only
+pop01-ancestry-client-install-20261015a9 tests PASS. Data install a precedes ASGI
+header repair and is superseded. Initial BaseHTTPMiddleware changed cancellation;
+ASGI pass-through restores legacy semantics (scoped c29 and full d610 PASS).
+Migration test pin0012 was stale; changed to existing0013, no migration added.
+Installed SQL a/b were test packaging failures; explicit pytest.ini/helpers and
+copied public config.example.json yield final c88. All owned trial containers removed.
 
-NEXT REQUIRES OWNER DECISION: docs/Build Plans/POP-01.08 Artifact ancestry
-footprint decision.md. Async approval requested this turn, no answer yet.
-POP-01.06 requires review of further public routes. No new endpoint/DTO implemented.
-Existing read APIs expose derivation only, not full conversion ancestry; retention
-closure inspection requires retention authority. Proposed GET /v1/artifacts/{id}/
-ancestry-footprint uses existing read grant and returns root/count/content bytes/
-existing closure-membership digest only. Read-only transaction, no grants/writes/
-payload I/O/migration. Read exact proposal before implementation. On approval,
-record it, implement/qualify that exact Data boundary, then integrate source
-footprints and finish full history/binding-I/O/spec/admission resource assessment.
-Repeated typed-material/population composition and E2.4 matrix remain later.
+Search final .test-results/pop01-source-footprint-search-install-20261015a:
+481 source/479 installed,95 focused PASS. Contract9 source/installed;46 boundary/
+schema checks PASS;752 schemas preserve750 predecessor bytes. Expanded peer probes
+show all25 OTHER service/tool/deploy implementation modules absent in each owner
+(derive exact names from project_specs; old manual Planning name was incomplete).
+No Data/Runtime/Planning/Process Mapping implementations/SQLAlchemy/FastAPI in Search.
+All sessions complete. No provider calls or original-demo service/source changes.
 
-Search0.24 final component:467 source PASS (one frozen-workspace exclusion),465
+Actual .test-results/pop01-ancestry-http-20261015a verifies26-member closure+ordinary
+leaf, existing closure digest, readonly contract-only client, Data restart,
+retention403. pop01-source-footprint-http-20261015a repeats through isolated Search
+SourceFootprints.assess/unchanged. New API only reads one repeatable-read catalog
+cut: no payload I/O, writes, migration, grants, commands or reservation. Source
+observations are point-in-time; refresh rejects digest changes. Unavailable404 never
+means leaf. Source roots capped128, aliases dedup, cross-root sharing counted
+conservatively. Source ancestors +future SUCCESSFUL publications <=4096 INCLUDING
+root; storage upper includes source bytes+all-attempt publications/binding budgets.
+Full worker/history/binding I/O and compound authoring identity still incomplete.
+
+User explicitly requested ALL old stopped Docker containers removed this turn.
+Removed13 verified exited Amphora containers; preserved every volume and running
+demo pair. Evidence .test-results/docker-stale-cleanup-20261015.json. All new test
+containers removed in finally. Only original running PG/Qdrant pair remains.
+Do not repeat prune/cleanup against retained volumes or active services.
+
+Earlier checkpoints b11ec51b batching/seed-I/O, fadac2e2 publications/header,
+7d65a401 pages,73dc9991 ancestry ledger,f8863cad structural bounds are pushed.
+Original review still frozen; current HEAD owns this new qualification. Continue
+in this integration branch only, never promote original while review wrappers live.
+
+
+Previous batching/seed-I/O checkpoint:467 source PASS (one frozen-workspace exclusion),465
 installed PASS,81 focused composition,guard/13 boundaries PASS. Endpoint pins exact.
 Final independent .test-results/pop01-composition-io-search-install-20261015a/
 environment/Scripts/python.exe; no Data/Runtime/Planning/Process Mapping impls,

@@ -1,5 +1,6 @@
 """Publish/check deterministic Draft 2020-12 input and output schema artifacts."""
 
+from amphora_contracts_artifact_ancestry import ArtifactAncestryFootprint
 from amphora_contracts_draft_successor import AdmitDraftSuccessor
 from amphora_contracts_artifact_retention import ReserveDerivedClosure, DerivedClosureReservationReceipt
 from amphora_contracts_campaign_resources import CampaignInvocationResources, AdmitResourceBoundedDraft
@@ -65,6 +66,7 @@ from amphora_contracts_tools import Completion, Invocation, ToolBinding, ToolDes
 ROOT = Path(__file__).absolute().parents[1]
 MODELS = {
     "node-inputs.observation": NodeInputObservation,
+    "artifact-ancestry.footprint": ArtifactAncestryFootprint,
     "artifact-retention.reserve-derived-closure": ReserveDerivedClosure,
     "artifact-retention.derived-closure-receipt": DerivedClosureReservationReceipt,
     "campaign-resources.invocation-cap": CampaignInvocationResources,

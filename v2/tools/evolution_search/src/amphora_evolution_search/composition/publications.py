@@ -29,6 +29,10 @@ class PublicationBudget:
     all_attempt_artifacts: int
     all_attempt_content_bytes: int
 
+    def __post_init__(self):
+        for value in (self.successful_artifacts,self.all_attempt_artifacts,self.all_attempt_content_bytes):add(value,0)
+        require(self.all_attempt_artifacts>=self.successful_artifacts,"composition_publication_budget")
+
 
 class NumericPublicationProfile:
     """All calls use full spec maxima; no speculative branch/duplicate pruning.

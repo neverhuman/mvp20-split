@@ -1,6 +1,6 @@
 # POP-01 authored composition preflight
 
-Status: E2.3 components qualified; full preflight incomplete. POP-01.08 approval pending.
+Status: E2.3 components qualified; full preflight incomplete. POP-01.08 qualified; full E2.3 remains incomplete.
 Reviewed: 2026-10-15 20:16:12 America/Chicago. Search0.24.
 Prerequisites: E1/E2.1/E2.2 qualified; [worker exit](POP-01_E2_2_Worker_Exit.md).
 
@@ -194,9 +194,26 @@ new I/O envelope to the retained b plan, not measured traffic or pre-dispatch pr
 
 Next concrete boundary: [POP-01.08](../Build%20Plans/POP-01.08%20Artifact%20ancestry%20footprint%20decision.md).
 Read-only existing APIs cannot establish full conversion/derivation source closure
-without retention authority; Data totals-only inspection is proposed, not implemented.
-Owner approval was requested under POP-01.06's further-public-route review rule.
-After approval, implement/qualify that exact Data boundary and bind source footprints
+without retention authority; Data totals-only inspection is now approved and qualified (see the following
+checkpoint and boundary audit). Bind source footprints
 to resource assessment; then finish full worker/history/binding I/O, immutable
 spec/admission identity and repeated typed-material/population composition.
 E2.3/E2.4 remain0; completed credit and RG-01 ordering remain unchanged.
+
+## Qualified external-source footprint component
+
+Owner approved POP-01.08. Data0.33/artifact_ancestry0.1 and Search0.24 consumer are
+independently qualified: [boundary/drift audit](POP-01_Artifact_Ancestry_Footprint.md).
+Data610 source/88 installed SQL; public contract9 source/installed; Search481 source/
+479 installed,95 focused;46 boundary/schema checks;752 schemas with750 predecessors
+unchanged. Actual26-member closure/ordinary leaf, read-only client, Data restart,
+retention403 and live SourceFootprints assessment/refresh pass. Every owned fixture
+container removed.13 historical stopped containers also removed at owner request;
+all volumes/original demo retained. No provider calls.
+
+SourceFootprints adds exact scoped metadata verification, alias deduplication,
+conservative source-plus-future ancestry/content bounds and changed-digest rejection.
+No unavailable read is inferred as a leaf. The observation remains point-in-time;
+Data completion/protection authority is unchanged. Full numerical spec/admission/
+history/binding-I/O integration and typed-material/population composition remain
+E2.3 scope; the later actual matrix remains E2.4. No full-unit credit yet.

@@ -500,3 +500,10 @@ eight-member batches across both owner restarts. It excludes other population/
 process variants and is a component proof, not the E2.4 batch/cap matrix. Owned
 fixture container cleanup remains in finally. population_batch_fixture.py owns
 the public-API driver; no private peer state or retained demo access is used.
+
+POP-01.08: --population-only --inspect-ancestry --ancestry-python <isolated-contract-
+client-python> adds read-only totals/digest and Data-restart proof. Optional
+--ancestry-search uses the isolated Search resource consumer instead; neither client
+has Data implementation installed. artifact_ancestry_fixture.py owns orchestration;
+artifact_ancestry_client_probe.py uses public contracts/SDK only. All test containers
+are removed in finally and volumes retained.

@@ -1,5 +1,14 @@
 [
   {
+    "package": "amphora-contracts-artifact-ancestry",
+    "version": "0.1.0",
+    "path": "contracts/artifact_ancestry",
+    "module": "amphora_contracts_artifact_ancestry",
+    "public_dependencies": [
+      "amphora-contracts-core"
+    ]
+  },
+  {
     "package": "amphora-contracts-artifact-retention",
     "version": "0.1.0",
     "path": "contracts/artifact_retention",
@@ -440,10 +449,11 @@
   },
   {
     "package": "amphora-data-artifacts",
-    "version": "0.32.0",
+    "version": "0.33.0",
     "path": "services/data_artifacts",
     "module": "amphora_data_artifacts",
     "public_dependencies": [
+      "amphora-contracts-artifact-ancestry",
       "amphora-contracts-artifact-retention",
       "amphora-contracts-representations",
       "amphora-contracts-research",
@@ -529,6 +539,7 @@
     "path": "tools/evolution_search",
     "module": "amphora_evolution_search",
     "public_dependencies": [
+      "amphora-contracts-artifact-ancestry",
       "amphora-contracts-campaigns",
       "amphora-contracts-node-inputs",
       "amphora-contracts-execution-proofs",

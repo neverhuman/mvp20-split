@@ -1,6 +1,6 @@
 # Master Build Tracker
 
-Latest checkpoint: 2026-10-15 20:16:12: Search0.24 source467/installed465; actual two-batch16-candidate restart proof/19 attempts qualified. POP-01.08 read-only source-footprint decision pending. E2.3 stays0; E2=50%, Execution37.5%, parent12.5%, Build18.75%, Verification0%. RG-01 follows whole POP-01.
+Latest checkpoint: 2026-10-15 22:26:03: POP-01.08 Data0.33 ancestry footprint and Search consumer qualified (Data610 source/88 installed SQL; Search481/479). Full E2.3 preflight/composition remains active; E2.3/E2.4=0, E2=50%, Execution37.5%, parent12.5%, Build18.75%, Verification0. RG-01 follows whole POP-01.
 
 ## Purpose and Authority
 
@@ -11,15 +11,15 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 ## Program Tracker
 
 - Status: POP-01.01/E2 active; UI-01/UI-02 closed100%, LR-01 paused25%.
-- Last refreshed: 2026-10-15 20:16:12 (America/Chicago).
+- Last refreshed: 2026-10-15 22:26:03 (America/Chicago).
 - Baseline: approved [POP-01.04](POP-01.04%20Population%20contract%20decision.md).
 - Current priority/task: POP-01.01 E2.3 full-wave authored composition/resource preflight.
 - Next task: complete authored material/population composition, then E2.4 actual-owner matrix.
 - Implementation: parent12.5%, Build18.75%, Verification0%; Execution37.5%, Experience/Qualification0%.
   Execution E1=100%, E2=50%, E3/E4=0%; Experience U1-U4=0%, Qualification Q1-Q4=0%.
-- Latest checkpoint: Search0.24 source467/installed465,81 focused checks and actual
-  two-batch restart proof pass. POP-01.08 approval pending for general source
-  ancestry footprint; full composition/history/binding-I/O assessment remains.
+- Latest checkpoint: POP-01.08 qualified: Data610 source/88 installed SQL, actual
+  read-only source-footprint/Data restart and Search assessment/refresh pass.
+  Search481 source/479 installed; full composition/history/binding-I/O remains.
   E2.2 complete: Search0.23 source386/installed384; Process58 source/
   58 installed;13 boundaries/750 schemas; qualified wire pins preserved. Actual
   transform3->2, both owners restarted, accepted producer/12 retained artifacts/
