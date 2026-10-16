@@ -2,7 +2,7 @@
 
 - Reviewed: 2026-10-14 21:22:00 America/Chicago; working tree after 65710ea9/c1798191.
 - Owner: POP-01.01/E2, first of four bounded delivery units. This is not E2 closeout.
-- Contract: approved [POP-01.05](../Build%20Plans/POP-01.05%20Bounded%20graph%20admission%20decision.md).
+- Contract: approved [POP-01.05](../Build%20Plans/POP-01/POP-01.05%20Bounded%20graph%20admission%20decision.md).
 
 Runtime0.68 implements the separate bounded draft admission command/route and
 retains the complete immutable request. Claims select capacity from that snapshot

@@ -12,7 +12,7 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 
 - Status: POP-01.01/E2 active; UI-01/UI-02 closed100%, LR-01 paused25%.
 - Last refreshed: 2026-10-15 22:26:03 (America/Chicago).
-- Baseline: approved [POP-01.04](POP-01.04%20Population%20contract%20decision.md).
+- Baseline: approved [POP-01.04](POP-01/POP-01.04%20Population%20contract%20decision.md).
 - Current priority/task: POP-01.01 E2.3 full-wave authored composition/resource preflight.
 - Next task: complete authored material/population composition, then E2.4 actual-owner matrix.
 - Implementation: parent12.5%, Build18.75%, Verification0%; Execution37.5%, Experience/Qualification0%.

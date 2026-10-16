@@ -3,7 +3,7 @@
 - Status: approved boundary implemented/qualified; no unresolved scoped drift.
 - Reviewed: 2026-10-15 22:24:00 America/Chicago.
 - Owner: Data0.33 / artifact_ancestry0.1; Search0.24 consumer, POP-01.01/E2.3.
-- Decision: [POP-01.08](../Build%20Plans/POP-01.08%20Artifact%20ancestry%20footprint%20decision.md).
+- Decision: [POP-01.08](../Build%20Plans/POP-01/POP-01.08%20Artifact%20ancestry%20footprint%20decision.md).
 
 ## Result and boundary
 

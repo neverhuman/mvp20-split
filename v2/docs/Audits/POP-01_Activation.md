@@ -5,7 +5,7 @@
 - Disposition: `corrected_ready` for E1 design; new public contracts await owner
   decision. No population implementation, performance or deployment credit.
 - Owner: [POP-01](../Build%20Plans/POP-01%20Population%20Campaign%20Execution%20and%20Experience.md).
-- Next: [E1 boundary decision](../Build%20Plans/POP-01.04%20Population%20contract%20decision.md).
+- Next: [E1 boundary decision](../Build%20Plans/POP-01/POP-01.04%20Population%20contract%20decision.md).
 
 ## Coherence review
 

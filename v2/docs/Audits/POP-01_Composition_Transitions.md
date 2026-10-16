@@ -2,7 +2,7 @@
 
 - Status: E1/D4 composition/resource/write-set review; resource command decision pending.
 - Reviewed: 2026-10-13 22:34:04 America/Chicago.
-- Owner: [Population Execution](../Build%20Plans/POP-01.01%20Population%20Execution.md).
+- Owner: [Population Execution](../Build%20Plans/POP-01/POP-01.01%20Population%20Execution.md).
 - Evidence: Runtime `tests/population_composition`; compiler-only synthetic adapters.
 
 ## Executable composition
@@ -65,7 +65,7 @@ if required scale cannot fit; they cannot weaken source verification.
 
 Scatter max_parallel limits child scopes. It does not enforce a campaign-wide
 outstanding worker-attempt cap across multiple tools in each scope. The separate
-[bounded admission decision](../Build%20Plans/POP-01.05%20Bounded%20graph%20admission%20decision.md)
+[bounded admission decision](../Build%20Plans/POP-01/POP-01.05%20Bounded%20graph%20admission%20decision.md)
 is required before E2 can claim the configured1/4/8 invocation limits.
 
 ## Owner transaction and failure map

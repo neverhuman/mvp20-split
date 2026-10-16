@@ -18,7 +18,7 @@ membership identity. This uses metadata read authority only and does not reserve
 renew, grant processing rights or accept execution. Observations can change when
 later conversion lineage is registered; consumers re-assess changes and retain Data's
 mandatory completion/protection checks. The approved boundary is
-[POP-01.08](../../Build%20Plans/POP-01.08%20Artifact%20ancestry%20footprint%20decision.md).
+[POP-01.08](../../Build%20Plans/POP-01/POP-01.08%20Artifact%20ancestry%20footprint%20decision.md).
 
 Worker recovery also needs original publication-command observation: authenticated actor/scope, original canonical request digest and pending/rejected/uploaded/finalized result. Inspection must not renew authority, change quota or expose another actor's command. BP-03.03 supplies this additive interface without reopening completed publication phases. An upload-command receipt proves allocation; only stream success proves provisional byte selection, and only finalization yields a usable artifact reference.
 

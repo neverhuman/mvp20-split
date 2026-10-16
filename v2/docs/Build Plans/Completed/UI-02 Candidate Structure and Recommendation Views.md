@@ -109,7 +109,7 @@ aggregate execution and lineage navigation. Keep that larger tranche separate;
 ML-01 now follows POP-01 qualification.
 
 Reuse existing bounded output reads where sufficient. Coordinate broader discovery
-with [UI-01.01 result discovery](../UI-01.01%20Campaign%20result%20discovery%20decision.md);
+with [UI-01.01 result discovery](../UI-01/UI-01.01%20Campaign%20result%20discovery%20decision.md);
 that proposal is not approval for a new Runtime API and is not a molecule renderer.
 Do not duplicate scientific ranking in Studio or add chemical interpretation to Runtime.
 Candidate generation/optimization remains a scientific-tool responsibility; this
@@ -123,7 +123,7 @@ a repeat-unit drawing. Do not invent coordinates or display an illustrative mode
 as a predicted conformation. Simulation capability, compute budgets and scientific
 validation are outside this first delivery.
 
-Latest checkpoint 2026-10-13 11:30:04: P1.1 complete;12 focused checks,24 unaffected publication checks plus2 corrected historical-count checks pass; all668 predecessor pins unchanged; dependency boundary guard passes. [History](UI-02%20Planning%20History.md).
+Latest checkpoint 2026-10-13 11:30:04: P1.1 complete;12 focused checks,24 unaffected publication checks plus2 corrected historical-count checks pass; all668 predecessor pins unchanged; dependency boundary guard passes. [History](../UI-02/Completed/UI-02%20Planning%20History.md).
 
 2026-10-13 11:37:38: P1.2 complete;32 copied tests pass in independent wheel installation, exact public schemas, two fresh-process deterministic results and visually inspected PNG. No service implementations installed;0model calls. Actual graph/Research acceptance remains P1.4.
 

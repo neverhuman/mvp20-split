@@ -22,5 +22,5 @@ strict validation. This is failure/accounting evidence, not live graph acceptanc
 - `manifest.json` pins copied evidence bytes. Full original input remains in the
   local qualification directory; its digest appears in provider accounting.
 
-Disposition: [bounded correction decision](../../../Build%20Plans/UI-01.08a%20Live%20curation%20qualification%20correction.md).
+Disposition: [bounded correction decision](../../../Build%20Plans/UI-01/UI-01.08a%20Live%20curation%20qualification%20correction.md).
 Serving demo unchanged; P5.2 and P5.3 remain unmet. No scientific validation claimed.

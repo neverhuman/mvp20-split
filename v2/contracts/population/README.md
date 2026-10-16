@@ -1,6 +1,6 @@
 # Population wire boundary
 
-Owner: POP-01.01/E1; approved [POP-01.04](../../docs/Build%20Plans/POP-01.04%20Population%20contract%20decision.md).
+Owner: POP-01.01/E1; approved [POP-01.04](../../docs/Build%20Plans/POP-01/POP-01.04%20Population%20contract%20decision.md).
 Implementation checkpoint: package0.5, specification, membership, birth/evaluation,
 fitness/selection records and bounded evidence pages/manifests;
 not an executable population profile.

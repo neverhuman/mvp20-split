@@ -2,6 +2,11 @@
 
 Refreshed: 2026-10-15 22:26:03 America/Chicago. Read with AGENTS.md.
 
+Plan navigation cleanup: POP-01 children/history now under docs/Build Plans/POP-01/;
+UI-01/UI-02 children under their family folders, with completed children in Completed/.
+Parent trackers remain central. Execution tracker now explains named phases and accounting.
+No implementation percentages changed.
+
 ## Task and workspace
 
 Continue until needed remains authorized. Primary POP-01.01/E2.3 authored composition/resource preflight.

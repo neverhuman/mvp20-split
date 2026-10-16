@@ -192,7 +192,7 @@ before seed-I/O code. Final io a supersedes both. Existing endpoint pins pass.
 `.test-results/pop01-batch-preflight-io-20261015a` is a POST-RUN application of the
 new I/O envelope to the retained b plan, not measured traffic or pre-dispatch proof.
 
-Next concrete boundary: [POP-01.08](../Build%20Plans/POP-01.08%20Artifact%20ancestry%20footprint%20decision.md).
+Next concrete boundary: [POP-01.08](../Build%20Plans/POP-01/POP-01.08%20Artifact%20ancestry%20footprint%20decision.md).
 Read-only existing APIs cannot establish full conversion/derivation source closure
 without retention authority; Data totals-only inspection is now approved and qualified (see the following
 checkpoint and boundary audit). Bind source footprints

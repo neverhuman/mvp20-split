@@ -39,7 +39,7 @@ This plan does not recover/retrain model weights, fulfill ML-01, import the enti
 ## Owned Contracts and Prerequisites
 
 - [Knowledge architecture](../Architecture/Knowledge/Knowledge_Architecture.md), [authoring](../Architecture/Knowledge/Authoring.md), and [Knowledge module](../../services/knowledge/README.md) govern entities, proposals, revisions, assertions and exploration.
-- [Completed Knowledge integration](Completed/UI-01.05%20Knowledge%20Run%20and%20LLM%20Integration.md) supplies the implemented browser/public-owner seam. Do not reopen its completed phases.
+- [Completed Knowledge integration](UI-01/Completed/UI-01.05%20Knowledge%20Run%20and%20LLM%20Integration.md) supplies the implemented browser/public-owner seam. Do not reopen its completed phases.
 - Data owns source rights, retained bytes and conversion lineage. Knowledge consumes explicit evidence references; no peer-private imports or direct access to another owner's tables.
 - ML-01 is not a technical prerequisite for this small corpus. Preserve the existing queue order unless the owner reprioritizes it.
 - Human content corrections apply to future campaigns; active campaigns keep their pinned revisions.

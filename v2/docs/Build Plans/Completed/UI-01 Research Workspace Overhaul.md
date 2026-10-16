@@ -36,7 +36,7 @@ do not create empty child plans or count plan-writing as delivered functionality
 
 Owner schedule2026-10-08: target the week2026-10-12 through2026-10-16 for actual
 Knowledge UI, browser-started campaigns with live per-node progress, and LLM graph
-revision grounded in Knowledge. [UI-01.05](UI-01.05%20Knowledge%20Run%20and%20LLM%20Integration.md)
+revision grounded in Knowledge. [UI-01.05](../UI-01/Completed/UI-01.05%20Knowledge%20Run%20and%20LLM%20Integration.md)
 decomposes this existing unfinished N2/N3 scope: K1=100%, R1=100%, I1=0%. N2.2 owns service
 provenance, N2.4 Knowledge/reasoning and honest node-quality evidence, N2.5 admission/
 worker engagement, and N3 the between-campaign LLM/successor loop. Complete all N2
@@ -270,8 +270,8 @@ explicit scope/denominator update after the owner decision; they earn no credit 
 
 | Task | Completion | Exit |
 |---|---:|---|
-| N2.E scientific execution | 100% | [Scientific execution MVP](../UI-01.03%20Scientific%20Execution%20MVP.md): actual solvency/viscosity tool invocations with retained evidence |
-| N2.S SME evaluation review | 100% | [MVP task](../UI-01.02%20SME%20Evaluation%20Review%20MVP.md); inspect and challenge criteria, methods, assumptions and aggregation before further result work |
+| N2.E scientific execution | 100% | [Scientific execution MVP](../UI-01/UI-01.03%20Scientific%20Execution%20MVP.md): actual solvency/viscosity tool invocations with retained evidence |
+| N2.S SME evaluation review | 100% | [MVP task](../UI-01/UI-01.02%20SME%20Evaluation%20Review%20MVP.md); inspect and challenge criteria, methods, assumptions and aggregation before further result work |
 | N2.C visible concurrency | 100% | Inline sibling branches and joins in campaign context; actual-state/omission proof and SME-visible behavior before result work |
 | N2.1 screen hierarchy | 100% | Single shell, compact execution status/actions, secondary technical controls, truthful absent-result notice |
 | N2.2 participating capabilities and result discovery | 100% | Retained plan/bounded discovery and exact Planning/Research provenance qualified; UI-01.07 audit |
@@ -280,7 +280,7 @@ explicit scope/denominator update after the owner decision; they earn no credit 
 | N2.5 actual-owner acceptance | 100% | Retained walkthrough plus actual local/LAN browser admission/workers/results, same-run/container recovery and installed replacement qualification; UI-01.06 closeout audit |
 
 Each remaining N2 task has two equally scoped delivery groups named in its row.
-[UI-01.04](../UI-01.04%20Connected%20Demo%20Flow.md) proves the first group; it does not
+[UI-01.04](../UI-01/UI-01.04%20Connected%20Demo%20Flow.md) proves the first group; it does not
 claim full Runtime LLM orchestration, launch controls or generational discovery.
 Next-iteration review export is pulled into this demo by owner direction, without
 crediting N3 successor execution. UI-01.01's new public index remains unapproved;
@@ -363,7 +363,7 @@ N2.C scoped work100, N2=33.33, overall48.89, Build58.33, Verification0.
 Owner explicitly rejected generic parallel evaluator instances as product delivery.
 Added N2.S as a seventh equal task: denominator reset N2 from33.33 to28.57 before
 implementation; completion of the local review MVP brings N2 to42.86, overall48.57,
-Build60.71. G1/N2.C retain infrastructure credit only. [UI-01.02](../UI-01.02%20SME%20Evaluation%20Review%20MVP.md)
+Build60.71. G1/N2.C retain infrastructure credit only. [UI-01.02](../UI-01/UI-01.02%20SME%20Evaluation%20Review%20MVP.md)
 owns bounded scope and evidence. SME inspection of criteria, evaluation procedures,
 assumptions and aggregation is now mandatory product acceptance, independent of
 execution monitoring. Future N2.2 must bind actual retained Planning proposals,

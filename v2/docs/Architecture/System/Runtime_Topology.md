@@ -47,7 +47,7 @@ reserves the single campaign slot, preserves unknown admission/worker outcomes a
 releases capacity only after Runtime termination plus worker reconciliation. It does
 not interpret graphs, run scientific code or become Runtime's database. Gateway may
 proxy only this narrow API; operator process control remains private. See the
-[launch decision and delivery gates](../../Build%20Plans/UI-01.06%20Campaign%20launch%20decision.md).
+[launch decision and delivery gates](../../Build%20Plans/UI-01/UI-01.06%20Campaign%20launch%20decision.md).
 
 [Graph Runner](Graph_Runner.md) names the execution coordinator, outcome aggregator and campaign supervisor inside Campaign Runtime. Agent Planning remains an isolated service that returns typed LLM proposals through durable engagements. Slow model calls do not hold runtime transactions or block unrelated branches; one conditional runtime commit accepts each supervision decision.
 

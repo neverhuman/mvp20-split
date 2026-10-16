@@ -31,4 +31,4 @@ Tests: tests/capability_requests (projection, scoped SQL/HTTP, immutable history
 reader replacement). Public types remain campaign-curation0.1. Current fulfillment
 readback requires the additive Planning0026/0027 migrations.
 Architecture: [Planning](../../../../../docs/Architecture/Agents/Planning.md).
-Delivery: [UI-01.08](../../../../../docs/Build%20Plans/UI-01.08%20Campaign%20curation%20boundary%20decision.md).
+Delivery: [UI-01.08](../../../../../docs/Build%20Plans/UI-01/UI-01.08%20Campaign%20curation%20boundary%20decision.md).

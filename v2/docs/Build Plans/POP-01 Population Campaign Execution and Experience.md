@@ -1,6 +1,14 @@
 # POP-01 Population Campaign Execution and Experience
 
-Current E2 checkpoint: E2.1/E2.2 complete; E2.3 authored composition/resource preflight active. Process0.3 actual transform/restart/accepted derivation and rejection cases qualified. E2=50%, Execution37.5%, parent12.5%, Build18.75%, Verification0. Search0.24 source481/installed479 and Data0.33 read-only ancestry boundary qualified. Two-batch/restart and source-footprint/refresh components pass; full numerical/history/binding preflight and material composition remain.
+**Overall: 12.5% complete.** POP-01 has three equally weighted deliveries:
+execution **37.5%**, population user experience **0%**, and end-to-end qualification **0%**.
+These percentages track accepted delivery checks; they do not predict remaining time.
+
+Population contracts, bounded admission and individual workers are qualified.
+We are now composing those pieces into a fully checked campaign. The population
+interface and full browser-to-execution qualification come afterward.
+See the [execution phase breakdown](POP-01/POP-01.01%20Population%20Execution.md#progress-in-plain-language)
+for named phases, current work and the percentage calculation.
 
 ## Canonical tracker
 
@@ -33,9 +41,9 @@ Current E2 checkpoint: E2.1/E2.2 complete; E2.3 authored composition/resource pr
 
 | Child / parent phase | Completion | Prerequisite | Delivery |
 |---|---:|---|---|
-| [POP-01.01 Population Execution](POP-01.01%20Population%20Execution.md) / Execution | 37.5%; E1=100%, E2=50%, E3/E4=0% | Entry gate above | Explicit population/evaluation identities, bounded dispatch, global selection and durable recovery |
-| [POP-01.02 Population Experience](POP-01.02%20Population%20Experience.md) / Experience | 0%; U1-U4=0% | POP-01.01 complete | Bounded authoritative projections, stable method graph, generation navigation and population comparison |
-| [POP-01.03 Qualification](POP-01.03%20Population%20Qualification.md) / Qualification | 0%; Q1-Q4=0% | POP-01.02 complete | Fresh UI-started evolutionary campaigns, restart/failure/scale proof and ML-01 handoff |
+| [POP-01.01 Population Execution](POP-01/POP-01.01%20Population%20Execution.md) / Execution | 37.5%; E1=100%, E2=50%, E3/E4=0% | Entry gate above | Explicit population/evaluation identities, bounded dispatch, global selection and durable recovery |
+| [POP-01.02 Population Experience](POP-01/POP-01.02%20Population%20Experience.md) / Experience | 0%; U1-U4=0% | POP-01.01 complete | Bounded authoritative projections, stable method graph, generation navigation and population comparison |
+| [POP-01.03 Qualification](POP-01/POP-01.03%20Population%20Qualification.md) / Qualification | 0%; Q1-Q4=0% | POP-01.02 complete | Fresh UI-started evolutionary campaigns, restart/failure/scale proof and ML-01 handoff |
 
 Do not replace the near-term demo work with this plan. After its entry gate, POP-01
 takes precedence over inherited-model migration. ML-01 starts only after POP-01
