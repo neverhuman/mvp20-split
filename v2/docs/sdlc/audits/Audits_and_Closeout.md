@@ -4,6 +4,16 @@ Reviewed: 2026-10-16 14:17:15 America/Chicago. Canonical development process; no
 
 Process lives here. Completed audit records stay in [docs/Audits](../../Audits/); unresolved drift and documentation debt keep their existing dashboards. Pre-activation coherence review follows [plan execution](../planning/Plan_Execution.md); it earns no implementation credit.
 
+
+## Purpose and handoff
+
+| Element | Meaning |
+|---|---|
+| Why it exists | Determine whether the declared plan/design/implementation boundary agrees with evidence. |
+| Inputs | Bounded claim set, reviewed revision, relevant architecture/contracts and independent observations. |
+| Output | Findings with evidence, blocking classification, owner and disposition. |
+| Completion test | Every in-scope claim is assessed; acceptance-invalidating findings block the relevant closeout, with follow-ups explicitly owned. |
+
 ## Closeout drift audit
 
 At each plan completion, perform a component-scoped architecture drift audit **after implementation/acceptance gates and before archival**. This also applies to a completed child implementation plan; a parent closeout verifies integration without repeating unchanged child audits.

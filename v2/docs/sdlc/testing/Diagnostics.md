@@ -4,6 +4,16 @@ Reviewed: 2026-10-16 14:17:15 America/Chicago. Canonical development process; no
 
 Use small discriminating probes, preserve failed evidence and isolate contaminated state. A provider failure report is an observation, not a proven cause. The case below is historical local evidence, not a claim about current provider behavior.
 
+
+## Purpose and handoff
+
+| Element | Meaning |
+|---|---|
+| Why it exists | Isolate a failure cause without spending blindly or weakening the contract. |
+| Inputs | A retained failure, competing explanations and a controlled baseline. |
+| Output | A discriminating probe, observations and supported diagnosis or explicit uncertainty. |
+| Completion test | The repair survives the relevant probe and regression boundary; an unexplained symptom remains an open finding. |
+
 ## Development debugging patterns
 
 - Remove temporary test containers after their verification completes (owner instruction, 2026-10-14). Do not leave stopped test containers accumulating. Distinguish temporary fixtures from the active demo and explicitly retained recovery state; preserve user data and volumes unless their removal is authorized. Test workflows must include owned-container cleanup.

@@ -6,6 +6,16 @@ Commands are run from the repository root in the authorized workspace. Bootstrap
 
 Temporary test containers must be removed in a `finally` cleanup after success or failure, using verified fixture ownership. Preserve active demo containers, volumes and explicit recovery state. Stop-only cleanup leaves stale containers. Never use broad prune/reset as test teardown. Retained volumes need separate disposal authorization.
 
+
+## Purpose and handoff
+
+| Element | Meaning |
+|---|---|
+| Why it exists | Give a repeatable local check path without contaminating user services or evidence. |
+| Inputs | Authorized checkout, declared tools/locks and selected verification scope. |
+| Output | Scoped test/build evidence and ownership-checked fixture cleanup. |
+| Completion test | The selected checks finish with their actual result recorded and temporary containers removed; retained resources remain explicit. |
+
 ## Reproduce from repository root
 
 Use Python 3.12 and uv 0.12.18. One local bootstrap on Windows:

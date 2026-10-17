@@ -2,6 +2,8 @@
 
 Reusable development processes live here. Architecture describes the system; these pages describe how changes are designed, built, checked, documented and released.
 
+Start with the [process model](Process_Model.md) for purpose, handoffs and completion. [Tracker design](planning/Tracker_Design.md) explains what trackers represent and the decisions they support.
+
 ## Load only what the task needs
 
 On resume, read AGENTS and Restore, use the canonical plan tracker to select work, then open the relevant topic below. Do not load every process page by default. Product requirements, owner authorization and declared gates remain binding.
@@ -31,3 +33,5 @@ On resume, read AGENTS and Restore, use the canonical plan tracker to select wor
 - [Restore](../../Restore.md): exact authorized workspace and interruption.
 
 [Migration audit](../Audits/SDLC_Framework_Separation.md) records the source review and relocation. No implementation percentage, API contract, authority or deployment policy is changed by organizing these documents.
+
+[Process completeness review](../Audits/SDLC_Process_Completeness.md) records semantic gaps, corrections and remaining enforcement limitations. A successful relocation/link check does not establish a complete process.

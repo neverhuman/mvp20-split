@@ -21,6 +21,12 @@ processes; architecture retains system contracts. Documentation-only updates app
 to both checkouts; original services/source remain frozen. Resume the previously
 authorized POP-01 task after this interruption. Progress and approval gates unchanged.
 
+Process correction 2026-10-16 22:18:42 America/Chicago: tracker purpose/information model
+and end-to-end process handoffs now defined in docs/sdlc/planning/Tracker_Design.md
+and docs/sdlc/Process_Model.md. Audit docs/Audits/SDLC_Process_Completeness.md
+distinguishes corrected documentation from remaining tooling/record review.
+Implementation progress and existing authorization unchanged.
+
 ## Task and workspace
 
 Continue until needed remains authorized. Primary POP-01.01/E2.3 authored composition/resource preflight.

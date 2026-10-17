@@ -4,6 +4,16 @@ Reviewed: 2026-10-16 14:17:15 America/Chicago. Canonical development process; no
 
 Architecture owns intended system design. SDLC owns how we design, implement, verify and release changes. Module READMEs remain beside source; audit evidence and plan state remain with their existing owners.
 
+
+## Purpose and handoff
+
+| Element | Meaning |
+|---|---|
+| Why it exists | Make the right current facts discoverable without reconstructing history. |
+| Inputs | Changed behavior/design, its owner and evidence. |
+| Output | An updated authoritative document and repaired navigation, with historical claims separated. |
+| Completion test | A reader can locate intent, actual behavior and current state without contradictory authorities. |
+
 ## Canonical ownership
 
 UI work also follows [UI Coding Guidelines](../ui/UI_Coding_Guidelines.md), adapted from the user-requested JARVIS UI review. Record UI verification in the owning task and module contract.

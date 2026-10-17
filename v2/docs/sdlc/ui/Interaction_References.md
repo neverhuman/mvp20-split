@@ -5,6 +5,16 @@
 - Parent: [Graph Studio](../../Architecture/Experience/Studio.md).
 - Provenance: user-supplied Claude reference list, checked against primary documentation. Adaptations below are Amphora design recommendations, not claims that these products implement Amphora semantics.
 
+
+## Purpose and handoff
+
+| Element | Meaning |
+|---|---|
+| Why it exists | Use external interaction lessons to evaluate research tasks without copying product assumptions. |
+| Inputs | The specific interaction problem and Amphora authority/context constraints. |
+| Output | A justified prototype pattern and concrete review tasks. |
+| Completion test | Observed task behavior supports the choice; a reference alone does not select a dependency or prove usability. |
+
 ## Reference Map
 
 | Need | Reference and documented pattern | Amphora adaptation / boundary | Delivery owner |

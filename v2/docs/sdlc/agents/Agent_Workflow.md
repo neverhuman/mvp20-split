@@ -6,6 +6,16 @@ Read AGENTS and Restore, then the [SDLC index](../README.md) and the process pag
 
 Existing user authorization persists; process pages add no approval ceremony. Delegation follows session instructions and is not implied by a checklist. Historical external paths are provenance, not permission to access another workspace. Leave Input.md empty unless the owner populates it. Keep credentials and local datasets out of Git.
 
+
+## Purpose and handoff
+
+| Element | Meaning |
+|---|---|
+| Why it exists | Maintain useful, authorized progress across interruptions and context loss. |
+| Inputs | Actual workspace/branch, current tracker, interruption and evidence locations. |
+| Output | Reviewable work and an exact, verified resume point for the next session. |
+| Completion test | A fresh session can identify the correct checkout, eligible next action and preserved constraints without guessing. |
+
 ## Continue-until-needed operating rule
 
 - When the owner says to continue until needed, that authorization persists across milestones, commits, pushes, plan boundaries and context compaction. After satisfying the current gate, update canonical trackers and Restore.md, commit/push significant verified work, then immediately take the next authorized task in MBT order.

@@ -2,6 +2,16 @@
 
 This is the verification workflow for a scientific claim, used with [testing and coverage](Testing_and_Coverage.md). [Product acceptance](../../Architecture/Requirements/Product_Requirements.md#acceptance-posture) and the owning domain retain their authority; this checklist does not promote a result.
 
+
+## Purpose and handoff
+
+| Element | Meaning |
+|---|---|
+| Why it exists | Prevent computational success or a metric from being mistaken for scientific authority. |
+| Inputs | Declared scientific claim, applicable data/methods and acceptance/review requirements. |
+| Output | An attributable evaluation and explicit applicability/authority disposition. |
+| Completion test | Evidence supports the stated claim within its limits; required scientific or external review is still separate. |
+
 1. Name the claim, representation, units, domain applicability and intended use. Distinguish measured, simulated, predicted and model-inferred outputs.
 2. Pin source/data/model/method versions, preprocessing and relevant scope/rights. Keep raw evidence, conversions and accepted revisions attributable.
 3. Choose the relevant baseline, independent test oracle, negative/failure controls and acceptance gate before interpreting the result. Keep comparison populations and split protocols explicit; report transfer limitations instead of treating within-corpus success as novel-chemistry validation.

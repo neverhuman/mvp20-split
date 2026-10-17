@@ -2,6 +2,16 @@
 
 Reviewed: 2026-10-16 14:17:15 America/Chicago. Canonical development process; not evidence of implementation.
 
+
+## Purpose and handoff
+
+| Element | Meaning |
+|---|---|
+| Why it exists | Make the accepted version reproducible and replaceable without corrupting pinned work or state. |
+| Inputs | Candidate source/version, dependency closure, evidence, consumer/state impact and existing authorization. |
+| Output | Identified artifacts and a release/cutover record, or an explicit blocked transition. |
+| Completion test | Required build/compatibility/target checks pass and authorized cutover/recovery criteria are satisfied; a push alone is insufficient. |
+
 ## Existing automation and its limits
 
 The repository has local verification scripts, package locks and independent-install/image probes. No hosted CI/CD workflow was found in the reviewed v2/root support material. These gates describe the required delivery process; they do not claim an automated deployment pipeline exists.

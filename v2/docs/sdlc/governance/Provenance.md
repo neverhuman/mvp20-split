@@ -8,6 +8,16 @@ System design belongs in Architecture; current implementation contracts remain b
 
 Update a process at its single owning page and repair its callers. Templates are under [templates](../templates/README.md). Keep the index compact so a session loads only the relevant topic. The migration audit records inspected sources and extraction destinations.
 
+
+## Purpose and handoff
+
+| Element | Meaning |
+|---|---|
+| Why it exists | Keep reusable rules current, scoped and distinguishable from project-specific requirements. |
+| Inputs | Owner direction, recurring friction and existing process authority. |
+| Output | A justified process correction at one owning page, with repaired callers and retained provenance. |
+| Completion test | The correction addresses its observed failure and does not silently change requirements, authority or evidence claims. |
+
 ## Reviewed source and local adaptation
 
 Reviewed read-only from JARVIS on `2026-09-22 13:47:22`: `Docs/AGENTS.md` (including tracker updates confirmed there on 2026-09-19), `Docs/plan audit.md`, `Docs/ProcessSummary.md`, targeted `Docs/Process.md`, `Docs/System/Architecture Cartography.md`, `Docs/Templates/Module README Template.md`, the Master Build Tracker, drift dashboard and the Specialist Lane Backend Extraction execution tracker.
