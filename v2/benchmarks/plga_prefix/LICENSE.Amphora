@@ -1,0 +1,31 @@
+Copyright (c) 2026. All rights reserved.
+
+This repository and its contents — including the Amphora MVP20 source, the evidence trees,
+the generated coating formulation IP, and all associated documentation — are proprietary and
+confidential. No licence, express or implied, is granted to use, copy, modify, distribute, or
+create derivative works from any part of it.
+
+THIRD-PARTY AND DERIVED DATA
+----------------------------
+Portions of the evidence and reference trees are derived from third-party datasets whose
+rights status is recorded per artifact in the modules' `docs/mission.md` and
+`docs/capability-profile.json` files, and in
+`amphora-source-ledger/reference/mvp20/data/*/catalog.json`.
+
+Those records are not uniformly resolved and must be reviewed before any redistribution or
+external use:
+
+  - 125 artifact declarations across the 29 mission documents carry rights status
+    UNRESOLVED; 103 of those paths are tracked in this repository.
+  - In the source ledger's rights decisions, 16 of 31 sources are NOT
+    DERIVATIVE_ALLOWED — including PROHIBITED_BULK (PoLyInfo/MatNavi, Polymer Genome),
+    CONTEXT_ONLY (five under the Georgia Tech Research Corporation General Public Use
+    License Agreement), CREDENTIALED, and MANUAL_EXPORT categories.
+  - All 31 rights decisions currently carry a null decision_receipt.
+  - 33 sources are CC-BY-4.0 and therefore require attribution on any redistribution.
+
+No attribution notices have been assembled. Resolving the outstanding rights decisions and
+producing a NOTICE file is a prerequisite for distributing any part of this work outside the
+owning organisation. See `amphora-ip-fto-guard/` and `amphora-sourceability-ehs/` for the
+per-source evidence, and note that freedom-to-operate is a matter for counsel, not for this
+repository.

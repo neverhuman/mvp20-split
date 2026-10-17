@@ -1,0 +1,6 @@
+{
+  "primary_benchmark_sha256": "fb963e6001ddfeb8c3cfc7715312dfec5188d982dcbc9f3d84a79f76cf8ba7cc",
+  "ranking_sha256": "f80ca634f97f47876329d6418ce7a852a20a8844cc4b5eec1a4900e4c219304f",
+  "models_features_and_hyperparameters": "identical to frozen primary pipeline",
+  "declared_utc": "2026-10-17T22:44:31.287426+00:00"
+}

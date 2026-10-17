@@ -1,0 +1,6 @@
+{
+  "source_commit": "afe121c0c59b69646052ada00bd20c75bf5753d8",
+  "source_path": "v2/tools/evolution_search/src/amphora_evolution_search/ranking.py",
+  "sha256": "f80ca634f97f47876329d6418ce7a852a20a8844cc4b5eec1a4900e4c219304f",
+  "reuse": "verbatim stdlib-only ranking module; no existing scientific evaluator imported"
+}
