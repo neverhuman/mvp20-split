@@ -4,6 +4,16 @@ Reviewed: 2026-10-16 14:17:15 America/Chicago. Canonical development process; no
 
 Select the owning behavior first. Read the [local verification runbook](../delivery/Local_Verification.md) for commands and [diagnostics](Diagnostics.md) for failure investigation. Documentation-only moves use link, content and scope checks; they do not require scientific or service restarts.
 
+
+## Purpose and handoff
+
+| Element | Meaning |
+|---|---|
+| Why it exists | Distinguish demonstrated behavior from assumptions and detect meaningful regressions. |
+| Inputs | Promised behavior, change impact, acceptance conditions and test environment. |
+| Output | Claim-linked results with exact scope, failures, coverage and limits. |
+| Completion test | Required gates have relevant evidence; skips, fixture-only proof and remaining gaps are not reported as acceptance. |
+
 ## Evidence tiers and exit gates
 
 Verification must match the promised behavior: focused unit/contract checks, integration/recovery/concurrency checks where relevant, and actual user-path or scientific evaluation when the gate requires them. Compilation or a mocked success alone does not prove usable end-to-end behavior or scientific authority. Preserve failures and explicit validation limits; do not weaken tests to close a gate. Avoid repeated broad testing without a new change or unresolved concern.

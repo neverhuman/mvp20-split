@@ -1,5 +1,14 @@
 # <Plan Name>
 
+Use [tracker design](../planning/Tracker_Design.md) to understand this record, not just its update schedule.
+
+## Outcome at a Glance
+
+- Intended outcome / why: <observable user or system improvement>
+- Demonstrated behavior: <what works, with evidence scope and limits>
+- Remaining delivery: <what must still exist or be proved>
+- Current action / next gate: <plain-language task and its completion condition>
+
 ## Canonical Execution Tracker
 
 - Status: proposed | primary_active | blocked | awaiting_acceptance | complete
@@ -26,6 +35,14 @@
 ## Objective and Boundaries
 
 Requirements/design links; included/excluded work; single owner for each cross-cutting capability; parent/child dependencies. Define scientific or runtime claims this plan can and cannot establish.
+
+## Acceptance and Evidence Map
+
+| Requirement / intended outcome | Deliverable | Observable acceptance condition | Verification / environment | Evidence and limits | Disposition / remaining gap |
+|---|---|---|---|---|---|
+| <link and readable outcome> | <bounded behavior> | <what would prove it> | <appropriate oracle/tier> | <revision/result or pending> | <demonstrated, incomplete, blocked or awaiting acceptance> |
+
+Use this table at the delivery level; do not create a second per-file progress ledger.
 
 ## Ordered Tasks
 

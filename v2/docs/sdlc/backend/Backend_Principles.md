@@ -4,6 +4,16 @@ Reviewed: 2026-10-16 14:17:15 America/Chicago. Canonical development process; no
 
 Keep transport handlers focused on decoding, authentication, dispatch and safe responses. Application handlers own use-case orchestration and transaction boundaries; domain objects own invariants; adapters implement declared ports. The architectural ownership and dependency graph remain in [Interfaces and Code Boundaries](../../Architecture/System/Interfaces_and_Code_Boundaries.md). Historical broad rules that every scientific tool is stateless are not imported: tools retain their declared state/effect contracts.
 
+
+## Purpose and handoff
+
+| Element | Meaning |
+|---|---|
+| Why it exists | Keep business behavior testable and prevent transport or persistence details from owning policy. |
+| Inputs | Owned use case, invariants, ports and transaction/failure boundaries. |
+| Output | A bounded implementation with explicit domain behavior and adapters. |
+| Completion test | Behavior and failure cases can be verified at the owning boundary without private peer dependencies. |
+
 ## Objects and domain behavior
 
 - Pydantic schemas and frontend API types are boundary DTOs. They are valid for validation, serialization, route contracts, and UI transport, but they are not a substitute for domain objects that own behavior.

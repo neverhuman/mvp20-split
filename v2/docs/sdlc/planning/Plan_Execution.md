@@ -2,6 +2,16 @@
 
 Reviewed: 2026-10-16 14:17:15 America/Chicago. Canonical development process; not evidence of implementation.
 
+
+## Purpose and handoff
+
+| Element | Meaning |
+|---|---|
+| Why it exists | Keep eligible work advancing without losing scope, evidence or decisions. |
+| Inputs | Bounded outcome, dependencies and current canonical tracker. |
+| Output | An executable current task and synchronized progress/remaining-work record. |
+| Completion test | The next action is eligible and explicit; the tracker answers the questions in [tracker design](Tracker_Design.md). |
+
 ## Hierarchical Plans
 
 Use `docs/Build Plans/` as the one local plan hierarchy. The Master Build Tracker selects program priority. Parent plans decompose capabilities into linked child plans or bounded phases; child plans own execution detail. Every child names its parent, dependencies and exit contribution. Do not count the same deliverable twice. [The plan template](../templates/Build%20Plan%20Template.md) applies at each execution-owning level.

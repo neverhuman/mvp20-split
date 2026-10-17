@@ -5,6 +5,16 @@
 - Owner: experience layer; used with [Development Process](../README.md)
 - Design authority: [Human Research Workspace](../../Architecture/Experience/Experience_Architecture.md)
 
+
+## Purpose and handoff
+
+| Element | Meaning |
+|---|---|
+| Why it exists | Help the user complete a research task while preserving truthful backend authority. |
+| Inputs | User question/action, owned projections/commands and representative states. |
+| Output | A task-focused screen and observed interaction/visual evidence. |
+| Completion test | The primary task and relevant failure/accessibility states work at the declared viewports; untested behavior stays explicit. |
+
 ## Provenance and Scope
 
 Adapted at the user's request from JARVIS `Docs/UI/2.0/Architecture.md`, especially Non-Negotiable Principles, performance rules, Referential Runtime Data and Message Contract, reviewed read-only on the date above. The older `Docs/UI/1.0/UI Developer.md` supplies a general role description, not the substantive rules. This local document is self-contained; routine UI work does not require access to JARVIS.

@@ -4,6 +4,16 @@ Reviewed: 2026-10-16 14:17:15 America/Chicago. Canonical development process; no
 
 The architectural validation/acceptance pipeline and version bindings remain in [Contract Architecture](../../Architecture/System/Contract_Architecture.md). This document owns the engineering steps used to implement them; it introduces no routes or new authority.
 
+
+## Purpose and handoff
+
+| Element | Meaning |
+|---|---|
+| Why it exists | Make independently changing producers and consumers exchange bounded, unambiguous data. |
+| Inputs | Operation purpose, semantic owner, callers, authority and compatibility obligations. |
+| Output | Public request/response/error contracts, mappings and consumer/negative-case evidence. |
+| Completion test | Consumers can interpret success, rejection and replay under the declared version; required compatibility gates pass. |
+
 ## Validation and safe failures
 
 Use strict validation at internal command and invocation boundaries, reject unexpected fields in closed command contracts and define any extensible metadata explicitly. Normalize source-specific data in acquisition adapters, preserving raw input, conversion identity and provenance. Never silently repair scientific units or representations merely to pass validation. [Pydantic strict mode](https://docs.pydantic.dev/latest/concepts/strict_mode/) reduces coercion but differs between Python and JSON inputs, so both boundary paths need fixtures.

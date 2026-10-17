@@ -8,6 +8,12 @@ processes; architecture retains system contracts. Documentation-only updates app
 to both checkouts; original services/source remain frozen. Resume the previously
 authorized POP-01 task after this interruption. Progress and approval gates unchanged.
 
+Process correction 2026-10-16 22:18:42 America/Chicago: tracker purpose/information model
+and end-to-end process handoffs now defined in docs/sdlc/planning/Tracker_Design.md
+and docs/sdlc/Process_Model.md. Audit docs/Audits/SDLC_Process_Completeness.md
+distinguishes corrected documentation from remaining tooling/record review.
+Implementation progress and existing authorization unchanged.
+
 ## Current task
 
 2026-10-15 10:13:49 SESSION REFRESH: original LAN15a drained after seven-day CA/server certificate expiry. Same-key local review certificates renewed90days; new LAN15b wrapper PID20524 verified by authenticated invite issuance. Local15a PID27368 unchanged. Fresh five-minute invitation in LAN15b/Open Amphora.url and clipboard. Remote computer may need renewed LAN15b/amphora-demo-ca.cer imported into its trusted roots. No scientific services or curation restarted; source freeze remains.

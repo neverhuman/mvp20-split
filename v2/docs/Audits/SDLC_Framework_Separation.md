@@ -6,6 +6,10 @@
 - Progress preserved: all POP-01 implementation percentages and gates unchanged.
 - Active interruption: process cleanup; return to authorized POP-01/E2.3 in integration worktree.
 
+## Review scope correction
+
+The original aligned disposition covers relocation, retained content and link integrity. It does not establish semantic completeness of the SDLC framework. The owner identified a missing tracker information model; the [process completeness review](SDLC_Process_Completeness.md) records that gap and the broader findings/corrections.
+
 ## Source review and disposition
 
 | Source material | Disposition |
