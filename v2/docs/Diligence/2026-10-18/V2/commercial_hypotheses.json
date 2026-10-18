@@ -1,0 +1,34 @@
+{
+  "claims_established": false,
+  "format": "amphora-commercial-hypotheses.v2",
+  "hypotheses": [
+    {
+      "adoption_constraints": [
+        "Tool/data-rights integration",
+        "Scientific applicability",
+        "Installation/operations",
+        "Workflow fit and user training"
+      ],
+      "benefit_measurement": "Matched composition/change/reconstruction effort, correctness, onboarding and integration cost",
+      "buyer": "Hypothesized R&D/platform lead; no verified buyer evidence supplied",
+      "current_alternative": "Existing notebooks/scripts and workflow tools; actual buyer baseline must be observed",
+      "evidence": [
+        "Public implementation and bounded historical examples only"
+      ],
+      "id": "CH-1",
+      "next_decision": "Whether to fund a scoped matched buyer-workflow pilot under DG-3",
+      "unfavorable_branch": "Change or stop the use-case hypothesis; do not infer value from benchmark compute time.",
+      "unknowns": [
+        "Pain severity",
+        "Budget holder",
+        "Willingness to pay",
+        "Pricing",
+        "Adoption time",
+        "Retention",
+        "Measured incremental value"
+      ],
+      "user": "Hypothesized formulation scientist and research engineer",
+      "workflow": "Compose a bounded computational investigation, inspect a decision and revise/replace one evaluator"
+    }
+  ]
+}

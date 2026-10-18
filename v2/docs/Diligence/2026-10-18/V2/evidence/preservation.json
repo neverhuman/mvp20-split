@@ -1,0 +1,22 @@
+{
+  "format": "amphora-v2-preservation-review.v1",
+  "result": "PASS",
+  "basis_revision": "9c3018dcdd17f40be27fc3c6dc7057d2d7cb05bc",
+  "protected_paths_unchanged": [
+    "v1",
+    "docs/review/plga",
+    "docs/whitepapers/plga-prefix-forecasting",
+    "v2/benchmarks",
+    "v2/services",
+    "v2/tools",
+    "v2/contracts",
+    "v2/deploy"
+  ],
+  "original_scientific_pdf_sha256": "f228757745d9d4836f6d048120867348ef6718e9763ca48ea0710f60b11dd33a",
+  "v2_pdf_sha256": "2ec2c6e6ecd4eb12811a6533fb5e328625ceed843199426ceb7aa6e6499d95e3",
+  "changed_text_files_scanned": 74,
+  "credential_private_url_flags": [],
+  "missing_v2_relative_links": [],
+  "raw_specification_payloads_included": false,
+  "scope": "Changed/publication paths only; does not retroactively audit the entire original public repository or establish rights."
+}

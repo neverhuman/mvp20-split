@@ -1,15 +1,16 @@
 {
   "capsule_profile": "frozen evidence integrity; no fresh production-source boundary scan",
-  "current_delivery": "local detailed plan, review PDF and bounded offline scaffolding",
+  "current_delivery": "Version 2 critical investor review, bounded fixes, public branch and draft PR",
   "format": "amphora-release-intent.v1",
   "investor_release_qualified": false,
+  "merge_authorized": false,
   "optional": [
     "walkthrough",
     "FAQ",
     "fresh_model_replay",
     "actual_owner_witness"
   ],
-  "public_push_authorized": false,
+  "public_push_authorized": true,
   "raw_attachments_export_allowed": false,
   "required_future_checks": [
     "claim_approval",

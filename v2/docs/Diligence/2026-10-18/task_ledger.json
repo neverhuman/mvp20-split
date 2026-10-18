@@ -1,6 +1,7 @@
 {
-  "accounting": "One task = one equal delivery unit; verified and implemented counts are separate; future investor release and existing engine percentages are never implied by plan completion.",
-  "format": "amphora-workplan.v1",
+  "accounting": "Backlog task states describe preparer delivery only. No task-count percentage measures investor, product, scientific or commercial readiness; five explicit decision tracks remain unmet.",
+  "evidence_registry": "v2/docs/Diligence/2026-10-18/V2/task_evidence.json",
+  "format": "amphora-workplan.v2",
   "phases": [
     {
       "id": "F",
@@ -171,10 +172,7 @@
         "v2/docs/Diligence/2026-10-18/specification_register.json"
       ],
       "dependencies": [],
-      "estimate_minutes": [
-        5,
-        15
-      ],
+      "estimate_minutes": null,
       "evidence": [
         "v2/docs/Diligence/2026-10-18/specification_register.json"
       ],
@@ -242,10 +240,7 @@
       "dependencies": [
         "DD-001"
       ],
-      "estimate_minutes": [
-        5,
-        15
-      ],
+      "estimate_minutes": null,
       "evidence": [
         "v2/docs/Diligence/2026-10-18/evidence/source_python312.json"
       ],
@@ -303,12 +298,9 @@
       "dependencies": [
         "DD-002"
       ],
-      "estimate_minutes": [
-        5,
-        15
-      ],
+      "estimate_minutes": null,
       "evidence": [
-        "v2/docs/Diligence/2026-10-18/REPOSITORY_RECONCILIATION.md"
+        "v2/docs/Diligence/2026-10-18/V2/HANDOFF.md"
       ],
       "execution_authority": "current_local_plan_and_scaffolding",
       "failure_disposition": "Keep this task open, preserve any failed receipt and block dependent acceptance; do not downgrade a required gate.",
@@ -364,10 +356,7 @@
       "dependencies": [
         "DD-003"
       ],
-      "estimate_minutes": [
-        5,
-        15
-      ],
+      "estimate_minutes": null,
       "evidence": [
         "v2/docs/Diligence/2026-10-18/DECISIONS.md"
       ],
@@ -425,10 +414,7 @@
       "dependencies": [
         "DD-002"
       ],
-      "estimate_minutes": [
-        5,
-        15
-      ],
+      "estimate_minutes": null,
       "evidence": [
         "v2/docs/Diligence/2026-10-18/REPOSITORY_RECONCILIATION.md"
       ],
@@ -496,10 +482,7 @@
       "dependencies": [
         "DD-002"
       ],
-      "estimate_minutes": [
-        5,
-        15
-      ],
+      "estimate_minutes": null,
       "evidence": [
         "v2/docs/Diligence/2026-10-18/evidence/source_python312.json"
       ],
@@ -567,10 +550,7 @@
       "dependencies": [
         "DD-002"
       ],
-      "estimate_minutes": [
-        5,
-        15
-      ],
+      "estimate_minutes": null,
       "evidence": [
         "v2/docs/Diligence/2026-10-18/evidence/source_python312.json"
       ],
@@ -630,10 +610,7 @@
         "DD-006",
         "DD-004"
       ],
-      "estimate_minutes": [
-        5,
-        15
-      ],
+      "estimate_minutes": null,
       "evidence": [
         "v2/docs/Diligence/2026-10-18/SPECIFICATION_CROSSWALK.md"
       ],
@@ -691,10 +668,7 @@
       "dependencies": [
         "DD-008"
       ],
-      "estimate_minutes": [
-        5,
-        15
-      ],
+      "estimate_minutes": null,
       "evidence": [
         "v2/docs/Diligence/2026-10-18/release_profile.json"
       ],
@@ -752,10 +726,7 @@
       "dependencies": [
         "DD-009"
       ],
-      "estimate_minutes": [
-        5,
-        15
-      ],
+      "estimate_minutes": null,
       "evidence": [],
       "execution_authority": "current_local_plan_and_scaffolding",
       "failure_disposition": "Keep this task open, preserve any failed receipt and block dependent acceptance; do not downgrade a required gate.",
@@ -821,12 +792,9 @@
       "dependencies": [
         "DD-004"
       ],
-      "estimate_minutes": [
-        10,
-        30
-      ],
+      "estimate_minutes": null,
       "evidence": [
-        "v2/docs/Diligence/2026-10-18/evidence/source_python312.json"
+        "v2/docs/Diligence/2026-10-18/V2/evidence/test_report.json"
       ],
       "execution_authority": "current_local_plan_and_scaffolding",
       "failure_disposition": "Keep this task open, preserve any failed receipt and block dependent acceptance; do not downgrade a required gate.",
@@ -893,12 +861,9 @@
         "DD-007",
         "DD-011"
       ],
-      "estimate_minutes": [
-        10,
-        30
-      ],
+      "estimate_minutes": null,
       "evidence": [
-        "v2/docs/Diligence/2026-10-18/evidence/source_python312.json"
+        "v2/docs/Diligence/2026-10-18/V2/evidence/source_profile.json"
       ],
       "execution_authority": "current_local_plan_and_scaffolding",
       "failure_disposition": "Keep this task open, preserve any failed receipt and block dependent acceptance; do not downgrade a required gate.",
@@ -964,12 +929,9 @@
       "dependencies": [
         "DD-012"
       ],
-      "estimate_minutes": [
-        10,
-        30
-      ],
+      "estimate_minutes": null,
       "evidence": [
-        "v2/docs/Diligence/2026-10-18/evidence/source_python312.json"
+        "v2/docs/Diligence/2026-10-18/V2/evidence/source_profile.json"
       ],
       "execution_authority": "current_local_plan_and_scaffolding",
       "failure_disposition": "Keep this task open, preserve any failed receipt and block dependent acceptance; do not downgrade a required gate.",
@@ -1036,12 +998,9 @@
         "DD-006",
         "DD-011"
       ],
-      "estimate_minutes": [
-        10,
-        30
-      ],
+      "estimate_minutes": null,
       "evidence": [
-        "v2/docs/Diligence/2026-10-18/evidence/source_python312.json"
+        "v2/docs/Diligence/2026-10-18/V2/evidence/source_profile.json"
       ],
       "execution_authority": "current_local_plan_and_scaffolding",
       "failure_disposition": "Keep this task open, preserve any failed receipt and block dependent acceptance; do not downgrade a required gate.",
@@ -1108,12 +1067,9 @@
         "DD-008",
         "DD-011"
       ],
-      "estimate_minutes": [
-        10,
-        30
-      ],
+      "estimate_minutes": null,
       "evidence": [
-        "v2/docs/Diligence/2026-10-18/evidence/source_python312.json"
+        "v2/docs/Diligence/2026-10-18/V2/evidence/test_report.json"
       ],
       "execution_authority": "current_local_plan_and_scaffolding",
       "failure_disposition": "Keep this task open, preserve any failed receipt and block dependent acceptance; do not downgrade a required gate.",
@@ -1181,12 +1137,9 @@
         "DD-014",
         "DD-015"
       ],
-      "estimate_minutes": [
-        10,
-        30
-      ],
+      "estimate_minutes": null,
       "evidence": [
-        "v2/docs/Diligence/2026-10-18/evidence/source_python312.json"
+        "v2/docs/Diligence/2026-10-18/V2/evidence/source_profile.json"
       ],
       "execution_authority": "current_local_plan_and_scaffolding",
       "failure_disposition": "Keep this task open, preserve any failed receipt and block dependent acceptance; do not downgrade a required gate.",
@@ -1253,13 +1206,9 @@
       "dependencies": [
         "DD-016"
       ],
-      "estimate_minutes": [
-        10,
-        30
-      ],
+      "estimate_minutes": null,
       "evidence": [
-        "v2/docs/Diligence/2026-10-18/evidence/pinned_arithmetic.json",
-        "v2/docs/Diligence/2026-10-18/evidence/missing_dependency.json"
+        "v2/docs/Diligence/2026-10-18/V2/evidence/pinned_arithmetic.json"
       ],
       "execution_authority": "current_local_plan_and_scaffolding",
       "failure_disposition": "Keep this task open, preserve any failed receipt and block dependent acceptance; do not downgrade a required gate.",
@@ -1326,12 +1275,9 @@
         "DD-013",
         "DD-014"
       ],
-      "estimate_minutes": [
-        10,
-        30
-      ],
+      "estimate_minutes": null,
       "evidence": [
-        "v2/docs/Diligence/2026-10-18/evidence/source_python312.json"
+        "v2/docs/Diligence/2026-10-18/V2/evidence/source_profile.json"
       ],
       "execution_authority": "current_local_plan_and_scaffolding",
       "failure_disposition": "Keep this task open, preserve any failed receipt and block dependent acceptance; do not downgrade a required gate.",
@@ -1397,12 +1343,9 @@
       "dependencies": [
         "DD-018"
       ],
-      "estimate_minutes": [
-        10,
-        30
-      ],
+      "estimate_minutes": null,
       "evidence": [
-        "v2/docs/Diligence/2026-10-18/evidence/source_python312.json"
+        "v2/docs/Diligence/2026-10-18/V2/evidence/test_report.json"
       ],
       "execution_authority": "current_local_plan_and_scaffolding",
       "failure_disposition": "Keep this task open, preserve any failed receipt and block dependent acceptance; do not downgrade a required gate.",
@@ -1474,12 +1417,9 @@
         "DD-015",
         "DD-017"
       ],
-      "estimate_minutes": [
-        10,
-        30
-      ],
+      "estimate_minutes": null,
       "evidence": [
-        "v2/docs/Diligence/2026-10-18/evidence/tooling_test_receipt.json"
+        "v2/docs/Diligence/2026-10-18/V2/evidence/test_report.json"
       ],
       "execution_authority": "current_local_plan_and_scaffolding",
       "failure_disposition": "Keep this task open, preserve any failed receipt and block dependent acceptance; do not downgrade a required gate.",
@@ -1549,12 +1489,9 @@
       "dependencies": [
         "DD-020"
       ],
-      "estimate_minutes": [
-        10,
-        30
-      ],
+      "estimate_minutes": null,
       "evidence": [
-        "v2/docs/Diligence/2026-10-18/evidence/tooling_test_receipt.json"
+        "v2/docs/Diligence/2026-10-18/V2/evidence/test_report.json"
       ],
       "execution_authority": "current_local_plan_and_scaffolding",
       "failure_disposition": "Keep this task open, preserve any failed receipt and block dependent acceptance; do not downgrade a required gate.",
@@ -1610,11 +1547,10 @@
       "dependencies": [
         "DD-016"
       ],
-      "estimate_minutes": [
-        10,
-        30
+      "estimate_minutes": null,
+      "evidence": [
+        "v2/docs/Diligence/2026-10-18/V2/evidence/test_report.json"
       ],
-      "evidence": [],
       "execution_authority": "current_local_plan_and_scaffolding",
       "failure_disposition": "Keep this task open, preserve any failed receipt and block dependent acceptance; do not downgrade a required gate.",
       "id": "DD-022",
@@ -1640,7 +1576,7 @@
           "start_line": 350
         }
       ],
-      "status": "planned",
+      "status": "verified",
       "title": "Close duplicate-check and timeout failure semantics"
     },
     {
@@ -1669,10 +1605,7 @@
       "dependencies": [
         "DD-022"
       ],
-      "estimate_minutes": [
-        10,
-        30
-      ],
+      "estimate_minutes": null,
       "evidence": [],
       "execution_authority": "current_local_plan_and_scaffolding",
       "failure_disposition": "Keep this task open, preserve any failed receipt and block dependent acceptance; do not downgrade a required gate.",
@@ -1728,10 +1661,7 @@
       "dependencies": [
         "DD-023"
       ],
-      "estimate_minutes": [
-        10,
-        30
-      ],
+      "estimate_minutes": null,
       "evidence": [],
       "execution_authority": "current_local_plan_and_scaffolding",
       "failure_disposition": "Keep this task open, preserve any failed receipt and block dependent acceptance; do not downgrade a required gate.",
@@ -1787,10 +1717,7 @@
       "dependencies": [
         "DD-005"
       ],
-      "estimate_minutes": [
-        5,
-        15
-      ],
+      "estimate_minutes": null,
       "evidence": [],
       "execution_authority": "future_scope_direction_required",
       "failure_disposition": "Keep this task open, preserve any failed receipt and block dependent acceptance; do not downgrade a required gate.",
@@ -1846,10 +1773,7 @@
       "dependencies": [
         "DD-005"
       ],
-      "estimate_minutes": [
-        5,
-        15
-      ],
+      "estimate_minutes": null,
       "evidence": [],
       "execution_authority": "future_scope_direction_required",
       "failure_disposition": "Keep this task open, preserve any failed receipt and block dependent acceptance; do not downgrade a required gate.",
@@ -1905,10 +1829,7 @@
       "dependencies": [
         "DD-005"
       ],
-      "estimate_minutes": [
-        5,
-        15
-      ],
+      "estimate_minutes": null,
       "evidence": [],
       "execution_authority": "future_scope_direction_required",
       "failure_disposition": "Keep this task open, preserve any failed receipt and block dependent acceptance; do not downgrade a required gate.",
@@ -1964,10 +1885,7 @@
       "dependencies": [
         "DD-013"
       ],
-      "estimate_minutes": [
-        5,
-        15
-      ],
+      "estimate_minutes": null,
       "evidence": [],
       "execution_authority": "future_scope_direction_required",
       "failure_disposition": "Keep this task open, preserve any failed receipt and block dependent acceptance; do not downgrade a required gate.",
@@ -2023,10 +1941,7 @@
       "dependencies": [
         "DD-005"
       ],
-      "estimate_minutes": [
-        5,
-        15
-      ],
+      "estimate_minutes": null,
       "evidence": [],
       "execution_authority": "future_scope_direction_required",
       "failure_disposition": "Keep this task open, preserve any failed receipt and block dependent acceptance; do not downgrade a required gate.",
@@ -2083,10 +1998,7 @@
         "DD-014",
         "DD-017"
       ],
-      "estimate_minutes": [
-        5,
-        15
-      ],
+      "estimate_minutes": null,
       "evidence": [],
       "execution_authority": "future_scope_direction_required",
       "failure_disposition": "Keep this task open, preserve any failed receipt and block dependent acceptance; do not downgrade a required gate.",
@@ -2142,10 +2054,7 @@
       "dependencies": [
         "DD-009"
       ],
-      "estimate_minutes": [
-        5,
-        15
-      ],
+      "estimate_minutes": null,
       "evidence": [],
       "execution_authority": "future_scope_direction_required",
       "failure_disposition": "Keep this task open, preserve any failed receipt and block dependent acceptance; do not downgrade a required gate.",
@@ -2201,10 +2110,7 @@
       "dependencies": [
         "DD-009"
       ],
-      "estimate_minutes": [
-        5,
-        15
-      ],
+      "estimate_minutes": null,
       "evidence": [],
       "execution_authority": "future_scope_direction_required",
       "failure_disposition": "Keep this task open, preserve any failed receipt and block dependent acceptance; do not downgrade a required gate.",
@@ -2268,10 +2174,7 @@
         "DD-032",
         "DD-010"
       ],
-      "estimate_minutes": [
-        5,
-        15
-      ],
+      "estimate_minutes": null,
       "evidence": [],
       "execution_authority": "future_scope_direction_required",
       "failure_disposition": "Keep this task open, preserve any failed receipt and block dependent acceptance; do not downgrade a required gate.",
@@ -2327,10 +2230,7 @@
       "dependencies": [
         "DD-033"
       ],
-      "estimate_minutes": [
-        5,
-        15
-      ],
+      "estimate_minutes": null,
       "evidence": [],
       "execution_authority": "future_scope_direction_required",
       "failure_disposition": "Keep this task open, preserve any failed receipt and block dependent acceptance; do not downgrade a required gate.",
@@ -2386,10 +2286,7 @@
       "dependencies": [
         "DD-034"
       ],
-      "estimate_minutes": [
-        10,
-        30
-      ],
+      "estimate_minutes": null,
       "evidence": [],
       "execution_authority": "future_scope_direction_required",
       "failure_disposition": "Keep this task open, preserve any failed receipt and block dependent acceptance; do not downgrade a required gate.",
@@ -2445,10 +2342,7 @@
       "dependencies": [
         "DD-034"
       ],
-      "estimate_minutes": [
-        10,
-        30
-      ],
+      "estimate_minutes": null,
       "evidence": [],
       "execution_authority": "future_scope_direction_required",
       "failure_disposition": "Keep this task open, preserve any failed receipt and block dependent acceptance; do not downgrade a required gate.",
@@ -2504,10 +2398,7 @@
       "dependencies": [
         "DD-036"
       ],
-      "estimate_minutes": [
-        10,
-        30
-      ],
+      "estimate_minutes": null,
       "evidence": [],
       "execution_authority": "future_scope_direction_required",
       "failure_disposition": "Keep this task open, preserve any failed receipt and block dependent acceptance; do not downgrade a required gate.",
@@ -2563,10 +2454,7 @@
       "dependencies": [
         "DD-034"
       ],
-      "estimate_minutes": [
-        10,
-        30
-      ],
+      "estimate_minutes": null,
       "evidence": [],
       "execution_authority": "future_scope_direction_required",
       "failure_disposition": "Keep this task open, preserve any failed receipt and block dependent acceptance; do not downgrade a required gate.",
@@ -2622,10 +2510,7 @@
       "dependencies": [
         "DD-038"
       ],
-      "estimate_minutes": [
-        10,
-        30
-      ],
+      "estimate_minutes": null,
       "evidence": [],
       "execution_authority": "future_scope_direction_required",
       "failure_disposition": "Keep this task open, preserve any failed receipt and block dependent acceptance; do not downgrade a required gate.",
@@ -2681,10 +2566,7 @@
       "dependencies": [
         "DD-039"
       ],
-      "estimate_minutes": [
-        10,
-        30
-      ],
+      "estimate_minutes": null,
       "evidence": [],
       "execution_authority": "future_scope_direction_required",
       "failure_disposition": "Keep this task open, preserve any failed receipt and block dependent acceptance; do not downgrade a required gate.",
@@ -2740,10 +2622,7 @@
       "dependencies": [
         "DD-040"
       ],
-      "estimate_minutes": [
-        10,
-        30
-      ],
+      "estimate_minutes": null,
       "evidence": [],
       "execution_authority": "future_scope_direction_required",
       "failure_disposition": "Keep this task open, preserve any failed receipt and block dependent acceptance; do not downgrade a required gate.",
@@ -2799,10 +2678,7 @@
       "dependencies": [
         "DD-041"
       ],
-      "estimate_minutes": [
-        10,
-        30
-      ],
+      "estimate_minutes": null,
       "evidence": [],
       "execution_authority": "future_scope_direction_required",
       "failure_disposition": "Keep this task open, preserve any failed receipt and block dependent acceptance; do not downgrade a required gate.",
@@ -2858,10 +2734,7 @@
       "dependencies": [
         "DD-034"
       ],
-      "estimate_minutes": [
-        10,
-        30
-      ],
+      "estimate_minutes": null,
       "evidence": [],
       "execution_authority": "future_scope_direction_required",
       "failure_disposition": "Keep this task open, preserve any failed receipt and block dependent acceptance; do not downgrade a required gate.",
@@ -2917,10 +2790,7 @@
       "dependencies": [
         "DD-034"
       ],
-      "estimate_minutes": [
-        10,
-        30
-      ],
+      "estimate_minutes": null,
       "evidence": [],
       "execution_authority": "future_scope_direction_required",
       "failure_disposition": "Keep this task open, preserve any failed receipt and block dependent acceptance; do not downgrade a required gate.",
@@ -2976,10 +2846,7 @@
       "dependencies": [
         "DD-044"
       ],
-      "estimate_minutes": [
-        10,
-        30
-      ],
+      "estimate_minutes": null,
       "evidence": [],
       "execution_authority": "future_scope_direction_required",
       "failure_disposition": "Keep this task open, preserve any failed receipt and block dependent acceptance; do not downgrade a required gate.",
@@ -3035,10 +2902,7 @@
       "dependencies": [
         "DD-045"
       ],
-      "estimate_minutes": [
-        10,
-        30
-      ],
+      "estimate_minutes": null,
       "evidence": [],
       "execution_authority": "future_scope_direction_required",
       "failure_disposition": "Keep this task open, preserve any failed receipt and block dependent acceptance; do not downgrade a required gate.",
@@ -3094,10 +2958,7 @@
       "dependencies": [
         "DD-046"
       ],
-      "estimate_minutes": [
-        10,
-        30
-      ],
+      "estimate_minutes": null,
       "evidence": [],
       "execution_authority": "future_scope_direction_required",
       "failure_disposition": "Keep this task open, preserve any failed receipt and block dependent acceptance; do not downgrade a required gate.",
@@ -3153,14 +3014,11 @@
       "dependencies": [
         "DD-004"
       ],
-      "estimate_minutes": [
-        10,
-        30
-      ],
+      "estimate_minutes": null,
       "evidence": [
         "v2/docs/Diligence/2026-10-18/brand_tokens.json"
       ],
-      "execution_authority": "future_scope_direction_required",
+      "execution_authority": "current_local_plan_and_scaffolding",
       "failure_disposition": "Keep this task open, preserve any failed receipt and block dependent acceptance; do not downgrade a required gate.",
       "id": "DD-048",
       "owner_role": "design reviewer",
@@ -3215,10 +3073,7 @@
         "DD-048",
         "DD-015"
       ],
-      "estimate_minutes": [
-        10,
-        30
-      ],
+      "estimate_minutes": null,
       "evidence": [],
       "execution_authority": "current_local_plan_and_scaffolding",
       "failure_disposition": "Keep this task open, preserve any failed receipt and block dependent acceptance; do not downgrade a required gate.",
@@ -3274,10 +3129,7 @@
       "dependencies": [
         "DD-048"
       ],
-      "estimate_minutes": [
-        10,
-        30
-      ],
+      "estimate_minutes": null,
       "evidence": [],
       "execution_authority": "future_scope_direction_required",
       "failure_disposition": "Keep this task open, preserve any failed receipt and block dependent acceptance; do not downgrade a required gate.",
@@ -3333,10 +3185,7 @@
       "dependencies": [
         "DD-050"
       ],
-      "estimate_minutes": [
-        10,
-        30
-      ],
+      "estimate_minutes": null,
       "evidence": [],
       "execution_authority": "future_scope_direction_required",
       "failure_disposition": "Keep this task open, preserve any failed receipt and block dependent acceptance; do not downgrade a required gate.",
@@ -3392,10 +3241,7 @@
       "dependencies": [
         "DD-051"
       ],
-      "estimate_minutes": [
-        10,
-        30
-      ],
+      "estimate_minutes": null,
       "evidence": [],
       "execution_authority": "future_scope_direction_required",
       "failure_disposition": "Keep this task open, preserve any failed receipt and block dependent acceptance; do not downgrade a required gate.",
@@ -3451,10 +3297,7 @@
       "dependencies": [
         "DD-052"
       ],
-      "estimate_minutes": [
-        10,
-        30
-      ],
+      "estimate_minutes": null,
       "evidence": [],
       "execution_authority": "future_scope_direction_required",
       "failure_disposition": "Keep this task open, preserve any failed receipt and block dependent acceptance; do not downgrade a required gate.",
@@ -3510,10 +3353,7 @@
       "dependencies": [
         "DD-053"
       ],
-      "estimate_minutes": [
-        10,
-        30
-      ],
+      "estimate_minutes": null,
       "evidence": [],
       "execution_authority": "future_scope_direction_required",
       "failure_disposition": "Keep this task open, preserve any failed receipt and block dependent acceptance; do not downgrade a required gate.",
@@ -3569,10 +3409,7 @@
       "dependencies": [
         "DD-054"
       ],
-      "estimate_minutes": [
-        10,
-        30
-      ],
+      "estimate_minutes": null,
       "evidence": [],
       "execution_authority": "future_scope_direction_required",
       "failure_disposition": "Keep this task open, preserve any failed receipt and block dependent acceptance; do not downgrade a required gate.",
@@ -3628,10 +3465,7 @@
       "dependencies": [
         "DD-055"
       ],
-      "estimate_minutes": [
-        10,
-        30
-      ],
+      "estimate_minutes": null,
       "evidence": [],
       "execution_authority": "future_scope_direction_required",
       "failure_disposition": "Keep this task open, preserve any failed receipt and block dependent acceptance; do not downgrade a required gate.",
@@ -3687,10 +3521,7 @@
       "dependencies": [
         "DD-056"
       ],
-      "estimate_minutes": [
-        10,
-        30
-      ],
+      "estimate_minutes": null,
       "evidence": [],
       "execution_authority": "future_scope_direction_required",
       "failure_disposition": "Keep this task open, preserve any failed receipt and block dependent acceptance; do not downgrade a required gate.",
@@ -3746,10 +3577,7 @@
       "dependencies": [
         "DD-057"
       ],
-      "estimate_minutes": [
-        10,
-        30
-      ],
+      "estimate_minutes": null,
       "evidence": [],
       "execution_authority": "future_scope_direction_required",
       "failure_disposition": "Keep this task open, preserve any failed receipt and block dependent acceptance; do not downgrade a required gate.",
@@ -3806,10 +3634,7 @@
         "DD-031",
         "DD-034"
       ],
-      "estimate_minutes": [
-        10,
-        30
-      ],
+      "estimate_minutes": null,
       "evidence": [],
       "execution_authority": "future_scope_direction_required",
       "failure_disposition": "Keep this task open, preserve any failed receipt and block dependent acceptance; do not downgrade a required gate.",
@@ -3865,10 +3690,7 @@
       "dependencies": [
         "DD-059"
       ],
-      "estimate_minutes": [
-        10,
-        30
-      ],
+      "estimate_minutes": null,
       "evidence": [],
       "execution_authority": "future_scope_direction_required",
       "failure_disposition": "Keep this task open, preserve any failed receipt and block dependent acceptance; do not downgrade a required gate.",
@@ -3924,10 +3746,7 @@
       "dependencies": [
         "DD-060"
       ],
-      "estimate_minutes": [
-        10,
-        30
-      ],
+      "estimate_minutes": null,
       "evidence": [],
       "execution_authority": "future_scope_direction_required",
       "failure_disposition": "Keep this task open, preserve any failed receipt and block dependent acceptance; do not downgrade a required gate.",
@@ -3983,10 +3802,7 @@
       "dependencies": [
         "DD-061"
       ],
-      "estimate_minutes": [
-        10,
-        30
-      ],
+      "estimate_minutes": null,
       "evidence": [],
       "execution_authority": "future_scope_direction_required",
       "failure_disposition": "Keep this task open, preserve any failed receipt and block dependent acceptance; do not downgrade a required gate.",
@@ -4042,10 +3858,7 @@
       "dependencies": [
         "DD-062"
       ],
-      "estimate_minutes": [
-        10,
-        30
-      ],
+      "estimate_minutes": null,
       "evidence": [],
       "execution_authority": "future_scope_direction_required",
       "failure_disposition": "Keep this task open, preserve any failed receipt and block dependent acceptance; do not downgrade a required gate.",
@@ -4101,10 +3914,7 @@
       "dependencies": [
         "DD-063"
       ],
-      "estimate_minutes": [
-        10,
-        30
-      ],
+      "estimate_minutes": null,
       "evidence": [],
       "execution_authority": "future_scope_direction_required",
       "failure_disposition": "Keep this task open, preserve any failed receipt and block dependent acceptance; do not downgrade a required gate.",
@@ -4160,10 +3970,7 @@
       "dependencies": [
         "DD-064"
       ],
-      "estimate_minutes": [
-        10,
-        30
-      ],
+      "estimate_minutes": null,
       "evidence": [],
       "execution_authority": "future_scope_direction_required",
       "failure_disposition": "Keep this task open, preserve any failed receipt and block dependent acceptance; do not downgrade a required gate.",
@@ -4219,10 +4026,7 @@
       "dependencies": [
         "DD-065"
       ],
-      "estimate_minutes": [
-        10,
-        30
-      ],
+      "estimate_minutes": null,
       "evidence": [],
       "execution_authority": "future_scope_direction_required",
       "failure_disposition": "Keep this task open, preserve any failed receipt and block dependent acceptance; do not downgrade a required gate.",
@@ -4278,10 +4082,7 @@
       "dependencies": [
         "DD-066"
       ],
-      "estimate_minutes": [
-        10,
-        30
-      ],
+      "estimate_minutes": null,
       "evidence": [],
       "execution_authority": "future_scope_direction_required",
       "failure_disposition": "Keep this task open, preserve any failed receipt and block dependent acceptance; do not downgrade a required gate.",
@@ -4337,10 +4138,7 @@
       "dependencies": [
         "DD-067"
       ],
-      "estimate_minutes": [
-        10,
-        30
-      ],
+      "estimate_minutes": null,
       "evidence": [],
       "execution_authority": "future_scope_direction_required",
       "failure_disposition": "Keep this task open, preserve any failed receipt and block dependent acceptance; do not downgrade a required gate.",
@@ -4396,10 +4194,7 @@
       "dependencies": [
         "DD-068"
       ],
-      "estimate_minutes": [
-        10,
-        30
-      ],
+      "estimate_minutes": null,
       "evidence": [],
       "execution_authority": "future_scope_direction_required",
       "failure_disposition": "Keep this task open, preserve any failed receipt and block dependent acceptance; do not downgrade a required gate.",
@@ -4455,10 +4250,7 @@
       "dependencies": [
         "DD-069"
       ],
-      "estimate_minutes": [
-        10,
-        30
-      ],
+      "estimate_minutes": null,
       "evidence": [],
       "execution_authority": "future_scope_direction_required",
       "failure_disposition": "Keep this task open, preserve any failed receipt and block dependent acceptance; do not downgrade a required gate.",
@@ -4528,14 +4320,11 @@
       "dependencies": [
         "DD-020"
       ],
-      "estimate_minutes": [
-        5,
-        15
-      ],
+      "estimate_minutes": null,
       "evidence": [
-        "v2/docs/Diligence/2026-10-18/evidence/tooling_test_receipt.json"
+        "v2/docs/Diligence/2026-10-18/V2/evidence/test_report.json"
       ],
-      "execution_authority": "future_scope_direction_required",
+      "execution_authority": "current_local_plan_and_scaffolding",
       "failure_disposition": "Keep this task open, preserve any failed receipt and block dependent acceptance; do not downgrade a required gate.",
       "id": "DD-071",
       "owner_role": "quality reviewer",
@@ -4599,14 +4388,11 @@
       "dependencies": [
         "DD-016"
       ],
-      "estimate_minutes": [
-        5,
-        15
-      ],
+      "estimate_minutes": null,
       "evidence": [
-        "v2/docs/Diligence/2026-10-18/evidence/source_python312.json"
+        "v2/docs/Diligence/2026-10-18/V2/evidence/source_profile.json"
       ],
-      "execution_authority": "future_scope_direction_required",
+      "execution_authority": "current_local_plan_and_scaffolding",
       "failure_disposition": "Keep this task open, preserve any failed receipt and block dependent acceptance; do not downgrade a required gate.",
       "id": "DD-072",
       "owner_role": "quality reviewer",
@@ -4671,14 +4457,11 @@
         "DD-019",
         "DD-072"
       ],
-      "estimate_minutes": [
-        5,
-        15
-      ],
+      "estimate_minutes": null,
       "evidence": [
-        "v2/docs/Diligence/2026-10-18/evidence/source_python312.json"
+        "v2/docs/Diligence/2026-10-18/V2/evidence/source_profile.json"
       ],
-      "execution_authority": "future_scope_direction_required",
+      "execution_authority": "current_local_plan_and_scaffolding",
       "failure_disposition": "Keep this task open, preserve any failed receipt and block dependent acceptance; do not downgrade a required gate.",
       "id": "DD-073",
       "owner_role": "quality reviewer",
@@ -4743,15 +4526,11 @@
       "dependencies": [
         "DD-017"
       ],
-      "estimate_minutes": [
-        5,
-        15
-      ],
+      "estimate_minutes": null,
       "evidence": [
-        "v2/docs/Diligence/2026-10-18/evidence/pinned_arithmetic.json",
-        "v2/docs/Diligence/2026-10-18/evidence/missing_dependency.json"
+        "v2/docs/Diligence/2026-10-18/V2/evidence/pinned_arithmetic.json"
       ],
-      "execution_authority": "future_scope_direction_required",
+      "execution_authority": "current_local_plan_and_scaffolding",
       "failure_disposition": "Keep this task open, preserve any failed receipt and block dependent acceptance; do not downgrade a required gate.",
       "id": "DD-074",
       "owner_role": "scientific reviewer",
@@ -4805,10 +4584,7 @@
       "dependencies": [
         "DD-049"
       ],
-      "estimate_minutes": [
-        5,
-        15
-      ],
+      "estimate_minutes": null,
       "evidence": [],
       "execution_authority": "future_scope_direction_required",
       "failure_disposition": "Keep this task open, preserve any failed receipt and block dependent acceptance; do not downgrade a required gate.",
@@ -4864,10 +4640,7 @@
       "dependencies": [
         "DD-075"
       ],
-      "estimate_minutes": [
-        5,
-        15
-      ],
+      "estimate_minutes": null,
       "evidence": [],
       "execution_authority": "future_scope_direction_required",
       "failure_disposition": "Keep this task open, preserve any failed receipt and block dependent acceptance; do not downgrade a required gate.",
@@ -4923,10 +4696,7 @@
       "dependencies": [
         "DD-076"
       ],
-      "estimate_minutes": [
-        5,
-        15
-      ],
+      "estimate_minutes": null,
       "evidence": [],
       "execution_authority": "future_scope_direction_required",
       "failure_disposition": "Keep this task open, preserve any failed receipt and block dependent acceptance; do not downgrade a required gate.",
@@ -4984,10 +4754,7 @@
         "DD-072",
         "DD-075"
       ],
-      "estimate_minutes": [
-        5,
-        15
-      ],
+      "estimate_minutes": null,
       "evidence": [],
       "execution_authority": "future_scope_direction_required",
       "failure_disposition": "Keep this task open, preserve any failed receipt and block dependent acceptance; do not downgrade a required gate.",
@@ -5043,10 +4810,7 @@
       "dependencies": [
         "DD-078"
       ],
-      "estimate_minutes": [
-        5,
-        15
-      ],
+      "estimate_minutes": null,
       "evidence": [],
       "execution_authority": "future_scope_direction_required",
       "failure_disposition": "Keep this task open, preserve any failed receipt and block dependent acceptance; do not downgrade a required gate.",
@@ -5102,10 +4866,7 @@
       "dependencies": [
         "DD-079"
       ],
-      "estimate_minutes": [
-        5,
-        15
-      ],
+      "estimate_minutes": null,
       "evidence": [],
       "execution_authority": "future_scope_direction_required",
       "failure_disposition": "Keep this task open, preserve any failed receipt and block dependent acceptance; do not downgrade a required gate.",
@@ -5162,10 +4923,7 @@
         "DD-080",
         "DD-070"
       ],
-      "estimate_minutes": [
-        5,
-        15
-      ],
+      "estimate_minutes": null,
       "evidence": [],
       "execution_authority": "future_scope_direction_required",
       "failure_disposition": "Keep this task open, preserve any failed receipt and block dependent acceptance; do not downgrade a required gate.",
@@ -5221,10 +4979,7 @@
       "dependencies": [
         "DD-070"
       ],
-      "estimate_minutes": [
-        10,
-        30
-      ],
+      "estimate_minutes": null,
       "evidence": [],
       "execution_authority": "future_scope_direction_required",
       "failure_disposition": "Keep this task open, preserve any failed receipt and block dependent acceptance; do not downgrade a required gate.",
@@ -5280,10 +5035,7 @@
       "dependencies": [
         "DD-070"
       ],
-      "estimate_minutes": [
-        10,
-        30
-      ],
+      "estimate_minutes": null,
       "evidence": [],
       "execution_authority": "future_scope_direction_required",
       "failure_disposition": "Keep this task open, preserve any failed receipt and block dependent acceptance; do not downgrade a required gate.",
@@ -5339,10 +5091,7 @@
       "dependencies": [
         "DD-070"
       ],
-      "estimate_minutes": [
-        10,
-        30
-      ],
+      "estimate_minutes": null,
       "evidence": [],
       "execution_authority": "future_scope_direction_required",
       "failure_disposition": "Keep this task open, preserve any failed receipt and block dependent acceptance; do not downgrade a required gate.",
@@ -5398,10 +5147,7 @@
       "dependencies": [
         "DD-070"
       ],
-      "estimate_minutes": [
-        10,
-        30
-      ],
+      "estimate_minutes": null,
       "evidence": [],
       "execution_authority": "future_scope_direction_required",
       "failure_disposition": "Keep this task open, preserve any failed receipt and block dependent acceptance; do not downgrade a required gate.",
@@ -5457,10 +5203,7 @@
       "dependencies": [
         "DD-070"
       ],
-      "estimate_minutes": [
-        10,
-        30
-      ],
+      "estimate_minutes": null,
       "evidence": [],
       "execution_authority": "future_scope_direction_required",
       "failure_disposition": "Keep this task open, preserve any failed receipt and block dependent acceptance; do not downgrade a required gate.",
@@ -5516,10 +5259,7 @@
       "dependencies": [
         "DD-070"
       ],
-      "estimate_minutes": [
-        10,
-        30
-      ],
+      "estimate_minutes": null,
       "evidence": [],
       "execution_authority": "future_scope_direction_required",
       "failure_disposition": "Keep this task open, preserve any failed receipt and block dependent acceptance; do not downgrade a required gate.",
@@ -5575,10 +5315,7 @@
       "dependencies": [
         "DD-070"
       ],
-      "estimate_minutes": [
-        10,
-        30
-      ],
+      "estimate_minutes": null,
       "evidence": [],
       "execution_authority": "future_scope_direction_required",
       "failure_disposition": "Keep this task open, preserve any failed receipt and block dependent acceptance; do not downgrade a required gate.",
@@ -5634,10 +5371,7 @@
       "dependencies": [
         "DD-070"
       ],
-      "estimate_minutes": [
-        10,
-        30
-      ],
+      "estimate_minutes": null,
       "evidence": [],
       "execution_authority": "future_scope_direction_required",
       "failure_disposition": "Keep this task open, preserve any failed receipt and block dependent acceptance; do not downgrade a required gate.",
@@ -5693,10 +5427,7 @@
       "dependencies": [
         "DD-070"
       ],
-      "estimate_minutes": [
-        10,
-        30
-      ],
+      "estimate_minutes": null,
       "evidence": [],
       "execution_authority": "future_scope_direction_required",
       "failure_disposition": "Keep this task open, preserve any failed receipt and block dependent acceptance; do not downgrade a required gate.",
@@ -5752,10 +5483,7 @@
       "dependencies": [
         "DD-070"
       ],
-      "estimate_minutes": [
-        10,
-        30
-      ],
+      "estimate_minutes": null,
       "evidence": [],
       "execution_authority": "future_scope_direction_required",
       "failure_disposition": "Keep this task open, preserve any failed receipt and block dependent acceptance; do not downgrade a required gate.",
@@ -5811,10 +5539,7 @@
       "dependencies": [
         "DD-070"
       ],
-      "estimate_minutes": [
-        10,
-        30
-      ],
+      "estimate_minutes": null,
       "evidence": [],
       "execution_authority": "future_scope_direction_required",
       "failure_disposition": "Keep this task open, preserve any failed receipt and block dependent acceptance; do not downgrade a required gate.",
@@ -5870,10 +5595,7 @@
       "dependencies": [
         "DD-070"
       ],
-      "estimate_minutes": [
-        10,
-        30
-      ],
+      "estimate_minutes": null,
       "evidence": [],
       "execution_authority": "future_scope_direction_required",
       "failure_disposition": "Keep this task open, preserve any failed receipt and block dependent acceptance; do not downgrade a required gate.",

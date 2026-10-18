@@ -11,7 +11,7 @@ Generated from `task_ledger.json`. Edit the ledger, then rerun this projection. 
 - Owner: release owner; reviewer: independent technical reviewer.
 - Dependencies: none.
 - Execution scope: current_local_plan_and_scaffolding.
-- Planning estimate: 5-15 minutes; unmeasured.
+- Planning estimate: unestimated; assign a person and calibrate the bounded scope before scheduling.
 - Boundary: Internal plan/tooling qualification
 - Deliverables: `v2/docs/Diligence/2026-10-18/specification_register.json`.
 
@@ -37,7 +37,7 @@ python3 v2/dev/diligence/cli.py inspect-task DD-001
 - Owner: build engineer; reviewer: release owner.
 - Dependencies: DD-001.
 - Execution scope: current_local_plan_and_scaffolding.
-- Planning estimate: 5-15 minutes; unmeasured.
+- Planning estimate: unestimated; assign a person and calibrate the bounded scope before scheduling.
 - Boundary: Internal plan/tooling qualification
 - Deliverables: `v2/docs/Diligence/2026-10-18/source_lock.json`.
 
@@ -69,7 +69,7 @@ python3.12 v2/dev/diligence/cli.py verify-source
 - Owner: release owner; reviewer: independent technical reviewer.
 - Dependencies: DD-002.
 - Execution scope: current_local_plan_and_scaffolding.
-- Planning estimate: 5-15 minutes; unmeasured.
+- Planning estimate: unestimated; assign a person and calibrate the bounded scope before scheduling.
 - Boundary: Internal plan/tooling qualification
 - Deliverables: `v2/docs/Diligence/2026-10-18/REPOSITORY_RECONCILIATION.md`.
 
@@ -83,7 +83,7 @@ python3 v2/dev/diligence/cli.py inspect-task DD-003
 
 - accept-dd-003 (manual): Preserve POP-01 E2.2a, Data qualification before Runtime binding; POP/RG/ML percentages and serving freezes are unchanged.
 
-**Evidence:** `v2/docs/Diligence/2026-10-18/REPOSITORY_RECONCILIATION.md`
+**Evidence:** `v2/docs/Diligence/2026-10-18/V2/HANDOFF.md`
 
 **Requirement sources:** SPEC-A lines 49-86; SPEC-B lines 708-717; SPEC-C lines 51-81.
 
@@ -95,7 +95,7 @@ python3 v2/dev/diligence/cli.py inspect-task DD-003
 - Owner: build engineer; reviewer: release owner.
 - Dependencies: DD-003.
 - Execution scope: current_local_plan_and_scaffolding.
-- Planning estimate: 5-15 minutes; unmeasured.
+- Planning estimate: unestimated; assign a person and calibrate the bounded scope before scheduling.
 - Boundary: Internal plan/tooling qualification
 - Deliverables: `v2/docs/Diligence/2026-10-18/DECISIONS.md`.
 
@@ -121,7 +121,7 @@ python3 v2/dev/diligence/cli.py inspect-task DD-004
 - Owner: systems reviewer; reviewer: release owner.
 - Dependencies: DD-002.
 - Execution scope: current_local_plan_and_scaffolding.
-- Planning estimate: 5-15 minutes; unmeasured.
+- Planning estimate: unestimated; assign a person and calibrate the bounded scope before scheduling.
 - Boundary: Internal plan/tooling qualification
 - Deliverables: `v2/docs/Diligence/2026-10-18/REPOSITORY_RECONCILIATION.md`.
 
@@ -147,7 +147,7 @@ python3 v2/dev/diligence/cli.py inspect-task DD-005
 - Owner: scientific reviewer; reviewer: release owner.
 - Dependencies: DD-002.
 - Execution scope: current_local_plan_and_scaffolding.
-- Planning estimate: 5-15 minutes; unmeasured.
+- Planning estimate: unestimated; assign a person and calibrate the bounded scope before scheduling.
 - Boundary: Internal plan/tooling qualification
 - Deliverables: `v2/docs/Diligence/2026-10-18/claims.json`.
 
@@ -179,7 +179,7 @@ python3.12 v2/dev/diligence/cli.py verify-source
 - Owner: build engineer; reviewer: release owner.
 - Dependencies: DD-002.
 - Execution scope: current_local_plan_and_scaffolding.
-- Planning estimate: 5-15 minutes; unmeasured.
+- Planning estimate: unestimated; assign a person and calibrate the bounded scope before scheduling.
 - Boundary: Internal plan/tooling qualification
 - Deliverables: `v2/docs/Diligence/2026-10-18/byte_reconstruction.v1.json`.
 
@@ -211,7 +211,7 @@ python3.12 v2/dev/diligence/cli.py verify-source
 - Owner: release owner; reviewer: independent technical reviewer.
 - Dependencies: DD-005, DD-006, DD-004.
 - Execution scope: current_local_plan_and_scaffolding.
-- Planning estimate: 5-15 minutes; unmeasured.
+- Planning estimate: unestimated; assign a person and calibrate the bounded scope before scheduling.
 - Boundary: Internal plan/tooling qualification
 - Deliverables: `v2/docs/Diligence/2026-10-18/SPECIFICATION_CROSSWALK.md`.
 
@@ -237,7 +237,7 @@ python3 v2/dev/diligence/cli.py inspect-task DD-008
 - Owner: release owner; reviewer: independent technical reviewer.
 - Dependencies: DD-008.
 - Execution scope: current_local_plan_and_scaffolding.
-- Planning estimate: 5-15 minutes; unmeasured.
+- Planning estimate: unestimated; assign a person and calibrate the bounded scope before scheduling.
 - Boundary: Internal plan/tooling qualification
 - Deliverables: `v2/docs/Diligence/2026-10-18/release_profile.json`.
 
@@ -263,7 +263,7 @@ python3 v2/dev/diligence/cli.py inspect-task DD-009
 - Owner: release owner; reviewer: independent technical reviewer.
 - Dependencies: DD-009.
 - Execution scope: current_local_plan_and_scaffolding.
-- Planning estimate: 5-15 minutes; unmeasured.
+- Planning estimate: unestimated; assign a person and calibrate the bounded scope before scheduling.
 - Boundary: Internal plan/tooling qualification
 - Deliverables: `v2/docs/Diligence/2026-10-18/approval/release_selection.json`.
 
@@ -292,7 +292,7 @@ python3 v2/dev/diligence/cli.py inspect-task DD-010
 - Owner: build engineer; reviewer: release owner.
 - Dependencies: DD-004.
 - Execution scope: current_local_plan_and_scaffolding.
-- Planning estimate: 10-30 minutes; unmeasured.
+- Planning estimate: unestimated; assign a person and calibrate the bounded scope before scheduling.
 - Boundary: Internal plan/tooling qualification
 - Deliverables: `v2/dev/diligence/core.py`.
 
@@ -312,7 +312,7 @@ python3.12 v2/dev/diligence/cli.py check-plan
 
 - accept-dd-011 (manual): Duplicate keys, NaN/Infinity, oversized documents, absolute paths, traversal and linked inputs reject before evaluation.
 
-**Evidence:** `v2/docs/Diligence/2026-10-18/evidence/source_python312.json`
+**Evidence:** `v2/docs/Diligence/2026-10-18/V2/evidence/test_report.json`
 
 **Requirement sources:** SPEC-A lines 556-745; SPEC-B lines 448-591; SPEC-C lines 350-518.
 
@@ -324,7 +324,7 @@ python3.12 v2/dev/diligence/cli.py check-plan
 - Owner: build engineer; reviewer: release owner.
 - Dependencies: DD-007, DD-011.
 - Execution scope: current_local_plan_and_scaffolding.
-- Planning estimate: 10-30 minutes; unmeasured.
+- Planning estimate: unestimated; assign a person and calibrate the bounded scope before scheduling.
 - Boundary: Internal plan/tooling qualification
 - Deliverables: `v2/dev/diligence/core.py`.
 
@@ -344,7 +344,7 @@ python3.12 v2/dev/diligence/cli.py verify-source
 
 - accept-dd-012 (manual): Source digest checked first; declared transform only; output must equal original frozen digest; no normalization fallback.
 
-**Evidence:** `v2/docs/Diligence/2026-10-18/evidence/source_python312.json`
+**Evidence:** `v2/docs/Diligence/2026-10-18/V2/evidence/source_profile.json`
 
 **Requirement sources:** SPEC-A lines 556-745; SPEC-B lines 448-591; SPEC-C lines 350-518.
 
@@ -356,7 +356,7 @@ python3.12 v2/dev/diligence/cli.py verify-source
 - Owner: build engineer; reviewer: release owner.
 - Dependencies: DD-012.
 - Execution scope: current_local_plan_and_scaffolding.
-- Planning estimate: 10-30 minutes; unmeasured.
+- Planning estimate: unestimated; assign a person and calibrate the bounded scope before scheduling.
 - Boundary: Internal plan/tooling qualification
 - Deliverables: `v2/dev/diligence/capsule.py`.
 
@@ -376,7 +376,7 @@ python3.12 v2/dev/diligence/cli.py verify-source
 
 - accept-dd-013 (manual): Original four-file checker closure and all required assertions run on temporary reconstructed bytes; nested 12-gate report retained.
 
-**Evidence:** `v2/docs/Diligence/2026-10-18/evidence/source_python312.json`
+**Evidence:** `v2/docs/Diligence/2026-10-18/V2/evidence/source_profile.json`
 
 **Requirement sources:** SPEC-A lines 556-745; SPEC-B lines 448-591; SPEC-C lines 350-518.
 
@@ -388,7 +388,7 @@ python3.12 v2/dev/diligence/cli.py verify-source
 - Owner: scientific reviewer; reviewer: release owner.
 - Dependencies: DD-006, DD-011.
 - Execution scope: current_local_plan_and_scaffolding.
-- Planning estimate: 10-30 minutes; unmeasured.
+- Planning estimate: unestimated; assign a person and calibrate the bounded scope before scheduling.
 - Boundary: Internal plan/tooling qualification
 - Deliverables: `v2/docs/Diligence/2026-10-18/claims.json`.
 
@@ -408,7 +408,7 @@ python3.12 v2/dev/diligence/cli.py verify-source
 
 - accept-dd-014 (manual): Every numerical cell has source pointer, full precision, unit, denominator, rounding policy and study classification; drift rejects.
 
-**Evidence:** `v2/docs/Diligence/2026-10-18/evidence/source_python312.json`
+**Evidence:** `v2/docs/Diligence/2026-10-18/V2/evidence/source_profile.json`
 
 **Requirement sources:** SPEC-A lines 556-745; SPEC-B lines 448-591; SPEC-C lines 350-518.
 
@@ -420,7 +420,7 @@ python3.12 v2/dev/diligence/cli.py verify-source
 - Owner: build engineer; reviewer: release owner.
 - Dependencies: DD-008, DD-011.
 - Execution scope: current_local_plan_and_scaffolding.
-- Planning estimate: 10-30 minutes; unmeasured.
+- Planning estimate: unestimated; assign a person and calibrate the bounded scope before scheduling.
 - Boundary: Internal plan/tooling qualification
 - Deliverables: `v2/dev/diligence/core.py`.
 
@@ -440,7 +440,7 @@ python3.12 v2/dev/diligence/cli.py check-plan
 
 - accept-dd-015 (manual): Unknown/duplicate task IDs, missing dependencies, cycles and verified tasks without evidence reject; verified prerequisites must be satisfied.
 
-**Evidence:** `v2/docs/Diligence/2026-10-18/evidence/source_python312.json`
+**Evidence:** `v2/docs/Diligence/2026-10-18/V2/evidence/test_report.json`
 
 **Requirement sources:** SPEC-A lines 556-745; SPEC-B lines 448-591; SPEC-C lines 350-518.
 
@@ -452,7 +452,7 @@ python3.12 v2/dev/diligence/cli.py check-plan
 - Owner: build engineer; reviewer: release owner.
 - Dependencies: DD-013, DD-014, DD-015.
 - Execution scope: current_local_plan_and_scaffolding.
-- Planning estimate: 10-30 minutes; unmeasured.
+- Planning estimate: unestimated; assign a person and calibrate the bounded scope before scheduling.
 - Boundary: Internal plan/tooling qualification
 - Deliverables: `v2/dev/diligence/cli.py`.
 
@@ -472,7 +472,7 @@ python3.12 v2/dev/diligence/cli.py verify-source
 
 - accept-dd-016 (manual): One source-profile command runs claim checks, unchanged PLGA checker, unchanged BP-09 checker and fresh source dependency guard without models/services.
 
-**Evidence:** `v2/docs/Diligence/2026-10-18/evidence/source_python312.json`
+**Evidence:** `v2/docs/Diligence/2026-10-18/V2/evidence/source_profile.json`
 
 **Requirement sources:** SPEC-A lines 556-745; SPEC-B lines 448-591; SPEC-C lines 350-518.
 
@@ -484,7 +484,7 @@ python3.12 v2/dev/diligence/cli.py verify-source
 - Owner: build engineer; reviewer: release owner.
 - Dependencies: DD-016.
 - Execution scope: current_local_plan_and_scaffolding.
-- Planning estimate: 10-30 minutes; unmeasured.
+- Planning estimate: unestimated; assign a person and calibrate the bounded scope before scheduling.
 - Boundary: Internal plan/tooling qualification
 - Deliverables: `v2/dev/diligence/capsule.py`.
 
@@ -504,7 +504,7 @@ python3.12 v2/dev/diligence/cli.py verify-source --bootstrap
 
 - accept-dd-017 (manual): Requested missing NumPy returns exit 3; no installation/downgrade. Present NumPy runs 4 pilot and 10 stage-2 intervals plus Holm and records actual version.
 
-**Evidence:** `v2/docs/Diligence/2026-10-18/evidence/pinned_arithmetic.json`, `v2/docs/Diligence/2026-10-18/evidence/missing_dependency.json`
+**Evidence:** `v2/docs/Diligence/2026-10-18/V2/evidence/pinned_arithmetic.json`
 
 **Requirement sources:** SPEC-A lines 556-745; SPEC-B lines 448-591; SPEC-C lines 350-518.
 
@@ -516,7 +516,7 @@ python3.12 v2/dev/diligence/cli.py verify-source --bootstrap
 - Owner: build engineer; reviewer: release owner.
 - Dependencies: DD-013, DD-014.
 - Execution scope: current_local_plan_and_scaffolding.
-- Planning estimate: 10-30 minutes; unmeasured.
+- Planning estimate: unestimated; assign a person and calibrate the bounded scope before scheduling.
 - Boundary: Internal plan/tooling qualification
 - Deliverables: `v2/dev/diligence/cli.py`.
 
@@ -536,7 +536,7 @@ python3.12 v2/dev/diligence/cli.py verify-source
 
 - accept-dd-018 (manual): Exported python3 verify.py works from a new directory with no original checkout; source-boundary result is explicitly not rerun.
 
-**Evidence:** `v2/docs/Diligence/2026-10-18/evidence/source_python312.json`
+**Evidence:** `v2/docs/Diligence/2026-10-18/V2/evidence/source_profile.json`
 
 **Requirement sources:** SPEC-A lines 556-745; SPEC-B lines 448-591; SPEC-C lines 350-518.
 
@@ -548,7 +548,7 @@ python3.12 v2/dev/diligence/cli.py verify-source
 - Owner: build engineer; reviewer: release owner.
 - Dependencies: DD-018.
 - Execution scope: current_local_plan_and_scaffolding.
-- Planning estimate: 10-30 minutes; unmeasured.
+- Planning estimate: unestimated; assign a person and calibrate the bounded scope before scheduling.
 - Boundary: Internal plan/tooling qualification
 - Deliverables: `v2/dev/diligence/cli.py`.
 
@@ -568,7 +568,7 @@ python3.12 v2/dev/diligence/cli.py verify-source
 
 - accept-dd-019 (manual): Exact payload membership and hashes; no self hash; detached manifest digest; sorted fixed ZIP metadata; repeated exports agree byte for byte.
 
-**Evidence:** `v2/docs/Diligence/2026-10-18/evidence/source_python312.json`
+**Evidence:** `v2/docs/Diligence/2026-10-18/V2/evidence/test_report.json`
 
 **Requirement sources:** SPEC-A lines 556-745; SPEC-B lines 448-591; SPEC-C lines 350-518.
 
@@ -580,7 +580,7 @@ python3.12 v2/dev/diligence/cli.py verify-source
 - Owner: quality reviewer; reviewer: release owner.
 - Dependencies: DD-019, DD-015, DD-017.
 - Execution scope: current_local_plan_and_scaffolding.
-- Planning estimate: 10-30 minutes; unmeasured.
+- Planning estimate: unestimated; assign a person and calibrate the bounded scope before scheduling.
 - Boundary: Internal plan/tooling qualification
 - Deliverables: `v2/dev/tests/diligence/test_integrity.py`.
 
@@ -600,7 +600,7 @@ python3.12 -m unittest discover -s v2/dev/tests/diligence -v
 
 - accept-dd-020 (manual): Alter source, historical transform, metric, missing gate, qualifier, task dependency, delivered byte and unexpected payload; all required negative outcomes reject.
 
-**Evidence:** `v2/docs/Diligence/2026-10-18/evidence/tooling_test_receipt.json`
+**Evidence:** `v2/docs/Diligence/2026-10-18/V2/evidence/test_report.json`
 
 **Requirement sources:** SPEC-A lines 556-745; SPEC-B lines 448-591; SPEC-C lines 350-518.
 
@@ -612,7 +612,7 @@ python3.12 -m unittest discover -s v2/dev/tests/diligence -v
 - Owner: quality reviewer; reviewer: release owner.
 - Dependencies: DD-020.
 - Execution scope: current_local_plan_and_scaffolding.
-- Planning estimate: 10-30 minutes; unmeasured.
+- Planning estimate: unestimated; assign a person and calibrate the bounded scope before scheduling.
 - Boundary: Internal plan/tooling qualification
 - Deliverables: `v2/docs/Diligence/2026-10-18/evidence/tooling_test_receipt.json`.
 
@@ -632,7 +632,7 @@ python3.12 -m unittest discover -s v2/dev/tests/diligence -v
 
 - accept-dd-021 (manual): Record actual Python/platform and line plus branch coverage; any unavailable coverage is explicitly unmeasured, never inferred from test count.
 
-**Evidence:** `v2/docs/Diligence/2026-10-18/evidence/tooling_test_receipt.json`
+**Evidence:** `v2/docs/Diligence/2026-10-18/V2/evidence/test_report.json`
 
 **Requirement sources:** SPEC-A lines 556-745; SPEC-B lines 448-591; SPEC-C lines 350-518.
 
@@ -640,11 +640,11 @@ python3.12 -m unittest discover -s v2/dev/tests/diligence -v
 
 ### DD-022 - Close duplicate-check and timeout failure semantics
 
-- Status: **planned**; priority: P0.
+- Status: **verified**; priority: P0.
 - Owner: build engineer; reviewer: release owner.
 - Dependencies: DD-016.
 - Execution scope: current_local_plan_and_scaffolding.
-- Planning estimate: 10-30 minutes; unmeasured.
+- Planning estimate: unestimated; assign a person and calibrate the bounded scope before scheduling.
 - Boundary: Internal plan/tooling qualification
 - Deliverables: `v2/dev/diligence/capsule.py`.
 
@@ -658,7 +658,7 @@ python3 v2/dev/diligence/cli.py inspect-task DD-022
 
 - accept-dd-022 (manual): Timeout/oversized checker stdout/child dependency failure emits bounded rejection; each required check runs once; no shell-selected commands.
 
-**Evidence:** Not yet retained; no acceptance pass is implied.
+**Evidence:** `v2/docs/Diligence/2026-10-18/V2/evidence/test_report.json`
 
 **Requirement sources:** SPEC-A lines 556-745; SPEC-B lines 448-591; SPEC-C lines 350-518.
 
@@ -670,7 +670,7 @@ python3 v2/dev/diligence/cli.py inspect-task DD-022
 - Owner: build engineer; reviewer: release owner.
 - Dependencies: DD-022.
 - Execution scope: current_local_plan_and_scaffolding.
-- Planning estimate: 10-30 minutes; unmeasured.
+- Planning estimate: unestimated; assign a person and calibrate the bounded scope before scheduling.
 - Boundary: Internal plan/tooling qualification
 - Deliverables: `v2/dev/diligence/cli.py`.
 
@@ -696,7 +696,7 @@ python3 v2/dev/diligence/cli.py inspect-task DD-023
 - Owner: build engineer; reviewer: release owner.
 - Dependencies: DD-023.
 - Execution scope: current_local_plan_and_scaffolding.
-- Planning estimate: 10-30 minutes; unmeasured.
+- Planning estimate: unestimated; assign a person and calibrate the bounded scope before scheduling.
 - Boundary: Internal plan/tooling qualification
 - Deliverables: `v2/docs/Diligence/2026-10-18/schemas/README.md`.
 
@@ -725,7 +725,7 @@ python3 v2/dev/diligence/cli.py inspect-task DD-024
 - Owner: systems reviewer; reviewer: release owner.
 - Dependencies: DD-005.
 - Execution scope: future_scope_direction_required.
-- Planning estimate: 5-15 minutes; unmeasured.
+- Planning estimate: unestimated; assign a person and calibrate the bounded scope before scheduling.
 - Boundary: Later investor release or separately scoped follow-on; not completed by authoring this workplan.
 - Deliverables: `v2/docs/Diligence/2026-10-18/approval/claims_systems.json`.
 
@@ -751,7 +751,7 @@ python3 v2/dev/diligence/cli.py inspect-task DD-025
 - Owner: systems reviewer; reviewer: release owner.
 - Dependencies: DD-005.
 - Execution scope: future_scope_direction_required.
-- Planning estimate: 5-15 minutes; unmeasured.
+- Planning estimate: unestimated; assign a person and calibrate the bounded scope before scheduling.
 - Boundary: Later investor release or separately scoped follow-on; not completed by authoring this workplan.
 - Deliverables: `v2/docs/Diligence/2026-10-18/approval/claims_agents.json`.
 
@@ -777,7 +777,7 @@ python3 v2/dev/diligence/cli.py inspect-task DD-026
 - Owner: systems reviewer; reviewer: release owner.
 - Dependencies: DD-005.
 - Execution scope: future_scope_direction_required.
-- Planning estimate: 5-15 minutes; unmeasured.
+- Planning estimate: unestimated; assign a person and calibrate the bounded scope before scheduling.
 - Boundary: Later investor release or separately scoped follow-on; not completed by authoring this workplan.
 - Deliverables: `v2/docs/Diligence/2026-10-18/approval/claims_context.json`.
 
@@ -803,7 +803,7 @@ python3 v2/dev/diligence/cli.py inspect-task DD-027
 - Owner: systems reviewer; reviewer: release owner.
 - Dependencies: DD-013.
 - Execution scope: future_scope_direction_required.
-- Planning estimate: 5-15 minutes; unmeasured.
+- Planning estimate: unestimated; assign a person and calibrate the bounded scope before scheduling.
 - Boundary: Later investor release or separately scoped follow-on; not completed by authoring this workplan.
 - Deliverables: `v2/docs/Diligence/2026-10-18/platform_cases.json`.
 
@@ -829,7 +829,7 @@ python3 v2/dev/diligence/cli.py inspect-task DD-028
 - Owner: scientific reviewer; reviewer: release owner.
 - Dependencies: DD-005.
 - Execution scope: future_scope_direction_required.
-- Planning estimate: 5-15 minutes; unmeasured.
+- Planning estimate: unestimated; assign a person and calibrate the bounded scope before scheduling.
 - Boundary: Later investor release or separately scoped follow-on; not completed by authoring this workplan.
 - Deliverables: `v2/docs/Diligence/2026-10-18/platform_cases.json`.
 
@@ -855,7 +855,7 @@ python3 v2/dev/diligence/cli.py inspect-task DD-029
 - Owner: scientific reviewer; reviewer: release owner.
 - Dependencies: DD-014, DD-017.
 - Execution scope: future_scope_direction_required.
-- Planning estimate: 5-15 minutes; unmeasured.
+- Planning estimate: unestimated; assign a person and calibrate the bounded scope before scheduling.
 - Boundary: Later investor release or separately scoped follow-on; not completed by authoring this workplan.
 - Deliverables: `v2/docs/Diligence/2026-10-18/approval/claims_science.json`.
 
@@ -881,7 +881,7 @@ python3 v2/dev/diligence/cli.py inspect-task DD-030
 - Owner: rights reviewer; reviewer: release owner.
 - Dependencies: DD-009.
 - Execution scope: future_scope_direction_required.
-- Planning estimate: 5-15 minutes; unmeasured.
+- Planning estimate: unestimated; assign a person and calibrate the bounded scope before scheduling.
 - Boundary: Later investor release or separately scoped follow-on; not completed by authoring this workplan.
 - Deliverables: `v2/docs/Diligence/2026-10-18/approval/disclosure_matrix.json`.
 
@@ -907,7 +907,7 @@ python3 v2/dev/diligence/cli.py inspect-task DD-031
 - Owner: rights reviewer; reviewer: release owner.
 - Dependencies: DD-009.
 - Execution scope: future_scope_direction_required.
-- Planning estimate: 5-15 minutes; unmeasured.
+- Planning estimate: unestimated; assign a person and calibrate the bounded scope before scheduling.
 - Boundary: Later investor release or separately scoped follow-on; not completed by authoring this workplan.
 - Deliverables: `v2/docs/Diligence/2026-10-18/references_review.json`.
 
@@ -933,7 +933,7 @@ python3 v2/dev/diligence/cli.py inspect-task DD-032
 - Owner: release owner; reviewer: independent technical reviewer.
 - Dependencies: DD-025, DD-026, DD-027, DD-028, DD-029, DD-030, DD-031, DD-032, DD-010.
 - Execution scope: future_scope_direction_required.
-- Planning estimate: 5-15 minutes; unmeasured.
+- Planning estimate: unestimated; assign a person and calibrate the bounded scope before scheduling.
 - Boundary: Later investor release or separately scoped follow-on; not completed by authoring this workplan.
 - Deliverables: `v2/docs/Diligence/2026-10-18/approval/claims_release.json`.
 
@@ -959,7 +959,7 @@ python3 v2/dev/diligence/cli.py inspect-task DD-033
 - Owner: release owner; reviewer: independent technical reviewer.
 - Dependencies: DD-033.
 - Execution scope: future_scope_direction_required.
-- Planning estimate: 5-15 minutes; unmeasured.
+- Planning estimate: unestimated; assign a person and calibrate the bounded scope before scheduling.
 - Boundary: Later investor release or separately scoped follow-on; not completed by authoring this workplan.
 - Deliverables: `v2/docs/Diligence/2026-10-18/release_profile.json`.
 
@@ -988,7 +988,7 @@ python3 v2/dev/diligence/cli.py inspect-task DD-034
 - Owner: technical writer; reviewer: release owner.
 - Dependencies: DD-034.
 - Execution scope: future_scope_direction_required.
-- Planning estimate: 10-30 minutes; unmeasured.
+- Planning estimate: unestimated; assign a person and calibrate the bounded scope before scheduling.
 - Boundary: Later investor release or separately scoped follow-on; not completed by authoring this workplan.
 - Deliverables: `v2/docs/Diligence/2026-10-18/00_START_HERE.md`.
 
@@ -1014,7 +1014,7 @@ python3 v2/dev/diligence/cli.py inspect-task DD-035
 - Owner: technical writer; reviewer: release owner.
 - Dependencies: DD-034.
 - Execution scope: future_scope_direction_required.
-- Planning estimate: 10-30 minutes; unmeasured.
+- Planning estimate: unestimated; assign a person and calibrate the bounded scope before scheduling.
 - Boundary: Later investor release or separately scoped follow-on; not completed by authoring this workplan.
 - Deliverables: `v2/docs/Diligence/2026-10-18/01_TECHNICAL_INVESTMENT_BRIEF.md`.
 
@@ -1040,7 +1040,7 @@ python3 v2/dev/diligence/cli.py inspect-task DD-036
 - Owner: technical writer; reviewer: release owner.
 - Dependencies: DD-036.
 - Execution scope: future_scope_direction_required.
-- Planning estimate: 10-30 minutes; unmeasured.
+- Planning estimate: unestimated; assign a person and calibrate the bounded scope before scheduling.
 - Boundary: Later investor release or separately scoped follow-on; not completed by authoring this workplan.
 - Deliverables: `v2/docs/Diligence/2026-10-18/01_TECHNICAL_INVESTMENT_BRIEF.md`.
 
@@ -1066,7 +1066,7 @@ python3 v2/dev/diligence/cli.py inspect-task DD-037
 - Owner: systems reviewer; reviewer: release owner.
 - Dependencies: DD-034.
 - Execution scope: future_scope_direction_required.
-- Planning estimate: 10-30 minutes; unmeasured.
+- Planning estimate: unestimated; assign a person and calibrate the bounded scope before scheduling.
 - Boundary: Later investor release or separately scoped follow-on; not completed by authoring this workplan.
 - Deliverables: `v2/docs/Diligence/2026-10-18/02_SYSTEMS_WHITEPAPER.md`.
 
@@ -1092,7 +1092,7 @@ python3 v2/dev/diligence/cli.py inspect-task DD-038
 - Owner: systems reviewer; reviewer: release owner.
 - Dependencies: DD-038.
 - Execution scope: future_scope_direction_required.
-- Planning estimate: 10-30 minutes; unmeasured.
+- Planning estimate: unestimated; assign a person and calibrate the bounded scope before scheduling.
 - Boundary: Later investor release or separately scoped follow-on; not completed by authoring this workplan.
 - Deliverables: `v2/docs/Diligence/2026-10-18/02_SYSTEMS_WHITEPAPER.md`.
 
@@ -1118,7 +1118,7 @@ python3 v2/dev/diligence/cli.py inspect-task DD-039
 - Owner: systems reviewer; reviewer: release owner.
 - Dependencies: DD-039.
 - Execution scope: future_scope_direction_required.
-- Planning estimate: 10-30 minutes; unmeasured.
+- Planning estimate: unestimated; assign a person and calibrate the bounded scope before scheduling.
 - Boundary: Later investor release or separately scoped follow-on; not completed by authoring this workplan.
 - Deliverables: `v2/docs/Diligence/2026-10-18/02_SYSTEMS_WHITEPAPER.md`.
 
@@ -1144,7 +1144,7 @@ python3 v2/dev/diligence/cli.py inspect-task DD-040
 - Owner: systems reviewer; reviewer: release owner.
 - Dependencies: DD-040.
 - Execution scope: future_scope_direction_required.
-- Planning estimate: 10-30 minutes; unmeasured.
+- Planning estimate: unestimated; assign a person and calibrate the bounded scope before scheduling.
 - Boundary: Later investor release or separately scoped follow-on; not completed by authoring this workplan.
 - Deliverables: `v2/docs/Diligence/2026-10-18/02_SYSTEMS_WHITEPAPER.md`.
 
@@ -1170,7 +1170,7 @@ python3 v2/dev/diligence/cli.py inspect-task DD-041
 - Owner: technical writer; reviewer: release owner.
 - Dependencies: DD-041.
 - Execution scope: future_scope_direction_required.
-- Planning estimate: 10-30 minutes; unmeasured.
+- Planning estimate: unestimated; assign a person and calibrate the bounded scope before scheduling.
 - Boundary: Later investor release or separately scoped follow-on; not completed by authoring this workplan.
 - Deliverables: `v2/docs/Diligence/2026-10-18/02_SYSTEMS_WHITEPAPER.md`.
 
@@ -1196,7 +1196,7 @@ python3 v2/dev/diligence/cli.py inspect-task DD-042
 - Owner: scientific reviewer; reviewer: release owner.
 - Dependencies: DD-034.
 - Execution scope: future_scope_direction_required.
-- Planning estimate: 10-30 minutes; unmeasured.
+- Planning estimate: unestimated; assign a person and calibrate the bounded scope before scheduling.
 - Boundary: Later investor release or separately scoped follow-on; not completed by authoring this workplan.
 - Deliverables: `v2/docs/Diligence/2026-10-18/03_PLGA_RESEARCH_GUIDE.md`.
 
@@ -1222,7 +1222,7 @@ python3 v2/dev/diligence/cli.py inspect-task DD-043
 - Owner: technical writer; reviewer: release owner.
 - Dependencies: DD-034.
 - Execution scope: future_scope_direction_required.
-- Planning estimate: 10-30 minutes; unmeasured.
+- Planning estimate: unestimated; assign a person and calibrate the bounded scope before scheduling.
 - Boundary: Later investor release or separately scoped follow-on; not completed by authoring this workplan.
 - Deliverables: `v2/docs/Diligence/2026-10-18/04_EVIDENCE_INDEX.md`.
 
@@ -1248,7 +1248,7 @@ python3 v2/dev/diligence/cli.py inspect-task DD-044
 - Owner: technical writer; reviewer: release owner.
 - Dependencies: DD-044.
 - Execution scope: future_scope_direction_required.
-- Planning estimate: 10-30 minutes; unmeasured.
+- Planning estimate: unestimated; assign a person and calibrate the bounded scope before scheduling.
 - Boundary: Later investor release or separately scoped follow-on; not completed by authoring this workplan.
 - Deliverables: `v2/docs/Diligence/2026-10-18/05_WALKTHROUGH.md`.
 
@@ -1274,7 +1274,7 @@ python3 v2/dev/diligence/cli.py inspect-task DD-045
 - Owner: scientific reviewer; reviewer: release owner.
 - Dependencies: DD-045.
 - Execution scope: future_scope_direction_required.
-- Planning estimate: 10-30 minutes; unmeasured.
+- Planning estimate: unestimated; assign a person and calibrate the bounded scope before scheduling.
 - Boundary: Later investor release or separately scoped follow-on; not completed by authoring this workplan.
 - Deliverables: `v2/docs/Diligence/2026-10-18/06_NEXT_VALIDATION.md`.
 
@@ -1300,7 +1300,7 @@ python3 v2/dev/diligence/cli.py inspect-task DD-046
 - Owner: release owner; reviewer: independent technical reviewer.
 - Dependencies: DD-046.
 - Execution scope: future_scope_direction_required.
-- Planning estimate: 10-30 minutes; unmeasured.
+- Planning estimate: unestimated; assign a person and calibrate the bounded scope before scheduling.
 - Boundary: Later investor release or separately scoped follow-on; not completed by authoring this workplan.
 - Deliverables: `v2/docs/Diligence/2026-10-18/evidence/reader_review.json`.
 
@@ -1328,8 +1328,8 @@ python3 v2/dev/diligence/cli.py inspect-task DD-047
 - Status: **verified**; priority: P0.
 - Owner: design reviewer; reviewer: release owner.
 - Dependencies: DD-004.
-- Execution scope: future_scope_direction_required.
-- Planning estimate: 10-30 minutes; unmeasured.
+- Execution scope: current_local_plan_and_scaffolding.
+- Planning estimate: unestimated; assign a person and calibrate the bounded scope before scheduling.
 - Boundary: Later investor release or separately scoped follow-on; not completed by authoring this workplan.
 - Deliverables: `v2/docs/Diligence/2026-10-18/brand_tokens.json`.
 
@@ -1355,7 +1355,7 @@ python3 v2/dev/diligence/cli.py inspect-task DD-048
 - Owner: build engineer; reviewer: release owner.
 - Dependencies: DD-048, DD-015.
 - Execution scope: current_local_plan_and_scaffolding.
-- Planning estimate: 10-30 minutes; unmeasured.
+- Planning estimate: unestimated; assign a person and calibrate the bounded scope before scheduling.
 - Boundary: Current review-plan renderer only; future investor brief/note outputs remain planned.
 - Deliverables: `v2/dev/diligence/render_plan.py`.
 
@@ -1381,7 +1381,7 @@ python3 v2/dev/diligence/cli.py inspect-task DD-049
 - Owner: build engineer; reviewer: release owner.
 - Dependencies: DD-048.
 - Execution scope: future_scope_direction_required.
-- Planning estimate: 10-30 minutes; unmeasured.
+- Planning estimate: unestimated; assign a person and calibrate the bounded scope before scheduling.
 - Boundary: Later investor release or separately scoped follow-on; not completed by authoring this workplan.
 - Deliverables: `v2/dev/diligence/templates/amphora_note.tex`.
 
@@ -1407,7 +1407,7 @@ python3 v2/dev/diligence/cli.py inspect-task DD-050
 - Owner: design reviewer; reviewer: release owner.
 - Dependencies: DD-050.
 - Execution scope: future_scope_direction_required.
-- Planning estimate: 10-30 minutes; unmeasured.
+- Planning estimate: unestimated; assign a person and calibrate the bounded scope before scheduling.
 - Boundary: Later investor release or separately scoped follow-on; not completed by authoring this workplan.
 - Deliverables: `v2/docs/Diligence/2026-10-18/figures/ownership.svg`.
 
@@ -1433,7 +1433,7 @@ python3 v2/dev/diligence/cli.py inspect-task DD-051
 - Owner: design reviewer; reviewer: release owner.
 - Dependencies: DD-051.
 - Execution scope: future_scope_direction_required.
-- Planning estimate: 10-30 minutes; unmeasured.
+- Planning estimate: unestimated; assign a person and calibrate the bounded scope before scheduling.
 - Boundary: Later investor release or separately scoped follow-on; not completed by authoring this workplan.
 - Deliverables: `v2/docs/Diligence/2026-10-18/figures/acceptance.svg`.
 
@@ -1459,7 +1459,7 @@ python3 v2/dev/diligence/cli.py inspect-task DD-052
 - Owner: design reviewer; reviewer: release owner.
 - Dependencies: DD-052.
 - Execution scope: future_scope_direction_required.
-- Planning estimate: 10-30 minutes; unmeasured.
+- Planning estimate: unestimated; assign a person and calibrate the bounded scope before scheduling.
 - Boundary: Later investor release or separately scoped follow-on; not completed by authoring this workplan.
 - Deliverables: `v2/docs/Diligence/2026-10-18/figures/successor.svg`.
 
@@ -1485,7 +1485,7 @@ python3 v2/dev/diligence/cli.py inspect-task DD-053
 - Owner: scientific reviewer; reviewer: release owner.
 - Dependencies: DD-053.
 - Execution scope: future_scope_direction_required.
-- Planning estimate: 10-30 minutes; unmeasured.
+- Planning estimate: unestimated; assign a person and calibrate the bounded scope before scheduling.
 - Boundary: Later investor release or separately scoped follow-on; not completed by authoring this workplan.
 - Deliverables: `v2/docs/Diligence/2026-10-18/figures/prefix.svg`.
 
@@ -1511,7 +1511,7 @@ python3 v2/dev/diligence/cli.py inspect-task DD-054
 - Owner: scientific reviewer; reviewer: release owner.
 - Dependencies: DD-054.
 - Execution scope: future_scope_direction_required.
-- Planning estimate: 10-30 minutes; unmeasured.
+- Planning estimate: unestimated; assign a person and calibrate the bounded scope before scheduling.
 - Boundary: Later investor release or separately scoped follow-on; not completed by authoring this workplan.
 - Deliverables: `v2/docs/Diligence/2026-10-18/figures/plga_matrix.svg`.
 
@@ -1537,7 +1537,7 @@ python3 v2/dev/diligence/cli.py inspect-task DD-055
 - Owner: build engineer; reviewer: release owner.
 - Dependencies: DD-055.
 - Execution scope: future_scope_direction_required.
-- Planning estimate: 10-30 minutes; unmeasured.
+- Planning estimate: unestimated; assign a person and calibrate the bounded scope before scheduling.
 - Boundary: Later investor release or separately scoped follow-on; not completed by authoring this workplan.
 - Deliverables: `v2/docs/Diligence/2026-10-18/figures/figure_sources.json`.
 
@@ -1563,7 +1563,7 @@ python3 v2/dev/diligence/cli.py inspect-task DD-056
 - Owner: design reviewer; reviewer: release owner.
 - Dependencies: DD-056.
 - Execution scope: future_scope_direction_required.
-- Planning estimate: 10-30 minutes; unmeasured.
+- Planning estimate: unestimated; assign a person and calibrate the bounded scope before scheduling.
 - Boundary: Later investor release or separately scoped follow-on; not completed by authoring this workplan.
 - Deliverables: `v2/docs/Diligence/2026-10-18/dist/Amphora_Systems_Technical_Note.pdf`.
 
@@ -1589,7 +1589,7 @@ python3 v2/dev/diligence/cli.py inspect-task DD-057
 - Owner: quality reviewer; reviewer: release owner.
 - Dependencies: DD-057.
 - Execution scope: future_scope_direction_required.
-- Planning estimate: 10-30 minutes; unmeasured.
+- Planning estimate: unestimated; assign a person and calibrate the bounded scope before scheduling.
 - Boundary: Later investor release or separately scoped follow-on; not completed by authoring this workplan.
 - Deliverables: `v2/docs/Diligence/2026-10-18/evidence/document_text_checks.json`.
 
@@ -1618,7 +1618,7 @@ python3 v2/dev/diligence/cli.py inspect-task DD-058
 - Owner: rights reviewer; reviewer: release owner.
 - Dependencies: DD-031, DD-034.
 - Execution scope: future_scope_direction_required.
-- Planning estimate: 10-30 minutes; unmeasured.
+- Planning estimate: unestimated; assign a person and calibrate the bounded scope before scheduling.
 - Boundary: Later investor release or separately scoped follow-on; not completed by authoring this workplan.
 - Deliverables: `v2/docs/Diligence/2026-10-18/export_allowlist.json`.
 
@@ -1644,7 +1644,7 @@ python3 v2/dev/diligence/cli.py inspect-task DD-059
 - Owner: release owner; reviewer: independent technical reviewer.
 - Dependencies: DD-059.
 - Execution scope: future_scope_direction_required.
-- Planning estimate: 10-30 minutes; unmeasured.
+- Planning estimate: unestimated; assign a person and calibrate the bounded scope before scheduling.
 - Boundary: Later investor release or separately scoped follow-on; not completed by authoring this workplan.
 - Deliverables: `v2/docs/Diligence/2026-10-18/DECISIONS.md`.
 
@@ -1670,7 +1670,7 @@ python3 v2/dev/diligence/cli.py inspect-task DD-060
 - Owner: build engineer; reviewer: release owner.
 - Dependencies: DD-060.
 - Execution scope: future_scope_direction_required.
-- Planning estimate: 10-30 minutes; unmeasured.
+- Planning estimate: unestimated; assign a person and calibrate the bounded scope before scheduling.
 - Boundary: Later investor release or separately scoped follow-on; not completed by authoring this workplan.
 - Deliverables: `v2/dev/diligence/documents.py`.
 
@@ -1696,7 +1696,7 @@ python3 v2/dev/diligence/cli.py inspect-task DD-061
 - Owner: build engineer; reviewer: release owner.
 - Dependencies: DD-061.
 - Execution scope: future_scope_direction_required.
-- Planning estimate: 10-30 minutes; unmeasured.
+- Planning estimate: unestimated; assign a person and calibrate the bounded scope before scheduling.
 - Boundary: Later investor release or separately scoped follow-on; not completed by authoring this workplan.
 - Deliverables: `v2/dev/diligence/documents.py`.
 
@@ -1722,7 +1722,7 @@ python3 v2/dev/diligence/cli.py inspect-task DD-062
 - Owner: build engineer; reviewer: release owner.
 - Dependencies: DD-062.
 - Execution scope: future_scope_direction_required.
-- Planning estimate: 10-30 minutes; unmeasured.
+- Planning estimate: unestimated; assign a person and calibrate the bounded scope before scheduling.
 - Boundary: Later investor release or separately scoped follow-on; not completed by authoring this workplan.
 - Deliverables: `v2/dev/diligence/release_gate.py`.
 
@@ -1748,7 +1748,7 @@ python3 v2/dev/diligence/cli.py inspect-task DD-063
 - Owner: build engineer; reviewer: release owner.
 - Dependencies: DD-063.
 - Execution scope: future_scope_direction_required.
-- Planning estimate: 10-30 minutes; unmeasured.
+- Planning estimate: unestimated; assign a person and calibrate the bounded scope before scheduling.
 - Boundary: Later investor release or separately scoped follow-on; not completed by authoring this workplan.
 - Deliverables: `v2/docs/Diligence/2026-10-18/reviewer/verify.py`.
 
@@ -1774,7 +1774,7 @@ python3 v2/dev/diligence/cli.py inspect-task DD-064
 - Owner: build engineer; reviewer: release owner.
 - Dependencies: DD-064.
 - Execution scope: future_scope_direction_required.
-- Planning estimate: 10-30 minutes; unmeasured.
+- Planning estimate: unestimated; assign a person and calibrate the bounded scope before scheduling.
 - Boundary: Later investor release or separately scoped follow-on; not completed by authoring this workplan.
 - Deliverables: `v2/dev/diligence/links.py`.
 
@@ -1800,7 +1800,7 @@ python3 v2/dev/diligence/cli.py inspect-task DD-065
 - Owner: rights reviewer; reviewer: release owner.
 - Dependencies: DD-065.
 - Execution scope: future_scope_direction_required.
-- Planning estimate: 10-30 minutes; unmeasured.
+- Planning estimate: unestimated; assign a person and calibrate the bounded scope before scheduling.
 - Boundary: Later investor release or separately scoped follow-on; not completed by authoring this workplan.
 - Deliverables: `v2/docs/Diligence/2026-10-18/NOTICES.md`.
 
@@ -1826,7 +1826,7 @@ python3 v2/dev/diligence/cli.py inspect-task DD-066
 - Owner: build engineer; reviewer: release owner.
 - Dependencies: DD-066.
 - Execution scope: future_scope_direction_required.
-- Planning estimate: 10-30 minutes; unmeasured.
+- Planning estimate: unestimated; assign a person and calibrate the bounded scope before scheduling.
 - Boundary: Later investor release or separately scoped follow-on; not completed by authoring this workplan.
 - Deliverables: `v2/docs/Diligence/2026-10-18/release/RELEASE_RECEIPT.json`.
 
@@ -1852,7 +1852,7 @@ python3 v2/dev/diligence/cli.py inspect-task DD-067
 - Owner: quality reviewer; reviewer: release owner.
 - Dependencies: DD-067.
 - Execution scope: future_scope_direction_required.
-- Planning estimate: 10-30 minutes; unmeasured.
+- Planning estimate: unestimated; assign a person and calibrate the bounded scope before scheduling.
 - Boundary: Later investor release or separately scoped follow-on; not completed by authoring this workplan.
 - Deliverables: `v2/docs/Diligence/2026-10-18/evidence/fresh_export.json`.
 
@@ -1878,7 +1878,7 @@ python3 v2/dev/diligence/cli.py inspect-task DD-068
 - Owner: quality reviewer; reviewer: release owner.
 - Dependencies: DD-068.
 - Execution scope: future_scope_direction_required.
-- Planning estimate: 10-30 minutes; unmeasured.
+- Planning estimate: unestimated; assign a person and calibrate the bounded scope before scheduling.
 - Boundary: Later investor release or separately scoped follow-on; not completed by authoring this workplan.
 - Deliverables: `v2/docs/Diligence/2026-10-18/evidence/verification_timing.json`.
 
@@ -1904,7 +1904,7 @@ python3 v2/dev/diligence/cli.py inspect-task DD-069
 - Owner: release owner; reviewer: independent technical reviewer.
 - Dependencies: DD-069.
 - Execution scope: future_scope_direction_required.
-- Planning estimate: 10-30 minutes; unmeasured.
+- Planning estimate: unestimated; assign a person and calibrate the bounded scope before scheduling.
 - Boundary: Later investor release or separately scoped follow-on; not completed by authoring this workplan.
 - Deliverables: `v2/docs/Diligence/2026-10-18/release/RELEASE_RECEIPT.json`.
 
@@ -1932,8 +1932,8 @@ python3 v2/dev/diligence/cli.py inspect-task DD-070
 - Status: **verified**; priority: P0.
 - Owner: quality reviewer; reviewer: release owner.
 - Dependencies: DD-020.
-- Execution scope: future_scope_direction_required.
-- Planning estimate: 5-15 minutes; unmeasured.
+- Execution scope: current_local_plan_and_scaffolding.
+- Planning estimate: unestimated; assign a person and calibrate the bounded scope before scheduling.
 - Boundary: Later investor release or separately scoped follow-on; not completed by authoring this workplan.
 - Deliverables: `v2/docs/Diligence/2026-10-18/evidence/tooling_test_receipt.json`.
 
@@ -1953,7 +1953,7 @@ python3.12 -m unittest discover -s v2/dev/tests/diligence -v
 
 - accept-dd-071 (manual): New positive and corruption cases exercise parser, source/reconstruction pins, claims, DAG, manifest and requested-dependency semantics.
 
-**Evidence:** `v2/docs/Diligence/2026-10-18/evidence/tooling_test_receipt.json`
+**Evidence:** `v2/docs/Diligence/2026-10-18/V2/evidence/test_report.json`
 
 **Requirement sources:** SPEC-A lines 964-1009; SPEC-B lines 930-977; SPEC-C lines 798-846.
 
@@ -1964,8 +1964,8 @@ python3.12 -m unittest discover -s v2/dev/tests/diligence -v
 - Status: **verified**; priority: P0.
 - Owner: quality reviewer; reviewer: release owner.
 - Dependencies: DD-016.
-- Execution scope: future_scope_direction_required.
-- Planning estimate: 5-15 minutes; unmeasured.
+- Execution scope: current_local_plan_and_scaffolding.
+- Planning estimate: unestimated; assign a person and calibrate the bounded scope before scheduling.
 - Boundary: Later investor release or separately scoped follow-on; not completed by authoring this workplan.
 - Deliverables: `v2/docs/Diligence/2026-10-18/evidence/preservation.json`.
 
@@ -1985,7 +1985,7 @@ python3.12 v2/dev/diligence/cli.py verify-source
 
 - accept-dd-072 (manual): Boundary checker passes; v1, PLGA source/results/PDF, original ledger and production modules are unchanged against baseline.
 
-**Evidence:** `v2/docs/Diligence/2026-10-18/evidence/source_python312.json`
+**Evidence:** `v2/docs/Diligence/2026-10-18/V2/evidence/source_profile.json`
 
 **Requirement sources:** SPEC-A lines 964-1009; SPEC-B lines 930-977; SPEC-C lines 798-846.
 
@@ -1996,8 +1996,8 @@ python3.12 v2/dev/diligence/cli.py verify-source
 - Status: **verified**; priority: P0.
 - Owner: quality reviewer; reviewer: release owner.
 - Dependencies: DD-019, DD-072.
-- Execution scope: future_scope_direction_required.
-- Planning estimate: 5-15 minutes; unmeasured.
+- Execution scope: current_local_plan_and_scaffolding.
+- Planning estimate: unestimated; assign a person and calibrate the bounded scope before scheduling.
 - Boundary: Later investor release or separately scoped follow-on; not completed by authoring this workplan.
 - Deliverables: `v2/docs/Diligence/2026-10-18/evidence/current_verification.json`.
 
@@ -2017,7 +2017,7 @@ python3.12 v2/dev/diligence/cli.py verify-source
 
 - accept-dd-073 (manual): Actual original 12-gate nested result and PLGA aggregate checker succeed; source profile reruns static guard; capsule does not misreport it.
 
-**Evidence:** `v2/docs/Diligence/2026-10-18/evidence/source_python312.json`
+**Evidence:** `v2/docs/Diligence/2026-10-18/V2/evidence/source_profile.json`
 
 **Requirement sources:** SPEC-A lines 964-1009; SPEC-B lines 930-977; SPEC-C lines 798-846.
 
@@ -2028,8 +2028,8 @@ python3.12 v2/dev/diligence/cli.py verify-source
 - Status: **verified**; priority: P0.
 - Owner: scientific reviewer; reviewer: release owner.
 - Dependencies: DD-017.
-- Execution scope: future_scope_direction_required.
-- Planning estimate: 5-15 minutes; unmeasured.
+- Execution scope: current_local_plan_and_scaffolding.
+- Planning estimate: unestimated; assign a person and calibrate the bounded scope before scheduling.
 - Boundary: Later investor release or separately scoped follow-on; not completed by authoring this workplan.
 - Deliverables: `v2/docs/Diligence/2026-10-18/evidence/pinned_arithmetic.json`.
 
@@ -2049,7 +2049,7 @@ python3.12 v2/dev/diligence/cli.py verify-source --bootstrap
 
 - accept-dd-074 (manual): Use NumPy1.26.4/Python3.12 when available; otherwise record actual tested environment and keep pinned qualification task open; zero fits.
 
-**Evidence:** `v2/docs/Diligence/2026-10-18/evidence/pinned_arithmetic.json`, `v2/docs/Diligence/2026-10-18/evidence/missing_dependency.json`
+**Evidence:** `v2/docs/Diligence/2026-10-18/V2/evidence/pinned_arithmetic.json`
 
 **Requirement sources:** SPEC-A lines 964-1009; SPEC-B lines 930-977; SPEC-C lines 798-846.
 
@@ -2061,7 +2061,7 @@ python3.12 v2/dev/diligence/cli.py verify-source --bootstrap
 - Owner: design reviewer; reviewer: release owner.
 - Dependencies: DD-049.
 - Execution scope: future_scope_direction_required.
-- Planning estimate: 5-15 minutes; unmeasured.
+- Planning estimate: unestimated; assign a person and calibrate the bounded scope before scheduling.
 - Boundary: Later investor release or separately scoped follow-on; not completed by authoring this workplan.
 - Deliverables: `v2/docs/Diligence/2026-10-18/evidence/pdf_visual_qa.json`.
 
@@ -2087,7 +2087,7 @@ python3 v2/dev/diligence/cli.py inspect-task DD-075
 - Owner: build engineer; reviewer: release owner.
 - Dependencies: DD-075.
 - Execution scope: future_scope_direction_required.
-- Planning estimate: 5-15 minutes; unmeasured.
+- Planning estimate: unestimated; assign a person and calibrate the bounded scope before scheduling.
 - Boundary: Later investor release or separately scoped follow-on; not completed by authoring this workplan.
 - Deliverables: `v2/docs/Diligence/2026-10-18/evidence/freshness.json`.
 
@@ -2113,7 +2113,7 @@ python3 v2/dev/diligence/cli.py inspect-task DD-076
 - Owner: build engineer; reviewer: release owner.
 - Dependencies: DD-076.
 - Execution scope: future_scope_direction_required.
-- Planning estimate: 5-15 minutes; unmeasured.
+- Planning estimate: unestimated; assign a person and calibrate the bounded scope before scheduling.
 - Boundary: Later investor release or separately scoped follow-on; not completed by authoring this workplan.
 - Deliverables: `v2/docs/Diligence/2026-10-18/ci/diligence-checks.yml`.
 
@@ -2139,7 +2139,7 @@ python3 v2/dev/diligence/cli.py inspect-task DD-077
 - Owner: systems reviewer; reviewer: release owner.
 - Dependencies: DD-071, DD-072, DD-075.
 - Execution scope: future_scope_direction_required.
-- Planning estimate: 5-15 minutes; unmeasured.
+- Planning estimate: unestimated; assign a person and calibrate the bounded scope before scheduling.
 - Boundary: Later investor release or separately scoped follow-on; not completed by authoring this workplan.
 - Deliverables: `v2/docs/Diligence/2026-10-18/evidence/scoped_drift_audit.md`.
 
@@ -2165,7 +2165,7 @@ python3 v2/dev/diligence/cli.py inspect-task DD-078
 - Owner: release owner; reviewer: independent technical reviewer.
 - Dependencies: DD-078.
 - Execution scope: future_scope_direction_required.
-- Planning estimate: 5-15 minutes; unmeasured.
+- Planning estimate: unestimated; assign a person and calibrate the bounded scope before scheduling.
 - Boundary: Later investor release or separately scoped follow-on; not completed by authoring this workplan.
 - Deliverables: `v2/docs/Diligence/2026-10-18/HANDOFF.md`.
 
@@ -2191,7 +2191,7 @@ python3 v2/dev/diligence/cli.py inspect-task DD-079
 - Owner: release owner; reviewer: independent technical reviewer.
 - Dependencies: DD-079.
 - Execution scope: future_scope_direction_required.
-- Planning estimate: 5-15 minutes; unmeasured.
+- Planning estimate: unestimated; assign a person and calibrate the bounded scope before scheduling.
 - Boundary: Later investor release or separately scoped follow-on; not completed by authoring this workplan.
 - Deliverables: `v2/docs/Diligence/2026-10-18/approval/local_review.json`.
 
@@ -2217,7 +2217,7 @@ python3 v2/dev/diligence/cli.py inspect-task DD-080
 - Owner: release owner; reviewer: independent technical reviewer.
 - Dependencies: DD-080, DD-070.
 - Execution scope: future_scope_direction_required.
-- Planning estimate: 5-15 minutes; unmeasured.
+- Planning estimate: unestimated; assign a person and calibrate the bounded scope before scheduling.
 - Boundary: Later investor release or separately scoped follow-on; not completed by authoring this workplan.
 - Deliverables: `v2/docs/Diligence/2026-10-18/approval/distribution.json`.
 
@@ -2246,7 +2246,7 @@ python3 v2/dev/diligence/cli.py inspect-task DD-081
 - Owner: technical writer; reviewer: release owner.
 - Dependencies: DD-070.
 - Execution scope: future_scope_direction_required.
-- Planning estimate: 10-30 minutes; unmeasured.
+- Planning estimate: unestimated; assign a person and calibrate the bounded scope before scheduling.
 - Boundary: Later investor release or separately scoped follow-on; not completed by authoring this workplan.
 - Deliverables: `v2/docs/Diligence/2026-10-18/optional/Amphora_Walkthrough.mp4`.
 
@@ -2272,7 +2272,7 @@ python3 v2/dev/diligence/cli.py inspect-task DD-082
 - Owner: technical writer; reviewer: release owner.
 - Dependencies: DD-070.
 - Execution scope: future_scope_direction_required.
-- Planning estimate: 10-30 minutes; unmeasured.
+- Planning estimate: unestimated; assign a person and calibrate the bounded scope before scheduling.
 - Boundary: Later investor release or separately scoped follow-on; not completed by authoring this workplan.
 - Deliverables: `v2/docs/Diligence/2026-10-18/optional/TECHNICAL_FAQ.md`.
 
@@ -2298,7 +2298,7 @@ python3 v2/dev/diligence/cli.py inspect-task DD-083
 - Owner: quality reviewer; reviewer: release owner.
 - Dependencies: DD-070.
 - Execution scope: future_scope_direction_required.
-- Planning estimate: 10-30 minutes; unmeasured.
+- Planning estimate: unestimated; assign a person and calibrate the bounded scope before scheduling.
 - Boundary: Later investor release or separately scoped follow-on; not completed by authoring this workplan.
 - Deliverables: `v2/docs/Diligence/2026-10-18/optional/reviewer_machine_receipt.json`.
 
@@ -2324,7 +2324,7 @@ python3 v2/dev/diligence/cli.py inspect-task DD-084
 - Owner: scientific reviewer; reviewer: release owner.
 - Dependencies: DD-070.
 - Execution scope: future_scope_direction_required.
-- Planning estimate: 10-30 minutes; unmeasured.
+- Planning estimate: unestimated; assign a person and calibrate the bounded scope before scheduling.
 - Boundary: Later investor release or separately scoped follow-on; not completed by authoring this workplan.
 - Deliverables: `v2/docs/Diligence/2026-10-18/optional/full_replay_protocol.md`.
 
@@ -2350,7 +2350,7 @@ python3 v2/dev/diligence/cli.py inspect-task DD-085
 - Owner: systems reviewer; reviewer: release owner.
 - Dependencies: DD-070.
 - Execution scope: future_scope_direction_required.
-- Planning estimate: 10-30 minutes; unmeasured.
+- Planning estimate: unestimated; assign a person and calibrate the bounded scope before scheduling.
 - Boundary: Later investor release or separately scoped follow-on; not completed by authoring this workplan.
 - Deliverables: `v2/docs/Diligence/2026-10-18/optional/recovery_witness_protocol.md`.
 
@@ -2376,7 +2376,7 @@ python3 v2/dev/diligence/cli.py inspect-task DD-086
 - Owner: scientific reviewer; reviewer: release owner.
 - Dependencies: DD-070.
 - Execution scope: future_scope_direction_required.
-- Planning estimate: 10-30 minutes; unmeasured.
+- Planning estimate: unestimated; assign a person and calibrate the bounded scope before scheduling.
 - Boundary: Later investor release or separately scoped follow-on; not completed by authoring this workplan.
 - Deliverables: `v2/docs/Diligence/2026-10-18/follow_on/new_panel_protocol.md`.
 
@@ -2402,7 +2402,7 @@ python3 v2/dev/diligence/cli.py inspect-task DD-087
 - Owner: product reviewer; reviewer: release owner.
 - Dependencies: DD-070.
 - Execution scope: future_scope_direction_required.
-- Planning estimate: 10-30 minutes; unmeasured.
+- Planning estimate: unestimated; assign a person and calibrate the bounded scope before scheduling.
 - Boundary: Later investor release or separately scoped follow-on; not completed by authoring this workplan.
 - Deliverables: `v2/docs/Diligence/2026-10-18/follow_on/workflow_value_protocol.md`.
 
@@ -2428,7 +2428,7 @@ python3 v2/dev/diligence/cli.py inspect-task DD-088
 - Owner: runtime owner; reviewer: release owner.
 - Dependencies: DD-070.
 - Execution scope: future_scope_direction_required.
-- Planning estimate: 10-30 minutes; unmeasured.
+- Planning estimate: unestimated; assign a person and calibrate the bounded scope before scheduling.
 - Boundary: Later investor release or separately scoped follow-on; not completed by authoring this workplan.
 - Deliverables: `v2/docs/Diligence/2026-10-18/follow_on/POP-01_link.md`.
 
@@ -2454,7 +2454,7 @@ python3 v2/dev/diligence/cli.py inspect-task DD-089
 - Owner: knowledge owner; reviewer: release owner.
 - Dependencies: DD-070.
 - Execution scope: future_scope_direction_required.
-- Planning estimate: 10-30 minutes; unmeasured.
+- Planning estimate: unestimated; assign a person and calibrate the bounded scope before scheduling.
 - Boundary: Later investor release or separately scoped follow-on; not completed by authoring this workplan.
 - Deliverables: `v2/docs/Diligence/2026-10-18/follow_on/RG-01_link.md`.
 
@@ -2480,7 +2480,7 @@ python3 v2/dev/diligence/cli.py inspect-task DD-090
 - Owner: scientific tool owner; reviewer: release owner.
 - Dependencies: DD-070.
 - Execution scope: future_scope_direction_required.
-- Planning estimate: 10-30 minutes; unmeasured.
+- Planning estimate: unestimated; assign a person and calibrate the bounded scope before scheduling.
 - Boundary: Later investor release or separately scoped follow-on; not completed by authoring this workplan.
 - Deliverables: `v2/docs/Diligence/2026-10-18/follow_on/ML-01_link.md`.
 
@@ -2506,7 +2506,7 @@ python3 v2/dev/diligence/cli.py inspect-task DD-091
 - Owner: deployment owner; reviewer: release owner.
 - Dependencies: DD-070.
 - Execution scope: future_scope_direction_required.
-- Planning estimate: 10-30 minutes; unmeasured.
+- Planning estimate: unestimated; assign a person and calibrate the bounded scope before scheduling.
 - Boundary: Later investor release or separately scoped follow-on; not completed by authoring this workplan.
 - Deliverables: `v2/docs/Diligence/2026-10-18/follow_on/linux_profile_protocol.md`.
 
@@ -2532,7 +2532,7 @@ python3 v2/dev/diligence/cli.py inspect-task DD-092
 - Owner: rights reviewer; reviewer: release owner.
 - Dependencies: DD-070.
 - Execution scope: future_scope_direction_required.
-- Planning estimate: 10-30 minutes; unmeasured.
+- Planning estimate: unestimated; assign a person and calibrate the bounded scope before scheduling.
 - Boundary: Later investor release or separately scoped follow-on; not completed by authoring this workplan.
 - Deliverables: `v2/docs/Diligence/2026-10-18/follow_on/reference_rights_review.md`.
 

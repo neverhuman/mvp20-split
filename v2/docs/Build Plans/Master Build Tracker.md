@@ -222,8 +222,8 @@ UI-02.02 correction tracker50% (policy/source verification complete); actual con
 
 2026-10-13 17:19:28: approved UI-02.03 execution correction37.5% (100/50/0/0); Runtime234 and SDK105 source tests pass; independent handoff next. Parent P1.4 remains0%, overall18.75%.
 
-## DD-01 local documentation/tooling interruption
+## DD-01 version 2 critical review interruption
 
-Recorded 2026-10-18 12:50:36 America/Chicago. User requested full reconciliation of three engineering specs, a detailed tracked plan, bounded offline scaffolding and a branded review PDF. [DD-01](DD-01%20Investor%20Diligence%20Engineering%20Workplan.md) owns this independent local delivery; [generated progress](../Diligence/2026-10-18/PROGRESS.md) mirrors the broader 93-task investor register. DD-01 implementation27.96%, verification26.88%; phase implementation/verification F90/90, T78.57/78.57, C0/0, D0/0, B18.18/9.09, P0/0, Q36.36/36.36, N0/0. These are documentation/tooling units, not engine progress. Current request returns reviewable local artifacts; investor prose/disclosure/release gates remain planned. No public push is authorized by this new request.
+The user now requests a skeptical investor red-team, concrete V2 fixes and public push. [Current DD-01](DD-01%20Investor%20Diligence%20Engineering%20Workplan.md) and its dated V2 handoff own the bounded review/publication. Five investment decision tracks remain unmet; 93 backlog IDs and preparation counts are not readiness percentages. Original scientific paper/results and historical pins remain unchanged. Public branch and draft PR are authorized; merge, experiments, investors messages and production operations are not implied.
 
-Return point preserved: POP-01 E2.2a, reconcile owning Data closure qualification before Runtime retention binding/transport/recovery and population workers. Existing engine percentages, serving freeze and POP-01 -> RG-01 -> ML-01 queue remain unchanged.
+Return point preserved: POP-01 E2.2a, actual owning Data qualification before Runtime retention binding/recovery and population workers. Existing engine percentages, serving freeze and POP-01 -> RG-01 -> ML-01 queue remain unchanged.

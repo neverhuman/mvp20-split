@@ -10,7 +10,11 @@ This repository separates the preserved implementation from the next graph-nativ
 
 Start with [v2/Restore.md](v2/Restore.md) and [Product Requirements](v2/docs/Architecture/Requirements/Product_Requirements.md). See [the relocation record](v1/REPOSITORY_LAYOUT.md) for preservation checks and operating boundaries.
 
-Git history and shared repository configuration remain at this root. The existing implementation is reference material; no v2 runtime is claimed. The repository license remains in [LICENSE](v1/LICENSE).
+Git history and shared repository configuration remain at this root. v2 includes bounded software implementations and retained demonstrations; scientific applicability and production qualification remain scoped to their owning evidence. The repository license remains in [LICENSE](v1/LICENSE).
+
+## Critical investor review
+
+[Version 2](v2/docs/Diligence/2026-10-18/V2/WORKPLAN_V2.md) separates inspectable engineering, historical demonstrations, the isolated PLGA study and unresolved integration/scientific/commercial questions. Start with its [current-state ledger](v2/docs/Diligence/2026-10-18/V2/CURRENT_STATE.md) and [red-team findings](v2/docs/Diligence/2026-10-18/V2/RED_TEAM_FINDINGS.md). This is a candid review and workplan, not a claim that the investment decision gates are met.
 
 ## Outside review
 

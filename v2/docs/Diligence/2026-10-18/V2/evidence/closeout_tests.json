@@ -1,0 +1,8 @@
+{
+  "exit_code": 0,
+  "result": "PASS",
+  "tests_run": 49,
+  "elapsed_seconds": 20.756,
+  "stdout_sha256": "90352e2f73ec1f02813180a97c349f00c423e0dd6cfa0acc3274f138d1a59919",
+  "meaning": "Functional suite rerun after evidence-registry/status promotion; immutable qualification receipts were not overwritten."
+}

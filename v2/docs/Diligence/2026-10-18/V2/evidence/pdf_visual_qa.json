@@ -1,0 +1,51 @@
+{
+  "format": "amphora-v2-document-visual-review.v1",
+  "pdf_sha256": "2ec2c6e6ecd4eb12811a6533fb5e328625ceed843199426ceb7aa6e6499d95e3",
+  "page_count": 14,
+  "inspected_pages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14
+  ],
+  "method": "Each page rendered with Poppler at 90 dpi and visually inspected by preparer after final word-wrapping correction.",
+  "result": "PASS",
+  "observations": [
+    "No clipped or overlapping content",
+    "Table wrapping and source digests legible",
+    "Headers/footers and page numbers present",
+    "All 14 finding IDs and all five decision IDs retained",
+    "All used PDF fonts embedded"
+  ],
+  "source_link_count": 14,
+  "independent_review": false,
+  "font_report": "name                                 type              encoding         emb sub uni object ID\n------------------------------------ ----------------- ---------------- --- --- --- ---------\nAAAAAA+DejaVuSans-Bold               TrueType          WinAnsi          yes yes yes     33  0\nAAAAAA+DejaVuSans                    TrueType          WinAnsi          yes yes yes     37  0\nAAAAAA+DejaVuSansMono                TrueType          WinAnsi          yes yes yes     41  0\n",
+  "render_receipt_sha256": "22a10362c674d9727af40670e36c1306913c70f3cb32b951716fd897a09c7b48",
+  "render_input_sha256": {
+    "v2/docs/Diligence/2026-10-18/V2/WORKPLAN_V2.md": "8b99dc2ebce192e16436f9f7c982e653b3c2f6fc923012ef6f5d4de404f5efda",
+    "v2/docs/Diligence/2026-10-18/task_ledger.json": "dacaaf9f6c7bc826248a78dbd5331469b0597c3d1ecc49225fda2aa9c2ed6b0e",
+    "v2/docs/Diligence/2026-10-18/brand_tokens.json": "f98892848b9e310f750942ed31baf3568cedb9ff32e5f06cfd9d73396c5ad6b6",
+    "v2/docs/Diligence/2026-10-18/claims.json": "c8d54b37c05aa21da1fd26549c8947eaa891ceae1254875fb4c6db09262f9692",
+    "v2/docs/Diligence/2026-10-18/source_lock.json": "e534a5ee1f22f31aa16235e8078ddea2923d447b5fd05015cd256acfd18309f9",
+    "v2/docs/Diligence/2026-10-18/specification_register.json": "9a4e626b561b9696f1d1788ff598b8935e21dff49a1f7ede1224a50e809c5341",
+    "v2/docs/Diligence/2026-10-18/V2/findings.json": "f1fdefe5a4124f36fbee62f1ddc08e4da769fe9c2576a1f19cf60d7425bf2b98",
+    "v2/docs/Diligence/2026-10-18/V2/investment_gates.json": "1ccb53c02886eefa040f233e1d9530485b8f39d1535250096930e02d8f503342",
+    "v2/docs/Diligence/2026-10-18/V2/evidence/test_report.json": "5098cc52b0c7a8f14123444c5c76de30eb186ce7b8495fa8246d23691ba44bfd",
+    "v2/docs/Diligence/2026-10-18/V2/evidence/final_source_profile.json": "9f62fc8031889213e0c841b9c20ca95d85df9024ba93df046025802825867724",
+    "v2/docs/Diligence/2026-10-18/V2/SCIENTIFIC_CARD.md": "1f89fa05f22b4f596db4d604a8b705cc3779a874191c5f9c9c26652550a93466",
+    "v2/docs/Diligence/2026-10-18/V2/CONTRIBUTION_PROVENANCE.md": "f0c034903dd612c76facadc1d8ed1e44fc0175bcf04f6594c976380274c11f4d",
+    "v2/docs/Diligence/2026-10-18/V2/commercial_hypotheses.json": "76a64f9d5d4bab88bd2eab850f6328c86e15ce02ef9c19015857c1c5f7be95a2",
+    "v2/dev/diligence/templates/amphora_brand.tex": "f2b4d9b81d896cd967afcbf3db25c38cca167ed53a31a6166ba0a9899ab27e31",
+    "v2/dev/diligence/templates/amphora_note.tex": "1b428a41d89add4bd2a9a4a8f282c43326a914028b9d56446304fd8eaaf20148"
+  }
+}

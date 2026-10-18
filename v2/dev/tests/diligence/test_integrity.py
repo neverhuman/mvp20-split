@@ -180,7 +180,7 @@ class CapsuleIntegration(unittest.TestCase):
     def test_changed_mapping_gate_set_rejects_even_with_new_payload_hash(self):
         p=self.capsule/'byte_reconstruction.v1.json';m=strict_json(p.read_bytes());m['entries'].pop();p.write_bytes(canonical(m))
         self.repin_payload_for_structural_test('byte_reconstruction.v1.json')
-        with self.assertRaisesRegex(Rejected,'required_gate_set_mismatch'):verify_capsule(self.capsule)
+        with self.assertRaisesRegex(Rejected,'reviewed_policy_mismatch'):verify_capsule(self.capsule)
 
     def test_changed_frozen_scope_rejected_by_unchanged_original_checker(self):
         # Test original semantic assertions separately from the wrapper's hash gate.

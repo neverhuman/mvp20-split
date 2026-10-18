@@ -21,3 +21,7 @@
 | Distribution | Local branch and private review files | No new public push, messages, invites or sharing changes. |
 
 The exact receipt inclusion choice remains DD-060. Either the original selected records clear disclosure unchanged, or a smaller profile uses clearly labeled derivative summaries and states which original assertions are unavailable. The current builder cannot be used to bypass that choice: its manifest and output explicitly remain `internal_engineering` with `release_qualified=false`.
+
+## Version 2 superseding scope
+
+The user now authorizes public push of the revised critical review as a branch and draft PR, with no merge. V2 findings and five investment tracks supersede V1 preparation percentages and the local-only publication scope. Original science, data terms and historical pins remain unchanged; raw attachments remain excluded. The current source/policy/verifier must be acquired from the reviewed revision, with investor/scientific/commercial/rights decisions still unmet.

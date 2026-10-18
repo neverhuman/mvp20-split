@@ -1,0 +1,294 @@
+{
+  "format": "amphora-task-evidence.v2",
+  "records": [
+    {
+      "actor_role": "Codex preparer; no independent signoff",
+      "code_bindings": [],
+      "kind": "preparer_inspection",
+      "pin": {
+        "bytes": 1527,
+        "path": "v2/docs/Diligence/2026-10-18/specification_register.json",
+        "sha256": "9a4e626b561b9696f1d1788ff598b8935e21dff49a1f7ede1224a50e809c5341"
+      },
+      "result": "preparer_reviewed",
+      "supports": [
+        "DD-001"
+      ]
+    },
+    {
+      "actor_role": "Codex preparer; no independent signoff",
+      "code_bindings": [],
+      "kind": "preparer_inspection",
+      "pin": {
+        "bytes": 6841,
+        "path": "v2/docs/Diligence/2026-10-18/evidence/source_python312.json",
+        "sha256": "567a8c2d65470294a93b0720500b9a326dd870b3ab077a6f745c4b17b9faf7fe"
+      },
+      "result": "preparer_reviewed",
+      "supports": [
+        "DD-002",
+        "DD-006",
+        "DD-007"
+      ]
+    },
+    {
+      "actor_role": "Codex preparer; no independent signoff",
+      "code_bindings": [],
+      "kind": "preparer_inspection",
+      "pin": {
+        "bytes": 4287,
+        "path": "v2/docs/Diligence/2026-10-18/REPOSITORY_RECONCILIATION.md",
+        "sha256": "141b15aff9d5686e5b3c2c66d1012ec72653366cde61414b95a64d199b0cb743"
+      },
+      "result": "preparer_reviewed",
+      "supports": [
+        "DD-005"
+      ]
+    },
+    {
+      "actor_role": "Codex preparer; no independent signoff",
+      "code_bindings": [],
+      "kind": "preparer_inspection",
+      "pin": {
+        "bytes": 3570,
+        "path": "v2/docs/Diligence/2026-10-18/DECISIONS.md",
+        "sha256": "729c5773406be05e8371f379c036f063a7179f3a883734547e14cbf58a85233c"
+      },
+      "result": "preparer_reviewed",
+      "supports": [
+        "DD-004"
+      ]
+    },
+    {
+      "actor_role": "Codex preparer; no independent signoff",
+      "code_bindings": [],
+      "kind": "preparer_inspection",
+      "pin": {
+        "bytes": 22027,
+        "path": "v2/docs/Diligence/2026-10-18/SPECIFICATION_CROSSWALK.md",
+        "sha256": "cef82af05bedf30119eecb1b7228b3c1f58d62fce9b9f8ddc033f68dccef2e28"
+      },
+      "result": "preparer_reviewed",
+      "supports": [
+        "DD-008"
+      ]
+    },
+    {
+      "actor_role": "Codex preparer; no independent signoff",
+      "code_bindings": [],
+      "kind": "preparer_inspection",
+      "pin": {
+        "bytes": 1095,
+        "path": "v2/docs/Diligence/2026-10-18/release_profile.json",
+        "sha256": "7dce4350419c9f54cb654900ad41e7dc026a980a74f5496b7dc6e4d5f1dfac95"
+      },
+      "result": "preparer_reviewed",
+      "supports": [
+        "DD-009"
+      ]
+    },
+    {
+      "actor_role": "Codex preparer; no independent signoff",
+      "code_bindings": [],
+      "kind": "preparer_inspection",
+      "pin": {
+        "bytes": 971,
+        "path": "v2/docs/Diligence/2026-10-18/brand_tokens.json",
+        "sha256": "f98892848b9e310f750942ed31baf3568cedb9ff32e5f06cfd9d73396c5ad6b6"
+      },
+      "result": "preparer_reviewed",
+      "supports": [
+        "DD-048"
+      ]
+    },
+    {
+      "actor_role": "Codex preparer; no independent signoff",
+      "code_bindings": [],
+      "kind": "preparer_inspection",
+      "pin": {
+        "bytes": 2530,
+        "path": "v2/docs/Diligence/2026-10-18/V2/HANDOFF.md",
+        "sha256": "34550980ea29cb9281cfad1a959f2bd8b1ba54d7bbdbb24f8041a05e6c69cd75"
+      },
+      "result": "preparer_reviewed",
+      "supports": [
+        "DD-003"
+      ]
+    },
+    {
+      "actor_role": "Codex preparer; no independent signoff",
+      "code_bindings": [
+        {
+          "bytes": 78,
+          "path": "v2/dev/diligence/__init__.py",
+          "sha256": "47e928c7237ef3eec2badcb1b5e0939a56214181e4b39cbb18258ff10f9cefe7"
+        },
+        {
+          "bytes": 9527,
+          "path": "v2/dev/diligence/capsule.py",
+          "sha256": "b37e53d447b2c57d0fabb4aa4dc397accdc99d9ff33ec50933072a8c76e64b2f"
+        },
+        {
+          "bytes": 9992,
+          "path": "v2/dev/diligence/cli.py",
+          "sha256": "b28026b7a8c8c46e2534157a660c0cc7baa8758a0307be0579e9d797b51917a0"
+        },
+        {
+          "bytes": 17586,
+          "path": "v2/dev/diligence/core.py",
+          "sha256": "814b830321bd79fcd62148946c5dfaa2a386793194476bac8f75e3a3abb60059"
+        },
+        {
+          "bytes": 1880,
+          "path": "v2/dev/diligence/decisions.py",
+          "sha256": "db6d08ec7c785727156c882dd1617e965f97d28eebe4c63627784a0c6010e344"
+        },
+        {
+          "bytes": 646,
+          "path": "v2/dev/diligence/policy.py",
+          "sha256": "77be252d91ab3bea9a0168933d5dd3eaf2b0162ff00d18db7db4150841fb0aae"
+        },
+        {
+          "bytes": 5025,
+          "path": "v2/dev/diligence/publication.py",
+          "sha256": "0feea467fdf96c2d000b322baf58946c59ef8c3e4775ebde1cd3e629743ecc1d"
+        }
+      ],
+      "kind": "mechanical_check",
+      "pin": {
+        "bytes": 10967,
+        "path": "v2/docs/Diligence/2026-10-18/V2/evidence/test_report.json",
+        "sha256": "5098cc52b0c7a8f14123444c5c76de30eb186ce7b8495fa8246d23691ba44bfd"
+      },
+      "result": {
+        "exit_selector": "/exit_code",
+        "expected": "PASS",
+        "selector": "/result"
+      },
+      "supports": [
+        "DD-011",
+        "DD-015",
+        "DD-019",
+        "DD-020",
+        "DD-021",
+        "DD-022",
+        "DD-071"
+      ]
+    },
+    {
+      "actor_role": "Codex preparer; no independent signoff",
+      "code_bindings": [
+        {
+          "bytes": 78,
+          "path": "v2/dev/diligence/__init__.py",
+          "sha256": "47e928c7237ef3eec2badcb1b5e0939a56214181e4b39cbb18258ff10f9cefe7"
+        },
+        {
+          "bytes": 9527,
+          "path": "v2/dev/diligence/capsule.py",
+          "sha256": "b37e53d447b2c57d0fabb4aa4dc397accdc99d9ff33ec50933072a8c76e64b2f"
+        },
+        {
+          "bytes": 9992,
+          "path": "v2/dev/diligence/cli.py",
+          "sha256": "b28026b7a8c8c46e2534157a660c0cc7baa8758a0307be0579e9d797b51917a0"
+        },
+        {
+          "bytes": 17586,
+          "path": "v2/dev/diligence/core.py",
+          "sha256": "814b830321bd79fcd62148946c5dfaa2a386793194476bac8f75e3a3abb60059"
+        },
+        {
+          "bytes": 1880,
+          "path": "v2/dev/diligence/decisions.py",
+          "sha256": "db6d08ec7c785727156c882dd1617e965f97d28eebe4c63627784a0c6010e344"
+        },
+        {
+          "bytes": 646,
+          "path": "v2/dev/diligence/policy.py",
+          "sha256": "77be252d91ab3bea9a0168933d5dd3eaf2b0162ff00d18db7db4150841fb0aae"
+        },
+        {
+          "bytes": 5025,
+          "path": "v2/dev/diligence/publication.py",
+          "sha256": "0feea467fdf96c2d000b322baf58946c59ef8c3e4775ebde1cd3e629743ecc1d"
+        }
+      ],
+      "kind": "mechanical_check",
+      "pin": {
+        "bytes": 8597,
+        "path": "v2/docs/Diligence/2026-10-18/V2/evidence/source_profile.json",
+        "sha256": "8e6d3eab375fd7d04995e40e75825717f4281e59dff79882ae07e90af216bd43"
+      },
+      "result": {
+        "exit_selector": "/exit_code",
+        "expected": "verified",
+        "selector": "/report/status"
+      },
+      "supports": [
+        "DD-012",
+        "DD-013",
+        "DD-014",
+        "DD-016",
+        "DD-018",
+        "DD-072",
+        "DD-073"
+      ]
+    },
+    {
+      "actor_role": "Codex preparer; no independent signoff",
+      "code_bindings": [
+        {
+          "bytes": 78,
+          "path": "v2/dev/diligence/__init__.py",
+          "sha256": "47e928c7237ef3eec2badcb1b5e0939a56214181e4b39cbb18258ff10f9cefe7"
+        },
+        {
+          "bytes": 9527,
+          "path": "v2/dev/diligence/capsule.py",
+          "sha256": "b37e53d447b2c57d0fabb4aa4dc397accdc99d9ff33ec50933072a8c76e64b2f"
+        },
+        {
+          "bytes": 9992,
+          "path": "v2/dev/diligence/cli.py",
+          "sha256": "b28026b7a8c8c46e2534157a660c0cc7baa8758a0307be0579e9d797b51917a0"
+        },
+        {
+          "bytes": 17586,
+          "path": "v2/dev/diligence/core.py",
+          "sha256": "814b830321bd79fcd62148946c5dfaa2a386793194476bac8f75e3a3abb60059"
+        },
+        {
+          "bytes": 1880,
+          "path": "v2/dev/diligence/decisions.py",
+          "sha256": "db6d08ec7c785727156c882dd1617e965f97d28eebe4c63627784a0c6010e344"
+        },
+        {
+          "bytes": 646,
+          "path": "v2/dev/diligence/policy.py",
+          "sha256": "77be252d91ab3bea9a0168933d5dd3eaf2b0162ff00d18db7db4150841fb0aae"
+        },
+        {
+          "bytes": 5025,
+          "path": "v2/dev/diligence/publication.py",
+          "sha256": "0feea467fdf96c2d000b322baf58946c59ef8c3e4775ebde1cd3e629743ecc1d"
+        }
+      ],
+      "kind": "mechanical_check",
+      "pin": {
+        "bytes": 8790,
+        "path": "v2/docs/Diligence/2026-10-18/V2/evidence/pinned_arithmetic.json",
+        "sha256": "0515605823803161648923d40cb342f1922d846ea7a930a3218cc3705eb93351"
+      },
+      "result": {
+        "exit_selector": "/exit_code",
+        "expected": "verified",
+        "selector": "/report/status"
+      },
+      "supports": [
+        "DD-017",
+        "DD-074"
+      ]
+    }
+  ]
+}

@@ -109,8 +109,14 @@ def pointer(value, selector):
             "invalid_selector")
     try:
         for component in selector.split("/")[1:]:
+            require(re.search(r"~(?![01])", component) is None, "invalid_selector")
             key = component.replace("~1", "/").replace("~0", "~")
-            value = value[int(key)] if isinstance(value, list) else value[key]
+            if isinstance(value, list):
+                require(re.fullmatch(r"0|[1-9][0-9]*", key) is not None, "invalid_array_selector")
+                value = value[int(key)]
+            else:
+                require(isinstance(value, dict), "missing_selector")
+                value = value[key]
     except (KeyError, IndexError, TypeError, ValueError):
         raise Rejected("missing_selector") from None
     return value
@@ -144,7 +150,8 @@ class HistoricalExport:
 
     def reconstruct(self, raw):
         self.pin.check(raw)
-        require(DIGEST.fullmatch(self.historical_sha256) is not None, "invalid_digest")
+        require(isinstance(self.historical_sha256, str) and
+                DIGEST.fullmatch(self.historical_sha256) is not None, "invalid_digest")
         if self.transform == "identity":
             output = raw
         elif self.transform == "lf-to-crlf-v1":
@@ -165,14 +172,20 @@ def validate_claims(registry, read_source):
     require(registry["format"] == "amphora-claim-registry.v1" and
             registry["source_revision"] == SOURCE_REVISION, "unsupported_claim_profile")
     seen = set()
+    require(isinstance(registry["claims"], list) and len(registry["claims"]) == 26,
+            "incomplete_claim_set")
     allowed = {"source_reviewed", "recorded_acceptance", "retrospective_research", "planned"}
     for claim in registry["claims"]:
         closed(claim, {"id", "statement", "evidence_class", "scope", "sources", "metrics",
                        "mandatory_qualifiers", "editorial_status", "reviewed_by_role",
                        "verification_status", "placements"})
         require(isinstance(claim["id"], str) and claim["id"] not in seen, "duplicate_claim")
+        require(all(isinstance(claim[key], str) and claim[key] for key in
+                    ["statement", "scope", "reviewed_by_role"]), "invalid_claim_text")
+        require(isinstance(claim["sources"], list) and isinstance(claim["metrics"], list)
+                and isinstance(claim["placements"], list), "invalid_claim_shape")
         seen.add(claim["id"])
-        require(claim["evidence_class"] in allowed, "unknown_evidence_class")
+        require(isinstance(claim["evidence_class"], str) and claim["evidence_class"] in allowed, "unknown_evidence_class")
         require(claim["verification_status"] in {"inspected", "recorded_only", "not_run"},
                 "verification_promotion_requires_new_profile")
         expected = {"source_reviewed": "inspected", "recorded_acceptance": "recorded_only",
@@ -208,9 +221,45 @@ def validate_claims(registry, read_source):
 
 
 def validate_ledger(ledger, root):
-    closed(ledger, {"format", "plan_id", "source_revision", "accounting", "phases", "tasks"})
-    require(ledger["format"] == "amphora-workplan.v1", "unsupported_task_profile")
+    closed(ledger, {"format", "plan_id", "source_revision", "accounting", "phases", "tasks",
+                    "evidence_registry"})
+    require(ledger["format"] == "amphora-workplan.v2", "unsupported_task_profile")
     require(ledger["source_revision"] == SOURCE_REVISION, "source_revision_drift")
+    require(isinstance(ledger["phases"], list) and isinstance(ledger["tasks"], list),
+            "invalid_ledger_shape")
+    evidence_path = local_file(root, ledger["evidence_registry"])
+    evidence = strict_json(bounded_read(evidence_path))
+    closed(evidence, {"format", "records"})
+    require(evidence["format"] == "amphora-task-evidence.v2" and
+            isinstance(evidence["records"], list), "invalid_task_evidence_registry")
+    records = {}
+    for item in evidence["records"]:
+        closed(item, {"pin", "supports", "kind", "actor_role", "result", "code_bindings"})
+        pin = EvidencePin.parse(item["pin"])
+        require(pin.path not in records and isinstance(item["supports"], list),
+                "duplicate_task_evidence")
+        raw = bounded_read(local_file(root, pin.path)); pin.check(raw)
+        require(item["kind"] in {"preparer_inspection", "mechanical_check"} and
+                item["actor_role"] == "Codex preparer; no independent signoff", "invalid_evidence_actor")
+        if item["kind"] == "mechanical_check":
+            closed(item["result"], {"selector", "expected", "exit_selector"})
+            require(item['result']['expected'] in {'PASS', 'verified', 'fresh', 'assessment_consistent'},
+                    'nonpassing_acceptance_criterion')
+            result = strict_json(raw)
+            exit_code = pointer(result, item["result"]["exit_selector"])
+            require(pointer(result, item["result"]["selector"]) == item["result"]["expected"]
+                    and type(exit_code) is int and exit_code == 0, "task_receipt_failed")
+            require(item["code_bindings"], "unbound_verification_code")
+        else:
+            require(item["result"] == "preparer_reviewed", "invalid_inspection_result")
+        for binding in item["code_bindings"]:
+            code = EvidencePin.parse(binding); code.check(bounded_read(local_file(root, code.path)))
+        records[pin.path] = item
+    membership = []
+    for phase in ledger["phases"]:
+        closed(phase, {"id", "name", "tasks"})
+        require(isinstance(phase["id"], str) and isinstance(phase["tasks"], list), "invalid_phase_membership")
+        membership.extend(phase["tasks"])
     phases = {p["id"] for p in ledger["phases"]}
     require(len(phases) == len(ledger["phases"]), "duplicate_phase")
     tasks = {}
@@ -219,14 +268,19 @@ def validate_ledger(ledger, root):
               "execution_authority", "estimate_minutes", "failure_disposition", "scope"}
     for task in ledger["tasks"]:
         closed(task, fields)
-        require(re.fullmatch(r"DD-\d{3}", task["id"]) and task["id"] not in tasks,
+        require(isinstance(task["id"], str) and re.fullmatch(r"DD-\d{3}", task["id"]) and task["id"] not in tasks,
                 "duplicate_or_invalid_task")
         require(task["phase"] in phases and task["status"] in
                 {"planned", "in_progress", "implemented", "verified", "blocked", "deferred"},
                 "invalid_task_state")
         require(task["owner_role"] and task["reviewer_role"] and task["acceptance"] and
                 task["source_refs"] and task["deliverables"], "incomplete_task")
-        require(task["estimate_minutes"][0] <= task["estimate_minutes"][1], "invalid_estimate")
+        require(task["estimate_minutes"] is None or
+                (isinstance(task["estimate_minutes"], list) and len(task["estimate_minutes"]) == 2
+                 and all(type(v) is int and v >= 0 for v in task["estimate_minutes"])
+                 and task["estimate_minutes"][0] <= task["estimate_minutes"][1]), "invalid_estimate")
+        require(isinstance(task["dependencies"], list) and
+                len(set(task["dependencies"])) == len(task["dependencies"]), "duplicate_dependency")
         for item in task["acceptance"]:
             closed(item, {"check_id", "command", "availability", "criteria"})
             require(item["availability"] in {"implemented", "planned", "manual"} and
@@ -234,10 +288,27 @@ def validate_ledger(ledger, root):
         for rel in task["deliverables"]:
             relative_name(rel)
         if task["status"] == "verified":
+            approvals = {'DD-010', 'DD-047', 'DD-059', 'DD-060', 'DD-070', 'DD-080', 'DD-081'} | {
+                f'DD-{number:03d}' for number in range(25, 35)}
+            require(task['id'] not in approvals, 'role_approval_not_established')
             require(task["evidence"], "verified_without_evidence")
             for rel in task["evidence"]:
-                require(local_file(root, rel).is_file(), "task_evidence_missing")
+                require(rel in records and task["id"] in records[rel]["supports"],
+                        "task_evidence_not_qualified")
         tasks[task["id"]] = task
+        for reference in task['source_refs']:
+            closed(reference, {'document', 'start_line', 'end_line'})
+            limits = {'SPEC-A': 1097, 'SPEC-B': 1035, 'SPEC-C': 999}
+            require(isinstance(reference['document'], str) and reference['document'] in limits and
+                    type(reference['start_line']) is int and type(reference['end_line']) is int and
+                    1 <= reference['start_line'] <= reference['end_line'] <= limits[reference['document']],
+                    'invalid_specification_range')
+    require(set(tasks) == {f'DD-{number:03d}' for number in range(1,94)}, 'incomplete_backlog')
+    require(set(membership) == set(tasks) and len(membership) == len(tasks),
+            "phase_membership_mismatch")
+    for phase in ledger["phases"]:
+        require(all(tasks[key]["phase"] == phase["id"] for key in phase["tasks"]),
+                "phase_owner_mismatch")
     visiting, visited = set(), set()
 
     def visit(key):
@@ -257,17 +328,23 @@ def validate_ledger(ledger, root):
     counts = {state: sum(t["status"] == state for t in tasks.values()) for state in
               ["planned", "in_progress", "implemented", "verified", "blocked", "deferred"]}
     return {"tasks": len(tasks), "status_counts": counts,
-            "verification_percent": round(100 * counts["verified"] / len(tasks), 2)}
+            "readiness_interpretation": "Task counts describe preparation, not investment, scientific, product or commercial readiness."}
 
 
-def verify_manifest(root: Path):
-    manifest = strict_json(bounded_read(local_file(root, "MANIFEST.json")))
+def verify_manifest(root: Path, expected_sha256=None):
+    raw_manifest = bounded_read(local_file(root, "MANIFEST.json"))
+    if expected_sha256 is not None:
+        require(isinstance(expected_sha256, str) and DIGEST.fullmatch(expected_sha256), "invalid_digest")
+        require(sha(raw_manifest) == expected_sha256, "external_manifest_pin_mismatch")
+    manifest = strict_json(raw_manifest)
     closed(manifest, {"format", "source_revision", "audience", "release_qualified", "files"})
-    require(manifest["format"] == "amphora-capsule-manifest.v1", "unsupported_manifest")
+    require(manifest["format"] == "amphora-capsule-manifest.v2", "unsupported_manifest")
     require(manifest["source_revision"] == SOURCE_REVISION, "source_revision_drift")
     require(manifest["audience"] == "internal_engineering" and
             manifest["release_qualified"] is False, "unsupported_release_claim")
     names = set()
+    require(isinstance(manifest["files"], list) and 1 <= len(manifest["files"]) <= 128,
+            "invalid_manifest_members")
     for item in manifest["files"]:
         pin = EvidencePin.parse(item)
         require(pin.path not in names and pin.path not in {"MANIFEST.json", "MANIFEST.sha256"},

@@ -1,0 +1,234 @@
+{
+  "code_sha256": {
+    "v2/dev/diligence/__init__.py": "47e928c7237ef3eec2badcb1b5e0939a56214181e4b39cbb18258ff10f9cefe7",
+    "v2/dev/diligence/capsule.py": "b37e53d447b2c57d0fabb4aa4dc397accdc99d9ff33ec50933072a8c76e64b2f",
+    "v2/dev/diligence/cli.py": "b28026b7a8c8c46e2534157a660c0cc7baa8758a0307be0579e9d797b51917a0",
+    "v2/dev/diligence/core.py": "814b830321bd79fcd62148946c5dfaa2a386793194476bac8f75e3a3abb60059",
+    "v2/dev/diligence/decisions.py": "db6d08ec7c785727156c882dd1617e965f97d28eebe4c63627784a0c6010e344",
+    "v2/dev/diligence/policy.py": "77be252d91ab3bea9a0168933d5dd3eaf2b0162ff00d18db7db4150841fb0aae",
+    "v2/dev/diligence/publication.py": "0feea467fdf96c2d000b322baf58946c59ef8c3e4775ebde1cd3e629743ecc1d"
+  },
+  "command": [
+    "python3.12",
+    "-B",
+    "v2/dev/diligence/cli.py",
+    "verify-source",
+    "--bootstrap"
+  ],
+  "elapsed_seconds": 2.574,
+  "executed_utc": "2026-10-18T18:54:53.248269+00:00",
+  "exit_code": 0,
+  "format": "amphora-v2-invocation.v1",
+  "platform": "macOS-15.7.5-arm64-arm-64bit-Mach-O",
+  "report": {
+    "audience": "internal_engineering",
+    "bootstrap": "recomputed",
+    "byte_reconstruction": [
+      {
+        "gate": "host",
+        "historical_sha256": "15108887b694bed51a6cf7ca118cbdfb606f1ef552c33713fd798cf7b54770b6",
+        "source_sha256": "ef13ea02a0e9c2b426d0aaf11448d3e9354de02bc29ea0973bae353bb9fc4c97",
+        "transform": "lf-to-crlf-v1"
+      },
+      {
+        "gate": "installation",
+        "historical_sha256": "0c5f2958b3ddaaa7f6a4781108156105994a7478dccc8a3efb6853ebc42c6437",
+        "source_sha256": "fb4ae735926c6f4d153e221b83d59e75956d4e8275cd66e106b3051a8f3e46b0",
+        "transform": "lf-to-crlf-v1"
+      },
+      {
+        "gate": "live_context",
+        "historical_sha256": "5e8e389b2a405a3114165f9238aac657b7fd16849333804ef9ea7088e48cd730",
+        "source_sha256": "c653ca0b722b191599dce2699d97089b5a145f88fbd9063b369bff4662fd2498",
+        "transform": "lf-to-crlf-v1"
+      },
+      {
+        "gate": "successor",
+        "historical_sha256": "ddf7e41727757e10d652d8ee4047130f4a719c21f8b31c078781911694ed6f9f",
+        "source_sha256": "1d05cea31a27fdb0630af4fc3843e7b71457dab225096170f4053533d68b8872",
+        "transform": "lf-to-crlf-v1"
+      },
+      {
+        "gate": "capacity",
+        "historical_sha256": "da1c322695e37242382ecd4384f79429f777d8be2e4a30656776551e0107dd8c",
+        "source_sha256": "eaa9d7cc0fbd110b00018f9af072f78e292be33c7871eb5c5a236bf3bf3a3cb7",
+        "transform": "lf-to-crlf-v1"
+      },
+      {
+        "gate": "browser",
+        "historical_sha256": "f4be54141bd6e1210cd149b841eecd307d33111740837c778b6dc18a1e950345",
+        "source_sha256": "f4be54141bd6e1210cd149b841eecd307d33111740837c778b6dc18a1e950345",
+        "transform": "identity"
+      },
+      {
+        "gate": "daemon_recovery",
+        "historical_sha256": "895b598ab7f29f114f8701d1b62fb909c997baef93a3b95e52e47525c1e58258",
+        "source_sha256": "cd561b5f2a7119c4330804199b2ff2e4cec1fc1ea134f518bb2b901b2967fed8",
+        "transform": "lf-to-crlf-v1"
+      },
+      {
+        "gate": "backup",
+        "historical_sha256": "f246802f3d097f56a340cf24527bc4c86efb8ece38c390febf3774471ef43f5d",
+        "source_sha256": "5eaa434e62dbfcb7a78a663384f0df797a77d3f9bcaaf35ef37f6a4961f34a0f",
+        "transform": "lf-to-crlf-v1"
+      },
+      {
+        "gate": "restore",
+        "historical_sha256": "db7d815cd87626d41d1578ba672d25ed933ee2f13dc249b52bf576a3cf818fda",
+        "source_sha256": "d48a6961171f3b3ae6efcfdc1aba0d9d2dc50bcebd60105061e4a0761e42545e",
+        "transform": "lf-to-crlf-v1"
+      },
+      {
+        "gate": "reconstruction",
+        "historical_sha256": "7d31d93627f6ba5ab12b0d72e3508226d11368d3cdc31705b769e74885778d91",
+        "source_sha256": "87fa80299c356111f47d5c221a347cd6ef2cb3c18bd87148be852f02eb9b42e0",
+        "transform": "lf-to-crlf-v1"
+      },
+      {
+        "gate": "recovery_faults",
+        "historical_sha256": "577338783d1e4c4e6eaa95782ed3d57edb91bd41e2d9129ce6fb78308c27bfee",
+        "source_sha256": "57cead05e7b8bef15268c38eaf77462858666e9b2d35d58723effe3c0694ee1f",
+        "transform": "lf-to-crlf-v1"
+      },
+      {
+        "gate": "recovery_acceptance",
+        "historical_sha256": "ef4149f88199573f98eaece16e336a5351f287957ea408675a4dd2e054d0a742",
+        "source_sha256": "9879f0ebd17489d68078c305c883a3901fed82230b05814b1abf12d1d5ed470d",
+        "transform": "lf-to-crlf-v1"
+      }
+    ],
+    "checks_executed": [
+      "reviewed_policy_and_allowlist",
+      "source_pins",
+      "original_historical_assertions",
+      "plga_aggregate",
+      "plga_bootstrap_holm",
+      "source_static_dependency_guard"
+    ],
+    "claims_checked": 26,
+    "elapsed_seconds": 0.659,
+    "elapsed_total_seconds": 2.524,
+    "external_manifest_pin_checked": false,
+    "format": "amphora-diligence-verification.v2",
+    "historical_evidence": {
+      "baseline": "e40a8e4ababd9048f8f81a67ee7688d976f40420",
+      "declared_host": "Workshop",
+      "format": "deployment-acceptance-report.v1",
+      "gates": [
+        {
+          "gate": "backup",
+          "status": "verified"
+        },
+        {
+          "gate": "browser",
+          "status": "verified"
+        },
+        {
+          "gate": "capacity",
+          "status": "verified"
+        },
+        {
+          "gate": "daemon_recovery",
+          "status": "verified"
+        },
+        {
+          "gate": "host",
+          "status": "verified"
+        },
+        {
+          "gate": "installation",
+          "status": "verified"
+        },
+        {
+          "gate": "live_context",
+          "status": "verified"
+        },
+        {
+          "gate": "reconstruction",
+          "status": "verified"
+        },
+        {
+          "gate": "recovery_acceptance",
+          "status": "verified"
+        },
+        {
+          "gate": "recovery_faults",
+          "status": "verified"
+        },
+        {
+          "gate": "restore",
+          "status": "verified"
+        },
+        {
+          "gate": "successor",
+          "status": "verified"
+        }
+      ],
+      "limitations": [
+        "synthetic_software_evidence_not_scientific_validation",
+        "same_host_user_and_retained_owner_dependencies",
+        "recovery_time_measured_without_hard_limit",
+        "intermittent_worker_failures_unresolved_no_soak_claim",
+        "separate_campaign_scopes_not_one_combined_run",
+        "hash_integrity_not_evidence_authenticity_or_current_health"
+      ],
+      "profile": "bp09-local-synthetic.v1",
+      "provider_calls": 0,
+      "services_started": false,
+      "status": "verified"
+    },
+    "historical_only": [
+      "original BP-09 process execution",
+      "original PLGA fitting/replay"
+    ],
+    "interpretation": "Frozen evidence consistency and named arithmetic, not current service health, scientific authenticity, or an investor publication approval.",
+    "investor_release_qualified": false,
+    "manifest_sha256": "adec5b08a7ab4eb0e06dd7bc7c35e658a63c95771ac4a06b11ac767609f0fcb9",
+    "model_fits": 0,
+    "not_executed": [
+      "current installed-owner recovery",
+      "PLGA engine integration",
+      "prospective science",
+      "customer value"
+    ],
+    "payload_files_checked": 65,
+    "plan": {
+      "claims_checked": 26,
+      "interpretation": "Plan/registry consistency; queued investor deliverables are not completed by this check.",
+      "readiness_interpretation": "Task counts describe preparation, not investment, scientific, product or commercial readiness.",
+      "source_revision": "9c3018dcdd17f40be27fc3c6dc7057d2d7cb05bc",
+      "status": "verified",
+      "status_counts": {
+        "blocked": 0,
+        "deferred": 0,
+        "implemented": 16,
+        "in_progress": 0,
+        "planned": 67,
+        "verified": 10
+      },
+      "tasks": 93
+    },
+    "plga": {
+      "bootstrap_recomputed": true,
+      "holm_family_recomputed": 10,
+      "manifest_file_hashes_checked": 6,
+      "model_fits": 0,
+      "numpy_version": "1.26.4",
+      "pilot_intervals_recomputed": 4,
+      "pilot_result_cells": 16,
+      "pilot_rows": 5120,
+      "recorded_replay_receipts_consistent": true,
+      "stage2_intervals_recomputed": 10,
+      "stage2_result_cells": 12,
+      "stage2_rows": 3840,
+      "status": "PASS"
+    },
+    "provider_calls": 0,
+    "python": "3.12.12",
+    "services_started": false,
+    "source_boundary_check": "fresh_static_check_passed",
+    "source_revision": "9c3018dcdd17f40be27fc3c6dc7057d2d7cb05bc",
+    "status": "verified",
+    "trust_model": "Trusted reviewed verifier/policy from the identified Git revision, trusted interpreter and local directory. Checksums do not authenticate a wholly replaced verifier or prove scientific truth; offline execution is not a sandbox."
+  }
+}

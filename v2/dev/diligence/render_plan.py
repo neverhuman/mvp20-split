@@ -43,7 +43,7 @@ def render(output):
     styles.add(ParagraphStyle('Deck',fontName='AmphoraSans',fontSize=14,leading=21,textColor=palette['muted'],spaceAfter=16))
     styles.add(ParagraphStyle('SectionA',fontName='AmphoraBold',fontSize=18,leading=23,spaceBefore=18,spaceAfter=10,textColor=palette['ink'],keepWithNext=True))
     styles.add(ParagraphStyle('SectionB',fontName='AmphoraBold',fontSize=12,leading=17,spaceBefore=12,spaceAfter=6,textColor=palette['teal'],keepWithNext=True))
-    styles.add(ParagraphStyle('CellA',fontName='AmphoraSans',fontSize=9.1,leading=12.5,textColor=palette['ink'],wordWrap='CJK'))
+    styles.add(ParagraphStyle('CellA',fontName='AmphoraSans',fontSize=9.1,leading=12.5,textColor=palette['ink']))
     styles.add(ParagraphStyle('CellHead',fontName='AmphoraBold',fontSize=9.1,leading=12.5,textColor=colors.white))
     styles.add(ParagraphStyle('CodeA',fontName='AmphoraMono',fontSize=9,leading=12,spaceAfter=5,textColor=palette['ink'],backColor=palette['wash'],borderPadding=7))
     width=612-2*.7*inch
@@ -80,21 +80,26 @@ def render(output):
 
     def page(canvas,doc):
         canvas.saveState();canvas.setFillColor(palette['ink']);canvas.setFont('AmphoraBold',11);canvas.drawString(.7*inch,752,'AMPHORA')
-        canvas.setFont('AmphoraSans',9);canvas.setFillColor(palette['muted']);canvas.drawRightString(612-.7*inch,752,'DD-01 | ENGINEERING REVIEW')
+        canvas.setFont('AmphoraSans',9);canvas.setFillColor(palette['muted']);canvas.drawRightString(612-.7*inch,752,'VERSION 2 | INVESTOR REVIEW')
         canvas.setStrokeColor(palette['rule']);canvas.line(.7*inch,742,612-.7*inch,742)
         canvas.line(.7*inch,44,612-.7*inch,44);canvas.setFont('AmphoraSans',8.5);canvas.drawString(.7*inch,29,'18 October 2026 | Local review draft')
         canvas.drawRightString(612-.7*inch,29,str(doc.page));canvas.restoreState()
 
     output.parent.mkdir(parents=True,exist_ok=True)
     doc=BaseDocTemplate(str(output),pagesize=(612,792),leftMargin=.7*inch,rightMargin=.7*inch,topMargin=64,bottomMargin=58,
-       title='Amphora | Investor diligence engineering workplan',author='Amphora',subject='Source-grounded local plan and offline scaffolding',creator='Amphora diligence plan renderer')
+       title='Amphora | Critical investor review and workplan - version 2',author='Amphora',subject='Candid findings, decision gates and bounded code fixes',creator='Amphora diligence plan renderer v2')
     doc.addPageTemplates(PageTemplate(id='Amphora',frames=[Frame(.7*inch,58,width,676,id='body',leftPadding=0,rightPadding=0,topPadding=0,bottomPadding=0)],onPage=page))
-    story=[Spacer(1,35),paragraph('Executable research.\nInspectable evidence.','TitleA'),paragraph('A detailed engineering plan for the Amphora investor diligence package','Deck'),
-       paragraph('93 trackable tasks | 26 source-bound candidate claims | 8 delivery phases','SectionB'),Route(),
-       paragraph('Build a strong technical account from reachable code, exact evidence and complete scientific context. Keep model proposals, execution authority and scientific interpretation explicit.'),
-       paragraph('This review contains the plan and useful bounded tooling. The investor brief, systems note and qualified external capsule remain tracked deliverables. The published eight-page PLGA study is preserved unchanged.'),
-       Spacer(1,14),table([['Review basis','Delivery boundary'],['Three complete engineering specifications; source snapshot 9c3018dc.','Local branch and private review. No public push, new experiments or production changes.']],[1,1]),PageBreak()]
-    lines=(D/'WORKPLAN.md').read_text().splitlines();i=0;buffer=[]
+    story=[Spacer(1,20),paragraph('Investor challenge.\nEvidence-led version 2.','TitleA'),paragraph('A candid decision brief and source-grounded delivery plan','Deck'),
+       paragraph('5 decision tracks | 14 findings | 93 backlog IDs retained','SectionB'),
+       table([['Investor question','Current evidence','Unresolved decision'],
+         ['Inspectable engineering?','Source mechanisms and bounded historical demonstrations.','Current installed behavior and the selected integrated workflow.'],
+         ['Scientific advantage?','Complete retrospective PLGA matrix; all ten planned intervals include zero.','New-panel benefit/transfer; no established Pareto-specific superiority.'],
+         ['Product integration?','PLGA is a separate adapter; no LLM calls.','No end-to-end PLGA campaign-engine qualification supplied.'],
+         ['Commercial value?','Workflow composition/reuse is a hypothesis.','Buyer pain, current alternative, adoption, pricing and matched value evidence.'],
+         ['Defensible assets?','Versioned source and data provenance.','Chain of rights, accountable owners/budgets and incremental advantage.']],[1.1,1.8,1.8]),
+       Spacer(1,15),paragraph('Decision: deeper technical diligence and a bounded next proof are supportable. None of the five investment tracks is closed. Preparation task counts are not scientific or commercial derisking.'),
+       paragraph('Two reproduced V1 defects are addressed in this revision: mutable hashes could bless a fake historical checker, and a README could qualify an owner-approval task. The original PLGA paper and results remain unchanged.'),PageBreak()]
+    lines=(D/'V2/WORKPLAN_V2.md').read_text().splitlines();i=0;buffer=[]
     def flush():
         if buffer:story.append(paragraph(' '.join(buffer)));buffer.clear()
     while i<len(lines):
@@ -120,14 +125,28 @@ def render(output):
         if not line.strip():flush()
         else:buffer.append(line)
         i+=1
-    flush();story.append(PageBreak());story.append(paragraph('Task map and ownership','SectionA'))
-    story.append(paragraph('Full acceptance commands, criteria, sources, dependencies and evidence are in the accompanying TASK_REGISTER.md and task_ledger.json. This compact view keeps all 93 units visible without substituting a summary for their contracts.'))
-    for phase in ledger['phases']:
-        story.append(paragraph(phase['id']+' - '+phase['name'],'SectionB'))
-        rows=[['Task','Bounded delivery','Owner','State']]
-        for task in ledger['tasks']:
-            if task['phase']==phase['id']:rows.append([task['id'],task['title'],task['owner_role'],task['status']])
-        story.append(table(rows,[.8,3.9,1.5,1.3]));story.append(Spacer(1,10))
+    flush();story.append(PageBreak());story.append(paragraph('Candid findings and disposition','SectionA'))
+    findings=json.loads((D/'V2/findings.json').read_text())
+    for finding in findings['findings']:
+        story.append(paragraph(finding['id']+' | '+finding['severity'].upper()+' | '+finding['title'],'SectionB'))
+        story.append(paragraph('Impact: '+finding['investor_impact']))
+        story.append(paragraph('Fix / disposition: '+finding['fix']+' ['+finding['disposition']+']'))
+        story.append(paragraph('Verification / remaining proof: '+finding['verification']))
+        src=finding['sources'][0]
+        url='https://github.com/neverhuman/mvp20-split/blob/'+src['revision']+'/'+src['path'].replace(' ','%20')+'#L'+str(src['lines'][0])
+        story.append(Paragraph('Source: <link href="'+html.escape(url,quote=True)+'" color="#087F8C">'+html.escape(src['revision'][:8]+' / '+Path(src['path']).name+' / lines '+str(src['lines'][0])+'-'+str(src['lines'][1]))+'</link>',styles['CellA']))
+        story.append(Spacer(1,8))
+    story.append(PageBreak());story.append(paragraph('Actual version 2 checks','SectionA'))
+    receipt=json.loads((D/'V2/evidence/test_report.json').read_text())
+    story.append(paragraph(str(receipt['tests_run'])+' focused tests: '+receipt['result']+'. This qualifies the named tooling boundary; it is not a count of scientific or commercial risks retired.'))
+    verified=json.loads((D/'V2/evidence/final_source_profile.json').read_text())
+    story.append(paragraph('Source/capsule report: '+verified['report']['status']+'. The original twelve historical assertions and PLGA aggregate check executed as stated in the receipt. Historical fitting/process behavior was not rerun.'))
+    story.append(paragraph('Full commands, code hashes, environment, stdout digest, coverage and requested arithmetic outcome are in V2/evidence. The additional review worker did not inspect the inaccessible Library artifacts; local artifact and code review was performed by the preparer.'))
+    rows=[['Decision track','State','New evidence required']]
+    for gate in json.loads((D/'V2/investment_gates.json').read_text())['gates']:
+        rows.append([gate['id']+' - '+gate['name'],gate['state'],gate['evidence_needed']])
+    story.append(table(rows,[1.5,.7,3]));story.append(Spacer(1,10))
+    story.append(paragraph('The 93 task IDs remain in TASK_REGISTER.md and task_ledger.json. No task percentage is presented as investment readiness. Missing owners, budgets and decision margins are deliberately unresolved.'))
     story.append(PageBreak());story.append(paragraph('Source and artifact identity','SectionA'))
     story.append(paragraph('The complete source lock and specification register accompany this document. Their hashes bind inspected inputs; they do not establish publisher authenticity or scientific validation.'))
     for spec in json.loads((D/'specification_register.json').read_text())['documents']:
@@ -140,10 +159,12 @@ def render(output):
         return Canvas(*args, **kwargs)
     doc.build(story,canvasmaker=canvas_factory)
     receipt={'format':'amphora-plan-render.v1','output_name':output.name,'pdf_sha256':hashlib.sha256(output.read_bytes()).hexdigest(),
-      'source_sha256':{name:hashlib.sha256((D/name).read_bytes()).hexdigest() for name in ['WORKPLAN.md','task_ledger.json','brand_tokens.json','claims.json','source_lock.json','specification_register.json']},
+      'source_sha256':{str((D/name).relative_to(ROOT)):hashlib.sha256((D/name).read_bytes()).hexdigest() for name in ['V2/WORKPLAN_V2.md','task_ledger.json','brand_tokens.json','claims.json','source_lock.json','specification_register.json','V2/findings.json','V2/investment_gates.json','V2/evidence/test_report.json','V2/evidence/final_source_profile.json','V2/SCIENTIFIC_CARD.md','V2/CONTRIBUTION_PROVENANCE.md','V2/commercial_hypotheses.json']},
       'renderer_sha256':hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
       'font_sha256':{name:hashlib.sha256((fontdir/file).read_bytes()).hexdigest() for name,file in fontfiles.items()},
       'renderer':'ReportLab','visual_qa':'pending_after_render','metadata_policy':'Record final PDF hash; no byte determinism claimed before testing fixed toolchain.'}
+    for p in (ROOT/'v2/dev/diligence/templates').glob('*.tex'):
+        receipt['source_sha256'][p.relative_to(ROOT).as_posix()]=hashlib.sha256(p.read_bytes()).hexdigest()
     output.with_suffix('.render.json').write_text(json.dumps(receipt,indent=2)+'\n');print(json.dumps(receipt,sort_keys=True))
 
 

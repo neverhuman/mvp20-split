@@ -2,9 +2,13 @@
 
 Owning design/workplan: [DD-01](../../docs/Diligence/2026-10-18/WORKPLAN.md). This module implements a bounded internal engineering witness and plan-generation scaffold. The investor release, editorial approval and full document assembler remain planned.
 
+Current edition: [critical investor review V2](../../docs/Diligence/2026-10-18/V2/WORKPLAN_V2.md), [findings](../../docs/Diligence/2026-10-18/V2/RED_TEAM_FINDINGS.md) and [current receipts](../../docs/Diligence/2026-10-18/V2/evidence/README.md). V1 contained two reproduced defects: coordinated checker/metadata substitution could pass, and an existing README could qualify an approval task. V2 fixes those supported-profile failures; it does not authenticate a wholly replaced verifier or establish independent science.
+
 ## Responsibilities and interfaces
 
 `core.py` owns strict bounded JSON, safe relative trusted-directory paths, exact evidence pins, the closed historical transport transform, candidate claim validation, task DAG/status validation and complete manifest membership. `capsule.py` invokes fixed copied original checkers and preserves their nested result/scope. `cli.py` exposes source verification, task inspection and new-directory internal capsule/archive creation. `render_plan.py` consumes the plan/brand/ledger for the review PDF. [Command catalog](../../docs/Diligence/2026-10-18/COMMANDS.md) lists actual entry points.
+
+`policy.py` anchors the reviewed claims/map/source-lock/allowlist hashes in trusted code. `decisions.py` checks the five-track assessment and cannot promote a gate to met. `publication.py` generates the complete scientific proof card with mandatory adjacent scope and validates the current document's input/renderer/output freshness. `entrypoint.py` supplies the copied capsule CLI. New role-approval states cannot be established by preparer evidence; mechanical evidence needs a passing result, integer zero exit, task support, exact bytes and current code bindings.
 
 The source lock pins Git blobs at 9c3018dc, including all original historical receipts. The byte map has exactly twelve reviewed entries and no fallback. The capsule includes an exact original acceptance checker closure plus the unchanged scientific evidence verifier. Current scripts and source/evidence bytes have different identities and are recorded separately.
 
@@ -24,13 +28,15 @@ Core: Python 3.12+ standard library. Optional arithmetic: NumPy 1.26.4, matching
 
 Candidate claims are deliberately not approved by tooling. The exact required claim set protects the full scientific matrix and principal scope statements. The current tool rejects arbitrary fresh-execution/editorial promotion. Planned document assembly must add placement/adjacency and editorial approval semantics under a new explicit release profile.
 
-Errors use bounded fixed labels. Original assertion checking must remain enabled. Required evidence failure returns 2; missing requested NumPy returns 3; no automatic dependency installation occurs. Timeout/output hardening and atomic optional receipt output are separately tracked tasks rather than implied guarantees.
+Errors use bounded fixed labels. Original assertion checking must remain enabled. Required evidence failure returns 2; missing requested NumPy returns 3; no automatic dependency installation occurs. V2 bounds checker stdout/stderr, parses the complete report, uses isolated child Python and a shared timeout, and avoids repeating the source capsule pass. Atomic optional receipt output remains planned.
+
+Acquire verifier/policy code from the reviewed Git revision. Capsule metadata cannot change the reviewed allowlist or original checker identity. `verify.py --expected-manifest-sha256 DIGEST` accepts a digest obtained outside the capsule; an editable detached digest alone is not an external trust anchor. Offline verification is not sandboxing; trusted code/interpreter/directory are prerequisites. No signing credentials or publisher-authenticity guarantee is introduced.
 
 ## Tests and coverage mapping
 
 Tests belong to `v2/dev/tests/diligence/test_integrity.py`, under the existing dev owner in `dev/test_scopes.json`. Parser/pin tests cover duplicate/nonfinite/oversized input, invalid fields/digests/paths, linked files, exact identity/CRLF reconstruction and malformed line profiles. Claim/task tests cover the complete candidate set, source precision, missing selectors/units/support, qualitative/future/fresh/editorial promotion, missing qualifiers and DAG/state evidence failures. Capsule tests run the unchanged twelve assertions/scientific checker, reject payload mutation/extra files/duplicate manifest members, verify missing requested NumPy, enforce original semantic assertions, test checkout-free execution and repeated archive identity.
 
-The original PLGA checker already owns membership/arithmetic semantics; this module composes it. Additional dedicated mutations of scientific loss/contrast rows, exhaustive matrix membership, generated document adjacency, source/brand/template freshness and active CI are planned. Passing the current test suite does not claim those later behaviors are implemented. Line and branch coverage are recorded for this source boundary with the measured receipt; subprocess coverage is not silently attributed to the parent.
+The V2 suite adds coordinated checker substitution with recomputed metadata, extra-member laundering, external manifest anchors, single execution/scope reporting, missing-dependency exits, output floods, timeouts, garbage reports, path aliases, canonical pointers, qualified task receipts, failed/stale code evidence, complete scientific-card context and current-document freshness. Exact counts/coverage come from V2/evidence/test_report.json. The original PLGA checker owns scientific membership/arithmetic semantics; no new fitting occurs. Arbitrary investor-prose coverage, full release orchestration, exhaustive loss-row mutation fixtures and active CI remain planned. Current-card adjacency and current-document freshness must not be advertised as that universal pipeline. Renderer/projection and subprocess coverage remain separate scopes.
 
 ## Replacement acceptance
 
