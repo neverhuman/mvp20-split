@@ -1,0 +1,120 @@
+{
+  "assessment_scope": "Critical investor assessment, not a funding, product, scientific or rights approval. No decision track is met by task counts.",
+  "format": "amphora-investment-assessment.v2",
+  "gates": [
+    {
+      "assigned_person": null,
+      "budget_approved": false,
+      "current_evidence": [
+        "V1 source/PLGA receipts are historical; V2 receipts live under V2/evidence after execution."
+      ],
+      "decision_enabled": "Whether an adviser can trace each principal claim and run a supported reviewer path.",
+      "dependencies": [],
+      "evidence_needed": "Reviewed claim set; brief/systems note; bounded replay/integrity receipts; final freshness and rights scope.",
+      "id": "DG-1",
+      "name": "Diligence inspectability",
+      "quantitative_exit": [
+        "100% of principal claims have exact source, scope and qualifier.",
+        "All 12 scientific cells and 10 planned contrasts remain available.",
+        "All requested integrity/arithmetic checks pass from a clean export; no failed required gate is hidden.",
+        "Each final PDF page reviewed; all output hashes match final receipts."
+      ],
+      "role": "Release owner and technical reviewer",
+      "state": "partial",
+      "uncertainty": "Integrity and readable provenance do not establish truth or publisher authenticity. Investor prose and external signoff are not completed.",
+      "unfavorable_result_branch": "Publish a smaller accurately scoped evidence route or keep the package draft; do not weaken original assertions."
+    },
+    {
+      "assigned_person": null,
+      "budget_approved": false,
+      "current_evidence": [
+        "Historical numerical owner workflows; no new integrated PLGA run."
+      ],
+      "decision_enabled": "Whether Amphora can carry one defined real scientific workload through its public owners with attributable outputs.",
+      "dependencies": [
+        "DG-1"
+      ],
+      "evidence_needed": "Frozen tool packaging, Registry/Runtime admission, data rights, retained producer chain, installed recovery and exact output reconciliation for one scientific profile.",
+      "id": "DG-2",
+      "name": "Product end-to-end integration",
+      "quantitative_exit": [
+        "One predeclared scientific workflow passes every named owner/retention/producer assertion on selected versions.",
+        "Zero unmapped inputs/outputs in the retained chain; scientific outputs reconcile to the independent frozen procedure.",
+        "Current installed-host checks are actually executed and labeled, not inferred from old receipts."
+      ],
+      "role": "Runtime owner and scientific tool owner",
+      "state": "unverified",
+      "uncertainty": "The real-data PLGA adapter and historical campaign demonstrations are separate executions. No integrated PLGA product proof is supplied.",
+      "unfavorable_result_branch": "Keep the system and science evidence tracks separate; investigate the failed boundary before integration claims."
+    },
+    {
+      "assigned_person": null,
+      "budget_approved": false,
+      "current_evidence": [
+        "No customer/pricing/ROI evidence supplied."
+      ],
+      "decision_enabled": "Whether the proposed workflow solves an expensive enough problem for an identified buyer.",
+      "dependencies": [
+        "DG-1"
+      ],
+      "evidence_needed": "Named buyer/user/workflow and current alternative; predeclared matched tasks and value metric; measured effort, correctness and adoption constraints.",
+      "id": "DG-3",
+      "name": "Workflow value against the current alternative",
+      "quantitative_exit": [
+        "Before execution, assign sample/replication plan, primary time/effort metric, correctness threshold and decision margin; values are currently undecided.",
+        "Retain all matched observations, failures, training/onboarding time and uncertainty; do not substitute a faster different task.",
+        "Evaluate the frozen decision rule against both favorable and unfavorable outcomes."
+      ],
+      "role": "Product owner and buyer-side reviewer",
+      "state": "unverified",
+      "uncertainty": "No buyer interview, willingness-to-pay, adoption evidence or matched workflow-saving measurement is in the delivered record.",
+      "unfavorable_result_branch": "Change the use case or business hypothesis, or stop the pilot; do not present compute timing as customer ROI."
+    },
+    {
+      "assigned_person": null,
+      "budget_approved": false,
+      "current_evidence": [
+        "320 formulations; six arms/two learners; all ten planned conditional intervals include zero."
+      ],
+      "decision_enabled": "Whether one frozen method meets a predeclared scientific margin on genuinely unexamined data.",
+      "dependencies": [
+        "DG-1"
+      ],
+      "evidence_needed": "Overlap-screened new-study panel, fixed sampling schedule and horizon, model/comparator, estimand, margin, missingness and assay-replicate uncertainty frozen before outcomes.",
+      "id": "DG-4",
+      "name": "Independent future scientific outcome",
+      "quantitative_exit": [
+        "Before outcomes: specify panel eligibility/overlap audit and a justified sample-size/replicate plan.",
+        "Before outcomes: set margin, uncertainty procedure and complete comparison family; missing values block study launch.",
+        "Afterward: report every eligible profile and planned endpoint, intervals and unfavorable results."
+      ],
+      "role": "Scientific owner and independent study reviewer",
+      "state": "not_met",
+      "uncertainty": "The exposed-corpus internal study does not establish Pareto-specific superiority or transfer to new studies/ocular use.",
+      "unfavorable_result_branch": "Report lack of benefit/failed transfer; retain the frozen result and decide a new study separately. No seed/grid selection on the exposed corpus."
+    },
+    {
+      "assigned_person": null,
+      "budget_approved": false,
+      "current_evidence": [
+        "Existing proprietary repository terms; Bao data CC BY 4.0; no patentability/ownership conclusion."
+      ],
+      "decision_enabled": "Whether the selected work and evidence can be represented and distributed as claimed, and what future asset could be defended.",
+      "dependencies": [
+        "DG-1"
+      ],
+      "evidence_needed": "Contribution/foundation matrix; source and third-party provenance; actual rights/author approvals; named role assignments; authorized budget; narrow differentiation evidence.",
+      "id": "DG-5",
+      "name": "Defensibility, provenance and accountable release",
+      "quantitative_exit": [
+        "100% of selected payload members have a stated source, license/rights disposition, audience and inclusion decision.",
+        "Assign a person and approved budget ceiling to each next activated gate before execution.",
+        "No ownership/patentability/FTO/exclusivity assertion without its actual supporting review."
+      ],
+      "role": "Repository/release owner and rights reviewer",
+      "state": "partial",
+      "uncertainty": "Public data and established workflow/search methods do not establish exclusive assets. Chain of rights, accountable people and allowed budget remain unresolved.",
+      "unfavorable_result_branch": "Narrow/remove unsupported ownership language, obtain missing rights evidence or choose a different payload/use case."
+    }
+  ]
+}

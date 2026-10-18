@@ -1,0 +1,18 @@
+% Amphora publication template contract v1. Values mirror brand_tokens.json.
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,margin=0.7in]{geometry}
+\usepackage{lmodern,xcolor,hyperref,fancyhdr,booktabs,tabularx}
+\definecolor{AmphoraInk}{HTML}{142B3B}
+\definecolor{AmphoraTeal}{HTML}{087F8C}
+\definecolor{AmphoraAmber}{HTML}{B57520}
+\hypersetup{colorlinks=true,urlcolor=AmphoraTeal,linkcolor=AmphoraTeal,
+ pdftitle={Amphora technical note - internal template},pdfauthor={Amphora}}
+\renewcommand{\familydefault}{\sfdefault}
+\color{AmphoraInk}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[L]{\textbf{AMPHORA}}\fancyhead[R]{\small Technical review draft}
+\fancyfoot[L]{\small 18 October 2026}\fancyfoot[R]{\thepage}
+\newcommand{\ClaimID}[1]{\textcolor{AmphoraTeal}{\texttt{#1}}}

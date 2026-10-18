@@ -1,0 +1,296 @@
+{
+  "files": [
+    {
+      "bytes": 1703,
+      "path": "docs/review/plga/NOTICE.md",
+      "sha256": "d81e8ac0f3372d6490a2f46c7d51a4d6e55bbec245af10bff7e64fd876655cd7"
+    },
+    {
+      "bytes": 7473,
+      "path": "docs/review/plga/README.md",
+      "sha256": "7445980c25cfbef73754602d754d300aefb678e06b67f48ad72369110c43e15a"
+    },
+    {
+      "bytes": 1000,
+      "path": "docs/review/plga/evidence/MANIFEST.json",
+      "sha256": "1db6c30a2cd90a83c9daee4150bc5e2c8973736e10de9bf012de5c382cc6423c"
+    },
+    {
+      "bytes": 1451,
+      "path": "docs/review/plga/evidence/SOURCE_DATA.json",
+      "sha256": "4b0c809d57b040674690244a270cf091d604427cc667c941893fed5e313a2eae"
+    },
+    {
+      "bytes": 393,
+      "path": "docs/review/plga/evidence/bootstrap_verification.json",
+      "sha256": "9948d4c0bbdd3da76cec8ac5908d233f8b4622ec60e8e45d996d806f95dfe280"
+    },
+    {
+      "bytes": 8585,
+      "path": "docs/review/plga/evidence/evidence_summary.json",
+      "sha256": "54f87966c2aceea80456fc570ce62eb10af901a0ab281abc378f7cc68672a412"
+    },
+    {
+      "bytes": 263301,
+      "path": "docs/review/plga/evidence/pilot_formulation_losses.csv",
+      "sha256": "47f583aabd71384e51dd6ff75c1aeb57b2f324c621b3a3d168342aa41fc2376d"
+    },
+    {
+      "bytes": 5596,
+      "path": "docs/review/plga/evidence/provenance.json",
+      "sha256": "45f19b242c1bb7bddac19ba756bef18cb903b18b1828d9465ef54e36a701e911"
+    },
+    {
+      "bytes": 4673,
+      "path": "docs/review/plga/evidence/replay_receipts.json",
+      "sha256": "90199062b4fa46d15332b309e4f9829fe5c83bc7337f5a655cf6384f2a0c72cd"
+    },
+    {
+      "bytes": 430,
+      "path": "docs/review/plga/evidence/setup_selftest.json",
+      "sha256": "9c8b426b5e1513a04b41f2828b2340f3ca828cb2b16335c303fede6182fcaba3"
+    },
+    {
+      "bytes": 204421,
+      "path": "docs/review/plga/evidence/stage2_formulation_losses.csv",
+      "sha256": "98948f453bfd380b902a842e0f80aa2801944e64af4e99062138ce1ca41d0ede"
+    },
+    {
+      "bytes": 14,
+      "path": "docs/review/plga/requirements.txt",
+      "sha256": "e77e7045d01a9431264f9262c6b199d8e7988c139276a5266a3cf689588ad66e"
+    },
+    {
+      "bytes": 5681,
+      "path": "docs/review/plga/verify_evidence.py",
+      "sha256": "9d8df170db0d5fe951e4a46929281e2d4f90ddb6bc0f0c2a92c86867da265910"
+    },
+    {
+      "bytes": 7064,
+      "path": "docs/whitepapers/plga-prefix-forecasting/README.md",
+      "sha256": "30e8a26a350bef3a5397cf7cff8e6a290e0d5c5936564827aabd0ae48a62e70c"
+    },
+    {
+      "bytes": 275344,
+      "path": "docs/whitepapers/plga-prefix-forecasting/paper.pdf",
+      "sha256": "f228757745d9d4836f6d048120867348ef6718e9763ca48ea0710f60b11dd33a"
+    },
+    {
+      "bytes": 37962,
+      "path": "docs/whitepapers/plga-prefix-forecasting/paper.tex",
+      "sha256": "0edb71d03a344a2e9f89c2226cc7bb6d621e692279dcd08bdf51310afa676ccb"
+    },
+    {
+      "bytes": 1803,
+      "path": "v1/LICENSE",
+      "sha256": "c056ef7626e4ff3986a4b3e4e19b7fd01d5fd32a481c5c2a1b4116e8cadf286b"
+    },
+    {
+      "bytes": 9684,
+      "path": "v2/Architecture.md",
+      "sha256": "79b23b6e742ee2b456bc43e0c6c93bf801e38b424d507b9287864d8dfcf88d95"
+    },
+    {
+      "bytes": 24368,
+      "path": "v2/Restore.md",
+      "sha256": "8a29dcf99a24c274c14c71ecfa5c216b927851d37d2f1eb1f257638caf9fe69e"
+    },
+    {
+      "bytes": 16599,
+      "path": "v2/benchmarks/plga_strengthening/campaign.py",
+      "sha256": "712e33f6fd33e9010ce615ef227f24e8af37c6b051e94d86ebc8ce3d6f4fa55a"
+    },
+    {
+      "bytes": 6754,
+      "path": "v2/benchmarks/plga_strengthening/protocol.json",
+      "sha256": "bc3b78f76a4c24b1643f49384f5546c5f4dd8ee894cf449c33b4f229dc85892d"
+    },
+    {
+      "bytes": 183,
+      "path": "v2/deploy/local/src/amphora_deployment/acceptance/__init__.py",
+      "sha256": "ba47460c2f6c51268456cfc0c74ce83591332db2764f1be77047de87dfaba964"
+    },
+    {
+      "bytes": 954,
+      "path": "v2/deploy/local/src/amphora_deployment/acceptance/__main__.py",
+      "sha256": "761aa7d13962186f08d4dbe684aaf2b8e8fefe1351d68efd3a907e026be3edc9"
+    },
+    {
+      "bytes": 4744,
+      "path": "v2/deploy/local/src/amphora_deployment/acceptance/ledger.py",
+      "sha256": "07026b1eafb4c87b56b0c9c0b3aad6921ba8eb771182d6e6229da17a680f6fac"
+    },
+    {
+      "bytes": 2712,
+      "path": "v2/deploy/local/src/amphora_deployment/acceptance/policy.py",
+      "sha256": "1f3b96c8e18d685397113dd937c1eb8c4ed7fd821b1a36074c11e86100d8dfbc"
+    },
+    {
+      "bytes": 4496,
+      "path": "v2/dev/check_boundaries.py",
+      "sha256": "04a26844d918fe73afd1e98a28f589ea6bec4f7e6a41ed7a4102eb27ef40c9fb"
+    },
+    {
+      "bytes": 5456,
+      "path": "v2/docs/Audits/BP-09.04_Recovery_Replacement_Closeout.md",
+      "sha256": "27b8a2bbba36eae604d63825bb40433d2d021fb539ab564b2661e97119470dd0"
+    },
+    {
+      "bytes": 5895,
+      "path": "v2/docs/Audits/Evidence/BP-08-Search/Evaluation_Reuse_Handoff.json",
+      "sha256": "1a7b53123c9055b0e8ce10f49d5e8f9e57b4eead2be45e040f0ee2971524e4ba"
+    },
+    {
+      "bytes": 1590,
+      "path": "v2/docs/Audits/Evidence/BP-09-Deployment/Acceptance_Ledger.json",
+      "sha256": "f098a8c09d16a9f81a75ace799fe131fb4dd051d8ef2c710eecb9f8608c9f443"
+    },
+    {
+      "bytes": 999,
+      "path": "v2/docs/Audits/Evidence/BP-09-Deployment/Cold_Backup.json",
+      "sha256": "5eaa434e62dbfcb7a78a663384f0df797a77d3f9bcaaf35ef37f6a4961f34a0f"
+    },
+    {
+      "bytes": 125959,
+      "path": "v2/docs/Audits/Evidence/BP-09-Deployment/Corrected_Successor.json",
+      "sha256": "1d05cea31a27fdb0630af4fc3843e7b71457dab225096170f4053533d68b8872"
+    },
+    {
+      "bytes": 23826,
+      "path": "v2/docs/Audits/Evidence/BP-09-Deployment/Evaluator_Reconstruction.json",
+      "sha256": "87fa80299c356111f47d5c221a347cd6ef2cb3c18bd87148be852f02eb9b42e0"
+    },
+    {
+      "bytes": 533,
+      "path": "v2/docs/Audits/Evidence/BP-09-Deployment/Gateway_Replacement_Browser.json",
+      "sha256": "f4be54141bd6e1210cd149b841eecd307d33111740837c778b6dc18a1e950345"
+    },
+    {
+      "bytes": 36996,
+      "path": "v2/docs/Audits/Evidence/BP-09-Deployment/Managed_Capacity.json",
+      "sha256": "eaa9d7cc0fbd110b00018f9af072f78e292be33c7871eb5c5a236bf3bf3a3cb7"
+    },
+    {
+      "bytes": 4653,
+      "path": "v2/docs/Audits/Evidence/BP-09-Deployment/Owner_Context_Campaign.json",
+      "sha256": "c653ca0b722b191599dce2699d97089b5a145f88fbd9063b369bff4662fd2498"
+    },
+    {
+      "bytes": 20185,
+      "path": "v2/docs/Audits/Evidence/BP-09-Deployment/Owner_Inventory.json",
+      "sha256": "fb4ae735926c6f4d153e221b83d59e75956d4e8275cd66e106b3051a8f3e46b0"
+    },
+    {
+      "bytes": 289207,
+      "path": "v2/docs/Audits/Evidence/BP-09-Deployment/Recovery_Acceptance.json",
+      "sha256": "9879f0ebd17489d68078c305c883a3901fed82230b05814b1abf12d1d5ed470d"
+    },
+    {
+      "bytes": 22866,
+      "path": "v2/docs/Audits/Evidence/BP-09-Deployment/Recovery_Faults.json",
+      "sha256": "57cead05e7b8bef15268c38eaf77462858666e9b2d35d58723effe3c0694ee1f"
+    },
+    {
+      "bytes": 7694,
+      "path": "v2/docs/Audits/Evidence/BP-09-Deployment/Restore_Verification.json",
+      "sha256": "d48a6961171f3b3ae6efcfdc1aba0d9d2dc50bcebd60105061e4a0761e42545e"
+    },
+    {
+      "bytes": 4977,
+      "path": "v2/docs/Audits/Evidence/BP-09-Deployment/Selected_Local_Host.json",
+      "sha256": "ef13ea02a0e9c2b426d0aaf11448d3e9354de02bc29ea0973bae353bb9fc4c97"
+    },
+    {
+      "bytes": 7091,
+      "path": "v2/docs/Audits/Evidence/BP-09-Deployment/Shared_Daemon.json",
+      "sha256": "cd561b5f2a7119c4330804199b2ff2e4cec1fc1ea134f518bb2b901b2967fed8"
+    },
+    {
+      "bytes": 12030,
+      "path": "v2/docs/Audits/Evidence/UI-01.08-Managed/scientific-delivery.json",
+      "sha256": "aa9ff36f62e3eb03a2468a76de69f30697bfda18a05176c9e495af6be22f0b80"
+    },
+    {
+      "bytes": 6318,
+      "path": "v2/docs/Audits/UI-01.08_Managed_Curation_Delivery.md",
+      "sha256": "90c02c777d0f191c98a4b9d8d7c694a04a88bc4f89bf36242738c1824e57ffa4"
+    },
+    {
+      "bytes": 7016,
+      "path": "v2/docs/Audits/UI-01_Research_Workspace_Closeout.md",
+      "sha256": "20a4ce587335edfa56618ce954fc06537045406cc8748eb9d4723ea92ff6bebd"
+    },
+    {
+      "bytes": 5681,
+      "path": "v2/docs/Audits/UI-02_Chemical_Representation.md",
+      "sha256": "66a6bbcfddfbcc38e502afefb64bc582186d8567449367be8ce9c8b40f2f308f"
+    },
+    {
+      "bytes": 9021,
+      "path": "v2/docs/Build Plans/ML-01 Inherited Scientific Model Integration.md",
+      "sha256": "67d4ea58ea28b22f8674a144399e8e892289210532e40330ffa9b7bd7d9ae225"
+    },
+    {
+      "bytes": 24662,
+      "path": "v2/docs/Build Plans/Master Build Tracker.md",
+      "sha256": "74028fd7e014c81be179151812e6367cc19a744a185734dc4622d93fb048cbed"
+    },
+    {
+      "bytes": 4074,
+      "path": "v2/docs/Build Plans/RG-01 LLM Research Graph Generation.md",
+      "sha256": "584eb6703e01cd567b356bc7ffbc733b85f3b3fbb436f934beb731f5b01905b2"
+    },
+    {
+      "bytes": 19859,
+      "path": "v2/services/agent_planning/README.md",
+      "sha256": "cf09e2f65f237238444abcd959680fe67f8ffb4c838a6a24da1ff7a2c38ffe26"
+    },
+    {
+      "bytes": 2695,
+      "path": "v2/services/agent_planning/src/amphora_agent_planning/budget/README.md",
+      "sha256": "d7774a6119932a817b096eaf919b0165453d17271a2cf64aa1ef4960de95d1ee"
+    },
+    {
+      "bytes": 11759,
+      "path": "v2/services/campaign_runtime/src/amphora_campaign_runtime/compiler/README.md",
+      "sha256": "a2b6c28b9bcf956aeac0275f425d80e9b44728f47d1223f935e216fbad62ae00"
+    },
+    {
+      "bytes": 9129,
+      "path": "v2/services/campaign_runtime/src/amphora_campaign_runtime/compiler/compiler.py",
+      "sha256": "78f1e762284705564b4bb87d1ce8543505bfc8eb4f052c082c2247398cd090c0"
+    },
+    {
+      "bytes": 10985,
+      "path": "v2/services/campaign_runtime/src/amphora_campaign_runtime/completion/README.md",
+      "sha256": "193b8447942ba48b1de6378410466147cf596087bbc8834766cb0e3154eed198"
+    },
+    {
+      "bytes": 10424,
+      "path": "v2/services/campaign_runtime/src/amphora_campaign_runtime/completion/commit.py",
+      "sha256": "0df41d35031f461e986713be0d325f371dde4e296c7f5121f903411103588bd0"
+    },
+    {
+      "bytes": 2968,
+      "path": "v2/services/knowledge/src/amphora_knowledge/corrections/README.md",
+      "sha256": "c22a022633ac2fbd87ee6bb320093656e35f099e3ccc620c5338c767a45afd6d"
+    },
+    {
+      "bytes": 4557,
+      "path": "v2/services/knowledge/src/amphora_knowledge/rebuild/README.md",
+      "sha256": "1a517ef7ab152d9782a57a0709acf968ed2aa38e932f9a2e74668214d61b6e51"
+    },
+    {
+      "bytes": 5251,
+      "path": "v2/services/research/src/amphora_research/evaluation_reuse/README.md",
+      "sha256": "be5249e2f83bfe5a0430648f2def28c1672a70962657db8df9780d2aa386a78a"
+    },
+    {
+      "bytes": 15556,
+      "path": "v2/tools/evolution_search/README.md",
+      "sha256": "9d12f8b73eeaefc8adc1d836d1e19187f0719afa6e5184f6276d072393fbb0c0"
+    }
+  ],
+  "format": "amphora-source-lock.v1",
+  "source_revision": "9c3018dcdd17f40be27fc3c6dc7057d2d7cb05bc"
+}

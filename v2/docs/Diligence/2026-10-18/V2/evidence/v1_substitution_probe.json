@@ -1,0 +1,10 @@
+{
+  "finding": "RF-01",
+  "v1_code_revision": "e11989526739ec4a3282416e2e4acf775effb104",
+  "mutation": "Replace original historical checker with fixed fake twelve-gate success; update mutable mapping and manifest checksums, leaving verifier implementation unchanged.",
+  "observed_v1_status": "verified",
+  "first_nested_gate": "fabricated-0",
+  "meaning": "V1 validates self-consistency of mutable metadata but does not pin the original checker identity to trusted policy.",
+  "new_models": 0,
+  "services_started": false
+}

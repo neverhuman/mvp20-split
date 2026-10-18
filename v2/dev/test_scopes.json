@@ -56,7 +56,8 @@
       "run_tests",
       "numeric_comparison",
       "dev/curation_managed_demo",
-      "dev/verify_studio.py"
+      "dev/verify_studio.py",
+      "dev/diligence"
     ]
   },
   "commands": {

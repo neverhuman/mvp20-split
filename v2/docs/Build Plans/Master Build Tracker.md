@@ -221,3 +221,9 @@ P5.3 missing-capability original and actual browser1440/390 passed; returned to 
 UI-02.02 correction tracker50% (policy/source verification complete); actual configured Registry/chemical handoff and audit remain. Parent P1.4 completion gate remains unmet; overall18.75%.
 
 2026-10-13 17:19:28: approved UI-02.03 execution correction37.5% (100/50/0/0); Runtime234 and SDK105 source tests pass; independent handoff next. Parent P1.4 remains0%, overall18.75%.
+
+## DD-01 version 2 critical review interruption
+
+The user now requests a skeptical investor red-team, concrete V2 fixes and public push. [Current DD-01](DD-01%20Investor%20Diligence%20Engineering%20Workplan.md) and its dated V2 handoff own the bounded review/publication. Five investment decision tracks remain unmet; 93 backlog IDs and preparation counts are not readiness percentages. Original scientific paper/results and historical pins remain unchanged. Public branch and draft PR are authorized; merge, experiments, investors messages and production operations are not implied.
+
+Return point preserved: POP-01 E2.2a, actual owning Data qualification before Runtime retention binding/recovery and population workers. Existing engine percentages, serving freeze and POP-01 -> RG-01 -> ML-01 queue remain unchanged.

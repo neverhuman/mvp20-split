@@ -1,5 +1,7 @@
 # Amphora: outside review
 
+For the separate systems/investor assessment, see [Version 2 critical review](../v2/docs/Diligence/2026-10-18/V2/WORKPLAN_V2.md) and its [findings](../v2/docs/Diligence/2026-10-18/V2/RED_TEAM_FINDINGS.md). It distinguishes historical software evidence, the separately executed PLGA study and still-open integration/value/validation decisions.
+
 This review package documents a retrospective PLGA drug-release forecasting benchmark and its limitations. Start with the manuscript, then inspect the protocols and run the model-free evidence checks.
 
 | Review item | Entry point |

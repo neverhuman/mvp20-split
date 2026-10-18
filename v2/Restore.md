@@ -1,5 +1,12 @@
 # Restore
 
+## DD-01 version 2 investor review interruption
+
+Current bounded task: user-authorized critical investor review, feasible V2 fixes and public branch/draft PR. Read [V2 handoff](docs/Diligence/2026-10-18/V2/HANDOFF.md) and [V2 plan](docs/Diligence/2026-10-18/V2/WORKPLAN_V2.md). Preserve V1e1198952 and the original PLGA/evidence. Five decision tracks remain unmet; backlog counts are not readiness. No merge, new model experiments, investor messages or production operations are implied.
+
+Engine return point remains POP-01 E2.2a with actual owning Data qualification before Runtime profile/transport/recovery and population workers. Preserve existing engine percentages, serving freeze and POP/RG/ML order. Historical operational notes below are not authority to restart or access old sessions.
+
+
 Refreshed: 2026-10-15 09:47:24 America/Chicago. Read FIRST after compaction.
 
 ## Current task

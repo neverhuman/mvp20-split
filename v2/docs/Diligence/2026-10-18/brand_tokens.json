@@ -1,0 +1,38 @@
+{
+  "fonts": {
+    "body": "DejaVu Sans",
+    "heading": "DejaVu Sans Bold",
+    "mono": "DejaVu Sans Mono",
+    "policy": "installed local fonts, embedded; no remote downloads"
+  },
+  "format": "amphora-brand.v1",
+  "layout": {
+    "body_pt": 10.5,
+    "brief_body_min_pt": 11,
+    "caption_min_pt": 9,
+    "leading_pt": 15,
+    "margin_in": 0.7,
+    "paper": "US Letter portrait"
+  },
+  "metadata": {
+    "author_policy": "Do not infer affiliation, investor endorsement, submission status or new authorship.",
+    "date": "2026-10-18",
+    "organization": "Amphora",
+    "status": "Version 2 critical investor review - draft"
+  },
+  "name": "Amphora",
+  "palette": {
+    "amber": "B57520",
+    "ink": "142B3B",
+    "muted": "526674",
+    "paper": "FFFFFF",
+    "rule": "D8E4E8",
+    "teal": "087F8C",
+    "wash": "F0F6F7"
+  },
+  "semantics": {
+    "amber": "human/model proposal input",
+    "navy": "main text and hierarchy",
+    "teal": "execution and evidence"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "finding": "RF-02",
+  "v1_code_revision": "e11989526739ec4a3282416e2e4acf775effb104",
+  "mutation": "Mark the future release-selection approval DD-010 verified, supplying only the root README as evidence.",
+  "observed": "accepted",
+  "status_count_verified": 26,
+  "meaning": "V1 tests file existence, not acceptance result, task support, current code binding, or actual owner signoff."
+}

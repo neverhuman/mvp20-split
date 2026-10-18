@@ -1,0 +1,338 @@
+{
+  "findings": [
+    {
+      "basis": "confirmed_code_defect",
+      "disposition": "resolved_in_scoped_local_tests",
+      "fix": "Fixed reviewed policy hashes and exact payload allowlist are checked before execution; full original gate/profile/limitation semantics checked; use reviewed Git verifier and optional externally obtained manifest digest.",
+      "id": "RF-01",
+      "investor_impact": "A fake twelve-gate checker was accepted after its mutable mapping/manifest hashes were recomputed. This invalidates any claim that V1 necessarily ran the original assertions under such tampering.",
+      "owner_role": "core/capsule",
+      "resolution_evidence": [
+        "V2/evidence/test_report.json",
+        "V2/evidence/source_profile.json"
+      ],
+      "severity": "high",
+      "sources": [
+        {
+          "lines": [
+            47,
+            85
+          ],
+          "path": "v2/dev/diligence/capsule.py",
+          "revision": "e11989526739ec4a3282416e2e4acf775effb104",
+          "sha256": "d99d67f4a199f314112078df81a828960f9568b83652e3b572b4d3ceba525238"
+        }
+      ],
+      "title": "Mutable hashes could launder a substituted historical checker",
+      "verification": "A coordinated fake-checker substitution with mutable hashes recomputed must reject before execution."
+    },
+    {
+      "basis": "confirmed_code_defect",
+      "disposition": "resolved_in_scoped_local_tests",
+      "fix": "Evidence registry binds bytes, supported task IDs, result/exit status and current verifier code; protected role-approval tasks cannot be auto-promoted by preparer records.",
+      "id": "RF-02",
+      "investor_impact": "V1 accepted DD-010 as verified when its only evidence was the root README; evidence existence was mistaken for acceptance.",
+      "owner_role": "core/ledger",
+      "resolution_evidence": [
+        "V2/evidence/test_report.json",
+        "V2/evidence/source_profile.json"
+      ],
+      "severity": "high",
+      "sources": [
+        {
+          "lines": [
+            197,
+            248
+          ],
+          "path": "v2/dev/diligence/core.py",
+          "revision": "e11989526739ec4a3282416e2e4acf775effb104",
+          "sha256": "4f37206b301f6af2d5f5631d9a72ff53a78badd999177a4bcb1269d5b7ae8a23"
+        }
+      ],
+      "title": "A README could qualify an owner approval task",
+      "verification": "README-only promotion, failed receipt and stale code binding reject."
+    },
+    {
+      "basis": "confirmed_presentation_issue",
+      "disposition": "implemented",
+      "fix": "Retain the 93 task IDs as a backlog; lead V2 with one current-state page and five decision tracks. Remove task-count readiness percentages and unjustified uniform effort ranges.",
+      "id": "RF-03",
+      "investor_impact": "The 27-page packet showed 27.96% implementation and 26.88% verification for a mixed future register; these quantities do not measure scientific, product or commercial derisking.",
+      "owner_role": "plan",
+      "severity": "high",
+      "sources": [
+        {
+          "lines": [
+            1,
+            19
+          ],
+          "path": "v2/docs/Diligence/2026-10-18/PROGRESS.md",
+          "revision": "e11989526739ec4a3282416e2e4acf775effb104",
+          "sha256": "96d1adacb9740a368db388f03fcb2180805c12d2e7015b0c8bd4069a1e1ece2a"
+        }
+      ],
+      "title": "93 tasks and preparation percentages obscure the investment decision",
+      "verification": "Current-state and decision validators report zero investment gates met, with separate technical receipts."
+    },
+    {
+      "basis": "evidence_gap",
+      "disposition": "disclosed_future_proof",
+      "fix": "Explicit exercise matrix and DG-2 frozen integration gate; no claim of an end-to-end PLGA engine run.",
+      "id": "RF-04",
+      "investor_impact": "The PLGA study is an isolated adapter, while owner/curation/recovery examples are different synthetic/historical scenarios.",
+      "owner_role": "science/product",
+      "severity": "high",
+      "sources": [
+        {
+          "lines": [
+            51,
+            75
+          ],
+          "path": "v2/docs/Diligence/2026-10-18/WORKPLAN.md",
+          "revision": "e11989526739ec4a3282416e2e4acf775effb104",
+          "sha256": "bbe06ecce45a313e0ecfc3f41202b63008260e90f05850b8907321f531d4fd5e"
+        }
+      ],
+      "title": "The benchmark has not qualified the deployed product",
+      "verification": "Every scientific proof card says isolated adapter/no LLM; an integration claim requires its own actual-owner evidence."
+    },
+    {
+      "basis": "evidence_gap",
+      "disposition": "disclosed_future_proof",
+      "fix": "Retain full inference beside scientific proof cards; define DG-4 frozen new-panel/margin/replicate gate and unfavorable-result branch.",
+      "id": "RF-05",
+      "investor_impact": "All ten planned stage-2 intervals include zero on a development-exposed corpus. Neither replay nor new formatting creates external validation.",
+      "owner_role": "science",
+      "severity": "high",
+      "sources": [
+        {
+          "lines": [
+            1,
+            284
+          ],
+          "path": "docs/review/plga/evidence/evidence_summary.json",
+          "revision": "e11989526739ec4a3282416e2e4acf775effb104",
+          "sha256": "54f87966c2aceea80456fc570ce62eb10af901a0ab281abc378f7cc68672a412"
+        }
+      ],
+      "title": "No independent scientific lift or transfer is established",
+      "verification": "No winner badge or ROI inference; all 12 cells and 10 contrasts remain linked unchanged."
+    },
+    {
+      "basis": "commercial_unknown",
+      "disposition": "disclosed_future_proof",
+      "fix": "Commercial hypothesis ledger, current-alternative comparison and DG-3 decision protocol; unknown thresholds remain blocking and unestimated.",
+      "id": "RF-06",
+      "investor_impact": "Workflow composition/provenance could be valuable, but there is no documented buyer interview, matched value study, adoption evidence or pricing evidence.",
+      "owner_role": "commercial",
+      "severity": "high",
+      "sources": [
+        {
+          "lines": [
+            269,
+            313
+          ],
+          "path": "v2/docs/Diligence/2026-10-18/WORKPLAN.md",
+          "revision": "e11989526739ec4a3282416e2e4acf775effb104",
+          "sha256": "bbe06ecce45a313e0ecfc3f41202b63008260e90f05850b8907321f531d4fd5e"
+        }
+      ],
+      "title": "No measured buyer value or willingness to pay",
+      "verification": "No customer/pricing/savings invented; primary value metric and decision margin must be frozen before a pilot."
+    },
+    {
+      "basis": "rights_unknown",
+      "disposition": "disclosed_requires_owner",
+      "fix": "Contribution/provenance matrix, payload rights gate and candid unresolved ownership status; keep existing terms and original attribution.",
+      "id": "RF-07",
+      "investor_impact": "Public visibility, existing proprietary terms and data attribution do not prove exclusive ownership or permission for every proposed reuse.",
+      "owner_role": "rights",
+      "severity": "high",
+      "sources": [
+        {
+          "lines": [
+            1,
+            23
+          ],
+          "path": "v2/docs/Diligence/2026-10-18/DECISIONS.md",
+          "revision": "e11989526739ec4a3282416e2e4acf775effb104",
+          "sha256": "9b2af6e8cde5f1a88efe912634dc6a16d38ac3d4cf4ac8126e2154e9c6ef0431"
+        }
+      ],
+      "title": "License/provenance is not a chain-of-rights conclusion",
+      "verification": "Review each selected object, not a blanket claim that this packet resolves rights or patentability."
+    },
+    {
+      "basis": "differentiation_unknown",
+      "disposition": "disclosed_future_proof",
+      "fix": "Primary-source AiiDA/LangGraph acknowledgement and contribution-specific matrix; measure claimed integration/value rather than marketing a universal first.",
+      "id": "RF-08",
+      "investor_impact": "Workflow provenance and stateful agent orchestration are established adjacent capabilities. The packet does not prove competitor absence or exclusivity.",
+      "owner_role": "positioning",
+      "severity": "medium",
+      "sources": [
+        {
+          "lines": [
+            184,
+            205
+          ],
+          "path": "v2/docs/Diligence/2026-10-18/WORKPLAN.md",
+          "revision": "e11989526739ec4a3282416e2e4acf775effb104",
+          "sha256": "bbe06ecce45a313e0ecfc3f41202b63008260e90f05850b8907321f531d4fd5e"
+        }
+      ],
+      "title": "The moat is a hypothesis and adjacent foundations already exist",
+      "verification": "No unsupported world-first/patent/moat assertion; source-backed present mechanism distinct from future commercial advantage."
+    },
+    {
+      "basis": "confirmed_code_defect",
+      "disposition": "resolved_in_scoped_local_tests",
+      "fix": "Bound stdout/stderr, reject malformed whole JSON, use a shared deadline and isolated child Python, and run the required capsule pass once.",
+      "id": "RF-09",
+      "investor_impact": "capture_output was memory-unbounded, parser accepted only the last output line, and verify-source ran capsule checks twice.",
+      "owner_role": "runtime tooling",
+      "resolution_evidence": [
+        "V2/evidence/test_report.json",
+        "V2/evidence/source_profile.json"
+      ],
+      "severity": "medium",
+      "sources": [
+        {
+          "lines": [
+            27,
+            39
+          ],
+          "path": "v2/dev/diligence/capsule.py",
+          "revision": "e11989526739ec4a3282416e2e4acf775effb104",
+          "sha256": "d99d67f4a199f314112078df81a828960f9568b83652e3b572b4d3ceba525238"
+        }
+      ],
+      "title": "Checker subprocesses were weakly bounded and checks repeated",
+      "verification": "Output flood, timeout, leading garbage JSON and duplicate execution regression cases fail safely."
+    },
+    {
+      "basis": "confirmed_code_defect",
+      "disposition": "resolved_in_scoped_local_tests",
+      "fix": "Stricter collection/phase/evidence validation and canonical JSON-pointer array indexes; fixed safe CLI error output.",
+      "id": "RF-10",
+      "investor_impact": "Null arrays and wrong shapes could escape clean rejection; source ranges/phase membership and canonical array selectors were insufficiently checked.",
+      "owner_role": "validation",
+      "resolution_evidence": [
+        "V2/evidence/test_report.json",
+        "V2/evidence/source_profile.json"
+      ],
+      "severity": "medium",
+      "sources": [
+        {
+          "lines": [
+            102,
+            111
+          ],
+          "path": "v2/dev/diligence/core.py",
+          "revision": "e11989526739ec4a3282416e2e4acf775effb104",
+          "sha256": "4f37206b301f6af2d5f5631d9a72ff53a78badd999177a4bcb1269d5b7ae8a23"
+        }
+      ],
+      "title": "Task/JSON shape and pointer validation had gaps",
+      "verification": "Null/malformed arrays, wrong phase membership, negative index and bad pointer escapes reject."
+    },
+    {
+      "basis": "confirmed_path_gap",
+      "disposition": "resolved_in_scoped_local_tests",
+      "fix": "Resolve output paths before checkout/inside-capsule checks and reject existing/linked destinations. Keep the trusted-directory/TOCTOU limit explicit.",
+      "id": "RF-11",
+      "investor_impact": "V1 used absolute paths and checked only the immediate output parent; an ancestor symlink could point back into the checkout.",
+      "owner_role": "filesystem",
+      "resolution_evidence": [
+        "V2/evidence/test_report.json",
+        "V2/evidence/source_profile.json"
+      ],
+      "severity": "medium",
+      "sources": [
+        {
+          "lines": [
+            58,
+            69
+          ],
+          "path": "v2/dev/diligence/cli.py",
+          "revision": "e11989526739ec4a3282416e2e4acf775effb104",
+          "sha256": "2b9f007af31adbbca71074ef5bb1eed8b6b26ca7ffee3701fbff995c03d44b98"
+        }
+      ],
+      "title": "Output aliases could evade the checkout exclusion",
+      "verification": "Ancestor link into repository, existing output and archive-inside-payload aliases reject without overwriting."
+    },
+    {
+      "basis": "confirmed_scope_gap",
+      "disposition": "resolved_in_scoped_local_tests",
+      "fix": "Reports enumerate executed, historical-only and omitted checks; DG-2 requires current installed-owner proof separately.",
+      "id": "RF-12",
+      "investor_impact": "A fresh receipt check validates old assertions; it does not rerun old process/recovery scenarios or assess current installed service health.",
+      "owner_role": "reporting",
+      "resolution_evidence": [
+        "V2/evidence/test_report.json",
+        "V2/evidence/source_profile.json"
+      ],
+      "severity": "medium",
+      "sources": [
+        {
+          "lines": [
+            89,
+            102
+          ],
+          "path": "v2/dev/diligence/capsule.py",
+          "revision": "e11989526739ec4a3282416e2e4acf775effb104",
+          "sha256": "d99d67f4a199f314112078df81a828960f9568b83652e3b572b4d3ceba525238"
+        }
+      ],
+      "title": "Historical pass labels could be mistaken for current readiness",
+      "verification": "Source and capsule scope fields differ correctly; no historical pass is labeled fresh process execution."
+    },
+    {
+      "basis": "accountability_unknown",
+      "disposition": "implemented",
+      "fix": "Unassigned roles and unapproved budgets are explicit at every decision track; remove uncalibrated effort ranges and schedule promises.",
+      "id": "RF-13",
+      "investor_impact": "A named role is not an assigned person. Uniform task-minute estimates and a six-hour aspiration do not establish delivery capacity.",
+      "owner_role": "planning",
+      "severity": "medium",
+      "sources": [
+        {
+          "lines": [
+            1,
+            80
+          ],
+          "path": "v2/docs/Diligence/2026-10-18/task_ledger.json",
+          "revision": "e11989526739ec4a3282416e2e4acf775effb104",
+          "sha256": "6d254b53cebbd98339c021872ea8379c97af6eb03597156e1d7d9c700657b6c5"
+        }
+      ],
+      "title": "Roles and effort ranges do not establish staffing or budget",
+      "verification": "Activation of future work needs named ownership, a frozen scope and an approved budget; current task authorizes only bounded revision/publication."
+    },
+    {
+      "basis": "review_limit",
+      "disposition": "implemented",
+      "fix": "Separate review coverage statement; local preparer inspected actual artifacts and ran the confirmed code probes.",
+      "id": "RF-14",
+      "investor_impact": "The independent worker was denied Library artifact access and reviewed only supplied reconciliation. It cannot be called an independent full-PDF/code audit.",
+      "owner_role": "review provenance",
+      "severity": "medium",
+      "sources": [
+        {
+          "lines": [
+            1,
+            32
+          ],
+          "path": "v2/docs/Diligence/2026-10-18/HANDOFF.md",
+          "revision": "e11989526739ec4a3282416e2e4acf775effb104",
+          "sha256": "6c9140c405e36354e239e6a63b2cf877e742053ed25c4fa6182449258cdcf1d4"
+        }
+      ],
+      "title": "The additional reviewer did not inspect the delivered artifacts",
+      "verification": "Review credits state precisely which material was and was not accessible."
+    }
+  ],
+  "format": "amphora-investor-redteam.v2",
+  "review_scope": "Local preparer reviewed actual V1 PDF, task ledger and code; additional worker reviewed reconciliation only after Library access denial. Not independent scientific validation or legal opinion."
+}
