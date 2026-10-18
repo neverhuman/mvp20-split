@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "input_mode": "checksum-verified cached public files",
+  "split_sha256": {
+    "pilot_primary": "9a4bc55350b4ddb474c366aca7d39703c8b2bec1ce99dab34ec573736e6d454a",
+    "pilot_joint": "fdcc7ba0f5c64ffd13b5a87e3aa171ed10ff0c3a9bfb6279cf2a76773a478444",
+    "stage2": "c981d6b47121a99b032957ddc655162939bb16a9bebe5ff76289794c92b9b714"
+  },
+  "global_model_fits": 0,
+  "numpy": "1.26.4",
+  "pandas": "2.3.2"
+}

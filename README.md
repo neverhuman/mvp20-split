@@ -11,3 +11,7 @@ This repository separates the preserved implementation from the next graph-nativ
 Start with [v2/Restore.md](v2/Restore.md) and [Product Requirements](v2/docs/Architecture/Requirements/Product_Requirements.md). See [the relocation record](v1/REPOSITORY_LAYOUT.md) for preservation checks and operating boundaries.
 
 Git history and shared repository configuration remain at this root. The existing implementation is reference material; no v2 runtime is claimed. The repository license remains in [LICENSE](v1/LICENSE).
+
+## Outside review
+
+Start with the [outside-review guide](docs/OUTSIDE_REVIEW.md) for the [IEEE-format PLGA white paper](docs/whitepapers/plga-prefix-forecasting/paper.pdf), research protocols, public evidence checks and reproduction instructions.

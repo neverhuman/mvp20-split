@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "pilot_rows": 5120,
+  "stage2_rows": 3840,
+  "pilot_result_cells": 16,
+  "stage2_result_cells": 12,
+  "model_fits": 0,
+  "manifest_file_hashes_checked": 6,
+  "recorded_replay_receipts_consistent": true,
+  "bootstrap_recomputed": true,
+  "pilot_intervals_recomputed": 4,
+  "stage2_intervals_recomputed": 10,
+  "holm_family_recomputed": 10,
+  "numpy_version": "1.26.4"
+}

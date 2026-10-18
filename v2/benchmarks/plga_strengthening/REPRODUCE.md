@@ -1,3 +1,5 @@
+> For public, fresh-clone reproduction and model-free evidence checks, use the [outside-review guide](../../../docs/OUTSIDE_REVIEW.md). The original retained-archive instructions below preserve the historical execution record; private archives are not required by the public guide.
+
 # Reproduce the frozen stage-2 campaign
 
 This is post-pilot internal validation on development-exposed Bao data, not an untouched external confirmation. Preserve the original pilot and report every arm. No model search follows these results.

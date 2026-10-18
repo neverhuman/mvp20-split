@@ -15,8 +15,7 @@ The retained cohort contains 320 formulations, 4,870 valid distinct-time observa
 An installed TeX Live distribution with IEEEtran, BibTeX, booktabs, tabularx, TikZ, xurl, hyperref and microtype is sufficient. No shell escape is enabled. Poppler (`pdfinfo`, `pdftotext`, `pdftoppm`) and Python 3 standard library support checks/rendering. The included figures and aggregate table source allow building without raw datasets, trained models, network access or the original benchmark environment.
 
 ```sh
-make all
-make check
+make -B all check
 mkdir -p qa/pages
 pdftoppm -r 120 -png paper.pdf qa/pages/page
 ```
@@ -36,7 +35,7 @@ On the evidence-owning server, using the recorded scientific Python environment:
   --pilot-artifacts /home/ubuntu/amphora-benchmarks/plga-prefix-20261017-artifacts \
   --stage2-artifacts /home/ubuntu/amphora-benchmarks/plga-strengthening-20261017-artifacts \
   --out .
-make all check
+make -B all check
 ```
 
 These paths identify external evidence locations; none of those raw tables, individual prediction files, environment directories or private reports is copied into this manuscript tree. `claim_ledger.json` contains aggregate claims and source digests only. The figures are newly drawn from recorded predictions/metrics; no figures are copied from prior papers.
@@ -57,8 +56,8 @@ Existing early-input and nested-validation work is cited, including Bannigan 202
 
 Next scientific work is a frozen representation and fixed sampling schedule on a genuinely unexamined, overlap-screened new-study PLGA panel with assay replicate uncertainty. Ocular transfer would require separate external/prospective evidence. This documentation task does not authorize new model searches or platform-plan work.
 
-## License and local publication boundary
+## License and publication scope
 
 The repository's existing software/documentation license is retained; this draft does not introduce a new open-source license. Dataset-derived figures attribute Bao et al. and the version-2 CC BY 4.0 data. Primary reference metadata and paraphrased discussion are cited in the manuscript; third-party full-text PDFs are not bundled.
 
-This manuscript is prepared on the local branch `docs/ieee-plga-whitepaper-20261018`, based on the merged research revision above. New manuscript changes remain local until separate public push/merge approval. Existing canonical checkout changes are preserved by using a dedicated documentation worktree.
+The manuscript and compact public evidence are published together for outside review. Start with the [reviewer entry point](../../OUTSIDE_REVIEW.md) and [fresh-clone evidence/reproduction guide](../../review/plga/README.md). The original manuscript revision is `ac2273e31ed1429e415d35d3d470557ca21c2742`; the PDF is retained unchanged. The reviewer guide provides public source acquisition and external-work-directory commands so reproduction does not depend on the original server paths above.
