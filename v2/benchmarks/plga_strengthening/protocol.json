@@ -1,0 +1,181 @@
+{
+  "stage": "Stage 2: post-pilot internal validation; every Bao curve is development-exposed",
+  "frozen_campaign": "One complete matrix; report every arm; no adaptation to outer scores; stop after audit and replay",
+  "source": "Same 320 eligible Bao formulations, raw pinned files and cleaning retained from pilot",
+  "external_confirmation": "None. Neither reused outer folds nor another potentially overlapping literature compilation is called untouched",
+  "prefix": "First 3 valid distinct-time records, often time zero plus 2 positive-time records; suffix observed times are query inputs",
+  "outer": {
+    "folds": 5,
+    "seed": 20261020,
+    "assignment": "sorted joint drug/publication components, NumPy default_rng shuffle, round robin"
+  },
+  "inner": {
+    "folds": 3,
+    "seed_base": 20261100,
+    "assignment": "same component rule within each outer training set, seed_base + outer_fold"
+  },
+  "groups": "Connected components sharing exact SMILES or MW/TPSA/LogP rounded 6 digits OR official publication DOI; 78 components",
+  "metric": "Mean formulation-level mean absolute suffix error in percentage points; no whole-curve or row-weighted headline",
+  "training_weights": "Each training formulation has total row weight 1; rescale mean weight to 1 for regularization consistency",
+  "preprocessing": "Training-split median imputation and one-hot method encoding, fitted separately in every inner fold and outer refit",
+  "candidate_pool": [
+    "persistence",
+    "linear",
+    "higuchi",
+    "first_order",
+    "korsmeyer_peppas",
+    "weibull"
+  ],
+  "candidate_complexity": [
+    0,
+    1,
+    1,
+    1,
+    2,
+    2
+  ],
+  "candidate_selection": "Fit first two prefix records, score third absolute error. Common fits and pool for all summaries. Refit predictions on all 3 visible records. Pareto minimizes error and declared parameter count with exact original ranking.py",
+  "bounded_kinetics": "KP log-linear positive t/y fit, exponent bounded [0.1,2], k [1e-6,10]. Weibull log-log fit for t>0 and 0<y<1, beta [0.1,3], alpha days [1e-3,1e4]. At least 2 usable points required; otherwise prefix-only first-order fallback. Recompute intercept after bounded exponent. All forecasts clipped [0,1]. No nonlinear optimizer or full-curve fitted parameter is used",
+  "identifiability": "Two positive records only identify 2 transformed parameters with no residual degrees of freedom. R2 is descriptive fit quality, never evidence of mechanism. Retain fit-count and fallback flags",
+  "common_kinetic_parameters": [
+    "kp_k",
+    "kp_n",
+    "kp_r2",
+    "kp_fit_count",
+    "kp_fallback",
+    "weibull_alpha",
+    "weibull_beta",
+    "weibull_r2",
+    "weibull_fit_count",
+    "weibull_fallback"
+  ],
+  "arms": [
+    {
+      "name": "raw",
+      "features": "Pilot static/raw-prefix features only",
+      "target": "direct"
+    },
+    {
+      "name": "kin_all",
+      "features": "raw + common kinetic parameters + mean/std/count of ALL 6 candidate forecasts",
+      "target": "direct"
+    },
+    {
+      "name": "kin_min",
+      "features": "raw + common kinetic parameters + minimum-prefix-error forecast/zero std/count=1; stable pool-order tie break",
+      "target": "direct"
+    },
+    {
+      "name": "kin_pareto",
+      "features": "raw + common kinetic parameters + Pareto-front forecast mean/std/count",
+      "target": "direct"
+    },
+    {
+      "name": "kin_all_pareto",
+      "features": "raw + common kinetic parameters + all-candidate mean/std/count + Pareto mean/std/count",
+      "target": "direct"
+    },
+    {
+      "name": "kin_all_pareto_residual",
+      "features": "EXACT SAME as kin_all_pareto",
+      "target": "observed release minus first-order prefix-only forecast; add anchor at prediction, clip [0,1]"
+    }
+  ],
+  "learners": [
+    "rf",
+    "lightgbm"
+  ],
+  "config_budget": "Exactly 4 predeclared configurations per learner per arm, 3 inner folds; all fits retained, no early stopping, same grids in direct/residual and all feature arms",
+  "rf_fixed": {
+    "n_estimators": 128,
+    "n_jobs": 1,
+    "random_state": 20261020
+  },
+  "rf_grid": [
+    {
+      "min_samples_leaf": 2,
+      "max_features": 0.7
+    },
+    {
+      "min_samples_leaf": 2,
+      "max_features": 1.0
+    },
+    {
+      "min_samples_leaf": 6,
+      "max_features": 0.7
+    },
+    {
+      "min_samples_leaf": 6,
+      "max_features": 1.0
+    }
+  ],
+  "lightgbm_fixed": {
+    "n_estimators": 256,
+    "learning_rate": 0.05,
+    "reg_lambda": 1.0,
+    "n_jobs": 1,
+    "random_state": 20261020,
+    "deterministic": true,
+    "force_col_wise": true,
+    "verbosity": -1
+  },
+  "lightgbm_grid": [
+    {
+      "num_leaves": 7,
+      "min_child_samples": 10
+    },
+    {
+      "num_leaves": 7,
+      "min_child_samples": 25
+    },
+    {
+      "num_leaves": 15,
+      "min_child_samples": 10
+    },
+    {
+      "num_leaves": 15,
+      "min_child_samples": 25
+    }
+  ],
+  "selection": "Lowest pooled inner out-of-fold formulation MAE; fixed grid index breaks ties; outer labels never used for configuration selection",
+  "contrasts_per_learner": [
+    [
+      "kin_all",
+      "raw"
+    ],
+    [
+      "kin_pareto",
+      "kin_all"
+    ],
+    [
+      "kin_pareto",
+      "kin_min"
+    ],
+    [
+      "kin_all_pareto",
+      "kin_all"
+    ],
+    [
+      "kin_all_pareto_residual",
+      "kin_all_pareto"
+    ]
+  ],
+  "uncertainty": "5000 joint-component paired percentile bootstrap draws conditional on this exposed corpus and fitted nested procedure; Holm family correction across all 10 two-sided centered-bootstrap p-values; descriptive internal evidence only",
+  "invariance": "Every eligible formulation: future-label perturbation must preserve all features, candidate selection and forecasts; visible-prefix perturbation positive control; held-out models refit only on training profiles",
+  "replay": "Repeat the entire frozen nested matrix in fresh processes; compare predictions, inner scores, chosen configurations and receipts byte for byte",
+  "resource_limits": {
+    "max_parallel_processes": 2,
+    "threads_per_process": 1,
+    "cpu_affinity": [
+      113,
+      114
+    ],
+    "nice": 10,
+    "address_space_gib_per_process": 4,
+    "cpu_seconds_per_process": 1800,
+    "wall_seconds_per_run": 2400,
+    "disk_budget_gib": 2
+  },
+  "prior_art_scope": "Alabsi public model card supplies KP/Weibull and LightGBM motivation but does not establish prefix-only fitting; this is a safely reimplemented inspired comparator, not an exact reproduction. MC-NODE publisher pages were unavailable; no numerical cross-paper superiority claim or pickle loading",
+  "scientific_limit": "Retrospective digitized in-vitro PLGA, no external or prospective validation, no lab/clinical/savings claims, no full evolutionary optimizer"
+}
