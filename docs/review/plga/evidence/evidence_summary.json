@@ -1,0 +1,284 @@
+{
+  "schema_version": 1,
+  "metric": "Mean formulation-level mean absolute suffix error, percentage points",
+  "cohort": {
+    "source_formulations": 321,
+    "eligible_formulations": 320,
+    "excluded_formulation": 74,
+    "formulation_74_original_points": 6,
+    "formulation_74_valid_distinct_times": 4,
+    "invalid_release_rows": 35,
+    "invalid_rows_by_formulation": {
+      "50": 6,
+      "53": 8,
+      "54": 1,
+      "69": 2,
+      "70": 1,
+      "73": 1,
+      "74": 2,
+      "80": 1,
+      "109": 1,
+      "194": 4,
+      "206": 1,
+      "207": 1,
+      "211": 1,
+      "212": 1,
+      "213": 1,
+      "214": 1,
+      "282": 2
+    },
+    "duplicate_times_averaged": 4,
+    "tail_targets_per_repeat": 3910
+  },
+  "prefix": {
+    "rule": "First three valid distinct-time records after locked cleaning; no complete-curve interpolation or normalization",
+    "includes_time_zero_count": 317,
+    "includes_zero_day_zero_release_count": 317,
+    "prefix_end_days_min_q25_median_q75_max": [
+      0.0216606498194945,
+      0.743874081543601,
+      1.92847312840509,
+      2.945137718857355,
+      21.0723555659249
+    ],
+    "prefix_ends_by_day_1": 111,
+    "prefix_ends_by_day_3": 248,
+    "all_three_times_retained": "visible_prefixes.csv"
+  },
+  "grouping": {
+    "primary_drug_components": 88,
+    "joint_drug_publication_components": 78,
+    "joint_connected_components_rebuilt_independently": true,
+    "official_drug_names_crossing_primary_blocks": 0,
+    "joint_split_doi_and_drug_disjoint": true,
+    "primary_folds_with_some_doi_overlap": 14
+  },
+  "eligible_publication_dois": 113,
+  "pilot": {
+    "all_model_mae_pp": {
+      "primary": {
+        "persistence": 40.730093759998844,
+        "linear": 23.20404966665951,
+        "higuchi": 23.945811830884296,
+        "first_order": 19.324382051149694,
+        "amphora_pareto": 26.840100551840557,
+        "rf": 14.375263563405397,
+        "hist_gradient_boosting": 13.958725950175898,
+        "rf_amphora": 13.469829922585944
+      },
+      "joint": {
+        "persistence": 40.730093759998844,
+        "linear": 23.20404966665951,
+        "higuchi": 23.945811830884296,
+        "first_order": 19.324382051149694,
+        "amphora_pareto": 26.840100551840557,
+        "rf": 14.176090682604732,
+        "hist_gradient_boosting": 13.726386590909879,
+        "rf_amphora": 13.63293827605165
+      }
+    },
+    "paired_contrasts": [
+      {
+        "analysis": "primary",
+        "baseline": "rf",
+        "augmentation_minus_baseline_pp": -0.905433640819453,
+        "conditional_ci95_pp": [
+          -1.458975889181437,
+          -0.2646457310426143
+        ],
+        "status": "predeclared primary contrast"
+      },
+      {
+        "analysis": "primary",
+        "baseline": "hist_gradient_boosting",
+        "augmentation_minus_baseline_pp": -0.4888960275899539,
+        "conditional_ci95_pp": [
+          -1.1134914330857673,
+          0.26872436568540076
+        ],
+        "status": "post-results audit contrast; no model search"
+      },
+      {
+        "analysis": "joint",
+        "baseline": "rf",
+        "augmentation_minus_baseline_pp": -0.543152406553082,
+        "conditional_ci95_pp": [
+          -1.0992042916971647,
+          0.07146137730348334
+        ],
+        "status": "sensitivity contrast"
+      },
+      {
+        "analysis": "joint",
+        "baseline": "hist_gradient_boosting",
+        "augmentation_minus_baseline_pp": -0.0934483148582288,
+        "conditional_ci95_pp": [
+          -0.6431798684947593,
+          0.5034225361675307
+        ],
+        "status": "post-results audit contrast; no model search"
+      }
+    ],
+    "bootstrap_draws": 2000,
+    "bootstrap_seed": 20261017,
+    "classification": "exploratory primary, later joint sensitivity, later boosting audit contrasts"
+  },
+  "stage2": {
+    "all_model_mae_pp": {
+      "rf": {
+        "raw": 13.797601711524308,
+        "kin_all": 13.077406469413708,
+        "kin_min": 13.534914701142068,
+        "kin_pareto": 13.347722018652789,
+        "kin_all_pareto": 13.104012390955978,
+        "kin_all_pareto_residual": 13.144686443524478
+      },
+      "lightgbm": {
+        "raw": 13.592220484544947,
+        "kin_all": 13.47229216685487,
+        "kin_min": 13.16893090873452,
+        "kin_pareto": 13.1385047564374,
+        "kin_all_pareto": 13.544202481329686,
+        "kin_all_pareto_residual": 13.866949151916733
+      }
+    },
+    "paired_contrasts": [
+      {
+        "learner": "rf",
+        "arm": "kin_all",
+        "baseline": "raw",
+        "difference_mae_pp": -0.7201952421105933,
+        "conditional_ci95_pp": [
+          -1.4729523605852504,
+          0.19120087957042486
+        ],
+        "centered_bootstrap_two_sided_p": 0.08118376324735053,
+        "holm_adjusted_p": 0.8118376324735054
+      },
+      {
+        "learner": "rf",
+        "arm": "kin_pareto",
+        "baseline": "kin_all",
+        "difference_mae_pp": 0.27031554923907386,
+        "conditional_ci95_pp": [
+          -0.33789830481816335,
+          0.8825644525547085
+        ],
+        "centered_bootstrap_two_sided_p": 0.369126174765047,
+        "holm_adjusted_p": 1.0
+      },
+      {
+        "learner": "rf",
+        "arm": "kin_pareto",
+        "baseline": "kin_min",
+        "difference_mae_pp": -0.187192682489286,
+        "conditional_ci95_pp": [
+          -0.46851971845052953,
+          0.0645135280886402
+        ],
+        "centered_bootstrap_two_sided_p": 0.16096780643871225,
+        "holm_adjusted_p": 1.0
+      },
+      {
+        "learner": "rf",
+        "arm": "kin_all_pareto",
+        "baseline": "kin_all",
+        "difference_mae_pp": 0.026605921542275368,
+        "conditional_ci95_pp": [
+          -0.18833206217136564,
+          0.22034625113875783
+        ],
+        "centered_bootstrap_two_sided_p": 0.8054389122175565,
+        "holm_adjusted_p": 1.0
+      },
+      {
+        "learner": "rf",
+        "arm": "kin_all_pareto_residual",
+        "baseline": "kin_all_pareto",
+        "difference_mae_pp": 0.040674052568499874,
+        "conditional_ci95_pp": [
+          -0.5244135390989177,
+          0.5064960208299566
+        ],
+        "centered_bootstrap_two_sided_p": 0.8794241151769646,
+        "holm_adjusted_p": 1.0
+      },
+      {
+        "learner": "lightgbm",
+        "arm": "kin_all",
+        "baseline": "raw",
+        "difference_mae_pp": -0.11992831769009982,
+        "conditional_ci95_pp": [
+          -0.9353004544406975,
+          0.9029097435559719
+        ],
+        "centered_bootstrap_two_sided_p": 0.8062387522495501,
+        "holm_adjusted_p": 1.0
+      },
+      {
+        "learner": "lightgbm",
+        "arm": "kin_pareto",
+        "baseline": "kin_all",
+        "difference_mae_pp": -0.33378741041746274,
+        "conditional_ci95_pp": [
+          -1.0780381398892291,
+          0.2458672297544847
+        ],
+        "centered_bootstrap_two_sided_p": 0.3359328134373125,
+        "holm_adjusted_p": 1.0
+      },
+      {
+        "learner": "lightgbm",
+        "arm": "kin_pareto",
+        "baseline": "kin_min",
+        "difference_mae_pp": -0.030426152297106768,
+        "conditional_ci95_pp": [
+          -0.3949848591159834,
+          0.2796846149838527
+        ],
+        "centered_bootstrap_two_sided_p": 0.8542291541691661,
+        "holm_adjusted_p": 1.0
+      },
+      {
+        "learner": "lightgbm",
+        "arm": "kin_all_pareto",
+        "baseline": "kin_all",
+        "difference_mae_pp": 0.07191031447482388,
+        "conditional_ci95_pp": [
+          -0.5939765162375479,
+          0.5736791089366723
+        ],
+        "centered_bootstrap_two_sided_p": 0.8196360727854429,
+        "holm_adjusted_p": 1.0
+      },
+      {
+        "learner": "lightgbm",
+        "arm": "kin_all_pareto_residual",
+        "baseline": "kin_all_pareto",
+        "difference_mae_pp": 0.32274667058704765,
+        "conditional_ci95_pp": [
+          -0.459604112072323,
+          0.8461119765999554
+        ],
+        "centered_bootstrap_two_sided_p": 0.3333333333333333,
+        "holm_adjusted_p": 1.0
+      }
+    ],
+    "bootstrap_draws": 5000,
+    "bootstrap_seed": 20261020,
+    "budgets": {
+      "configs_per_arm": 4,
+      "inner_folds": 3,
+      "outer_folds": 5,
+      "arms_per_learner": 6,
+      "fits_per_run": 780,
+      "total_fits_including_replay": 1560
+    },
+    "classification": "post-pilot internal validation on development-exposed Bao data; not external confirmation",
+    "conditional_ci95_all_include_zero": true,
+    "holm_family_size": 10
+  },
+  "raw_measurement_data_included": false,
+  "new_model_fits_for_publication": 0,
+  "full_prediction_tables_included": false
+}

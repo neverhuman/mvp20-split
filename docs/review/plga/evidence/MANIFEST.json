@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "artifact_kind": "derived reproducibility metrics and provenance, not raw source measurements",
+  "files": {
+    "SOURCE_DATA.json": {
+      "sha256": "4b0c809d57b040674690244a270cf091d604427cc667c941893fed5e313a2eae",
+      "bytes": 1451
+    },
+    "evidence_summary.json": {
+      "sha256": "54f87966c2aceea80456fc570ce62eb10af901a0ab281abc378f7cc68672a412",
+      "bytes": 8585
+    },
+    "pilot_formulation_losses.csv": {
+      "sha256": "47f583aabd71384e51dd6ff75c1aeb57b2f324c621b3a3d168342aa41fc2376d",
+      "bytes": 263301
+    },
+    "provenance.json": {
+      "sha256": "45f19b242c1bb7bddac19ba756bef18cb903b18b1828d9465ef54e36a701e911",
+      "bytes": 5596
+    },
+    "replay_receipts.json": {
+      "sha256": "90199062b4fa46d15332b309e4f9829fe5c83bc7337f5a655cf6384f2a0c72cd",
+      "bytes": 4673
+    },
+    "stage2_formulation_losses.csv": {
+      "sha256": "98948f453bfd380b902a842e0f80aa2801944e64af4e99062138ce1ca41d0ede",
+      "bytes": 204421
+    }
+  }
+}

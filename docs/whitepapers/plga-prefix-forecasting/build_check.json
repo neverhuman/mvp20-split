@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "pages": 8,
+  "bibliography_entries": 14,
+  "numeric_result_cells": 12,
+  "planned_contrasts": 10,
+  "unresolved_references": 0,
+  "overfull_boxes": 0,
+  "new_model_fits": 0,
+  "raw_data_or_private_reports_in_tree": false,
+  "prohibited_branding_found": false,
+  "pdf_sha256": "f228757745d9d4836f6d048120867348ef6718e9763ca48ea0710f60b11dd33a",
+  "source_sha256": {
+    "paper.tex": "0edb71d03a344a2e9f89c2226cc7bb6d621e692279dcd08bdf51310afa676ccb",
+    "references.bib": "347cc08191b764b6094ce072e1010c76ac65c8d4d3fd60e9f400666117d7516d",
+    "tables.tex": "e0ebd97947287ff5e0b00cbb246aa628b66e9c012618739b3f9830bbec28735f",
+    "claim_ledger.json": "1cf8a61f929fe2b24a8a2e1b9d350ea8759cefafebcfa81a621b78a8ede60d31"
+  }
+}

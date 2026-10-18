@@ -1,0 +1,31 @@
+% Generated from audited aggregate metrics; no raw observations.
+\newcommand{\StageRows}{
+Raw prefix & 13.798 & 13.592 \\
+All candidates & 13.077 & 13.472 \\
+Minimum error & 13.535 & 13.169 \\
+Pareto selection & 13.348 & 13.139 \\
+All + Pareto & 13.104 & 13.544 \\
+First-order residual & 13.145 & 13.867 \\
+}
+\newcommand{\ContrastRows}{
+RF & All - Raw & -0.720 & [-1.473, +0.191] & 0.812 \\
+RF & Pareto - All & +0.270 & [-0.338, +0.883] & 1.000 \\
+RF & Pareto - Minimum & -0.187 & [-0.469, +0.065] & 1.000 \\
+RF & All + Pareto - All & +0.027 & [-0.188, +0.220] & 1.000 \\
+RF & Residual - All + Pareto & +0.041 & [-0.524, +0.506] & 1.000 \\
+LGBM & All - Raw & -0.120 & [-0.935, +0.903] & 1.000 \\
+LGBM & Pareto - All & -0.334 & [-1.078, +0.246] & 1.000 \\
+LGBM & Pareto - Minimum & -0.030 & [-0.395, +0.280] & 1.000 \\
+LGBM & All + Pareto - All & +0.072 & [-0.594, +0.574] & 1.000 \\
+LGBM & Residual - All + Pareto & +0.323 & [-0.460, +0.846] & 1.000 \\
+}
+\newcommand{\PilotRows}{
+Persistence & 40.730 & 40.730 \\
+Linear & 23.204 & 23.204 \\
+Higuchi & 23.946 & 23.946 \\
+First order & 19.324 & 19.324 \\
+Standalone Pareto & 26.840 & 26.840 \\
+Random Forest & 14.375 & 14.176 \\
+Histogram boosting & 13.959 & 13.726 \\
+RF + Pareto & 13.470 & 13.633 \\
+}

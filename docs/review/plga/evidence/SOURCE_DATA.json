@@ -1,0 +1,29 @@
+{
+  "dataset_doi": "10.17632/zzvtdrcy76.2",
+  "dataset_version": 2,
+  "license": "CC BY 4.0",
+  "citation": "Z. Bao, J. Kim, C. Kwok, F. Le Devedec, and C. Allen, Mendeley Data v2 (2024); Scientific Data 12,364 (2025), doi:10.1038/s41597-025-04621-9",
+  "derivative_commit": "605cd707c47a4379212193560cd332d7a2d973fd",
+  "metadata_url": "https://data.mendeley.com/public-api/datasets/zzvtdrcy76",
+  "files": [
+    {
+      "file": "mp_dataset_processed_no_dupes.xlsx",
+      "url": "https://raw.githubusercontent.com/mdsamad001/Drug_Release_Dynamics_Prediction/605cd707c47a4379212193560cd332d7a2d973fd/mp_dataset_processed_no_dupes.xlsx",
+      "bytes": 42219,
+      "sha256": "72c02ebf13925255fe72c088c4f4470a9a28346e179ea2380f9f14bb05bcd9f3"
+    },
+    {
+      "file": "mp_dataset_processed_time_release_only.xlsx",
+      "url": "https://raw.githubusercontent.com/mdsamad001/Drug_Release_Dynamics_Prediction/605cd707c47a4379212193560cd332d7a2d973fd/mp_dataset_processed_time_release_only.xlsx",
+      "bytes": 147072,
+      "sha256": "45c222184145de01062fabb14e033db80971370cb5699fc912f8000245067448"
+    },
+    {
+      "file": "mp_dataset_initial_formulation.xlsx",
+      "url": "https://data.mendeley.com/public-files/datasets/zzvtdrcy76/files/0f98021e-47fd-4f24-8226-c450dc796564/file_downloaded",
+      "bytes": 33981,
+      "sha256": "033f01949670afde2aae6d8bdf886b41f6f962170e5d2e5ddf07c520edd51169"
+    }
+  ],
+  "raw_files_committed": false
+}

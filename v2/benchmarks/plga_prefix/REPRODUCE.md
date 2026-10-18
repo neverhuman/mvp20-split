@@ -1,3 +1,5 @@
+> For public, fresh-clone reproduction and model-free evidence checks, use the [outside-review guide](../../../docs/OUTSIDE_REVIEW.md). The original retained-archive instructions below preserve the historical execution record; private archives are not required by the public guide.
+
 # Reproduction
 
 The delivered archive contains the exact public data, frozen primary and joint protocols, split assignments, all predictions, exclusions and provenance. No downloads or paid services are needed to use the supplied data. Python 3.12.3 was used. `requirements.environment.lock` records the full runtime dependency closure; `requirements.lock` preserves the original scientific-package pins.

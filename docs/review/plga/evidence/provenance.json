@@ -1,0 +1,129 @@
+{
+  "source_commits": {
+    "merged_research": "879b6d254e10848020635cc2ae2c654968a0cfc1",
+    "pilot": "9e4d4afb444d683761078d2a3bbaa151a3d6177c",
+    "stage2": "dfac76aebc18dcf8b2e021c016f53aaa6b14bd3f",
+    "manuscript_draft": "ac2273e31ed1429e415d35d3d470557ca21c2742"
+  },
+  "source_artifact_sha256": {
+    "pilot_independent_audit.json": "2d47487ff02f403eefedece30b5b6be92254d30ecd2c2d4b26746030b95332cf",
+    "stage2_independent_audit.json": "b6f5639b6a6c03841a304896be8024e82bea418159c7f67a2597543d840084f2",
+    "pilot_primary_curve_metrics.csv": "f2adeeabca68710d8c54e46cf631ff35a5229b40af9b06fbf8ba2bd6a0a39caf",
+    "pilot_joint_curve_metrics.csv": "a98f00ca7b50920f280092b817c983275cfb03b5ae59365472c4cf9296976919",
+    "stage2_curve_metrics.csv": "398df65e07da1ef4d9adf7d5243e9f2b8c0d6de1ec9092991a84b8a285d0a79b"
+  },
+  "locks": {
+    "pilot_primary": {
+      "created_utc": "2026-10-17T22:40:41.133119+00:00",
+      "code_sha256": {
+        "LICENSE.Amphora": "c056ef7626e4ff3986a4b3e4e19b7fd01d5fd32a481c5c2a1b4116e8cadf286b",
+        "VENDORED_SOURCE.json": "4536300becc179967d82d56a2cbfd7f454744138439bbb416bb956ab4d131984",
+        "benchmark.py": "fb963e6001ddfeb8c3cfc7715312dfec5188d982dcbc9f3d84a79f76cf8ba7cc",
+        "protocol.json": "a3c45e945518cf64c84608df76b5b4c0f551201ef8f24f298692a4e94c1d7a38",
+        "requirements.lock": "c91bed63358d5c1d3147df7e8112d3e1b48ad470a38af23875a463dbaa4a567e",
+        "vendor/ranking.py": "f80ca634f97f47876329d6418ce7a852a20a8844cc4b5eec1a4900e4c219304f"
+      },
+      "protocol_sha256": "a3c45e945518cf64c84608df76b5b4c0f551201ef8f24f298692a4e94c1d7a38",
+      "splits_sha256": "9a4bc55350b4ddb474c366aca7d39703c8b2bec1ce99dab34ec573736e6d454a",
+      "sources_sha256": "954041adbfa7a4cc2f2591cf14e8e529f5047bcb2a5ee1ba6e4b27326d57e56b"
+    },
+    "pilot_joint": {
+      "created_utc": "2026-10-17T22:44:32.489422+00:00",
+      "code_sha256": {
+        "PARENT_PIPELINE.json": "6bfd2b4eb9dbb24ba24a23d1daf56a8ffd1c56ff0679c800ae98d48af9193969",
+        "joint_sensitivity.py": "cefcc26ea3dba8a076e3a150627a132c23b8165b9352c126a3348b7795a72bca",
+        "protocol.json": "71b1b2892c591c085529d5da41b97af208320513b7f25edff47836365ef57034",
+        "requirements.lock": "c91bed63358d5c1d3147df7e8112d3e1b48ad470a38af23875a463dbaa4a567e"
+      },
+      "protocol_sha256": "71b1b2892c591c085529d5da41b97af208320513b7f25edff47836365ef57034",
+      "splits_sha256": "fdcc7ba0f5c64ffd13b5a87e3aa171ed10ff0c3a9bfb6279cf2a76773a478444",
+      "sources_sha256": "954041adbfa7a4cc2f2591cf14e8e529f5047bcb2a5ee1ba6e4b27326d57e56b"
+    },
+    "stage2": {
+      "created_utc": "2026-10-17T23:12:11.035225+00:00",
+      "code_sha256": {
+        "README.md": "911158db8475d7b12ec7cf15a8ab83c65b0c44db2677afa77d52c65b59334d79",
+        "campaign.py": "712e33f6fd33e9010ce615ef227f24e8af37c6b051e94d86ebc8ce3d6f4fa55a",
+        "launch.py": "20e8c5376d516ac43dc0ab896fcf87999b462a8da930d4629bc45c4d365a63c8",
+        "protocol.json": "bc3b78f76a4c24b1643f49384f5546c5f4dd8ee894cf449c33b4f229dc85892d"
+      },
+      "split_sha256": "c981d6b47121a99b032957ddc655162939bb16a9bebe5ff76289794c92b9b714",
+      "data_sha256": {
+        "mp_dataset_initial_formulation.xlsx": "033f01949670afde2aae6d8bdf886b41f6f962170e5d2e5ddf07c520edd51169",
+        "mp_dataset_processed_no_dupes.xlsx": "72c02ebf13925255fe72c088c4f4470a9a28346e179ea2380f9f14bb05bcd9f3",
+        "mp_dataset_processed_time_release_only.xlsx": "45c222184145de01062fabb14e033db80971370cb5699fc912f8000245067448"
+      },
+      "mapping_sha256": "8126dd4968ae90aac0d511904a46935a566684af815ceb23ca68642d429401d0",
+      "cohort_sha256": "4c0c67a7b52dbf0eac53244e518f8263ee45f77563827cac6b857bcc0acbfb7f"
+    }
+  },
+  "pilot_thread_amendment": [
+    {
+      "utc": "2026-10-17T22:40:39.924181+00:00",
+      "reason": "Exact replay assertion found parallel RF floating summation nondeterminism despite identical held-out-tail features. Before any fold score was reported, set n_jobs=1; no statistical hyperparameters or split changed. Failed output retained.",
+      "initial_protocol_sha256": "511e681dc2086ac7068f04c9165345b14a8fe4002efb9ee984b3fa2718dda8c2",
+      "valid_test_scores_seen": false
+    }
+  ],
+  "runtime": {
+    "main": {
+      "rf": {
+        "seconds": 648.9174281023443,
+        "peak_rss_mib": 239.07421875,
+        "model_fits": 390
+      },
+      "lightgbm": {
+        "seconds": 54.43226057291031,
+        "peak_rss_mib": 235.60546875,
+        "model_fits": 390
+      }
+    },
+    "replay": {
+      "rf": {
+        "seconds": 664.0588462697342,
+        "peak_rss_mib": 239.42578125,
+        "model_fits": 390
+      },
+      "lightgbm": {
+        "seconds": 54.77110616862774,
+        "peak_rss_mib": 234.35546875,
+        "model_fits": 390
+      }
+    }
+  },
+  "software": {
+    "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+    "packages": {
+      "numpy": "1.26.4",
+      "pandas": "2.3.2",
+      "scikit-learn": "1.7.2",
+      "lightgbm": "4.6.0",
+      "scipy": "1.16.3",
+      "openpyxl": "3.1.5",
+      "joblib": "1.3.2",
+      "threadpoolctl": "3.6.0"
+    }
+  },
+  "published_loss_fields": {
+    "pilot": [
+      "analysis",
+      "formulation",
+      "group",
+      "model",
+      "mae_pp"
+    ],
+    "stage2": [
+      "learner",
+      "arm",
+      "formulation",
+      "group",
+      "outer",
+      "mae_pp"
+    ]
+  },
+  "loss_rows": {
+    "pilot": 5120,
+    "stage2": 3840
+  },
+  "privacy_scope": "Derived curve errors only. No time/release observations, SMILES, full prediction rows, private reports, credentials or private links."
+}

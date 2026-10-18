@@ -1,0 +1,131 @@
+{
+  "pilot": [
+    {
+      "analysis": "primary",
+      "completed_utc": "2026-10-17T22:55:19.998762+00:00",
+      "files": {
+        "predictions.csv": {
+          "sha256": "5764aadca49c2c96fadab549a5bdfd0702affeb8df82e7a833790ddf3aab3a72",
+          "byte_identical": true
+        },
+        "curve_metrics.csv": {
+          "sha256": "f2adeeabca68710d8c54e46cf631ff35a5229b40af9b06fbf8ba2bd6a0a39caf",
+          "byte_identical": true
+        },
+        "summary.csv": {
+          "sha256": "5fc1e1f04a810c5061698b494362065c9fd6682163f56d1fbeb62768eed570b7",
+          "byte_identical": true
+        },
+        "selection_receipts.json": {
+          "sha256": "4d0d56c299f26c5430a537ed4e0a0f3768551786e32fe6455aefc4d465633261",
+          "byte_identical": true
+        },
+        "leakage_checks.csv": {
+          "sha256": "635bfe9141e081284bb21a3075990a80a1561ba40b972140ce366214ee61a46c",
+          "byte_identical": true
+        }
+      },
+      "fresh_run": {
+        "protocol_sha256": "a3c45e945518cf64c84608df76b5b4c0f551201ef8f24f298692a4e94c1d7a38",
+        "split_sha256": "9a4bc55350b4ddb474c366aca7d39703c8b2bec1ce99dab34ec573736e6d454a",
+        "predictions_sha256": "5764aadca49c2c96fadab549a5bdfd0702affeb8df82e7a833790ddf3aab3a72",
+        "peak_rss_mib": 285.7578125,
+        "seconds": 107.40913831628859,
+        "failed_models": [],
+        "status": "complete"
+      }
+    },
+    {
+      "analysis": "joint",
+      "completed_utc": "2026-10-17T22:55:20.288891+00:00",
+      "files": {
+        "predictions.csv": {
+          "sha256": "96c8a9ee2d670b2d551a372d81f61adae264e300161c12faa8d364e294276770",
+          "byte_identical": true
+        },
+        "curve_metrics.csv": {
+          "sha256": "a98f00ca7b50920f280092b817c983275cfb03b5ae59365472c4cf9296976919",
+          "byte_identical": true
+        },
+        "summary.csv": {
+          "sha256": "d6b69058b53feb8b5f5bab9476b2b852d2bf40163e2062526aa5de9601cdea38",
+          "byte_identical": true
+        },
+        "selection_receipts.json": {
+          "sha256": "4d0d56c299f26c5430a537ed4e0a0f3768551786e32fe6455aefc4d465633261",
+          "byte_identical": true
+        },
+        "leakage_checks.csv": {
+          "sha256": "a8e91a590d4571796aa59e7a7b680d7274c924c62733dbb34e177b339f990aeb",
+          "byte_identical": true
+        }
+      },
+      "fresh_run": {
+        "protocol_sha256": "71b1b2892c591c085529d5da41b97af208320513b7f25edff47836365ef57034",
+        "split_sha256": "fdcc7ba0f5c64ffd13b5a87e3aa171ed10ff0c3a9bfb6279cf2a76773a478444",
+        "predictions_sha256": "96c8a9ee2d670b2d551a372d81f61adae264e300161c12faa8d364e294276770",
+        "peak_rss_mib": 292.8515625,
+        "seconds": 107.73960081674159,
+        "failed_models": [],
+        "status": "complete"
+      }
+    }
+  ],
+  "stage2": [
+    {
+      "learner": "rf",
+      "file": "predictions.csv",
+      "sha256": "b65393105fbce2587d132f2fad8187e4bc6cdc43f5429568a7e36e841d097055",
+      "fresh_process_identical": true
+    },
+    {
+      "learner": "rf",
+      "file": "inner_search.csv",
+      "sha256": "921a8e2cf41131b2d0ee27b41ba29c7128cc83ab2afbc7ee2a9fe902a625ca64",
+      "fresh_process_identical": true
+    },
+    {
+      "learner": "rf",
+      "file": "selected_configs.json",
+      "sha256": "c1f8bb2e2bf32fea7c48042910fcc4e7314bd174d916cc3f26641571020e81a6",
+      "fresh_process_identical": true
+    },
+    {
+      "learner": "lightgbm",
+      "file": "predictions.csv",
+      "sha256": "3a74961e48fece2ce699b9fe0ce01d95b35ace759de4d3db09f9e68ba060c00d",
+      "fresh_process_identical": true
+    },
+    {
+      "learner": "lightgbm",
+      "file": "inner_search.csv",
+      "sha256": "8673d46e2056445eaf5eb54a771a7e1ba888a935b29349dc2786e0ac0f7fd093",
+      "fresh_process_identical": true
+    },
+    {
+      "learner": "lightgbm",
+      "file": "selected_configs.json",
+      "sha256": "ba786b21f812e184e8b2186cfe608802c8f14b60652d9ad8ea7b8bf6de5bd3e6",
+      "fresh_process_identical": true
+    }
+  ],
+  "feature_replay": {
+    "profiles": 320,
+    "status": "PASS",
+    "checks": [
+      {
+        "original": "candidate_receipts.json",
+        "replay": "candidate_receipts_replay.json",
+        "sha256": "2afa940c13eeb337ee755db6c63dea524a9bc8a73aab6701ca74a98431119193",
+        "byte_identical": true
+      },
+      {
+        "original": "invariance_checks.csv",
+        "replay": "invariance_checks_replay.csv",
+        "sha256": "904af22e0e13a4b3f37e58999d262c8bafcf770de888229d82592d7fb7a5294f",
+        "byte_identical": true
+      }
+    ]
+  },
+  "interpretation": "These are recorded verification receipts, not a substitute for independently executing the model pipeline."
+}

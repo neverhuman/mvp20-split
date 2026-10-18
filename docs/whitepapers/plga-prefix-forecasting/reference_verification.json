@@ -1,0 +1,99 @@
+{
+  "verified_utc": "2026-10-18T10:59:56.270366+00:00",
+  "principal_references": [
+    {
+      "key": "bannigan",
+      "doi": "10.1038/s41467-022-35343-w",
+      "title": "Machine learning models to accelerate the design of polymeric long-acting injectables",
+      "authors": [
+        "Pauric Bannigan",
+        "Zeqing Bao",
+        "Riley J. Hickman",
+        "Matteo Aldeghi",
+        "Florian H\u00e4se",
+        "Al\u00e1n Aspuru-Guzik",
+        "Christine Allen"
+      ],
+      "metadata_source": "https://api.crossref.org/works/10.1038/s41467-022-35343-w",
+      "primary_full_text_verified": true,
+      "primary_file_sha256": "faf86a3294364568178c264be6d3ae5a59435feb66573cb860edb492ec8dc6a4",
+      "source_route": "NLM PMC9832011 full text",
+      "full_text_bundled": false
+    },
+    {
+      "key": "bao",
+      "doi": "10.1038/s41597-025-04621-9",
+      "title": "A dataset on formulation parameters and characteristics of drug-loaded PLGA microparticles",
+      "authors": [
+        "Zeqing Bao",
+        "Jongwhi Kim",
+        "Candice Kwok",
+        "Frantz Le Devedec",
+        "Christine Allen"
+      ],
+      "metadata_source": "https://api.crossref.org/works/10.1038/s41597-025-04621-9",
+      "primary_full_text_verified": true,
+      "primary_file_sha256": "31e2efce12b19f483f873f07e37f7adb55577728a2beab6adeb5ad08ee99a41f",
+      "source_route": "Nature Scientific Data publisher full text",
+      "full_text_bundled": false
+    },
+    {
+      "key": "alabsi",
+      "doi": "10.1016/j.nexres.2026.101842",
+      "title": "Predictive modelling of drug release from PLGA microparticles using artificial intelligence and machine learning",
+      "authors": [
+        "Hasan Alabsi",
+        "Ahmad Z. Bahlool",
+        "Abdelrahman Bizzari"
+      ],
+      "metadata_source": "https://api.crossref.org/works/10.1016/j.nexres.2026.101842",
+      "primary_full_text_verified": true,
+      "primary_file_sha256": "010911b3fea5286a9e6a0c572654fa6bd00fddfeecb1208c3cad354e2c3a4bc8",
+      "source_route": "RCSI institutional repository publisher PDF, file 65556666",
+      "full_text_bundled": false
+    },
+    {
+      "key": "mcnode",
+      "doi": "10.3390/ph19081227",
+      "title": "MC-NODE: A Mechanism-Decomposed Neural Differential Model for PLGA Microsphere Drug Release Prediction and Attribution",
+      "authors": [
+        "Zi\u2019an Tang",
+        "Hui Li",
+        "Tianfu Li",
+        "Feng Xue"
+      ],
+      "metadata_source": "https://api.crossref.org/works/10.3390/ph19081227",
+      "primary_full_text_verified": true,
+      "primary_file_sha256": "cfcb717586765b42346375ba26a0c440a7fa593b377d2fd9aa45f612c3bf7a39",
+      "source_route": "Official MDPI publisher JATS XML and PDF",
+      "full_text_bundled": false
+    }
+  ],
+  "dataset": {
+    "doi": "10.17632/zzvtdrcy76.2",
+    "version": 2,
+    "published": "2024-12-16",
+    "license": "CC BY 4.0",
+    "official_formulation_table_sha256": "033f01949670afde2aae6d8bdf886b41f6f962170e5d2e5ddf07c520edd51169"
+  },
+  "method_references": {
+    "Crossref_DOI_metadata_verified": [
+      "10.1023/A:1010933404324",
+      "10.1016/0378-5173(83)90064-9",
+      "10.1111/j.2042-7158.1972.tb08930.x",
+      "10.1186/1471-2105-7-91",
+      "10.1111/ecog.02881"
+    ],
+    "LightGBM": "Official NeurIPS proceedings author/title/year metadata verified",
+    "Holm1979": "Established bibliographic citation, Scandinavian Journal of Statistics 6(2),65-70; JSTOR primary full text challenged access; no numerical result depends on a quoted passage"
+  },
+  "interpretation_checks": [
+    "No first generic early-release, nested-CV, kinetic-residual or grouped-benchmark claim",
+    "Bannigan: early 6/12/24h inputs and nested CV; drug-polymer grouping with drug overlap acknowledged",
+    "Alabsi: >24h task,347 formulations5265 observations; inspired comparator is not an exact reproduction; no leakage allegation",
+    "MC-NODE: sparse training-observation experiment with complete test curves; no cross-metric score ranking",
+    "Joint drug/DOI grouping is not chemical-cluster independence",
+    "Replay is computational reproducibility, not independent scientific validation",
+    "Nonsignificance is not equivalence"
+  ]
+}

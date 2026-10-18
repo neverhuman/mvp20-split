@@ -1,0 +1,11 @@
+{
+  "tool_versions": {
+    "pdflatex": "pdfTeX 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian)",
+    "bibtex": "BibTeX 0.99d (TeX Live 2023/Debian)",
+    "pdfinfo": "pdfinfo version 24.02.0"
+  },
+  "document_class": "IEEEtran conference",
+  "source_base": "879b6d254e10848020635cc2ae2c654968a0cfc1",
+  "new_model_fits": 0,
+  "shell_escape_enabled": false
+}
