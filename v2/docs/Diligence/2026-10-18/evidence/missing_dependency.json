@@ -1,0 +1,16 @@
+{
+  "command": [
+    "python3.12",
+    "-B",
+    "v2/dev/diligence/cli.py",
+    "verify-source",
+    "--bootstrap"
+  ],
+  "observed_exit": 3,
+  "expected_exit": 3,
+  "result": {
+    "status": "environment_unavailable",
+    "reason": "requested_numpy_unavailable"
+  },
+  "meaning": "Missing NumPy in plain Python3.12 is an explicit requested-environment failure, not a downgraded pass."
+}

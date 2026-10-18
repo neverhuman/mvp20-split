@@ -1,0 +1,32 @@
+{
+  "capsule_profile": "frozen evidence integrity; no fresh production-source boundary scan",
+  "current_delivery": "local detailed plan, review PDF and bounded offline scaffolding",
+  "format": "amphora-release-intent.v1",
+  "investor_release_qualified": false,
+  "optional": [
+    "walkthrough",
+    "FAQ",
+    "fresh_model_replay",
+    "actual_owner_witness"
+  ],
+  "public_push_authorized": false,
+  "raw_attachments_export_allowed": false,
+  "required_future_checks": [
+    "claim_approval",
+    "disclosure",
+    "plga_integrity",
+    "plga_bootstrap",
+    "bp09_original_assertions",
+    "package_membership",
+    "source_preservation",
+    "numeric_qualifiers",
+    "all_page_visual_qa",
+    "clean_export",
+    "artifact_freshness"
+  ],
+  "selected_claim_status": "internal candidates; release-owner review required",
+  "source_profile": "fresh static source dependency check",
+  "source_revision": "9c3018dcdd17f40be27fc3c6dc7057d2d7cb05bc",
+  "target_seconds": 120,
+  "target_status": "unmeasured proposal until actual receipt is produced"
+}

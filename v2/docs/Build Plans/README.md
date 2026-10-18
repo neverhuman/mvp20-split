@@ -61,3 +61,5 @@ Read the selected plan's tracker first. Complete each phase gate before advancin
 - [RG-01 LLM Research Graph Generation](RG-01%20LLM%20Research%20Graph%20Generation.md): critical queued placeholder immediately after POP-01, before ML-01; overall/Build/Verification0%, R1/R2/R3/V1=0%. LLM generates/refines research graphs; Knowledge enhances context, with no populated-corpus prerequisite.
 
 - [POP-01.06 Referenced artifact retention decision](POP-01.06%20Referenced%20artifact%20retention%20decision.md): proposed E2.2 prerequisite; Data-owned protection of declared manifest ancestry, preserving worker completion bytes. Owner review pending; no implementation credit.
+
+- [DD-01 Investor Diligence Engineering Workplan](DD-01%20Investor%20Diligence%20Engineering%20Workplan.md): bounded local source-grounded plan and offline scaffolding; no investor release or engine implementation credit.

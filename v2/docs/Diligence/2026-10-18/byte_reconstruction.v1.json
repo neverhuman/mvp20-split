@@ -1,0 +1,177 @@
+{
+  "checker_sources": [
+    {
+      "capsule_path": "checker/acceptance/__init__.py",
+      "source": {
+        "bytes": 183,
+        "path": "v2/deploy/local/src/amphora_deployment/acceptance/__init__.py",
+        "sha256": "ba47460c2f6c51268456cfc0c74ce83591332db2764f1be77047de87dfaba964"
+      }
+    },
+    {
+      "capsule_path": "checker/acceptance/__main__.py",
+      "source": {
+        "bytes": 954,
+        "path": "v2/deploy/local/src/amphora_deployment/acceptance/__main__.py",
+        "sha256": "761aa7d13962186f08d4dbe684aaf2b8e8fefe1351d68efd3a907e026be3edc9"
+      }
+    },
+    {
+      "capsule_path": "checker/acceptance/ledger.py",
+      "source": {
+        "bytes": 4744,
+        "path": "v2/deploy/local/src/amphora_deployment/acceptance/ledger.py",
+        "sha256": "07026b1eafb4c87b56b0c9c0b3aad6921ba8eb771182d6e6229da17a680f6fac"
+      }
+    },
+    {
+      "capsule_path": "checker/acceptance/policy.py",
+      "source": {
+        "bytes": 2712,
+        "path": "v2/deploy/local/src/amphora_deployment/acceptance/policy.py",
+        "sha256": "1f3b96c8e18d685397113dd937c1eb8c4ed7fd821b1a36074c11e86100d8dfbc"
+      }
+    }
+  ],
+  "entries": [
+    {
+      "gate": "host",
+      "historical_sha256": "15108887b694bed51a6cf7ca118cbdfb606f1ef552c33713fd798cf7b54770b6",
+      "output_name": "Selected_Local_Host.json",
+      "source": {
+        "bytes": 4977,
+        "path": "v2/docs/Audits/Evidence/BP-09-Deployment/Selected_Local_Host.json",
+        "sha256": "ef13ea02a0e9c2b426d0aaf11448d3e9354de02bc29ea0973bae353bb9fc4c97"
+      },
+      "transform": "lf-to-crlf-v1"
+    },
+    {
+      "gate": "installation",
+      "historical_sha256": "0c5f2958b3ddaaa7f6a4781108156105994a7478dccc8a3efb6853ebc42c6437",
+      "output_name": "Owner_Inventory.json",
+      "source": {
+        "bytes": 20185,
+        "path": "v2/docs/Audits/Evidence/BP-09-Deployment/Owner_Inventory.json",
+        "sha256": "fb4ae735926c6f4d153e221b83d59e75956d4e8275cd66e106b3051a8f3e46b0"
+      },
+      "transform": "lf-to-crlf-v1"
+    },
+    {
+      "gate": "live_context",
+      "historical_sha256": "5e8e389b2a405a3114165f9238aac657b7fd16849333804ef9ea7088e48cd730",
+      "output_name": "Owner_Context_Campaign.json",
+      "source": {
+        "bytes": 4653,
+        "path": "v2/docs/Audits/Evidence/BP-09-Deployment/Owner_Context_Campaign.json",
+        "sha256": "c653ca0b722b191599dce2699d97089b5a145f88fbd9063b369bff4662fd2498"
+      },
+      "transform": "lf-to-crlf-v1"
+    },
+    {
+      "gate": "successor",
+      "historical_sha256": "ddf7e41727757e10d652d8ee4047130f4a719c21f8b31c078781911694ed6f9f",
+      "output_name": "Corrected_Successor.json",
+      "source": {
+        "bytes": 125959,
+        "path": "v2/docs/Audits/Evidence/BP-09-Deployment/Corrected_Successor.json",
+        "sha256": "1d05cea31a27fdb0630af4fc3843e7b71457dab225096170f4053533d68b8872"
+      },
+      "transform": "lf-to-crlf-v1"
+    },
+    {
+      "gate": "capacity",
+      "historical_sha256": "da1c322695e37242382ecd4384f79429f777d8be2e4a30656776551e0107dd8c",
+      "output_name": "Managed_Capacity.json",
+      "source": {
+        "bytes": 36996,
+        "path": "v2/docs/Audits/Evidence/BP-09-Deployment/Managed_Capacity.json",
+        "sha256": "eaa9d7cc0fbd110b00018f9af072f78e292be33c7871eb5c5a236bf3bf3a3cb7"
+      },
+      "transform": "lf-to-crlf-v1"
+    },
+    {
+      "gate": "browser",
+      "historical_sha256": "f4be54141bd6e1210cd149b841eecd307d33111740837c778b6dc18a1e950345",
+      "output_name": "Gateway_Replacement_Browser.json",
+      "source": {
+        "bytes": 533,
+        "path": "v2/docs/Audits/Evidence/BP-09-Deployment/Gateway_Replacement_Browser.json",
+        "sha256": "f4be54141bd6e1210cd149b841eecd307d33111740837c778b6dc18a1e950345"
+      },
+      "transform": "identity"
+    },
+    {
+      "gate": "daemon_recovery",
+      "historical_sha256": "895b598ab7f29f114f8701d1b62fb909c997baef93a3b95e52e47525c1e58258",
+      "output_name": "Shared_Daemon.json",
+      "source": {
+        "bytes": 7091,
+        "path": "v2/docs/Audits/Evidence/BP-09-Deployment/Shared_Daemon.json",
+        "sha256": "cd561b5f2a7119c4330804199b2ff2e4cec1fc1ea134f518bb2b901b2967fed8"
+      },
+      "transform": "lf-to-crlf-v1"
+    },
+    {
+      "gate": "backup",
+      "historical_sha256": "f246802f3d097f56a340cf24527bc4c86efb8ece38c390febf3774471ef43f5d",
+      "output_name": "Cold_Backup.json",
+      "source": {
+        "bytes": 999,
+        "path": "v2/docs/Audits/Evidence/BP-09-Deployment/Cold_Backup.json",
+        "sha256": "5eaa434e62dbfcb7a78a663384f0df797a77d3f9bcaaf35ef37f6a4961f34a0f"
+      },
+      "transform": "lf-to-crlf-v1"
+    },
+    {
+      "gate": "restore",
+      "historical_sha256": "db7d815cd87626d41d1578ba672d25ed933ee2f13dc249b52bf576a3cf818fda",
+      "output_name": "Restore_Verification.json",
+      "source": {
+        "bytes": 7694,
+        "path": "v2/docs/Audits/Evidence/BP-09-Deployment/Restore_Verification.json",
+        "sha256": "d48a6961171f3b3ae6efcfdc1aba0d9d2dc50bcebd60105061e4a0761e42545e"
+      },
+      "transform": "lf-to-crlf-v1"
+    },
+    {
+      "gate": "reconstruction",
+      "historical_sha256": "7d31d93627f6ba5ab12b0d72e3508226d11368d3cdc31705b769e74885778d91",
+      "output_name": "Evaluator_Reconstruction.json",
+      "source": {
+        "bytes": 23826,
+        "path": "v2/docs/Audits/Evidence/BP-09-Deployment/Evaluator_Reconstruction.json",
+        "sha256": "87fa80299c356111f47d5c221a347cd6ef2cb3c18bd87148be852f02eb9b42e0"
+      },
+      "transform": "lf-to-crlf-v1"
+    },
+    {
+      "gate": "recovery_faults",
+      "historical_sha256": "577338783d1e4c4e6eaa95782ed3d57edb91bd41e2d9129ce6fb78308c27bfee",
+      "output_name": "Recovery_Faults.json",
+      "source": {
+        "bytes": 22866,
+        "path": "v2/docs/Audits/Evidence/BP-09-Deployment/Recovery_Faults.json",
+        "sha256": "57cead05e7b8bef15268c38eaf77462858666e9b2d35d58723effe3c0694ee1f"
+      },
+      "transform": "lf-to-crlf-v1"
+    },
+    {
+      "gate": "recovery_acceptance",
+      "historical_sha256": "ef4149f88199573f98eaece16e336a5351f287957ea408675a4dd2e054d0a742",
+      "output_name": "Recovery_Acceptance.json",
+      "source": {
+        "bytes": 289207,
+        "path": "v2/docs/Audits/Evidence/BP-09-Deployment/Recovery_Acceptance.json",
+        "sha256": "9879f0ebd17489d68078c305c883a3901fed82230b05814b1abf12d1d5ed470d"
+      },
+      "transform": "lf-to-crlf-v1"
+    }
+  ],
+  "format": "amphora-bp09-byte-map.v1",
+  "ledger": {
+    "bytes": 1590,
+    "path": "v2/docs/Audits/Evidence/BP-09-Deployment/Acceptance_Ledger.json",
+    "sha256": "f098a8c09d16a9f81a75ace799fe131fb4dd051d8ef2c710eecb9f8608c9f443"
+  },
+  "source_revision": "9c3018dcdd17f40be27fc3c6dc7057d2d7cb05bc"
+}

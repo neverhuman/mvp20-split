@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "source_revision": "9c3018dcdd17f40be27fc3c6dc7057d2d7cb05bc",
+  "protected_paths_unchanged": [
+    "v1",
+    "docs/review/plga",
+    "docs/whitepapers/plga-prefix-forecasting",
+    "v2/benchmarks",
+    "v2/services",
+    "v2/tools",
+    "v2/contracts",
+    "v2/deploy"
+  ],
+  "new_text_files_scanned": 36,
+  "relative_markdown_links_checked": 27,
+  "raw_attachments_in_git": false,
+  "pdf_sha256_unchanged": "f228757745d9d4836f6d048120867348ef6718e9763ca48ea0710f60b11dd33a",
+  "task_projection_deterministic": true,
+  "production_changes": false,
+  "new_model_fits": 0,
+  "public_push": false
+}

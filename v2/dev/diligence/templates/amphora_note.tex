@@ -1,0 +1,19 @@
+% Layout scaffold, not an authored or qualified investor note.
+\documentclass[11pt,letterpaper]{article}
+\input{amphora_brand.tex}
+\begin{document}
+{\Huge\bfseries Amphora}\par
+{\Large Executable research with inspectable evidence}\par
+\textcolor{AmphoraTeal}{Publication layout scaffold | Internal review}
+
+\section*{Generation contract}
+The approved-claim assembler will emit escaped prose and numerical slots into
+\texttt{generated_body.tex}. It must reject unknown claim IDs, missing qualifiers,
+unsupported release status and stale source or brand inputs before rendering.
+The full assembler and investor content remain planned in DD-01.
+
+\IfFileExists{generated_body.tex}{\input{generated_body.tex}}{%
+\section*{Template qualification state}
+No investor body is included in this scaffold. This document makes no completed
+campaign, scientific result, author affiliation or publication-status assertion.}
+\end{document}

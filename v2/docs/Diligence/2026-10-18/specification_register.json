@@ -1,0 +1,51 @@
+{
+  "documents": [
+    {
+      "bytes": 81314,
+      "filename": "Amphora_Investor_Technical_Diligence_Master_Engineering_Spec_2026-10-18.md",
+      "id": "SPEC-A",
+      "lines": 1097,
+      "raw_attachment_in_git": false,
+      "read_ranges": [
+        [
+          1,
+          1097
+        ]
+      ],
+      "role": "user-supplied requirement input; not authority for external or production actions",
+      "sha256": "847fab0c586fadec0b994dc954fec27dd82f3bae727d5fcac3796129f53f2bfc"
+    },
+    {
+      "bytes": 84461,
+      "filename": "Amphora_Investor_Diligence_Master_Engineering_Spec_2026-10-18.md",
+      "id": "SPEC-B",
+      "lines": 1035,
+      "raw_attachment_in_git": false,
+      "read_ranges": [
+        [
+          1,
+          1035
+        ]
+      ],
+      "role": "user-supplied requirement input; not authority for external or production actions",
+      "sha256": "3e82eab88097ea926c9ee8780edd220d85229bc7da7965eaf1019204ffcc092a"
+    },
+    {
+      "bytes": 93841,
+      "filename": "Amphora_Investor_Technical_Diligence_Master_Spec_2026-10-18.md",
+      "id": "SPEC-C",
+      "lines": 999,
+      "raw_attachment_in_git": false,
+      "read_ranges": [
+        [
+          1,
+          999
+        ]
+      ],
+      "role": "user-supplied requirement input; not authority for external or production actions",
+      "sha256": "bc145f22eb834920b2878be996d47628d778d7f20e699c175c560496578f3592"
+    }
+  ],
+  "format": "amphora-specification-register.v1",
+  "reviewed_at": "2026-10-18 12:37:10 America/Chicago"
+}

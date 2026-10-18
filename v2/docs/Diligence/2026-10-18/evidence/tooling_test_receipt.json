@@ -1,0 +1,91 @@
+{
+  "format": "amphora-tooling-test-receipt.v1",
+  "python": "3.12.12",
+  "coverage_version": "7.10.7",
+  "numpy": "1.26.4",
+  "platform": "macOS-15.7.5-arm64-arm-64bit-Mach-O",
+  "command": [
+    "python3.12",
+    "-m",
+    "coverage",
+    "run",
+    "--branch",
+    "--source=v2/dev/diligence",
+    "--omit=*/render_plan.py,*/project_plan.py",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "v2/dev/tests/diligence",
+    "-v"
+  ],
+  "tests_run": 28,
+  "exit_code": 0,
+  "result": "PASS",
+  "elapsed_seconds": 13.14,
+  "log_sha256": "2e8534761554a1a34cd51b920b45e0f292a8b3894bf075ca4f21411605ebf58f",
+  "coverage_totals": {
+    "covered_lines": 337,
+    "num_statements": 385,
+    "percent_covered": 86.88172043010752,
+    "percent_covered_display": "87",
+    "missing_lines": 48,
+    "excluded_lines": 0,
+    "num_branches": 80,
+    "num_partial_branches": 3,
+    "covered_branches": 67,
+    "missing_branches": 13
+  },
+  "coverage_by_file": {
+    "v2/dev/diligence/__init__.py": {
+      "covered_lines": 0,
+      "num_statements": 0,
+      "percent_covered": 100.0,
+      "percent_covered_display": "100",
+      "missing_lines": 0,
+      "excluded_lines": 0,
+      "num_branches": 0,
+      "num_partial_branches": 0,
+      "covered_branches": 0,
+      "missing_branches": 0
+    },
+    "v2/dev/diligence/capsule.py": {
+      "covered_lines": 67,
+      "num_statements": 71,
+      "percent_covered": 92.7710843373494,
+      "percent_covered_display": "93",
+      "missing_lines": 4,
+      "excluded_lines": 0,
+      "num_branches": 12,
+      "num_partial_branches": 2,
+      "covered_branches": 10,
+      "missing_branches": 2
+    },
+    "v2/dev/diligence/cli.py": {
+      "covered_lines": 74,
+      "num_statements": 118,
+      "percent_covered": 61.80555555555556,
+      "percent_covered_display": "62",
+      "missing_lines": 44,
+      "excluded_lines": 0,
+      "num_branches": 26,
+      "num_partial_branches": 1,
+      "covered_branches": 15,
+      "missing_branches": 11
+    },
+    "v2/dev/diligence/core.py": {
+      "covered_lines": 196,
+      "num_statements": 196,
+      "percent_covered": 100.0,
+      "percent_covered_display": "100",
+      "missing_lines": 0,
+      "excluded_lines": 0,
+      "num_branches": 42,
+      "num_partial_branches": 0,
+      "covered_branches": 42,
+      "missing_branches": 0
+    }
+  },
+  "measured_boundary": "core.py, capsule.py, cli.py, package initialization; renderer and projection excluded and separately built/reviewed",
+  "limits": "No claim of scientific validity, production owner execution or all future release gates."
+}
